@@ -7,60 +7,58 @@
 
   <style type="text/css">
     body {
-      margin-top: 1.0em;
-      background-color: #cad6f2;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
+      background-color: #ffffff;
       color: #000000;
+      margin: 0;
+      padding: 0;
     }
     #container {
-      margin: 0 auto;
-      width: 700px;
+      float: left;
+      width: 100%;
     }
-    h1 { font-size: 3.8em; color: #35290d; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #35290d; }
-    h3 { text-align: center; color: #35290d; }
-    a { color: #35290d; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
+    #center {
+      margin: 0 auto 0 auto;
+      float: left;
+    }
+    #logo {
+      clear: right;
+    }
+    #nav {
+      float: left;
+      width: 15%;
+    }
   </style>
 </head>
 
 <body>
   <div id="container">
 
-    <div class="download">
-      <a href="http://github.com/graydon/rust/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/graydon/rust/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    <div id="nav">
+      <img id="logo" src="logos/rust-logo-128x128-blk.png"/>
+      <ul>
+        <li><a href="http://tinderbox.mozilla.org/showbuilds.cgi?tree=Rust">Tinderbox</a></li>
+        <li><a href="http://github.com/graydon/rust">Github page</a></li>
+        <li><a href="http://irclog.gr/#browse/irc.mozilla.org/rust">IRC logs</a>
+        <li><a href="http://izs.no.de/graydon/rust">De-ajax'ed issues</a>
+        <li>Mailing lists:
+          <ul>
+            <li><a href="https://mail.mozilla.org/listinfo/rust-dev">rust-dev</a></li>
+            <li><a href="https://mail.mozilla.org/listinfo/rust-commits">rust-commits</a></li>
+          </ul>
+        </li>
+        <li>Download repo:
+          <ul>
+            <li><a href="http://github.com/graydon/rust/tarball/master">Tar</a></li>
+            <li><a href="http://github.com/graydon/rust/zipball/master">Zip</a></li>
+          </ul>
+        </li>
     </div>
 
-    <h1><a href="http://github.com/graydon/rust">Rust</a></h1>
-
-    <div class="description">
+    <div id="center">
+      <h2>Rust: A safe, concurrent, practical language</h2>
       Rust programming language
     </div>
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/graydon/rust/zipball/master">zip</a> or
-      <a href="http://github.com/graydon/rust/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/graydon/rust</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/graydon/rust">graydon/rust</a>
-    </div>
-
+    
   </div>  
 </body>
 </html>
