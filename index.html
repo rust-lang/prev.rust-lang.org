@@ -6,6 +6,11 @@
   <title>Rust</title>
 
   <style type="text/css">
+    ul {
+      list-style-type: square;
+      margin-left: 10px;
+      padding-left: 0px;
+    }
     body {
       background-color: #ffffff;
       color: #000000;
@@ -15,17 +20,30 @@
     #container {
       float: left;
       width: 80%;
+      padding: 1em;
     }
     #center {
-      margin: 0 auto 0 auto;
       float: left;
+      margin: 0 auto 0 auto;
     }
     #logo {
       clear: right;
     }
     #nav {
       float: left;
-      width: 15%;
+      width: 150px;
+    }
+    #features {
+      margin: 2em;
+      padding: 1em;
+      border: 1px solid black;
+    }
+    td {
+      padding-left: 1.5em;
+    }
+    .code {
+      font-family: fixed, monospace;
+      white-space: pre;
     }
   </style>
   <link rel="shortcut icon" href="favicon.ico" />
@@ -57,7 +75,49 @@
 
     <div id="center">
       <h2>Rust: A safe, concurrent, practical language</h2>
-      Rust programming language
+
+
+Rust is a programming language for low-level, safe code. A short summary of features:
+
+<table id="features">
+<tr><td>Compilation model</td><td>batch, ahead-of-time, C/C++ compatible</td></tr>
+<tr><td>Type system</td><td>static, structural-algebraic, with metadata</td></tr>
+<tr><td>Type inference</td><td>yes, only local variables</td></tr>
+<tr><td>Generic types</td><td>yes, only simple, non-turing-complete substitution</td></tr>
+<tr><td>Concurrency</td><td>isolated tasks, message passing, move semantics</td></tr>
+<tr><td>Error handling</td><td>isolated tasks, unrecoverable unwinding</td></tr>
+<tr><td>Garbage Collection</td><td>optional, per-task, only "shared" types</td></tr>
+<tr><td>Text</td><td>utf8 strings, ucs4 characters</td></tr>
+<tr><td>Tier 1 platforms</td><td>Linux, OSX, Windows</td></tr>
+<tr><td>Developers</td><td>Mozilla</td></tr>
+<tr><td>License</td><td>BSD</li>
+</table>
+
+You may also prefer some of our favourite <em>anti-features</em>:
+
+<table id="features">
+<tr><td class="code">#include</td><td>no</td></tr>
+<tr><td class="code">void*</td><td>no</td></tr>
+<tr><td class="code">free()</td><td>no</td></tr>
+<tr><td class="code">NULL</td><td>no</td></tr>
+<tr><td>use before init</td><td>no</td></tr>
+<tr><td>buffer overflow</td><td>no</td></tr>
+<tr><td>data race</td><td>no</td></tr>
+<tr><td class="code">const</td><td>no (immutable is default)</td></tr>
+<tr><td><a href="http://en.wikipedia.org/wiki/Substitution_failure_is_not_an_error">SFINAE</td><td>no</td></tr>
+</table>
+
+A very small taste of what it looks like:
+
+{% highlight rust %}
+use std;
+fn main() {
+  let out = std::io::stdout();
+  for i in [1, 2, 3] {
+    out.write_str(#fmt("hello %d\n", i));
+  }
+}
+{% endhighlight %}
     </div>
     
   </div>  
