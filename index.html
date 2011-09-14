@@ -1,6 +1,3 @@
----
-title: Rust
----
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,6 +44,11 @@ title: Rust
     .code {
       font-family: fixed, monospace;
       white-space: pre;
+    }
+    pre {
+      background: #eeeeee;
+      margin: 1em;
+      padding: 1em;
     }
   </style>
   <link rel="shortcut icon" href="favicon.ico" />
@@ -112,7 +114,7 @@ You may also prefer some of our favourite <em>anti-features</em>:
 
 A very small taste of what it looks like:
 
-{% highlight rust %}
+<pre class="code">
 use std;
 fn main() {
   let out = std::io::stdout();
@@ -120,9 +122,10 @@ fn main() {
     out.write_str(#fmt("hello %d\n", i));
   }
 }
-{% endhighlight %}
+</pre>
     </div>
     
   </div>  
 </body>
 </html>
+<
