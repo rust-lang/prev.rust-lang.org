@@ -96,27 +96,16 @@ Rust is a programming language for low-level, safe code. A short summary of feat
 <tr><td>Type system</td><td>static, structural-algebraic, with metadata</td></tr>
 <tr><td>Type inference</td><td>yes, only local variables</td></tr>
 <tr><td>Generic types</td><td>yes, only simple, non-turing-complete substitution</td></tr>
-<tr><td>Concurrency</td><td>isolated tasks, message passing, move semantics</td></tr>
-<tr><td>Error handling</td><td>isolated tasks, unrecoverable unwinding</td></tr>
+<tr><td>Concurrency</td><td>isolated tasks, message passing</td></tr>
+<tr><td>Unique pointers</td><td>no races or sharing, move semantics</td></tr>
+<tr><td>Memory safety</td><td>no buffer overflow, use before init, <span class="code">NULL</span> or <span class="code">free()</span></td></tr>
+<tr><td>Immutability</td><td>immutable by default, mutability is the special case</td></tr>
 <tr><td>Garbage Collection</td><td>optional, per-task, only "shared" types</td></tr>
+<tr><td>Error handling</td><td>isolated tasks, unrecoverable unwinding</td></tr>
 <tr><td>Text</td><td>utf8 strings, ucs4 characters</td></tr>
 <tr><td>Tier 1 platforms</td><td>Linux, OSX, Windows</td></tr>
 <tr><td>Developers</td><td>Mozilla</td></tr>
 <tr><td>License</td><td>BSD</li>
-</table>
-
-You may also like some of our favourite <em>anti-features</em>:
-
-<table id="features">
-<tr><td class="code">#include</td><td>no</td></tr>
-<tr><td class="code">void*</td><td>no</td></tr>
-<tr><td class="code">free()</td><td>no</td></tr>
-<tr><td class="code">NULL</td><td>no</td></tr>
-<tr><td>use before init</td><td>no</td></tr>
-<tr><td>buffer overflow</td><td>no</td></tr>
-<tr><td>data race</td><td>no</td></tr>
-<tr><td class="code">const</td><td>no (immutable is default)</td></tr>
-<tr><td><a href="http://en.wikipedia.org/wiki/Substitution_failure_is_not_an_error">SFINAE</td><td>no</td></tr>
 </table>
 
 A very small taste of what it looks like:
