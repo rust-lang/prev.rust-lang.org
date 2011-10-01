@@ -14,6 +14,9 @@
     margin-top: 20px;
     margin-bottom: 20px;
     }
+    h2 {
+    font-size: 16px;
+    }
     table {
     padding: 1em;
     }
@@ -64,8 +67,25 @@
       <div id="main" class="span13">
 	<h1>Rust <small>a safe, concurrent, practical language</small></h1>
 
+	<p>
+	  Rust is a curly-brace, block-structured expression
+	language. It visually resembles the C language family, but
+	differs significantly in syntactic and semantic details. Its
+	design is oriented toward concerns of “programming in the
+	large”, that is, of creating and
+	maintaining <em>boundaries</em> – both abstract and
+	operational – that preserve large-system
+	<em>integrity</em>, <em>availability</em> and <em>concurrency</em>.
+	</p>
 
-	<p>A short summary of features:</p>
+	<p>
+	  It supports a mixture of imperative procedural, concurrent
+	  actor, object-oriented and pure functional styles. Rust also
+	  supports generic programming and metaprogramming, in both
+	  static and dynamic styles.
+	</p>
+
+	<h2>A short summary of features</h2>
 
 	<table id="features">
 	  <tr><td>Compilation model</td><td>batch, ahead-of-time, C/C++ compatible</td></tr>
@@ -84,7 +104,7 @@
 	  <tr><td>License</td><td>BSD</td></tr>
 	</table>
 
-	<p>A very small taste of what it looks like:</p>
+	<h2>A very small taste of what it looks like</h2>
 
 <pre class="code">
 use std;
