@@ -5,49 +5,24 @@
 
   <title>Rust</title>
 
+  <link rel="stylesheet" href="bootstrap.min.css">
   <style type="text/css">
-    ul {
-      list-style-type: square;
-      margin-left: 10px;
-      padding-left: 0px;
+    div.container {
+    margin-top: 30px;
     }
-    body {
-      background-color: #ffffff;
-      color: #000000;
-      margin: 10pt;
-      padding: 0;
+    p {
+    margin-top: 20px;
+    margin-bottom: 20px;
     }
-    #container {
-      float: left;
-      padding: 1em;
+    table {
+    padding: 1em;
     }
-    #center {
-      float: left;
-      margin: 0 auto 0 auto;
+    #features td {
+    padding: 0.2em;
+    border: none;
     }
     #logo {
-      clear: right;
-    }
-    #nav {
-      float: left;
-      width: 150px;
-    }
-    #features {
-      margin: 2em;
-      padding: 1em;
-      border: 1px solid black;
-    }
-    td {
-      padding-left: 1.5em;
-    }
-    .code {
-      font-family: fixed, monospace;
-      white-space: pre;
-    }
-    pre {
-      background: #eeeeee;
-      margin: 2em;
-      padding: 1em;
+    margin: 0px 30px 30px 0px;
     }
   </style>
   <link rel="shortcut icon" href="favicon.ico" />
@@ -55,70 +30,73 @@
 
 <body>
 <a href="http://github.com/graydon/rust"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a>
-  <div id="container">
-    <div id="nav">
-      <img id="logo" src="logos/rust-logo-128x128-blk.png"/>
-      <ul>
-        <li><a href="http://bot.rust-lang.org">Bot</a></li>
-        <li><a href="http://tinderbox.mozilla.org/showbuilds.cgi?tree=Rust">Tinderbox</a></li>
-        <li><a href="http://github.com/graydon/rust">Github</a></li>
-        <li><a href="http://twitter.com/rustlang">Twitter</a></li>
-        <li><a href="http://irclog.gr/#browse/irc.mozilla.org/rust">IRC logs</a>
-        <li><a href="http://izs.no.de/graydon/rust">De-ajax'ed issues</a>
-        <li>Mailing lists:
-          <ul>
-            <li><a href="https://mail.mozilla.org/listinfo/rust-dev">rust-dev</a></li>
-            <li><a href="https://mail.mozilla.org/listinfo/rust-commits">rust-commits</a></li>
-          </ul>
-        </li>
-        <li>Doc snapshot:
-          <ul>
-            <li><a href="doc/rust.html">HTML</a></li>
-            <li><a href="doc/rust.pdf">PDF</a></li>
-          </ul>
-        </li>
-        <li>Download repo:
-          <ul>
-            <li><a href="http://github.com/graydon/rust/tarball/master">Tar</a></li>
-            <li><a href="http://github.com/graydon/rust/zipball/master">Zip</a></li>
-          </ul>
-        </li>
-    </div>
+  <div class="container">
+    <div id="nav" class="row">
+      <div class="span3">
+	<img id="logo" src="logos/rust-logo-128x128-blk.png"/>
+	<ul class="unstyled">
+          <li><a href="http://bot.rust-lang.org">Bot</a></li>
+          <li><a href="http://tinderbox.mozilla.org/showbuilds.cgi?tree=Rust">Tinderbox</a></li>
+          <li><a href="http://github.com/graydon/rust">Github</a></li>
+          <li><a href="http://twitter.com/rustlang">Twitter</a></li>
+          <li><a href="http://irclog.gr/#browse/irc.mozilla.org/rust">IRC logs</a>
+          <li><a href="http://izs.no.de/graydon/rust">De-ajax'ed issues</a>
+          <li>Mailing lists:
+            <ul>
+              <li><a href="https://mail.mozilla.org/listinfo/rust-dev">rust-dev</a></li>
+              <li><a href="https://mail.mozilla.org/listinfo/rust-commits">rust-commits</a></li>
+            </ul>
+          </li>
+          <li>Doc snapshot:
+            <ul>
+              <li><a href="doc/rust.html">HTML</a></li>
+              <li><a href="doc/rust.pdf">PDF</a></li>
+            </ul>
+          </li>
+          <li>Download repo:
+            <ul>
+              <li><a href="http://github.com/graydon/rust/tarball/master">Tar</a></li>
+              <li><a href="http://github.com/graydon/rust/zipball/master">Zip</a></li>
+            </ul>
+          </li>
+      </div>
 
-    <div id="center">
-      <h2>Rust: A safe, concurrent, practical language</h2>
+      <div id="main" class="span13">
+	<h1>Rust <small>a safe, concurrent, practical language</small></h1>
 
 
-Rust is a programming language for low-level, safe code. A short summary of features:
+	<p>A short summary of features:</p>
 
-<table id="features">
-<tr><td>Compilation model</td><td>batch, ahead-of-time, C/C++ compatible</td></tr>
-<tr><td>Type system</td><td>static, structural-algebraic, with metadata</td></tr>
-<tr><td>Type inference</td><td>yes, only local variables</td></tr>
-<tr><td>Generic types</td><td>yes, only simple, non-turing-complete substitution</td></tr>
-<tr><td>Concurrency</td><td>isolated tasks, message passing</td></tr>
-<tr><td>Unique pointers</td><td>no races or sharing, move semantics</td></tr>
-<tr><td>Memory safety</td><td>no buffer overflow, use before init, <span class="code">NULL</span> or <span class="code">free()</span></td></tr>
-<tr><td>Immutability</td><td>immutable by default, mutability is the special case</td></tr>
-<tr><td>Garbage collection</td><td>optional, per-task, only "shared" types</td></tr>
-<tr><td>Error handling</td><td>isolated tasks, unrecoverable unwinding</td></tr>
-<tr><td>Text</td><td>utf8 strings, ucs4 characters</td></tr>
-<tr><td>Tier 1 platforms</td><td>Linux, OSX, Windows</td></tr>
-<tr><td>Developers</td><td>Mozilla</td></tr>
-<tr><td>License</td><td>BSD</li>
-</table>
+	<table id="features">
+	  <tr><td>Compilation model</td><td>batch, ahead-of-time, C/C++ compatible</td></tr>
+	  <tr><td>Type system</td><td>static, structural-algebraic, with metadata</td></tr>
+	  <tr><td>Type inference</td><td>yes, only local variables</td></tr>
+	  <tr><td>Generic types</td><td>yes, only simple, non-turing-complete substitution</td></tr>
+	  <tr><td>Concurrency</td><td>isolated tasks, message passing</td></tr>
+	  <tr><td>Unique pointers</td><td>no races or sharing, move semantics</td></tr>
+	  <tr><td>Memory safety</td><td>no buffer overflow, use before init, <span class="code">NULL</span> or <span class="code">free()</span></td></tr>
+	  <tr><td>Immutability</td><td>immutable by default, mutability is the special case</td></tr>
+	  <tr><td>Garbage collection</td><td>optional, per-task, only "shared" types</td></tr>
+	  <tr><td>Error handling</td><td>isolated tasks, unrecoverable unwinding</td></tr>
+	  <tr><td>Text</td><td>utf8 strings, ucs4 characters</td></tr>
+	  <tr><td>Tier 1 platforms</td><td>Linux, OSX, Windows</td></tr>
+	  <tr><td>Developers</td><td>Mozilla</td></tr>
+	  <tr><td>License</td><td>BSD</td></tr>
+	</table>
 
-A very small taste of what it looks like:
+	<p>A very small taste of what it looks like:</p>
 
 <pre class="code">
 use std;
 fn main() {
-  let out = std::io::stdout();
-  for i in [1, 2, 3] {
-    out.write_str(#fmt("hello %d\n", i));
-  }
+    let out = std::io::stdout();
+    for i in [1, 2, 3] {
+        out.write_str(#fmt("hello %d\n", i));
+    }
 }
 </pre>
+
+        </div>
     </div>
     
   </div>  
