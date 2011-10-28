@@ -150,26 +150,27 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#dir">(dir)</a>
 <li><a href="#Ref_002eExpr_002eBind">4.11.3 Ref.Expr.Bind</a>
 <li><a href="#Ref_002eExpr_002eRet">4.11.4 Ref.Expr.Ret</a>
 <li><a href="#Ref_002eExpr_002ePut">4.11.5 Ref.Expr.Put</a>
-<li><a href="#Ref_002eExpr_002eFail">4.11.6 Ref.Expr.Fail</a>
-<li><a href="#Ref_002eExpr_002eLog">4.11.7 Ref.Expr.Log</a>
-<li><a href="#Ref_002eExpr_002eNote">4.11.8 Ref.Expr.Note</a>
-<li><a href="#Ref_002eExpr_002eWhile">4.11.9 Ref.Expr.While</a>
-<li><a href="#Ref_002eExpr_002eBreak">4.11.10 Ref.Expr.Break</a>
-<li><a href="#Ref_002eExpr_002eCont">4.11.11 Ref.Expr.Cont</a>
-<li><a href="#Ref_002eExpr_002eFor">4.11.12 Ref.Expr.For</a>
-<li><a href="#Ref_002eExpr_002eForeach">4.11.13 Ref.Expr.Foreach</a>
-<li><a href="#Ref_002eExpr_002eIf">4.11.14 Ref.Expr.If</a>
-<li><a href="#Ref_002eExpr_002eAlt">4.11.15 Ref.Expr.Alt</a>
+<li><a href="#Ref_002eExpr_002eAs">4.11.6 Ref.Expr.As</a>
+<li><a href="#Ref_002eExpr_002eFail">4.11.7 Ref.Expr.Fail</a>
+<li><a href="#Ref_002eExpr_002eLog">4.11.8 Ref.Expr.Log</a>
+<li><a href="#Ref_002eExpr_002eNote">4.11.9 Ref.Expr.Note</a>
+<li><a href="#Ref_002eExpr_002eWhile">4.11.10 Ref.Expr.While</a>
+<li><a href="#Ref_002eExpr_002eBreak">4.11.11 Ref.Expr.Break</a>
+<li><a href="#Ref_002eExpr_002eCont">4.11.12 Ref.Expr.Cont</a>
+<li><a href="#Ref_002eExpr_002eFor">4.11.13 Ref.Expr.For</a>
+<li><a href="#Ref_002eExpr_002eForeach">4.11.14 Ref.Expr.Foreach</a>
+<li><a href="#Ref_002eExpr_002eIf">4.11.15 Ref.Expr.If</a>
+<li><a href="#Ref_002eExpr_002eAlt">4.11.16 Ref.Expr.Alt</a>
 <ul>
-<li><a href="#Ref_002eExpr_002eAlt_002ePat">4.11.15.1 Ref.Expr.Alt.Pat</a>
-<li><a href="#Ref_002eExpr_002eAlt_002eType">4.11.15.2 Ref.Expr.Alt.Type</a>
+<li><a href="#Ref_002eExpr_002eAlt_002ePat">4.11.16.1 Ref.Expr.Alt.Pat</a>
+<li><a href="#Ref_002eExpr_002eAlt_002eType">4.11.16.2 Ref.Expr.Alt.Type</a>
 </li></ul>
-<li><a href="#Ref_002eExpr_002eProve">4.11.16 Ref.Expr.Prove</a>
-<li><a href="#Ref_002eExpr_002eCheck">4.11.17 Ref.Expr.Check</a>
-<li><a href="#Ref_002eExpr_002eClaim">4.11.18 Ref.Expr.Claim</a>
-<li><a href="#Ref_002eExpr_002eIfCheck">4.11.19 Ref.Expr.IfCheck</a>
-<li><a href="#Ref_002eExpr_002eAssert">4.11.20 Ref.Expr.Assert</a>
-<li><a href="#Ref_002eExpr_002eAnonObj">4.11.21 Ref.Expr.AnonObj</a>
+<li><a href="#Ref_002eExpr_002eProve">4.11.17 Ref.Expr.Prove</a>
+<li><a href="#Ref_002eExpr_002eCheck">4.11.18 Ref.Expr.Check</a>
+<li><a href="#Ref_002eExpr_002eClaim">4.11.19 Ref.Expr.Claim</a>
+<li><a href="#Ref_002eExpr_002eIfCheck">4.11.20 Ref.Expr.IfCheck</a>
+<li><a href="#Ref_002eExpr_002eAssert">4.11.21 Ref.Expr.Assert</a>
+<li><a href="#Ref_002eExpr_002eAnonObj">4.11.22 Ref.Expr.AnonObj</a>
 </li></ul>
 <li><a href="#Ref_002eRun">4.12 Ref.Run</a>
 <ul>
@@ -1241,7 +1242,7 @@ component of a path may also have trailing explicit type arguments.
      x::y::z;
 </pre>
    <p>In most contexts, the Rust grammar accepts a general <em>path</em>, but
-subsequent passes pay restrict paths occurring in various contexts to refer to
+subsequent passes may restrict paths occurring in various contexts to refer to
 slots or items, depending on the semantics of the occurrence. In other words:
 in some contexts a slot is required (for example, on the left hand side of the
 copy operator, see <a href="#Ref_002eExpr_002eCopy">Ref.Expr.Copy</a>) and in other contexts an item is
@@ -2249,7 +2250,7 @@ with a <code>ret</code>, <code>be</code>, or diverging expression. So, if <code>
 were declared without the <code>!</code> annotation, the following code would not
 typecheck:
 <pre class="example">     fn f(i: int) -&gt; int {
-        if (i == 42) {
+        if i == 42 {
           ret 42;
         }
         else {
@@ -2385,7 +2386,7 @@ See <a href="#Ref_002eExpr_002eForeach">Ref.Expr.Foreach</a>.
      }
      
      let sum: int = 0;
-     for each (x: int in range(0,100)) {
+     for each x: int in range(0,100) {
          sum += x;
      }
 </pre>
@@ -2526,7 +2527,7 @@ module system).
        cons(T, @list&lt;T&gt;);
      }
      
-     let a: list&lt;int&gt; = cons(7, cons(13, nil));
+     let a: list&lt;int&gt; = cons(7, @cons(13, @nil));
 </pre>
    <div class="node">
 <a name="Ref.Type"></a>
@@ -2904,7 +2905,7 @@ constraints and an output slot. See <a href="#Ref_002eItem_002eIter">Ref.Item.It
        }
      }
      
-     for each (i: int in range(5,7)) {
+     for each i: int in range(5,7) {
        ...;
      }
 </pre>
@@ -3474,10 +3475,11 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Reference">Reference</a>
 <li><a accesskey="4" href="#Ref_002eExpr_002eRet">Ref.Expr.Ret</a>:                 Expression for stopping and producing a value. 
 <!-- * Ref.Expr.Be::                 Expression for stopping and executing a tail call. -->
 <li><a accesskey="5" href="#Ref_002eExpr_002ePut">Ref.Expr.Put</a>:                 Expression for pausing and producing a value. 
-<li><a accesskey="6" href="#Ref_002eExpr_002eFail">Ref.Expr.Fail</a>:                Expression for causing task failure. 
-<li><a accesskey="7" href="#Ref_002eExpr_002eLog">Ref.Expr.Log</a>:                 Expression for logging values to diagnostic buffers. 
-<li><a accesskey="8" href="#Ref_002eExpr_002eNote">Ref.Expr.Note</a>:                Expression for logging values during failure. 
-<li><a accesskey="9" href="#Ref_002eExpr_002eWhile">Ref.Expr.While</a>:               Expression for simple conditional looping. 
+<li><a accesskey="6" href="#Ref_002eExpr_002eAs">Ref.Expr.As</a>:                  Expression for casting a value to a different type. 
+<li><a accesskey="7" href="#Ref_002eExpr_002eFail">Ref.Expr.Fail</a>:                Expression for causing task failure. 
+<li><a accesskey="8" href="#Ref_002eExpr_002eLog">Ref.Expr.Log</a>:                 Expression for logging values to diagnostic buffers. 
+<li><a accesskey="9" href="#Ref_002eExpr_002eNote">Ref.Expr.Note</a>:                Expression for logging values during failure. 
+<li><a href="#Ref_002eExpr_002eWhile">Ref.Expr.While</a>:               Expression for simple conditional looping. 
 <li><a href="#Ref_002eExpr_002eBreak">Ref.Expr.Break</a>:               Expression for terminating a loop. 
 <li><a href="#Ref_002eExpr_002eCont">Ref.Expr.Cont</a>:                Expression for terminating a single loop iteration. 
 <li><a href="#Ref_002eExpr_002eFor">Ref.Expr.For</a>:                 Expression for looping over strings and vectors. 
@@ -3620,7 +3622,7 @@ and transfers control to the caller frame.
 
    <p>An example of a <code>ret</code> expression:
 <pre class="example">     fn max(a: int, b: int) -&gt; int {
-        if (a &gt; b) {
+        if a &gt; b {
            ret a;
         }
         ret b;
@@ -3630,7 +3632,7 @@ and transfers control to the caller frame.
 <a name="Ref.Expr.Put"></a>
 <a name="Ref_002eExpr_002ePut"></a>
 <p><hr>
-Next:&nbsp;<a rel="next" accesskey="n" href="#Ref_002eExpr_002eFail">Ref.Expr.Fail</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Ref_002eExpr_002eAs">Ref.Expr.As</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Ref_002eExpr_002eRet">Ref.Expr.Ret</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
@@ -3650,19 +3652,47 @@ either continuing execution after the <code>put</code> expression, or terminatin
 execution and destroying the iterator frame.
 
 <div class="node">
-<a name="Ref.Expr.Fail"></a>
-<a name="Ref_002eExpr_002eFail"></a>
+<a name="Ref.Expr.As"></a>
+<a name="Ref_002eExpr_002eAs"></a>
 <p><hr>
-Next:&nbsp;<a rel="next" accesskey="n" href="#Ref_002eExpr_002eLog">Ref.Expr.Log</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Ref_002eExpr_002eFail">Ref.Expr.Fail</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Ref_002eExpr_002ePut">Ref.Expr.Put</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.6 Ref.Expr.Fail</h4>
+<h4 class="subsection">4.11.6 Ref.Expr.As</h4>
+
+<!-- * Ref.Expr.As::                 Expression for casting a value to a different type. -->
+<p><a name="index-As-expression-155"></a><a name="index-Cast-156"></a><a name="index-Typecast-157"></a>
+Executing an <code>as</code> expression casts the value on the left-hand side to the
+type on the right-hand side.
+
+   <p>A numeric value can be cast to any numeric type.  A native pointer value can
+be cast to or from any integral type or native pointer type.  Any other cast
+is unsupported and will fail to compile.
+
+   <p>An example of an <code>as</code> expression:
+<pre class="example">     fn avg(v: [float]) -&gt; float {
+       let sum: float = sum(v);
+       let sz: float = std::vec::len(v) as float;
+       ret sum / sz;
+     }
+</pre>
+   <div class="node">
+<a name="Ref.Expr.Fail"></a>
+<a name="Ref_002eExpr_002eFail"></a>
+<p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Ref_002eExpr_002eLog">Ref.Expr.Log</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Ref_002eExpr_002eAs">Ref.Expr.As</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
+
+</div>
+
+<h4 class="subsection">4.11.7 Ref.Expr.Fail</h4>
 
 <!-- * Ref.Expr.Fail::               Expression for causing task failure. -->
-<p><a name="index-Fail-expression-155"></a><a name="index-Failure-156"></a><a name="index-Unwinding-157"></a>
+<p><a name="index-Fail-expression-158"></a><a name="index-Failure-159"></a><a name="index-Unwinding-160"></a>
 Executing a <code>fail</code> expression causes a task to enter the <em>failing</em>
 state. In the <em>failing</em> state, a task unwinds its stack, destroying all
 frames and freeing all resources until it reaches its entry frame, at which
@@ -3678,10 +3708,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.7 Ref.Expr.Log</h4>
+<h4 class="subsection">4.11.8 Ref.Expr.Log</h4>
 
 <!-- * Ref.Expr.Log::                Expression for logging values to diagnostic buffers. -->
-<p><a name="index-Log-expression-158"></a><a name="index-Logging-159"></a>
+<p><a name="index-Log-expression-161"></a><a name="index-Logging-162"></a>
 Executing a <code>log</code> expression may, depending on runtime configuration,
 cause a value to be appended to an internal diagnostic logging buffer provided
 by the runtime or emitted to a system console. Log expressions are enabled or
@@ -3699,10 +3729,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.8 Ref.Expr.Note</h4>
+<h4 class="subsection">4.11.9 Ref.Expr.Note</h4>
 
 <!-- * Ref.Expr.Note::                Expression for logging values during failure. -->
-<p><a name="index-Note-expression-160"></a><a name="index-Logging-161"></a><a name="index-Unwinding-162"></a><a name="index-Failure-163"></a>
+<p><a name="index-Note-expression-163"></a><a name="index-Logging-164"></a><a name="index-Unwinding-165"></a><a name="index-Failure-166"></a>
 A <code>note</code> expression has no effect during normal execution. The purpose of
 a <code>note</code> expression is to provide additional diagnostic information to the
 logging subsystem during task failure. See <a href="#Ref_002eExpr_002eLog">Ref.Expr.Log</a>. Using <code>note</code>
@@ -3723,7 +3753,7 @@ diagnostic buffer.
          note path;
          let r: [str];
          let f: file = open_read(path);
-         for each (s: str in lines(f)) {
+         for each s: str in lines(f) {
              vec::append(r,s);
          }
          ret r;
@@ -3751,10 +3781,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.9 Ref.Expr.While</h4>
+<h4 class="subsection">4.11.10 Ref.Expr.While</h4>
 
 <!-- * Ref.Expr.While::              Expression for simple conditional looping. -->
-<p><a name="index-While-expression-164"></a><a name="index-Loops-165"></a><a name="index-Control_002dflow-166"></a>
+<p><a name="index-While-expression-167"></a><a name="index-Loops-168"></a><a name="index-Control_002dflow-169"></a>
 A <code>while</code> expression is a loop construct. A <code>while</code> loop may be
 either a simple <code>while</code> or a <code>do</code>-<code>while</code> loop.
 
@@ -3791,10 +3821,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.10 Ref.Expr.Break</h4>
+<h4 class="subsection">4.11.11 Ref.Expr.Break</h4>
 
 <!-- * Ref.Expr.Break::              Expression for terminating a loop. -->
-<p><a name="index-Break-expression-167"></a><a name="index-Loops-168"></a><a name="index-Control_002dflow-169"></a>
+<p><a name="index-Break-expression-170"></a><a name="index-Loops-171"></a><a name="index-Control_002dflow-172"></a>
 Executing a <code>break</code> expression immediately terminates the innermost loop
 enclosing it. It is only permitted in the body of a loop.
 
@@ -3808,10 +3838,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.11 Ref.Expr.Cont</h4>
+<h4 class="subsection">4.11.12 Ref.Expr.Cont</h4>
 
 <!-- * Ref.Expr.Cont::               Expression for terminating a single loop iteration. -->
-<p><a name="index-Continue-expression-170"></a><a name="index-Loops-171"></a><a name="index-Control_002dflow-172"></a>
+<p><a name="index-Continue-expression-173"></a><a name="index-Loops-174"></a><a name="index-Control_002dflow-175"></a>
 Executing a <code>cont</code> expression immediately terminates the current iteration
 of the innermost loop enclosing it, returning control to the loop
 <em>head</em>. In the case of a <code>while</code> loop, the head is the conditional
@@ -3831,10 +3861,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.12 Ref.Expr.For</h4>
+<h4 class="subsection">4.11.13 Ref.Expr.For</h4>
 
 <!-- * Ref.Expr.For::                Expression for looping over strings and vectors. -->
-<p><a name="index-For-expression-173"></a><a name="index-Loops-174"></a><a name="index-Control_002dflow-175"></a>
+<p><a name="index-For-expression-176"></a><a name="index-Loops-177"></a><a name="index-Control_002dflow-178"></a>
 A <dfn>for loop</dfn> is controlled by a vector or string. The for loop
 bounds-checks the underlying sequence <em>once</em> when initiating the loop,
 then repeatedly copies each value of the underlying sequence into the element
@@ -3843,7 +3873,7 @@ variable, executing the loop body once per copy.
    <p>Example a for loop:
 <pre class="example">     let v: [foo] = [a, b, c];
      
-     for (foo e in v) {
+     for e: foo in v {
          bar(e);
      }
 </pre>
@@ -3857,10 +3887,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.13 Ref.Expr.Foreach</h4>
+<h4 class="subsection">4.11.14 Ref.Expr.Foreach</h4>
 
 <!-- * Ref.Expr.Foreach::           Expression for general conditional looping. -->
-<p><a name="index-Foreach-expression-176"></a><a name="index-Loops-177"></a><a name="index-Control_002dflow-178"></a>
+<p><a name="index-Foreach-expression-179"></a><a name="index-Loops-180"></a><a name="index-Control_002dflow-181"></a>
 An <dfn>foreach loop</dfn> is denoted by the <code>for each</code> keywords, and is
 controlled by an iterator. The loop executes once for each value <code>put</code> by
 the iterator.  When the iterator returns or fails, the loop terminates.
@@ -3868,7 +3898,7 @@ the iterator.  When the iterator returns or fails, the loop terminates.
    <p>Example of a foreach loop:
 <pre class="example">     let txt: str;
      let lines: [str];
-     for each (s: str in str::split(txt, "\n")) {
+     for each s: str in str::split(txt, "\n") {
          vec::push(lines, s);
      }
 </pre>
@@ -3882,14 +3912,14 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.14 Ref.Expr.If</h4>
+<h4 class="subsection">4.11.15 Ref.Expr.If</h4>
 
 <!-- * Ref.Expr.If::                 Expression for simple conditional branching. -->
-<p><a name="index-If-expression-179"></a><a name="index-Control_002dflow-180"></a>
+<p><a name="index-If-expression-182"></a><a name="index-Control_002dflow-183"></a>
 An <code>if</code> expression is a conditional branch in program control. The form of
-an <code>if</code> expression is a parenthesized condition expression, followed by a
-consequent block, any number of <code>else if</code> conditions and blocks, and an
-optional trailing <code>else</code> block. The condition expressions must have type
+an <code>if</code> expression is a condition expression, followed by a consequent
+block, any number of <code>else if</code> conditions and blocks, and an optional
+trailing <code>else</code> block. The condition expressions must have type
 <code>bool</code>. If a condition expression evaluates to <code>true</code>, the
 consequent block is executed and any subsequent <code>else if</code> or <code>else</code>
 block is skipped. If a condition expression evaluates to <code>false</code>, the
@@ -3907,10 +3937,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.15 Ref.Expr.Alt</h4>
+<h4 class="subsection">4.11.16 Ref.Expr.Alt</h4>
 
 <!-- * Ref.Expr.Alt::                Expression for complex conditional branching. -->
-<p><a name="index-Alt-expression-181"></a><a name="index-Control_002dflow-182"></a><a name="index-Switch-expression_002c-see-_0040i_007bAlt-expression_007d-183"></a>
+<p><a name="index-Alt-expression-184"></a><a name="index-Control_002dflow-185"></a><a name="index-Switch-expression_002c-see-_0040i_007bAlt-expression_007d-186"></a>
 An <code>alt</code> expression is a multi-directional branch in program control. 
 There are two kinds of <code>alt</code> expression: pattern <code>alt</code> expressions
 and <code>alt type</code> expressions.
@@ -3937,38 +3967,37 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr_002eAlt">Ref.Expr.Alt</a>
 
 </div>
 
-<h5 class="subsubsection">4.11.15.1 Ref.Expr.Alt.Pat</h5>
+<h5 class="subsubsection">4.11.16.1 Ref.Expr.Alt.Pat</h5>
 
 <!-- * Ref.Expr.Alt.Pat::            Expression for branching on pattern matches. -->
-<p><a name="index-Pattern-alt-expression-184"></a><a name="index-Control_002dflow-185"></a>
+<p><a name="index-Pattern-alt-expression-187"></a><a name="index-Control_002dflow-188"></a>
 A pattern <code>alt</code> expression branches on a <em>pattern</em>. The exact form of
 matching that occurs depends on the pattern. Patterns consist of some
 combination of literals, tag constructors, variable binding specifications and
-placeholders (<code>_</code>). A pattern <code>alt</code> has a parenthesized <em>head
-expression</em>, which is the value to compare to the patterns. The type of the
-patterns must equal the type of the head expression.
+placeholders (<code>_</code>). A pattern <code>alt</code> has a <em>head expression</em>,
+which is the value to compare to the patterns. The type of the patterns must
+equal the type of the head expression.
 
    <p>To execute a pattern <code>alt</code> expression, first the head expression is
 evaluated, then its value is sequentially compared to the patterns in the arms
-until a match is found. The first arm with a matching <code>case</code> pattern is
-chosen as the branch target of the <code>alt</code>, any variables bound by the
-pattern are assigned to local slots in the arm's block, and control enters the
-block.
+until a match is found. The first arm with a matching pattern is chosen as the
+branch target of the <code>alt</code>, any variables bound by the pattern are
+assigned to local slots in the arm's block, and control enters the block.
 
    <p>An example of a pattern <code>alt</code> expression:
 
-<pre class="example">     type list&lt;X&gt; = tag(nil, cons(X, @list&lt;X&gt;));
+<pre class="example">     tag list&lt;X&gt; { nil; cons(X, @list&lt;X&gt;); }
      
-     let x: list&lt;int&gt; = cons(10, cons(11, nil));
+     let x: list&lt;int&gt; = cons(10, @cons(11, @nil));
      
-     alt (x) {
-         case (cons(a, cons(b, _))) {
+     alt x {
+         cons(a, @cons(b, _)) {
              process_pair(a,b);
          }
-         case (cons(v=10, _)) {
-             process_ten(v);
+         cons(10, _) {
+             process_ten();
          }
-         case (_) {
+         _ {
              fail;
          }
      }
@@ -3982,10 +4011,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr_002eAlt">Ref.Expr.Alt</a>
 
 </div>
 
-<h5 class="subsubsection">4.11.15.2 Ref.Expr.Alt.Type</h5>
+<h5 class="subsubsection">4.11.16.2 Ref.Expr.Alt.Type</h5>
 
 <!-- * Ref.Expr.Alt.Type::           Expression for branching on type. -->
-<p><a name="index-Type-alt-expression-186"></a><a name="index-Control_002dflow-187"></a>
+<p><a name="index-Type-alt-expression-189"></a><a name="index-Control_002dflow-190"></a>
 An <code>alt type</code> expression is similar to a pattern <code>alt</code>, but branches
 on the <em>type</em> of its head expression, rather than the value. The head
 expression of an <code>alt type</code> expression must be of type <code>any</code>, and the
@@ -4022,10 +4051,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.16 Ref.Expr.Prove</h4>
+<h4 class="subsection">4.11.17 Ref.Expr.Prove</h4>
 
 <!-- * Ref.Expr.Prove::              Expression for static assertion of typestate. -->
-<p><a name="index-Prove-expression-188"></a><a name="index-Typestate-system-189"></a>
+<p><a name="index-Prove-expression-191"></a><a name="index-Typestate-system-192"></a>
 A <code>prove</code> expression has no run-time effect. Its purpose is to statically
 check (and document) that its argument constraint holds at its expression entry
 point. If its argument typestate does not hold, under the typestate algorithm,
@@ -4041,10 +4070,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.17 Ref.Expr.Check</h4>
+<h4 class="subsection">4.11.18 Ref.Expr.Check</h4>
 
 <!-- * Ref.Expr.Check::              Expression for dynamic assertion of typestate. -->
-<p><a name="index-Check-expression-190"></a><a name="index-Typestate-system-191"></a>
+<p><a name="index-Check-expression-193"></a><a name="index-Typestate-system-194"></a>
 A <code>check</code> expression connects dynamic assertions made at run-time to the
 static typestate system. A <code>check</code> expression takes a constraint to check
 at run-time. If the constraint holds at run-time, control passes through the
@@ -4090,10 +4119,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.18 Ref.Expr.Claim</h4>
+<h4 class="subsection">4.11.19 Ref.Expr.Claim</h4>
 
 <!-- * Ref.Expr.Claim::              Expression for static (unsafe) or dynamic assertion of typestate. -->
-<p><a name="index-Claim-expression-192"></a><a name="index-Typestate-system-193"></a>
+<p><a name="index-Claim-expression-195"></a><a name="index-Typestate-system-196"></a>
 A <code>claim</code> expression is an unsafe variant on a <code>check</code> expression
 that is not actually checked at runtime. Thus, using a <code>claim</code> implies a
 proof obligation to ensure&mdash;without compiler assistance&mdash;that an assertion
@@ -4116,10 +4145,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.19 Ref.Expr.IfCheck</h4>
+<h4 class="subsection">4.11.20 Ref.Expr.IfCheck</h4>
 
 <!-- * Ref.Expr.IfCheck::            Expression for dynamic testing of typestate. -->
-<p><a name="index-If-check-expression-194"></a><a name="index-Typestate-system-195"></a><a name="index-Control_002dflow-196"></a>
+<p><a name="index-If-check-expression-197"></a><a name="index-Typestate-system-198"></a><a name="index-Control_002dflow-199"></a>
 An <code>if check</code> expression combines a <code>if</code> expression and a <code>check</code>
 expression in an indivisible unit that can be used to build more complex
 conditional control-flow than the <code>check</code> expression affords.
@@ -4155,10 +4184,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.20 Ref.Expr.Assert</h4>
+<h4 class="subsection">4.11.21 Ref.Expr.Assert</h4>
 
 <!-- * Ref.Expr.Assert::            Expression that halts the program if a boolean condition fails to hold. -->
-<p><a name="index-Assertions-197"></a>
+<p><a name="index-Assertions-200"></a>
 An <code>assert</code> expression is similar to a <code>check</code> expression, except
 the condition may be any boolean-typed expression, and the compiler makes no
 use of the knowledge that the condition holds if the program continues to
@@ -4173,10 +4202,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eExpr">Ref.Expr</a>
 
 </div>
 
-<h4 class="subsection">4.11.21 Ref.Expr.AnonObj</h4>
+<h4 class="subsection">4.11.22 Ref.Expr.AnonObj</h4>
 
 <!-- * Ref.Expr.AnonObj::           Expression that extends an object with additional methods. -->
-<p><a name="index-Anonymous-objects-198"></a>
+<p><a name="index-Anonymous-objects-201"></a>
 An <em>anonymous object</em> expression extends an existing object with methods.
 
 <div class="node">
@@ -4191,7 +4220,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Reference">Reference</a>
 <h3 class="section">4.12 Ref.Run</h3>
 
 <!-- * Ref.Run::                     Organization of runtime services. -->
-<p><a name="index-Runtime-library-199"></a>
+<p><a name="index-Runtime-library-202"></a>
 The Rust <dfn>runtime</dfn> is a relatively compact collection of C and Rust code
 that provides fundamental services and datatypes to all Rust tasks at
 run-time. It is smaller and simpler than many modern language runtimes. It is
@@ -4218,7 +4247,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eRun">Ref.Run</a>
 <h4 class="subsection">4.12.1 Ref.Run.Mem</h4>
 
 <!-- * Ref.Run.Mem::                 Runtime memory management service. -->
-<p><a name="index-Memory-allocation-200"></a>
+<p><a name="index-Memory-allocation-203"></a>
 The runtime memory-management system is based on a <em>service-provider
 interface</em>, through which the runtime requests blocks of memory from its
 environment and releases them back to its environment when they are no longer
@@ -4242,7 +4271,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eRun">Ref.Run</a>
 <h4 class="subsection">4.12.2 Ref.Run.Type</h4>
 
 <!-- * Ref.Run.Mem::                 Runtime built-in type services. -->
-<p><a name="index-Built_002din-types-201"></a>
+<p><a name="index-Built_002din-types-204"></a>
 The runtime provides C and Rust code to assist with various built-in types,
 such as vectors, strings, bignums, and the low level communication system
 (ports, channels, tasks).
@@ -4263,7 +4292,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eRun">Ref.Run</a>
 <h4 class="subsection">4.12.3 Ref.Run.Comm</h4>
 
 <!-- * Ref.Run.Comm::                Runtime communication service. -->
-<p><a name="index-Communication-202"></a><a name="index-Process-203"></a><a name="index-Thread-204"></a>
+<p><a name="index-Communication-205"></a><a name="index-Process-206"></a><a name="index-Thread-207"></a>
 The runtime provides code to manage inter-task communication.  This includes
 the system of task-lifecycle state transitions depending on the contents of
 queues, as well as code to copy values between queues and their recipients and
@@ -4283,7 +4312,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eRun">Ref.Run</a>
 <h4 class="subsection">4.12.4 Ref.Run.Log</h4>
 
 <!-- * Ref.Run.Log::                 Runtime logging system. -->
-<p><a name="index-Logging-205"></a>
+<p><a name="index-Logging-208"></a>
 The runtime contains a system for directing logging expressions to a logging
 console and/or internal logging buffers. See <a href="#Ref_002eExpr_002eLog">Ref.Expr.Log</a>.  Logging
 expressions can be enabled or disabled via a two-dimensional filtering process:
@@ -4323,7 +4352,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Ref_002eRun">Ref.Run</a>
 <h4 class="subsection">4.12.5 Ref.Run.Sig</h4>
 
 <!-- * Ref.Run.Sig::               Runtime signal handler. -->
-<p><a name="index-Signals-206"></a>
+<p><a name="index-Signals-209"></a>
 The runtime signal-handling system is driven by a signal-dispatch table and a
 signal queue associated with each task. Sending a signal to a task inserts the
 signal into the task's signal queue and marks the task as having a pending
@@ -4345,12 +4374,13 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <h2 class="chapter">5 Index</h2>
 
 <ul class="index-cp" compact>
-<li><a href="#index-Alt-expression-181">Alt expression</a>: <a href="#Ref_002eExpr_002eAlt">Ref.Expr.Alt</a></li>
+<li><a href="#index-Alt-expression-184">Alt expression</a>: <a href="#Ref_002eExpr_002eAlt">Ref.Expr.Alt</a></li>
 <li><a href="#index-Alt-type-expression-90">Alt type expression</a>: <a href="#Ref_002eType_002eAny">Ref.Type.Any</a></li>
-<li><a href="#index-Anonymous-objects-198">Anonymous objects</a>: <a href="#Ref_002eExpr_002eAnonObj">Ref.Expr.AnonObj</a></li>
+<li><a href="#index-Anonymous-objects-201">Anonymous objects</a>: <a href="#Ref_002eExpr_002eAnonObj">Ref.Expr.AnonObj</a></li>
 <li><a href="#index-Any-type-88">Any type</a>: <a href="#Ref_002eType_002eAny">Ref.Type.Any</a></li>
 <li><a href="#index-Array-types_002c-see-_0040i_007bVector-types_007d-117">Array types, see <i>Vector types</i></a>: <a href="#Ref_002eType_002eVec">Ref.Type.Vec</a></li>
-<li><a href="#index-Assertions-197">Assertions</a>: <a href="#Ref_002eExpr_002eAssert">Ref.Expr.Assert</a></li>
+<li><a href="#index-As-expression-155">As expression</a>: <a href="#Ref_002eExpr_002eAs">Ref.Expr.As</a></li>
+<li><a href="#index-Assertions-200">Assertions</a>: <a href="#Ref_002eExpr_002eAssert">Ref.Expr.Assert</a></li>
 <li><a href="#index-Assertions_002c-see-_0040i_007bCheck-statement_007d-137">Assertions, see <i>Check statement</i></a>: <a href="#Ref_002eTypestate_002eCheck">Ref.Typestate.Check</a></li>
 <li><a href="#index-Assignment-operator_002c-see-_0040i_007bCopy-expression_007d-146">Assignment operator, see <i>Copy expression</i></a>: <a href="#Ref_002eExpr_002eCopy">Ref.Expr.Copy</a></li>
 <li><a href="#index-Attributes-22">Attributes</a>: <a href="#Ref_002eComp_002eAttr">Ref.Comp.Attr</a></li>
@@ -4361,18 +4391,19 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#index-Boolean-type-104">Boolean type</a>: <a href="#Ref_002eType_002ePrim">Ref.Type.Prim</a></li>
 <li><a href="#index-Box-37">Box</a>: <a href="#Ref_002eMem_002eBox">Ref.Mem.Box</a></li>
 <li><a href="#index-Box-25">Box</a>: <a href="#Ref_002eMem">Ref.Mem</a></li>
-<li><a href="#index-Break-expression-167">Break expression</a>: <a href="#Ref_002eExpr_002eBreak">Ref.Expr.Break</a></li>
-<li><a href="#index-Built_002din-types-201">Built-in types</a>: <a href="#Ref_002eRun_002eType">Ref.Run.Type</a></li>
+<li><a href="#index-Break-expression-170">Break expression</a>: <a href="#Ref_002eExpr_002eBreak">Ref.Expr.Break</a></li>
+<li><a href="#index-Built_002din-types-204">Built-in types</a>: <a href="#Ref_002eRun_002eType">Ref.Run.Type</a></li>
 <li><a href="#index-Call-expression-147">Call expression</a>: <a href="#Ref_002eExpr_002eCall">Ref.Expr.Call</a></li>
+<li><a href="#index-Cast-156">Cast</a>: <a href="#Ref_002eExpr_002eAs">Ref.Expr.As</a></li>
 <li><a href="#index-Channel-43">Channel</a>: <a href="#Ref_002eTask_002eComm">Ref.Task.Comm</a></li>
 <li><a href="#index-Character-token-12">Character token</a>: <a href="#Ref_002eLex_002eText">Ref.Lex.Text</a></li>
 <li><a href="#index-Character-type-109">Character type</a>: <a href="#Ref_002eType_002eText">Ref.Type.Text</a></li>
 <li><a href="#index-Character-type-103">Character type</a>: <a href="#Ref_002eType_002ePrim">Ref.Type.Prim</a></li>
-<li><a href="#index-Check-expression-190">Check expression</a>: <a href="#Ref_002eExpr_002eCheck">Ref.Expr.Check</a></li>
+<li><a href="#index-Check-expression-193">Check expression</a>: <a href="#Ref_002eExpr_002eCheck">Ref.Expr.Check</a></li>
 <li><a href="#index-Check-statement-136">Check statement</a>: <a href="#Ref_002eTypestate_002eCheck">Ref.Typestate.Check</a></li>
-<li><a href="#index-Claim-expression-192">Claim expression</a>: <a href="#Ref_002eExpr_002eClaim">Ref.Expr.Claim</a></li>
+<li><a href="#index-Claim-expression-195">Claim expression</a>: <a href="#Ref_002eExpr_002eClaim">Ref.Expr.Claim</a></li>
 <li><a href="#index-Closures-150">Closures</a>: <a href="#Ref_002eExpr_002eBind">Ref.Expr.Bind</a></li>
-<li><a href="#index-Communication-202">Communication</a>: <a href="#Ref_002eRun_002eComm">Ref.Run.Comm</a></li>
+<li><a href="#index-Communication-205">Communication</a>: <a href="#Ref_002eRun_002eComm">Ref.Run.Comm</a></li>
 <li><a href="#index-Communication-64">Communication</a>: <a href="#Ref_002eTask_002eRecv">Ref.Task.Recv</a></li>
 <li><a href="#index-Communication-61">Communication</a>: <a href="#Ref_002eTask_002eSend">Ref.Task.Send</a></li>
 <li><a href="#index-Communication-41">Communication</a>: <a href="#Ref_002eTask_002eComm">Ref.Task.Comm</a></li>
@@ -4380,17 +4411,17 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#index-Condition-130">Condition</a>: <a href="#Ref_002eTypestate_002eCond">Ref.Typestate.Cond</a></li>
 <li><a href="#index-Constrained-types-123">Constrained types</a>: <a href="#Ref_002eType_002eConstr">Ref.Type.Constr</a></li>
 <li><a href="#index-Constraint-129">Constraint</a>: <a href="#Ref_002eTypestate_002eConstr">Ref.Typestate.Constr</a></li>
-<li><a href="#index-Continue-expression-170">Continue expression</a>: <a href="#Ref_002eExpr_002eCont">Ref.Expr.Cont</a></li>
-<li><a href="#index-Control_002dflow-196">Control-flow</a>: <a href="#Ref_002eExpr_002eIfCheck">Ref.Expr.IfCheck</a></li>
-<li><a href="#index-Control_002dflow-187">Control-flow</a>: <a href="#Ref_002eExpr_002eAlt_002eType">Ref.Expr.Alt.Type</a></li>
-<li><a href="#index-Control_002dflow-185">Control-flow</a>: <a href="#Ref_002eExpr_002eAlt_002ePat">Ref.Expr.Alt.Pat</a></li>
-<li><a href="#index-Control_002dflow-182">Control-flow</a>: <a href="#Ref_002eExpr_002eAlt">Ref.Expr.Alt</a></li>
-<li><a href="#index-Control_002dflow-180">Control-flow</a>: <a href="#Ref_002eExpr_002eIf">Ref.Expr.If</a></li>
-<li><a href="#index-Control_002dflow-178">Control-flow</a>: <a href="#Ref_002eExpr_002eForeach">Ref.Expr.Foreach</a></li>
-<li><a href="#index-Control_002dflow-175">Control-flow</a>: <a href="#Ref_002eExpr_002eFor">Ref.Expr.For</a></li>
-<li><a href="#index-Control_002dflow-172">Control-flow</a>: <a href="#Ref_002eExpr_002eCont">Ref.Expr.Cont</a></li>
-<li><a href="#index-Control_002dflow-169">Control-flow</a>: <a href="#Ref_002eExpr_002eBreak">Ref.Expr.Break</a></li>
-<li><a href="#index-Control_002dflow-166">Control-flow</a>: <a href="#Ref_002eExpr_002eWhile">Ref.Expr.While</a></li>
+<li><a href="#index-Continue-expression-173">Continue expression</a>: <a href="#Ref_002eExpr_002eCont">Ref.Expr.Cont</a></li>
+<li><a href="#index-Control_002dflow-199">Control-flow</a>: <a href="#Ref_002eExpr_002eIfCheck">Ref.Expr.IfCheck</a></li>
+<li><a href="#index-Control_002dflow-190">Control-flow</a>: <a href="#Ref_002eExpr_002eAlt_002eType">Ref.Expr.Alt.Type</a></li>
+<li><a href="#index-Control_002dflow-188">Control-flow</a>: <a href="#Ref_002eExpr_002eAlt_002ePat">Ref.Expr.Alt.Pat</a></li>
+<li><a href="#index-Control_002dflow-185">Control-flow</a>: <a href="#Ref_002eExpr_002eAlt">Ref.Expr.Alt</a></li>
+<li><a href="#index-Control_002dflow-183">Control-flow</a>: <a href="#Ref_002eExpr_002eIf">Ref.Expr.If</a></li>
+<li><a href="#index-Control_002dflow-181">Control-flow</a>: <a href="#Ref_002eExpr_002eForeach">Ref.Expr.Foreach</a></li>
+<li><a href="#index-Control_002dflow-178">Control-flow</a>: <a href="#Ref_002eExpr_002eFor">Ref.Expr.For</a></li>
+<li><a href="#index-Control_002dflow-175">Control-flow</a>: <a href="#Ref_002eExpr_002eCont">Ref.Expr.Cont</a></li>
+<li><a href="#index-Control_002dflow-172">Control-flow</a>: <a href="#Ref_002eExpr_002eBreak">Ref.Expr.Break</a></li>
+<li><a href="#index-Control_002dflow-169">Control-flow</a>: <a href="#Ref_002eExpr_002eWhile">Ref.Expr.While</a></li>
 <li><a href="#index-Control_002dflow-graph-127">Control-flow graph</a>: <a href="#Ref_002eTypestate_002eCFG">Ref.Typestate.CFG</a></li>
 <li><a href="#index-Copy-expression-145">Copy expression</a>: <a href="#Ref_002eExpr_002eCopy">Ref.Expr.Copy</a></li>
 <li><a href="#index-Crate-21">Crate</a>: <a href="#Ref_002eComp_002eCrate">Ref.Comp.Crate</a></li>
@@ -4405,16 +4436,16 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#index-Exporting-names-70">Exporting names</a>: <a href="#Ref_002eItem_002eMod">Ref.Item.Mod</a></li>
 <li><a href="#index-Expression-statement-143">Expression statement</a>: <a href="#Ref_002eStmt_002eExpr">Ref.Stmt.Expr</a></li>
 <li><a href="#index-Expressions-144">Expressions</a>: <a href="#Ref_002eExpr">Ref.Expr</a></li>
-<li><a href="#index-Fail-expression-155">Fail expression</a>: <a href="#Ref_002eExpr_002eFail">Ref.Expr.Fail</a></li>
+<li><a href="#index-Fail-expression-158">Fail expression</a>: <a href="#Ref_002eExpr_002eFail">Ref.Expr.Fail</a></li>
 <li><a href="#index-Failing_002c-task-state-51">Failing, task state</a>: <a href="#Ref_002eTask_002eLife">Ref.Task.Life</a></li>
-<li><a href="#index-Failure-163">Failure</a>: <a href="#Ref_002eExpr_002eNote">Ref.Expr.Note</a></li>
-<li><a href="#index-Failure-156">Failure</a>: <a href="#Ref_002eExpr_002eFail">Ref.Expr.Fail</a></li>
+<li><a href="#index-Failure-166">Failure</a>: <a href="#Ref_002eExpr_002eNote">Ref.Expr.Note</a></li>
+<li><a href="#index-Failure-159">Failure</a>: <a href="#Ref_002eExpr_002eFail">Ref.Expr.Fail</a></li>
 <li><a href="#index-Floating_002dpoint-token-10">Floating-point token</a>: <a href="#Ref_002eLex_002eNum">Ref.Lex.Num</a></li>
 <li><a href="#index-Floating_002dpoint-types-102">Floating-point types</a>: <a href="#Ref_002eType_002ePrim">Ref.Type.Prim</a></li>
 <li><a href="#index-Floating_002dpoint-types-99">Floating-point types</a>: <a href="#Ref_002eType_002eFloat">Ref.Type.Float</a></li>
 <li><a href="#index-Floating_002dpoint-types-92">Floating-point types</a>: <a href="#Ref_002eType_002eMach">Ref.Type.Mach</a></li>
-<li><a href="#index-For-expression-173">For expression</a>: <a href="#Ref_002eExpr_002eFor">Ref.Expr.For</a></li>
-<li><a href="#index-Foreach-expression-176">Foreach expression</a>: <a href="#Ref_002eExpr_002eForeach">Ref.Expr.Foreach</a></li>
+<li><a href="#index-For-expression-176">For expression</a>: <a href="#Ref_002eExpr_002eFor">Ref.Expr.For</a></li>
+<li><a href="#index-Foreach-expression-179">Foreach expression</a>: <a href="#Ref_002eExpr_002eForeach">Ref.Expr.Foreach</a></li>
 <li><a href="#index-Foreach-expression-82">Foreach expression</a>: <a href="#Ref_002eItem_002eIter">Ref.Item.Iter</a></li>
 <li><a href="#index-Function-calls-148">Function calls</a>: <a href="#Ref_002eExpr_002eCall">Ref.Expr.Call</a></li>
 <li><a href="#index-Function-types-120">Function types</a>: <a href="#Ref_002eType_002eFn">Ref.Type.Fn</a></li>
@@ -4423,8 +4454,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#index-Heap-29">Heap</a>: <a href="#Ref_002eMem_002eAlloc">Ref.Mem.Alloc</a></li>
 <li><a href="#index-Hex-token-7">Hex token</a>: <a href="#Ref_002eLex_002eNum">Ref.Lex.Num</a></li>
 <li><a href="#index-Identifier-token-3">Identifier token</a>: <a href="#Ref_002eLex_002eIdent">Ref.Lex.Ident</a></li>
-<li><a href="#index-If-check-expression-194">If check expression</a>: <a href="#Ref_002eExpr_002eIfCheck">Ref.Expr.IfCheck</a></li>
-<li><a href="#index-If-expression-179">If expression</a>: <a href="#Ref_002eExpr_002eIf">Ref.Expr.If</a></li>
+<li><a href="#index-If-check-expression-197">If check expression</a>: <a href="#Ref_002eExpr_002eIfCheck">Ref.Expr.IfCheck</a></li>
+<li><a href="#index-If-expression-182">If expression</a>: <a href="#Ref_002eExpr_002eIf">Ref.Expr.If</a></li>
 <li><a href="#index-Importing-names-72">Importing names</a>: <a href="#Ref_002eItem_002eMod_002eImport">Ref.Item.Mod.Import</a></li>
 <li><a href="#index-Importing-names-69">Importing names</a>: <a href="#Ref_002eItem_002eMod">Ref.Item.Mod</a></li>
 <li><a href="#index-Integer-types-105">Integer types</a>: <a href="#Ref_002eType_002eBig">Ref.Type.Big</a></li>
@@ -4441,19 +4472,19 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#index-Lifecycle-of-task-47">Lifecycle of task</a>: <a href="#Ref_002eTask_002eLife">Ref.Task.Life</a></li>
 <li><a href="#index-Local-slot-140">Local slot</a>: <a href="#Ref_002eStmt_002eDecl_002eSlot">Ref.Stmt.Decl.Slot</a></li>
 <li><a href="#index-Local-slot-35">Local slot</a>: <a href="#Ref_002eMem_002eSlot">Ref.Mem.Slot</a></li>
-<li><a href="#index-Log-expression-158">Log expression</a>: <a href="#Ref_002eExpr_002eLog">Ref.Expr.Log</a></li>
-<li><a href="#index-Logging-205">Logging</a>: <a href="#Ref_002eRun_002eLog">Ref.Run.Log</a></li>
-<li><a href="#index-Logging-161">Logging</a>: <a href="#Ref_002eExpr_002eNote">Ref.Expr.Note</a></li>
-<li><a href="#index-Logging-159">Logging</a>: <a href="#Ref_002eExpr_002eLog">Ref.Expr.Log</a></li>
-<li><a href="#index-Loops-177">Loops</a>: <a href="#Ref_002eExpr_002eForeach">Ref.Expr.Foreach</a></li>
-<li><a href="#index-Loops-174">Loops</a>: <a href="#Ref_002eExpr_002eFor">Ref.Expr.For</a></li>
-<li><a href="#index-Loops-171">Loops</a>: <a href="#Ref_002eExpr_002eCont">Ref.Expr.Cont</a></li>
-<li><a href="#index-Loops-168">Loops</a>: <a href="#Ref_002eExpr_002eBreak">Ref.Expr.Break</a></li>
-<li><a href="#index-Loops-165">Loops</a>: <a href="#Ref_002eExpr_002eWhile">Ref.Expr.While</a></li>
+<li><a href="#index-Log-expression-161">Log expression</a>: <a href="#Ref_002eExpr_002eLog">Ref.Expr.Log</a></li>
+<li><a href="#index-Logging-208">Logging</a>: <a href="#Ref_002eRun_002eLog">Ref.Run.Log</a></li>
+<li><a href="#index-Logging-164">Logging</a>: <a href="#Ref_002eExpr_002eNote">Ref.Expr.Note</a></li>
+<li><a href="#index-Logging-162">Logging</a>: <a href="#Ref_002eExpr_002eLog">Ref.Expr.Log</a></li>
+<li><a href="#index-Loops-180">Loops</a>: <a href="#Ref_002eExpr_002eForeach">Ref.Expr.Foreach</a></li>
+<li><a href="#index-Loops-177">Loops</a>: <a href="#Ref_002eExpr_002eFor">Ref.Expr.For</a></li>
+<li><a href="#index-Loops-174">Loops</a>: <a href="#Ref_002eExpr_002eCont">Ref.Expr.Cont</a></li>
+<li><a href="#index-Loops-171">Loops</a>: <a href="#Ref_002eExpr_002eBreak">Ref.Expr.Break</a></li>
+<li><a href="#index-Loops-168">Loops</a>: <a href="#Ref_002eExpr_002eWhile">Ref.Expr.While</a></li>
 <li><a href="#index-Machine-types-91">Machine types</a>: <a href="#Ref_002eType_002eMach">Ref.Type.Mach</a></li>
 <li><a href="#index-Machine_002ddependent-types-98">Machine-dependent types</a>: <a href="#Ref_002eType_002eFloat">Ref.Type.Float</a></li>
 <li><a href="#index-Machine_002ddependent-types-95">Machine-dependent types</a>: <a href="#Ref_002eType_002eInt">Ref.Type.Int</a></li>
-<li><a href="#index-Memory-allocation-200">Memory allocation</a>: <a href="#Ref_002eRun_002eMem">Ref.Run.Mem</a></li>
+<li><a href="#index-Memory-allocation-203">Memory allocation</a>: <a href="#Ref_002eRun_002eMem">Ref.Run.Mem</a></li>
 <li><a href="#index-Memory-model-24">Memory model</a>: <a href="#Ref_002eMem">Ref.Mem</a></li>
 <li><a href="#index-Message-passing-44">Message passing</a>: <a href="#Ref_002eTask_002eComm">Ref.Task.Comm</a></li>
 <li><a href="#index-Messages-63">Messages</a>: <a href="#Ref_002eTask_002eRecv">Ref.Task.Recv</a></li>
@@ -4461,7 +4492,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#index-Module-item-68">Module item</a>: <a href="#Ref_002eItem_002eMod">Ref.Item.Mod</a></li>
 <li><a href="#index-Module-item-67">Module item</a>: <a href="#Ref_002eItem">Ref.Item</a></li>
 <li><a href="#index-Names-of-items-or-slots-17">Names of items or slots</a>: <a href="#Ref_002ePath">Ref.Path</a></li>
-<li><a href="#index-Note-expression-160">Note expression</a>: <a href="#Ref_002eExpr_002eNote">Ref.Expr.Note</a></li>
+<li><a href="#index-Note-expression-163">Note expression</a>: <a href="#Ref_002eExpr_002eNote">Ref.Expr.Note</a></li>
 <li><a href="#index-Number-token-6">Number token</a>: <a href="#Ref_002eLex_002eNum">Ref.Lex.Num</a></li>
 <li><a href="#index-Object-constructors-84">Object constructors</a>: <a href="#Ref_002eItem_002eObj">Ref.Item.Obj</a></li>
 <li><a href="#index-Object-types-122">Object types</a>: <a href="#Ref_002eType_002eObj">Ref.Type.Obj</a></li>
@@ -4469,7 +4500,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#index-Operator-16">Operator</a>: <a href="#Ref_002eLex_002eSym">Ref.Lex.Sym</a></li>
 <li><a href="#index-Ownership-32">Ownership</a>: <a href="#Ref_002eMem_002eOwn">Ref.Mem.Own</a></li>
 <li><a href="#index-Path-name-18">Path name</a>: <a href="#Ref_002ePath">Ref.Path</a></li>
-<li><a href="#index-Pattern-alt-expression-184">Pattern alt expression</a>: <a href="#Ref_002eExpr_002eAlt_002ePat">Ref.Expr.Alt.Pat</a></li>
+<li><a href="#index-Pattern-alt-expression-187">Pattern alt expression</a>: <a href="#Ref_002eExpr_002eAlt_002ePat">Ref.Expr.Alt.Pat</a></li>
 <li><a href="#index-Points-126">Points</a>: <a href="#Ref_002eTypestate_002ePoint">Ref.Typestate.Point</a></li>
 <li><a href="#index-Port-42">Port</a>: <a href="#Ref_002eTask_002eComm">Ref.Task.Comm</a></li>
 <li><a href="#index-Postcondition-132">Postcondition</a>: <a href="#Ref_002eTypestate_002eCond">Ref.Typestate.Cond</a></li>
@@ -4480,9 +4511,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#index-Preemption-56">Preemption</a>: <a href="#Ref_002eTask_002eSched">Ref.Task.Sched</a></li>
 <li><a href="#index-Prestate-134">Prestate</a>: <a href="#Ref_002eTypestate_002eState">Ref.Typestate.State</a></li>
 <li><a href="#index-Primitive-types-100">Primitive types</a>: <a href="#Ref_002eType_002ePrim">Ref.Type.Prim</a></li>
-<li><a href="#index-Process-203">Process</a>: <a href="#Ref_002eRun_002eComm">Ref.Run.Comm</a></li>
+<li><a href="#index-Process-206">Process</a>: <a href="#Ref_002eRun_002eComm">Ref.Run.Comm</a></li>
 <li><a href="#index-Process-40">Process</a>: <a href="#Ref_002eTask">Ref.Task</a></li>
-<li><a href="#index-Prove-expression-188">Prove expression</a>: <a href="#Ref_002eExpr_002eProve">Ref.Expr.Prove</a></li>
+<li><a href="#index-Prove-expression-191">Prove expression</a>: <a href="#Ref_002eExpr_002eProve">Ref.Expr.Prove</a></li>
 <li><a href="#index-Put-each-expression-81">Put each expression</a>: <a href="#Ref_002eItem_002eIter">Ref.Item.Iter</a></li>
 <li><a href="#index-Put-expression-153">Put expression</a>: <a href="#Ref_002eExpr_002ePut">Ref.Expr.Put</a></li>
 <li><a href="#index-Put-expression-80">Put expression</a>: <a href="#Ref_002eItem_002eIter">Ref.Item.Iter</a></li>
@@ -4493,13 +4524,13 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#index-Reserved-5">Reserved</a>: <a href="#Ref_002eLex_002eRes">Ref.Lex.Res</a></li>
 <li><a href="#index-Return-expression-152">Return expression</a>: <a href="#Ref_002eExpr_002eRet">Ref.Expr.Ret</a></li>
 <li><a href="#index-Running_002c-task-state-49">Running, task state</a>: <a href="#Ref_002eTask_002eLife">Ref.Task.Life</a></li>
-<li><a href="#index-Runtime-library-199">Runtime library</a>: <a href="#Ref_002eRun">Ref.Run</a></li>
+<li><a href="#index-Runtime-library-202">Runtime library</a>: <a href="#Ref_002eRun">Ref.Run</a></li>
 <li><a href="#index-Scheduling-55">Scheduling</a>: <a href="#Ref_002eTask_002eSched">Ref.Task.Sched</a></li>
 <li><a href="#index-Scheduling-48">Scheduling</a>: <a href="#Ref_002eTask_002eLife">Ref.Task.Life</a></li>
 <li><a href="#index-Send-call-59">Send call</a>: <a href="#Ref_002eTask_002eSend">Ref.Task.Send</a></li>
 <li><a href="#index-Send-expression-45">Send expression</a>: <a href="#Ref_002eTask_002eComm">Ref.Task.Comm</a></li>
 <li><a href="#index-Shared-box-30">Shared box</a>: <a href="#Ref_002eMem_002eAlloc">Ref.Mem.Alloc</a></li>
-<li><a href="#index-Signals-206">Signals</a>: <a href="#Ref_002eRun_002eSig">Ref.Run.Sig</a></li>
+<li><a href="#index-Signals-209">Signals</a>: <a href="#Ref_002eRun_002eSig">Ref.Run.Sig</a></li>
 <li><a href="#index-Slot-34">Slot</a>: <a href="#Ref_002eMem_002eSlot">Ref.Mem.Slot</a></li>
 <li><a href="#index-Slot-26">Slot</a>: <a href="#Ref_002eMem">Ref.Mem</a></li>
 <li><a href="#index-Slots_002c-function-input-and-output-77">Slots, function input and output</a>: <a href="#Ref_002eItem_002eFn">Ref.Item.Fn</a></li>
@@ -4511,7 +4542,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#index-String-token-11">String token</a>: <a href="#Ref_002eLex_002eText">Ref.Lex.Text</a></li>
 <li><a href="#index-String-type-108">String type</a>: <a href="#Ref_002eType_002eText">Ref.Type.Text</a></li>
 <li><a href="#index-Structure-types_002c-see-_0040i_007bRecord-types_007d-114">Structure types, see <i>Record types</i></a>: <a href="#Ref_002eType_002eRec">Ref.Type.Rec</a></li>
-<li><a href="#index-Switch-expression_002c-see-_0040i_007bAlt-expression_007d-183">Switch expression, see <i>Alt expression</i></a>: <a href="#Ref_002eExpr_002eAlt">Ref.Expr.Alt</a></li>
+<li><a href="#index-Switch-expression_002c-see-_0040i_007bAlt-expression_007d-186">Switch expression, see <i>Alt expression</i></a>: <a href="#Ref_002eExpr_002eAlt">Ref.Expr.Alt</a></li>
 <li><a href="#index-Symbol-15">Symbol</a>: <a href="#Ref_002eLex_002eSym">Ref.Lex.Sym</a></li>
 <li><a href="#index-Syntax-extension-23">Syntax extension</a>: <a href="#Ref_002eComp_002eSyntax">Ref.Comp.Syntax</a></li>
 <li><a href="#index-Tag-types-118">Tag types</a>: <a href="#Ref_002eType_002eTag">Ref.Type.Tag</a></li>
@@ -4519,35 +4550,36 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#index-Task-39">Task</a>: <a href="#Ref_002eTask">Ref.Task</a></li>
 <li><a href="#index-Task_002dlocal-box-31">Task-local box</a>: <a href="#Ref_002eMem_002eAlloc">Ref.Mem.Alloc</a></li>
 <li><a href="#index-Text-types-107">Text types</a>: <a href="#Ref_002eType_002eText">Ref.Type.Text</a></li>
-<li><a href="#index-Thread-204">Thread</a>: <a href="#Ref_002eRun_002eComm">Ref.Run.Comm</a></li>
+<li><a href="#index-Thread-207">Thread</a>: <a href="#Ref_002eRun_002eComm">Ref.Run.Comm</a></li>
 <li><a href="#index-Token-2">Token</a>: <a href="#Ref_002eLex">Ref.Lex</a></li>
 <li><a href="#index-Tuple-types-115">Tuple types</a>: <a href="#Ref_002eType_002eTup">Ref.Type.Tup</a></li>
-<li><a href="#index-Type-alt-expression-186">Type alt expression</a>: <a href="#Ref_002eExpr_002eAlt_002eType">Ref.Expr.Alt.Type</a></li>
+<li><a href="#index-Type-alt-expression-189">Type alt expression</a>: <a href="#Ref_002eExpr_002eAlt_002eType">Ref.Expr.Alt.Type</a></li>
 <li><a href="#index-Type-definitions-85">Type definitions</a>: <a href="#Ref_002eItem_002eType">Ref.Item.Type</a></li>
 <li><a href="#index-Type-inference-142">Type inference</a>: <a href="#Ref_002eStmt_002eDecl_002eSlot">Ref.Stmt.Decl.Slot</a></li>
 <li><a href="#index-Type-parameters-66">Type parameters</a>: <a href="#Ref_002eItem">Ref.Item</a></li>
 <li><a href="#index-Type-parameters-19">Type parameters</a>: <a href="#Ref_002ePath">Ref.Path</a></li>
 <li><a href="#index-Type-type-124">Type type</a>: <a href="#Ref_002eType_002eType">Ref.Type.Type</a></li>
+<li><a href="#index-Typecast-157">Typecast</a>: <a href="#Ref_002eExpr_002eAs">Ref.Expr.As</a></li>
 <li><a href="#index-Types-87">Types</a>: <a href="#Ref_002eType">Ref.Type</a></li>
 <li><a href="#index-Typestate-133">Typestate</a>: <a href="#Ref_002eTypestate_002eState">Ref.Typestate.State</a></li>
-<li><a href="#index-Typestate-system-195">Typestate system</a>: <a href="#Ref_002eExpr_002eIfCheck">Ref.Expr.IfCheck</a></li>
-<li><a href="#index-Typestate-system-193">Typestate system</a>: <a href="#Ref_002eExpr_002eClaim">Ref.Expr.Claim</a></li>
-<li><a href="#index-Typestate-system-191">Typestate system</a>: <a href="#Ref_002eExpr_002eCheck">Ref.Expr.Check</a></li>
-<li><a href="#index-Typestate-system-189">Typestate system</a>: <a href="#Ref_002eExpr_002eProve">Ref.Expr.Prove</a></li>
+<li><a href="#index-Typestate-system-198">Typestate system</a>: <a href="#Ref_002eExpr_002eIfCheck">Ref.Expr.IfCheck</a></li>
+<li><a href="#index-Typestate-system-196">Typestate system</a>: <a href="#Ref_002eExpr_002eClaim">Ref.Expr.Claim</a></li>
+<li><a href="#index-Typestate-system-194">Typestate system</a>: <a href="#Ref_002eExpr_002eCheck">Ref.Expr.Check</a></li>
+<li><a href="#index-Typestate-system-192">Typestate system</a>: <a href="#Ref_002eExpr_002eProve">Ref.Expr.Prove</a></li>
 <li><a href="#index-Typestate-system-125">Typestate system</a>: <a href="#Ref_002eTypestate">Ref.Typestate</a></li>
 <li><a href="#index-UCS_002d4-111">UCS-4</a>: <a href="#Ref_002eType_002eText">Ref.Type.Text</a></li>
 <li><a href="#index-Unicode-110">Unicode</a>: <a href="#Ref_002eType_002eText">Ref.Type.Text</a></li>
 <li><a href="#index-Unicode-14">Unicode</a>: <a href="#Ref_002eLex_002eText">Ref.Lex.Text</a></li>
 <li><a href="#index-Union-types_002c-see-_0040i_007bTag-types_007d-119">Union types, see <i>Tag types</i></a>: <a href="#Ref_002eType_002eTag">Ref.Type.Tag</a></li>
-<li><a href="#index-Unwinding-162">Unwinding</a>: <a href="#Ref_002eExpr_002eNote">Ref.Expr.Note</a></li>
-<li><a href="#index-Unwinding-157">Unwinding</a>: <a href="#Ref_002eExpr_002eFail">Ref.Expr.Fail</a></li>
+<li><a href="#index-Unwinding-165">Unwinding</a>: <a href="#Ref_002eExpr_002eNote">Ref.Expr.Note</a></li>
+<li><a href="#index-Unwinding-160">Unwinding</a>: <a href="#Ref_002eExpr_002eFail">Ref.Expr.Fail</a></li>
 <li><a href="#index-UTF_002d8-112">UTF-8</a>: <a href="#Ref_002eType_002eText">Ref.Type.Text</a></li>
 <li><a href="#index-Variable_002c-see-_0040i_007bLocal-slot_007d-141">Variable, see <i>Local slot</i></a>: <a href="#Ref_002eStmt_002eDecl_002eSlot">Ref.Stmt.Decl.Slot</a></li>
 <li><a href="#index-Vector-types-116">Vector types</a>: <a href="#Ref_002eType_002eVec">Ref.Type.Vec</a></li>
 <li><a href="#index-Visibility-control-75">Visibility control</a>: <a href="#Ref_002eItem_002eMod_002eExport">Ref.Item.Mod.Export</a></li>
 <li><a href="#index-Visibility-control-73">Visibility control</a>: <a href="#Ref_002eItem_002eMod_002eImport">Ref.Item.Mod.Import</a></li>
 <li><a href="#index-Visibility-control-71">Visibility control</a>: <a href="#Ref_002eItem_002eMod">Ref.Item.Mod</a></li>
-<li><a href="#index-While-expression-164">While expression</a>: <a href="#Ref_002eExpr_002eWhile">Ref.Expr.While</a></li>
+<li><a href="#index-While-expression-167">While expression</a>: <a href="#Ref_002eExpr_002eWhile">Ref.Expr.While</a></li>
 <li><a href="#index-Word-types-97">Word types</a>: <a href="#Ref_002eType_002eInt">Ref.Type.Int</a></li>
 <li><a href="#index-Word-types-94">Word types</a>: <a href="#Ref_002eType_002eMach">Ref.Type.Mach</a></li>
 <li><a href="#index-Yielding-control-57">Yielding control</a>: <a href="#Ref_002eTask_002eSched">Ref.Task.Sched</a></li>
