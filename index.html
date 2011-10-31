@@ -120,10 +120,11 @@
 	  <div class="span10">
 <pre class="code">
 use std;
+import std::io;
+
 fn main() {
-    let out = std::io::stdout();
     for i in [1, 2, 3] {
-        out.write_str(#fmt("hello %d\n", i));
+        io::println(#fmt("hello %d\n", i));
     }
 }
 </pre>
