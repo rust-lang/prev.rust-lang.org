@@ -1,0 +1,281 @@
+<html><head><link rel='stylesheet' href='style.css' type='text/css'><link rel='stylesheet' href='default.css' type='text/css'><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Syntax Basics</title></head><body>
+<p class="head">Section 3 of the Rust language tutorial.<br><a href="setup.html">« Section 2</a> | <a href="index.html">Index</a> | <a href="control.html">Section 4 »</a></p><div id="content"><h1>Syntax Basics</h1>
+
+<h2>Braces</h2>
+
+<p>Assuming you&#39;ve programmed in any C-family language (C++, Java,
+JavaScript, C#, or PHP), Rust will feel familiar. The main surface
+difference to be aware of is that the bodies of <code>if</code> statements and of
+loops <em>have</em> to be wrapped in brackets. Single-statement, bracket-less
+bodies are not allowed.</p>
+
+<p>If the verbosity of that bothers you, consider the fact that this
+allows you to omit the parentheses around the condition in <code>if</code>,
+<code>while</code>, and similar constructs. This will save you two characters
+every time. As a bonus, you no longer have to spend any mental energy
+on deciding whether you need to add braces or not, or on adding them
+after the fact when adding a statement to an <code>if</code> branch.</p>
+
+<p>Accounting for these differences, the surface syntax of Rust
+statements and expressions is C-like. Function calls are written
+<code>myfunc(arg1, arg2)</code>, operators have mostly the same name and
+precedence that they have in C, comments look the same, and constructs
+like <code>if</code> and <code>while</code> are available:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">main</span>() {
+    <span class="cm-keyword">if</span> <span class="cm-number">1</span> &lt; <span class="cm-number">2</span> {
+        <span class="cm-keyword">while</span> <span class="cm-atom">false</span> { <span class="cm-variable">call_a_function</span>(<span class="cm-number">10</span> * <span class="cm-number">4</span>); }
+    } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> <span class="cm-number">4</span> &lt; <span class="cm-number">3</span> || <span class="cm-number">3</span> &lt; <span class="cm-number">4</span> {
+        <span class="cm-comment">// Comments are C++-style too</span>
+    } <span class="cm-keyword">else</span> {
+        <span class="cm-comment">/* Multi-line comment syntax */</span>
+    }
+}</pre>
+
+<h2>Expression syntax</h2>
+
+<p>Though it isn&#39;t apparent in all code, there is a fundamental
+difference between Rust&#39;s syntax and the predecessors in this family
+of languages. A lot of thing that are statements in C are expressions
+in Rust. This allows for useless things like this (which passes
+nil—the void type—to a function):</p>
+
+<pre class="cm-s-default"><span class="cm-variable">a_function</span>(<span class="cm-keyword">while</span> <span class="cm-atom">false</span> {});</pre>
+
+<p>But also useful things like this:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">x</span> = <span class="cm-keyword">if</span> <span class="cm-variable">the_stars_align</span>() { <span class="cm-number">4</span> }
+        <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> <span class="cm-variable">something_else</span>() { <span class="cm-number">3</span> }
+        <span class="cm-keyword">else</span> { <span class="cm-number">0</span> };</pre>
+
+<p>This piece of code will bind the variable <code>x</code> to a value depending on
+the conditions. Note the condition bodies, which look like <code>{
+expression }</code>. The lack of a semicolon after the last statement in a
+braced block gives the whole block the value of that last expression.
+If the branches of the <code>if</code> had looked like <code>{ 4; }</code>, the above
+example would simply assign nil (void) to <code>x</code>. But without the
+semicolon, each branch has a different value, and <code>x</code> gets the value
+of the branch that was taken.</p>
+
+<p>This also works for function bodies. This function returns a boolean:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">is_four</span>(<span class="cm-def">x</span>: <span class="cm-keyword">int</span>) -&gt; <span class="cm-keyword">bool</span> { <span class="cm-variable">x</span> == <span class="cm-number">4</span> }</pre>
+
+<p>In short, everything that&#39;s not a declaration (<code>let</code> for variables,
+<code>fn</code> for functions, etcetera) is an expression.</p>
+
+<p>If all those things are expressions, you might conclude that you have
+to add a terminating semicolon after <em>every</em> statement, even ones that
+are not traditionally terminated with a semicolon in C (like <code>while</code>).
+That is not the case, though. Expressions that end in a block only
+need a semicolon if that block contains a trailing expression. <code>while</code>
+loops do not allow trailing expressions, and <code>if</code> statements tend to
+only have a trailing expression when you want to use their value for
+something—in which case you&#39;ll have embedded it in a bigger statement,
+like the <code>let x = ...</code> example above.</p>
+
+<h2>Identifiers</h2>
+
+<p>Rust identifiers must start with an alphabetic character or an
+underscore, and after that may contain any alphanumeric character, and
+more underscores.</p>
+
+<p>NOTE: The parser doesn&#39;t currently recognize non-ascii alphabetic
+characters. This is a bug that will eventually be fixed.</p>
+
+<p>The double-colon (<code>::</code>) is used as a module separator, so
+<code>std::io::println</code> means &#39;the thing named <code>println</code> in the module
+named <code>io</code> in the module named <code>std</code>&#39;.</p>
+
+<p>Rust will normally emit warning about unused variables. These can be
+suppressed by using a variable name that starts with an underscore.</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">this_warns</span>(<span class="cm-def">x</span>: <span class="cm-keyword">int</span>) {}
+<span class="cm-keyword">fn</span> <span class="cm-def">this_doesnt</span>(<span class="cm-def">_x</span>: <span class="cm-keyword">int</span>) {}</pre>
+
+<h2>Variable declaration</h2>
+
+<p>The <code>let</code> keyword, as we&#39;ve seen, introduces a local variable. Global
+constants can be defined with <code>const</code>:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">use</span> <span class="cm-variable">std</span>;
+<span class="cm-keyword">const</span> <span class="cm-def">repeat</span>: <span class="cm-keyword">uint</span> = <span class="cm-number">5</span><span class="cm-variable">u</span>;
+<span class="cm-keyword">fn</span> <span class="cm-def">main</span>() {
+    <span class="cm-keyword">let</span> <span class="cm-def">count</span> = <span class="cm-number">0</span><span class="cm-variable">u</span>;
+    <span class="cm-keyword">while</span> <span class="cm-variable">count</span> &lt; <span class="cm-variable">repeat</span> {
+        <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;Hi!&quot;</span>);
+        <span class="cm-variable">count</span> += <span class="cm-number">1</span><span class="cm-variable">u</span>;
+    }
+}</pre>
+
+<h2>Types</h2>
+
+<p>The <code>-&gt; bool</code> in the <code>is_four</code> example is the way a function&#39;s return
+type is written. For functions that do not return a meaningful value
+(these conceptually return nil in Rust), you can optionally say <code>-&gt;
+()</code> (<code>()</code> is how nil is written), but usually the return annotation is
+simply left off, as in the <code>fn main() { ... }</code> examples we&#39;ve seen
+earlier.</p>
+
+<p>Every argument to a function must have its type declared (for example,
+<code>x: int</code>). Inside the function, type inference will be able to
+automatically deduce the type of most locals (generic functions, which
+we&#39;ll come back to later, will occasionally need additional
+annotation). Locals can be written either with or without a type
+annotation:</p>
+
+<pre class="cm-s-default"><span class="cm-comment">// The type of this vector will be inferred based on its use.</span>
+<span class="cm-keyword">let</span> <span class="cm-def">x</span> = [];
+<span class="cm-comment">// Explicitly say this is a vector of integers.</span>
+<span class="cm-keyword">let</span> <span class="cm-def">y</span>: [<span class="cm-keyword">int</span>] = [];</pre>
+
+<p>The basic types are written like this:</p>
+
+<dl><dt><code>()</code></dt><dd>Nil, the type that has only a single value.</dd><dt><code>bool</code></dt><dd>Boolean type..</dd><dt><code>int</code></dt><dd>A machine-pointer-sized integer.</dd><dt><code>uint</code></dt><dd>A machine-pointer-sized unsigned integer.</dd><dt><code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code></dt><dd>Signed integers with a specific size (in bits).</dd><dt><code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code></dt><dd>Unsigned integers with a specific size.</dd><dt><code>f32</code>, <code>f64</code></dt><dd>Floating-point types.</dd><dt><code>float</code></dt><dd>The largest floating-point type efficiently supported on the target machine.</dd><dt><code>char</code></dt><dd>A character is a 32-bit Unicode code point.</dd><dt><code>str</code></dt><dd>String type. A string contains a utf-8 encoded sequence of characters.</dd></dl>
+
+<p>These can be combined in composite types, which will be described in
+more detail later on (the <code>T</code>s here stand for any other type):</p>
+
+<dl><dt><code>[T]</code></dt><dd>Vector type.</dd><dt><code>[mutable T]</code></dt><dd>Mutable vector type.</dd><dt><code>(T1, T2)</code></dt><dd>Tuple type. Any arity above 1 is supported.</dd><dt><code>{fname1: T1, fname2: T2}</code></dt><dd>Record type.</dd><dt><code>fn(arg1: T1, arg2: T2) -&gt; T3</code>, <code>lambda()</code>, <code>block()</code></dt><dd>Function types.</dd><dt><code>@T</code>, <code>~T</code>, <code>*T</code></dt><dd>Pointer types.</dd><dt><code>obj { fn method1() }</code></dt><dd>Object type.</dd></dl>
+
+<p>Types can be given names with <code>type</code> declarations:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">type</span> <span class="cm-def">monster_size</span> = <span class="cm-keyword">uint</span>;</pre>
+
+<p>This will provide a synonym, <code>monster_size</code>, for unsigned integers. It
+will not actually create a new type—<code>monster_size</code> and <code>uint</code> can be
+used interchangeably, and using one where the other is expected is not
+a type error. Read about <a href="data.html#single_variant_tag">single-variant tags</a> further on if you
+need to create a type name that&#39;s not just a synonym.</p>
+
+<h2>Literals</h2>
+
+<p>Integers can be written in decimal (<code>144</code>), hexadecimal (<code>0x90</code>), and
+binary (<code>0b10010000</code>) base. Without suffix, an integer literal is
+considered to be of type <code>int</code>. Add a <code>u</code> (<code>144u</code>) to make it a <code>uint</code>
+instead. Literals of the fixed-size integer types can be created by
+the literal with the type name (<code>255u8</code>, <code>50i64</code>, etc).</p>
+
+<p>Note that, in Rust, no implicit conversion between integer types
+happens. If you are adding one to a variable of type <code>uint</code>, you must
+type <code>v += 1u</code>—saying <code>+= 1</code> will give you a type error.</p>
+
+<p>Floating point numbers are written <code>0.0</code>, <code>1e6</code>, or <code>2.1e-4</code>. Without
+suffix, the literal is assumed to be of type <code>float</code>. Suffixes <code>f32</code>
+and <code>f64</code> can be used to create literals of a specific type. The
+suffix <code>f</code> can be used to write <code>float</code> literals without a dot or
+exponent: <code>3f</code>.</p>
+
+<p>The nil literal is written just like the type: <code>()</code>. The keywords
+<code>true</code> and <code>false</code> produce the boolean literals.</p>
+
+<p>Character literals are written between single quotes, as in <code>&#39;x&#39;</code>. You
+may put non-ascii characters between single quotes (your source file
+should be encoded as utf-8 in that case). Rust understands a number of
+character escapes, using the backslash character:</p>
+
+<dl><dt><code>\n</code></dt><dd>A newline (unicode character 32).</dd><dt><code>\r</code></dt><dd>A carriage return (13).</dd><dt><code>\t</code></dt><dd>A tab character (9).</dd><dt><code>\\</code>, <code>\&#39;</code>, <code>\&quot;</code></dt><dd>Simply escapes the following character.</dd><dt><code>\xHH</code>, <code>\uHHHH</code>, <code>\UHHHHHHHH</code></dt><dd>Unicode escapes, where the <code>H</code> characters are the hexadecimal digits that form the character code.</dd></dl>
+
+<p>String literals allow the same escape sequences. They are written
+between double quotes (<code>&quot;hello&quot;</code>). Rust strings may contain newlines.
+When a newline is preceded by a backslash, it, and all white space
+following it, will not appear in the resulting string literal.</p>
+
+<h2>Operators</h2>
+
+<p>Rust&#39;s set of operators contains very few surprises. The main
+difference with C is that <code>++</code> and <code>--</code> are missing, and that the
+logical binary operators have higher precedence—in C, <code>x &amp; 2 &gt; 0</code>
+comes out as <code>x &amp; (2 &gt; 0)</code>, in Rust, it means <code>(x &amp; 2) &gt; 0</code>, which is
+more likely to be what you expect (unless you are a C veteran).</p>
+
+<p>Thus, binary arithmetic is done with <code>*</code>, <code>/</code>, <code>%</code>, <code>+</code>, and <code>-</code>
+(multiply, divide, remainder, plus, minus). <code>-</code> is also a unary prefix
+operator (there are no unary postfix operators in Rust) that does
+negation.</p>
+
+<p>Binary shifting is done with <code>&gt;&gt;</code> (shift right), <code>&gt;&gt;&gt;</code> (arithmetic
+shift right), and <code>&lt;&lt;</code> (shift left). Logical bitwise operators are
+<code>&amp;</code>, <code>|</code>, and <code>^</code> (and, or, and exclusive or), and unary <code>!</code> for
+bitwise negation (or boolean negation when applied to a boolean
+value).</p>
+
+<p>The comparison operators are the traditional <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>,
+<code>&lt;=</code>, and <code>&gt;=</code>. Short-circuiting (lazy) boolean operators are written
+<code>&amp;&amp;</code> (and) and <code>||</code> (or).</p>
+
+<p>Rust has a ternary conditional operator <code>?:</code>, as in:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">message</span> = <span class="cm-variable">badness</span> &lt; <span class="cm-number">10</span> ? <span class="cm-string">&quot;error&quot;</span> : <span class="cm-string">&quot;FATAL ERROR&quot;</span>;</pre>
+
+<p>For type casting, Rust uses the binary <code>as</code> operator, which has a
+precedence between the bitwise combination operators (<code>&amp;</code>, <code>|</code>, <code>^</code>)
+and the comparison operators. It takes an expression on the left side,
+and a type on the right side, and will, if a meaningful conversion
+exists, convert the result of the expression to the given type.</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">x</span>: <span class="cm-keyword">float</span> = <span class="cm-number">4.0</span>;
+<span class="cm-keyword">let</span> <span class="cm-def">y</span>: <span class="cm-keyword">uint</span> = <span class="cm-variable">x</span> <span class="cm-keyword">as</span> <span class="cm-variable">uint</span>;
+<span class="cm-keyword">assert</span> <span class="cm-variable">y</span> == <span class="cm-number">4</span><span class="cm-variable">u</span>;</pre>
+
+<h2>Attributes</h2>
+
+<a name="conditional></a>
+
+<p>Every definition can be annotated with attributes. Attributes are meta
+information that can serve a variety of purposes. One of those is
+conditional compilation:</p>
+
+<pre class="cm-s-default">#[<span class="cm-variable">cfg</span>(<span class="cm-variable">target_os</span> = <span class="cm-string">&quot;win32&quot;</span>)]
+<span class="cm-keyword">fn</span> <span class="cm-def">register_win_service</span>() { <span class="cm-comment">/* ... */</span> }</pre>
+
+<p>This will cause the function to vanish without a trace during
+compilation on a non-Windows platform, much like <code>#ifdef</code> in C (it
+allows <code>cfg(flag=value)</code> and <code>cfg(flag)</code> forms, where the second
+simply checks whether the configuration flag is defined at all). Flags
+for <code>target_os</code> and <code>target_arch</code> are set by the compiler. It is
+possible to set additional flags with the <code>--cfg</code> command-line option.</p>
+
+<p>Attributes always look like <code>#[attr]</code>, where <code>attr</code> can be simply a
+name (as in <code>#[test]</code>, which is used by the <a href="test.html)">built-in test
+framework</a>, a name followed by <code>=</code> and then a literal (as
+in <code>#[license = &quot;BSD&quot;]</code>, which is a valid way to annotate a Rust
+program as being released under a BSD-style license), or a name
+followed by a comma-separated list of nested attributes, as in the
+<code>cfg</code> example above, or in this <a href="mod.html">crate</a> metadata
+declaration:</p>
+
+<pre class="cm-s-default">#[<span class="cm-variable">link</span>(<span class="cm-variable">name</span> = <span class="cm-string">&quot;std&quot;</span>,
+       <span class="cm-variable">vers</span> = <span class="cm-string">&quot;0.1&quot;</span>,
+       <span class="cm-variable">url</span> = <span class="cm-string">&quot;http://rust-lang.org/src/std&quot;</span>)];</pre>
+
+<p>An attribute without a semicolon following it applies to the
+definition that follows it. When terminated with a semicolon, it
+applies to the current context. The above example could also be
+written like this:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">register_win_service</span>() {
+    #[<span class="cm-variable">cfg</span>(<span class="cm-variable">target_os</span> = <span class="cm-string">&quot;win32&quot;</span>)];
+    <span class="cm-comment">/* ... */</span>
+}</pre>
+
+<h2>Syntax extensions</h2>
+
+<p>There are plans to support user-defined syntax (macros) in Rust. This
+currently only exists in very limited form.</p>
+
+<p>The compiler defines a few built-in syntax extensions. The most useful
+one is <code>#fmt</code>, a printf-style text formatting macro that is expanded
+at compile time.</p>
+
+<pre class="cm-s-default"><span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-meta">#fmt</span>(<span class="cm-string">&quot;%s is %d&quot;</span>, <span class="cm-string">&quot;the answer&quot;</span>, <span class="cm-number">42</span>));</pre>
+
+<p><code>#fmt</code> supports most of the directives that <a href="http://en.cppreference.com/w/cpp/io/c/fprintf">printf</a> supports, but
+will give you a compile-time error when the types of the directives
+don&#39;t match the types of the arguments.</p>
+
+<p>All syntax extensions look like <code>#word</code>. Another built-in one is
+<code>#env</code>, which will look up its argument as an environment variable at
+compile-time.</p>
+
+<pre class="cm-s-default"><span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-meta">#env</span>(<span class="cm-string">&quot;PATH&quot;</span>));</pre></div><p class="head">Section 3 of the Rust language tutorial.<br><a href="setup.html">« Section 2</a> | <a href="index.html">Index</a> | <a href="control.html">Section 4 »</a></p><p class='head'>Created September 31, 2011, last modified on October 7, 2011</p></body></html>

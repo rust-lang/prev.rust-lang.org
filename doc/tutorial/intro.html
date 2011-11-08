@@ -1,0 +1,58 @@
+<html><head><link rel='stylesheet' href='style.css' type='text/css'><link rel='stylesheet' href='default.css' type='text/css'><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Introduction</title></head><body>
+<p class="head">Section 1 of the Rust language tutorial.<br><a href="index.html">Index</a> | <a href="setup.html">Section 2 »</a></p><div id="content"><h1>Introduction</h1>
+
+<h2>Scope</h2>
+
+<p>This is a tutorial for the Rust programming language. It assumes the
+reader is familiar with the basic concepts of programming, and has
+programmed in one or more other languages before. The tutorial covers
+the whole language, though not with the depth and precision of the
+<a href="http://www.rust-lang.org/doc/rust.html">language reference</a>.</p>
+
+<p>FIXME: maybe also the stdlib?</p>
+
+<h2>Disclaimer</h2>
+
+<p>Rust is a language under development. The general flavor of the
+language has settled, but details will continue to change as it is
+further refined. Nothing in this tutorial is final, and though we try
+to keep it updated, it is possible that the text occasionally does not
+reflect the actual state of the language.</p>
+
+<h2>First Impressions</h2>
+
+<p>Though syntax is something you get used to, an initial encounter with
+a language can be made easier if the notation looks familiar. Rust is
+a curly-brace language in the tradition of C, C++, and JavaScript.</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">fac</span>(<span class="cm-def">n</span>: <span class="cm-keyword">int</span>) -&gt; <span class="cm-keyword">int</span> {
+    <span class="cm-keyword">let</span> <span class="cm-def">result</span> = <span class="cm-number">1</span>, <span class="cm-def">i</span> = <span class="cm-number">1</span>;
+    <span class="cm-keyword">while</span> <span class="cm-variable">i</span> &lt;= <span class="cm-variable">n</span> {
+        <span class="cm-variable">result</span> *= <span class="cm-variable">i</span>;
+        <span class="cm-variable">i</span> += <span class="cm-number">1</span>;
+    }
+    <span class="cm-keyword">ret</span> <span class="cm-variable">result</span>;
+}</pre>
+
+<p>Several differences from C stand out. Types do not come before, but
+after variable names (preceded by a colon). In local variables
+(introduced with <code>let</code>), they are optional, and will be inferred when
+left off. Constructs like <code>while</code> and <code>if</code> do not require parenthesis
+around the condition (though they allow them). Also, there&#39;s a
+tendency towards aggressive abbreviation in the keywords—<code>fn</code> for
+function, <code>ret</code> for return.</p>
+
+<p>You should, however, not conclude that Rust is simply an evolution of
+C. As will become clear in the rest of this tutorial, it goes into
+quite a different direction.</p>
+
+<h2>Conventions</h2>
+
+<p>Throughout the tutorial, words that indicate language keywords or
+identifiers defined in the example code are displayed in <code>code font</code>.</p>
+
+<p>Code snippets are indented, and also shown in a monospace font. Not
+all snippets constitute whole programs. For brevity, we&#39;ll often show
+fragments of programs that don&#39;t compile on their own. To try them
+out, you&#39;ll have to wrap them in <code>fn main() { ... }</code>, and make sure
+they don&#39;t contain references to things that aren&#39;t actually defined.</p></div><p class="head">Section 1 of the Rust language tutorial.<br><a href="index.html">Index</a> | <a href="setup.html">Section 2 »</a></p><p class='head'>Created September 31, 2011, last modified on October 7, 2011</p></body></html>

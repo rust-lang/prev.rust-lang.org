@@ -1,0 +1,125 @@
+<html><head><link rel='stylesheet' href='style.css' type='text/css'><link rel='stylesheet' href='default.css' type='text/css'><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Argument passing</title></head><body>
+<p class="head">Section 7 of the Rust language tutorial.<br><a href="data.html">« Section 6</a> | <a href="index.html">Index</a> | <a href="generic.html">Section 8 »</a></p><div id="content"><h1>Argument passing</h1>
+
+<p>Rust datatypes are not trivial to copy (the way, for example,
+JavaScript values can be copied by simply taking one or two machine
+words and plunking them somewhere else). Shared boxes require
+reference count updates, big records or tags require an arbitrary
+amount of data to be copied (plus updating the reference counts of
+shared boxes hanging off them), unique pointers require their origin
+to be de-initialized.</p>
+
+<p>For this reason, the way Rust passes arguments to functions is a bit
+more involved than it is in most languages. It performs some
+compile-time cleverness to get rid of most of the cost of copying
+arguments, and forces you to put in explicit copy operators in the
+places where it can not.</p>
+
+<h2>Safe references</h2>
+
+<p>The foundation of Rust&#39;s argument-passing optimization is the fact
+that Rust tasks for single-threaded worlds, which share no data with
+other tasks, and that most data is immutable.</p>
+
+<p>Take the following program:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">x</span> = <span class="cm-variable">get_really_big_record</span>();
+<span class="cm-variable">myfunc</span>(<span class="cm-variable">x</span>);</pre>
+
+<p>We want to pass <code>x</code> to <code>myfunc</code> by pointer (which is easy), <em>and</em> we
+want to ensure that <code>x</code> stays intact for the duration of the call
+(which, in this example, is also easy). So we can just use the
+existing value as the argument, without copying.</p>
+
+<p>There are more involved cases. The call could look like this:</p>
+
+<pre class="cm-s-default"><span class="cm-variable">myfunc</span>(<span class="cm-variable">x</span>, {|| <span class="cm-variable">x</span> = <span class="cm-variable">get_another_record</span>(); });</pre>
+
+<p>Now, if <code>myfunc</code> first calls its second argument and then accesses its
+first argument, it will see a different value from the one that was
+passed to it.</p>
+
+<p>The compiler will insert an implicit copy of <code>x</code> in such a case,
+<em>except</em> if <code>x</code> contains something mutable, in which case a copy would
+result in code that behaves differently (if you mutate the copy, <code>x</code>
+stays unchanged). That would be bad, so the compiler will disallow
+such code.</p>
+
+<p>When inserting an implicit copy for something big, the compiler will
+warn, so that you know that the code is not as efficient as it looks.</p>
+
+<p>There are even more tricky cases, in which the Rust compiler is forced
+to pessimistically assume a value will get mutated, even though it is
+not sure.</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">for_each</span>(<span class="cm-def">v</span>: [<span class="cm-variable-3">mutable</span> @<span class="cm-keyword">int</span>], <span class="cm-def">iter</span>: <span class="cm-keyword">block</span>(@<span class="cm-keyword">int</span>)) {
+   <span class="cm-keyword">for</span> <span class="cm-def">elt</span> <span class="cm-keyword">in</span> <span class="cm-variable">v</span> { <span class="cm-variable">iter</span>(<span class="cm-variable">elt</span>); }
+}</pre>
+
+<p>For all this function knows, calling <code>iter</code> (which is a closure that
+might have access to the vector that&#39;s passed as <code>v</code>) could cause the
+elements in the vector to be mutated, with the effect that it can not
+guarantee that the boxes will live for the duration of the call. So it
+has to copy them. In this case, this will happen implicitly (bumping a
+reference count is considered cheap enough to not warn about it).</p>
+
+<h2>The copy operator</h2>
+
+<p>If the <code>for_each</code> function given above were to take a vector of
+<code>{mutable a: int}</code> instead of <code>@int</code>, it would not be able to
+implicitly copy, since if the <code>iter</code> function changes a copy of a
+mutable record, the changes won&#39;t be visible in the record itself. If
+we <em>do</em> want to allow copies there, we have to explicitly allow it
+with the <code>copy</code> operator:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">type</span> <span class="cm-def">mutrec</span> = {<span class="cm-keyword">mutable</span> <span class="cm-variable">x</span>: <span class="cm-keyword">int</span>};
+<span class="cm-keyword">fn</span> <span class="cm-def">for_each</span>(<span class="cm-def">v</span>: [<span class="cm-variable-3">mutable</span> <span class="cm-variable">mutrec</span>], <span class="cm-def">iter</span>: <span class="cm-keyword">block</span>(<span class="cm-variable-3">mutrec</span>)) {
+   <span class="cm-keyword">for</span> <span class="cm-def">elt</span> <span class="cm-keyword">in</span> <span class="cm-variable">v</span> { <span class="cm-variable">iter</span>(<span class="cm-keyword">copy</span> <span class="cm-variable">elt</span>); }
+}</pre>
+
+<h2>Argument passing styles</h2>
+
+<p>The fact that arguments are conceptually passed by safe reference does
+not mean all arguments are passed by pointer. Composite types like
+records and tags <em>are</em> passed by pointer, but others, like integers
+and pointers, are simply passed by value.</p>
+
+<p>It is possible, when defining a function, to specify a passing style
+for a parameter by prefixing the parameter name with a symbol. The
+most common special style is by-mutable-reference, written <code>&amp;</code>:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">vec_push</span>(&amp;<span class="cm-variable">v</span>: [<span class="cm-variable">int</span>], <span class="cm-def">elt</span>: <span class="cm-keyword">int</span>) {
+    <span class="cm-variable">v</span> += [<span class="cm-variable">elt</span>];
+}</pre>
+
+<p>This will make it possible for the function to mutate the parameter.
+Clearly, you are only allowed to pass things that can actually be
+mutated to such a function.</p>
+
+<p>Another style is by-move, which will cause the argument to become
+de-initialized on the caller side, and give ownership of it to the
+called function. This is written <code>-</code>.</p>
+
+<p>Finally, the default passing styles (by-value for non-structural
+types, by-reference for structural ones) are written <code>+</code> for by-value
+and <code>&amp;&amp;</code> for by(-immutable)-reference. It is sometimes necessary to
+override the defaults. We&#39;ll talk more about this when discussing
+<a href="generic.html">generics</a>.</p>
+
+<h2>Other uses of safe references</h2>
+
+<p>Safe references are not only used for argument passing. When you
+destructure on a value in an <code>alt</code> expression, or loop over a vector
+with <code>for</code>, variables bound to the inside of the given data structure
+will use safe references, not copies. This means such references have
+little overhead, but you&#39;ll occasionally have to copy them to ensure
+safety.</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">my_rec</span> = {<span class="cm-variable">a</span>: <span class="cm-number">4</span>, <span class="cm-variable">b</span>: [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>]};
+<span class="cm-keyword">alt</span> <span class="cm-variable">my_rec</span> {
+  {<span class="cm-def">a</span>, <span class="cm-def">b</span>} {
+    <span class="cm-keyword">log</span> <span class="cm-variable">b</span>; <span class="cm-comment">// This is okay</span>
+    <span class="cm-variable">my_rec</span> = {<span class="cm-variable">a</span>: <span class="cm-variable">a</span> + <span class="cm-number">1</span>, <span class="cm-variable">b</span>: <span class="cm-variable">b</span> + [<span class="cm-variable">a</span>]};
+    <span class="cm-keyword">log</span> <span class="cm-variable">b</span>; <span class="cm-comment">// Here reference b has become invalid</span>
+  }
+}</pre></div><p class="head">Section 7 of the Rust language tutorial.<br><a href="data.html">« Section 6</a> | <a href="index.html">Index</a> | <a href="generic.html">Section 8 »</a></p><p class='head'>Created September 31, 2011, last modified on October 1, 2011</p></body></html>

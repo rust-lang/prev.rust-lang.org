@@ -1,0 +1,187 @@
+<html><head><link rel='stylesheet' href='style.css' type='text/css'><link rel='stylesheet' href='default.css' type='text/css'><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Control structures</title></head><body>
+<p class="head">Section 4 of the Rust language tutorial.<br><a href="syntax.html">« Section 3</a> | <a href="index.html">Index</a> | <a href="func.html">Section 5 »</a></p><div id="content"><h1>Control structures</h1>
+
+<h2>Conditionals</h2>
+
+<p>We&#39;ve seen <code>if</code> pass by a few times already. To recap, braces are
+compulsory, an optional <code>else</code> clause can be appended, and multiple
+<code>if</code>/<code>else</code> constructs can be chained together:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">if</span> <span class="cm-atom">false</span> {
+    <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;that&#39;s odd&quot;</span>);
+} <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> <span class="cm-atom">true</span> {
+    <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;right&quot;</span>);
+} <span class="cm-keyword">else</span> {
+    <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;neither true nor false&quot;</span>);
+}</pre>
+
+<p>The condition given to an <code>if</code> construct <em>must</em> be of type boolean (no
+implicit conversion happens). If the arms return a value, this value
+must be of the same type for every arm in which control reaches the
+end of the block:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">signum</span>(<span class="cm-def">x</span>: <span class="cm-keyword">int</span>) -&gt; <span class="cm-keyword">int</span> {
+    <span class="cm-keyword">if</span> <span class="cm-variable">x</span> &lt; <span class="cm-number">0</span> { -<span class="cm-number">1</span> }
+    <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> <span class="cm-variable">x</span> &gt; <span class="cm-number">0</span> { <span class="cm-number">1</span> }
+    <span class="cm-keyword">else</span> { <span class="cm-keyword">ret</span> <span class="cm-number">0</span>; }
+}</pre>
+
+<p>The <code>ret</code> (return) and its semicolon could have been left out without
+changing the meaning of this function, but it illustrates that you
+will not get a type error in this case, although the last arm doesn&#39;t
+have type <code>int</code>, because control doesn&#39;t reach the end of that arm
+(<code>ret</code> is jumping out of the function).</p>
+
+<h2>Pattern matching</h2>
+
+<p>Rust&#39;s <code>alt</code> construct is a generalized, cleaned-up version of C&#39;s
+<code>switch</code> construct. You provide it with a value and a number of arms,
+each labelled with a pattern, and it will execute the arm that matches
+the value.</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">alt</span> <span class="cm-variable">my_number</span> {
+  <span class="cm-number">0</span>       { <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;zero&quot;</span>); }
+  <span class="cm-number">1</span> | <span class="cm-number">2</span>   { <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;one or two&quot;</span>); }
+  <span class="cm-number">3</span> <span class="cm-keyword">to</span> <span class="cm-number">10</span> { <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;three to ten&quot;</span>); }
+  <span class="cm-def">_</span>       { <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;something else&quot;</span>); }
+}</pre>
+
+<p>There is no &#39;falling through&#39; between arms, as in C—only one arm is
+executed, and it doesn&#39;t have to explicitly <code>break</code> out of the
+construct when it is finished.</p>
+
+<p>The part to the left of each arm is called the pattern. Literals are
+valid patterns, and will match only their own value. The pipe operator
+(<code>|</code>) can be used to assign multiple patterns to a single arm. Ranges
+of numeric literal patterns can be expressed with <code>to</code>. The underscore
+(<code>_</code>) is a wildcard pattern that matches everything.</p>
+
+<p>If the arm with the wildcard pattern was left off in the above
+example, running it on a number greater than ten (or negative) would
+cause a run-time failure. When no arm matches, <code>alt</code> constructs do not
+silently fall through—they blow up instead.</p>
+
+<p>A powerful application of pattern matching is <em>destructuring</em>, where
+you use the matching to get at the contents of data types. Remember
+that <code>(float, float)</code> is a tuple of two floats:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">angle</span>(<span class="cm-def">vec</span>: (<span class="cm-keyword">float</span>, <span class="cm-keyword">float</span>)) -&gt; <span class="cm-keyword">float</span> {
+    <span class="cm-keyword">alt</span> <span class="cm-variable">vec</span> {
+      (<span class="cm-number">0</span><span class="cm-variable">f</span>, <span class="cm-def">y</span>) <span class="cm-keyword">when</span> <span class="cm-variable">y</span> &lt; <span class="cm-number">0</span><span class="cm-def">f</span> { <span class="cm-number">1.5</span> * <span class="cm-variable-2">std::math::</span><span class="cm-variable">pi</span> }
+      (<span class="cm-number">0</span><span class="cm-variable">f</span>, <span class="cm-def">y</span>) { <span class="cm-number">0.5</span> * <span class="cm-variable-2">std::math::</span><span class="cm-variable">pi</span> }
+      (<span class="cm-def">x</span>, <span class="cm-def">y</span>) { <span class="cm-variable-2">std::math::</span><span class="cm-variable">atan</span>(<span class="cm-variable">y</span> <span class="cm-variable">/</span> <span class="cm-variable">x</span>) }
+    }
+}</pre>
+
+<p>A variable name in a pattern matches everything, <em>and</em> binds that name
+to the value of the matched thing inside of the arm block. Thus, <code>(0f,
+y)</code> matches any tuple whose first element is zero, and binds <code>y</code> to
+the second element. <code>(x, y)</code> matches any tuple, and binds both
+elements to a variable.</p>
+
+<p>Any <code>alt</code> arm can have a guard clause (written <code>when EXPR</code>), which is
+an expression of type <code>bool</code> that determines, after the pattern is
+found to match, whether the arm is taken or not. The variables bound
+by the pattern are available in this guard expression.</p>
+
+<h2>Destructuring let</h2>
+
+<p>To a limited extent, it is possible to use destructuring patterns when
+declaring a variable with <code>let</code>. For example, you can say this to
+extract the fields from a tuple:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> (<span class="cm-def">a</span>, <span class="cm-def">b</span>) = <span class="cm-variable">get_tuple_of_two_ints</span>();</pre>
+
+<p>This will introduce two new variables, <code>a</code> and <code>b</code>, bound to the
+content of the tuple.</p>
+
+<p>You may only use irrevocable patterns—patterns that can never fail to
+match—in let bindings, though. Things like literals, which only match
+a specific value, are not allowed.</p>
+
+<h2>Loops</h2>
+
+<p><code>while</code> produces a loop that runs as long as its given condition
+(which must have type <code>bool</code>) evaluates to true. Inside a loop, the
+keyword <code>break</code> can be used to abort the loop, and <code>cont</code> can be used
+to abort the current iteration and continue with the next.</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">x</span> = <span class="cm-number">5</span>;
+<span class="cm-keyword">while</span> <span class="cm-atom">true</span> {
+    <span class="cm-variable">x</span> += <span class="cm-variable">x</span> - <span class="cm-number">3</span>;
+    <span class="cm-keyword">if</span> <span class="cm-variable">x</span> % <span class="cm-number">5</span> == <span class="cm-number">0</span> { <span class="cm-keyword">break</span>; }
+    <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-variable-2">std::int::</span><span class="cm-variable">str</span>(<span class="cm-variable">x</span>));
+}</pre>
+
+<p>This code prints out a weird sequence of numbers and stops as soon as
+it finds one that can be divided by five.</p>
+
+<p>There&#39;s also <code>while</code>&#39;s ugly cousin, <code>do</code>/<code>while</code>, which does not check
+its condition on the first iteration, using traditional syntax:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">do</span> {
+    <span class="cm-variable">eat_cake</span>();
+} <span class="cm-keyword">while</span> <span class="cm-variable">any_cake_left</span>();</pre>
+
+<p>When iterating over a vector, use <code>for</code> instead.</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">for</span> <span class="cm-def">elt</span> <span class="cm-keyword">in</span> [<span class="cm-string">&quot;red&quot;</span>, <span class="cm-string">&quot;green&quot;</span>, <span class="cm-string">&quot;blue&quot;</span>] {
+    <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-variable">elt</span>);
+}</pre>
+
+<p>This will go over each element in the given vector (a three-element
+vector of strings, in this case), and repeatedly execute the body with
+<code>elt</code> bound to the current element. You may add an optional type
+declaration (<code>elt: str</code>) for the iteration variable if you want.</p>
+
+<p>For more involved iteration, such as going over the elements of a hash
+table, Rust uses higher-order functions. We&#39;ll come back to those in a
+moment.</p>
+
+<h2>Failure</h2>
+
+<p>The <code>fail</code> keyword causes the current <a href="task.html">task</a> to fail. You use
+it to indicate unexpected failure, much like you&#39;d use <code>exit(1)</code> in a
+C program, except that in Rust, it is possible for other tasks to
+handle the failure, allowing the program to continue running.</p>
+
+<p><code>fail</code> takes an optional argument, which must have type <code>str</code>. Trying
+to access a vector out of bounds, or running a pattern match with no
+matching clauses, both result in the equivalent of a <code>fail</code>.</p>
+
+<h2>Logging</h2>
+
+<p>Rust has a built-in logging mechanism, using the <code>log</code> statement.
+Logging is polymorphic—any type of value can be logged, and the
+runtime will do its best to output a textual representation of the
+value.</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">log</span> <span class="cm-string">&quot;hi&quot;</span>;
+<span class="cm-keyword">log</span> (<span class="cm-number">1</span>, [<span class="cm-number">2.5</span>, -<span class="cm-number">1.8</span>]);</pre>
+
+<p>By default, you <em>will not</em> see the output of your log statements. The
+environment variable <code>RUST_LOG</code> controls which log statements actually
+get output. It can contain a comma-separated list of paths for modules
+that should be logged. For example, running <code>rustc</code> with
+<code>RUST_LOG=rustc::front::attr</code> will turn on logging in its attribute
+parser. If you compile a program <code>foo.rs</code>, you can set <code>RUST_LOG</code> to
+<code>foo</code> to enable its logging.</p>
+
+<p>Turned-off <code>log</code> statements impose minimal overhead on the code that
+contains them, so except in code that needs to be really, really fast,
+you should feel free to scatter around debug logging statements, and
+leave them in.</p>
+
+<p>For interactive debugging, you often want unconditional logging. For
+this, use <code>log_err</code> instead of <code>log</code> [FIXME better name].</p>
+
+<h2>Assertions</h2>
+
+<p>The keyword <code>assert</code>, followed by an expression with boolean type,
+will check that the given expression results in <code>true</code>, and cause a
+failure otherwise. It is typically used to double-check things that
+<em>should</em> hold at a certain point in a program.</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">x</span> = <span class="cm-number">100</span>;
+<span class="cm-keyword">while</span> (<span class="cm-variable">x</span> &gt; <span class="cm-number">10</span>) { <span class="cm-variable">x</span> -= <span class="cm-number">10</span>; }
+<span class="cm-keyword">assert</span> <span class="cm-variable">x</span> == <span class="cm-number">10</span>;</pre></div><p class="head">Section 4 of the Rust language tutorial.<br><a href="syntax.html">« Section 3</a> | <a href="index.html">Index</a> | <a href="func.html">Section 5 »</a></p><p class='head'>Created September 31, 2011, last modified on October 1, 2011</p></body></html>
