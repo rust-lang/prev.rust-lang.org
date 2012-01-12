@@ -2,13 +2,13 @@
 <p class="head">Section 6 of the Rust language tutorial.<br><a href="func.html">« Section 5</a> | <a href="index.html">Index</a> | <a href="args.html">Section 7 »</a></p><div id="content"><h1>Datatypes</h1>
 
 <p>Rust datatypes are, by default, immutable. The core datatypes of Rust
-are structural records and &#39;tags&#39; (tagged unions, algebraic data
+are structural records and &#39;enums&#39; (tagged unions, algebraic data
 types).</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">type</span> <span class="cm-def">point</span> = {<span class="cm-variable">x</span>: <span class="cm-keyword">float</span>, <span class="cm-variable">y</span>: <span class="cm-keyword">float</span>};
-<span class="cm-keyword">tag</span> <span class="cm-def">shape</span> {
-    <span class="cm-def">circle</span>(<span class="cm-variable-3">point</span>, <span class="cm-keyword">float</span>);
-    <span class="cm-def">rectangle</span>(<span class="cm-variable-3">point</span>, <span class="cm-variable-3">point</span>);
+<span class="cm-variable">enum</span> <span class="cm-variable">shape</span> {
+    <span class="cm-variable">circle</span>(<span class="cm-variable">point</span>, <span class="cm-variable">float</span>);
+    <span class="cm-variable">rectangle</span>(<span class="cm-variable">point</span>, <span class="cm-variable">point</span>);
 }
 <span class="cm-keyword">let</span> <span class="cm-def">my_shape</span> = <span class="cm-variable">circle</span>({<span class="cm-variable">x</span>: <span class="cm-number">0.0</span>, <span class="cm-variable">y</span>: <span class="cm-number">0.0</span>}, <span class="cm-number">10.0</span>);</pre>
 
@@ -27,8 +27,8 @@ example...</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">type</span> <span class="cm-def">stack</span> = {<span class="cm-variable">content</span>: [<span class="cm-keyword">int</span>], <span class="cm-keyword">mutable</span> <span class="cm-variable">head</span>: <span class="cm-keyword">uint</span>};</pre>
 
-<p>With such a type, you can do <code>mystack.head += 1u</code>. When the <code>mutable</code>
-is omitted from the type, such an assignment would result in a type
+<p>With such a type, you can do <code>mystack.head += 1u</code>. If <code>mutable</code> were
+omitted from the type, such an assignment would result in a type
 error.</p>
 
 <p>To &#39;update&#39; an immutable record, you use functional record update
@@ -67,14 +67,14 @@ same order they appear in the type. When you are not interested in all
 the fields of a record, a record pattern may end with <code>, _</code> (as in
 <code>{field1, _}</code>) to indicate that you&#39;re ignoring all other fields.</p>
 
-<h2>Tags</h2>
+<h2>Enums</h2>
 
-<p>Tags [FIXME terminology] are datatypes that have several different
-representations. For example, the type shown earlier:</p>
+<p>Enums are datatypes that have several different representations. For
+example, the type shown earlier:</p>
 
-<pre class="cm-s-default"><span class="cm-keyword">tag</span> <span class="cm-def">shape</span> {
-    <span class="cm-def">circle</span>(<span class="cm-variable-3">point</span>, <span class="cm-keyword">float</span>);
-    <span class="cm-def">rectangle</span>(<span class="cm-variable-3">point</span>, <span class="cm-variable-3">point</span>);
+<pre class="cm-s-default"><span class="cm-variable">enum</span> <span class="cm-variable">shape</span> {
+    <span class="cm-variable">circle</span>(<span class="cm-variable">point</span>, <span class="cm-variable">float</span>);
+    <span class="cm-variable">rectangle</span>(<span class="cm-variable">point</span>, <span class="cm-variable">point</span>);
 }</pre>
 
 <p>A value of this type is either a circle¸ in which case it contains a
@@ -89,46 +89,46 @@ which can be used to construct values of the type (taking arguments of
 the specified types). So <code>circle({x: 0f, y: 0f}, 10f)</code> is the way to
 create a new circle.</p>
 
-<p>Tag variants do not have to have parameters. This, for example, is
-equivalent to an <code>enum</code> in C:</p>
+<p>Enum variants do not have to have parameters. This, for example, is
+equivalent to a C enum:</p>
 
-<pre class="cm-s-default"><span class="cm-keyword">tag</span> <span class="cm-def">direction</span> {
-    <span class="cm-def">north</span>;
-    <span class="cm-def">east</span>;
-    <span class="cm-def">south</span>;
-    <span class="cm-def">west</span>;
-};</pre>
+<pre class="cm-s-default"><span class="cm-variable">enum</span> <span class="cm-variable">direction</span> {
+    <span class="cm-variable">north</span>;
+    <span class="cm-variable">east</span>;
+    <span class="cm-variable">south</span>;
+    <span class="cm-variable">west</span>;
+}</pre>
 
 <p>This will define <code>north</code>, <code>east</code>, <code>south</code>, and <code>west</code> as constants,
 all of which have type <code>direction</code>.</p>
 
-<a name="single_variant_tag"></a>
+<a name="single_variant_enum"></a>
 
-<p>There is a special case for tags with a single variant. These are used
-to define new types in such a way that the new name is not just a
+<p>There is a special case for enums with a single variant. These are
+used to define new types in such a way that the new name is not just a
 synonym for an existing type, but its own distinct type. If you say:</p>
 
-<pre class="cm-s-default"><span class="cm-keyword">tag</span> <span class="cm-def">gizmo_id</span> = <span class="cm-keyword">int</span>;</pre>
+<pre class="cm-s-default"><span class="cm-variable">enum</span> <span class="cm-variable">gizmo_id</span> = <span class="cm-variable">int</span>;</pre>
 
 <p>That is a shorthand for this:</p>
 
-<pre class="cm-s-default"><span class="cm-keyword">tag</span> <span class="cm-def">gizmo_id</span> { <span class="cm-def">gizmo_id</span>(<span class="cm-keyword">int</span>); }</pre>
+<pre class="cm-s-default"><span class="cm-variable">enum</span> <span class="cm-variable">gizmo_id</span> { <span class="cm-variable">gizmo_id</span>(<span class="cm-variable">int</span>); }</pre>
 
-<p>Tag types like this can have their content extracted with the
+<p>Enum types like this can have their content extracted with the
 dereference (<code>*</code>) unary operator:</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">my_gizmo_id</span> = <span class="cm-variable">gizmo_id</span>(<span class="cm-number">10</span>);
 <span class="cm-keyword">let</span> <span class="cm-def">id_int</span>: <span class="cm-keyword">int</span> = *<span class="cm-variable">my_gizmo_id</span>;</pre>
 
-<h2>Tag patterns</h2>
+<h2>Enum patterns</h2>
 
-<p>For tag types with multiple variants, destructuring is the only way to
+<p>For enum types with multiple variants, destructuring is the only way to
 get at their contents. All variant constructors can be used as
 patterns, as in this definition of <code>area</code>:</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">area</span>(<span class="cm-def">sh</span>: <span class="cm-variable-3">shape</span>) -&gt; <span class="cm-keyword">float</span> {
     <span class="cm-keyword">alt</span> <span class="cm-variable">sh</span> {
-        <span class="cm-def">circle</span>(<span class="cm-def">_</span>, <span class="cm-def">size</span>) { <span class="cm-variable-2">std::math::</span><span class="cm-variable">pi</span> * <span class="cm-variable">size</span> * <span class="cm-variable">size</span> }
+        <span class="cm-def">circle</span>(<span class="cm-def">_</span>, <span class="cm-def">size</span>) { <span class="cm-variable-2">float::consts::</span><span class="cm-variable">pi</span> * <span class="cm-variable">size</span> * <span class="cm-variable">size</span> }
         <span class="cm-def">rectangle</span>({<span class="cm-def">x</span>, <span class="cm-def">y</span>}, {<span class="cm-def">x</span>: <span class="cm-variable">x2</span>, <span class="cm-def">y</span>: <span class="cm-variable">y2</span>}) { (<span class="cm-variable">x2</span> - <span class="cm-variable">x</span>) * (<span class="cm-variable">y2</span> - <span class="cm-variable">y</span>) }
     }
 }</pre>
@@ -155,22 +155,22 @@ Tuples can have any arity except for 0 or 1 (though you may see nil,
 
 <pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">mytup</span>: (<span class="cm-keyword">int</span>, <span class="cm-keyword">int</span>, <span class="cm-keyword">float</span>) = (<span class="cm-number">10</span>, <span class="cm-number">20</span>, <span class="cm-number">30.0</span>);
 <span class="cm-keyword">alt</span> <span class="cm-variable">mytup</span> {
-  (<span class="cm-def">a</span>, <span class="cm-def">b</span>, <span class="cm-def">c</span>) { <span class="cm-keyword">log</span> <span class="cm-variable">a</span> + <span class="cm-variable">b</span> + (<span class="cm-variable">c</span> <span class="cm-keyword">as</span> <span class="cm-variable">int</span>); }
+  (<span class="cm-def">a</span>, <span class="cm-def">b</span>, <span class="cm-def">c</span>) { <span class="cm-keyword">log</span>(<span class="cm-variable">info</span>, <span class="cm-variable">a</span> + <span class="cm-variable">b</span> + (<span class="cm-variable">c</span> <span class="cm-keyword">as</span> <span class="cm-variable">int</span>)); }
 }</pre>
 
 <h2>Pointers</h2>
 
-<p>In contrast to a lot of modern languages, record and tag types in Rust
-are not represented as pointers to allocated memory. They are, like in
-C and C++, represented directly. This means that if you <code>let x = {x:
-1f, y: 1f};</code>, you are creating a record on the stack. If you then copy
-it into a data structure, the whole record is copied, not just a
-pointer.</p>
+<p>In contrast to a lot of modern languages, record and enum types in
+Rust are not represented as pointers to allocated memory. They are,
+like in C and C++, represented directly. This means that if you <code>let x
+= {x: 1f, y: 1f};</code>, you are creating a record on the stack. If you
+then copy it into a data structure, the whole record is copied, not
+just a pointer.</p>
 
-<p>For small records like <code>point</code>, this is usually still more efficient
-than allocating memory and going through a pointer. But for big
-records, or records with mutable fields, it can be useful to have a
-single copy on the heap, and refer to that through a pointer.</p>
+<p>For small records like <code>point</code>, this is usually more efficient than
+allocating memory and going through a pointer. But for big records, or
+records with mutable fields, it can be useful to have a single copy on
+the heap, and refer to that through a pointer.</p>
 
 <p>Rust supports several types of pointers. The simplest is the unsafe
 pointer, written <code>*TYPE</code>, which is a completely unchecked pointer
@@ -182,11 +182,13 @@ reference-counted boxes, and <code>~TYPE</code>, for uniquely-owned pointers.</p
 
 <h3>Shared boxes</h3>
 
+<a name="shared-box"></a>
+
 <p>Shared boxes are pointers to heap-allocated, reference counted memory.
 A cycle collector ensures that circular references do not result in
 memory leaks.</p>
 
-<p>Creating a shared box is done by simply applying the binary <code>@</code>
+<p>Creating a shared box is done by simply applying the unary <code>@</code>
 operator to an expression. The result of the expression will be boxed,
 resulting in a box of the right type. For example:</p>
 
@@ -201,6 +203,8 @@ reference counting, for shared boxes.</p>
 
 <h3>Unique boxes</h3>
 
+<a name="unique-box"></a>
+
 <p>In contrast to shared boxes, unique boxes are not reference counted.
 Instead, it is statically guaranteed that only a single owner of the
 box exists at any time.</p>
@@ -211,11 +215,8 @@ box exists at any time.</p>
 <p>This is where the &#39;move&#39; (<code>&lt;-</code>) operator comes in. It is similar to
 <code>=</code>, but it de-initializes its source. Thus, the unique box can move
 from <code>x</code> to <code>y</code>, without violating the constraint that it only has a
-single owner.</p>
-
-<p>NOTE: If you do <code>y = x</code> instead, the box will be copied. We should
-emit warning for this, or disallow it entirely, but do not currently
-do so.</p>
+single owner (if you used assignment instead of the move operator, the
+box would, in principle, be copied).</p>
 
 <p>Unique boxes, when they do not contain any shared boxes, can be sent
 to other tasks. The sending task will give up ownership of the box,
@@ -239,10 +240,10 @@ by combining the dereference operator with a mutating action.</p>
 containing any number of <code>TYPE</code> values.</p>
 
 <p>NOTE: This uniqueness is turning out to be quite awkward in practice,
-and might change.</p>
+and might change in the future.</p>
 
 <p>Vector literals are enclosed in square brackets. Dereferencing is done
-with square brackets (and zero-based):</p>
+with square brackets (zero-based):</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">myvec</span> = [<span class="cm-atom">true</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span>, <span class="cm-atom">false</span>];
 <span class="cm-keyword">if</span> <span class="cm-variable">myvec</span>[<span class="cm-number">1</span>] { <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;boom&quot;</span>); }</pre>
@@ -252,8 +253,8 @@ The type written as <code>[mutable TYPE]</code> is a vector with mutable
 elements. Mutable vector literals are written <code>[mutable]</code> (empty) or
 <code>[mutable 1, 2, 3]</code> (with elements).</p>
 
-<p>Growing a vector in Rust is not as inefficient as it looks (the <code>+</code>
-operator means concatenation when applied to vector types):</p>
+<p>The <code>+</code> operator means concatenation when applied to vector types.
+Growing a vector in Rust is not as inefficient as it looks :</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">myvec</span> = [], <span class="cm-def">i</span> = <span class="cm-number">0</span>;
 <span class="cm-keyword">while</span> <span class="cm-variable">i</span> &lt; <span class="cm-number">100</span> {
@@ -276,17 +277,17 @@ null byte (for interoperability with C APIs).</p>
 
 <p>This sequence of bytes is interpreted as an UTF-8 encoded sequence of
 characters. This has the advantage that UTF-8 encoded I/O (which
-should really be the goal for modern systems) is very fast, and that
-strings have, for most intents and purposes, a nicely compact
+should really be the default for modern systems) is very fast, and
+that strings have, for most intents and purposes, a nicely compact
 representation. It has the disadvantage that you only get
 constant-time access by byte, not by character.</p>
 
 <p>A lot of algorithms don&#39;t need constant-time indexed access (they
-iterate over all characters, which <code>std::str::chars</code> helps with), and
+iterate over all characters, which <code>str::chars</code> helps with), and
 for those that do, many don&#39;t need actual characters, and can operate
 on bytes. For algorithms that do really need to index by character,
 there&#39;s the option to convert your string to a character vector (using
-<code>std::str::to_chars</code>).</p>
+<code>str::to_chars</code>).</p>
 
 <p>Like vectors, strings are always unique. You can wrap them in a shared
 box to share them. Unlike vectors, there is no mutable variant of
@@ -307,4 +308,4 @@ their box is cleaned up), their body runs. In the example above, this
 would cause the given file descriptor to be closed.</p>
 
 <p>NOTE: We&#39;re considering alternative approaches for data types with
-destructors. Resources might go away in the future.</p></div><p class="head">Section 6 of the Rust language tutorial.<br><a href="func.html">« Section 5</a> | <a href="index.html">Index</a> | <a href="args.html">Section 7 »</a></p><p class='head'>Created September 31, 2011, last modified on October 2, 2011</p></body></html>
+destructors. Resources might go away in the future.</p></div><p class="head">Section 6 of the Rust language tutorial.<br><a href="func.html">« Section 5</a> | <a href="index.html">Index</a> | <a href="args.html">Section 7 »</a></p><p class='head'>Created September 31, 2011, last modified on  12, 2012</p></body></html>

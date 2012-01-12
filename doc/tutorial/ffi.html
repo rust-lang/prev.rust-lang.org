@@ -1,5 +1,5 @@
 <html><head><link rel='stylesheet' href='style.css' type='text/css'><link rel='stylesheet' href='default.css' type='text/css'><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Interacting with foreign code</title></head><body>
-<p class="head">Section 10 of the Rust language tutorial.<br><a href="mod.html">« Section 9</a> | <a href="index.html">Index</a> | <a href="task.html">Section 11 »</a></p><div id="content"><h1>Interacting with foreign code</h1>
+<p class="head">Section 11 of the Rust language tutorial.<br><a href="iface.html">« Section 10</a> | <a href="index.html">Index</a> | <a href="task.html">Section 12 »</a></p><div id="content"><h1>Interacting with foreign code</h1>
 
 <p>One of Rust&#39;s aims, as a system programming language, is to
 interoperate well with C code.</p>
@@ -14,26 +14,21 @@ hexadecimal string and prints to standard output. If you have the
 OpenSSL libraries installed, it should &#39;just work&#39;.</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">use</span> <span class="cm-variable">std</span>;
-<span class="cm-keyword">import</span> <span class="cm-variable">std</span>::{<span class="cm-variable">vec</span>, <span class="cm-variable">str</span>};</pre>
-
-<pre class="cm-s-default"><span class="cm-keyword">native</span> <span class="cm-keyword">mod</span> <span class="cm-def">crypto</span> {
+<span class="cm-keyword">native</span> <span class="cm-keyword">mod</span> <span class="cm-def">crypto</span> {
     <span class="cm-keyword">fn</span> <span class="cm-def">SHA1</span>(<span class="cm-def">src</span>: *<span class="cm-keyword">u8</span>, <span class="cm-def">sz</span>: <span class="cm-keyword">uint</span>, <span class="cm-def">out</span>: *<span class="cm-keyword">u8</span>) -&gt; *<span class="cm-keyword">u8</span>;
-}</pre>
-
-<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">as_hex</span>(<span class="cm-def">data</span>: [<span class="cm-keyword">u8</span>]) -&gt; <span class="cm-keyword">str</span> {
+}
+<span class="cm-keyword">fn</span> <span class="cm-def">as_hex</span>(<span class="cm-def">data</span>: [<span class="cm-keyword">u8</span>]) -&gt; <span class="cm-keyword">str</span> {
     <span class="cm-keyword">let</span> <span class="cm-def">acc</span> = <span class="cm-string">&quot;&quot;</span>;
     <span class="cm-keyword">for</span> <span class="cm-def">byte</span> <span class="cm-keyword">in</span> <span class="cm-variable">data</span> { <span class="cm-variable">acc</span> += <span class="cm-meta">#fmt</span>(<span class="cm-string">&quot;%02x&quot;</span>, <span class="cm-variable">byte</span> <span class="cm-keyword">as</span> <span class="cm-variable">uint</span>); }
     <span class="cm-keyword">ret</span> <span class="cm-variable">acc</span>;
-}</pre>
-
-<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">sha1</span>(<span class="cm-def">data</span>: <span class="cm-keyword">str</span>) -&gt; <span class="cm-keyword">str</span> <span class="cm-def">unsafe</span> {
+}
+<span class="cm-keyword">fn</span> <span class="cm-def">sha1</span>(<span class="cm-def">data</span>: <span class="cm-keyword">str</span>) -&gt; <span class="cm-keyword">str</span> <span class="cm-def">unsafe</span> {
     <span class="cm-keyword">let</span> <span class="cm-def">bytes</span> = <span class="cm-variable-2">str::</span><span class="cm-variable">bytes</span>(<span class="cm-variable">data</span>);
     <span class="cm-keyword">let</span> <span class="cm-def">hash</span> = <span class="cm-variable-2">crypto::</span><span class="cm-variable">SHA1</span>(<span class="cm-variable-2">vec::unsafe::</span><span class="cm-variable">to_ptr</span>(<span class="cm-variable">bytes</span>),
-                            <span class="cm-variable-2">vec::</span><span class="cm-variable">len</span>(<span class="cm-variable">bytes</span>), <span class="cm-variable-2">std::ptr::</span><span class="cm-variable">null</span>());
+                            <span class="cm-variable-2">vec::</span><span class="cm-variable">len</span>(<span class="cm-variable">bytes</span>), <span class="cm-variable-2">ptr::</span><span class="cm-variable">null</span>());
     <span class="cm-keyword">ret</span> <span class="cm-variable">as_hex</span>(<span class="cm-variable-2">vec::unsafe::</span><span class="cm-variable">from_buf</span>(<span class="cm-variable">hash</span>, <span class="cm-number">20</span><span class="cm-variable">u</span>));
-}</pre>
-
-<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">main</span>(<span class="cm-def">args</span>: [<span class="cm-keyword">str</span>]) {
+}
+<span class="cm-keyword">fn</span> <span class="cm-def">main</span>(<span class="cm-def">args</span>: [<span class="cm-keyword">str</span>]) {
     <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-variable">sha1</span>(<span class="cm-variable">args</span>[<span class="cm-number">1</span>]));
 }</pre>
 
@@ -68,7 +63,8 @@ most notably the Windows API, use other calling conventions, so Rust
 provides a way to to hint to the compiler which is expected by using
 the <code>&quot;abi&quot;</code> attribute:</p>
 
-<pre class="cm-s-default">#[<span class="cm-variable">abi</span> = <span class="cm-string">&quot;stdcall&quot;</span>]
+<pre class="cm-s-default">#[<span class="cm-variable">cfg</span>(<span class="cm-variable">target_os</span> = <span class="cm-string">&quot;win32&quot;</span>)]
+#[<span class="cm-variable">abi</span> = <span class="cm-string">&quot;stdcall&quot;</span>]
 <span class="cm-keyword">native</span> <span class="cm-keyword">mod</span> <span class="cm-def">kernel32</span> {
     <span class="cm-keyword">fn</span> <span class="cm-def">SetEnvironmentVariableA</span>(<span class="cm-def">n</span>: *<span class="cm-keyword">u8</span>, <span class="cm-def">v</span>: *<span class="cm-keyword">u8</span>) -&gt; <span class="cm-keyword">int</span>;
 }</pre>
@@ -110,7 +106,7 @@ null pointers.</p>
 <pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">sha1</span>(<span class="cm-def">data</span>: <span class="cm-keyword">str</span>) -&gt; <span class="cm-keyword">str</span> <span class="cm-def">unsafe</span> {
     <span class="cm-keyword">let</span> <span class="cm-def">bytes</span> = <span class="cm-variable-2">str::</span><span class="cm-variable">bytes</span>(<span class="cm-variable">data</span>);
     <span class="cm-keyword">let</span> <span class="cm-def">hash</span> = <span class="cm-variable-2">crypto::</span><span class="cm-variable">SHA1</span>(<span class="cm-variable-2">vec::unsafe::</span><span class="cm-variable">to_ptr</span>(<span class="cm-variable">bytes</span>),
-                            <span class="cm-variable-2">vec::</span><span class="cm-variable">len</span>(<span class="cm-variable">bytes</span>), <span class="cm-variable-2">std::ptr::</span><span class="cm-variable">null</span>());
+                            <span class="cm-variable-2">vec::</span><span class="cm-variable">len</span>(<span class="cm-variable">bytes</span>), <span class="cm-variable-2">ptr::</span><span class="cm-variable">null</span>());
     <span class="cm-keyword">ret</span> <span class="cm-variable">as_hex</span>(<span class="cm-variable-2">vec::unsafe::</span><span class="cm-variable">from_buf</span>(<span class="cm-variable">hash</span>, <span class="cm-number">20</span><span class="cm-variable">u</span>));
 }</pre>
 
@@ -129,7 +125,7 @@ caused by some unsafe code.</p>
 <p>Unsafe blocks isolate unsafety. Unsafe functions, on the other hand,
 advertise it to the world. An unsafe function is written like this:</p>
 
-<pre class="cm-s-default"><span class="cm-keyword">unsafe</span> <span class="cm-keyword">fn</span> <span class="cm-def">kaboom</span>() { <span class="cm-keyword">log</span> <span class="cm-string">&quot;I&#39;m harmless!&quot;</span>; }</pre>
+<pre class="cm-s-default"><span class="cm-keyword">unsafe</span> <span class="cm-keyword">fn</span> <span class="cm-def">kaboom</span>() { <span class="cm-string">&quot;I&#39;m harmless!&quot;</span>; }</pre>
 
 <p>This function can only be called from an unsafe block or another
 unsafe function.</p>
@@ -144,7 +140,7 @@ Rust&#39;s safety mechanisms.</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">bytes</span> = <span class="cm-variable-2">str::</span><span class="cm-variable">bytes</span>(<span class="cm-variable">data</span>);
 <span class="cm-keyword">let</span> <span class="cm-def">hash</span> = <span class="cm-variable-2">crypto::</span><span class="cm-variable">SHA1</span>(<span class="cm-variable-2">vec::unsafe::</span><span class="cm-variable">to_ptr</span>(<span class="cm-variable">bytes</span>),
-                        <span class="cm-variable-2">vec::</span><span class="cm-variable">len</span>(<span class="cm-variable">bytes</span>), <span class="cm-variable-2">std::ptr::</span><span class="cm-variable">null</span>());
+                        <span class="cm-variable-2">vec::</span><span class="cm-variable">len</span>(<span class="cm-variable">bytes</span>), <span class="cm-variable-2">ptr::</span><span class="cm-variable">null</span>());
 <span class="cm-keyword">ret</span> <span class="cm-variable">as_hex</span>(<span class="cm-variable-2">vec::unsafe::</span><span class="cm-variable">from_buf</span>(<span class="cm-variable">hash</span>, <span class="cm-number">20</span><span class="cm-variable">u</span>));</pre>
 
 <p>The <code>str::bytes</code> function is perfectly safe, it converts a string to
@@ -179,17 +175,17 @@ microsecond-resolution timer.</p>
 <pre class="cm-s-default"><span class="cm-keyword">use</span> <span class="cm-variable">std</span>;
 <span class="cm-keyword">type</span> <span class="cm-def">timeval</span> = {<span class="cm-keyword">mutable</span> <span class="cm-variable">tv_sec</span>: <span class="cm-keyword">u32</span>,
                 <span class="cm-keyword">mutable</span> <span class="cm-variable">tv_usec</span>: <span class="cm-keyword">u32</span>};
-#[<span class="cm-variable">link_name</span> = <span class="cm-string">&quot;&quot;</span>]
+#[<span class="cm-variable">nolink</span>]
 <span class="cm-keyword">native</span> <span class="cm-keyword">mod</span> <span class="cm-def">libc</span> {
     <span class="cm-keyword">fn</span> <span class="cm-def">gettimeofday</span>(<span class="cm-def">tv</span>: *<span class="cm-variable-3">timeval</span>, <span class="cm-def">tz</span>: *()) -&gt; <span class="cm-keyword">i32</span>;
 }
 <span class="cm-keyword">fn</span> <span class="cm-def">unix_time_in_microseconds</span>() -&gt; <span class="cm-keyword">u64</span> <span class="cm-def">unsafe</span> {
     <span class="cm-keyword">let</span> <span class="cm-def">x</span> = {<span class="cm-keyword">mutable</span> <span class="cm-variable">tv_sec</span>: <span class="cm-number">0u32</span>, <span class="cm-keyword">mutable</span> <span class="cm-variable">tv_usec</span>: <span class="cm-number">0u32</span>};
-    <span class="cm-variable-2">libc::</span><span class="cm-variable">gettimeofday</span>(<span class="cm-variable-2">std::ptr::</span><span class="cm-variable">addr_of</span>(<span class="cm-variable">x</span>), <span class="cm-variable-2">std::ptr::</span><span class="cm-variable">null</span>());
+    <span class="cm-variable-2">libc::</span><span class="cm-variable">gettimeofday</span>(<span class="cm-variable-2">ptr::</span><span class="cm-variable">addr_of</span>(<span class="cm-variable">x</span>), <span class="cm-variable-2">ptr::</span><span class="cm-variable">null</span>());
     <span class="cm-keyword">ret</span> (<span class="cm-variable">x</span>.<span class="cm-variable">tv_sec</span> <span class="cm-keyword">as</span> <span class="cm-variable">u64</span>) * <span class="cm-number">1000</span><span class="cm-variable">_000_u64</span> + (<span class="cm-variable">x</span>.<span class="cm-variable">tv_usec</span> <span class="cm-keyword">as</span> <span class="cm-variable">u64</span>);
 }</pre>
 
-<p>The <code>#[link_name = &quot;&quot;]</code> sets the name of the native module to the
+<p>The <code>#[nolink]</code> sets the name of the native module to the
 empty string to prevent the rust compiler from trying to link it.
 The standard C library is already linked with Rust programs.</p>
 
@@ -200,4 +196,4 @@ define a record type with the same contents, and declare
 <p>The second argument to <code>gettimeofday</code> (the time zone) is not used by
 this program, so it simply declares it to be a pointer to the nil
 type. Since null pointer look the same, no matter which type they are
-supposed to point at, this is safe.</p></div><p class="head">Section 10 of the Rust language tutorial.<br><a href="mod.html">« Section 9</a> | <a href="index.html">Index</a> | <a href="task.html">Section 11 »</a></p><p class='head'>Created October 1, 2011, last modified on October 17, 2011</p></body></html>
+supposed to point at, this is safe.</p></div><p class="head">Section 11 of the Rust language tutorial.<br><a href="iface.html">« Section 10</a> | <a href="index.html">Index</a> | <a href="task.html">Section 12 »</a></p><p class='head'>Created October 1, 2011, last modified on  12, 2012</p></body></html>

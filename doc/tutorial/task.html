@@ -1,4 +1,143 @@
 <html><head><link rel='stylesheet' href='style.css' type='text/css'><link rel='stylesheet' href='default.css' type='text/css'><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Tasks</title></head><body>
-<p class="head">Section 11 of the Rust language tutorial.<br><a href="ffi.html">« Section 10</a> | <a href="index.html">Index</a> | <a href="test.html">Section 12 »</a></p><div id="content"><h1>Tasks</h1>
+<p class="head">Section 12 of the Rust language tutorial.<br><a href="ffi.html">« Section 11</a> | <a href="index.html">Index</a> | <a href="test.html">Section 13 »</a></p><div id="content"><h1>Tasks</h1>
 
-<p>FIXME to be written</p></div><p class="head">Section 11 of the Rust language tutorial.<br><a href="ffi.html">« Section 10</a> | <a href="index.html">Index</a> | <a href="test.html">Section 12 »</a></p><p class='head'>Created October 1, 2011</p></body></html>
+<p>Rust supports a system of lightweight tasks, similar to what is found
+in Erlang or other actor systems. Rust tasks communicate via messages
+and do not share data. However, it is possible to send data without
+copying it by making use of <a href="data.html#unique-box">unique boxes</a>, which allow the
+sending task to release ownership of a value, so that the receiving
+task can keep on using it.</p>
+
+<p>NOTE: As Rust evolves, we expect the Task API to grow and change
+somewhat.  The tutorial documents the API as it exists today.</p>
+
+<h2>Spawning a task</h2>
+
+<p>Spawning a task is done using the various spawn functions in the
+module <code>task</code>.  Let&#39;s begin with the simplest one, <code>task::spawn()</code>:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">some_value</span> = <span class="cm-number">22</span>;
+<span class="cm-keyword">let</span> <span class="cm-def">child_task</span> = <span class="cm-variable-2">task::</span><span class="cm-variable">spawn</span> {||
+    <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;This executes in the child task.&quot;</span>);
+    <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-meta">#fmt</span>(<span class="cm-string">&quot;%d&quot;</span>, <span class="cm-variable">some_value</span>));
+};</pre>
+
+<p>The argument to <code>task::spawn()</code> is a <a href="func.html#unique">unique
+closure</a> of type <code>fn~()</code>, meaning that it takes no
+arguments and generates no return value. The effect of <code>task::spawn()</code>
+is to fire up a child task that will execute the closure in parallel
+with the creator. The result is a task id, here stored into the
+variable <code>child_task</code>.</p>
+
+<h2>Ports and channels</h2>
+
+<p>Now that we have spawned a child task, it would be nice if we could
+communicate with it.  This is done by creating a <em>port</em> with an
+associated <em>channel</em>.  A port is simply a location to receive messages
+of a particular type.  A channel is used to send messages to a port.
+For example, imagine we wish to perform two expensive computations
+in parallel.  We might write something like:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">port</span> = <span class="cm-variable-2">comm::</span><span class="cm-variable">port</span>::&lt;<span class="cm-variable-3">int</span>&gt;();
+<span class="cm-keyword">let</span> <span class="cm-def">chan</span> = <span class="cm-variable-2">comm::</span><span class="cm-variable">chan</span>::&lt;<span class="cm-variable-3">int</span>&gt;(<span class="cm-variable">port</span>);
+<span class="cm-keyword">let</span> <span class="cm-def">child_task</span> = <span class="cm-variable-2">task::</span><span class="cm-variable">spawn</span> {||
+    <span class="cm-keyword">let</span> <span class="cm-def">result</span> = <span class="cm-variable">some_expensive_computation</span>();
+    <span class="cm-variable-2">comm::</span><span class="cm-variable">send</span>(<span class="cm-variable">chan</span>, <span class="cm-variable">result</span>);
+};
+<span class="cm-variable">some_other_expensive_computation</span>();
+<span class="cm-keyword">let</span> <span class="cm-def">result</span> = <span class="cm-variable-2">comm::</span><span class="cm-variable">recv</span>(<span class="cm-variable">port</span>);</pre>
+
+<p>Let&#39;s walk through this code line-by-line.  The first line creates a
+port for receiving integers:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">port</span> = <span class="cm-variable-2">comm::</span><span class="cm-variable">port</span>::&lt;<span class="cm-variable-3">int</span>&gt;();</pre>
+
+<p>This port is where we will receive the message from the child task
+once it is complete.  The second line creates a channel for sending
+integers to the port <code>port</code>:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">chan</span> = <span class="cm-variable-2">comm::</span><span class="cm-variable">chan</span>::&lt;<span class="cm-variable-3">int</span>&gt;(<span class="cm-variable">port</span>);</pre>
+
+<p>The channel will be used by the child to send a message to the port.
+The next statement actually spawns the child:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">child_task</span> = <span class="cm-variable-2">task::</span><span class="cm-variable">spawn</span> {||
+    <span class="cm-keyword">let</span> <span class="cm-def">result</span> = <span class="cm-variable">some_expensive_computation</span>();
+    <span class="cm-variable-2">comm::</span><span class="cm-variable">send</span>(<span class="cm-variable">chan</span>, <span class="cm-variable">result</span>);
+};</pre>
+
+<p>This child will perform the expensive computation send the result
+over the channel.  Finally, the parent continues by performing
+some other expensive computation and then waiting for the child&#39;s result
+to arrive on the port:</p>
+
+<pre class="cm-s-default"><span class="cm-variable">some_other_expensive_computation</span>();
+<span class="cm-keyword">let</span> <span class="cm-def">result</span> = <span class="cm-variable-2">comm::</span><span class="cm-variable">recv</span>(<span class="cm-variable">port</span>);</pre>
+
+<h2>Creating a task with a bi-directional communication path</h2>
+
+<p>A very common thing to do is to spawn a child task where the parent
+and child both need to exchange messages with each other. The function
+<code>task::spawn_connected()</code> supports this pattern. We&#39;ll look briefly at
+how it is used.</p>
+
+<p>To see how <code>spawn_connected()</code> works, we will create a child task
+which receives <code>uint</code> messages, converts them to a string, and sends
+the string in response.  The child terminates when <code>0</code> is received.
+Here is the function which implements the child task:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">stringifier</span>(<span class="cm-def">from_par</span>: <span class="cm-variable-2">comm::</span><span class="cm-variable-3">port</span>&lt;<span class="cm-keyword">uint</span>&gt;,
+               <span class="cm-def">to_par</span>: <span class="cm-variable-2">comm::</span><span class="cm-variable-3">chan</span>&lt;<span class="cm-keyword">str</span>&gt;) {
+    <span class="cm-keyword">let</span> <span class="cm-def">value</span>: <span class="cm-keyword">uint</span>;
+    <span class="cm-keyword">do</span> {
+        <span class="cm-variable">value</span> = <span class="cm-variable-2">comm::</span><span class="cm-variable">recv</span>(<span class="cm-variable">from_par</span>);
+        <span class="cm-variable-2">comm::</span><span class="cm-variable">send</span>(<span class="cm-variable">to_par</span>, <span class="cm-variable-2">uint::</span><span class="cm-variable">to_str</span>(<span class="cm-variable">value</span>, <span class="cm-number">10</span><span class="cm-variable">u</span>));
+    } <span class="cm-keyword">while</span> <span class="cm-variable">value</span> != <span class="cm-number">0</span><span class="cm-variable">u</span>;
+}</pre>
+
+<p>You can see that the function takes two parameters.  The first is a
+port used to receive messages from the parent, and the second is a
+channel used to send messages to the parent.  The body itself simply
+loops, reading from the <code>from_par</code> port and then sending its response
+to the <code>to_par</code> channel.  The actual response itself is simply the
+strified version of the received value, <code>uint::to_str(value)</code>.</p>
+
+<p>Here is the code for the parent task:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">main</span>() {
+    <span class="cm-keyword">let</span> <span class="cm-def">t</span> = <span class="cm-variable-2">task::</span><span class="cm-variable">spawn_connected</span>(<span class="cm-variable">stringifier</span>);
+    <span class="cm-variable-2">comm::</span><span class="cm-variable">send</span>(<span class="cm-variable">t</span>.<span class="cm-variable">to_child</span>, <span class="cm-number">22</span><span class="cm-variable">u</span>);
+    <span class="cm-keyword">assert</span> <span class="cm-variable-2">comm::</span><span class="cm-variable">recv</span>(<span class="cm-variable">t</span>.<span class="cm-variable">from_child</span>) == <span class="cm-string">&quot;22&quot;</span>;
+    <span class="cm-variable-2">comm::</span><span class="cm-variable">send</span>(<span class="cm-variable">t</span>.<span class="cm-variable">to_child</span>, <span class="cm-number">23</span><span class="cm-variable">u</span>);
+    <span class="cm-keyword">assert</span> <span class="cm-variable-2">comm::</span><span class="cm-variable">recv</span>(<span class="cm-variable">t</span>.<span class="cm-variable">from_child</span>) == <span class="cm-string">&quot;23&quot;</span>;
+    <span class="cm-variable-2">comm::</span><span class="cm-variable">send</span>(<span class="cm-variable">t</span>.<span class="cm-variable">to_child</span>, <span class="cm-number">0</span><span class="cm-variable">u</span>);
+    <span class="cm-keyword">assert</span> <span class="cm-variable-2">comm::</span><span class="cm-variable">recv</span>(<span class="cm-variable">t</span>.<span class="cm-variable">from_child</span>) == <span class="cm-string">&quot;0&quot;</span>;
+}</pre>
+
+<p>The call to <code>spawn_connected()</code> on the first line will instantiate the
+various ports and channels and startup the child task.  The returned
+value, <code>t</code>, is a record of type <code>task::connected_task&lt;uint,str&gt;</code>.  In
+addition to the task id of the child, this record defines two fields,
+<code>from_child</code> and <code>to_child</code>, which contain the port and channel
+respectively for communicating with the child.  Those fields are used
+here to send and receive three messages from the child task.</p>
+
+<h2>Joining a task</h2>
+
+<p>The function <code>spawn_joinable()</code> is used to spawn a task that can later
+be joined. This is implemented by having the child task send a message
+when it has completed (either successfully or by failing). Therefore,
+<code>spawn_joinable()</code> returns a structure containing both the task ID and
+the port where this message will be sent---this structure type is
+called <code>task::joinable_task</code>. The structure can be passed to
+<code>task::join()</code>, which simply blocks on the port, waiting to receive
+the message from the child task.</p>
+
+<h2>The supervisor relationship</h2>
+
+<p>By default, failures in Rust propagate upward through the task tree.
+We say that each task is supervised by its parent, meaning that if the
+task fails, that failure is propagated to the parent task, which will
+fail sometime later.  This propagation can be disabled by using the
+function <code>task::unsupervise()</code>, which disables error propagation from
+the current task to its parent.</p></div><p class="head">Section 12 of the Rust language tutorial.<br><a href="ffi.html">« Section 11</a> | <a href="index.html">Index</a> | <a href="test.html">Section 13 »</a></p><p class='head'>Created October 1, 2011, last modified on  12, 2012</p></body></html>

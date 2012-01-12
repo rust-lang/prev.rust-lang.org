@@ -12,7 +12,7 @@ we have a file <code>hello.rs</code> containing this program:</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">use</span> <span class="cm-variable">std</span>;
 <span class="cm-keyword">fn</span> <span class="cm-def">main</span>(<span class="cm-def">args</span>: [<span class="cm-keyword">str</span>]) {
-    <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;hello world from &quot;</span> + <span class="cm-variable">args</span>[<span class="cm-number">0</span>] + <span class="cm-string">&quot;!&quot;</span>);
+    <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;hello world from &#39;&quot;</span> + <span class="cm-variable">args</span>[<span class="cm-number">0</span>] + <span class="cm-string">&quot;&#39;!&quot;</span>);
 }</pre>
 
 <p>If the Rust compiler was installed successfully, running <code>rustc
@@ -22,9 +22,9 @@ hello.rs</code> will produce a binary called <code>hello</code> (or <code>hello.
 <code>use std</code> line), and then compile it, you&#39;ll see an error message like
 this:</p>
 
-<pre class="cm-s-default"><span class="cm-variable">hello</span>.<span class="cm-variable">rs</span>:<span class="cm-number">2</span>:<span class="cm-number">4</span>: <span class="cm-number">2</span>:<span class="cm-number">20</span> <span class="cm-variable">error</span>: <span class="cm-variable">unresolved</span> <span class="cm-variable">modulename</span>: <span class="cm-variable">std</span>
-<span class="cm-variable">hello</span>.<span class="cm-variable">rs</span>:<span class="cm-number">2</span>     <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;hello world!&quot;</span>);
-               <span class="cm-variable">^~~~~~~~~~~~~~~~</span></pre>
+<pre>hello.rs:2:4: 2:20 error: unresolved modulename: std
+hello.rs:2     std::io::println(&quot;hello world!&quot;);
+               ^~~~~~~~~~~~~~~~</pre>
 
 <p>The Rust compiler tries to provide useful information when it runs
 into an error.</p>
@@ -39,8 +39,8 @@ live inside a function.</p>
 
 <p>Rust programs can also be compiled as libraries, and included in other
 programs. The <code>use std</code> directive that appears at the top of a lot of
-examples imports the standard library. This is described in more
-detail <a href="mod.html">later on</a>.</p>
+examples imports the <a href="mod.html">standard library]<a href="http://doc.rust-lang.org/doc/std/index/General.html">std</a>. This is described in more
+detail [later on</a>.</p>
 
 <h2>Editing Rust code</h2>
 
@@ -49,4 +49,4 @@ distribution under <code>src/etc/vim/</code>. An Emacs mode can be found at
 <a href="https://github.com/marijnh/rust-mode">https://github.com/marijnh/rust-mode</a>.</p>
 
 <p>Other editors are not provided for yet. If you end up writing a Rust
-mode for your favorite editor, let us know so that we can link to it.</p></div><p class="head">Section 2 of the Rust language tutorial.<br><a href="intro.html">« Section 1</a> | <a href="index.html">Index</a> | <a href="syntax.html">Section 3 »</a></p><p class='head'>Created September 31, 2011, last modified on October 1, 2011</p></body></html>
+mode for your favorite editor, let us know so that we can link to it.</p></div><p class="head">Section 2 of the Rust language tutorial.<br><a href="intro.html">« Section 1</a> | <a href="index.html">Index</a> | <a href="syntax.html">Section 3 »</a></p><p class='head'>Created September 31, 2011, last modified on  12, 2012</p></body></html>

@@ -1,8 +1,8 @@
 <html><head><link rel='stylesheet' href='style.css' type='text/css'><link rel='stylesheet' href='default.css' type='text/css'><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Modules and crates</title></head><body>
-<p class="head">Section 9 of the Rust language tutorial.<br><a href="generic.html">« Section 8</a> | <a href="index.html">Index</a> | <a href="ffi.html">Section 10 »</a></p><div id="content"><h1>Modules and crates</h1>
+<p class="head">Section 9 of the Rust language tutorial.<br><a href="generic.html">« Section 8</a> | <a href="index.html">Index</a> | <a href="iface.html">Section 10 »</a></p><div id="content"><h1>Modules and crates</h1>
 
 <p>The Rust namespace is divided into modules. Each source file starts
-with its own, empty module.</p>
+with its own module.</p>
 
 <h2>Local modules</h2>
 
@@ -16,7 +16,7 @@ explicitly import it, you must refer to it by its long name,
     <span class="cm-keyword">fn</span> <span class="cm-def">cow</span>() -&gt; <span class="cm-keyword">str</span> { <span class="cm-string">&quot;mooo&quot;</span> }
 }
 <span class="cm-keyword">fn</span> <span class="cm-def">main</span>() {
-    <span class="cm-keyword">log_err</span> <span class="cm-variable-2">farm::</span><span class="cm-variable">chicken</span>();
+    <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-variable-2">farm::</span><span class="cm-variable">chicken</span>());
 }</pre>
 
 <p>Modules can be nested to arbitrary depth.</p>
@@ -48,7 +48,7 @@ file, compile them all together, and, depending on the presence of the
 
 <p>The <code>#[link(...)]</code> part provides meta information about the module,
 which other crates can use to load the right module. More about that
-in a moment.</p>
+later.</p>
 
 <p>To have a nested directory structure for your source files, you can
 nest mods in your <code>.rc</code> file:</p>
@@ -67,15 +67,12 @@ content to the <code>poultry</code> module itself.</p>
 
 <p>Having compiled a crate with <code>--lib</code>, you can use it in another crate
 with a <code>use</code> directive. We&#39;ve already seen <code>use std</code> in several of the
-examples, which loads in the standard library.</p>
+examples, which loads in the <a href="http://doc.rust-lang.org/doc/std/index/General.html">standard library</a>.</p>
 
 <p><code>use</code> directives can appear in a crate file, or at the top level of a
 single-file <code>.rs</code> crate. They will cause the compiler to search its
 library search path (which you can extend with <code>-L</code> switch) for a Rust
-crate library with the right name. This name is deduced from the crate
-name in a platform-dependent way. The <code>farm</code> library will be called
-<code>farm.dll</code> on Windows, <code>libfarm.so</code> on Linux, and <code>libfarm.dylib</code> on
-OS X.</p>
+crate library with the right name.</p>
 
 <p>It is possible to provide more specific information when using an
 external crate.</p>
@@ -97,6 +94,14 @@ local name <code>myfarm</code>.</p>
 unless the compiler can find another crate with the right version
 somewhere, it will complain that no matching crate was found.</p>
 
+<h2>The core library</h2>
+
+<p>A set of basic library routines, mostly related to built-in datatypes
+and the task system, are always implicitly linked and included in any
+Rust program, unless the <code>--no-core</code> compiler switch is given.</p>
+
+<p>This library is document <a href="http://doc.rust-lang.org/doc/core/index/General.html">here</a>.</p>
+
 <h2>A minimal example</h2>
 
 <p>Now for something that you can actually compile yourself. We have
@@ -104,25 +109,24 @@ these two files:</p>
 
 <pre class="cm-s-default"><span class="cm-comment">// mylib.rs</span>
 #[<span class="cm-variable">link</span>(<span class="cm-variable">name</span> = <span class="cm-string">&quot;mylib&quot;</span>, <span class="cm-variable">vers</span> = <span class="cm-string">&quot;1.0&quot;</span>)];
-<span class="cm-keyword">fn</span> <span class="cm-def">world</span>() -&gt; <span class="cm-keyword">str</span> { <span class="cm-string">&quot;world&quot;</span> }</pre>
-
-<pre class="cm-s-default"><span class="cm-comment">// main.rs</span>
+<span class="cm-keyword">fn</span> <span class="cm-def">world</span>() -&gt; <span class="cm-keyword">str</span> { <span class="cm-string">&quot;world&quot;</span> }
+<span class="cm-comment">// main.rs</span>
 <span class="cm-keyword">use</span> <span class="cm-variable">mylib</span>;
-<span class="cm-keyword">fn</span> <span class="cm-def">main</span>() { <span class="cm-keyword">log_err</span> <span class="cm-string">&quot;hello &quot;</span> + <span class="cm-variable-2">mylib::</span><span class="cm-variable">world</span>(); }</pre>
+<span class="cm-keyword">fn</span> <span class="cm-def">main</span>() { <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-string">&quot;hello &quot;</span> + <span class="cm-variable-2">mylib::</span><span class="cm-variable">world</span>()); }</pre>
 
 <p>Now compile and run like this (adjust to your platform if necessary):</p>
 
-<pre class="cm-s-default">&gt; <span class="cm-variable">rustc</span> --<span class="cm-variable">lib</span> <span class="cm-variable">mylib</span>.<span class="cm-variable">rs</span>
-&gt; <span class="cm-variable">rustc</span> <span class="cm-variable">main</span>.<span class="cm-variable">rs</span> -<span class="cm-variable">L</span> .
-&gt; .<span class="cm-variable">/main</span>
-<span class="cm-string">&quot;hello world&quot;</span></pre>
+<pre>&gt; rustc --lib mylib.rs
+&gt; rustc main.rs -L .
+&gt; ./main
+&quot;hello world&quot;</pre>
 
 <h2>Importing</h2>
 
 <p>When using identifiers from other modules, it can get tiresome to
 qualify them with the full module path every time (especially when
 that path is several modules deep). Rust allows you to import
-identifiers at the top of a file or module.</p>
+identifiers at the top of a file, module, or block.</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">use</span> <span class="cm-variable">std</span>;
 <span class="cm-keyword">import</span> <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>;
@@ -131,12 +135,11 @@ identifiers at the top of a file or module.</p>
 }</pre>
 
 <p>It is also possible to import just the name of a module (<code>import
-std::io;</code>, then use <code>io::println</code>), import all identifiers exported by
-a given module (<code>import std::io::*</code>), or to import a specific set of
-identifiers (<code>import std::math::{min, max, pi}</code>).</p>
+std::io;</code>, then use <code>io::println</code>), to import all identifiers exported
+by a given module (<code>import std::io::*</code>), or to import a specific set
+of identifiers (<code>import math::{min, max, pi}</code>).</p>
 
-<p>It is also possible to rename an identifier when importing, using the
-<code>=</code> operator:</p>
+<p>You can rename an identifier when importing using the <code>=</code> operator:</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">import</span> <span class="cm-variable">prnt</span> = <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>;</pre>
 
@@ -148,8 +151,8 @@ restricted with <code>export</code> directives at the top of the module or file.
 <pre class="cm-s-default"><span class="cm-keyword">mod</span> <span class="cm-def">enc</span> {
     <span class="cm-keyword">export</span> <span class="cm-variable">encrypt</span>, <span class="cm-variable">decrypt</span>;
     <span class="cm-keyword">const</span> <span class="cm-def">super_secret_number</span>: <span class="cm-keyword">int</span> = <span class="cm-number">10</span>;
-    <span class="cm-keyword">fn</span> <span class="cm-def">encrypt</span>(<span class="cm-def">n</span>: <span class="cm-keyword">int</span>) { <span class="cm-variable">n</span> + <span class="cm-variable">super_secret_number</span> }
-    <span class="cm-keyword">fn</span> <span class="cm-def">decrypt</span>(<span class="cm-def">n</span>: <span class="cm-keyword">int</span>) { <span class="cm-variable">n</span> - <span class="cm-variable">super_secret_number</span> }
+    <span class="cm-keyword">fn</span> <span class="cm-def">encrypt</span>(<span class="cm-def">n</span>: <span class="cm-keyword">int</span>) -&gt; <span class="cm-keyword">int</span> { <span class="cm-variable">n</span> + <span class="cm-variable">super_secret_number</span> }
+    <span class="cm-keyword">fn</span> <span class="cm-def">decrypt</span>(<span class="cm-def">n</span>: <span class="cm-keyword">int</span>) -&gt; <span class="cm-keyword">int</span> { <span class="cm-variable">n</span> - <span class="cm-variable">super_secret_number</span> }
 }</pre>
 
 <p>This defines a rock-solid encryption algorithm. Code outside of the
@@ -172,7 +175,7 @@ and one for values. This means that this code is valid:</p>
 
 <p>You don&#39;t want to write things like that, but it <em>is</em> very practical
 to not have to worry about name clashes between types, values, and
-modules. This allows us to have a module <code>std::str</code>, for example, even
+modules. This allows us to have a module <code>core::str</code>, for example, even
 though <code>str</code> is a built-in type name.</p>
 
 <h2>Resolution</h2>
@@ -221,4 +224,4 @@ recent definition is used.</p>
 
 <p>This makes it possible to rebind a variable without actually mutating
 it, which is mostly useful for destructuring (which can rebind, but
-not assign).</p></div><p class="head">Section 9 of the Rust language tutorial.<br><a href="generic.html">« Section 8</a> | <a href="index.html">Index</a> | <a href="ffi.html">Section 10 »</a></p><p class='head'>Created September 31, 2011, last modified on October 1, 2011</p></body></html>
+not assign).</p></div><p class="head">Section 9 of the Rust language tutorial.<br><a href="generic.html">« Section 8</a> | <a href="index.html">Index</a> | <a href="iface.html">Section 10 »</a></p><p class='head'>Created September 31, 2011, last modified on  12, 2012</p></body></html>

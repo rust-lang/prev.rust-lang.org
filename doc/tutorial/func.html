@@ -12,7 +12,7 @@ also return a value by having its top level block produce an
 expression (by omitting the final semicolon).</p>
 
 <p>Some functions (such as the C function <code>exit</code>) never return normally.
-In Rust, these are annotated with return type <code>!</code>:</p>
+In Rust, these are annotated with the pseudo-return type &#39;<code>!</code>&#39;:</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">dead_end</span>() -&gt; ! { <span class="cm-variable">fail</span>; }</pre>
 
@@ -26,58 +26,113 @@ expected to return.</p>
 
 <h2>Closures</h2>
 
-<p>Normal Rust functions (declared with <code>fn</code>) do not close over their
-environment. A <code>lambda</code> expression can be used to create a closure.</p>
+<p>Named functions, like those in the previous section, do not close over
+their environment. Rust also includes support for closures, which are
+functions that can access variables in the scope in which they are
+created.</p>
 
-<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">make_plus_function</span>(<span class="cm-def">x</span>: <span class="cm-keyword">int</span>) -&gt; <span class="cm-variable-3">lambda</span>(<span class="cm-def">int</span>) -&gt; <span class="cm-keyword">int</span> {
-    <span class="cm-keyword">lambda</span>(<span class="cm-def">y</span>: <span class="cm-keyword">int</span>) -&gt; <span class="cm-keyword">int</span> { <span class="cm-variable">x</span> + <span class="cm-variable">y</span> }
+<p>There are several forms of closures, each with its own role. The most
+common type is called a &#39;block&#39;, this is a closure which has full
+access to its environment.</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">call_block_with_ten</span>(<span class="cm-def">b</span>: <span class="cm-keyword">block</span>(<span class="cm-keyword">int</span>)) { <span class="cm-variable">b</span>(<span class="cm-number">10</span>); }
+<span class="cm-keyword">let</span> <span class="cm-def">x</span> = <span class="cm-number">20</span>;    
+<span class="cm-variable">call_block_with_ten</span>({|<span class="cm-def">arg</span>|
+    <span class="cm-meta">#info</span>(<span class="cm-string">&quot;x=%d, arg=%d&quot;</span>, <span class="cm-variable">x</span>, <span class="cm-variable">arg</span>);
+});</pre>
+
+<p>This defines a function that accepts a block, and then calls it with a
+simple block that executes a log statement, accessing both its
+argument and the variable <code>x</code> from its environment.</p>
+
+<p>Blocks can only be used in a restricted way, because it is not allowed
+to survive the scope in which it was created. They are allowed to
+appear in function argument position and in call position, but nowhere
+else.</p>
+
+<h3>Boxed closures</h3>
+
+<p>When you need to store a closure in a data structure, a block will not
+do, since the compiler will refuse to let you store it. For this
+purpose, Rust provides a type of closure that has an arbitrary
+lifetime, written <code>fn@</code> (boxed closure, analogous to the <code>@</code> pointer
+type described in the next section).</p>
+
+<p>A boxed closure does not directly access its environment, but merely
+copies out the values that it closes over into a private data
+structure. This means that it can not assign to these variables, and
+will not &#39;see&#39; updates to them.</p>
+
+<p>This code creates a closure that adds a given string to its argument,
+returns it from a function, and then calls it:</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">use</span> <span class="cm-variable">std</span>;
+<span class="cm-keyword">fn</span> <span class="cm-def">mk_appender</span>(<span class="cm-def">suffix</span>: <span class="cm-keyword">str</span>) -&gt; <span class="cm-keyword">fn</span>@(<span class="cm-def">str</span>) -&gt; <span class="cm-keyword">str</span> {
+    <span class="cm-keyword">let</span> <span class="cm-def">f</span> = <span class="cm-keyword">fn</span>@(<span class="cm-def">s</span>: <span class="cm-keyword">str</span>) -&gt; <span class="cm-keyword">str</span> { <span class="cm-variable">s</span> + <span class="cm-variable">suffix</span> };
+    <span class="cm-keyword">ret</span> <span class="cm-variable">f</span>;
 }
-<span class="cm-keyword">let</span> <span class="cm-def">plus_two</span> = <span class="cm-variable">make_plus_function</span>(<span class="cm-number">2</span>);
-<span class="cm-keyword">assert</span> <span class="cm-variable">plus_two</span>(<span class="cm-number">3</span>) == <span class="cm-number">5</span>;</pre>
+<span class="cm-keyword">fn</span> <span class="cm-def">main</span>() {
+    <span class="cm-keyword">let</span> <span class="cm-def">shout</span> = <span class="cm-variable">mk_appender</span>(<span class="cm-string">&quot;!&quot;</span>);
+    <span class="cm-variable-2">std::io::</span><span class="cm-variable">println</span>(<span class="cm-variable">shout</span>(<span class="cm-string">&quot;hey ho, let&#39;s go&quot;</span>));
+}</pre>
 
-<p>A <code>lambda</code> function <em>copies</em> its environment (in this case, the
-binding for <code>x</code>). It can not mutate the closed-over bindings, and will
-not see changes made to these variables after the <code>lambda</code> was
-evaluated. <code>lambda</code>s can be put in data structures and passed around
-without limitation.</p>
+<h3>Closure compatibility</h3>
 
-<p>The type of a closure is <code>lambda(args) -&gt; type</code>, as opposed to
-<code>fn(args) -&gt; type</code>. The <code>fn</code> type stands for &#39;bare&#39; functions, with no
-closure attached. Keep this in mind when writing higher-order
-functions.</p>
+<p>A nice property of Rust closures is that you can pass any kind of
+closure (as long as the arguments and return types match) to functions
+that expect a <code>block</code>. Thus, when writing a higher-order function that
+wants to do nothing with its function argument beyond calling it, you
+should almost always specify the type of that argument as <code>block</code>, so
+that callers have the flexibility to pass whatever they want.</p>
 
-<p>A different form of closure is the block. Blocks are written like they
-are in Ruby: <code>{|x| x + y}</code>, the formal parameters between pipes,
-followed by the function body. They are stack-allocated and properly
-close over their environment (they see updates to closed over
-variables, for example). But blocks can only be used in a limited set
-of circumstances. They can be passed to other functions, but not
-stored in data structures or returned.</p>
+<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">call_twice</span>(<span class="cm-def">f</span>: <span class="cm-keyword">block</span>()) { <span class="cm-variable">f</span>(); <span class="cm-variable">f</span>(); }
+<span class="cm-variable">call_twice</span>({|| <span class="cm-string">&quot;I am a block&quot;</span>; });
+<span class="cm-variable">call_twice</span>(<span class="cm-keyword">fn</span>@() { <span class="cm-string">&quot;I am a boxed closure&quot;</span>; });
+<span class="cm-keyword">fn</span> <span class="cm-def">bare_function</span>() { <span class="cm-string">&quot;I am a plain function&quot;</span>; }
+<span class="cm-variable">call_twice</span>(<span class="cm-variable">bare_function</span>);</pre>
 
-<pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">map_int</span>(<span class="cm-def">f</span>: <span class="cm-keyword">block</span>(<span class="cm-keyword">int</span>) -&gt; <span class="cm-keyword">int</span>, <span class="cm-def">vec</span>: [<span class="cm-keyword">int</span>]) -&gt; [<span class="cm-keyword">int</span>] {
-    <span class="cm-keyword">let</span> <span class="cm-def">result</span> = [];
-    <span class="cm-keyword">for</span> <span class="cm-def">i</span> <span class="cm-keyword">in</span> <span class="cm-variable">vec</span> { <span class="cm-variable">result</span> += [<span class="cm-variable">f</span>(<span class="cm-variable">i</span>)]; }
-    <span class="cm-keyword">ret</span> <span class="cm-variable">result</span>;
-}
-<span class="cm-variable">map_int</span>({|<span class="cm-def">x</span>| <span class="cm-variable">x</span> + <span class="cm-number">1</span> }, [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>]);</pre>
+<h3>Unique closures</h3>
 
-<p>The type of blocks is spelled <code>block(args) -&gt; type</code>. Both closures and
-bare functions are automatically convert to <code>block</code>s when appropriate.
-Most higher-order functions should take their function arguments as
-<code>block</code>s.</p>
+<a name="unique"></a>
 
-<p>A block with no arguments is written <code>{|| body(); }</code>—you can not leave
-off the pipes.</p>
+<p>Unique closures, written <code>fn~</code> in analogy to the <code>~</code> pointer type (see
+next section), hold on to things that can safely be sent between
+processes. They copy the values they close over, much like boxed
+closures, but they also &#39;own&#39; them—meaning no other code can access
+them. Unique closures mostly exist to for spawning new
+<a href="task.html">tasks</a>.</p>
+
+<h3>Shorthand syntax</h3>
+
+<p>The compact syntax used for blocks (<code>{|arg1, arg2| body}</code>) can also
+be used to express boxed and unique closures in situations where the
+closure style can be unambiguously derived from the context. Most
+notably, when calling a higher-order function you do not have to use
+the long-hand syntax for the function you&#39;re passing, since the
+compiler can look at the argument type to find out what the parameter
+types are.</p>
+
+<p>As a further simplification, if the final parameter to a function is a
+closure, the closure need not be placed within parenthesis. You could,
+for example, write...</p>
+
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">doubled</span> = <span class="cm-variable-2">vec::</span><span class="cm-variable">map</span>([<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>]) {|<span class="cm-def">x</span>| <span class="cm-variable">x</span>*<span class="cm-number">2</span>};</pre>
+
+<p><code>vec::map</code> is a function in the core library that applies its last
+argument to every element of a vector, producing a new vector.</p>
+
+<p>Even when a closure takes no parameters, you must still write the bars
+for the parameter list, as in <code>{|| ...}</code>.</p>
 
 <h2>Binding</h2>
 
 <p>Partial application is done using the <code>bind</code> keyword in Rust.</p>
 
-<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">daynum</span> = <span class="cm-keyword">bind</span> <span class="cm-variable-2">std::vec::</span><span class="cm-variable">position</span>(<span class="cm-variable">_</span>, [<span class="cm-string">&quot;mo&quot;</span>, <span class="cm-string">&quot;tu&quot;</span>, <span class="cm-string">&quot;we&quot;</span>, <span class="cm-string">&quot;do&quot;</span>,
-                                         <span class="cm-string">&quot;fr&quot;</span>, <span class="cm-string">&quot;sa&quot;</span>, <span class="cm-string">&quot;su&quot;</span>]);</pre>
+<pre class="cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">daynum</span> = <span class="cm-keyword">bind</span> <span class="cm-variable-2">vec::</span><span class="cm-variable">position</span>(<span class="cm-variable">_</span>, [<span class="cm-string">&quot;mo&quot;</span>, <span class="cm-string">&quot;tu&quot;</span>, <span class="cm-string">&quot;we&quot;</span>, <span class="cm-string">&quot;do&quot;</span>,
+                                    <span class="cm-string">&quot;fr&quot;</span>, <span class="cm-string">&quot;sa&quot;</span>, <span class="cm-string">&quot;su&quot;</span>]);</pre>
 
-<p>Binding a function produces a closure (<code>lambda</code> type) in which some of
-the arguments to the bound function have already been provided.
+<p>Binding a function produces a boxed closure (<code>fn@</code> type) in which some
+of the arguments to the bound function have already been provided.
 <code>daynum</code> will be a function taking a single string argument, and
 returning the day of the week that string corresponds to (if any).</p>
 
@@ -88,7 +143,7 @@ iteration constructs. For example, this one iterates over a vector
 of integers backwards:</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">for_rev</span>(<span class="cm-def">v</span>: [<span class="cm-keyword">int</span>], <span class="cm-def">act</span>: <span class="cm-keyword">block</span>(<span class="cm-keyword">int</span>)) {
-    <span class="cm-keyword">let</span> <span class="cm-def">i</span> = <span class="cm-variable-2">std::vec::</span><span class="cm-variable">len</span>(<span class="cm-variable">v</span>);
+    <span class="cm-keyword">let</span> <span class="cm-def">i</span> = <span class="cm-variable-2">vec::</span><span class="cm-variable">len</span>(<span class="cm-variable">v</span>);
     <span class="cm-keyword">while</span> (<span class="cm-variable">i</span> &gt; <span class="cm-number">0</span><span class="cm-variable">u</span>) {
         <span class="cm-variable">i</span> -= <span class="cm-number">1</span><span class="cm-variable">u</span>;
         <span class="cm-variable">act</span>(<span class="cm-variable">v</span>[<span class="cm-variable">i</span>]);
@@ -97,12 +152,15 @@ of integers backwards:</p>
 
 <p>To run such an iteration, you could do this:</p>
 
-<pre class="cm-s-default"><span class="cm-variable">for_rev</span>([<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>], {|<span class="cm-def">n</span>| <span class="cm-keyword">log</span> <span class="cm-variable">n</span>; });</pre>
+<pre class="cm-s-default"><span class="cm-variable">for_rev</span>([<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>], {|<span class="cm-def">n</span>| <span class="cm-keyword">log</span>(<span class="cm-variable">error</span>, <span class="cm-variable">n</span>); });</pre>
 
-<p>But Rust allows a more pleasant syntax for this situation, with the
-loop block moved out of the parenthesis and the final semicolon
-omitted:</p>
+<p>Making use of the shorthand where a final closure argument can be
+moved outside of the parentheses permits the following, which
+looks quite like a normal loop:</p>
 
 <pre class="cm-s-default"><span class="cm-variable">for_rev</span>([<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>]) {|<span class="cm-def">n</span>|
-    <span class="cm-keyword">log</span> <span class="cm-variable">n</span>;
-}</pre></div><p class="head">Section 5 of the Rust language tutorial.<br><a href="control.html">« Section 4</a> | <a href="index.html">Index</a> | <a href="data.html">Section 6 »</a></p><p class='head'>Created September 31, 2011, last modified on October 2, 2011</p></body></html>
+    <span class="cm-keyword">log</span>(<span class="cm-variable">error</span>, <span class="cm-variable">n</span>);
+}</pre>
+
+<p>Note that, because <code>for_rev()</code> returns unit type, no semicolon is
+needed when the final closure is pulled outside of the parentheses.</p></div><p class="head">Section 5 of the Rust language tutorial.<br><a href="control.html">« Section 4</a> | <a href="index.html">Index</a> | <a href="data.html">Section 6 »</a></p><p class='head'>Created September 31, 2011, last modified on  12, 2012</p></body></html>
