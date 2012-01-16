@@ -102,6 +102,24 @@ equivalent to a C enum:</p>
 <p>This will define <code>north</code>, <code>east</code>, <code>south</code>, and <code>west</code> as constants,
 all of which have type <code>direction</code>.</p>
 
+<p>When the enum is is C like, that is none of the variants have
+parameters, it is possible to explicit set the discriminator values to
+an integer value:</p>
+
+<pre class="cm-s-default"><span class="cm-variable">enum</span> <span class="cm-variable">color</span> {
+  <span class="cm-variable">red</span> = <span class="cm-number">0xff0000</span>;
+  <span class="cm-variable">green</span> = <span class="cm-number">0x00ff00</span>;
+  <span class="cm-variable">blue</span> = <span class="cm-number">0x0000ff</span>;
+}</pre>
+
+<p>If an explicit discriminator is not specified for a variant, the value
+defaults to the value of the previous variant plus one.  If the first
+variant does not have a discriminator, it defaults to 0.  For example,
+the value of <code>north</code> is 0, <code>east</code> is 1, etc.</p>
+
+<p>When an enum is C-like the <code>as</code> cast operator can be used to get the
+discriminator&#39;s value.</p>
+
 <a name="single_variant_enum"></a>
 
 <p>There is a special case for enums with a single variant. These are
@@ -308,4 +326,4 @@ their box is cleaned up), their body runs. In the example above, this
 would cause the given file descriptor to be closed.</p>
 
 <p>NOTE: We&#39;re considering alternative approaches for data types with
-destructors. Resources might go away in the future.</p></div><p class="head">Section 6 of the Rust language tutorial.<br><a href="func.html">« Section 5</a> | <a href="index.html">Index</a> | <a href="args.html">Section 7 »</a></p><p class='head'>Created September 31, 2011, last modified on  12, 2012</p></body></html>
+destructors. Resources might go away in the future.</p></div><p class="head">Section 6 of the Rust language tutorial.<br><a href="func.html">« Section 5</a> | <a href="index.html">Index</a> | <a href="args.html">Section 7 »</a></p><p class='head'>Created September 31, 2011, last modified on  16, 2012</p></body></html>

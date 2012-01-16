@@ -18,7 +18,7 @@ dot notation: <code>self.foo(arg1, arg2)</code>.</p>
 <p>For example, we could declare the interface <code>to_str</code> for things that
 can be converted to a string, with a single method of the same name:</p>
 
-<pre class="cm-s-default"><span class="cm-keyword">iface</span> <span class="cm-variable">to_str</span> {
+<pre class="cm-s-default"><span class="cm-keyword">iface</span> <span class="cm-def">to_str</span> {
     <span class="cm-keyword">fn</span> <span class="cm-def">to_str</span>() -&gt; <span class="cm-keyword">str</span>;
 }</pre>
 
@@ -28,11 +28,11 @@ can be converted to a string, with a single method of the same name:</p>
 is used. This defines implementations of <code>to_str</code> for the <code>int</code> and
 <code>str</code> types.</p>
 
-<pre class="cm-s-default"><span class="cm-keyword">impl</span> <span class="cm-variable">of</span> <span class="cm-variable">to_str</span> <span class="cm-keyword">for</span> <span class="cm-def">int</span> {
-    <span class="cm-keyword">fn</span> <span class="cm-def">to_str</span>() -&gt; <span class="cm-keyword">str</span> { <span class="cm-variable-2">int::</span><span class="cm-variable">to_str</span>(<span class="cm-variable">self</span>, <span class="cm-number">10</span><span class="cm-variable">u</span>) }
+<pre class="cm-s-default"><span class="cm-keyword">impl</span> <span class="cm-keyword">of</span> <span class="cm-variable-3">to_str</span> <span class="cm-keyword">for</span> <span class="cm-variable-3">int</span> {
+    <span class="cm-keyword">fn</span> <span class="cm-def">to_str</span>() -&gt; <span class="cm-keyword">str</span> { <span class="cm-variable-2">int::</span><span class="cm-variable">to_str</span>(<span class="cm-keyword">self</span>, <span class="cm-number">10</span><span class="cm-variable">u</span>) }
 }
-<span class="cm-keyword">impl</span> <span class="cm-variable">of</span> <span class="cm-variable">to_str</span> <span class="cm-keyword">for</span> <span class="cm-def">str</span> {
-    <span class="cm-keyword">fn</span> <span class="cm-def">to_str</span>() -&gt; <span class="cm-keyword">str</span> { <span class="cm-variable">self</span> }
+<span class="cm-keyword">impl</span> <span class="cm-keyword">of</span> <span class="cm-variable-3">to_str</span> <span class="cm-keyword">for</span> <span class="cm-variable-3">str</span> {
+    <span class="cm-keyword">fn</span> <span class="cm-def">to_str</span>() -&gt; <span class="cm-keyword">str</span> { <span class="cm-keyword">self</span> }
 }</pre>
 
 <p>Given these, we may call <code>1.to_str()</code> to get <code>&quot;1&quot;</code>, or
@@ -50,7 +50,7 @@ implement (multiple implementations with the same name can be in scope
 without problems). Or you can give them an explicit name if you
 prefer, using this syntax:</p>
 
-<pre class="cm-s-default"><span class="cm-keyword">impl</span> <span class="cm-variable">nil_to_str</span> <span class="cm-variable">of</span> <span class="cm-variable">to_str</span> <span class="cm-keyword">for</span> () {
+<pre class="cm-s-default"><span class="cm-keyword">impl</span> <span class="cm-def">nil_to_str</span> <span class="cm-keyword">of</span> <span class="cm-variable-3">to_str</span> <span class="cm-keyword">for</span> () {
     <span class="cm-keyword">fn</span> <span class="cm-def">to_str</span>() -&gt; <span class="cm-keyword">str</span> { <span class="cm-string">&quot;()&quot;</span> }
 }</pre>
 
@@ -86,14 +86,14 @@ whose element type does not have a <code>to_str</code> implementation in scope.<
 <p>Interfaces may contain type parameters. This defines an interface for
 generalized sequence types:</p>
 
-<pre class="cm-s-default"><span class="cm-keyword">iface</span> <span class="cm-variable">seq</span>&lt;<span class="cm-variable">T</span>&gt; {
+<pre class="cm-s-default"><span class="cm-keyword">iface</span> <span class="cm-def">seq</span>&lt;<span class="cm-variable-3">T</span>&gt; {
     <span class="cm-keyword">fn</span> <span class="cm-def">len</span>() -&gt; <span class="cm-keyword">uint</span>;
     <span class="cm-keyword">fn</span> <span class="cm-def">iter</span>(<span class="cm-def">block</span>(<span class="cm-variable">T</span>));
 }
-<span class="cm-keyword">impl</span> &lt;<span class="cm-variable-3">T</span>&gt; <span class="cm-def">of</span> <span class="cm-def">seq</span>&lt;<span class="cm-variable-3">T</span>&gt; <span class="cm-keyword">for</span> [<span class="cm-def">T</span>] {
-    <span class="cm-keyword">fn</span> <span class="cm-def">len</span>() -&gt; <span class="cm-keyword">uint</span> { <span class="cm-variable-2">vec::</span><span class="cm-variable">len</span>(<span class="cm-variable">self</span>) }
+<span class="cm-keyword">impl</span> &lt;<span class="cm-variable-3">T</span>&gt; <span class="cm-keyword">of</span> <span class="cm-variable-3">seq</span>&lt;<span class="cm-variable-3">T</span>&gt; <span class="cm-keyword">for</span> [<span class="cm-variable-3">T</span>] {
+    <span class="cm-keyword">fn</span> <span class="cm-def">len</span>() -&gt; <span class="cm-keyword">uint</span> { <span class="cm-variable-2">vec::</span><span class="cm-variable">len</span>(<span class="cm-keyword">self</span>) }
     <span class="cm-keyword">fn</span> <span class="cm-def">iter</span>(<span class="cm-def">b</span>: <span class="cm-keyword">block</span>(<span class="cm-variable-3">T</span>)) {
-        <span class="cm-keyword">for</span> <span class="cm-def">elt</span> <span class="cm-keyword">in</span> <span class="cm-variable">self</span> { <span class="cm-variable">b</span>(<span class="cm-variable">elt</span>); }
+        <span class="cm-keyword">for</span> <span class="cm-def">elt</span> <span class="cm-keyword">in</span> <span class="cm-keyword">self</span> { <span class="cm-variable">b</span>(<span class="cm-variable">elt</span>); }
     }
 }</pre>
 
@@ -154,13 +154,13 @@ more expensive than statically resolved method calls.</p>
 and there is no interface available that it conforms to, you are free
 to leave off the <code>of</code> clause.</p>
 
-<pre class="cm-s-default"><span class="cm-keyword">impl</span> <span class="cm-variable">int_util</span> <span class="cm-keyword">for</span> <span class="cm-def">int</span> {
+<pre class="cm-s-default"><span class="cm-keyword">impl</span> <span class="cm-def">int_util</span> <span class="cm-keyword">for</span> <span class="cm-variable-3">int</span> {
     <span class="cm-keyword">fn</span> <span class="cm-def">times</span>(<span class="cm-def">b</span>: <span class="cm-keyword">block</span>(<span class="cm-keyword">int</span>)) {
         <span class="cm-keyword">let</span> <span class="cm-def">i</span> = <span class="cm-number">0</span>;
-        <span class="cm-keyword">while</span> <span class="cm-variable">i</span> &lt; <span class="cm-variable">self</span> { <span class="cm-variable">b</span>(<span class="cm-variable">i</span>); <span class="cm-variable">i</span> += <span class="cm-number">1</span>; }
+        <span class="cm-keyword">while</span> <span class="cm-variable">i</span> &lt; <span class="cm-keyword">self</span> { <span class="cm-variable">b</span>(<span class="cm-variable">i</span>); <span class="cm-variable">i</span> += <span class="cm-number">1</span>; }
     }
     <span class="cm-keyword">fn</span> <span class="cm-def">dollars</span>() -&gt; <span class="cm-variable-3">currency</span> {
-        <span class="cm-variable">mk_currency</span>(<span class="cm-variable">self</span>, <span class="cm-string">&quot;USD&quot;</span>)
+        <span class="cm-variable">mk_currency</span>(<span class="cm-keyword">self</span>, <span class="cm-string">&quot;USD&quot;</span>)
     }
 }</pre>
 

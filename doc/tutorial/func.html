@@ -67,8 +67,8 @@ will not &#39;see&#39; updates to them.</p>
 returns it from a function, and then calls it:</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">use</span> <span class="cm-variable">std</span>;
-<span class="cm-keyword">fn</span> <span class="cm-def">mk_appender</span>(<span class="cm-def">suffix</span>: <span class="cm-keyword">str</span>) -&gt; <span class="cm-keyword">fn</span>@(<span class="cm-def">str</span>) -&gt; <span class="cm-keyword">str</span> {
-    <span class="cm-keyword">let</span> <span class="cm-def">f</span> = <span class="cm-keyword">fn</span>@(<span class="cm-def">s</span>: <span class="cm-keyword">str</span>) -&gt; <span class="cm-keyword">str</span> { <span class="cm-variable">s</span> + <span class="cm-variable">suffix</span> };
+<span class="cm-keyword">fn</span> <span class="cm-def">mk_appender</span>(<span class="cm-def">suffix</span>: <span class="cm-keyword">str</span>) -&gt; <span class="cm-keyword">fn@</span>(<span class="cm-def">str</span>) -&gt; <span class="cm-keyword">str</span> {
+    <span class="cm-keyword">let</span> <span class="cm-def">f</span> = <span class="cm-keyword">fn@</span>(<span class="cm-def">s</span>: <span class="cm-keyword">str</span>) -&gt; <span class="cm-keyword">str</span> { <span class="cm-variable">s</span> + <span class="cm-variable">suffix</span> };
     <span class="cm-keyword">ret</span> <span class="cm-variable">f</span>;
 }
 <span class="cm-keyword">fn</span> <span class="cm-def">main</span>() {
@@ -87,7 +87,7 @@ that callers have the flexibility to pass whatever they want.</p>
 
 <pre class="cm-s-default"><span class="cm-keyword">fn</span> <span class="cm-def">call_twice</span>(<span class="cm-def">f</span>: <span class="cm-keyword">block</span>()) { <span class="cm-variable">f</span>(); <span class="cm-variable">f</span>(); }
 <span class="cm-variable">call_twice</span>({|| <span class="cm-string">&quot;I am a block&quot;</span>; });
-<span class="cm-variable">call_twice</span>(<span class="cm-keyword">fn</span>@() { <span class="cm-string">&quot;I am a boxed closure&quot;</span>; });
+<span class="cm-variable">call_twice</span>(<span class="cm-keyword">fn@</span>() { <span class="cm-string">&quot;I am a boxed closure&quot;</span>; });
 <span class="cm-keyword">fn</span> <span class="cm-def">bare_function</span>() { <span class="cm-string">&quot;I am a plain function&quot;</span>; }
 <span class="cm-variable">call_twice</span>(<span class="cm-variable">bare_function</span>);</pre>
 

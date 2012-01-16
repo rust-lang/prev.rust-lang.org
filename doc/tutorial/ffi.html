@@ -185,9 +185,8 @@ microsecond-resolution timer.</p>
     <span class="cm-keyword">ret</span> (<span class="cm-variable">x</span>.<span class="cm-variable">tv_sec</span> <span class="cm-keyword">as</span> <span class="cm-variable">u64</span>) * <span class="cm-number">1000</span><span class="cm-variable">_000_u64</span> + (<span class="cm-variable">x</span>.<span class="cm-variable">tv_usec</span> <span class="cm-keyword">as</span> <span class="cm-variable">u64</span>);
 }</pre>
 
-<p>The <code>#[nolink]</code> sets the name of the native module to the
-empty string to prevent the rust compiler from trying to link it.
-The standard C library is already linked with Rust programs.</p>
+<p>The <code>#[nolink]</code> attribute indicates that there&#39;s no native library to link
+in. The standard C library is already linked with Rust programs.</p>
 
 <p>A <code>timeval</code>, in C, is a struct with two 32-bit integers. Thus, we
 define a record type with the same contents, and declare
