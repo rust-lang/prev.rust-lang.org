@@ -133,8 +133,8 @@
 	  <div class="span10">
 <pre class="code">
 fn main() {
-    for i in [1, 2, 3] {
-        io::println(#fmt("hello %d\n", i));
+    for [1, 2, 3].each {|i|
+        io::println(#fmt("hello, %d\n", i));
     }
 }
 </pre>
