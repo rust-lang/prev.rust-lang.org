@@ -133,7 +133,7 @@
 	  <div class="span10">
 <pre class="code">
 fn main() {
-    for [1, 2, 3].each {|i|
+    vec::iter([1, 2, 3]) {|i|
         io::println(#fmt("hello, %d", i));
     }
 }
