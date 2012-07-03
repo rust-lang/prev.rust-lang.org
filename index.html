@@ -131,9 +131,11 @@
 
 	  <div class="span10">
 <pre class="code">
+import io::println;
+
 fn main() {
-    vec::iter([1, 2, 3]) {|i|
-        io::println(#fmt("hello, %d", i));
+    for [1, 2, 3].each |i| {
+        println(#fmt("hello, %d", i));
     }
 }
 </pre>
