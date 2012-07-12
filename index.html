@@ -157,7 +157,7 @@
 import io::println;
 
 fn main() {
-    for [1, 2, 3].each |i| {
+    for (~[1, 2, 3]).each |i| {
         println(#fmt("hello, %d", i));
     }
 }
