@@ -31,8 +31,12 @@
     #logo {
     margin: 0px 30px 30px 0px;
     }
+    ul {margin-left: 0.5em; padding-left: 0.5em;}
     ul.menu>li {
     margin-top: 10px;
+    }
+    li.release {
+    margin-top: 1em;
     }
   </style>
   <link rel="shortcut icon" href="favicon.ico" />
@@ -48,21 +52,40 @@
           <li>Documentation
             <ul>
               <li><a href="http://doc.rust-lang.org/doc/tutorial.html">Tutorial</li>
-              <li><a href="http://doc.rust-lang.org/doc/rust.html">Reference</a>
+              <li><a href="http://doc.rust-lang.org/doc/rust.html">Manual</a>
                   (<a href="http://doc.rust-lang.org/doc/rust.pdf">PDF</a>)</li>
-              <li><a href="http://doc.rust-lang.org/doc/core/index.html">Core library</a></li>
-              <li><a href="http://doc.rust-lang.org/doc/std/index.html">Standard library</a></li>
+              <li><a href="http://doc.rust-lang.org/doc/core/index.html">Core lib</a></li>
+              <li><a href="http://doc.rust-lang.org/doc/std/index.html">Std lib</a></li>
               <li><a href="http://github.com/mozilla/rust/wiki">Wiki</a></li>
             </ul>
           </li>
-      <li>Latest release <br/>
-          (<a href="https://github.com/mozilla/rust/blob/release-0.2/RELEASES.txt">0.2, Mar 29 2012</a>):
-        <ul>
+      <li>Releases (<a href="https://github.com/mozilla/rust/wiki/Doc-detailed-release-notes">detailed notes</a>)
+          <ul>
+          <li class="release"><a href="https://github.com/mozilla/rust/blob/release-0.3/RELEASES.txt">0.3, Jul 12 2012</a>:
+              <ul>
+              <li>[<a href="http://dl.rust-lang.org/dist/rust-0.3.tar.gz">.tar.gz</a>]
+                  (<a href="http://dl.rust-lang.org/dist/rust-0.3.tar.gz.asc">sig</a>)
+              <li>[<a href="http://dl.rust-lang.org/dist/rust-0.3-install.exe">.exe</a>]
+                  (<a href="http://dl.rust-lang.org/dist/rust-0.3-install.exe.asc">sig</a>)
+			  <li>Docs:
+              <ul>
+              <li><a href="http://doc.rust-lang.org/doc/0.3/tutorial.html">Tutorial</li>
+              <li><a href="http://doc.rust-lang.org/doc/0.3/rust.html">Manual</a>
+                  (<a href="http://doc.rust-lang.org/doc/0.3/rust.pdf">PDF</a>)</li>
+              <li><a href="http://doc.rust-lang.org/doc/0.3/core/index.html">Core lib</a></li>
+              <li><a href="http://doc.rust-lang.org/doc/0.3/std/index.html">Std lib</a></li>
+              </ul>
+              </li>
+              </ul>
+          <li class="release"><a href="https://github.com/mozilla/rust/blob/release-0.2/RELEASES.txt">0.2, Mar 29 2012</a>:
+              <ul>
               <li>[<a href="http://dl.rust-lang.org/dist/rust-0.2.tar.gz">.tar.gz</a>]
                   (<a href="http://dl.rust-lang.org/dist/rust-0.2.tar.gz.asc">sig</a>)
               <li>[<a href="http://dl.rust-lang.org/dist/rust-0.2-install.exe">.exe</a>]
                   (<a href="http://dl.rust-lang.org/dist/rust-0.2-install.exe.asc">sig</a>)
-        </ul>
+             </ul>
+          </li>
+          </ul>
       </li>
 	  <li>Resources
 	    <ul>
