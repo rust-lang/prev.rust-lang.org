@@ -1,0 +1,69 @@
+.cm-s-default span.cm-keyword {
+    color: #770088;
+}
+.cm-s-default span.cm-atom {
+    color: #221199;
+}
+.cm-s-default span.cm-number {
+    color: #116644;
+}
+.cm-s-default span.cm-def {
+    color: #0000FF;
+}
+.cm-s-default span.cm-variable {
+    color: black;
+}
+.cm-s-default span.cm-variable-2 {
+    color: #0055AA;
+}
+.cm-s-default span.cm-variable-3 {
+    color: #008855;
+}
+.cm-s-default span.cm-property {
+    color: black;
+}
+.cm-s-default span.cm-operator {
+    color: black;
+}
+.cm-s-default span.cm-comment {
+    color: #AA5500;
+}
+.cm-s-default span.cm-string {
+    color: #AA1111;
+}
+.cm-s-default span.cm-string-2 {
+    color: #FF5500;
+}
+.cm-s-default span.cm-meta {
+    color: #555555;
+}
+.cm-s-default span.cm-error {
+    color: #FF0000;
+}
+.cm-s-default span.cm-qualifier {
+    color: #555555;
+}
+.cm-s-default span.cm-builtin {
+    color: #3300AA;
+}
+.cm-s-default span.cm-bracket {
+    color: #999977;
+}
+.cm-s-default span.cm-tag {
+    color: #117700;
+}
+.cm-s-default span.cm-attribute {
+    color: #0000CC;
+}
+.cm-s-default span.cm-header {
+    color: blue;
+}
+.cm-s-default span.cm-quote {
+    color: #009900;
+}
+.cm-s-default span.cm-hr {
+    color: #999999;
+}
+.cm-s-default span.cm-link {
+    color: #0000CC;
+}
