@@ -6,6 +6,7 @@
   <title>Rust</title>
 
   <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="codemirror.css">
   <style type="text/css">
     div.container {
     margin-top: 30px;
@@ -148,12 +149,15 @@
 	  <div class="span3"><h2>A very small taste of what it looks like</h2></div>
 
 	  <div class="span10">
-<pre class="code">
-import io::println;
-
-fn main() {
-    for 5.times {
-        println("Here's some Rust!");
+<pre class="cm-s-default">
+<span class="cm-keyword">fn</span> <span class="cm-def">main</span>() {
+    <span class="cm-keyword">for</span> [<span class="cm-string">"Alice"</span>, <span class="cm-string">"Bob"</span>, <span class="cm-string">"Carol"</span>].<span class="cm-variable">each</span> |<span class="cm-variable">n</span>| {
+        <span class="cm-keyword">do</span> <span class="cm-variable-2">task::</span><span class="cm-variable">spawn</span> {
+            <span class="cm-keyword">let</span> <span class="cm-def">v</span> = <span class="cm-variable-2">rand::</span><span class="cm-variable">Rng</span>().<span class="cm-variable">shuffle</span>([<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>]);
+            <span class="cm-keyword">for</span> <span class="cm-variable">v</span>.<span class="cm-variable">each</span> |<span class="cm-variable">e</span>| {
+                <span class="cm-variable-2">io::</span><span class="cm-variable">print</span>(<span class="cm-variable-3">fmt!</span>(<span class="cm-string">"%s says: '%d'\n"</span>, <span class="cm-variable">n</span>, <span class="cm-variable">e</span>))
+            }
+        }
     }
 }
 </pre>
