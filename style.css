@@ -1,0 +1,31 @@
+div.container {
+    margin-top: 30px;
+}
+p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h2 {
+    padding-top: 7px;
+    font-size: 14px;
+}
+table {
+    padding: 10px;
+}
+#features td {
+    padding: 5px;
+    border: none;
+}
+pre {
+    padding: 15px;
+}
+#logo {
+    margin: 0px 30px 30px 0px;
+}
+ul {margin-left: 0.5em; padding-left: 0.5em;}
+ul.menu>li {
+    margin-top: 10px;
+}
+li.release {
+    margin-bottom: 1em;
+}
