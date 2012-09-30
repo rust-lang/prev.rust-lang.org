@@ -22,10 +22,26 @@ pre {
 #logo {
     margin: 0px 30px 30px 0px;
 }
-ul {margin-left: 0.5em; padding-left: 0.5em;}
-ul.menu>li {
-    margin-top: 10px;
+
+ul.menu {
+    margin-left: 0.5em;
+    padding-left: 0.5em;
 }
-li.release {
-    margin-bottom: 1em;
+ul.menu li {
+    list-style: none;
+}
+ul.menu li.menu-header {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+ul.menu li.menu-header>ul {
+    margin-top: 1em;
+    margin-left: 0em;
+    padding-left: 0em;
+}
+ul.menu li.release>ul {
+    margin-left: 1em;
+}
+ul.menu li.release>ul>li {
+    display: inline;
 }
