@@ -1,9 +1,13 @@
 div.container {
-    margin-top: 30px;
+    margin-top: 0em;
 }
 p {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+h1 {
+    margin-top: 50px;
+    font-size: 24px;
 }
 h2 {
     padding-top: 7px;
@@ -19,19 +23,25 @@ table {
 pre {
     padding: 15px;
 }
-#logo {
-    margin: 0px 30px 30px 0px;
+
+#banner {
+    margin-bottom: 2em;
+}
+#banner h1>small {
+    margin-left: 2em;
 }
 
-ul.menu {
-    margin-left: 0.5em;
-    padding-left: 0.5em;
+#logo {
+    margin: 40px 100px 0px 0px;
+    display: inline;
+    float: right;
 }
+
 ul.menu li {
     list-style: none;
+    margin-bottom: .2em;
 }
 ul.menu li.menu-header {
-    margin-top: 1em;
     margin-bottom: 2em;
 }
 ul.menu li.menu-header>ul {
@@ -44,4 +54,17 @@ ul.menu li.release>ul {
 }
 ul.menu li.release>ul>li {
     display: inline;
+}
+
+#pitch {
+    margin-top: 2em;
+}
+#pitch p {
+    margin: 2em 1em 2em 1em;
+    line-height: 1.8em;
+    font-style: italic;
+}
+
+#thats-rust {
+    text-align: right;
 }

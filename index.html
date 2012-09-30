@@ -20,11 +20,16 @@
   <a href="https://github.com/mozilla/rust"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 
   <div class="container">
+    <div id="banner" class="row">
+      <div class="span16">
+	<img id="logo" src="logos/rust-logo-64x64-blk.png" alt="rust logo"/>
+	<h1>Rust <small>a safe, concurrent, practical language</small></h1>
+      </div>
+    </div>
+
     <div class="row">
 
-      <!-- Sidebar -->
       <div id="nav" class="span3">
-	<img id="logo" src="logos/rust-logo-128x128-blk.png" alt="rust logo"/>
 	<ul class="unstyled menu">
           <li class="menu-header">Documentation
             <ul>
@@ -68,35 +73,10 @@
 	</ul>
       </div> <!-- #nav -->
 
-      <!-- Main content -->
-      <div id="main" class="span13">
-
-	<h1>Rust <small>a safe, concurrent, practical language</small></h1>
-
-	<p>
-	  Rust is a curly-brace, block-structured expression
-	  language. It visually resembles the C language family, but
-	  differs significantly in syntactic and semantic details. Its
-	  design is oriented toward concerns of “programming in the
-	  large”, that is, of creating and
-	  maintaining <em>boundaries</em> – both abstract and
-	  operational – that preserve large-system
-	  <em>integrity</em>, <em>availability</em>
-	  and <em>concurrency</em>.
-	</p>
-
-	<p>
-	  It supports a mixture of imperative procedural, concurrent
-	  actor, object-oriented and pure functional styles. Rust also
-	  supports generic programming and metaprogramming, in both
-	  static and dynamic styles.
-	</p>
-
+      <div id="main" class="span9">
 
 	<div class="row">
-	  <div class="span3"><h2>A short summary of features</h2></div>
-
-	  <div class="span10">
+	  <div class="span9">
 	    <table id="features">
 	      <tr><td>Type system</td><td>static, nominal, algebraic, locally inferred</td></tr>
 	      <tr><td>Memory safety</td><td>no null or dangling pointers, no buffer overflows</td></tr>
@@ -107,14 +87,13 @@
 	      <tr><td>Compilation model</td><td>ahead-of-time, C/C++ compatible</td></tr>
 	      <tr><td>License</td><td>MIT</td></tr>
 	    </table>
-	  </div> <!-- .span10 -->
+	  </div>
+
 	</div> <!-- .row -->
 
 
 	<div class="row">
-	  <div class="span3"><h2>A very small taste of what it looks like</h2></div>
-
-	  <div class="span10">
+	  <div class="span9">
 
 <pre class="cm-s-default">
 <span class="cm-keyword">fn</span> <span class="cm-def">main</span>() {
@@ -130,10 +109,39 @@
 }
 </pre>
 
-          </div> <!-- .span10 -->
+          </div>
 
 	</div> <!-- .row -->
       </div> <!-- #main -->
+
+
+      <div id="pitch" class="span4">
+
+	<div class="row">
+	  <div class="span4">
+
+	    <p>
+	      A type safe and memory safe systems language, like in your dreams.
+	    </p>
+
+	    <p>
+	      A language that knows that you need to go fast, to
+	      experiment, be creative, but will queitly protect 
+	      you from your own destructive tendencies.
+	    </p>
+
+	    <p>
+	      A language that some other baloney, blah blah lorum ipsum
+	      watermelon.
+	    </p>
+
+	    <p id="thats-rust">
+	      That's Rust.
+	    </p>
+
+	  </div>
+	</div> <!-- .row -->
+      </div> <!-- #pitch -->
 
     </div> <!-- .row -->
   </div> <!-- #container -->
