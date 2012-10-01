@@ -29,6 +29,7 @@ ul.menu {
 }
 ul.menu li {
     list-style: none;
+    margin-bottom: .2em;
 }
 ul.menu li.menu-header {
     margin-top: 1em;
