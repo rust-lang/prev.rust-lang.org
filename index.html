@@ -22,7 +22,6 @@
   <div class="container">
     <div id="banner" class="row">
       <div class="span16">
-	<img id="logo" src="logos/rust-logo-64x64-blk.png" alt="rust logo"/>
 	<h1>Rust <small>a safe, concurrent, practical language</small></h1>
       </div>
     </div>
@@ -31,7 +30,7 @@
 
       <div id="nav" class="span3">
 	<ul class="unstyled menu">
-          <li class="menu-header">Documentation
+          <li class="menu-header"><span>Documentation</span>
             <ul>
               <li><a href="http://doc.rust-lang.org/doc/0.3/tutorial.html">Tutorial</a></li>
               <li><a href="http://doc.rust-lang.org/doc/0.3/rust.html">Manual</a></li>
@@ -40,7 +39,7 @@
               <li><a href="http://github.com/mozilla/rust/wiki/Docs">Other docs</a></li>
             </ul>
           </li>
-	  <li class="menu-header">Releases
+	  <li class="menu-header"><span>Releases</span>
             <ul>
               <li class="release">0.3.1, Jul 20 2012
 		<ul>
@@ -57,13 +56,13 @@
 	      <li><a href="https://github.com/mozilla/rust/wiki/Doc-releases">Previous releases</a></li>
             </ul>
 	  </li>
-          <li class="menu-header">Mailing lists
+          <li class="menu-header"><span>Mailing lists</span>
             <ul>
               <li><a href="https://mail.mozilla.org/listinfo/rust-dev">rust-dev</a></li>
               <li><a href="https://mail.mozilla.org/listinfo/rust-commits">rust-commits</a></li>
             </ul>
           </li>
-	  <li class="menu-header">Other resources
+	  <li class="menu-header"><span>Other resources</span>
 	    <ul>
               <li><a href="http://bot.rust-lang.org">Build bot</a></li>
               <li><a href="http://irclog.gr/#browse/irc.mozilla.org/rust">IRC logs</a>
@@ -77,16 +76,18 @@
 
 	<div class="row">
 	  <div class="span9">
-	    <table id="features">
-	      <tr><td>Type system</td><td>static, nominal, algebraic, locally inferred</td></tr>
-	      <tr><td>Memory safety</td><td>no null or dangling pointers, no buffer overflows</td></tr>
-	      <tr><td>Concurrency</td><td>lightweight tasks with message passing, no shared memory</td></tr>
-	      <tr><td>Generics</td><td>type parameterization with type classes</td></tr>
-	      <tr><td>Exception handling</td><td>unrecoverable unwinding with task isolation</td></tr>
-	      <tr><td>Memory model</td><td>optional task-local GC, safe pointer types with region analysis</td></tr>
-	      <tr><td>Compilation model</td><td>ahead-of-time, C/C++ compatible</td></tr>
-	      <tr><td>License</td><td>MIT</td></tr>
-	    </table>
+        <section id="features">
+            <ul>
+    	      <li><span>Type system</span><span>static, nominal, algebraic, locally inferred</span></li>
+    	      <li><span>Memory safety</span><span>no null or dangling pointers, no buffer overflows</span></li>
+    	      <li><span>Concurrency</span><span>lightweight tasks with message passing, no shared memory</span></li>
+    	      <li><span>Generics</span><span>type parameterization with type classes</span></li>
+    	      <li><span>Exception handling</span><span>unrecoverable unwinding with task isolation</span></li>
+    	      <li><span>Memory model</span><span>optional task-local GC, safe pointer types with region analysis</span></li>
+    	      <li><span>Compilation model</span><span>ahead-of-time, C/C++ compatible</span></li>
+    	      <li><span>License</span><span>MIT</span></li>
+    	    </ul>
+        </section>
 	  </div>
 
 	</div> <!-- .row -->
@@ -94,7 +95,7 @@
 
 	<div class="row">
 	  <div class="span9">
-
+        <section>
 <pre class="cm-s-default">
 <span class="cm-keyword">fn</span> <span class="cm-def">main</span>() {
     <span class="cm-keyword">for</span> [<span class="cm-string">"Alice"</span>, <span class="cm-string">"Bob"</span>, <span class="cm-string">"Carol"</span>].<span class="cm-variable">each</span> |<span class="cm-variable">name</span>| {
@@ -108,18 +109,19 @@
     }
 }
 </pre>
-
+    </section>
           </div>
 
 	</div> <!-- .row -->
       </div> <!-- #main -->
 
 
-      <div id="pitch" class="span4">
+  <div id="pitch" class="span4">
 
 	<div class="row">
 	  <div class="span4">
-
+        <section>
+        <img id="logo" src="logos/rust-logo-128x128-blk.png" alt="rust logo"/>
 	    <p>
 	      A type safe and memory safe systems language, like in your dreams.
 	    </p>
@@ -138,7 +140,7 @@
 	    <p id="thats-rust">
 	      That's Rust.
 	    </p>
-
+        </section>
 	  </div>
 	</div> <!-- .row -->
       </div> <!-- #pitch -->
