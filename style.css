@@ -46,3 +46,11 @@ ul.menu li.release>ul {
 ul.menu li.release>ul>li {
     display: inline;
 }
+div.doc-rev {
+    float: left;
+    display: inline;
+}
+ul.docs {
+    margin-left: 3em;
+    margin-bottom: 1em;
+}
