@@ -1,5 +1,12 @@
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+}
+h1 small {
+    color: #777;
+}
 div.container {
     margin-top: 30px;
+    width: 800px;
 }
 p {
     margin-top: 20px;
@@ -8,6 +15,7 @@ p {
 h2 {
     padding-top: 7px;
     font-size: 14px;
+    line-height: 24px;
 }
 table {
     padding: 10px;
@@ -19,38 +27,42 @@ table {
 pre {
     padding: 15px;
 }
+.span2.logo {
+    width: 130px;
+}
 #logo {
-    margin: 0px 30px 30px 0px;
+    margin-bottom: 20px;
 }
 
 ul.menu {
-    margin-left: 0.5em;
-    padding-left: 0.5em;
+    margin: 0;
 }
 ul.menu li {
     list-style: none;
     margin-bottom: .2em;
 }
 ul.menu li.menu-header {
-    margin-top: 1em;
-    margin-bottom: 2em;
+    margin: 0 2.4em 2em 0;
+    vertical-align: top;
+    float: left;
 }
 ul.menu li.menu-header>ul {
     margin-top: 1em;
     margin-left: 0em;
     padding-left: 0em;
 }
-ul.menu li.release>ul {
-    margin-left: 1em;
-}
-ul.menu li.release>ul>li {
-    display: inline;
-}
-div.doc-rev {
-    float: left;
-    display: inline;
+.menu-header .header-text {
+    font-weight: bold;
+    font-size: 1.1em;
 }
 ul.docs {
-    margin-left: 3em;
-    margin-bottom: 1em;
+    margin: 0;
+}
+.community-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+ul.community-icons li {
+    display: inline;
 }
