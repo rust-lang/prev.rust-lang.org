@@ -132,9 +132,9 @@
     <span class="cm-keyword">let</span> <span class="cm-def">nums</span> = [<span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>];
     <span class="cm-keyword">let</span> <span class="cm-def">noms</span> = [<span class="cm-string">&quot;Tim&quot;</span>, <span class="cm-string">&quot;Eston&quot;</span>, <span class="cm-string">&quot;Aaron&quot;</span>, <span class="cm-string">&quot;Ben&quot;</span>];
 
-    <span class="cm-keyword">let</span> <span class="cm-keyword">mut</span> <span class="cm-def">evens</span> = <span class="cm-variable">nums</span>.<span class="cm-variable">iter</span>().<span class="cm-variable">filter</span>(|&amp;<span class="cm-variable">x</span>| <span class="cm-variable">x</span> % <span class="cm-number">2</span> == <span class="cm-number">0</span>);
+    <span class="cm-keyword">let</span> <span class="cm-keyword">mut</span> <span class="cm-def">evens</span> = <span class="cm-variable">nums</span>.<span class="cm-variable">iter</span>().<span class="cm-variable">filter</span>(|<span class="cm-variable">x</span>| **<span class="cm-variable">x</span> % <span class="cm-number">2</span> == <span class="cm-number">0</span>);
 
-    <span class="cm-keyword">for</span> <span class="cm-def">evens</span>.<span class="cm-variable">advance</span> |&amp;<span class="cm-variable">num</span>| {
+    <span class="cm-keyword">for</span> &amp;<span class="cm-def">num</span> <span class="cm-keyword">in</span> <span class="cm-def">evens</span> {
         <span class="cm-keyword">do</span> <span class="cm-variable">spawn</span> {
             <span class="cm-keyword">let</span> <span class="cm-def">msg</span> = <span class="cm-variable">fmt</span>!(<span class="cm-string">&quot;%s says hello from a lightweight thread!&quot;</span>,
                            <span class="cm-variable">noms</span>[<span class="cm-variable">num</span>]);
