@@ -1,6 +1,6 @@
 .container-fixed {
 	margin: 0 auto;
-    margin-top: 30px;
+	margin-top: 30px;
 	padding: 0;
 	/*
 	 * TODO: change this to max-width and work out
@@ -9,15 +9,15 @@
 	width: 820px;
 }
 h1 small {
-    color: #777;
+	color: #777;
 }
 p {
-    margin: 20px 0;
+	margin: 20px 0;
 }
 .col-md-3 h2 {
 	font-weight: bold;
-    font-size: 14px;
-    line-height: 24px;
+	font-size: 1.1em;
+	line-height: 24px;
 	margin-right: 10px;
 	text-align: right;
 }
@@ -29,17 +29,17 @@ p {
 	border-collapse: inherit;
 }
 .table-features td {
-    padding: 6px 12px;
-    border: none;
+	padding: 6px 12px;
+	border: none;
 }
 
 ul.menu {
-    font-size: 14px;
-    margin: 0;
+	font-size: 1em;
+	margin: 0;
 	padding: 0;
 }
 ul.menu li {
-    list-style-type: none;
+	list-style-type: none;
 }
 
 /*
@@ -55,12 +55,12 @@ ul.menu li {
 }
 
 ul.menu h2 {
-    font-size: 1.1em;
+	font-size: 1.1em;
 	font-weight: bold;
 	margin: 0;
 }
 ul.menu li>ul {
-    margin-top: .5em;
-    padding-left: 0em;
+	margin-top: .5em;
+	padding-left: 0em;
 	line-height: 1.5em;
 }
