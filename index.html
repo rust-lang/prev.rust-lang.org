@@ -1,133 +1,111 @@
 <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Rust Programming Language</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Rust, Rust programming language, rustlang, Mozilla Rust">
 
-<html>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/codemirror.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
 
-<head>
-  <meta charset='utf-8'>
+	<body class="container-fixed">
+		<ul class="row menu clearfix">
+			<li class="col-md-2">
+				<img src="logos/rust-logo-128x128-blk-v2.png" height="128" width="128" alt="Rust logo" />
+			</li>
+			<li class="col-md-2"><h2>Getting Started</h2>
+				<ul>
+					<li><a href="http://doc.rust-lang.org/doc/0.8/tutorial.html">Tutorial</a> (0.8)</li>
+					<li><a href="http://doc.rust-lang.org/doc/0.8/rust.html">Manual</a> (0.8)</li>
+					<li><a href="http://doc.rust-lang.org/doc/master/tutorial.html">Tutorial</a> (master)</li>
+					<li><a href="http://doc.rust-lang.org/doc/master/rust.html">Manual</a> (master)</li>
+				</ul>
+			</li>
+			<li class="col-md-2"><h2>Documentation</h2>
+				<ul>
+					<li>
+						<a href="http://doc.rust-lang.org/doc/0.8/std/index.html">std</a> |
+						<a href="http://doc.rust-lang.org/doc/0.8/extra/index.html">extra</a> (0.8)
+					</li>
+					<li>
+						<a href="http://doc.rust-lang.org/doc/master/std/index.html">std</a> |
+						<a href="http://doc.rust-lang.org/doc/master/extra/index.html">extra</a> (master)
+					</li>
+					<li>
+						<a href="http://github.com/mozilla/rust/wiki/Docs">Other docs</a>
+					</li>
+				</ul>
+			</li>
+			<li class="col-md-2"><h2>Downloads</h2>
+				<ul>
+					<li>
+						0.8 - Sep. 26 2013
+					</li>
+					<li>
+						<a href="http://static.rust-lang.org/dist/rust-0.8.tar.gz">.tar.gz</a> |
+						<a href="http://static.rust-lang.org/dist/rust-0.8-install.exe">.exe</a>
+					</li>
+					<li>
+						<a href="https://github.com/mozilla/rust/blob/0.8/RELEASES.txt">Release notes</a>
+					</li>
+					<li>
+						<a href="https://github.com/mozilla/rust/wiki/Doc-releases">Previous releases</a>
+					</li>
+				</ul>
+			</li>
+			<li class="col-md-2"><h2>Community</h2>
+				<ul>
+					<li><a href="http://github.com/mozilla/rust">GitHub</a></li>
+					<li><a href="https://mail.mozilla.org/listinfo/rust-dev">rust-dev</a> mailing list</li>
+					<li><a href="https://mail.mozilla.org/listinfo/rust-commits">rust-commits</a> mailing list</li>
+					<li><a href="http://chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust">#rust on irc.mozilla.org</a></li>
+					<li><a href="http://twitter.com/rustlang">Twitter</a></li>
+				</ul>
+			</li>
+		</ul>
+		<div>
+			<h1>Rust <small>a safe, concurrent, practical language</small></h1>
+			<p>
+				Rust is a curly-brace, block-structured expression language.
+				It visually resembles the C language family, but differs 
+				significantly in syntactic and semantic details.
+				Its design is oriented toward concerns of “programming in the
+				large”, that is, of creating and maintaining <em>boundaries</em>
+				– both abstract and operational – that preserve large-system <em>
+				integrity</em>, <em>availability</em> and <em>concurrency</em>.
+			</p>
+			<p>
+				It supports a mixture of imperative procedural, concurrent
+				actor, object-oriented and pure functional styles. Rust also
+				supports generic programming and metaprogramming, in both
+				static and dynamic styles.
+			</p>
 
-  <title>The Rust Programming Language</title>
-
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/codemirror.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" href="favicon.ico" />
-</head>
-
-
-<body>
-
-  <!-- GitHub banner -->
-  <!--<a href="https://github.com/mozilla/rust"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>-->
-
-  <div class="container">
-    <div class="row">
-
-      <!-- Sidebar -->
-      <div class="span2 logo">
-        <img id="logo" src="logos/rust-logo-128x128-blk-v2.png" alt="rust logo"/>
-      </div>
-      <div id="nav" class="span11">
-        <ul class="unstyled menu top">
-          <li class="menu-header"><span class="header-text">Getting Started</span>
-            <ul>
-              <li>
-                <ul class="docs">
-                  <li><a href="http://doc.rust-lang.org/doc/0.8/tutorial.html">Tutorial</a> (0.8)</li>
-                  <li><a href="http://doc.rust-lang.org/doc/0.8/rust.html">Manual</a> (0.8)</li>
-                  <li><a href="http://doc.rust-lang.org/doc/master/tutorial.html">Tutorial</a> (master)</li>
-                  <li><a href="http://doc.rust-lang.org/doc/master/rust.html">Manual</a> (master)</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-header"><span class="header-text">Documentation</span>
-            <ul>
-              <li>
-                <ul class="docs">
-                  <li><a href="http://doc.rust-lang.org/doc/0.8/std/index.html">std</a> |
-                      <a href="http://doc.rust-lang.org/doc/0.8/extra/index.html">extra</a> (0.8)</li>
-                </ul>
-              </li>
-              <li>
-                <ul class="docs">
-                  <li><a href="http://doc.rust-lang.org/doc/master/std/index.html">std</a> |
-                      <a href="http://doc.rust-lang.org/doc/master/extra/index.html">extra</a> (master)</li>
-                </ul>
-              </li>
-              <li><a href="http://github.com/mozilla/rust/wiki/Docs">Other docs</a></li>
-            </ul>
-          </li>
-          <li class="menu-header"><span class="header-text">Downloads</span>
-            <ul>
-              <li>0.8 - September 26 2013</li>
-              <li>
-                <a href="http://static.rust-lang.org/dist/rust-0.8.tar.gz">.tar.gz</a> |
-                <a href="http://static.rust-lang.org/dist/rust-0.8-install.exe">.exe</a>
-              </li>
-              <li><a href="https://github.com/mozilla/rust/blob/0.8/RELEASES.txt">Release notes</a></li>
-              <li><a href="https://github.com/mozilla/rust/wiki/Doc-releases">Previous releases</a></li>
-            </ul>
-          </li>
-          <li class="menu-header"><span class="header-text">Community</span>
-            <ul>
-			  <li><a href="http://github.com/mozilla/rust">GitHub</a></li>
-              <li><a href="https://mail.mozilla.org/listinfo/rust-dev">rust-dev</a> mailing list</li>
-              <li><a href="https://mail.mozilla.org/listinfo/rust-commits">rust-commits</a> mailing list</li>
-              <li><a href="http://chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust">#rust on irc.mozilla.org</a></li>
-			  <li><a href="http://twitter.com/rustlang">Twitter</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div> <!-- #nav -->
-
-      <!-- Main content -->
-      <div id="main" class="span13">
-
-	<h1>Rust <small>a safe, concurrent, practical language</small></h1>
-
-	<p>
-	  Rust is a curly-brace, block-structured expression
-	  language. It visually resembles the C language family, but
-	  differs significantly in syntactic and semantic details. Its
-	  design is oriented toward concerns of “programming in the
-	  large”, that is, of creating and
-	  maintaining <em>boundaries</em> – both abstract and
-	  operational – that preserve large-system
-	  <em>integrity</em>, <em>availability</em>
-	  and <em>concurrency</em>.
-	</p>
-
-	<p>
-	  It supports a mixture of imperative procedural, concurrent
-	  actor, object-oriented and pure functional styles. Rust also
-	  supports generic programming and metaprogramming, in both
-	  static and dynamic styles.
-	</p>
-
-
-	<div class="row">
-	  <div class="span3"><h2>A short summary of features</h2></div>
-
-	  <div class="span10">
-	    <table id="features">
-	      <tr><td>Type system</td><td>static, nominal, linear, algebraic, locally inferred</td></tr>
-	      <tr><td>Memory safety</td><td>no null or dangling pointers, no buffer overflows</td></tr>
-	      <tr><td>Concurrency</td><td>lightweight tasks with message passing, no shared memory</td></tr>
-	      <tr><td>Generics</td><td>type parameterization with type classes</td></tr>
-	      <tr><td>Exception handling</td><td>unrecoverable unwinding with task isolation</td></tr>
-	      <tr><td>Memory model</td><td>optional task-local GC, safe pointer types with region analysis</td></tr>
-	      <tr><td>Compilation model</td><td>ahead-of-time, C/C++ compatible</td></tr>
-	      <tr><td>License</td><td>dual MIT / Apache 2</td></tr>
-	    </table>
-	  </div> <!-- .span10 -->
-	</div> <!-- .row -->
-
-
-	<div class="row">
-	  <div class="span3"><h2>A very small taste of what it looks like</h2></div>
-
-	  <div class="span10">
-
+			<div class="row">
+				<div class="col-md-3">
+					<h2>A short summary of features</h2>
+				</div>
+				<div class="col-md-9">
+					<table class="table-features table-hover"><tbody>
+						<tr><td>Type system</td><td>static, nominal, linear, algebraic, locally inferred</td></tr>
+						<tr><td>Memory safety</td><td>no null or dangling pointers, no buffer overflows</td></tr>
+						<tr><td>Concurrency</td><td>lightweight tasks with message passing, no shared memory</td></tr>
+						<tr><td>Generics</td><td>type parametrization with type classes</td></tr>
+						<tr><td>Exception handling</td><td>unrecoverable unwinding with task isolation</td></tr>
+						<tr><td>Memory model</td><td>optional task-local GC, safe pointer types with region analysis</td></tr>
+						<tr><td>Compilation model</td><td>ahead-of-time, C/C++ compatible</td></tr>
+						<tr><td>License</td><td>dual MIT / Apache 2</td></tr>
+					</tbody></table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<h2>A very small taste of what it looks like</h2>
+				</div>
+				<div class="col-md-9">
 <pre class="cm-s-default">
 <span class="cm-keyword">fn</span> <span class="cm-def">main</span>() {
     <span class="cm-keyword">let</span> <span class="cm-def">nums</span> = [<span class="cm-number">1</span>, <span class="cm-number">2</span>];
@@ -142,16 +120,8 @@
     }
 }
 </pre>
-
-
-          </div> <!-- .span10 -->
-
-	</div> <!-- .row -->
-      </div> <!-- #main -->
-
-    </div> <!-- .row -->
-  </div> <!-- #container -->
-
-</body>
-
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

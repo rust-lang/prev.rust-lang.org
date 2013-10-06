@@ -1,68 +1,66 @@
-h1, h2, h3, h4, h5, h6 {
-    color: #000;
+.container-fixed {
+	margin: 0 auto;
+    margin-top: 30px;
+	padding: 0;
+	/*
+	 * TODO: change this to max-width and work out
+	 * a responsive design, Bootstrap 3 is there already!
+	 */
+	width: 820px;
 }
 h1 small {
     color: #777;
 }
-div.container {
-    margin-top: 30px;
-    width: 800px;
-}
 p {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
-h2 {
-    padding-top: 7px;
+.col-md-3 h2 {
+	font-weight: bold;
     font-size: 14px;
     line-height: 24px;
+	margin-right: 10px;
+	text-align: right;
 }
-table {
-    padding: 10px;
+.table-features {
+	width: 100%;
+	margin-bottom: 18px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	border-collapse: inherit;
 }
-#features td {
-    padding: 5px;
+.table-features td {
+    padding: 6px 12px;
     border: none;
-}
-pre {
-    padding: 15px;
-}
-.span2.logo {
-    width: 130px;
-}
-#logo {
-    margin-bottom: 20px;
 }
 
 ul.menu {
+    font-size: 14px;
     margin: 0;
+	padding: 0;
 }
 ul.menu li {
-    list-style: none;
-    margin-bottom: .2em;
+    list-style-type: none;
 }
-ul.menu li.menu-header {
-    margin: 0 2.4em 2em 0;
-    vertical-align: top;
-    float: left;
+
+/*
+ * TODO: use min-width: 992px media query or
+ * cleanup this when switching to resp. design.
+ */
+.col-md-2 {
+	width: 20%;
 }
-ul.menu li.menu-header>ul {
-    margin-top: 1em;
-    margin-left: 0em;
-    padding-left: 0em;
+
+.col-md-2 {
+	padding: 0px;
 }
-.menu-header .header-text {
-    font-weight: bold;
+
+ul.menu h2 {
     font-size: 1.1em;
+	font-weight: bold;
+	margin: 0;
 }
-ul.docs {
-    margin: 0;
-}
-.community-icon {
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-}
-ul.community-icons li {
-    display: inline;
+ul.menu li>ul {
+    margin-top: .5em;
+    padding-left: 0em;
+	line-height: 1.5em;
 }
