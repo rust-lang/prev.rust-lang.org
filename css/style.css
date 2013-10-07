@@ -1,4 +1,4 @@
-.container-fixed {
+body {
 	margin: 0 auto;
 	margin-top: 30px;
 	padding: 0;
@@ -14,6 +14,18 @@ h1 small {
 p {
 	margin: 20px 0;
 }
+
+.col-md-2 {
+	/*
+	 * TODO: use min-width: 992px media query or
+	 * cleanup this when switching to resp. design.
+	 */
+	width: 20%;
+}
+.col-md-2 {
+	padding: 0px;
+}
+
 .col-md-3 h2 {
 	font-weight: bold;
 	font-size: 1.1em;
@@ -41,19 +53,6 @@ ul.menu {
 ul.menu li {
 	list-style-type: none;
 }
-
-/*
- * TODO: use min-width: 992px media query or
- * cleanup this when switching to resp. design.
- */
-.col-md-2 {
-	width: 20%;
-}
-
-.col-md-2 {
-	padding: 0px;
-}
-
 ul.menu h2 {
 	font-size: 1.1em;
 	font-weight: bold;
