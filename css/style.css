@@ -1,0 +1,65 @@
+body {
+	margin: 0 auto;
+	margin-top: 30px;
+	padding: 0;
+	/*
+	 * TODO: change this to max-width and work out
+	 * a responsive design, Bootstrap 3 is there already!
+	 */
+	width: 820px;
+}
+h1 small {
+	color: #777;
+}
+p {
+	margin: 20px 0;
+}
+
+.col-md-2 {
+	/*
+	 * TODO: use min-width: 992px media query or
+	 * cleanup this when switching to resp. design.
+	 */
+	width: 20%;
+}
+.col-md-2 {
+	padding: 0px;
+}
+
+.col-md-3 h2 {
+	font-weight: bold;
+	font-size: 1.1em;
+	line-height: 24px;
+	margin-right: 10px;
+	text-align: right;
+}
+.table-features {
+	width: 100%;
+	margin-bottom: 18px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	border-collapse: inherit;
+}
+.table-features td {
+	padding: 6px 12px;
+	border: none;
+}
+
+ul.menu {
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+}
+ul.menu li {
+	list-style-type: none;
+}
+ul.menu h2 {
+	font-size: 1.1em;
+	font-weight: bold;
+	margin: 0;
+}
+ul.menu li>ul {
+	margin-top: .5em;
+	padding-left: 0em;
+	line-height: 1.5em;
+}
