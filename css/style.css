@@ -27,18 +27,14 @@ ul.menu li>ul {
 	line-height: 1.5em;
 }
 
-.col-md-3 h2 {
+.boxhead h2 {
 	font-weight: bold;
 	font-size: 1.1em;
 	line-height: 24px;
 	margin-left: 10px;
 	margin-right: 10px;
 }
-@media (min-width: 992px) {
-	.col-md-3 h2 {
-		text-align: right;
-	}
-}
+
 .table-features {
 	width: 100%;
 	margin-bottom: 18px;
