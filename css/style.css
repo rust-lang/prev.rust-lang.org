@@ -58,22 +58,22 @@ ul.menu li>ul {
 
 /* Code highlighting */
 .cm-s-default span.cm-keyword {
-	color: #770088;
+	color: #803C8D;
 }
 .cm-s-default span.cm-atom {
 	color: #221199;
 }
 .cm-s-default span.cm-number {
-	color: #116644;
+	color: #2AA198;
 }
 .cm-s-default span.cm-def {
-	color: #0000FF;
+	color: #256EB8;
 }
 .cm-s-default span.cm-variable {
 	color: black;
 }
 .cm-s-default span.cm-variable-2 {
-	color: #0055AA;
+	color: #817E61;
 }
 .cm-s-default span.cm-variable-3 {
 	color: #008855;
@@ -85,10 +85,10 @@ ul.menu li>ul {
 	color: black;
 }
 .cm-s-default span.cm-comment {
-	color: #AA5500;
+	color: #A82323;
 }
 .cm-s-default span.cm-string {
-	color: #AA1111;
+	color: #866544;
 }
 .cm-s-default span.cm-string-2 {
 	color: #FF5500;
