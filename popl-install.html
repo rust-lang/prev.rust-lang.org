@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+<meta name="robots" value="noindex, nofollow">
+</head>
+
+<body>
+
+Rust releases are not currently distributed as binaries for Linux and OS X,
+but for this tutorial we've created a special build of Rust 0.9 to avoid
+needing to compile the compiler before getting started.
+Follow the instructions below as appropriate for your platform.
+
+<h1>Linux</h1>
+
+Prerequisites: gcc
+
+<pre>
+$ curl -O http://static.rust-lang.org/rust-0.9-x86_64-unknown-linux-gnu.tar.gz
+$ tar xzf rust-0.9-x86_64-unknown-linux-gnu.tar.gz
+$ rust-0.9/bin/rustc --help
+</pre>
+
+<h1>OS X</h1>
+
+Prerequisites: Xcode
+
+<pre>
+$ curl -O http://static.rust-lang.org/rust-0.9-x86_64-apple-darwin.tar.gz
+$ tar xzf rust-0.9-x86_64-apple-darwin.tar.gz
+$ rust-0.9/bin/rustc --help
+</pre>
+
+<h1>If you are running a 32-bit CPU</h1>
+
+Use <code>http://static.rust-lang.org/rust-0.9-i686-unknown-linux-gnu.tar.gz</code>
+or <code>http://static.rust-lang.org/rust-0.9-i686-apple-darwin.tar.gz</code> instead.
+
+<h1>If the binaries don't work</h1>
+
+Then build from source...
+
+<pre>
+$ curl -O http://static.rust-lang.org/dist/rust-0.9.tar.gz
+$ cd rust-0.9
+$ ./configure
+$ make install
+</pre>
+
+<h1>If you are on Windows</h1>
+
+Find another computer that is not running Windows or follow the
+<a href="https://github.com/mozilla/rust/wiki/Using-Rust-on-Windows">instructions on the Rust wiki.</a>
+
+</body>
