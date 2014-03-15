@@ -27,14 +27,11 @@
 				<ul>
 					<li>
 						<a href="http://doc.rust-lang.org/doc/master/std/index.html">std</a> |
-						<a href="http://doc.rust-lang.org/doc/master/extra/index.html">extra</a> (master)
+						<a href="http://static.rust-lang.org/doc/master/index.html">docs</a> (master)
 					</li>
 					<li>
 						<a href="http://doc.rust-lang.org/doc/0.9/std/index.html">std</a> |
 						<a href="http://doc.rust-lang.org/doc/0.9/extra/index.html">extra</a> (0.9)
-					</li>
-					<li>
-						<a href="http://static.rust-lang.org/doc/master/index.html">Other docs</a> (master)
 					</li>
 					<li>
 						<a href="http://static.rust-lang.org/doc/0.9/index.html">Other docs</a> (0.9)
@@ -115,17 +112,17 @@
 					<h2>A very small taste of what it looks like</h2>
 				</div>
 				<div class="col-md-10">
-<pre class="cm-s-default">
-<span class="cm-keyword">fn</span> <span class="cm-def">main</span>() {
-    <span class="cm-keyword">let</span> <span class="cm-def">nums</span> = [<span class="cm-number">1</span>, <span class="cm-number">2</span>];
-    <span class="cm-keyword">let</span> <span class="cm-def">noms</span> = [<span class="cm-string">"Tim"</span>, <span class="cm-string">"Eston"</span>, <span class="cm-string">"Aaron"</span>, <span class="cm-string">"Ben"</span>];
-&nbsp;
-    <span class="cm-keyword">let</span> <span class="cm-def">mut</span> <span class="cm-def">odds</span> = <span class="cm-variable">nums</span>.<span class="cm-variable">iter</span>().<span class="cm-variable">map</span>(|&amp;<span class="cm-variable">x</span>| <span class="cm-variable">x</span> * <span class="cm-number">2</span> - <span class="cm-number">1</span>);
-&nbsp;
-    <span class="cm-keyword">for</span> <span class="cm-def">num</span> <span class="cm-keyword">in</span> <span class="cm-variable">odds</span> {
-        <span class="cm-keyword">do</span> <span class="cm-variable">spawn</span> {
-            <span class="cm-variable">println</span>!(<span class="cm-string">"{:s} says hello from a lightweight thread!"</span>, <span class="cm-variable">noms</span>[<span class="cm-variable">num</span>]);
-        }
+<pre class='rust'>
+<span class='kw'>fn</span> <span class='ident'>main</span>() {
+    <span class='kw'>let</span> <span class='ident'>nums</span> <span class='op'>=</span> [<span class='number'>1</span>, <span class='number'>2</span>];
+    <span class='kw'>let</span> <span class='ident'>noms</span> <span class='op'>=</span> [<span class='string'>&quot;Tim&quot;</span>, <span class='string'>&quot;Eston&quot;</span>, <span class='string'>&quot;Aaron&quot;</span>, <span class='string'>&quot;Ben&quot;</span>];
+
+    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>odds</span> <span class='op'>=</span> <span class='ident'>nums</span>.<span class='ident'>iter</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='kw-2'>&amp;</span><span class='ident'>x</span><span class='op'>|</span> <span class='ident'>x</span> <span class='op'>*</span> <span class='number'>2</span> <span class='op'>-</span> <span class='number'>1</span>);
+
+    <span class='kw'>for</span> <span class='ident'>num</span> <span class='kw'>in</span> <span class='ident'>odds</span> {
+        <span class='ident'>spawn</span>(<span class='kw'>proc</span>() {
+            <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;{:s} says hello from a lightweight thread!&quot;</span>, <span class='ident'>noms</span>[<span class='ident'>num</span>]);
+        });
     }
 }
 </pre>
