@@ -11,14 +11,19 @@
 
 	<body class="container">
 		<a href="//github.com/mozilla/rust"><img class="ribbon" style="display: none" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+		<!-- header start -->
+		<!-- HEY! This code is duplicated in the other html files.
+			 That sucks, but if need to change this do some copying and pasting. -->
+
 		<ul class="row menu">
 			<li class="col-xs-2 col-md-2">
 				<img class="img-responsive" src="logos/rust-logo-128x128-blk-v2.png" height="128" width="128" alt="Rust logo" />
 			</li>
 			<li class="col-xs-2 col-md-2"><h2>Getting Started</h2>
 				<ul>
-					<li><a href="http://doc.rust-lang.org/doc/master/tutorial.html">Tutorial</a> (master)</li>
-					<li><a href="http://doc.rust-lang.org/doc/master/rust.html">Manual</a> (master)</li>
+					<li><a href="http://doc.rust-lang.org/doc/master/tutorial.html">Tutorial</a> (nightly)</li>
+					<li><a href="http://doc.rust-lang.org/doc/master/rust.html">Manual</a> (nightly)</li>
 					<li><a href="http://doc.rust-lang.org/doc/0.9/tutorial.html">Tutorial</a> (0.9)</li>
 					<li><a href="http://doc.rust-lang.org/doc/0.9/rust.html">Manual</a> (0.9)</li>
 				</ul>
@@ -27,14 +32,11 @@
 				<ul>
 					<li>
 						<a href="http://doc.rust-lang.org/doc/master/std/index.html">std</a> |
-						<a href="http://static.rust-lang.org/doc/master/index.html">all docs</a> (master)
+						<a href="http://static.rust-lang.org/doc/master/index.html">all docs</a> (nightly)
 					</li>
 					<li>
 						<a href="http://doc.rust-lang.org/doc/0.9/std/index.html">std</a> |
-						<a href="http://doc.rust-lang.org/doc/0.9/extra/index.html">extra</a> (0.9)
-					</li>
-					<li>
-						<a href="http://static.rust-lang.org/doc/0.9/index.html">All docs</a> (0.9)
+						<a href="http://static.rust-lang.org/doc/0.9/index.html">all docs</a> (0.9)
 					</li>
 				</ul>
 			</li>
@@ -44,14 +46,11 @@
 						0.9 - Jan. 9, 2014
 					</li>
 					<li>
-						<a href="http://static.rust-lang.org/dist/rust-0.9.tar.gz">.tar.gz</a> |
-						<a href="https://github.com/mozilla/rust/wiki/Using-Rust-on-Windows">.exe</a>
+						<a href="http://static.rust-lang.org/dist/rust-0.9.tar.gz">Source</a>
+						(<a href="https://github.com/mozilla/rust/blob/0.9/RELEASES.txt">release notes</a>)
 					</li>
 					<li>
-						<a href="https://github.com/mozilla/rust/blob/0.9/RELEASES.txt">Release notes</a>
-					</li>
-					<li>
-						<a href="https://github.com/mozilla/rust/wiki/Doc-releases">Previous releases</a>
+						<a href="install.html">Installers</a>
 					</li>
 				</ul>
 			</li>
@@ -72,8 +71,11 @@
 				</ul>
 			</li>
 		</ul>
+
+		<!-- header end -->
+
 		<div>
-			<h1>Rust <small>a safe, concurrent, practical language</small></h1>
+			<h1 class="title">Rust <small>a safe, concurrent, practical language</small></h1>
 			<p>
 				Rust is a curly-brace, block-structured expression language.
 				It visually resembles the C language family, but differs 
@@ -91,7 +93,7 @@
 			</p>
 
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-2 side-header">
 					<h2>A short summary of features</h2>
 				</div>
 				<div class="col-md-10">
@@ -108,7 +110,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-2 side-header">
 					<h2>A very small taste of what it looks like</h2>
 				</div>
 				<div class="col-md-10">

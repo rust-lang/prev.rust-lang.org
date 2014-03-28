@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Rust Programming Language - Installation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Rust, Rust programming language, rustlang, Mozilla Rust">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body class="container">
+
+		<!-- header start -->
+		<!-- HEY! This code is duplicated in the other html files.
+			 That sucks, but if need to change this do some copying and pasting. -->
+
+		<ul class="row menu">
+			<li class="col-xs-2 col-md-2">
+				<img class="img-responsive" src="logos/rust-logo-128x128-blk-v2.png" height="128" width="128" alt="Rust logo" />
+			</li>
+			<li class="col-xs-2 col-md-2"><h2>Getting Started</h2>
+				<ul>
+					<li><a href="http://doc.rust-lang.org/doc/master/tutorial.html">Tutorial</a> (nightly)</li>
+					<li><a href="http://doc.rust-lang.org/doc/master/rust.html">Manual</a> (nightly)</li>
+					<li><a href="http://doc.rust-lang.org/doc/0.9/tutorial.html">Tutorial</a> (0.9)</li>
+					<li><a href="http://doc.rust-lang.org/doc/0.9/rust.html">Manual</a> (0.9)</li>
+				</ul>
+			</li>
+			<li class="col-xs-2 col-md-2"><h2>Documentation</h2>
+				<ul>
+					<li>
+						<a href="http://doc.rust-lang.org/doc/master/std/index.html">std</a> |
+						<a href="http://static.rust-lang.org/doc/master/index.html">all docs</a> (nightly)
+					</li>
+					<li>
+						<a href="http://doc.rust-lang.org/doc/0.9/std/index.html">std</a> |
+						<a href="http://static.rust-lang.org/doc/0.9/index.html">all docs</a> (0.9)
+					</li>
+				</ul>
+			</li>
+			<li class="col-xs-2 col-md-2"><h2>Downloads</h2>
+				<ul>
+					<li>
+						0.9 - Jan. 9, 2014
+					</li>
+					<li>
+						<a href="http://static.rust-lang.org/dist/rust-0.9.tar.gz">Source</a>
+						(<a href="https://github.com/mozilla/rust/blob/0.9/RELEASES.txt">release notes</a>)
+					</li>
+					<li>
+						<a href="install.html">Installers</a>
+					</li>
+				</ul>
+			</li>
+			<li class="col-xs-2 col-md-2"><h2>Community</h2>
+				<ul>
+					<li>
+						<a href="http://github.com/mozilla/rust">GitHub</a>
+					</li>
+					<li>
+						<a href="http://reddit.com/r/rust">Reddit</a> | <a href="http://twitter.com/rustlang">Twitter</a>
+					</li>
+					<li>
+						<a href="https://mail.mozilla.org/listinfo/rust-dev">rust-dev</a> mailing list
+					</li>
+					<li>
+						<a href="http://chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust">#rust on irc.mozilla.org</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<!-- header end -->
+
+		<div class="install-menu">
+		  <div class="row">
+			<div class="col-md-1"></div>
+
+			<div class="col-md-3 side-header">
+			  <h2>Nightly</h2>
+
+			  <p>
+				The current dev branch.
+				It's got all the best stuff and is usually reliable.
+				Many people prefer running nightlies to stay current with Rust as it matures.
+			  </p>
+			</div>
+			<div class="col-md-7">
+			  
+			  <table class="table-features table-installers"><tbody>
+				  <tr>
+					<td class="inst-type">Linux binaries (.tar.gz)</td>
+					<td><a href="http://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-linux-gnu.tar.gz">64-bit</a></td>
+					<td><a href="http://static.rust-lang.org/dist/rust-nightly-i686-unknown-linux-gnu.tar.gz">32-bit</a></td>
+				  </tr>
+				  <tr>
+					<td class="inst-type">Mac installer (.pkg)</td>
+					<td><a href="http://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.pkg">64-bit</a></td>
+					<td><a href="http://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.pkg">32-bit</a></td>
+				  </tr>
+				  <tr>
+					<td class="inst-type">Mac binaries (.tar.gz)</td>
+					<td><a href="http://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.tar.gz">64-bit</a></td>
+					<td><a href="http://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.tar.gz">32-bit</a></td>
+				  </tr>
+				  <tr>
+					<td class="inst-type">Windows installer (.exe)</td>
+					<td></td>
+					<td><a href="http://static.rust-lang.org/dist/rust-nightly-install.exe">32-bit</a></td>
+				  </tr>
+				  <tr>
+					<td class="inst-type">Source</td>
+					<td colspan="2"><a href="http://static.rust-lang.org/dist/rust-nightly.tar.gz">rust-nightly.tar.gz</a></td>
+				  </tr>
+			  </tbody></table>
+			</div>
+
+			<div class="col-md-1"></div>
+
+		  </div>
+
+		  <div class="row">
+
+			<div class="col-md-1"></div>
+
+			<div class="col-md-3 side-header">
+			  <h2>0.10-pre</h2>
+			  <h3>January 9, 2014</h3>
+
+			  <p>
+				The latest release.
+				These are made roughly every three months and tend to become out of date quickly.
+			  </p>
+			</div>
+			<div class="col-md-7">
+			  
+			  <table class="table-features table-installers"><tbody>
+				  <tr>
+					<td class="inst-type">Linux binaries (.tar.gz)</td>
+					<td><a href="http://static.rust-lang.org/dist/rust-0.10-pre-x86_64-unknown-linux-gnu.tar.gz">64-bit</a></td>
+					<td><a href="http://static.rust-lang.org/dist/rust-0.10-pre-i686-unknown-linux-gnu.tar.gz">32-bit</a></td>
+				  </tr>
+				  <tr>
+					<td class="inst-type">Mac installer (.pkg)</td>
+					<td><a href="http://static.rust-lang.org/dist/rust-0.10-pre-x86_64-apple-darwin.pkg">64-bit</a></td>
+					<td><a href="http://static.rust-lang.org/dist/rust-0.10-pre-i686-apple-darwin.pkg">32-bit</a></td>
+				  </tr>
+				  <tr>
+					<td class="inst-type">Mac binaries (.tar.gz)</td>
+					<td><a href="http://static.rust-lang.org/dist/rust-0.10-pre-x86_64-apple-darwin.tar.gz">64-bit</a></td>
+					<td><a href="http://static.rust-lang.org/dist/rust-0.10-pre-i686-apple-darwin.tar.gz">32-bit</a></td>
+				  </tr>
+				  <tr>
+					<td class="inst-type">Windows installer (.exe)</td>
+					<td></td>
+					<td><a href="http://static.rust-lang.org/dist/rust-0.10-pre-install.exe">32-bit</a></td>
+				  </tr>
+				  <tr>
+					<td class="inst-type">Source</td>
+					<td colspan="2"><a href="http://static.rust-lang.org/dist/rust-0.10-pre.tar.gz">rust-0.10-pre.tar.gz</a></td>
+				  </tr>
+			  </tbody></table>
+			</div>
+
+			<div class="col-md-1"></div>
+
+		  </div>
+
+		</div>
+		
+		<div class="row">
+		  <div class="col-md-1"></div>
+
+		  <div class="col-md-11">
+			<p>
+			  <a href="https://github.com/mozilla/rust/wiki/Doc-releases">
+				Additional resources
+			  </a>, including release notes, signatures, previous releases.
+			</p>
+          </div>
+		</div>
+
+	</body>
+
+</html>

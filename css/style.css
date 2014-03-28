@@ -1,11 +1,28 @@
 body {
 	margin-top: 30px;
+	margin-bottom: 60px;
+}
+p {
+	margin-top: 1.2em;
+	margin-bottom: 1.2em;
+}
+li {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+h1.title {
+	font-size: 2.5em;
+	margin-top: 1em;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+h1 {
+	font-size: 2em;
+	margin-top: 1.2em;
+	margin-bottom: 0.5em;
 }
 h1 small {
 	color: #777;
-}
-p {
-	margin: 20px 0;
 }
 
 ul.menu {
@@ -15,6 +32,8 @@ ul.menu {
 }
 ul.menu li {
 	list-style-type: none;
+	margin-top: 0em;
+	margin-bottom: 0em;
 }
 ul.menu h2 {
 	font-size: 1.1em;
@@ -27,11 +46,33 @@ ul.menu li>ul {
 	line-height: 1.5em;
 }
 
-.col-md-2 h2 {
+.note {
+	font-style: italic;
+}
+
+.side-header h2 {
 	font-weight: bold;
 	font-size: 1.1em;
 	line-height: 24px;
 	margin-top: 7px;
+}
+
+.side-header h3 {
+	font-size: 1em;
+	margin-top: 0px;
+}
+
+.side-header p {
+	color: 	#777;
+}
+
+.preferred-method h2 {
+	font-weight: bold;
+	font-size: 1.1em;
+	line-height: 24px;
+	display: inline;
+	margin-right: 0.5em;
+	margin-top: 0px;
 }
 
 .table-features {
@@ -44,6 +85,41 @@ ul.menu li>ul {
 .table-features td {
 	padding: 6px 12px;
 	border: none;
+}
+
+.install-menu {
+	margin-top: 5em;
+}
+
+.install-menu .row {
+	margin-bottom: 1.5em;
+}
+
+.table-installers {
+	margin-left: 2em;
+	width: 30em;
+	border-spacing: 2px;
+	border: 0px;
+	empty-cells: hide;
+}
+
+.table-installers td {
+	border: 1px solid #ddd;
+	text-align: center;
+	border-radius: 4px;
+}
+
+.table-installers td.inst-type {
+	border: 0px;
+	font-weight: bold;
+	text-align: left;
+	width: 15em;
+}
+
+.table-installers td div {
+	height: 100%;
+	width: 100%;
+	border: 2px solid green;
 }
 
 @media (min-width: 992px) {
