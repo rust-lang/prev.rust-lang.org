@@ -11,10 +11,14 @@ li {
 	margin-bottom: 1em;
 }
 h1.title {
-	font-size: 2.5em;
-	margin-top: 1em;
-	font-weight: normal;
+	font-size: 3em;
+	margin-top: 0.5em;
+	font-weight: bold;
 	margin-bottom: 10px;
+	text-align: center;
+}
+h1.title span {
+	font-size: 70%;
 }
 h1 {
 	font-size: 2em;
@@ -23,6 +27,7 @@ h1 {
 }
 h1 small {
 	color: #777;
+	margin-left: 1em;
 }
 
 ul.menu {
@@ -39,6 +44,7 @@ ul.menu h2 {
 	font-size: 1.1em;
 	font-weight: bold;
 	margin: 0;
+	margin-bottom: 1em;
 }
 ul.menu li>ul {
 	margin-top: .5em;
@@ -46,13 +52,26 @@ ul.menu li>ul {
 	line-height: 1.5em;
 }
 
+.header-right {
+	text-align: right;
+}
+
+.menu img {
+	margin: 0em auto 0em 0em;
+}
+
 .note {
 	font-style: italic;
 }
 
+h2 {
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
 .side-header h2 {
 	font-weight: bold;
-	font-size: 1.1em;
+	font-size: 1.3em;
 	line-height: 24px;
 	margin-top: 7px;
 }
@@ -78,8 +97,8 @@ ul.menu li>ul {
 .table-features {
 	width: 100%;
 	margin-bottom: 18px;
-	border: 1px solid #ddd;
-	border-radius: 4px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
 	border-collapse: inherit;
 }
 .table-features td {
@@ -98,15 +117,13 @@ ul.menu li>ul {
 .table-installers {
 	margin-left: 2em;
 	width: 30em;
-	border-spacing: 2px;
+	border-spacing: 4px;
 	border: 0px;
 	empty-cells: hide;
 }
 
 .table-installers td {
-	border: 1px solid #ddd;
-	text-align: center;
-	border-radius: 4px;
+	padding: 0px;
 }
 
 .table-installers td.inst-type {
@@ -116,10 +133,132 @@ ul.menu li>ul {
 	width: 15em;
 }
 
-.table-installers td div {
-	height: 100%;
-	width: 100%;
-	border: 2px solid green;
+.table-installers div.inst-button {
+	border: 1px solid #ccc;
+	text-align: center;
+	border-radius: 3px;
+	padding: 0.3em;
+}
+
+.table-installers div.inst-button:hover {
+	border-color: #428BCA;
+	color: white;
+	background-color: #428BCA;
+}
+
+.table-installers a {
+	text-decoration: none;
+}
+
+#install-row {
+	margin-bottom: 0em;
+}
+
+#pitch p {
+	margin-top: 2em;
+	margin-bottom: 2em;
+	text-align: left;
+	font-size: 200%;
+}
+
+#install-box {
+	color: #777;
+	text-align: right;
+	font-size: 130%;
+	margin-top: 1em;
+}
+
+#install-box .install-button-row {
+	margin: 1em auto 1em auto;
+}
+
+.version-rec-box {
+	width: 10em;
+	display: inline-block;
+}
+
+.version-rec-box-inner {
+	font-size: 60%;
+	text-align: center;
+}
+
+#install-button {
+	border: 2px solid white;
+	color: white;
+	background-color: #428BCA;
+	border-radius: 4px;
+	padding: 0.5em 0em 0.5em 0em;
+	font-weight: bold;
+	width: 10em;
+	display: inline-block;
+}
+
+#install-button div {
+	text-align: center;
+	
+}
+
+#install-button:hover {
+	border-color: #428BCA;
+	background-color: white;
+	color: #428BCA;
+}
+
+.minor-button {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	width: 10em;
+	display: inline-block;
+	padding: 0.5em 0em 0.5em 0em;
+}
+
+.minor-button div {
+	text-align: center;
+}
+
+.minor-button:hover {
+	color: white;
+	background-color: #428BCA;
+	border-color: #428BCA;
+}
+
+hr {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.asterisk {
+	margin-left: 0px;
+	color: #428BCA;
+}
+
+.footnote {
+	color: #777;
+	text-align: right;
+	font-size: 80%;
+	margin-top: 7em;
+}
+
+.slogan-row {
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 4em;
+	font-size: 110%;
+	font-style: italic;
+	height: 2em;
+}
+
+.slogan-row .flowers {
+	color: #428BCA;
+	font-size: 250%;
+	margin: 0px;
+	margin-top: 0.15em;
+}
+
+.laundry-list span.z {
+	color: #428BCA;
+	margin: 0em 0.4em 0em 0em;
+	font-size: 150%;
 }
 
 @media (min-width: 992px) {

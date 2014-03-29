@@ -18,39 +18,26 @@
 
 		<ul class="row menu">
 			<li class="col-xs-2 col-md-2">
-				<img class="img-responsive" src="logos/rust-logo-128x128-blk-v2.png" height="128" width="128" alt="Rust logo" />
+				<a href="index.html"><img class="img-responsive" src="logos/rust-logo-128x128-blk-v2.png" height="128" width="128" alt="Rust logo" /></a>
 			</li>
-			<li class="col-xs-2 col-md-2"><h2>Getting Started</h2>
+			<li class="col-xs-2 col-md-2"></li>
+			<li class="col-xs-2 col-md-2"><h2>Docs (Nightly)</h2>
 				<ul>
-					<li><a href="http://doc.rust-lang.org/doc/master/tutorial.html">Tutorial</a> (nightly)</li>
-					<li><a href="http://doc.rust-lang.org/doc/master/rust.html">Manual</a> (nightly)</li>
-					<li><a href="http://doc.rust-lang.org/doc/0.9/tutorial.html">Tutorial</a> (0.9)</li>
-					<li><a href="http://doc.rust-lang.org/doc/0.9/rust.html">Manual</a> (0.9)</li>
-				</ul>
-			</li>
-			<li class="col-xs-2 col-md-2"><h2>Documentation</h2>
-				<ul>
+					<li><a href="http://doc.rust-lang.org/doc/master/tutorial.html">Tutorial</a></li>
+					<li><a href="http://doc.rust-lang.org/doc/master/rust.html">Manual</a></li>
 					<li>
-						<a href="http://doc.rust-lang.org/doc/master/std/index.html">std</a> |
-						<a href="http://static.rust-lang.org/doc/master/index.html">all docs</a> (nightly)
-					</li>
-					<li>
-						<a href="http://doc.rust-lang.org/doc/0.9/std/index.html">std</a> |
-						<a href="http://static.rust-lang.org/doc/0.9/index.html">all docs</a> (0.9)
+						<a href="http://doc.rust-lang.org/doc/master/std/index.html">std API docs</a></li>
+						<li><a href="http://static.rust-lang.org/doc/master/index.html">All docs</a>
 					</li>
 				</ul>
 			</li>
-			<li class="col-xs-2 col-md-2"><h2>Downloads</h2>
+			<li class="col-xs-2 col-md-2"><h2>Docs (0.10)</h2>
 				<ul>
+					<li><a href="http://doc.rust-lang.org/doc/0.10/tutorial.html">Tutorial</a></li>
+					<li><a href="http://doc.rust-lang.org/doc/0.10/rust.html">Manual</a></li>
 					<li>
-						0.9 - Jan. 9, 2014
-					</li>
-					<li>
-						<a href="http://static.rust-lang.org/dist/rust-0.9.tar.gz">Source</a>
-						(<a href="https://github.com/mozilla/rust/blob/0.9/RELEASES.txt">release notes</a>)
-					</li>
-					<li>
-						<a href="install.html">Installers</a>
+						<a href="http://doc.rust-lang.org/doc/0.10/std/index.html">std API docs</a></li>
+						<li><a href="http://static.rust-lang.org/doc/0.10/index.html">All docs</a>
 					</li>
 				</ul>
 			</li>
@@ -63,10 +50,10 @@
 						<a href="http://reddit.com/r/rust">Reddit</a> | <a href="http://twitter.com/rustlang">Twitter</a>
 					</li>
 					<li>
-						<a href="https://mail.mozilla.org/listinfo/rust-dev">rust-dev</a> mailing list
+						<a href="https://mail.mozilla.org/listinfo/rust-dev">Mailing List</a>
 					</li>
 					<li>
-						<a href="http://chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust">#rust on irc.mozilla.org</a>
+						<a href="http://chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust">IRC</a>
 					</li>
 				</ul>
 			</li>
@@ -74,62 +61,148 @@
 
 		<!-- header end -->
 
-		<div>
-			<h1 class="title">Rust <small>a safe, concurrent, practical language</small></h1>
+
+		<div class="row" id="install-row">
+		  <div class="col-md-8" id="pitch">
+			<!--<p>
+The <b>Rust</b> programming language applies the best
+of modern theory to the problems that face developers
+at the lowest levels of the software stack.
+With Rust, developers may craft systems that coax
+the maximum performance and predictability from tomorrow's hardware.
+And Rust never crashes. <span class="asterisk">*</span>
+			</p>-->
+
 			<p>
-				Rust is a curly-brace, block-structured expression language.
-				It visually resembles the C language family, but differs 
-				significantly in syntactic and semantic details.
-				Its design is oriented toward concerns of “programming in the
-				large”, that is, of creating and maintaining <em>boundaries</em>
-				– both abstract and operational – that preserve large-system <em>
-				integrity</em>, <em>availability</em> and <em>concurrency</em>.
-			</p>
-			<p>
-				It supports a mixture of imperative procedural, concurrent
-				actor, object-oriented and pure functional styles. Rust also
-				supports generic programming and metaprogramming, in both
-				static and dynamic styles.
+			  <b>Rust</b> is a systems programming language
+			  that runs blazingly fast,
+			  prevents almost all crashes<span class="asterisk">*</span>,
+			  and eliminates data races.
 			</p>
 
-			<div class="row">
-				<div class="col-md-2 side-header">
-					<h2>A short summary of features</h2>
-				</div>
-				<div class="col-md-10">
-					<table class="table-features table-hover"><tbody>
-						<tr><td>Type system</td><td>static, nominal, linear, algebraic, locally inferred</td></tr>
-						<tr><td>Memory safety</td><td>no null or dangling pointers, no buffer overflows</td></tr>
-						<tr><td>Concurrency</td><td>lightweight tasks with message passing, no shared memory</td></tr>
-						<tr><td>Generics</td><td>type parametrization with type classes</td></tr>
-						<tr><td>Exception handling</td><td>unrecoverable unwinding with task isolation</td></tr>
-						<tr><td>Memory model</td><td>optional task-local GC, safe pointer types with region analysis</td></tr>
-						<tr><td>Compilation model</td><td>ahead-of-time, C/C++ compatible</td></tr>
-						<tr><td>License</td><td>dual MIT / Apache 2</td></tr>
-					</tbody></table>
-				</div>
+          </div>
+		  <div class="col-md-4">
+			<div id="install-box">
+			  <div class="install-button-row">
+				<span class="version-rec-box">
+				  <span class="version-rec-box-inner">
+					<div>
+					  Recommended Version:
+					</div>
+					<div id="install-version">
+					  0.10-pre-nightly
+					  (<span>source</span>)
+					</div>
+				</span>
+				</span>
+			  </div>
+			  <div class="install-button-row"><a id="inst-link" href="http://static.rust-lang.org/dist/rust-nightly.tar.gz"><span id="install-button"><div>Install</div></span></a></div>
+			  <div class="install-button-row"><a href="install.html"><span class="minor-button"><div>Other Downloads</div></span></a></div>
 			</div>
-			<div class="row">
-				<div class="col-md-2 side-header">
-					<h2>A very small taste of what it looks like</h2>
-				</div>
-				<div class="col-md-10">
+		  </div>
+		</div>
+
+		<div class="row code-row">
+		  <div class="col-md-4">
+			<h2>Featuring</h2>
+			<div class="laundry-list">
+			  <div><span class="z">·</span>algebraic data types</div>
+			  <div><span class="z">·</span>pattern matching</div>
+			  <div><span class="z">·</span>closures</div>
+			  <div><span class="z">·</span>type inference</div>
+			  <div><span class="z">·</span>zero-cost abstractions</div>
+			  <div><span class="z">·</span>guaranteed memory safety</div>
+			  <div><span class="z">·</span>optional garbage collection</div>
+			  <div><span class="z">·</span>concurrency without data races</div>
+			  <div><span class="z">·</span>minimal runtime</div>
+			  <div><span class="z">·</span>efficient FFI</div>
+			</div>
+		  </div>
+		  <div class="col-md-8">
 <pre class='rust'>
-<span class='kw'>fn</span> <span class='ident'>main</span>() {
-    <span class='kw'>let</span> <span class='ident'>nums</span> <span class='op'>=</span> [<span class='number'>1</span>, <span class='number'>2</span>];
-    <span class='kw'>let</span> <span class='ident'>noms</span> <span class='op'>=</span> [<span class='string'>&quot;Tim&quot;</span>, <span class='string'>&quot;Eston&quot;</span>, <span class='string'>&quot;Aaron&quot;</span>, <span class='string'>&quot;Ben&quot;</span>];
-
-    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>odds</span> <span class='op'>=</span> <span class='ident'>nums</span>.<span class='ident'>iter</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='kw-2'>&amp;</span><span class='ident'>x</span><span class='op'>|</span> <span class='ident'>x</span> <span class='op'>*</span> <span class='number'>2</span> <span class='op'>-</span> <span class='number'>1</span>);
-
-    <span class='kw'>for</span> <span class='ident'>num</span> <span class='kw'>in</span> <span class='ident'>odds</span> {
-        <span class='ident'>spawn</span>(<span class='kw'>proc</span>() {
-            <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;{:s} says hello from a lightweight thread!&quot;</span>, <span class='ident'>noms</span>[<span class='ident'>num</span>]);
-        });
+<span class='kw'>fn</span> main() {
+    <span class='comment'>// A simple integer calculator:
+    // `+` or `-` means add/sub by 1
+    // `*` or `/` means mul/div by 2</span>
+ 
+    <span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
+    <span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0</span>;
+ 
+    <span class='kw'>for</span> token in program.chars() {
+        <span class='kw'>match</span> token {
+            <span class='string'>'+'</span> => accumulator <span class='op'>+=</span> <span class='number'>1</span>,
+            <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
+            <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
+            <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
+            _ => { <span class='comment'>/* ignore everything else */</span> }
+        }
     }
+ 
+    <span class='prelude-val'>println!</span>(<span class='string'>"The program \"{}\" calculates the value {}"</span>,
+             program, accumulator);
 }
 </pre>
-				</div>
-			</div>
+		  </div>
+
+		<div class="row">
+		  <div class="col-md-7"></div>
+		  <div class="col-md-5">
+			<p class="footnote">
+			  <span class="asterisk">*</span>
+			  In theory. Rust is still experimental and may do anything it likes up to and including eating your laundry.
+			</p>
+		  </div>
 		</div>
+
 	</body>
+
+    <script type="text/javascript">
+      function detect_platform() {
+          var os = "unknown";
+
+          if (os == "unknown") {
+              if (navigator.platform == "Linux x86_64") os = "x86_64-unknown-linux-gnu";
+              if (navigator.platform == "Linux i686") os = "i686-unknown-linux-gnu";
+          }
+
+          // I wish I knew by know, but I don't. Try harder.
+          if (os == "unknown") {
+              if (navigator.appVersion.indexOf("Win")!=-1) os = "i686-pc-mingw32";
+              if (navigator.appVersion.indexOf("Mac")!=-1) os = "x86_64-apple-darwin";
+              if (navigator.appVersion.indexOf("Linux")!=-1) os = "x86_64-unknown-linux-gnu";
+          }
+
+          return os;
+      }
+      
+      var platform = detect_platform();
+
+      var rec_package_name = "nightly";
+      var rec_version_type = "source";
+      var rec_download_file = "rust-nightly.tar.gz";
+
+      if (platform == "x86_64-unknown-linux-gnu") {
+          rec_version_type = "Linux binary";
+          rec_download_file = "rust-" + rec_package_name + "-x86_64-unknown-linux-gnu.tar.gz";
+      } else if (platform == "i686-unknown-linux-gnu") {
+          rec_version_type = "Linux binary";
+          rec_download_file = "rust-" + rec_package_name + "-i686-unknown-linux-gnu.tar.gz";
+      } else if (platform == "x86_64-apple-darwin") {
+          rec_version_type = "Mac installer";
+          rec_download_file = "rust-" + rec_package_name + "-x86_64-apple-darwin.pkg";
+      } else if (platform == "i686-pc-mingw32") {
+          rec_version_type = "Windows installer";
+          rec_download_file = "rust-" + rec_package_name + "-install.exe";
+      }
+
+      var rec_package_desc = rec_package_name + " (<span>" + rec_version_type + "</span>)";
+      var rec_vers_div = document.getElementById("install-version");
+      rec_vers_div.innerHTML = rec_package_desc;
+
+      var rec_dl_addy = "http://static.rust-lang.org/dist/" + rec_download_file;
+      var rec_inst_link = document.getElementById("inst-link");
+      rec_inst_link.setAttribute("href", rec_dl_addy);
+     
+	</script>
+
 </html>
