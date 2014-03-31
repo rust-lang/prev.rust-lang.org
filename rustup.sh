@@ -47,7 +47,6 @@ putvar() {
     else
         printf "rustup: %-20s := %s %s\n" $1 "$T" "$2"
     fi
-    printf "%-20s := %s\n" $1 "$T" >>config.tmp
 }
 
 probe() {
