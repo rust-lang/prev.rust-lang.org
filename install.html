@@ -1,175 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>The Rust Programming Language - Installation</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keywords" content="Rust, Rust programming language, rustlang, Mozilla Rust">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
+---
+layout: default
+title: Install &middot; The Rust Programming Language
+---
 
-	<body class="container">
-		<a href="//github.com/mozilla/rust"><img class="ribbon" style="display: none" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 
-		<!-- header start -->
-		<!-- HEY! This code is duplicated in the other html files.
-			 That sucks, but if need to change this do some copying and pasting. -->
+    <div class="row install">
+      <div class="col-md-offset-1 col-md-3 side-header">
+        <h2>Nightly</h2>
+        <p>
+        The current dev branch.
+        This is the most up to date version with the latest bug fixes and features.
+        </p>
+      </div>
+      <div class="col-md-7">
+        <table class="table-features table-installers"><tbody>
+          <tr>
+          <td class="inst-type">Linux binaries (.tar.gz)</td>
+          <td><a href="http://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="http://static.rust-lang.org/dist/rust-nightly-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac installer (.pkg)</td>
+          <td><a href="http://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="http://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac binaries (.tar.gz)</td>
+          <td><a href="http://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="http://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows installer (.exe)</td>
+          <td></td>
+          <td><a href="http://static.rust-lang.org/dist/rust-nightly-install.exe"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Source</td>
+          <td colspan="2"><a href="http://static.rust-lang.org/dist/rust-nightly.tar.gz"><div class="inst-button">rust-nightly.tar.gz</div></a></td>
+          </tr>
+        </tbody></table>
+        </div>
+      </div>
 
-		<ul class="row menu">
-			<li class="col-xs-2 col-md-2">
-				<a href="index.html"><img class="img-responsive" src="logos/rust-logo-128x128-blk-v2.png" height="128" width="128" alt="Rust logo" /></a>
-			</li>
-			<li class="col-xs-2 col-md-2"></li>
-			<li class="col-xs-2 col-md-2"><h2>Docs (Nightly)</h2>
-				<ul>
-					<li><a href="http://doc.rust-lang.org/doc/master/tutorial.html">Tutorial</a></li>
-					<li><a href="http://doc.rust-lang.org/doc/master/rust.html">Manual</a></li>
-					<li>
-						<a href="http://doc.rust-lang.org/doc/master/std/index.html">std API docs</a></li>
-						<li><a href="http://static.rust-lang.org/doc/master/index.html">All docs</a>
-					</li>
-				</ul>
-			</li>
-			<li class="col-xs-2 col-md-2"><h2>Docs (0.10)</h2>
-				<ul>
-					<li><a href="http://doc.rust-lang.org/doc/0.10/tutorial.html">Tutorial</a></li>
-					<li><a href="http://doc.rust-lang.org/doc/0.10/rust.html">Manual</a></li>
-					<li>
-						<a href="http://doc.rust-lang.org/doc/0.10/std/index.html">std API docs</a></li>
-						<li><a href="http://static.rust-lang.org/doc/0.10/index.html">All docs</a>
-					</li>
-				</ul>
-			</li>
-			<li class="col-xs-2 col-md-2"><h2>Community</h2>
-				<ul>
-					<li>
-						<a href="http://github.com/mozilla/rust">GitHub</a>
-					</li>
-					<li>
-						<a href="http://reddit.com/r/rust">Reddit</a> | <a href="http://twitter.com/rustlang">Twitter</a>
-					</li>
-					<li>
-						<a href="https://mail.mozilla.org/listinfo/rust-dev">Mailing List</a>
-					</li>
-					<li>
-						<a href="http://chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust">IRC</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
+      <hr/>
 
-		<!-- header end -->
-
-		<div class="install-menu">
-		  <div class="row">
-			<div class="col-md-1"></div>
-
-			<div class="col-md-3 side-header">
-			  <h2>Nightly</h2>
-
-			  <p>
-				The current dev branch.
-				This is the most up to date version with the latest bug fixes and features.
-			  </p>
-			</div>
-			<div class="col-md-7">
-			  
-			  <table class="table-features table-installers"><tbody>
-				  <tr>
-					<td class="inst-type">Linux binaries (.tar.gz)</td>
-					<td><a href="http://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
-					<td><a href="http://static.rust-lang.org/dist/rust-nightly-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
-				  </tr>
-				  <tr>
-					<td class="inst-type">Mac installer (.pkg)</td>
-					<td><a href="http://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
-					<td><a href="http://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
-				  </tr>
-				  <tr>
-					<td class="inst-type">Mac binaries (.tar.gz)</td>
-					<td><a href="http://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.tar.gz"><div class="inst-button">64-bit</div></a></td>
-					<td><a href="http://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.tar.gz"><div class="inst-button">32-bit</div></a></td>
-				  </tr>
-				  <tr>
-					<td class="inst-type">Windows installer (.exe)</td>
-					<td></td>
-					<td><a href="http://static.rust-lang.org/dist/rust-nightly-install.exe"><div class="inst-button">32-bit</div></a></td>
-				  </tr>
-				  <tr>
-					<td class="inst-type">Source</td>
-					<td colspan="2"><a href="http://static.rust-lang.org/dist/rust-nightly.tar.gz"><div class="inst-button">rust-nightly.tar.gz</div></a></td>
-				  </tr>
-			  </tbody></table>
-			</div>
-
-			<div class="col-md-1"></div>
-
-		  </div>
-
-		  <hr/>
-
-		  <div class="row">
-
-			<div class="col-md-1"></div>
-
-			<div class="col-md-3 side-header">
-			  <h2>0.10</h2>
-			  <h3>April 3, 2014</h3>
-
-			  <p>
-				The latest release.
-				These are made roughly every three months and become out of date quickly.
-			  </p>
-			</div>
-			<div class="col-md-7">
-			  
-			  <table class="table-features table-installers"><tbody>
-				  <tr>
-					<td class="inst-type">Linux binaries (.tar.gz)</td>
-					<td><a href="http://static.rust-lang.org/dist/rust-0.10-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
-					<td><a href="http://static.rust-lang.org/dist/rust-0.10-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
-				  </tr>
-				  <tr>
-					<td class="inst-type">Mac installer (.pkg)</td>
-					<td><a href="http://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
-					<td><a href="http://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
-				  </tr>
-				  <tr>
-					<td class="inst-type">Mac binaries (.tar.gz)</td>
-					<td><a href="http://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.tar.gz"><div class="inst-button">64-bit</div></a></td>
-					<td><a href="http://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.tar.gz"><div class="inst-button">32-bit</div></a></td>
-				  </tr>
-				  <tr>
-					<td class="inst-type">Windows installer (.exe)</td>
-					<td></td>
-					<td><a href="http://static.rust-lang.org/dist/rust-0.10-install.exe"><div class="inst-button">32-bit</div></a></td>
-				  </tr>
-				  <tr>
-					<td class="inst-type">Source</td>
-					<td colspan="2"><a href="http://static.rust-lang.org/dist/rust-0.10.tar.gz"><div class="inst-button">rust-0.10.tar.gz</div></a></td>
-				  </tr>
-			  </tbody></table>
-			</div>
-
-			<div class="col-md-1"></div>
-
-		  </div>
-
-		</div>
-		
-		<div class="row">
-		  <div class="col-md-1"></div>
-
-		  <div class="col-md-11">
-			<p>
-			  <a href="https://github.com/mozilla/rust/wiki/Doc-releases">
-				Additional resources
-			  </a>, including release notes, signatures, previous releases.
-			</p>
-          </div>
-		</div>
-
-	</body>
-
+      <div class="row">
+      <div class="col-md-3 col-md-offset-1 side-header">
+        <h2>0.10</h2>
+        <h3>April 3, 2014</h3>
+        <p>
+        The latest release.
+        These are made roughly every three months and become out of date quickly.
+        </p>
+      </div>
+      <div class="col-md-7">
+        <table class="table-features table-installers"><tbody>
+          <tr>
+          <td class="inst-type">Linux binaries (.tar.gz)</td>
+          <td><a href="http://static.rust-lang.org/dist/rust-0.10-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="http://static.rust-lang.org/dist/rust-0.10-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac installer (.pkg)</td>
+          <td><a href="http://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="http://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac binaries (.tar.gz)</td>
+          <td><a href="http://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="http://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows installer (.exe)</td>
+          <td></td>
+          <td><a href="http://static.rust-lang.org/dist/rust-0.10-install.exe"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Source</td>
+          <td colspan="2"><a href="http://static.rust-lang.org/dist/rust-0.10.tar.gz"><div class="inst-button">rust-0.10.tar.gz</div></a></td>
+          </tr>
+        </tbody></table>
+      </div>
+      </div>
+    
+    <div class="row">
+      <div class="col-md-offset-1 col-md-11">
+      <p>
+        <a href="https://github.com/mozilla/rust/wiki/Doc-releases">
+        Additional resources</a> &ndash; including release notes, signatures, previous releases.
+      </p>
+      </div>
+    </div>
+  </body>
 </html>

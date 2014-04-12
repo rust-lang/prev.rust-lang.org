@@ -1,208 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>The Rust Programming Language</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keywords" content="Rust, Rust programming language, rustlang, Mozilla Rust">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
+---
+layout: default
+title: The Rust Programming Language
+---
 
-	<body class="container">
-		<a href="//github.com/mozilla/rust"><img class="ribbon" style="display: none" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <div class="row install-row">
+      <div class="col-md-8">
+        <p class="pitch">
+          <b>Rust</b> is a systems programming language
+          that runs blazingly fast,
+          prevents almost all crashes<span class="asterisk">*</span>,
+          and eliminates data races.
+        </p>
+      </div>
+      <div class="col-md-4 install-box">
+          <span class="version-rec-box-inner">
+            Recommended Version:<br>
+            <span id="install-version">
+              0.10-pre-nightly
+              (<span>source</span>)
+            </span>
+          </span>
+        <a class="btn btn-primary" id="inst-link" href="http://static.rust-lang.org/dist/rust-nightly.tar.gz">Install</a>
+        <a class="btn btn-default" href="install.html" role="button">Other Downloads</a>
+      </div>
+    </div>
 
-		<!-- header start -->
-		<!-- HEY! This code is duplicated in the other html files.
-			 That sucks, but if need to change this do some copying and pasting. -->
-
-		<ul class="row menu">
-			<li class="col-xs-2 col-md-2">
-				<a href="index.html"><img class="img-responsive" src="logos/rust-logo-128x128-blk-v2.png" height="128" width="128" alt="Rust logo" /></a>
-			</li>
-			<li class="col-xs-2 col-md-2"></li>
-			<li class="col-xs-2 col-md-2"><h2>Docs (Nightly)</h2>
-				<ul>
-					<li><a href="http://doc.rust-lang.org/doc/master/tutorial.html">Tutorial</a></li>
-					<li><a href="http://doc.rust-lang.org/doc/master/rust.html">Manual</a></li>
-					<li>
-						<a href="http://doc.rust-lang.org/doc/master/std/index.html">std API docs</a></li>
-						<li><a href="http://static.rust-lang.org/doc/master/index.html">All docs</a>
-					</li>
-				</ul>
-			</li>
-			<li class="col-xs-2 col-md-2"><h2>Docs (0.10)</h2>
-				<ul>
-					<li><a href="http://doc.rust-lang.org/doc/0.10/tutorial.html">Tutorial</a></li>
-					<li><a href="http://doc.rust-lang.org/doc/0.10/rust.html">Manual</a></li>
-					<li>
-						<a href="http://doc.rust-lang.org/doc/0.10/std/index.html">std API docs</a></li>
-						<li><a href="http://static.rust-lang.org/doc/0.10/index.html">All docs</a>
-					</li>
-				</ul>
-			</li>
-			<li class="col-xs-2 col-md-2"><h2>Community</h2>
-				<ul>
-					<li>
-						<a href="http://github.com/mozilla/rust">GitHub</a>
-					</li>
-					<li>
-						<a href="http://reddit.com/r/rust">Reddit</a> | <a href="http://twitter.com/rustlang">Twitter</a>
-					</li>
-					<li>
-						<a href="https://mail.mozilla.org/listinfo/rust-dev">Mailing List</a>
-					</li>
-					<li>
-						<a href="http://chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust">IRC</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-
-		<!-- header end -->
-
-
-		<div class="row" id="install-row">
-		  <div class="col-md-8" id="pitch">
-			<!--<p>
-The <b>Rust</b> programming language applies the best
-of modern theory to the problems that face developers
-at the lowest levels of the software stack.
-With Rust, developers may craft systems that coax
-the maximum performance and predictability from tomorrow's hardware.
-And Rust never crashes. <span class="asterisk">*</span>
-			</p>-->
-
-			<p>
-			  <b>Rust</b> is a systems programming language
-			  that runs blazingly fast,
-			  prevents almost all crashes<span class="asterisk">*</span>,
-			  and eliminates data races.
-			</p>
-
-          </div>
-		  <div class="col-md-4">
-			<div id="install-box">
-			  <div class="install-button-row">
-				<span class="version-rec-box">
-				  <span class="version-rec-box-inner">
-					<div>
-					  Recommended Version:
-					</div>
-					<div id="install-version">
-					  0.10-pre-nightly
-					  (<span>source</span>)
-					</div>
-				</span>
-				</span>
-			  </div>
-			  <div class="install-button-row"><a id="inst-link" href="http://static.rust-lang.org/dist/rust-nightly.tar.gz"><span id="install-button"><div>Install</div></span></a></div>
-			  <div class="install-button-row"><a href="install.html"><span class="minor-button"><div>Other Downloads</div></span></a></div>
-			</div>
-		  </div>
-		</div>
-
-		<div class="row code-row">
-		  <div class="col-md-4">
-			<h2>Featuring</h2>
-			<div class="laundry-list">
-			  <div><span class="z">·</span>algebraic data types</div>
-			  <div><span class="z">·</span>pattern matching</div>
-			  <div><span class="z">·</span>closures</div>
-			  <div><span class="z">·</span>type inference</div>
-			  <div><span class="z">·</span>zero-cost abstractions</div>
-			  <div><span class="z">·</span>guaranteed memory safety</div>
-			  <div><span class="z">·</span>optional garbage collection</div>
-			  <div><span class="z">·</span>concurrency without data races</div>
-			  <div><span class="z">·</span>minimal runtime</div>
-			  <div><span class="z">·</span>efficient FFI</div>
-			</div>
-		  </div>
-		  <div class="col-md-8">
+    <div class="row code-row">
+      <div class="col-md-4">
+      <h2>Featuring</h2>
+      <ul class="laundry-list">
+        <li>algebraic data types</li>
+        <li>pattern matching</li>
+        <li>closures</li>
+        <li>type inference</li>
+        <li>zero-cost abstractions</li>
+        <li>guaranteed memory safety</li>
+        <li>optional garbage collection</li>
+        <li>concurrency without data races</li>
+        <li>minimal runtime</li>
+        <li>efficient FFI</li>
+      </ul>
+      </div>
+      <div class="col-md-8">
 <pre class='rust'>
 <span class='kw'>fn</span> main() {
-    <span class='comment'>// A simple integer calculator:
-    // `+` or `-` means add/sub by 1
-    // `*` or `/` means mul/div by 2</span>
+  <span class='comment'>// A simple integer calculator:
+  // `+` or `-` means add/sub by 1
+  // `*` or `/` means mul/div by 2</span>
  
-    <span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
-    <span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0</span>;
+  <span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
+  <span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0</span>;
  
-    <span class='kw'>for</span> token in program.chars() {
-        <span class='kw'>match</span> token {
-            <span class='string'>'+'</span> => accumulator <span class='op'>+=</span> <span class='number'>1</span>,
-            <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
-            <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
-            <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
-            _ => { <span class='comment'>/* ignore everything else */</span> }
-        }
+  <span class='kw'>for</span> token in program.chars() {
+    <span class='kw'>match</span> token {
+      <span class='string'>'+'</span> => accumulator <span class='op'>+=</span> <span class='number'>1</span>,
+      <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
+      <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
+      <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
+      _ => { <span class='comment'>/* ignore everything else */</span> }
     }
+  }
  
-    <span class='prelude-val'>println!</span>(<span class='string'>"The program \"{}\" calculates the value {}"</span>,
-             program, accumulator);
+  <span class='prelude-val'>println!</span>(<span class='string'>"The program \"{}\" calculates the value {}"</span>,
+       program, accumulator);
 }
 </pre>
-		  </div>
+      </div>
+    </div>
 
-		<div class="row">
-		  <div class="col-md-7"></div>
-		  <div class="col-md-5">
-			<p class="footnote">
-			  <span class="asterisk">*</span>
-			  In theory. Rust is a work-in-progress and may do anything it likes up to and including eating your laundry.
-			</p>
-		  </div>
-		</div>
+    <p class="footnote">
+      <span class="asterisk">*</span>
+      In theory. Rust is a work-in-progress and may do anything it likes up to and including eating your laundry.
+    </p>
 
-	</body>
+  <script type="text/javascript">
+    function detect_platform() {
+      var os = "unknown";
 
-    <script type="text/javascript">
-      function detect_platform() {
-          var os = "unknown";
-
-          if (os == "unknown") {
-              if (navigator.platform == "Linux x86_64") os = "x86_64-unknown-linux-gnu";
-              if (navigator.platform == "Linux i686") os = "i686-unknown-linux-gnu";
-          }
-
-          // I wish I knew by know, but I don't. Try harder.
-          if (os == "unknown") {
-              if (navigator.appVersion.indexOf("Win")!=-1) os = "i686-pc-mingw32";
-              if (navigator.appVersion.indexOf("Mac")!=-1) os = "x86_64-apple-darwin";
-              if (navigator.appVersion.indexOf("Linux")!=-1) os = "x86_64-unknown-linux-gnu";
-          }
-
-          return os;
-      }
-      
-      var platform = detect_platform();
-
-      var rec_package_name = "nightly";
-      var rec_version_type = "source";
-      var rec_download_file = "rust-nightly.tar.gz";
-
-      if (platform == "x86_64-unknown-linux-gnu") {
-          rec_version_type = "Linux binary";
-          rec_download_file = "rust-" + rec_package_name + "-x86_64-unknown-linux-gnu.tar.gz";
-      } else if (platform == "i686-unknown-linux-gnu") {
-          rec_version_type = "Linux binary";
-          rec_download_file = "rust-" + rec_package_name + "-i686-unknown-linux-gnu.tar.gz";
-      } else if (platform == "x86_64-apple-darwin") {
-          rec_version_type = "Mac installer";
-          rec_download_file = "rust-" + rec_package_name + "-x86_64-apple-darwin.pkg";
-      } else if (platform == "i686-pc-mingw32") {
-          rec_version_type = "Windows installer";
-          rec_download_file = "rust-" + rec_package_name + "-install.exe";
+      if (os == "unknown") {
+        if (navigator.platform == "Linux x86_64") os = "x86_64-unknown-linux-gnu";
+        if (navigator.platform == "Linux i686") os = "i686-unknown-linux-gnu";
       }
 
-      var rec_package_desc = rec_package_name + " (<span>" + rec_version_type + "</span>)";
-      var rec_vers_div = document.getElementById("install-version");
-      rec_vers_div.innerHTML = rec_package_desc;
+      // I wish I knew by know, but I don't. Try harder.
+      if (os == "unknown") {
+        if (navigator.appVersion.indexOf("Win")!=-1) os = "i686-pc-mingw32";
+        if (navigator.appVersion.indexOf("Mac")!=-1) os = "x86_64-apple-darwin";
+        if (navigator.appVersion.indexOf("Linux")!=-1) os = "x86_64-unknown-linux-gnu";
+      }
 
-      var rec_dl_addy = "http://static.rust-lang.org/dist/" + rec_download_file;
-      var rec_inst_link = document.getElementById("inst-link");
-      rec_inst_link.setAttribute("href", rec_dl_addy);
-     
-	</script>
+      return os;
+    }
+    
+    var platform = detect_platform();
 
-</html>
+    var rec_package_name = "nightly";
+    var rec_version_type = "source";
+    var rec_download_file = "rust-nightly.tar.gz";
+
+    if (platform == "x86_64-unknown-linux-gnu") {
+      rec_version_type = "Linux binary";
+      rec_download_file = "rust-" + rec_package_name + "-x86_64-unknown-linux-gnu.tar.gz";
+    } else if (platform == "i686-unknown-linux-gnu") {
+      rec_version_type = "Linux binary";
+      rec_download_file = "rust-" + rec_package_name + "-i686-unknown-linux-gnu.tar.gz";
+    } else if (platform == "x86_64-apple-darwin") {
+      rec_version_type = "Mac installer";
+      rec_download_file = "rust-" + rec_package_name + "-x86_64-apple-darwin.pkg";
+    } else if (platform == "i686-pc-mingw32") {
+      rec_version_type = "Windows installer";
+      rec_download_file = "rust-" + rec_package_name + "-install.exe";
+    }
+
+    var rec_package_desc = rec_package_name + " (<span>" + rec_version_type + "</span>)";
+    var rec_vers_div = document.getElementById("install-version");
+    rec_vers_div.innerHTML = rec_package_desc;
+
+    var rec_dl_addy = "http://static.rust-lang.org/dist/" + rec_download_file;
+    var rec_inst_link = document.getElementById("inst-link");
+    rec_inst_link.setAttribute("href", rec_dl_addy);
+   
+  </script>
