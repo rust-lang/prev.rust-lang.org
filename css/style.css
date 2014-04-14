@@ -1,39 +1,53 @@
+@font-face {
+	font-family: 'Fira Sans';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Fira Sans Light'), url("../fonts/FiraSans-Light.woff") format('woff');
+}
+@font-face {
+	font-family: 'Fira Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Fira Sans'), url("../fonts/FiraSans-Regular.woff") format('woff');
+}
+@font-face {
+	font-family: 'Fira Sans';
+	font-style: normal;
+	font-weight: 500;
+	src: local('Fira Sans Medium'), url("../fonts/FiraSans-Medium.woff") format('woff');
+}
+
 body {
-	margin-top: 30px;
-	margin-bottom: 60px;
+	font-family: 'Fira Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	max-width: 820px;
 }
 p {
 	margin-top: 1.2em;
 	margin-bottom: 1.2em;
 }
+b {
+	font-weight: bolder;
+}
 li {
-	margin-top: 1em;
-	margin-bottom: 1em;
-}
-h1.title {
-	font-size: 3em;
-	margin-top: 0.5em;
-	font-weight: bold;
-	margin-bottom: 10px;
-	text-align: center;
-}
-h1.title span {
-	font-size: 70%;
+	margin-top: .5em;
+	margin-bottom: .5em;
 }
 h1 {
 	font-size: 2em;
 	margin-top: 1.2em;
 	margin-bottom: 0.5em;
 }
-h1 small {
-	color: #777;
-	margin-left: 1em;
-}
 
+ul {
+	padding-left: 30px;
+}
 ul.menu {
 	font-size: 1em;
 	margin: 0;
 	padding: 0;
+	text-align: center;
 }
 ul.menu li {
 	list-style-type: none;
@@ -41,10 +55,9 @@ ul.menu li {
 	margin-bottom: 0em;
 }
 ul.menu h2 {
-	font-size: 1.1em;
-	font-weight: bold;
-	margin: 0;
-	margin-bottom: 1em;
+	font-size: 15.4px;
+	font-weight: 500;
+	margin: .8em 0;
 }
 ul.menu li>ul {
 	margin-top: .5em;
@@ -52,26 +65,29 @@ ul.menu li>ul {
 	line-height: 1.5em;
 }
 
-.header-right {
-	text-align: right;
-}
-
 .menu img {
-	margin: 0em auto 0em 0em;
+	margin: 0 auto 20px auto;
 }
-
-.note {
-	font-style: italic;
+@media (min-width: 992px) {
+	ul.menu {
+		text-align: left;
+	}
+	.menu img {
+		margin: 0;
+	}
 }
 
 h2 {
-	font-weight: bold;
-	font-size: 1.3em;
+	font-weight: 500;
+	font-size: 18.5px; /* gridfit */
+}
+h3 {
+	font-weight: 500;
 }
 
 .side-header h2 {
-	font-weight: bold;
-	font-size: 1.3em;
+	font-weight: 500;
+	font-size: 18.5px;
 	line-height: 24px;
 	margin-top: 7px;
 }
@@ -82,16 +98,7 @@ h2 {
 }
 
 .side-header p {
-	color: 	#777;
-}
-
-.preferred-method h2 {
-	font-weight: bold;
-	font-size: 1.1em;
-	line-height: 24px;
-	display: inline;
-	margin-right: 0.5em;
-	margin-top: 0px;
+	color:  #777;
 }
 
 .table-features {
@@ -106,17 +113,17 @@ h2 {
 	border: none;
 }
 
-.install-menu {
-	margin-top: 5em;
-}
-
-.install-menu .row {
+div.install {
+	margin-top: 2.5em;
 	margin-bottom: 1.5em;
+}
+@media (min-width: 662px) {
+	div.install {
+		margin-top: 5em;
+	}
 }
 
 .table-installers {
-	margin-left: 2em;
-	width: 30em;
 	border-spacing: 4px;
 	border: 0px;
 	empty-cells: hide;
@@ -128,7 +135,7 @@ h2 {
 
 .table-installers td.inst-type {
 	border: 0px;
-	font-weight: bold;
+	color: black;
 	text-align: left;
 	width: 15em;
 }
@@ -150,76 +157,35 @@ h2 {
 	text-decoration: none;
 }
 
-#install-row {
+.install-row {
 	margin-bottom: 0em;
 }
 
-#pitch p {
-	margin-top: 2em;
-	margin-bottom: 2em;
-	text-align: left;
-	font-size: 200%;
+p.pitch {
+	font-size: 25px;
+	font-weight: 300;
+	text-align: center;
+}
+@media (min-width: 992px) {
+	p.pitch {
+		font-size: 28px;
+		margin-top: 2.7em;
+		margin-bottom: 1.8em;
+		text-align: left;
+	}
 }
 
-#install-box {
+.install-box {
 	color: #777;
 	text-align: right;
 	font-size: 130%;
 	margin-top: 1em;
 }
 
-#install-box .install-button-row {
-	margin: 1em auto 1em auto;
-}
-
-.version-rec-box {
-	width: 10em;
-	display: inline-block;
-}
-
 .version-rec-box-inner {
-	font-size: 60%;
+	display: block;
+	font-size: 12px;
 	text-align: center;
-}
-
-#install-button {
-	border: 2px solid white;
-	color: white;
-	background-color: #428BCA;
-	border-radius: 4px;
-	padding: 0.5em 0em 0.5em 0em;
-	font-weight: bold;
-	width: 10em;
-	display: inline-block;
-}
-
-#install-button div {
-	text-align: center;
-	
-}
-
-#install-button:hover {
-	border-color: #428BCA;
-	background-color: white;
-	color: #428BCA;
-}
-
-.minor-button {
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	width: 10em;
-	display: inline-block;
-	padding: 0.5em 0em 0.5em 0em;
-}
-
-.minor-button div {
-	text-align: center;
-}
-
-.minor-button:hover {
-	color: white;
-	background-color: #428BCA;
-	border-color: #428BCA;
 }
 
 hr {
@@ -235,39 +201,47 @@ hr {
 .footnote {
 	color: #777;
 	text-align: right;
-	font-size: 80%;
-	margin-top: 7em;
+	font-size: 12px;
+	padding: 0 15px;
 }
 
-.slogan-row {
-	text-align: center;
-	margin-top: 2em;
-	margin-bottom: 4em;
-	font-size: 110%;
-	font-style: italic;
-	height: 2em;
+.laundry-list {
+	font-size: 16px;
+	list-style-type: square;
 }
 
-.slogan-row .flowers {
-	color: #428BCA;
-	font-size: 250%;
-	margin: 0px;
-	margin-top: 0.15em;
+.install-box a.btn {
+	display:block;
+	margin:1em auto;
+	max-width: 250px;
 }
 
-.laundry-list span.z {
-	color: #428BCA;
-	margin: 0em 0.4em 0em 0em;
-	font-size: 150%;
+ul.laundry-list {
+	column-count: 2;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	margin-bottom: 20px;
 }
 
 @media (min-width: 992px) {
+	.install-box a.btn {
+		font-size: 20px;
+		padding: 10px 15px;
+	}
+	ul.laundry-list {
+	  column-count: auto;
+	  -moz-column-count: auto;
+	  -webkit-column-count: auto;
+	}
 	img.ribbon {
 		display: inline !important;
 		position: absolute;
 		top: 0;
 		right: 0;
 		border: 0;
+	}
+	ul.menu .col-xs-12 {
+		padding-left: 0;
 	}
 }
 
