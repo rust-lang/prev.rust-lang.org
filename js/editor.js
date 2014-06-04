@@ -118,20 +118,21 @@ function handleSuccess(message) {
   resultDiv.innerHTML = message;
 }
 
-// Called on unsuccessful program run. Detects and prints errors in program
-// output and highlights relevant lines and text in the code.
+// Called when program run results in warning(s)
 function handleWarning(message) {
   resultDiv.style.backgroundColor = warningColor;
   handleProblem(message, "warning");
 }
 
-// Called on unsuccessful program run. Detects and prints errors in program
-// output and highlights relevant lines and text in the code.
+// Called when program run results in error(s)
 function handleError(message) {
   resultDiv.style.backgroundColor = errorColor;
   handleProblem(message, "error");
 }
 
+// Called on unsuccessful program run. Detects and prints problems (either
+// warnings or errors) in program output and highlights relevant lines and text
+// in the code.
 function handleProblem(message, problem) {
   // Getting list of ranges with problems
   var lines = message.split("<br />");
