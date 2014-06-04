@@ -254,7 +254,7 @@ ul.laundry-list {
   padding: none;
   margin: none;
   width: 100%;
-  height: 340px;
+  min-height: 340px;
   font-size: 13px;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
@@ -285,14 +285,24 @@ ul.laundry-list {
   border-radius: 4px;
 }
 
+.ace-error-text, .ace-error-line, .ace-warning-text, .ace-warning-line {
+  position: absolute;
+}
+
 .ace-error-text {
   background-color: #e9abab;
-  position: absolute;
 }
 
 .ace-error-line {
   background-color: #F6E2E2;
-  position: absolute;
+}
+
+.ace-warning-text {
+  background-color: #FFEF00;
+}
+
+.ace-warning-line {
+  background-color: #FFFBCB;
 }
 
 pre { background-color: #FDFDFD; }
