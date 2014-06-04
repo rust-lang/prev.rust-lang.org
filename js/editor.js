@@ -96,7 +96,6 @@ function runProgram(program, callback) {
 
 // The callback to runProgram
 function handleResult(statusCode, message) {
-  var message = message.replace(/<anon>/g, '');
   var message = message.replace(/(?:\r\n|\r|\n)/g, '<br />');
 
   // Dispatch depending on result type
@@ -139,11 +138,15 @@ function handleProblem(message, problem) {
 
   // Cleaning up the message: keeps only relevant problem output
   var cleanMessage = lines.map(function(line) {
-    var errIndex = line.indexOf(problem + ": ");
-    if (errIndex !== -1) {
-      return line.slice(errIndex);
+    if (line.startsWith("<anon>") || line.indexOf("^") !== -1) {
+      var errIndex = line.indexOf(problem + ": ");
+      if (errIndex !== -1) return line.slice(errIndex);
+      return "";
     }
-    return "";
+
+    // Discard playpen messages, keep the rest
+    if (line.startsWith("playpen:")) return "";
+    return line;
   }).filter(function(line) {
     return line !== "";
   }).join("<br />");
@@ -171,7 +174,7 @@ function parseProblems(lines) {
   var ranges = [];
   for (var i in lines) {
     var line = lines[i];
-    if (line.startsWith(":") && line.indexOf(": ") !== -1) {
+    if (line.startsWith("<anon>:") && line.indexOf(": ") !== -1) {
       var parts = line.split(/:\s?|\s+/, 5).slice(1, 5);
       var ip = parts.map(function(p) { return parseInt(p, 10) - 1; });
       // console.log("line:", line, parts, ip);
