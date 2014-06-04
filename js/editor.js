@@ -7,6 +7,7 @@ if (typeof String.prototype.startsWith != 'function') {
 
 // Fetching DOM items
 var activeCode = document.getElementById("active-code");
+var editorDiv = document.getElementById("editor");
 var staticCode = document.getElementById("static-code");
 var runButton = document.getElementById("run-code");
 var resultDiv = document.getElementById("result");
@@ -14,12 +15,18 @@ var resultDiv = document.getElementById("result");
 // Background colors for program result on success/error
 var successColor = "#E2EEF6";
 var errorColor = "#F6E2E2";
+var warningColor = "#FFFBCB";
 
 // Error message to return when there's a server failure
 var errMsg = "The server encountered an error while running the program.";
 
 // Stores ACE editor markers (highights) for errors
 var markers = [];
+
+// Status codes, because there are no enums in Javascript
+var SUCCESS = 0;
+var ERROR = 1;
+var WARNING = 2;
 
 // JS exists, display ACE editor
 staticCode.style.display = "none";
@@ -32,6 +39,21 @@ editor.setTheme("ace/theme/chrome");
 editor.getSession().setMode("ace/mode/rust");
 editor.setShowPrintMargin(false);
 editor.renderer.setShowGutter(false);
+editor.setHighlightActiveLine(false);
+
+// Changes the height of the editor to match its contents
+function updateEditorHeight() {
+  // http://stackoverflow.com/questions/11584061/
+  var newHeight = editor.getSession().getScreenLength()
+    * editor.renderer.lineHeight
+    + editor.renderer.scrollBar.getWidth();
+
+  editorDiv.style.height = Math.ceil(newHeight).toString() + "px";
+  editor.resize();
+};
+
+// Set initial size to match initial content
+updateEditorHeight();
 
 // Dispatches a XMLHttpRequest to the Rust playpen, running the program, and
 // issues a callback to `callback` with the result (or null on error)
@@ -43,14 +65,21 @@ function runProgram(program, callback) {
       code: program
   });
 
-  <!-- console.log("Sending", data); -->
-    req.open('POST', "http://playtest.rust-lang.org/evaluate.json", true);
+  // console.log("Sending", data);
+  req.open('POST', "http://playtest.rust-lang.org/evaluate.json", true);
   req.onload = function(e) {
     if (req.readyState === 4 && req.status === 200) {
       var result = JSON.parse(req.response).result;
+
       // Need server support to get an accurate version of this.
-      var isSuccess = (result.indexOf("error:") === -1);
-      callback(isSuccess, result);
+      var statusCode = SUCCESS;
+      if (result.indexOf("error:") !== -1) {
+        statusCode = ERROR;
+      } else if (result.indexOf("warning:") !== -1) {
+        statusCode = WARNING;
+      }
+
+      callback(statusCode, result);
     } else {
       callback(false, null);
     }
@@ -65,7 +94,7 @@ function runProgram(program, callback) {
 }
 
 // The callback to runProgram
-function handleResult(success, message) {
+function handleResult(statusCode, message) {
   var message = message.replace(/<anon>/g, '');
   var message = message.replace(/(?:\r\n|\r|\n)/g, '<br />');
 
@@ -73,8 +102,10 @@ function handleResult(success, message) {
   if (result == null) {
     resultDiv.style.backgroundColor = errorColor;
     resultDiv.innerHTML = errMsg;
-  } else if (success) {
+  } else if (statusCode == SUCCESS) {
     handleSuccess(message);
+  } else if (statusCode == WARNING) {
+    handleWarning(message);
   } else {
     handleError(message);
   }
@@ -88,16 +119,25 @@ function handleSuccess(message) {
 
 // Called on unsuccessful program run. Detects and prints errors in program
 // output and highlights relevant lines and text in the code.
+function handleWarning(message) {
+  resultDiv.style.backgroundColor = warningColor;
+  handleProblem(message, "warning");
+}
+
+// Called on unsuccessful program run. Detects and prints errors in program
+// output and highlights relevant lines and text in the code.
 function handleError(message) {
   resultDiv.style.backgroundColor = errorColor;
+  handleProblem(message, "error");
+}
 
-  // Getting list of ranges with errors
+function handleProblem(message, problem) {
+  // Getting list of ranges with problems
   var lines = message.split("<br />");
-  var ranges = parseError(lines);
 
-  // Cleaning up the message: keeps only relevant error output
+  // Cleaning up the message: keeps only relevant problem output
   var cleanMessage = lines.map(function(line) {
-    var errIndex = line.indexOf("error: ");
+    var errIndex = line.indexOf(problem + ": ");
     if (errIndex !== -1) {
       return line.slice(errIndex);
     }
@@ -110,27 +150,30 @@ function handleError(message) {
   resultDiv.innerHTML = cleanMessage;
 
   // Highlighting the lines
+  var ranges = parseProblems(lines);
   markers = ranges.map(function(range) {
-    return editor.getSession().addMarker(range, "ace-error-line", "fullLine", false);
+    return editor.getSession().addMarker(range, "ace-" + problem + "-line",
+      "fullLine", false);
   });
 
   // Highlighting the specific text
   markers = markers.concat(ranges.map(function(range) {
-    return editor.getSession().addMarker(range, "ace-error-text", "text", false);
+    return editor.getSession().addMarker(range, "ace-" + problem + "-text",
+      "text", false);
   }));
 }
 
-// Parses an error message returning a list of ranges (row:col, row:col) where
-// erors in the code have occured.
-function parseError(lines) {
+// Parses a problem message returning a list of ranges (row:col, row:col) where
+// problems in the code have occured.
+function parseProblems(lines) {
   var ranges = [];
   for (var i in lines) {
     var line = lines[i];
     if (line.startsWith(":") && line.indexOf(": ") !== -1) {
       var parts = line.split(/:\s?|\s+/, 5).slice(1, 5);
       var ip = parts.map(function(p) { return parseInt(p, 10) - 1; });
-      <!-- console.log("line:", line, parts, ip); -->
-        ranges.push(new Range(ip[0], ip[1], ip[2], ip[3]));
+      // console.log("line:", line, parts, ip);
+      ranges.push(new Range(ip[0], ip[1], ip[2], ip[3]));
     }
   }
 
@@ -148,4 +191,14 @@ runButton.addEventListener("click", function(ev) {
   // Get the code, run the program
   var program = editor.getValue();
   runProgram(program, handleResult);
+});
+
+// Highlight active line when focused
+editor.on('focus', function() {
+  editor.setHighlightActiveLine(true);
+});
+
+// Don't when not
+editor.on('blur', function() {
+  editor.setHighlightActiveLine(false);
 });
