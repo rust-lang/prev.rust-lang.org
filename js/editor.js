@@ -37,6 +37,7 @@ var editor = ace.edit("editor");
 var Range = ace.require('ace/range').Range;
 editor.setTheme("ace/theme/chrome");
 editor.getSession().setMode("ace/mode/rust");
+editor.getSession().setTabSize(2);
 editor.setShowPrintMargin(false);
 editor.renderer.setShowGutter(false);
 editor.setHighlightActiveLine(false);
