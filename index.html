@@ -48,50 +48,50 @@ title: The Rust Programming Language
           <button type="button" class="btn btn-primary btn-sm" id="run-code">Run</button>
           <div id="editor">// This code is editable and runnable!
 fn main() {
-  // A simple integer calculator:
-  // `+` or `-` means add/sub by 1
-  // `*` or `/` means mul/div by 2
- 
-  let program = "+ + * - /";
-  let mut accumulator = 0;
- 
-  for token in program.chars() {
-    match token {
-      '+' => accumulator += 1,
-      '-' => accumulator -= 1,
-      '*' => accumulator *= 2,
-      '/' => accumulator /= 2,
-      _ => { /* ignore everything else */ }
+    // A simple integer calculator:
+    // `+` or `-` means add/sub by 1
+    // `*` or `/` means mul/div by 2
+
+    let program = "+ + * - /";
+    let mut accumulator = 0;
+
+    for token in program.chars() {
+        match token {
+            '+' => accumulator += 1,
+            '-' => accumulator -= 1,
+            '*' => accumulator *= 2,
+            '/' => accumulator /= 2,
+            _ => { /* ignore everything else */ }
+        }
     }
-  }
- 
+
   println!("The program \"{}\" calculates the value {}",
-       program, accumulator);
+           program, accumulator);
 }</div>
           <div id="result"></div>
         </div>
         <div id="static-code">
 <pre class='rust'>
 <span class='kw'>fn</span> main() {
-  <span class='comment'>// A simple integer calculator:
-  // `+` or `-` means add/sub by 1
-  // `*` or `/` means mul/div by 2</span>
- 
-  <span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
-  <span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0</span>;
- 
-  <span class='kw'>for</span> token in program.chars() {
-    <span class='kw'>match</span> token {
-      <span class='string'>'+'</span> => accumulator <span class='op'>+=</span> <span class='number'>1</span>,
-      <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
-      <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
-      <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
-      _ => { <span class='comment'>/* ignore everything else */</span> }
+    <span class='comment'>// A simple integer calculator:
+    // `+` or `-` means add/sub by 1
+    // `*` or `/` means mul/div by 2</span>
+
+    <span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
+    <span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0</span>;
+
+    <span class='kw'>for</span> token in program.chars() {
+        <span class='kw'>match</span> token {
+            <span class='string'>'+'</span> => accumulator <span class='op'>+=</span> <span class='number'>1</span>,
+            <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
+            <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
+            <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
+            _ => { <span class='comment'>/* ignore everything else */</span> }
+        }
     }
-  }
- 
-  <span class='prelude-val'>println!</span>(<span class='string'>"The program \"{}\" calculates the value {}"</span>,
-       program, accumulator);
+
+    <span class='prelude-val'>println!</span>(<span class='string'>"The program \"{}\" calculates the value {}"</span>,
+           program, accumulator);
 }
 </pre>
         </div>
