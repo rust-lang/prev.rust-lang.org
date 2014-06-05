@@ -5,6 +5,9 @@ if (typeof String.prototype.startsWith != 'function') {
   };
 }
 
+// Regex for finding new lines
+var newLineRegex = /(?:\r\n|\r|\n)/g;
+
 // Fetching DOM items
 var activeCode = document.getElementById("active-code");
 var editorDiv = document.getElementById("editor");
@@ -56,6 +59,16 @@ function updateEditorHeight() {
 // Set initial size to match initial content
 updateEditorHeight();
 
+function escapeHTML(unsafe) {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;")
+    .replace(newLineRegex, '<br />');
+}
+
 // Dispatches a XMLHttpRequest to the Rust playpen, running the program, and
 // issues a callback to `callback` with the result (or null on error)
 function runProgram(program, callback) {
@@ -96,8 +109,6 @@ function runProgram(program, callback) {
 
 // The callback to runProgram
 function handleResult(statusCode, message) {
-  var message = message.replace(/(?:\r\n|\r|\n)/g, '<br />');
-
   // Dispatch depending on result type
   if (result == null) {
     resultDiv.style.backgroundColor = errorColor;
@@ -114,7 +125,7 @@ function handleResult(statusCode, message) {
 // Called on successful program run
 function handleSuccess(message) {
   resultDiv.style.backgroundColor = successColor;
-  resultDiv.innerHTML = message;
+  resultDiv.innerHTML = escapeHTML(message);
 }
 
 // Called when program run results in warning(s)
@@ -134,7 +145,7 @@ function handleError(message) {
 // in the code.
 function handleProblem(message, problem) {
   // Getting list of ranges with problems
-  var lines = message.split("<br />");
+  var lines = message.split(newLineRegex);
 
   // Cleaning up the message: keeps only relevant problem output
   var cleanMessage = lines.map(function(line) {
@@ -149,6 +160,8 @@ function handleProblem(message, problem) {
     return line;
   }).filter(function(line) {
     return line !== "";
+  }).map(function(line) {
+    return escapeHTML(line);
   }).join("<br />");
 
   // Setting message
