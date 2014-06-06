@@ -277,6 +277,15 @@ ul.laundry-list {
   outline: none;
 }
 
+#playground {
+  position: absolute;
+  z-index: 10;
+  float: right;
+  right: 8px;
+  top: 48px;
+  outline: none;
+}
+
 #result {
   background-color: #E2EEF6;
   margin-top: 10px;

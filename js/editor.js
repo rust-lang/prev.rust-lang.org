@@ -13,6 +13,7 @@ var activeCode = document.getElementById("active-code");
 var editorDiv = document.getElementById("editor");
 var staticCode = document.getElementById("static-code");
 var runButton = document.getElementById("run-code");
+var playButton = document.getElementById("playground");
 var resultDiv = document.getElementById("result");
 
 // Background colors for program result on success/error
@@ -208,6 +209,11 @@ runButton.addEventListener("click", function(ev) {
   // Get the code, run the program
   var program = editor.getValue();
   runProgram(program, handleResult);
+});
+
+// Navigate to playground, TODO: Get code from editor and paste into playground
+playButton.addEventListener("click", function(ev) {
+  window.location = "http://play.rust-lang.org/"
 });
 
 // Highlight active line when focused
