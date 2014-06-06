@@ -277,15 +277,6 @@ ul.laundry-list {
   outline: none;
 }
 
-#playground {
-  position: absolute;
-  z-index: 10;
-  float: right;
-  right: 8px;
-  top: 48px;
-  outline: none;
-}
-
 .fa-external-link {
   position: relative;
   float: right;
