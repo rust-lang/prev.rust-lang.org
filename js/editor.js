@@ -128,7 +128,7 @@ function handleSuccess(message) {
   var output = "<a href=\"http://play.rust-lang.org/?code=" + program + 
     "&run=1\"><i class=\"fa fa-external-link\"></i></a>"
   // console.log(output);
-  resultDiv.innerHTML = escapeHTML(message).replace(/(<br ?\/?>)*/g,"") + output;
+  resultDiv.innerHTML = output + escapeHTML(message);
 }
 
 // Called when program run results in warning(s)
