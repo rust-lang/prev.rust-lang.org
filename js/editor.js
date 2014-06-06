@@ -125,7 +125,8 @@ function handleResult(statusCode, message) {
 // Called on successful program run
 function handleSuccess(message) {
   resultDiv.style.backgroundColor = successColor;
-  resultDiv.innerHTML = escapeHTML(message);
+  var outputbutton = "<a href=\"http://play.rust-lang.org/\"><i class=\"fa fa-external-link\"></i></a>"
+  resultDiv.innerHTML = escapeHTML(message).replace(/(<br ?\/?>)*/g,"") + outputbutton + "<br />";
 }
 
 // Called when program run results in warning(s)
