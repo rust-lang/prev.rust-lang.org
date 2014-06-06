@@ -286,6 +286,11 @@ ul.laundry-list {
   outline: none;
 }
 
+.fa-external-link {
+  position: relative;
+  float: right;
+}
+
 #result {
   background-color: #E2EEF6;
   margin-top: 10px;

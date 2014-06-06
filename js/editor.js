@@ -122,11 +122,14 @@ function handleResult(statusCode, message) {
   }
 }
 
-// Called on successful program run
+// Called on successful program run: take edit contents and run in playground
 function handleSuccess(message) {
   resultDiv.style.backgroundColor = successColor;
-  var outputbutton = "<a href=\"http://play.rust-lang.org/\"><i class=\"fa fa-external-link\"></i></a>"
-  resultDiv.innerHTML = escapeHTML(message).replace(/(<br ?\/?>)*/g,"") + outputbutton + "<br />";
+  var program = encodeURIComponent(editor.getValue());
+  var output = "<a href=\"http://play.rust-lang.org/?code=" + program + 
+    "&run=1\"><i class=\"fa fa-external-link\"></i></a>"
+  // console.log(output);
+  resultDiv.innerHTML = escapeHTML(message).replace(/(<br ?\/?>)*/g,"") + output;
 }
 
 // Called when program run results in warning(s)
@@ -213,9 +216,9 @@ runButton.addEventListener("click", function(ev) {
 });
 
 // Navigate to playground, TODO: Get code from editor and paste into playground
-playButton.addEventListener("click", function(ev) {
+/*playButton.addEventListener("click", function(ev) {
   window.location = "http://play.rust-lang.org/"
-});
+});*/
 
 // Highlight active line when focused
 editor.on('focus', function() {
