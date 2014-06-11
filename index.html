@@ -68,7 +68,9 @@ fn main() {
     println!("The program \"{}\" calculates the value {}",
               program, accumulator);
 }</div>
-          <div id="result"></div>
+          <div id="result">
+            <a id="playlink" onclick="f1()" href="http://play.rust-lang.org/"><i class="icon-link-ext"></i></a>
+          </div>
         </div>
         <div id="static-code">
 <pre class='rust'>
@@ -121,7 +123,7 @@ fn main() {
 
       return os;
     }
-    
+
     var platform = detect_platform();
 
     var rec_package_name = "nightly";
@@ -149,7 +151,7 @@ fn main() {
     var rec_dl_addy = "http://static.rust-lang.org/dist/" + rec_download_file;
     var rec_inst_link = document.getElementById("inst-link");
     rec_inst_link.setAttribute("href", rec_dl_addy);
-   
+
   </script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-rust.js"></script>
