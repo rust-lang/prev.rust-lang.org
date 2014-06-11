@@ -121,12 +121,12 @@ function handleResult(statusCode, message) {
   }
 }
 
-// Called on successful program run: take edit contents and run in playground
+// Called on successful program run: display output and link to playground
 function handleSuccess(message) {
   resultDiv.style.backgroundColor = successColor;
   var program = encodeURIComponent(editor.getValue());
   var output = "<a href=\"http://play.rust-lang.org/?code=" + program + 
-    "&run=1\"><i class=\"fa fa-external-link\"></i></a>"
+    "&run=1\"><i class=\"icon-link-ext\"></i></a>"
   // console.log(output);
   resultDiv.innerHTML = output + escapeHTML(message);
 }
