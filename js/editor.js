@@ -14,6 +14,7 @@ var editorDiv = document.getElementById("editor");
 var staticCode = document.getElementById("static-code");
 var runButton = document.getElementById("run-code");
 var resultDiv = document.getElementById("result");
+var playLink = document.getElementById("playlink");
 
 // Background colors for program result on success/error
 var successColor = "#E2EEF6";
@@ -121,10 +122,15 @@ function handleResult(statusCode, message) {
   }
 }
 
-// Called on successful program run
+// Called on successful program run: display output and link to playground
 function handleSuccess(message) {
   resultDiv.style.backgroundColor = successColor;
-  resultDiv.innerHTML = escapeHTML(message);
+  var program = encodeURIComponent(editor.getValue());
+  playLink.href = "http://play.rust-lang.org/?code=" + program + "&run=1"
+  // console.log(playLink.href);
+  resultDiv.innerHTML = '';        // clear resultDiv, then add
+  resultDiv.appendChild(playLink); // playLink icon and message
+  resultDiv.innerHTML += escapeHTML(message);
 }
 
 // Called when program run results in warning(s)
@@ -164,7 +170,12 @@ function handleProblem(message, problem) {
   }).join("<br />");
 
   // Setting message
-  resultDiv.innerHTML = cleanMessage;
+  var program = encodeURIComponent(editor.getValue());
+  playLink.href = "http://play.rust-lang.org/?code=" + program + "&run=1"
+  // console.log(playLink.href);
+  resultDiv.innerHTML = '';        // clear resultDiv, then add
+  resultDiv.appendChild(playLink); // playLink icon and error message
+  resultDiv.innerHTML += cleanMessage;
 
   // Highlighting the lines
   var ranges = parseProblems(lines);
