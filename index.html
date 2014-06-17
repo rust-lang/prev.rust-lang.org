@@ -10,19 +10,20 @@ title: The Rust Programming Language
           that runs blazingly fast,
           prevents almost all crashes<span class="asterisk">*</span>,
           and eliminates data races.
-		  <br/>
-		  <a href="http://doc.rust-lang.org/master/intro.html">Show me more!</a>
+          <br/>
+          <a href="http://doc.rust-lang.org/master/intro.html">Show me more!</a>
         </p>
       </div>
       <div class="col-md-4 install-box">
-          <span class="version-rec-box-inner">
-            Recommended Version:<br>
-            <span id="install-version">
-              nightly
-              (<span>source</span>)
-            </span>
+        <span class="version-rec-box-inner">
+          Recommended Version:<br>
+          <span id="install-version">
+            nightly
+            (<span>source</span>)
           </span>
-        <a class="btn btn-primary" id="inst-link" href="http://static.rust-lang.org/dist/rust-nightly.tar.gz">Install</a>
+        </span>
+        <a class="btn btn-primary" id="inst-link"
+            href="http://static.rust-lang.org/dist/rust-nightly.tar.gz">Install</a>
         <a class="btn btn-default" href="install.html" role="button">Other Downloads</a>
       </div>
     </div>
@@ -46,7 +47,7 @@ title: The Rust Programming Language
       <div class="col-md-8">
         <div id="active-code">
           <button type="button" class="btn btn-primary btn-sm" id="run-code">Run</button>
-          <div id="editor">// This code is editable and runnable!
+<div id="editor">// This code is editable and runnable!
 fn main() {
     // A simple integer calculator:
     // `+` or `-` means add or subtract by 1
@@ -69,33 +70,33 @@ fn main() {
               program, accumulator);
 }</div>
           <div id="result">
-            <a id="playlink" onclick="f1()" href="http://play.rust-lang.org/"><i class="icon-link-ext"></i></a>
+            <a id="playlink" onclick="goPlayground()" ><i class="icon-link-ext"></i></a>
           </div>
         </div>
         <div id="static-code">
-<pre class='rust'>
-<span class='kw'>fn</span> main() {
-    <span class='comment'>// A simple integer calculator:
-    // `+` or `-` means add or subtract by 1
-    // `*` or `/` means multiply or divide by 2</span>
+          <pre class='rust'>
+          <span class='kw'>fn</span> main() {
+              <span class='comment'>// A simple integer calculator:
+              // `+` or `-` means add or subtract by 1
+              // `*` or `/` means multiply or divide by 2</span>
 
-    <span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
-    <span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0</span>;
+              <span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
+              <span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0</span>;
 
-    <span class='kw'>for</span> token in program.chars() {
-        <span class='kw'>match</span> token {
-            <span class='string'>'+'</span> => accumulator <span class='op'>+=</span> <span class='number'>1</span>,
-            <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
-            <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
-            <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
-            _ => { <span class='comment'>/* ignore everything else */</span> }
-        }
-    }
+              <span class='kw'>for</span> token in program.chars() {
+                  <span class='kw'>match</span> token {
+                      <span class='string'>'+'</span> => accumulator <span class='op'>+=</span> <span class='number'>1</span>,
+                      <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
+                      <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
+                      <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
+                      _ => { <span class='comment'>/* ignore everything else */</span> }
+                  }
+              }
 
-    <span class='prelude-val'>println!</span>(<span class='string'>"The program \"{}\" calculates the value {}"</span>,
-           program, accumulator);
-}
-</pre>
+              <span class='prelude-val'>println!</span>(<span class='string'>"The program \"{}\" calculates the value {}"</span>,
+                     program, accumulator);
+          }
+          </pre>
         </div>
       </div>
     </div>

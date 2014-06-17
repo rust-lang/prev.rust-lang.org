@@ -122,11 +122,11 @@ function handleResult(statusCode, message) {
   }
 }
 
-// Called on successful program run: display output and link to playground
+// Called on successful program run: display output and playground icon
 function handleSuccess(message) {
   resultDiv.style.backgroundColor = successColor;
   var program = encodeURIComponent(editor.getValue());
-  playLink.href = "http://play.rust-lang.org/?code=" + program + "&run=1"
+  // playLink.href = "http://play.rust-lang.org/?code=" + program + "&run=1"
   // console.log(playLink.href);
   resultDiv.innerHTML = '';        // clear resultDiv, then add
   resultDiv.appendChild(playLink); // playLink icon and message
@@ -171,7 +171,7 @@ function handleProblem(message, problem) {
 
   // Setting message
   var program = encodeURIComponent(editor.getValue());
-  playLink.href = "http://play.rust-lang.org/?code=" + program + "&run=1"
+  // playLink.href = "http://play.rust-lang.org/?code=" + program + "&run=1"
   // console.log(playLink.href);
   resultDiv.innerHTML = '';        // clear resultDiv, then add
   resultDiv.appendChild(playLink); // playLink icon and error message
@@ -220,6 +220,14 @@ runButton.addEventListener("click", function(ev) {
   var program = editor.getValue();
   runProgram(program, handleResult);
 });
+
+// When clicking on the playground icon, navigate to the playground itself
+function goPlayground() {
+  var program = "http://play.rust-lang.org/?code=" +
+      encodeURIComponent(editor.getValue()) + "&run=1"
+  window.location = program
+  //  console.log(program);
+}
 
 // Highlight active line when focused
 editor.on('focus', function() {
