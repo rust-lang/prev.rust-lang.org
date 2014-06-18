@@ -285,6 +285,8 @@ ul.laundry-list {
 }
 
  [class^="icon-"]:before, [class*=" icon-"]:before {
+  cursor: pointer;
+  cursor: hand;               /* cursor: hand ensures IE 5.5 */
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
