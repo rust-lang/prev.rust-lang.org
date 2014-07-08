@@ -152,8 +152,27 @@ fn main() {
     var rec_dl_addy = "http://static.rust-lang.org/dist/" + rec_download_file;
     var rec_inst_link = document.getElementById("inst-link");
     rec_inst_link.setAttribute("href", rec_dl_addy);
-
   </script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-rust.js"></script>
   <script type="text/javascript" charset="utf-8" src="/js/editor.js"></script>
+  <style>
+    .ace-chrome .ace_comment {
+      color: #565656;
+    }
+    .ace-chrome .ace-keyword {
+      color: #8959A8;
+    }
+    .ace-chrome .ace_entity.ace_name.ace_function {
+      color: #4271AE;
+    }
+    .ace-chrome .ace_constant.ace_numeric {
+      color: #718C00;
+    }
+    .ace-chrome .ace_keyword.ace_operator {
+        color: black;
+    }
+    .ace-chrome .ace_string {
+        color: #3E999F;
+    }
+  </style>
