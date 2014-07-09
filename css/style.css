@@ -34,11 +34,10 @@ p {
 	margin-top: 1.2em;
 	margin-bottom: 1.2em;
 }
-b {
-	font-weight: bolder;
+.pitch b {
+	font-weight: 400;
 }
 li {
-	margin-top: .5em;
 	margin-bottom: .5em;
 }
 h1 {
@@ -169,7 +168,6 @@ div.install {
 }
 
 p.pitch {
-	margin-right: 1em;
 	font-size: 25px;
 	font-weight: 300;
 	text-align: center;
@@ -179,6 +177,7 @@ p.pitch {
 		font-size: 25px;
 		margin-top: 2.7em;
 		margin-bottom: 1em;
+		margin-right: 1em;
 		text-align: left;
 	}
 }
@@ -223,7 +222,7 @@ hr {
 }
 
 .install-box a.btn {
-	display:block;
+	display: block;
 	margin:1em auto;
 	max-width: 250px;
 }
@@ -233,6 +232,10 @@ ul.laundry-list {
 	-moz-column-count: 2;
 	-webkit-column-count: 2;
 	margin-bottom: 20px;
+}
+
+.resp-block {
+	display: none;
 }
 
 @media (min-width: 992px) {
@@ -254,6 +257,9 @@ ul.laundry-list {
 	}
 	ul.menu .col-xs-12 {
 		padding-left: 0;
+	}
+	.resp-block {
+		display: block;
 	}
 }
 
@@ -342,15 +348,6 @@ ul.laundry-list {
   background-color: #FFFBCB;
 }
 
-pre { background-color: #FDFDFD; }
-
-/* Code highlighting */
-pre.rust .kw { color: #8959A8; }
-pre.rust .kw-2, pre.rust .prelude-ty { color: #4271AE; }
-pre.rust .number, pre.rust .string { color: #718C00; }
-pre.rust .self, pre.rust .boolval, pre.rust .prelude-val,
-pre.rust .attribute, pre.rust .attribute .ident { color: #C82829; }
-pre.rust .comment { color: #8E908C; }
-pre.rust .doccomment { color: #4D4D4C; }
-pre.rust .macro, pre.rust .macro-nonterminal { color: #3E999F; }
-pre.rust .lifetime { color: #B76514; }
+#active-code, #editor {
+	background-color: #FAFAFA;
+}
