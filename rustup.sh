@@ -255,6 +255,7 @@ BOOL_OPTIONS=""
 VAL_OPTIONS=""
 
 flag uninstall "only uninstall from the installation prefix"
+opt cargo 1 "install cargo with rust"
 
 if [ $HELP -eq 1 ]
 then
@@ -384,6 +385,24 @@ case $HOST_TRIPLE in
 
 esac
 
+# Is this a triple we have cargo nightlies for?
+if [ -z "${CFG_DISABLE_CARGO}" ]; then
+    case $HOST_TRIPLE in
+            x86_64-unknown-linux-gnu)
+                    CARGO_PLATFORM=linux
+                    ;;
+
+            x86_64-apple-darwin)
+                    CARGO_PLATFORM=mac
+                    ;;
+
+            *)
+                    warn "rustup.sh can't install cargo for $HOST_TRIPLE"
+                    CFG_DISABLE_CARGO=1
+
+    esac
+fi
+
 msg "host triple: ${HOST_TRIPLE}"
 
 PACKAGE_NAME=rust-nightly
@@ -395,19 +414,38 @@ LOCAL_TARBALL="${TMP_DIR}/${TARBALL_NAME}"
 LOCAL_INSTALL_DIR="${TMP_DIR}/${PACKAGE_NAME_AND_TRIPLE}"
 LOCAL_INSTALL_SCRIPT="${LOCAL_INSTALL_DIR}/install.sh"
 
+CARGO_PACKAGE_NAME=cargo-nightly
+CARGO_PACKAGE_NAME_AND_TRIPLE="${CARGO_PACKAGE_NAME}-${CARGO_PLATFORM}"
+CARGO_TARBALL_NAME="${CARGO_PACKAGE_NAME_AND_TRIPLE}.tar.gz"
+CARGO_REMOTE_TARBALL="http://static.rust-lang.org/cargo-dist/${CARGO_TARBALL_NAME}"
+CARGO_LOCAL_TARBALL="${TMP_DIR}/${CARGO_TARBALL_NAME}"
+CARGO_LOCAL_INSTALL_DIR="${TMP_DIR}/${CARGO_PACKAGE_NAME}"
+CARGO_LOCAL_INSTALL_SCRIPT="${CARGO_LOCAL_INSTALL_DIR}/install.sh"
+
 rm -Rf "${TMP_DIR}"
 need_ok "failed to remove temporary installation directory"
 
 mkdir -p "${TMP_DIR}"
 need_ok "failed to create create temporary installation directory"
 
-msg "downloading installer"
+msg "downloading rust installer"
 "${CFG_CURL}" "${REMOTE_TARBALL}" > "${LOCAL_TARBALL}"
 if [ $? -ne 0 ]
 then
 	rm -Rf "${TMP_DIR}"
 	err "failed to download installer"
 fi
+
+if [ -z "${CFG_DISABLE_CARGO}" ]; then
+    msg "downloading cargo installer"
+    "${CFG_CURL}" "${CARGO_REMOTE_TARBALL}" > "${CARGO_LOCAL_TARBALL}"
+    if [ $? -ne 0 ]
+    then
+            rm -Rf "${TMP_DIR}"
+            err "failed to download cargo installer"
+    fi
+fi
+
 
 (cd "${TMP_DIR}" && tar xzf "${TARBALL_NAME}")
 if [ $? -ne 0 ]
@@ -427,6 +465,22 @@ if [ $? -ne 0 ]
 then
 	rm -Rf "${TMP_DIR}"
 	err "failed to install Rust"
+fi
+
+if [ -z "${CFG_DISABLE_CARGO}" ]; then
+    (cd "${TMP_DIR}" && tar xzf "${CARGO_TARBALL_NAME}")
+    if [ $? -ne 0 ]
+    then
+            rm -Rf "${TMP_DIR}"
+            err "failed to unpack cargo installer"
+    fi
+
+    sh "${CARGO_LOCAL_INSTALL_SCRIPT}" "${MAYBE_UNINSTALL}"
+    if [ $? -ne 0 ]
+    then
+            rm -Rf "${TMP_DIR}"
+            err "failed to install Cargo"
+    fi
 fi
 
 rm -Rf "${TMP_DIR}"
