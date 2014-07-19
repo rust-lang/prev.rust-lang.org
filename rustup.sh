@@ -230,7 +230,6 @@ validate_opt () {
 }
 
 probe_need CFG_CURL  curl
-probe_need CFG_SUDO  sudo
 
 CFG_SRC_DIR="$(cd $(dirname $0) && pwd)/"
 CFG_SELF="$0"
