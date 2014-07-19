@@ -254,6 +254,8 @@ ul.laundry-list {
 		top: 0;
 		right: 0;
 		border: 0;
+    width: 149px;
+    height: 149px;
 	}
 	ul.menu .col-xs-12 {
 		padding-left: 0;
@@ -263,7 +265,7 @@ ul.laundry-list {
 	}
 }
 
-#editor { 
+#editor {
   padding: none;
   margin: none;
   width: 100%;
@@ -297,27 +299,27 @@ ul.laundry-list {
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
- 
+
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-     
+
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
- 
+
   position: relative;
   float: right;
   font-size: 120%;
- 
+
 }
- 
+
 .icon-link-ext:before { content: '\e800'; } /* '' */
 
 #result {
