@@ -384,24 +384,6 @@ case $HOST_TRIPLE in
 
 esac
 
-# Is this a triple we have cargo nightlies for?
-if [ -z "${CFG_DISABLE_CARGO}" ]; then
-    case $HOST_TRIPLE in
-            x86_64-unknown-linux-gnu)
-                    CARGO_PLATFORM=linux
-                    ;;
-
-            x86_64-apple-darwin)
-                    CARGO_PLATFORM=mac
-                    ;;
-
-            *)
-                    warn "rustup.sh can't install cargo for $HOST_TRIPLE"
-                    CFG_DISABLE_CARGO=1
-
-    esac
-fi
-
 msg "host triple: ${HOST_TRIPLE}"
 
 PACKAGE_NAME=rust-nightly
@@ -414,11 +396,11 @@ LOCAL_INSTALL_DIR="${TMP_DIR}/${PACKAGE_NAME_AND_TRIPLE}"
 LOCAL_INSTALL_SCRIPT="${LOCAL_INSTALL_DIR}/install.sh"
 
 CARGO_PACKAGE_NAME=cargo-nightly
-CARGO_PACKAGE_NAME_AND_TRIPLE="${CARGO_PACKAGE_NAME}-${CARGO_PLATFORM}"
+CARGO_PACKAGE_NAME_AND_TRIPLE="${CARGO_PACKAGE_NAME}-${HOST_TRIPLE}"
 CARGO_TARBALL_NAME="${CARGO_PACKAGE_NAME_AND_TRIPLE}.tar.gz"
 CARGO_REMOTE_TARBALL="http://static.rust-lang.org/cargo-dist/${CARGO_TARBALL_NAME}"
 CARGO_LOCAL_TARBALL="${TMP_DIR}/${CARGO_TARBALL_NAME}"
-CARGO_LOCAL_INSTALL_DIR="${TMP_DIR}/${CARGO_PACKAGE_NAME}"
+CARGO_LOCAL_INSTALL_DIR="${TMP_DIR}/${CARGO_PACKAGE_NAME_AND_TRIPLE}"
 CARGO_LOCAL_INSTALL_SCRIPT="${CARGO_LOCAL_INSTALL_DIR}/install.sh"
 
 rm -Rf "${TMP_DIR}"
