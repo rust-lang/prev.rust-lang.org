@@ -254,6 +254,7 @@ BOOL_OPTIONS=""
 VAL_OPTIONS=""
 
 flag uninstall "only uninstall from the installation prefix"
+valopt prefix /usr/local "set installation prefix"
 opt cargo 1 "install cargo with rust"
 
 if [ $HELP -eq 1 ]
@@ -441,7 +442,13 @@ then
 	MAYBE_UNINSTALL="--uninstall"
 fi
 
-sh "${LOCAL_INSTALL_SCRIPT}" "${MAYBE_UNINSTALL}"
+MAYBE_PREFIX=
+if [ -n "${CFG_PREFIX}" ]
+then
+	MAYBE_PREFIX="--prefix=${CFG_PREFIX}"
+fi
+
+sh "${LOCAL_INSTALL_SCRIPT}" "${MAYBE_UNINSTALL}" "${MAYBE_PREFIX}"
 if [ $? -ne 0 ]
 then
 	rm -Rf "${TMP_DIR}"
