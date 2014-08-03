@@ -254,7 +254,7 @@ BOOL_OPTIONS=""
 VAL_OPTIONS=""
 
 flag uninstall "only uninstall from the installation prefix"
-valopt prefix /usr/local "set installation prefix"
+valopt prefix "" "set installation prefix"
 opt cargo 1 "install cargo with rust"
 
 if [ $HELP -eq 1 ]
