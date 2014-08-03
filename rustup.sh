@@ -463,7 +463,7 @@ if [ -z "${CFG_DISABLE_CARGO}" ]; then
             err "failed to unpack cargo installer"
     fi
 
-    sh "${CARGO_LOCAL_INSTALL_SCRIPT}" "${MAYBE_UNINSTALL}"
+    sh "${CARGO_LOCAL_INSTALL_SCRIPT}" "${MAYBE_UNINSTALL}" "${MAYBE_PREFIX}"
     if [ $? -ne 0 ]
     then
             rm -Rf "${TMP_DIR}"
