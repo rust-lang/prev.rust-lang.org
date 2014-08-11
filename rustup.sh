@@ -229,6 +229,14 @@ validate_opt () {
     done
 }
 
+# This version of rustup.sh is not the canonical one, which is in the static-rust-lang-org s3 bucket
+echo; echo; echo
+warn "Downloading rustup.sh from http://www.rust-lang.org/rustup.sh is deprecated."
+msg "Use https://static.rust-lang.org/rustup.sh instead."
+echo; echo; echo
+# Look at me!
+sleep 4
+
 probe_need CFG_CURL  curl
 
 CFG_SRC_DIR="$(cd $(dirname $0) && pwd)/"
