@@ -116,7 +116,7 @@ fn main() {
 
       // I wish I knew by know, but I don't. Try harder.
       if (os == "unknown") {
-        if (navigator.appVersion.indexOf("Win")!=-1) os = "x86_64-w64-mingw32";
+        if (navigator.appVersion.indexOf("Win")!=-1) os = "x86_64-pc-windows-gnu";
         if (navigator.appVersion.indexOf("Mac")!=-1) os = "x86_64-apple-darwin";
         if (navigator.appVersion.indexOf("Linux")!=-1) os = "x86_64-unknown-linux-gnu";
       }
@@ -139,9 +139,9 @@ fn main() {
     } else if (platform == "x86_64-apple-darwin") {
       rec_version_type = "Mac installer";
       rec_download_file = "rust-" + rec_package_name + "-x86_64-apple-darwin.pkg";
-    } else if (platform == "x86_64-w64-mingw32") {
+    } else if (platform == "x86_64-pc-windows-gnu") {
       rec_version_type = "Windows installer";
-      rec_download_file = "rust-" + rec_package_name + "-x86_64-w64-mingw32.exe";
+      rec_download_file = "rust-" + rec_package_name + "-x86_64-pc-windows-gnu.exe";
     }
 
     var rec_package_desc = rec_package_name + " (<span>" + rec_version_type + "</span>)";
