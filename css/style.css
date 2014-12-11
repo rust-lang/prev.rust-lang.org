@@ -353,3 +353,8 @@ ul.laundry-list {
 #active-code, #editor {
 	background-color: #FAFAFA;
 }
+
+.more-examples {
+	text-align: right;
+	margin: 5px 10px 0 0;
+}
