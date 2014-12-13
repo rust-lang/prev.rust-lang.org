@@ -272,6 +272,7 @@ ul.laundry-list {
   min-height: 340px;
   font-size: 13px;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  white-space: pre-wrap;
 }
 
 #active-code {
