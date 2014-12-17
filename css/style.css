@@ -350,6 +350,30 @@ ul.laundry-list {
   background-color: #FFFBCB;
 }
 
+.ace-chrome .ace_comment {
+	color: #565656;
+}
+
+.ace-chrome .ace-keyword {
+	color: #8959A8;
+}
+
+.ace-chrome .ace_entity.ace_name.ace_function {
+	color: #4271AE;
+}
+
+.ace-chrome .ace_constant.ace_numeric {
+	color: #718C00;
+}
+
+.ace-chrome .ace_keyword.ace_operator {
+	color: black;
+}
+
+.ace-chrome .ace_string {
+	color: #3E999F;
+}
+
 #active-code, #editor {
 	background-color: #FAFAFA;
 }

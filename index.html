@@ -46,57 +46,12 @@ title: The Rust Programming Language
       <div class="col-md-8">
         <div id="active-code">
           <button type="button" class="btn btn-primary btn-sm" id="run-code">Run</button>
-<div id="editor">// This code is editable and runnable!
-fn main() {
-    // A simple integer calculator:
-    // `+` or `-` means add or subtract by 1
-    // `*` or `/` means multiply or divide by 2
-
-    let program = "+ + * - /";
-    let mut accumulator = 0i;
-
-    for token in program.chars() {
-        match token {
-            '+' => accumulator += 1,
-            '-' => accumulator -= 1,
-            '*' => accumulator *= 2,
-            '/' => accumulator /= 2,
-            _ => { /* ignore everything else */ }
-        }
-    }
-
-    println!("The program \"{}\" calculates the value {}",
-              program, accumulator);
-}</div>
+<div id="editor">{% include example.rs %}</div>
           <div id="result">
             <a id="playlink" onclick="goPlayground()" href="javascript:void(0);"><i class="icon-link-ext"></i></a>
           </div>
         </div>
-        <div id="static-code">
-<pre class='rust'>// This code is editable and runnable!
-<span class='kw'>fn</span> main() {
-    <span class='comment'>// A simple integer calculator:
-    // `+` or `-` means add or subtract by 1
-    // `*` or `/` means multiply or divide by 2</span>
-
-    <span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
-    <span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0i</span>;
-
-    <span class='kw'>for</span> token in program.chars() {
-        <span class='kw'>match</span> token {
-            <span class='string'>'+'</span> => accumulator <span class='op'>+=</span> <span class='number'>1</span>,
-            <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
-            <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
-            <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
-            _ => { <span class='comment'>/* ignore everything else */</span> }
-        }
-    }
-
-    <span class='prelude-val'>println!</span>(<span class='string'>"The program \"{}\" calculates the value {}"</span>,
-           program, accumulator);
-}
-</pre>
-        </div>
+        <div id="static-code">{% include example.rs.html %}</div>
         <div class="more-examples">
           <a href="http://rustbyexample.com/">More examples</a>
         </div>
@@ -109,72 +64,13 @@ fn main() {
     </p>
 
   <script type="text/javascript">
-    function detect_platform() {
-      var os = "unknown";
+    {% include include.js %}
 
-      if (os == "unknown") {
-        if (navigator.platform == "Linux x86_64") os = "x86_64-unknown-linux-gnu";
-        if (navigator.platform == "Linux i686") os = "i686-unknown-linux-gnu";
-      }
+    include("https://cdn.jsdelivr.net/ace/1.1.3/noconflict/ace.js", function () {
+      include("https://cdn.jsdelivr.net/ace/1.1.3/noconflict/mode-rust.js", function () {
+        {% include editor.js %}
+      });
+    });
 
-      // I wish I knew by know, but I don't. Try harder.
-      if (os == "unknown") {
-        if (navigator.appVersion.indexOf("Win")!=-1) os = "x86_64-pc-windows-gnu";
-        if (navigator.appVersion.indexOf("Mac")!=-1) os = "x86_64-apple-darwin";
-        if (navigator.appVersion.indexOf("Linux")!=-1) os = "x86_64-unknown-linux-gnu";
-      }
-
-      return os;
-    }
-
-    var platform = detect_platform();
-
-    var rec_package_name = "nightly";
-    var rec_version_type = "source";
-    var rec_download_file = "rust-nightly.tar.gz";
-
-    if (platform == "x86_64-unknown-linux-gnu") {
-      rec_version_type = "Linux binary";
-      rec_download_file = "rust-" + rec_package_name + "-x86_64-unknown-linux-gnu.tar.gz";
-    } else if (platform == "i686-unknown-linux-gnu") {
-      rec_version_type = "Linux binary";
-      rec_download_file = "rust-" + rec_package_name + "-i686-unknown-linux-gnu.tar.gz";
-    } else if (platform == "x86_64-apple-darwin") {
-      rec_version_type = "Mac installer";
-      rec_download_file = "rust-" + rec_package_name + "-x86_64-apple-darwin.pkg";
-    } else if (platform == "x86_64-pc-windows-gnu") {
-      rec_version_type = "Windows installer";
-      rec_download_file = "rust-" + rec_package_name + "-x86_64-pc-windows-gnu.exe";
-    }
-
-    var rec_package_desc = rec_package_name + " (<span>" + rec_version_type + "</span>)";
-    var rec_vers_div = document.getElementById("install-version");
-    rec_vers_div.innerHTML = rec_package_desc;
-
-    var rec_dl_addy = "https://static.rust-lang.org/dist/" + rec_download_file;
-    var rec_inst_link = document.getElementById("inst-link");
-    rec_inst_link.setAttribute("href", rec_dl_addy);
+    {% include set_platform.js %}
   </script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/ace/1.1.3/noconflict/ace.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/ace/1.1.3/noconflict/mode-rust.js"></script>
-  <script type="text/javascript" charset="utf-8" src="/js/editor.js"></script>
-  <style>
-    .ace-chrome .ace_comment {
-      color: #565656;
-    }
-    .ace-chrome .ace-keyword {
-      color: #8959A8;
-    }
-    .ace-chrome .ace_entity.ace_name.ace_function {
-      color: #4271AE;
-    }
-    .ace-chrome .ace_constant.ace_numeric {
-      color: #718C00;
-    }
-    .ace-chrome .ace_keyword.ace_operator {
-        color: black;
-    }
-    .ace-chrome .ace_string {
-        color: #3E999F;
-    }
-  </style>
