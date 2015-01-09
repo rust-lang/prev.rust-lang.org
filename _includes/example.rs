@@ -5,7 +5,7 @@ fn main() {
     // `*` or `/` means multiply or divide by 2
 
     let program = "+ + * - /";
-    let mut accumulator = 0i;
+    let mut accumulator = 0;
 
     for token in program.chars() {
         match token {
