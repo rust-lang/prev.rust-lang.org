@@ -23,7 +23,7 @@ function detect_platform() {
 
   var rec_package_name = "nightly";
   var rec_version_type = "source";
-  var rec_download_file = "rust-nightly.tar.gz";
+  var rec_download_file = "rustc-nightly-src.tar.gz";
 
   if (platform == "x86_64-unknown-linux-gnu") {
     rec_version_type = "Linux binary";
