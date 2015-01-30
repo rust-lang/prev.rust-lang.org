@@ -82,7 +82,7 @@
     });
 
     // console.log("Sending", data);
-    req.open('POST', "http://play.rust-lang.org/evaluate.json", true);
+    req.open('POST', "https://play.rust-lang.org/evaluate.json", true);
     req.onload = function(e) {
       if (req.readyState === 4 && req.status === 200) {
         var result = JSON.parse(req.response).result;
@@ -215,7 +215,7 @@
 
   // Display an output message and a link to the Rust playground
   function displayOutput(message, program) {
-    var programUrl = "http://play.rust-lang.org/?code=" +
+    var programUrl = "https://play.rust-lang.org/?code=" +
         encodeURIComponent(program) + "&run=1";
     playLink.href = programUrl;
 
