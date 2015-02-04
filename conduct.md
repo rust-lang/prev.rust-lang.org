@@ -3,6 +3,8 @@ layout: default
 title: Code of Conduct
 ---
 
+# Code of Conduct
+
 ## Conduct
 
 * We are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, disability, ethnicity, religion, or similar personal characteristic.
@@ -12,7 +14,7 @@ title: Code of Conduct
 * Please keep unstructured critique to a minimum. If you have solid ideas you want to experiment with, make a fork and see how it works.
 * We will exclude you from interaction if you insult, demean or harass anyone. That is not welcome behaviour. We interpret the term "harassment" as including the definition in the <a href="http://citizencodeofconduct.org/">Citizen Code of Conduct</a>; if you have any lack of clarity about what might be included in that concept, please read their definition. In particular, we don't tolerate behavior that excludes people in socially marginalized groups.
 * Private harassment is also unacceptable. No matter who you are, if you feel you have been or are being harassed or made uncomfortable by a community member, please contact one of the channel ops or any of the [Rust core team](https://github.com/rust-lang/rust/wiki/Note-core-team) immediately. Whether you're a regular contributor or a newcomer, we care about making this community a safe place for you and we've got your back.
-* Likewise any spamming, trolling, flaming, baiting or other attention-stealing behaviour is not welcome. 
+* Likewise any spamming, trolling, flaming, baiting or other attention-stealing behaviour is not welcome.
 
 ## Moderation
 
@@ -32,4 +34,3 @@ In the Rust community we strive to go the extra step to look out for each other.
 And if someone takes issue with something you said or did, resist the urge to be defensive. Just stop doing what it was they complained about and apologize. Even if you feel you were misinterpreted or unfairly accused, chances are good there was something you could've communicated better — remember that it's your responsibility to make your fellow Rustians comfortable. Everyone wants to get along and we are all here first and foremost because we want to talk about cool technology. You will find that people will be eager to assume good intent and forgive as long as you earn their trust.
 
 *Adapted from the [Node.js Policy on Trolling](http://blog.izs.me/post/30036893703/policy-on-trolling)*
-
