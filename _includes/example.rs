@@ -1,5 +1,3 @@
-#![feature(core)]
-
 // This code is editable and runnable!
 fn main() {
     // A simple integer calculator:
