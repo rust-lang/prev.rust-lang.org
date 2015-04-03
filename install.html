@@ -5,6 +5,59 @@ title: Install &middot; The Rust Programming Language
 
     <div class="row install">
       <div class="col-md-offset-1 col-md-3 side-header">
+        <h2>1.0.0-beta</h2>
+        <h3>April 3, 2015</h3>
+        <p>
+	  A feature-complete preview of the 1.0.0 release.
+        </p>
+      </div>
+      <div class="col-md-7">
+        <table class="table-features table-installers"><tbody>
+          <tr>
+          <td class="inst-type">Linux binaries (.tar.gz)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-beta-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-beta-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac installer (.pkg)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-beta-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-beta-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac binaries (.tar.gz)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-beta-x86_64-apple-darwin.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-beta-i686-apple-darwin.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows installer (.exe)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-beta-x86_64-pc-windows-gnu.exe"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-beta-i686-pc-windows-gnu.exe"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <tr>
+          <td class="inst-type">Windows installer (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-beta-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-beta-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <td class="inst-type">Source</td>
+          <td colspan="2"><a
+              href="https://static.rust-lang.org/dist/rustc-1.0.0-beta-src.tar.gz"><div class="inst-button">rustc-1.0.0-beta-src.tar.gz</div></a></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <p>An easy way to install the beta binaries for Linux and Mac is to run this in your shell:</p>
+        <pre><code>$ curl -s https://static.rust-lang.org/rustup.sh | sudo sh</code></pre>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-3 col-md-offset-1 side-header">
         <h2>Nightly</h2>
         <p>
         The current dev branch.
@@ -37,7 +90,7 @@ title: Install &middot; The Rust Programming Language
           <td class="inst-type">Windows installer (.msi)</td>
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
-          </tr>          
+          </tr>
           <tr>
           <td class="inst-type">Source</td>
           <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz"><div class="inst-button">rustc-nightly-src.tar.gz</div></a></td>
@@ -49,53 +102,7 @@ title: Install &middot; The Rust Programming Language
      <div class="row">
       <div class="col-md-offset-1 col-md-10">
         <p>An easy way to install the nightly binaries for Linux and Mac is to run this in your shell:</p>
-        <pre><code>$ curl -s https://static.rust-lang.org/rustup.sh | sudo sh</code></pre>
-      </div>
-    </div>
-
-    <hr/>
-
-    <div class="row">
-      <div class="col-md-3 col-md-offset-1 side-header">
-        <h2>1.0.0-alpha.2</h2>
-        <h3>February 20, 2015</h3>
-        <p>
-	  A feature-complete preview of the 1.0.0 release. For now it
-	  is still recommended to use the nightlies.
-        </p>
-      </div>
-      <div class="col-md-7">
-        <table class="table-features table-installers"><tbody>
-          <tr>
-          <td class="inst-type">Linux binaries (.tar.gz)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
-          </tr>
-          <tr>
-          <td class="inst-type">Mac installer (.pkg)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
-          </tr>
-          <tr>
-          <td class="inst-type">Mac binaries (.tar.gz)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-apple-darwin.tar.gz"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-apple-darwin.tar.gz"><div class="inst-button">32-bit</div></a></td>
-          </tr>
-          <tr>
-          <td class="inst-type">Windows installer (.exe)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-pc-windows-gnu.exe"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-pc-windows-gnu.exe"><div class="inst-button">32-bit</div></a></td>
-          </tr>
-          <tr>
-          <tr>
-          <td class="inst-type">Windows installer (.msi)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
-          </tr>          
-          <td class="inst-type">Source</td>
-          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-1.0.0-alpha.2-src.tar.gz"><div class="inst-button">rustc-1.0.0-alpha-src.tar.gz</div></a></td>
-          </tr>
-        </tbody></table>
+        <pre><code>$ curl -s https://static.rust-lang.org/rustup.sh | sudo sh -s --channel=nightly</code></pre>
       </div>
     </div>
 
