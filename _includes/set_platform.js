@@ -36,7 +36,7 @@ function detect_platform() {
     rec_download_file = "rust-" + rec_package_name + "-x86_64-apple-darwin.pkg";
   } else if (platform == "x86_64-pc-windows-gnu") {
     rec_version_type = "Windows installer";
-    rec_download_file = "rust-" + rec_package_name + "-x86_64-pc-windows-gnu.exe";
+    rec_download_file = "rust-" + rec_package_name + "-x86_64-pc-windows-gnu.msi";
   }
 
   var rec_package_desc = rec_package_name + " (<span>" + rec_version_type + "</span>)";
