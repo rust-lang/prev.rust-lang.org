@@ -84,21 +84,31 @@
     // console.log("Sending", data);
     req.open('POST', "https://play.rust-lang.org/evaluate.json", true);
     req.onload = function(e) {
+      var statusCode = false;
+      var result = null;
+
       if (req.readyState === 4 && req.status === 200) {
-        var result = JSON.parse(req.response).result;
+        result = JSON.parse(req.response);
 
-        // Need server support to get an accurate version of this.
-        var statusCode = SUCCESS;
-        if (result.indexOf("error:") !== -1) {
+        // handle application errors from playpen
+        if (typeof result['error'] === 'string') {
           statusCode = ERROR;
-        } else if (result.indexOf("warning:") !== -1) {
-          statusCode = WARNING;
-        }
+          result = 'Playpen Error: ' + result['error'];
+        } else if (typeof result['result'] === 'string') {
+          statusCode = SUCCESS;
+          result = result['result'];
 
-        callback(statusCode, result);
-      } else {
-        callback(false, null);
+          // handle rustc errors/warnings
+          // Need server support to get an accurate version of this.
+          if (result.indexOf("error:") !== -1) {
+            statusCode = ERROR;
+          } else if (result.indexOf("warning:") !== -1) {
+            statusCode = WARNING;
+          }
+        }
       }
+
+      callback(statusCode, result);
     };
 
     req.onerror = function(e) {
