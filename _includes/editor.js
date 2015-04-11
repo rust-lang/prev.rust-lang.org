@@ -76,9 +76,9 @@
   function runProgram(program, callback) {
     var req = new XMLHttpRequest();
     var data = JSON.stringify({
-      version: "master",
-        optimize: "2",
-        code: program
+      version: "beta",
+      optimize: "2",
+      code: program
     });
 
     // console.log("Sending", data);
