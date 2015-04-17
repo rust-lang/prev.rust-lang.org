@@ -21,9 +21,9 @@ function detect_platform() {
   "use strict";
   var platform = detect_platform();
 
-  var rec_package_name = "1.0.0-beta";
+  var rec_package_name = "1.0.0-beta.2";
   var rec_version_type = "source";
-  var rec_download_file = "rustc-1.0.0-beta-src.tar.gz";
+  var rec_download_file = "rustc-1.0.0-beta.2-src.tar.gz";
 
   if (platform == "x86_64-unknown-linux-gnu") {
     rec_version_type = "Linux binary";
