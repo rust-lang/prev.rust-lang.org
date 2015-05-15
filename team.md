@@ -137,6 +137,8 @@ rosters, in alphabetical order.
     <td><a href="https://github.com/vadimcn/">Vadim Chugunov<br/>
         <img class="headshot" src="https://avatars.githubusercontent.com/vadimcn"></a></td>
   </tr><tr>
+    <td><a href="https://github.com/wycats/">Yehuda Katz<br/>
+        <img class="headshot" src="https://avatars.githubusercontent.com/wycats"></a></td>
     <td><a href="https://github.com/michaelwoerister/">Michael Woerister<br/>
         <img class="headshot" src="https://avatars.githubusercontent.com/michaelwoerister"></a></td>
   </tr>
