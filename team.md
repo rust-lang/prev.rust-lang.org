@@ -13,6 +13,9 @@ title: The Rust Team
 .person {
   display: inline-block;
 }
+.lead {
+  font-weight: bold;
+}
 
 .headshots {
   text-align: center;
@@ -62,7 +65,7 @@ rosters, in alphabetical order.
       <img class="headshot" src="https://avatars.githubusercontent.com/nrc"></a></li>
   <li class="person"><a href="https://github.com/pnkfelix/">Felix Klock<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/pnkfelix"></a></li>
-  <li class="person"><a href="https://github.com/nikomatsakis/"><b>Niko Matsakis (lead)</b><br/>
+  <li class="person lead"><a href="https://github.com/nikomatsakis/">Niko Matsakis (lead)<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/nikomatsakis"></a></li>
   <li class="person"><a href="https://github.com/aturon/">Aaron Turon<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/aturon"></a></li>
@@ -85,7 +88,7 @@ rosters, in alphabetical order.
       <img class="headshot" src="https://avatars.githubusercontent.com/BurntSushi"></a></li>
   <li class="person"><a href="https://github.com/Kimundi/">Marvin Löbel<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/Kimundi"></a></li>
-  <li class="person"><a href="https://github.com/aturon/"><b>Aaron Turon (lead)</b><br/>
+  <li class="person lead"><a href="https://github.com/aturon/">Aaron Turon (lead)<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/aturon"></a></li>
   <li class="person"><a href="https://github.com/huonw/">Huon Wilson<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/huonw"></a></li>
@@ -106,7 +109,7 @@ rosters, in alphabetical order.
       <img class="headshot" src="https://avatars.githubusercontent.com/pnkfelix"></a></li>
   <li class="person"><a href="https://github.com/bkoropoff/">Brian Koropoff<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/bkoropoff"></a></li>
-  <li class="person"><a href="https://github.com/nikomatsakis/"><b>Niko Matsakis (lead)</b><br/>
+  <li class="person lead"><a href="https://github.com/nikomatsakis/">Niko Matsakis (lead)<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/nikomatsakis"></a></li>
   <li class="person"><a href="https://github.com/aatch/">James Miller<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/aatch"></a></li>
@@ -125,7 +128,7 @@ rosters, in alphabetical order.
       <img class="headshot" src="https://avatars.githubusercontent.com/brson"></a></li>
   <li class="person"><a href="https://github.com/nrc/">Nick Cameron<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/nrc"></a></li>
-  <li class="person"><a href="https://github.com/alexcrichton/"><b>Alex Crichton (lead)</b><br/>
+  <li class="person lead"><a href="https://github.com/alexcrichton/">Alex Crichton (lead)<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/alexcrichton"></a></li>
   <li class="person"><a href="https://github.com/vadimcn/">Vadim Chugunov<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/vadimcn"></a></li>
