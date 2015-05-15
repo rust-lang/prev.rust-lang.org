@@ -10,11 +10,17 @@ title: The Rust Team
   width: 140px;
 }
 
+.person {
+  display: inline-block;
+}
+
 .headshots {
   text-align: center;
-  border-collapse: collapse;
   margin: 0px auto;
-  width: 700px
+  padding: 0;
+  width: 700px;
+  max-width: 100%;
+  list-style: none;
 }
 </style>
 
@@ -28,138 +34,120 @@ rosters, in alphabetical order.
 
 **Responsibility**: *overall direction of the project, subteam leadership, cross-cutting concerns*
 
-<table class="headshots">
-  <tr>
-    <td><a href="https://github.com/brson/">Brian Anderson<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/brson"></a></td>
-    <td><a href="https://github.com/alexcrichton/">Alex Crichton<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/alexcrichton"></a></td>
-    <td><a href="https://github.com/wycats/">Yehuda Katz<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/wycats"></a></td>
-    <td><a href="https://github.com/steveklabnik/">Steve Klabnik<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/steveklabnik"></a></td>
-  </tr><tr>
-    <td><a href="https://github.com/nikomatsakis/">Niko Matsakis<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/nikomatsakis"></a></td>
-    <td><a href="https://github.com/aturon/">Aaron Turon<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/aturon"></a></td>
-    <td><a href="https://github.com/pcwalton/">Patrick Walton<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/pcwalton"></a></td>
-    <td><a href="https://github.com/huonw/">Huon Wilson<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/huonw"></a></td>
-  </tr>
-</table>
+<ul class="headshots">
+  <li class="person"><a href="https://github.com/brson/">Brian Anderson<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/brson"></a></li>
+  <li class="person"><a href="https://github.com/alexcrichton/">Alex Crichton<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/alexcrichton"></a></li>
+  <li class="person"><a href="https://github.com/wycats/">Yehuda Katz<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/wycats"></a></li>
+  <li class="person"><a href="https://github.com/steveklabnik/">Steve Klabnik<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/steveklabnik"></a></li>
+  <li class="person"><a href="https://github.com/nikomatsakis/">Niko Matsakis<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/nikomatsakis"></a></li>
+  <li class="person"><a href="https://github.com/aturon/">Aaron Turon<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/aturon"></a></li>
+  <li class="person"><a href="https://github.com/pcwalton/">Patrick Walton<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/pcwalton"></a></li>
+  <li class="person"><a href="https://github.com/huonw/">Huon Wilson<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/huonw"></a></li>
+</ul>
 
 ## Language design team
 
 **Responsibility**: *designing new language features*
 
-<table class="headshots">
-  <tr>
-    <td><a href="https://github.com/nrc/">Nick Cameron<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/nrc"></a></td>
-    <td><a href="https://github.com/pnkfelix/">Felix Klock<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/pnkfelix"></a></td>
-    <td><a href="https://github.com/nikomatsakis/"><b>Niko Matsakis (lead)</b><br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/nikomatsakis"></a></td>
-    <td><a href="https://github.com/aturon/">Aaron Turon<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/aturon"></a></td>
-  </tr>
-</table>
+<ul class="headshots">
+  <li class="person"><a href="https://github.com/nrc/">Nick Cameron<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/nrc"></a></li>
+  <li class="person"><a href="https://github.com/pnkfelix/">Felix Klock<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/pnkfelix"></a></li>
+  <li class="person"><a href="https://github.com/nikomatsakis/"><b>Niko Matsakis (lead)</b><br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/nikomatsakis"></a></li>
+  <li class="person"><a href="https://github.com/aturon/">Aaron Turon<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/aturon"></a></li>
+</ul>
 
 ## Library team
 
 **Responsibility**: *the Rust standard library, rust-lang crates, conventions*
 
-<table class="headshots">
-  <tr>
-    <td><a href="https://github.com/brson/">Brian Anderson<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/brson"></a></td>
-    <td><a href="https://github.com/Gankro/">Alexis Beingessner<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/Gankro"></a></td>
-    <td><a href="https://github.com/alexcrichton/">Alex Crichton<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/alexcrichton"></a></td>
-    <td><a href="https://github.com/sfackler/">Steven Fackler<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/sfackler"></a></td>
-  </tr><tr>
-    <td><a href="https://github.com/BurntSushi/">Andrew Gallant<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/BurntSushi"></a></td>
-    <td><a href="https://github.com/Kimundi/">Marvin Löbel<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/Kimundi"></a></td>
-    <td><a href="https://github.com/aturon/"><b>Aaron Turon (lead)</b><br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/aturon"></a></td>
-    <td><a href="https://github.com/huonw/">Huon Wilson<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/huonw"></a></td>
-  </tr>
-</table>
+<ul class="headshots">
+  <li class="person"><a href="https://github.com/brson/">Brian Anderson<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/brson"></a></li>
+  <li class="person"><a href="https://github.com/Gankro/">Alexis Beingessner<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/Gankro"></a></li>
+  <li class="person"><a href="https://github.com/alexcrichton/">Alex Crichton<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/alexcrichton"></a></li>
+  <li class="person"><a href="https://github.com/sfackler/">Steven Fackler<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/sfackler"></a></li>
+  <li class="person"><a href="https://github.com/BurntSushi/">Andrew Gallant<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/BurntSushi"></a></li>
+  <li class="person"><a href="https://github.com/Kimundi/">Marvin Löbel<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/Kimundi"></a></li>
+  <li class="person"><a href="https://github.com/aturon/"><b>Aaron Turon (lead)</b><br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/aturon"></a></li>
+  <li class="person"><a href="https://github.com/huonw/">Huon Wilson<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/huonw"></a></li>
+</ul>
 
 ## Compiler team
 
 **Responsibility**: *compiler internals, optimizations*
 
-<table class="headshots">
-  <tr>
-    <td><a href="https://github.com/jakub-/">Jakub Bukaj<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/jakub-"></a></td>
-    <td><a href="https://github.com/eddyb/">Eduard Burtescu<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/eddyb"></a></td>
-    <td><a href="https://github.com/nrc/">Nick Cameron<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/nrc"></a></td>
-    <td><a href="https://github.com/pnkfelix/">Felix Klock<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/pnkfelix"></a></td>
-  </tr><tr>
-    <td><a href="https://github.com/bkoropoff/">Brian Koropoff<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/bkoropoff"></a></td>
-    <td><a href="https://github.com/nikomatsakis/"><b>Niko Matsakis (lead)</b><br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/nikomatsakis"></a></td>
-    <td><a href="https://github.com/aatch/">James Miller<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/aatch"></a></td>
-    <td><a href="https://github.com/dotdash/">Björn Steinbrink<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/dotdash"></a></td>
-  </tr><tr>
-    <td><a href="https://github.com/michaelwoerister/">Michael Woerister<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/michaelwoerister"></a></td>
-  </tr>
-</table>
+<ul class="headshots">
+  <li class="person"><a href="https://github.com/jakub-/">Jakub Bukaj<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/jakub-"></a></li>
+  <li class="person"><a href="https://github.com/eddyb/">Eduard Burtescu<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/eddyb"></a></li>
+  <li class="person"><a href="https://github.com/nrc/">Nick Cameron<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/nrc"></a></li>
+  <li class="person"><a href="https://github.com/pnkfelix/">Felix Klock<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/pnkfelix"></a></li>
+  <li class="person"><a href="https://github.com/bkoropoff/">Brian Koropoff<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/bkoropoff"></a></li>
+  <li class="person"><a href="https://github.com/nikomatsakis/"><b>Niko Matsakis (lead)</b><br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/nikomatsakis"></a></li>
+  <li class="person"><a href="https://github.com/aatch/">James Miller<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/aatch"></a></li>
+  <li class="person"><a href="https://github.com/doliash/">Björn Steinbrink<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/doliash"></a></li>
+  <li class="person"><a href="https://github.com/michaelwoerister/">Michael Woerister<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/michaelwoerister"></a></li>
+</ul>
 
 ## Tooling and infrastructure team
 
 **Responsiblity**: *tool support (e.g. Cargo, multirust), CI infrastructure, etc.*
 
-<table class="headshots">
-  <tr>
-    <td><a href="https://github.com/brson/">Brian Anderson<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/brson"></a></td>
-    <td><a href="https://github.com/nrc/">Nick Cameron<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/nrc"></a></td>
-    <td><a href="https://github.com/alexcrichton/"><b>Alex Crichton (lead)</b><br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/alexcrichton"></a></td>
-    <td><a href="https://github.com/vadimcn/">Vadim Chugunov<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/vadimcn"></a></td>
-  </tr><tr>
-    <td><a href="https://github.com/wycats/">Yehuda Katz<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/wycats"></a></td>
-    <td><a href="https://github.com/michaelwoerister/">Michael Woerister<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/michaelwoerister"></a></td>
-  </tr>
-</table>
+<ul class="headshots">
+  <li class="person"><a href="https://github.com/brson/">Brian Anderson<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/brson"></a></li>
+  <li class="person"><a href="https://github.com/nrc/">Nick Cameron<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/nrc"></a></li>
+  <li class="person"><a href="https://github.com/alexcrichton/"><b>Alex Crichton (lead)</b><br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/alexcrichton"></a></li>
+  <li class="person"><a href="https://github.com/vadimcn/">Vadim Chugunov<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/vadimcn"></a></li>
+  <li class="person"><a href="https://github.com/wycats/">Yehuda Katz<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/wycats"></a></li>
+  <li class="person"><a href="https://github.com/michaelwoerister/">Michael Woerister<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/michaelwoerister"></a></li>
+</ul>
 
 ## Moderation team
 
 **Responsibility**: *helping uphold the [code of conduct](http://www.rust-lang.org/conduct.html)*
 
-<table class="headshots">
-  <tr>
-    <td><a href="https://github.com/mbrubeck/">Matt Brubeck<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/mbrubeck"></a></td>
-    <td><a href="https://github.com/BurntSushi/">Andrew Gallant<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/BurntSushi"></a></td>
-    <td><a href="https://github.com/manishearth/">Manish Goregaokar<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/manishearth"></a></td>
-    <td><a href="https://github.com/pnkfelix/">Felix Klock<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/pnkfelix"></a></td>
-  </tr><tr>
-    <td><a href="https://github.com/erickt/">Erick Tryzelaar<br/>
-        <img class="headshot" src="https://avatars.githubusercontent.com/erickt"></a></td>
-  </tr>
-</table>
+<ul class="headshots">
+  <li class="person"><a href="https://github.com/mbrubeck/">Matt Brubeck<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/mbrubeck"></a></li>
+  <li class="person"><a href="https://github.com/BurntSushi/">Andrew Gallant<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/BurntSushi"></a></li>
+  <li class="person"><a href="https://github.com/manishearth/">Manish Goregaokar<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/manishearth"></a></li>
+  <li class="person"><a href="https://github.com/pnkfelix/">Felix Klock<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/pnkfelix"></a></li>
+  <li class="person"><a href="https://github.com/erickt/">Erick Tryzelaar<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/erickt"></a></li>
+</ul>
