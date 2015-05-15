@@ -113,8 +113,8 @@ rosters, in alphabetical order.
       <img class="headshot" src="https://avatars.githubusercontent.com/nikomatsakis"></a></li>
   <li class="person"><a href="https://github.com/aatch/">James Miller<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/aatch"></a></li>
-  <li class="person"><a href="https://github.com/doliash/">Björn Steinbrink<br/>
-      <img class="headshot" src="https://avatars.githubusercontent.com/doliash"></a></li>
+  <li class="person"><a href="https://github.com/dotdash/">Björn Steinbrink<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/dotdash"></a></li>
   <li class="person"><a href="https://github.com/michaelwoerister/">Michael Woerister<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/michaelwoerister"></a></li>
 </ul>
