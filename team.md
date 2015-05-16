@@ -101,6 +101,19 @@ teams:
 }
 .lead { font-weight: bold; }
 .lead .name::after { content: " (lead)"; }
+.irc {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-weight: normal;
+}
+.person:hover .irc {
+   display: block;
+}
 
 .headshots {
   text-align: center;
@@ -129,6 +142,7 @@ rosters, in alphabetical order.
   <li class="person {% if team.lead and team.lead == github %}lead{% endif %}">
   <a href="https://github.com/{{ github }}">
     <div class="name">{{ person.name }}</div>
+    <div class="irc">irc: {% if person.irc %}{{ person.irc }}{% else %}{{ github }}{% endif %}</div>
     <img class="headshot" src="http://avatars.githubusercontent.com/{{ github }}">
   </a>
 </li>
