@@ -61,6 +61,17 @@
   // Set initial size to match initial content
   updateEditorHeight();
 
+  // Safely remove all content from the result div
+  function clearResultDiv() {
+    // Clearing the result div will break our reference to
+    // the playlink icon, so let's save it if it exists
+    var newPlayLink = document.getElementById("playlink");
+    if (newPlayLink) {
+      playLink = resultDiv.removeChild(newPlayLink);
+    }
+    resultDiv.innerHTML = "";
+  }
+
   function escapeHTML(unsafe) {
     return unsafe
       .replace(/&/g, "&amp;")
@@ -123,6 +134,7 @@
   function handleResult(statusCode, message) {
     // Dispatch depending on result type
     if (result == null) {
+      clearResultDiv();
       resultDiv.style.backgroundColor = errorColor;
       resultDiv.innerHTML = errMsg;
     } else if (statusCode === SUCCESS) {
@@ -213,6 +225,7 @@
   // Registering handler for run button click
   runButton.addEventListener("click", function(ev) {
     resultDiv.style.display = "block";
+    clearResultDiv();
     resultDiv.innerHTML = "Running...";
 
     // clear previous markers, if any
@@ -229,7 +242,7 @@
         encodeURIComponent(program) + "&run=1";
     playLink.href = programUrl;
 
-    resultDiv.innerHTML = '';        // clear resultDiv, then add
+    clearResultDiv();                // clear resultDiv, then add
     resultDiv.appendChild(playLink); // playLink icon and message
     resultDiv.innerHTML += message;
   }
