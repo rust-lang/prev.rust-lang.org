@@ -29,7 +29,7 @@ title: The Rust Team
 
 # The Rust Team
 
-The Rust project is [governed](https://github.com/rust-lang/rfcs/pull/1068) by a
+The Rust project is [governed](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md) by a
 number of teams, each focused on a specific area of concern. Below are the
 rosters, in alphabetical order.
 
