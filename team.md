@@ -69,6 +69,8 @@ rosters, in alphabetical order.
       <img class="headshot" src="https://avatars.githubusercontent.com/nikomatsakis"></a></li>
   <li class="person"><a href="https://github.com/aturon/">Aaron Turon<br/>
       <img class="headshot" src="https://avatars.githubusercontent.com/aturon"></a></li>
+  <li class="person"><a href="https://github.com/huonw/">Huon Wilson<br/>
+      <img class="headshot" src="https://avatars.githubusercontent.com/huonw"></a></li>
 </ul>
 
 ## Library team
