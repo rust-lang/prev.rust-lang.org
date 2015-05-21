@@ -86,6 +86,7 @@ teams:
   - name: Moderation
     responsibility: "helping uphold the [code of conduct](http://www.rust-lang.org/conduct.html)"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, erickt]
+    email: rust-mods@googlegroups.com
 ---
 
 <style type="text/css">
@@ -135,6 +136,11 @@ rosters, in alphabetical order.
 ## {{ team.name }} team
 
 **Responsibility**: *{{ team.responsibility }}*
+
+{% if team.email %}
+  **Contact**:
+  <a href="mailto:{{ team.email | uri_escape }}">{{ team.email }}</a>
+{% endif %}
 
 <ul class="headshots">
 {% for github in team.members %}
