@@ -133,6 +133,7 @@ number of teams, each focused on a specific area of concern. Below are the
 rosters, in alphabetical order.
 
 {% for team in page.teams %}
+<section id="{{ team.name | replace:' ','-' }}">
 ## {{ team.name }} team
 
 **Responsibility**: *{{ team.responsibility }}*
@@ -154,5 +155,5 @@ rosters, in alphabetical order.
 </li>
 {% endfor %}
 </ul>
-
+</section>
 {% endfor %}
