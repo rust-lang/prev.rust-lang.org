@@ -1,0 +1,20 @@
+language: ruby
+rvm:
+- 2.1
+script: jekyll build
+branches:
+  only:
+  - master
+deploy:
+  provider: s3
+  access_key_id: AKIAIR4V3CAS724EMHFQ
+  secret_access_key:
+    secure: Gg8T6boIjCYXZX+e4Il7LEyU6QQoHXGnBJcI4I5ODNsXpPjeBI2eER6BbwFd75RwfKOG4SW+K0DXKMyItpzPIg5GE4TPlrNPMB6ikV6bsrZLuP1BnpV4AwdpfhpJ1RY7F3DlOAiVvPthiDHeINAaca0LOVgv2c9H5LlOZj72Y3DDRn8NH9YTPGsPDEipq7q4ieJBuTNpKhPio4ii+oZQMWJPwpwWuTw0Fgb1GUw2Usw9Cl9FeYntrSL7LW45Eazu1NPfWQWgMLQ1MCQEntmBJyOGSKbp6uyy3607eLJ+L3dZhX+trXSOKR1qKI/pNp7TGbTbqbB8+x3UxJe2CDWkBGiNbd8SXmC41crRm6rnGnbVZV7ASeXWV2D4j2I+kuVFXtTPlf1N7D9ND05SEtSMUgTUuJ9reZK5BgybrYt2MgXsUhXzl0VecwBWVkX0zc7S3Ny3oZFK2kQA/Z/rNKUi5aqzWxF/bGDpIseR7Mqyz+VQw801D3T9qX6RfTwme4q04Qbud2h7v5Emn+hIUOa6nXXa6zdopX1H8hbKTON5+/gG1WJzbWfMndQWpMDYjtlhRODb0MCJ/NB4nMZ5dNREyAODZ1yN590i4a6w55kr6OUu3L2S53XewK1dUFGU2PgqILDxa9zNivxVnXbPObecijWYY9cOpv/PYQoeBlTbYXY=
+  bucket: www-rust-lang-org
+  acl: public_read
+  skip_cleanup: true
+  local_dir: _site
+  region: us-west-1
+  on:
+    repo: rust-lang/rust-www
+    branch: master
