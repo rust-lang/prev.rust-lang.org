@@ -1,0 +1,23 @@
+<pre class='rust'>// This code is editable and runnable!
+<span class='kw'>fn</span> main() {
+<span class='comment'>// A simple integer calculator:
+// `+` or `-` means add or subtract by 1
+// `*` or `/` means multiply or divide by 2</span>
+
+<span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
+<span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0</span>;
+
+<span class='kw'>for</span> token in program.chars() {
+<span class='kw'>match</span> token {
+    <span class='string'>'+'</span> => accumulator <span class='op'>+=</span> <span class='number'>1</span>,
+    <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
+    <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
+    <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
+    _ => { <span class='comment'>/* ignore everything else */</span> }
+}
+}
+
+<span class='prelude-val'>println!</span>(<span class='string'>"The program \"{}\" calculates the value {}"</span>,
+   program, accumulator);
+}
+</pre>
