@@ -84,7 +84,7 @@ teams:
     members: [brson, nrc, alexcrichton, vadimcn, wycats, michaelwoerister]
     lead: alexcrichton
   - name: Moderation
-    responsibility: "helping uphold the [code of conduct](http://www.rust-lang.org/conduct.html)"
+    responsibility: "helping uphold the <a href='http://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, erickt]
     email: rust-mods@googlegroups.com
 ---
@@ -134,12 +134,14 @@ rosters, in alphabetical order.
 
 {% for team in page.teams %}
 <section id="{{ team.name | replace:' ','-' }}">
-## {{ team.name }} team
+<h2> {{ team.name }} team</h2>
 
-**Responsibility**: *{{ team.responsibility }}*
+<strong>Responsibility</strong>: <em>{{ team.responsibility }}</em>
+
+<br />
 
 {% if team.email %}
-  **Contact**:
+  <strong>Contact</strong>:
   <a href="mailto:{{ team.email | uri_escape }}">{{ team.email }}</a>
 {% endif %}
 
