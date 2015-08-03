@@ -2,14 +2,16 @@ language: ruby
 rvm:
 - 2.1
 
-# Cloudfront invalidation: Decrypt credentials, then run 
+# Cloudfront invalidation: If not PR, decrypt credentials, then run 
 # https://github.com/laurilehmijoki/cf-s3-invalidator if build succeeded
 before_install:
-- openssl aes-256-cbc -K $encrypted_13e2bd2b9e2d_key -iv $encrypted_13e2bd2b9e2d_iv -in _cf_s3_invalidator.yml.enc -out _cf_s3_invalidator.yml -d
-install: cf-s3-invalidator
-after_success: cf-s3-inv
+- [ "${TRAVIS_PULL_REQUEST}" = "false" ] && openssl aes-256-cbc -K $encrypted_13e2bd2b9e2d_key -iv $encrypted_13e2bd2b9e2d_iv -in _cf_s3_invalidator.yml.enc -out _cf_s3_invalidator.yml -d
+install: 
+- [ "${TRAVIS_PULL_REQUEST}" = "false" ] && cf-s3-invalidator
+after_success: 
+- [ "${TRAVIS_PULL_REQUEST}" = "false" ] && cf-s3-inv
 
-# Build and deploy the site to the S3 bucket on push to master
+# Build and deploy the site to the S3 bucket on push to master, unless PR
 script: jekyll build
 branches:
   only:
@@ -27,3 +29,4 @@ deploy:
   on:
     repo: rust-lang/rust-www
     branch: master
+    condition: "${TRAVIS_PULL_REQUEST}" = "false"
