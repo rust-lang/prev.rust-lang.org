@@ -8,11 +8,11 @@ sudo: false
 # Cloudfront invalidation: If not PR, decrypt credentials, then run 
 # https://github.com/laurilehmijoki/cf-s3-invalidator if build succeeded
 before_install:
-- [ "${TRAVIS_PULL_REQUEST}" = "false" ] && openssl aes-256-cbc -K $encrypted_9a099440e1ee_key -iv $encrypted_9a099440e1ee_iv -in _cf_s3_invalidator.yml.enc -out _cf_s3_invalidator.yml -d 
+- '[[ $TRAVIS_PULL_REQUEST == "false" ]] && openssl aes-256-cbc -K $encrypted_9a099440e1ee_key -iv $encrypted_9a099440e1ee_iv -in _cf_s3_invalidator.yml.enc -out _cf_s3_invalidator.yml -d'
 install: 
-- [ "${TRAVIS_PULL_REQUEST}" = "false" ] && cf-s3-invalidator
+- '[[ $TRAVIS_PULL_REQUEST == "false" ]] && cf-s3-invalidator'
 after_success: 
-- [ "${TRAVIS_PULL_REQUEST}" = "false" ] && cf-s3-inv
+- '[[ $TRAVIS_PULL_REQUEST == "false" ]] && cf-s3-inv'
 
 # Build and deploy the site to the S3 bucket on push to master, unless PR
 script: jekyll build
@@ -30,6 +30,5 @@ deploy:
   local_dir: _site
   region: us-west-1
   on:
-    repo: rust-lang/rust-www
     branch: master
-    condition: "${TRAVIS_PULL_REQUEST}" = "false"
+    condition: '[[ $TRAVIS_PULL_REQUEST == "false"]]'
