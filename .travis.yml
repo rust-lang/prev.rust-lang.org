@@ -32,4 +32,4 @@ deploy:
   region: us-west-1
   on:
     branch: master
-    condition: '[[ $TRAVIS_PULL_REQUEST == "false"]]'
+    condition: $TRAVIS_PULL_REQUEST = "false"
