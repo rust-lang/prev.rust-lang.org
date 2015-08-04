@@ -16,6 +16,8 @@ people:
     name: Brian Koropoff
   brson:
     name: Brian Anderson
+  bstrie:
+    name: Ben Striegel
   BurntSushi:
     name: Andrew Gallant
     irc: burntsushi
@@ -53,8 +55,13 @@ people:
     name: Patrick Walton
   pnkfelix:
     name: Felix Klock
+  rpcraig:
+    name: Rachel Craig
+    site: twitter
   sfackler:
     name: Steven Fackler
+  skade:
+    name: Florian Gilcher
   steveklabnik:
     name: Steve Klabnik
   vadimcn:
@@ -83,10 +90,23 @@ teams:
     responsibility: "tool support (e.g. Cargo, multirust), CI infrastructure, etc."
     members: [brson, nrc, alexcrichton, vadimcn, wycats, michaelwoerister]
     lead: alexcrichton
+  - name: Community
+    responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
+    lead: steveklabnik
+    members: [brson, rpcraig, skade, manishearth, steveklabnik, bstrie, erickt]
   - name: Moderation
-    responsibility: "helping uphold the [code of conduct](http://www.rust-lang.org/conduct.html)"
+    responsibility: "helping uphold the <a href='http://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, erickt]
     email: rust-mods@googlegroups.com
+
+# Information on sites to get profile information from
+sites:
+  github:
+    url: https://github.com/%nick
+    avatar: http://avatars.githubusercontent.com/%nick
+  twitter:
+    url: https://twitter.com/%nick
+    avatar: https://avatars.io/twitter/%nick?size=large
 ---
 
 <style type="text/css">
@@ -134,23 +154,31 @@ rosters, in alphabetical order.
 
 {% for team in page.teams %}
 <section id="{{ team.name | replace:' ','-' }}">
-## {{ team.name }} team
+<h2> {{ team.name }} team</h2>
 
-**Responsibility**: *{{ team.responsibility }}*
+<strong>Responsibility</strong>: <em>{{ team.responsibility }}</em>
+
+<br />
 
 {% if team.email %}
-  **Contact**:
+  <strong>Contact</strong>:
   <a href="mailto:{{ team.email | uri_escape }}">{{ team.email }}</a>
 {% endif %}
 
 <ul class="headshots">
-{% for github in team.members %}
-  {% assign person = page.people[github] %}
-  <li class="person {% if team.lead and team.lead == github %}lead{% endif %}">
-  <a href="https://github.com/{{ github }}">
+{% for nick in team.members %}
+  {% assign person = page.people[nick] %}
+  {% if person.site %}
+    {% assign sitename = person.site %}
+  {% else %}
+    {% assign sitename = "github" %}
+  {% endif %}
+  {% assign site = page.sites[sitename] %}
+  <li class="person {% if team.lead and team.lead == nick %}lead{% endif %}">
+  <a href="{{ site.url | replace:'%nick',nick }}">
     <div class="name">{{ person.name }}</div>
-    <div class="irc">irc: {% if person.irc %}{{ person.irc }}{% else %}{{ github }}{% endif %}</div>
-    <img class="headshot" src="http://avatars.githubusercontent.com/{{ github }}">
+    <div class="irc">irc: {% if person.irc %}{{ person.irc }}{% else %}{{ nick }}{% endif %}</div>
+    <img class="headshot" src="{{ site.avatar | replace:'%nick',nick }}">
   </a>
 </li>
 {% endfor %}
