@@ -56,7 +56,7 @@ people:
   pnkfelix:
     name: Felix Klock
   rpcraig:
-    name: Rachel Craig
+    name: Rachael Craig
     site: twitter
   sfackler:
     name: Steven Fackler
