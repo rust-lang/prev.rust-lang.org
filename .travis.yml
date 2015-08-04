@@ -33,3 +33,33 @@ deploy:
   on:
     branch: master
     condition: $TRAVIS_PULL_REQUEST = "false"
+
+# Instructions for getting the magic numbers which appear above: 
+#
+# For the openssl command in the before_install step, follow the directions at
+# https://github.com/laurilehmijoki/cf-s3-invalidator to create a
+# `_cf_s3_invalidator.yml` file. The aws_key and aws_secret come from the
+# Travis account's IAM credentials, which you can get from
+# https://console.aws.amazon.com/iam/home?region=us-west-1#users if you're
+# logged in as someone with the appropriate permissions. The
+# cloudfront_distribution_id is listed in the ID field of the distribution for
+# www-rust-lang-org on the console at
+# https://console.aws.amazon.com/cloudfront/home?region=us-west-1. 
+#
+# Encryption uses the Travis CLI, so 
+# 
+#   $ gem install travis
+#
+# After populating the _cf_s3_invalidator.yml file, encrypt and add it: 
+#
+#   $ travis encrypt-file -r rust-lang/rust-www _cf_s3_invalidator.yml 
+#   $ git add _cf_s3_invalidator.yml.enc 
+#   $ rm _cf_s3_invalidator.yml
+# 
+# To encrypt the secret_access_key for the deploy step, use the Travis AWS
+# account's credentials as specified above. Then encrypt the single variable: 
+#
+#   $ travis encrypt -r rust-lang/rust-www "abc123"
+#
+# The output of that command will contain a `secure: "7890wxyzPQR"` line which
+# you then add to `.travis.yml`. 
