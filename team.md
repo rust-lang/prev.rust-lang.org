@@ -46,6 +46,9 @@ people:
   michaelwoerister:
     name: Michael Woerister
     irc: mw
+  niconii:
+    name: Nicolette Verlinden
+    irc: niconii
   nikomatsakis:
     name: Niko Matsakis
     irc: nmatsakis
@@ -96,7 +99,7 @@ teams:
     members: [brson, rpcraig, skade, manishearth, steveklabnik, bstrie, erickt]
   - name: Moderation
     responsibility: "helping uphold the <a href='http://www.rust-lang.org/conduct.html'>code of conduct</a>"
-    members: [mbrubeck, BurntSushi, manishearth, pnkfelix, erickt]
+    members: [mbrubeck, BurntSushi, manishearth, pnkfelix, erickt, niconii]
     email: rust-mods@googlegroups.com
 
 # Information on sites to get profile information from
