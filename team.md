@@ -106,7 +106,7 @@ teams:
 sites:
   github:
     url: https://github.com/%nick
-    avatar: http://avatars.githubusercontent.com/%nick
+    avatar: https://avatars.githubusercontent.com/%nick
   twitter:
     url: https://twitter.com/%nick
     avatar: https://avatars.io/twitter/%nick?size=large
