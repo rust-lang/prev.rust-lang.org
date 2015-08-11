@@ -33,8 +33,6 @@ people:
   huonw:
     name: Huon Wilson
     irc: huon
-  "jakub-":
-    name: Jakub Bukaj
   Kimundi:
     name: Marvin Löbel
     irc: kimundi
@@ -87,7 +85,7 @@ teams:
     lead: aturon
   - name: Compiler
     responsibility: "compiler internals, optimizations"
-    members: ["jakub-", eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister]
+    members: [eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister]
     lead: nikomatsakis
   - name: Tooling and infrastructure
     responsibility: "tool support (e.g. Cargo, multirust), CI infrastructure, etc."
