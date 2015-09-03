@@ -1,7 +1,45 @@
 ---
 layout: default
-title: Rust's trademark policy
+title: Rust's legal policies
 ---
+
+# Copyright
+
+## Code
+
+Rust's [code][(https://github.com/rust-lang/rust) is primarily distributed under
+the terms of both the MIT license and the Apache License (Version 2.0), with
+portions covered by various BSD-like licenses.
+See [LICENSE-APACHE](https://github.com/rust-lang/rust/blob/master/LICENSE-APACHE),
+[LICENSE-MIT](https://github.com/rust-lang/rust/blob/master/LICENSE-MIT),
+and [COPYRIGHT](https://github.com/rust-lang/rust/blob/master/COPYRIGHT) for details.
+
+## Art
+
+The Rust and Cargo logos (bitmap and vector) are owned by Mozilla and
+distributed under the terms of the Creative Commons Attribution license
+(CC-BY). This is the most permissive Creative Commons license, and allows reuse
+and modifications for any purpose. The restrictions are that distributors must
+"give appropriate credit, provide a link to the license, and indicate if changes
+were made". **Note that use of these logos, and the Rust and Cargo names, is
+also governed by trademark; our trademark policy is described below**.
+
+Variants of the Rust logo can be found at:
+
+* http://rust-lang.org/logos/rust-logo-128x128-blk.png
+* http://rust-lang.org/logos/rust-logo-128x128-blk-v2.png
+* http://rust-lang.org/logos/rust-logo-128x128.png
+* http://rust-lang.org/logos/rust-logo-16x16-blk.png
+* http://rust-lang.org/logos/rust-logo-16x16.png
+* http://rust-lang.org/logos/rust-logo-256x256-blk.png
+* http://rust-lang.org/logos/rust-logo-256x256.png
+* http://rust-lang.org/logos/rust-logo-32x32-blk.png
+* http://rust-lang.org/logos/rust-logo-32x32.png
+* http://rust-lang.org/logos/rust-logo-512x512-blk.png
+* http://rust-lang.org/logos/rust-logo-512x512.png
+* http://rust-lang.org/logos/rust-logo-64x64-blk.png
+* http://rust-lang.org/logos/rust-logo-64x64.png
+* http://rust-lang.org/logos/rust-logo-blk.svg
 
 # Trademark policy
 
