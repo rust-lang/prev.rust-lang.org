@@ -17,12 +17,13 @@ and [COPYRIGHT](https://github.com/rust-lang/rust/blob/master/COPYRIGHT) for det
 ## Art
 
 The Rust and Cargo logos (bitmap and vector) are owned by Mozilla and
-distributed under the terms of the Creative Commons Attribution license
-(CC-BY). This is the most permissive Creative Commons license, and allows reuse
-and modifications for any purpose. The restrictions are that distributors must
-"give appropriate credit, provide a link to the license, and indicate if changes
-were made". **Note that use of these logos, and the Rust and Cargo names, is
-also governed by trademark; our trademark policy is described below**.
+distributed under the terms of the
+[Creative Commons Attribution license (CC-BY)](http://creativecommons.org/licenses/by/4.0/). This
+is the most permissive Creative Commons license, and allows reuse and
+modifications for any purpose. The restrictions are that distributors must "give
+appropriate credit, provide a link to the license, and indicate if changes were
+made". **Note that use of these logos, and the Rust and Cargo names, is also
+governed by trademark; our trademark policy is described below**.
 
 Variants of the Rust logo can be found at:
 
