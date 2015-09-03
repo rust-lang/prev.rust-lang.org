@@ -1,3 +1,8 @@
+---
+layout: default
+title: Rust's trademark policy
+---
+
 # Trademark policy
 
 The Rust and Cargo names and brands make it possible to say what is officially
