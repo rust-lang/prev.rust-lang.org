@@ -7,7 +7,7 @@ title: Rust's legal policies
 
 ## Code
 
-Rust's [code][(https://github.com/rust-lang/rust) is primarily distributed under
+Rust's [code](https://github.com/rust-lang/rust) is primarily distributed under
 the terms of both the MIT license and the Apache License (Version 2.0), with
 portions covered by various BSD-like licenses.
 See [LICENSE-APACHE](https://github.com/rust-lang/rust/blob/master/LICENSE-APACHE),
@@ -26,20 +26,20 @@ also governed by trademark; our trademark policy is described below**.
 
 Variants of the Rust logo can be found at:
 
-* http://rust-lang.org/logos/rust-logo-128x128-blk.png
-* http://rust-lang.org/logos/rust-logo-128x128-blk-v2.png
-* http://rust-lang.org/logos/rust-logo-128x128.png
-* http://rust-lang.org/logos/rust-logo-16x16-blk.png
-* http://rust-lang.org/logos/rust-logo-16x16.png
-* http://rust-lang.org/logos/rust-logo-256x256-blk.png
-* http://rust-lang.org/logos/rust-logo-256x256.png
-* http://rust-lang.org/logos/rust-logo-32x32-blk.png
-* http://rust-lang.org/logos/rust-logo-32x32.png
-* http://rust-lang.org/logos/rust-logo-512x512-blk.png
-* http://rust-lang.org/logos/rust-logo-512x512.png
-* http://rust-lang.org/logos/rust-logo-64x64-blk.png
-* http://rust-lang.org/logos/rust-logo-64x64.png
-* http://rust-lang.org/logos/rust-logo-blk.svg
+* [rust-logo-128x128-blk.png](/logos/rust-logo-128x128-blk.png)
+* [rust-logo-128x128-blk-v2.png](/logos/rust-logo-128x128-blk-v2.png)
+* [rust-logo-128x128.png](/logos/rust-logo-128x128.png)
+* [rust-logo-16x16-blk.png](/logos/rust-logo-16x16-blk.png)
+* [rust-logo-16x16.png](/logos/rust-logo-16x16.png)
+* [rust-logo-256x256-blk.png](/logos/rust-logo-256x256-blk.png)
+* [rust-logo-256x256.png](/logos/rust-logo-256x256.png)
+* [rust-logo-32x32-blk.png](/logos/rust-logo-32x32-blk.png)
+* [rust-logo-32x32.png](/logos/rust-logo-32x32.png)
+* [rust-logo-512x512-blk.png](/logos/rust-logo-512x512-blk.png)
+* [rust-logo-512x512.png](/logos/rust-logo-512x512.png)
+* [rust-logo-64x64-blk.png](/logos/rust-logo-64x64-blk.png)
+* [rust-logo-64x64.png](/logos/rust-logo-64x64.png)
+* [rust-logo-blk.svg](/logos/rust-logo-blk.svg)
 
 # Trademark policy
 
