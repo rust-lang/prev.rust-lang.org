@@ -50,7 +50,7 @@ allow them to appear. But at the same time, we want to allow for as much
 creative use of these brands as we can. The policy laid out here explains how we
 strike a balance. If you want to use these names or brands, especially in a
 commercial way, please read this page or feel free to
-[reach out](trademark@rust-lang.org) and ask us about it!
+[reach out](mailto:trademark@rust-lang.org) and ask us about it!
 
 **TL;DR**: Most non-commercial uses of the Rust/Cargo names and logos are
 allowed and do not require permission; most commercial uses require
@@ -99,7 +99,7 @@ Since this rule is about managing perception, it is subjective and somewhat
 difficult to nail down concretely. There are some obvious ways to avoid
 problems, like including the word "unofficial" in a very prominent way, but if
 you have any doubts, we would be more than happy to help; just send mail to
-[trademark@rust-lang.org](trademark@rust-lang.org).
+[trademark@rust-lang.org](mailto:trademark@rust-lang.org).
 
 ### The basics: referring to Rust/Cargo
 
@@ -130,17 +130,17 @@ RustPostgres or Rustymine, or in the name of code repositories in e.g. GitHub,
 is allowed when referring to use with or suitability for the Rust
 programming language. Such uses may also include the Rust logo, even in modified
 form. For commercial products (including crowdfunded or sponsored ones), please
-check in at [trademark@rust-lang.org](trademark@rust-lang.org) to ensure your
+check in at [trademark@rust-lang.org](mailto:trademark@rust-lang.org) to ensure your
 use does not appear official.
 
 * Using the Rust trademarks on t-shirts, hats, and other artwork or merchandise,
 even in modified form, is allowed for your personal use or for use by a
 small group of community members, as long as they are not sold. If you want to
 distribute merchandise with Rust Trademarks at a Rust affiliated event, please
-contact us for permission at [trademark@rust-lang.org](trademark@rust-lang.org).
+contact us for permission at [trademark@rust-lang.org](mailto:trademark@rust-lang.org).
 
 * Using the Rust trademarks (even in modified form) for social events like
-meetups, tutorials, and the like is allowed for events that are free to attend. For commercial events (including sponsored ones), please check in at [trademark@rust-lang.org](trademark@rust-lang.org). However, the words "RustCamp", "RustCon" or
+meetups, tutorials, and the like is allowed for events that are free to attend. For commercial events (including sponsored ones), please check in at [trademark@rust-lang.org](mailto:trademark@rust-lang.org). However, the words "RustCamp", "RustCon" or
 "RustConf" cannot be used without explicit permission. And, as with all of the
 above uses, the **event cannot appear to be officially endorsed or run by the Rust project** without written permission.
 
@@ -172,7 +172,7 @@ from the Rust core team except as described above.
 
 If you have any doubts about whether your intended use of a Rust Trademark
 requires permission, please contact us at
-[trademark@rust-lang.org](trademark@rust-lang.org).
+[trademark@rust-lang.org](mailto:trademark@rust-lang.org).
 
 This document was derived in part from the
 [Python Software Foundation Trademark Usage Policy](https://www.python.org/psf/trademarks/).
@@ -184,7 +184,7 @@ serves to clarify Mozilla's trademark policy as it relates to Rust.
 
 As a member of the Rust community, please keep an eye out for questionable uses
 of the Rust logo and "Rust" word mark. You can report potential misuse to
-[trademark@rust-lang.org](trademark@rust-lang.org). We will evaluate each case
+[trademark@rust-lang.org](mailto:trademark@rust-lang.org). We will evaluate each case
 and take appropriate action.
 
 Please do not approach users of the trademarks with a complaint. That should be
@@ -195,4 +195,4 @@ Thanks!
 ## License
 
 Interested parties may adapt this document freely under the
-[Creative Commons CC0 license](creativecommons.org/publicdomain/zero/1.0/).
+[Creative Commons CC0 license](http://creativecommons.org/publicdomain/zero/1.0/).
