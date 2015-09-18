@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Past Conferences
+title: Past Events
 ---
 
-# Past Rust Conferences and Workshops
+# Past Conferences, Talks and Workshops
 
 ### 1st August, 2015
 
