@@ -11,7 +11,7 @@ all, regardless of gender, sexual orientation, disability, ethnicity,
 religion, or similar personal characteristic.  Our code of conduct can
 be found [here](https://www.rust-lang.org/conduct.html).
 
-### News
+## News
 
 [Upcoming Conferences and Workshops]()
 
@@ -22,8 +22,7 @@ be found [here](https://www.rust-lang.org/conduct.html).
 The Rust programming blog is where the Rust team makes announcements
 about major developments.
 
-User Groups, Conferences and Workshops
-------
+## User Groups, Conferences and Workshops
 
 [Rust User Groups](./user_groups.html)
 
@@ -36,22 +35,28 @@ everyone.
 
 [Past Conferences and Workshops](./past_conferences.html) with videos
 
-### How to Get Help
+## How to Get Help
 
-[Join the IRC Channel]([https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
+[Join the Rust IRC Channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
 
-The Rust IRC Channel gives the most timely response to any questions
-you may have.
+In the Rust community most real-time collaboration happens through
+IRC. The
+[#rust](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
+channel is a venue for general discussion about Rust, and a good place
+to ask for help. You'll find people willing to help you with any
+questions you may have, and responses are typically very fast.
 
 [Stack Overflow](https://stackoverflow.com/questions/tagged/rust)
 
 Stack Overflow is a question and answer site for programmers.
+Searching for your problem might reveal someone who has asked it
+before.
 
 [Join a Mail List](https://www.reddit.com/r/rust)
 
 [Twitter](https://twitter.com/rustlang)
 
-### People
+## People
 
 [Rust Team](https://www.rust-lang.org/team.html)
 
@@ -61,7 +66,7 @@ Team Structure
 
 Acknowledgements
 
-### Rust Development
+## Rust Development
 
 [How to contribute](https://github.com/efindlay/Rust_community_page/blob/master/contribute.md)
 
