@@ -10,3 +10,4 @@ title: Upcoming Events
 [Concurrency First in Rust](http://www.oscon.com/open-source-eu-2015/public/schedule/detail/46257)
 Jim Blandy in Amsterdam
 
+

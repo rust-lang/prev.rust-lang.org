@@ -52,6 +52,10 @@ Stack Overflow is a question and answer site for programmers.
 Searching for your problem might reveal someone who has asked it
 before.
 
+[Rust Forum](https://users.rust-lang.org/)
+
+Rust Programming Language Forum is for general discussion and broader questions.
+
 [Join a Mail List](https://www.reddit.com/r/rust)
 
 [Twitter](https://twitter.com/rustlang)
@@ -60,26 +64,22 @@ before.
 
 [Rust Team](https://www.rust-lang.org/team.html)
 
-Team Structure
-
-[User Forum](https://users.rust-lang.org/)
+The Rust project is governed by a number of teams, each focused on a
+specific area of concern.
 
 Acknowledgements
 
 ## Rust Development
 
-[How to contribute](https://github.com/efindlay/Rust_community_page/blob/master/contribute.md)
+[How to contribute](https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md)
 
 [Github](https://github.com/rust-lang/rust)
 
 [RFCs](https://github.com/rust-lang/rfcs)
 
-Substantial changes to Rust are put through a bit of a design process
-and produce a consensus among the Rust community and the core team.
-The "RFC" (request for comments) process is intended to provide a
-consistent and controlled path for new features to enter the language
-and standard libraries, so that all stakeholders can be confident
-about the direction the language is evolving in.
+The RFC (request for comments) process is the main pathway through
+which the Rust community and the core team reach consensus on new
+features entering the language and standard libraries.
 
 [Subteam Reports](https://github.com/rust-lang/subteams)
 
