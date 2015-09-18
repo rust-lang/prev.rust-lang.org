@@ -13,8 +13,6 @@ be found [here](https://www.rust-lang.org/conduct.html).
 
 ### News
 
-[Upcoming User Group Meetings]()
-
 [Upcoming Conferences and Workshops]()
 
 [This Week in Rust](http://this-week-in-rust.org/)
@@ -36,7 +34,7 @@ learn and socialize with other people with a similar interest.
 Meetings are usually monthly and very informal. Meetings are open to
 everyone.
 
-[Past Conferences and Workshops](https://github.com/efindlay/Rust_community_page/blob/master/past_conferences.md) with videos
+[Past Conferences and Workshops](./past_conferences.html) with videos
 
 ### How to Get Help
 
