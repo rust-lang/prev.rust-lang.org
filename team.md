@@ -149,9 +149,15 @@ sites:
 
 # The Rust Team
 
-The Rust project is [governed](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md) by a
-number of teams, each focused on a specific area of concern. Below are the
-rosters, in alphabetical order.
+The Rust project is
+[governed](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)
+by a number of teams, each focused on a specific area of concern. Below are
+the rosters, in alphabetical order.
+
+To contact a team, post your question or comment to [the Internals
+forum](https://internals.rust-lang.org/) and tag your post with the category
+corresponding to the team name. Note that security disclosures should follow
+the [Rust security disclosure process](https://www.rust-lang.org/security.html). 
 
 {% for team in page.teams %}
 <section id="{{ team.name | replace:' ','-' }}">
