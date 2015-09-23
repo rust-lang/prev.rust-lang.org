@@ -13,9 +13,10 @@ be found [here](https://www.rust-lang.org/conduct.html).
 
 ## News
 
-[Upcoming Conferences, Talks and Workshops](./upcoming_events.html)
-
 [This Week in Rust](http://this-week-in-rust.org/)
+
+This Week in Rust comtains the latest news, upcoming events and a
+week-by-week account of changes in the Rust language and libraries.
 
 [Rust Programming Blog](http://blog.rust-lang.org/)
 
@@ -66,8 +67,6 @@ Rust Programming Language Forum is for general discussion and broader questions.
 
 The Rust project is governed by a number of teams, each focused on a
 specific area of concern.
-
-Acknowledgements
 
 ## Rust Development
 
