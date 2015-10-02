@@ -8,12 +8,12 @@ title: Community
 We have a great community and we want to keep it that way. Rust is
 more than just a revolutionary programming language, it is a
 tight-knit community with a [legendary dedication to kindness and
-inclusiveness](https://internals.rust-lang.org/). We are committed to
+inclusivity](https://internals.rust-lang.org/). We are committed to
 providing a friendly, safe and welcoming environment for all,
 regardless of gender, sexual orientation, disability, ethnicity,
 religion, or similar personal characteristic. Our [code of
 conduct](https://www.rust-lang.org/conduct.html) must be observed in
-all official communication channels.
+all matters relating to the official Rust website.
 
 ## News
 
@@ -29,7 +29,7 @@ about major developments.
 
 [Reddit](https://www.reddit.com/r/rust)
 
-Reddit is the unofficial online forum for all things Rust.
+Reddit is an unofficial online forum for all things Rust.
 
 ## How to Get Help
 
@@ -52,8 +52,6 @@ before.
 
 Rust Programming Language Forum is for general discussion and broader questions.
 
-[Join a Mail List](https://www.reddit.com/r/rust)
-
 [Twitter](https://twitter.com/rustlang)
 
 [Rust Moderation Team](https://www.rust-lang.org/team.html#Moderation)
@@ -73,6 +71,8 @@ Groups.  Its a great introduction to the community and a great way to
 learn and socialize with other people with a similar interest.
 Meetings are usually monthly and very informal. Meetings are open to
 everyone.
+
+[Rust Calendar](https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com)
 
 ## People
 
