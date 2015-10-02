@@ -9,7 +9,9 @@ Groups.  Its a great introduction to the community and a great way to
 learn and socialize with other people with a similar interest.
 Meetings are usually monthly and very informal. Meetings are open to
 everyone. If you have started a new user group and with to add it to
-this list, please contact the [Rust Community Team](./team.html).
+this list, please contact the [Rust Community Team](./team.html) or
+even better, open a pull request against
+[rust_www](https://github.com/rust-lang/rust-www/blob/master/user_groups.md).
 
 ### Australia
 
