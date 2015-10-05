@@ -57,8 +57,8 @@ Rust Programming Language Forum is for general discussion and broader questions.
 [Rust Moderation Team](https://www.rust-lang.org/team.html#Moderation)
 
 If you feel you have been or are being harassed or made uncomfortable
-by a community member, please contact any of the Rust moderation team
-immediately. Whether you're a regular contributor or a newcomer, we
+by a community member, please contact any of the [Rust moderation
+team](https://www.rust-lang.org/team.html#Moderation) immediately. Whether you're a regular contributor or a newcomer, we
 care about making this community a safe place for you.
 
 ## User Groups, Conferences and Workshops
@@ -85,7 +85,14 @@ specific area of concern.
 
 [How to contribute](https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md)
 
+According to [CodeTriage](http://www.codetriage.com), the Rust
+language has the most contributors of any programming language. If you
+want to join in the fun but aren't sure about the process, please read
+[how to contribute](https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md).
+
 [Github](https://github.com/rust-lang/rust)
+
+This is where all the source code resides.
 
 [RFCs](https://github.com/rust-lang/rfcs)
 
