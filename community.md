@@ -83,12 +83,12 @@ specific area of concern.
 
 ## Rust Development
 
-[How to contribute](https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md)
+[How to contribute](./how_to_contribute.html)
 
 According to [CodeTriage](http://www.codetriage.com), the Rust
 language has the most contributors of any programming language. If you
-want to join in the fun but aren't sure about the process, please read
-[how to contribute](https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md).
+want to join in the fun but aren't sure about the process, please take
+a look at [how to contribute](./how_to_contribute.html).
 
 [Github](https://github.com/rust-lang/rust)
 
