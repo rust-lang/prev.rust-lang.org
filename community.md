@@ -76,10 +76,45 @@ everyone.
 
 ## People
 
-[Rust Team](https://www.rust-lang.org/team.html)
+[Rust Teams](https://www.rust-lang.org/team.html)
 
-The Rust project is governed by a number of teams, each focused on a
-specific area of concern.
+Rust has a community-driven development process where most decisions
+are made through consensus, under the stewardship of a [Core
+team](https://www.rust-lang.org/team.html#Core)'.  
+
+<table>
+<tr>
+<tr>
+<td><a href="https://www.rust-lang.org/team.html#Core">Core Team</a></td>
+<td>steering the design and development process,
+overseeing the introduction of new features, and ultimately making
+decisions for which there is no consensus (this happens rarely)</td>
+</tr>
+<tr>
+<td><a href="https://www.rust-lang.org/team.html#Language-design">Language Design Team</a></td>
+<td>design of new language features</td>
+</tr>
+<tr>
+<td><a href="https://www.rust-lang.org/team.html#Library">Library Team</a></td>
+<td>Rust standard library, rust-lang crates, and conventions</td>
+</tr>
+<tr>
+<td><a href="https://www.rust-lang.org/team.html#Compiler">Compiler Team</a></td>
+<td>compiler internals and optimizations</td>
+</tr>
+<tr>
+<td><a href="https://www.rust-lang.org/team.html#Tooling-and-infrastructure">Tooling and Infrastructure Team</a></td>
+<td>support such as Cargo, Multirust, CI Infrastructure</td>
+</tr>
+<tr>
+<td><a href="https://www.rust-lang.org/team.html#Community">Community Team</a></td>
+<td>coordinating events, outreach, commercial users, teaching materials, and exposure</td>
+</tr>
+<tr>
+<td><a href="https://www.rust-lang.org/team.html#Moderation">Moderation Team</a></td>
+<td>helping to uphold the [code of conduct](https://www.rust-lang.org/conduct.html)</td>
+</tr>
+</table>
 
 ## Rust Development
 
