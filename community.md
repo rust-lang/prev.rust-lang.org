@@ -33,14 +33,30 @@ Reddit is an unofficial online forum for all things Rust.
 
 ## How to Get Help
 
-[Join the Rust IRC Channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
+[IRC Channels](https://chat.mibbit.com/?server=irc.mozilla.org%3A%2B6697&channel=%23rust-internals)
 
-In the Rust community most real-time collaboration happens through
-IRC. The
-[#rust](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
-channel is a venue for general discussion about Rust, and a good place
-to ask for help. You'll find people willing to help you with any
-questions you may have, and responses are typically very fast.
+Rustaceans primarily communicate via IRC. Most of the IRC channels are
+on Moznet.
+
+\#rust
+
+The #rust channel on Moznet is a venue for general discussion
+about Rust, and a good place to ask for help.  You'll find people
+willing to help you with any questions you may have, and responses are
+typically very fast.
+
+\#rust-internals
+
+For questions about how Rust works, anything about contribution, or to
+find a mentor, #rust-internals is the right channel. There are also
+some more specific irc channels noted below.
+
+\#rustc
+
+\#rust-libs
+
+\#rust-osdev
+
 
 [Stack Overflow](https://stackoverflow.com/questions/tagged/rust)
 
@@ -79,42 +95,26 @@ everyone.
 [Rust Teams](https://www.rust-lang.org/team.html)
 
 Rust has a community-driven development process where most decisions
-are made through consensus, under the stewardship of a [Core
-team](https://www.rust-lang.org/team.html#Core)'.  
-
-<table>
-<tr>
-<tr>
-<td><a href="https://www.rust-lang.org/team.html#Core">Core Team</a></td>
-<td>steering the design and development process,
-overseeing the introduction of new features, and ultimately making
-decisions for which there is no consensus (this happens rarely)</td>
-</tr>
-<tr>
-<td><a href="https://www.rust-lang.org/team.html#Language-design">Language Design Team</a></td>
-<td>design of new language features</td>
-</tr>
-<tr>
-<td><a href="https://www.rust-lang.org/team.html#Library">Library Team</a></td>
-<td>Rust standard library, rust-lang crates, and conventions</td>
-</tr>
-<tr>
-<td><a href="https://www.rust-lang.org/team.html#Compiler">Compiler Team</a></td>
-<td>compiler internals and optimizations</td>
-</tr>
-<tr>
-<td><a href="https://www.rust-lang.org/team.html#Tooling-and-infrastructure">Tooling and Infrastructure Team</a></td>
-<td>support such as Cargo, Multirust, CI Infrastructure</td>
-</tr>
-<tr>
-<td><a href="https://www.rust-lang.org/team.html#Community">Community Team</a></td>
-<td>coordinating events, outreach, commercial users, teaching materials, and exposure</td>
-</tr>
-<tr>
-<td><a href="https://www.rust-lang.org/team.html#Moderation">Moderation Team</a></td>
-<td>helping to uphold the [code of conduct](https://www.rust-lang.org/conduct.html)</td>
-</tr>
-</table>
+are made through consensus, under the stewardship of a core team. The
+[Core Team](https://www.rust-lang.org/team.html#Core) is responsible
+for steering the design and development process, overseeing the
+introduction of new features, and ultimately making decisions for
+which there is no consensus (this happens rarely). The [Language
+Design Team](https://www.rust-lang.org/team.html#Language-design) is
+responsible for design of new language features. The [Library
+Team](https://www.rust-lang.org/team.html#Library) is responsible for
+the Rust standard library, rust-lang crates, and conventions. The
+[Compiler Team](https://www.rust-lang.org/team.html#Compiler) is
+responsible for compiler internals and optimizations. The [Tooling and
+Infrastructure
+Team](https://www.rust-lang.org/team.html#Tooling-and-infrastructure)
+is responsible for support for Cargo, Multirust, and CI
+Infrastructure. The [Community Team](https://www.rust-lang.org/team.html#Community) is
+responsible for coordinating events, outreach, commercial users,
+teaching materials, and exposure. The [Moderation
+Team](https://www.rust-lang.org/team.html#Moderation) is responsible
+for helping to upholding the [code of
+conduct](https://www.rust-lang.org/conduct.html).
 
 ## Rust Development
 
@@ -135,6 +135,6 @@ The RFC (request for comments) process is the main pathway through
 which the Rust community and the core team reach consensus on new
 features entering the language and standard libraries.
 
-[Subteam Reports](https://github.com/rust-lang/subteams)
+[Team Reports](https://github.com/rust-lang/subteams)
 
 [Issue Tracking](https://github.com/rust-lang/rust/issues)
