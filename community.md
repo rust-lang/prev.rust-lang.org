@@ -101,7 +101,7 @@ newcomer, we care about making this community a safe place for you.
 [twitter]: https://twitter.com/rustlang
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
 
-## User Groups, Conferences and Workshops
+## User Groups
 
 [Rust User Groups][user_group]
 
