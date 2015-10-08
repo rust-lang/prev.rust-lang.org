@@ -13,7 +13,7 @@ providing a friendly, safe and welcoming environment for all,
 regardless of gender, sexual orientation, disability, ethnicity,
 religion, or similar personal characteristic. Our [code of
 conduct](https://www.rust-lang.org/conduct.html) must be observed in
-all matters relating to the official Rust website.
+all matters relating to Rust online.
 
 ## News
 
@@ -35,28 +35,29 @@ Reddit is an unofficial online forum for all things Rust.
 
 [IRC Channels](https://chat.mibbit.com/?server=irc.mozilla.org%3A%2B6697&channel=%23rust-internals)
 
-Rustaceans primarily communicate via IRC. Most of the IRC channels are
-on Moznet.
+Rustaceans primarily communicate via IRC. The
+[#rust](irc://moznet/rust) channel on Moznet is a venue for general
+discussion about Rust, and a good place to ask for help.  You'll find
+people willing to help you with any questions you may have, and
+responses are typically very fast. For questions about how Rust works,
+anything about contribution, or to find a mentor, #rust-internals is
+the right channel. There are also some more specific IRC channels
+noted below.
 
-\#rust
+IRC on Moznet
 
-The #rust channel on Moznet is a venue for general discussion
-about Rust, and a good place to ask for help.  You'll find people
-willing to help you with any questions you may have, and responses are
-typically very fast.
-
-\#rust-internals
-
-For questions about how Rust works, anything about contribution, or to
-find a mentor, #rust-internals is the right channel. There are also
-some more specific irc channels noted below.
-
-\#rustc
-
-\#rust-libs
-
-\#rust-osdev
-
+- [#rust](irc://moznet/rust) is for all things Rust;
+- [#rustc](irc://moznet/rustc) is for discussion of the implementation of the Rust compiler;
+- [#rust-libs](irc://moznet/rust-libs) is for discussion of the implementation of the Rust standard libraries;
+- [#rust-internals](irc://moznet/rust-internals) is for discussion of other Rust implementation topics;
+- [#rust-gamedev](irc://moznet/rust-gamedev) is for people doing game development in Rust;
+- [#rust-crypto](irc://moznet/rust-crypto) is for discussion of cryptography in Rust;
+- [#rust-osdev](irc://moznet/rust-osdev) is for people doing OS development in Rust;
+- [#rust-webdev](irc://moznet/rust-webdev) is for people doing web development in Rust;
+- [#cargo](irc://moznet/cargo) is for discussion of Cargo, Rust's package manager;
+- [#rust-offtopic](irc://moznet/rust-offtopic) is for general chit-chat amongst Rustaceans;
+- [#servo](irc://moznet/servo) is for discussion of Servo, the browser engine written in Rust;
+- [#rust-bots](irc://moznet/rust-bots) notifcations about Rust from a selection of bots.
 
 [Stack Overflow](https://stackoverflow.com/questions/tagged/rust)
 
