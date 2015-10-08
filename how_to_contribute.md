@@ -57,9 +57,9 @@ I-nominated label.
 
 The compiler is part of the [main repo](https://github.com/rust-lang),
 which also includes the standard library crates and a whole bunch of
-supporting code. For questions about the compiler, there is the #rustc
-irc channel. Compiler errors (ICE for 'internal compiler errors') can
-be searched for in issues using the
+supporting code. For questions about the compiler, there is the
+[#rustc](irc://moznet/rustc) IRC channel. Compiler errors (ICE for
+'internal compiler errors') can be searched for in issues using the
 [I-ICE](https://github.com/rust-lang/rust/labels/I-ICE) label. These
 are usually good bugs to start with because it's easy to know when
 you've fixed them, and they're often relatively self-contained. If
@@ -78,14 +78,14 @@ and
 [libcore](https://github.com/rust-lang/rust/tree/master/src/libcore)
 are the main library crates.  These all appear to users as if they are
 part of libstd, the standard library. These tend to be very
-fundamental libraries - built-in types, low level io and concurrency,
+fundamental libraries - built-in types, low level IO and concurrency,
 allocation, essential collections, and so forth. You should join
-\#rust-libs if you are interested in contributing to the Rust
-libraries.
+[#rust-libs](irc://moznet/rust-libs) if you are interested in contributing
+to the Rust libraries.
 
 #### Cargo
 
-Cargo is Rust's package manager. Cargo [issues](https://github.com/rust-lang/cargo/issues).
+[Cargo](https://github.com/rust-lang/cargo/issues) is Rust's package manager.
 
 #### Tests
 
@@ -133,11 +133,14 @@ Tools play a huge part in the success of a language. Rust has some
 great tool support, in particular with debugging and package
 management, but we need much more.
 
-- [Cargo](https://github.com/rust-lang/cargo/issues) Rust's package manager and build system.
-- [Rustdoc](https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-rustdoc)
+- [cargo](https://github.com/rust-lang/cargo/issues) Rust's package manager and build system.
+- [rustdoc](https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-rustdoc)
   Produces documentation for the official libraries and user projects.
-- [Racer](https://github.com/phildawes/racer) Code completion.
+- [racer](https://github.com/phildawes/racer) Code completion.
 - [rustfmt](https://github.com/nrc/rustfmt) Code formatting.
+- [multirust](https://github.com/brson/multirust/issues) For managing
+  multiple installations of the Rust toolchain.
+- [homu](https://github.com/barosl/homu/issues) Acts as a gatekeeper for commits.
 
 #### Other Contributions
 
@@ -145,9 +148,8 @@ Try [Github Trending](https://github.com/trending?l=rust) for
 currently active Rust projects. There are a number of other ways to
 contribute to Rust that don't deal directly with the Rust repository.
 
-- Answer questions in
-[#rust](http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust),
-on the [Rust Forum](https://users.rust-lang.org/) or on [Stack
+- Answer questions in [#rust](irc://moznet/rust), on the [Rust
+  Forum](https://users.rust-lang.org/) or on [Stack
 Overflow](http://stackoverflow.com/questions/tagged/rust).
 - Participate in the [RFC process](https://github.com/rust-lang/rfcs).
 - Find a [requested community

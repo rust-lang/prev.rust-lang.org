@@ -33,16 +33,16 @@ Reddit is an unofficial online forum for all things Rust.
 
 ## How to Get Help
 
-[IRC Channels](https://chat.mibbit.com/?server=irc.mozilla.org%3A%2B6697&channel=%23rust-internals)
+[IRC Channels](irc://moznet/rust)
 
 Rustaceans primarily communicate via IRC. The
 [#rust](irc://moznet/rust) channel on Moznet is a venue for general
 discussion about Rust, and a good place to ask for help.  You'll find
 people willing to help you with any questions you may have, and
 responses are typically very fast. For questions about how Rust works,
-anything about contribution, or to find a mentor, #rust-internals is
-the right channel. There are also some more specific IRC channels
-noted below.
+anything about contribution, or to find a mentor,
+[#rust-internals](irc://moznet/rust-internals) is the right channel.
+There are also some more specific IRC channels noted below.
 
 IRC on Moznet
 
@@ -110,8 +110,9 @@ responsible for compiler internals and optimizations. The [Tooling and
 Infrastructure
 Team](https://www.rust-lang.org/team.html#Tooling-and-infrastructure)
 is responsible for support for Cargo, Multirust, and CI
-Infrastructure. The [Community Team](https://www.rust-lang.org/team.html#Community) is
-responsible for coordinating events, outreach, commercial users,
+Infrastructure. The [Community
+Team](https://www.rust-lang.org/team.html#Community) is responsible
+for coordinating events, outreach, commercial users,
 teaching materials, and exposure. The [Moderation
 Team](https://www.rust-lang.org/team.html#Moderation) is responsible
 for helping to upholding the [code of
@@ -123,7 +124,7 @@ conduct](https://www.rust-lang.org/conduct.html).
 
 According to [CodeTriage](http://www.codetriage.com), the Rust
 language has the most contributors of any programming language. If you
-want to join in the fun but aren't sure about the process, please take
+want to join in the fun but aren't sure what to work on, please take
 a look at [how to contribute](./how_to_contribute.html).
 
 [Github](https://github.com/rust-lang/rust)
