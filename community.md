@@ -15,7 +15,6 @@ religion, or similar personal characteristic. Our [code of
 conduct][coc] must be observed in
 all matters relating to Rust online.
 
-[internals]: https://internals.rust-lang.org/
 [coc]: https://www.rust-lang.org/conduct.html
 
 ## News
@@ -46,24 +45,26 @@ Rustaceans primarily communicate via IRC. The
 [#rust][rust_irc] channel on Moznet is a venue for general
 discussion about Rust, and a good place to ask for help.  You'll find
 people willing to help you with any questions you may have, and
-responses are typically very fast. For questions about how Rust works,
-anything about contribution, or to find a mentor,
-[#rust-internals][internals_irc] is the right channel.
-There are also some more specific IRC channels noted below.
+responses are typically very fast. To get involved in the development
+of Rust itself, for anything about contribution, or to find a mentor,
+[#rust-internals][internals_irc] is the right channel. There are also
+some more specific IRC channels noted below.
 
 IRC on Moznet
 
 - [#rust][rust_irc] is for all things Rust;
-- [#rustc][rustc_irc] is for discussion of the implementation of the Rust compiler;
-- [#rust-libs][libs_irc] is for discussion of the implementation of the Rust standard libraries;
 - [#rust-internals][internals_irc] is for discussion of other Rust implementation topics;
-- [#rust-gamedev][gamedev_irc] is for people doing game development in Rust;
+- [#rustc][rustc_irc] is the home of the [compiler team][compiler_team];
+- [#rust-libs][libs_irc] is the home of the [libraries team][library_team];
+- [#rust-tools][tools_irc] is the home of the [tools and infrastructure team][tool_team];
+- [#rust-lang][lang_irc] is the home of the [language team][language_team];
+- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager;
+- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust;
+- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans;
 - [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust;
 - [#rust-osdev][osdev_irc] is for people doing OS development in Rust;
-- [#rust-webdev][webdev] is for people doing web development in Rust;
-- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager;
-- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans;
-- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust;
+- [#rust-webdev][webdev_irc] is for people doing web development in Rust;
+- [#rust-gamedev][gamedev_irc] is for people doing game development in Rust;
 - [#rust-bots][bots_irc] notifcations about Rust from a selection of bots.
 
 [Stack Overflow][stack_overflow]
@@ -81,25 +82,30 @@ Rust Programming Language Forum is for general discussion and broader questions.
 [Rust Moderation Team][mod_team]
 
 If you feel you have been or are being harassed or made uncomfortable
-by a community member, please contact any of the [Rust moderation
-team][mod_team] immediately. Whether you're a regular contributor or a
-newcomer, we care about making this community a safe place for you.
+by a community member, please [contact][mod_team_email] any of the
+Rust moderation team immediately. Whether you're a regular contributor
+or a newcomer, we care about making this community a safe place for
+you.
 
 [rust_irc]: irc://moznet/rust
 [rustc_irc]: irc://moznet/rustc
 [libs_irc]: irc://moznet/rust-libs
+[tools_irc]: irc://moznet/rust-tools
+[lang_irc]: irc://moznet/rust-lang
 [internals_irc]: irc://moznet/rust-internals
 [gamedev_irc]: irc://moznet/rust-gamedev
 [crypto_irc]: irc://moznet/rust-crypto
 [osdev_irc]: irc://moznet/rust-osdev
 [webdev_irc]: irc://moznet/rust-webdev
 [cargo_irc]: irc://moznet/cargo
+[offtopic_irc]: irc://moznet/rust-offtopic
 [servo_irc]: irc://moznet/servo
 [bots_irc]: irc://moznet/rust-bots
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 [forum]: https://users.rust-lang.org/ 
 [twitter]: https://twitter.com/rustlang
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
+[mod_team_email]: mailto:rust-mods@googlegroups.com
 
 ## User Groups
 
@@ -126,7 +132,7 @@ are made through consensus, under the stewardship of a core team. The
 [Core Team][core_team] is responsible for steering the design and
 development process, overseeing the introduction of new features, and
 ultimately making decisions for which there is no consensus (this
-happens rarely). The [Language Design Team][language_design_team] is
+happens rarely). The [Language Design Team][language_team] is
 responsible for design of new language features. The [Library
 Team][library_team] is responsible for the Rust standard library,
 rust-lang crates, and conventions. The [Compiler Team][compiler_team]
@@ -135,12 +141,12 @@ and Infrastructure Team][tool_team] is responsible for support for
 Cargo, Multirust, and CI Infrastructure. The [Community
 Team][community_team] is responsible for coordinating events,
 outreach, commercial users, teaching materials, and exposure. The
-[Moderation Team][mod_team] is responsible for helping to upholding
-the [code of conduct][coc].
+[Moderation Team][mod_team] is responsible for helping to uphold the
+[code of conduct][coc].
 
 [teams]: https://www.rust-lang.org/team.html
 [core_team]: https://www.rust-lang.org/team.html#Core
-[language_design_team]: https://www.rust-lang.org/team.html#Language-design
+[language_team]: https://www.rust-lang.org/team.html#Language-design
 [library_team]: https://www.rust-lang.org/team.html#Library
 [compiler_team]: https://www.rust-lang.org/team.html#Compiler
 [tool_team]: https://www.rust-lang.org/team.html#Tooling-and-infrastructure
@@ -155,6 +161,11 @@ According to [CodeTriage][codetriage], the Rust
 language has the most contributors of any programming language. If you
 want to join in the fun but aren't sure what to work on, please take
 a look at [how to contribute][contribute].
+
+[Rust Internals Forum][internals]
+
+This is the main forum for discussing the design and implementation of
+Rust.
 
 [Github][github]
 
@@ -171,6 +182,7 @@ features entering the language and standard libraries.
 [Issue Tracking][issue_tracking]
 
 [contribute]: ./how_to_contribute.html
+[internals]: https://internals.rust-lang.org/
 [codetriage]: http://www.codetriage.com
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
