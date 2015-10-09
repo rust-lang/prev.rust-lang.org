@@ -8,14 +8,14 @@ title: Community
 We have a great community and we want to keep it that way. Rust is
 more than just a revolutionary programming language, it is a
 tight-knit community with a [legendary dedication to kindness and
-inclusivity][internals]. We are committed to
-providing a friendly, safe and welcoming environment for all,
-regardless of gender, sexual orientation, disability, ethnicity,
-religion, or similar personal characteristic. Our [code of
-conduct][coc] must be observed in
+inclusivity][techwhirl]. We are committed to providing a friendly,
+safe and welcoming environment for all, regardless of gender, sexual
+orientation, disability, ethnicity, religion, or similar personal
+characteristic. Our [code of conduct][coc] must be observed in
 all matters relating to Rust online.
 
 [coc]: https://www.rust-lang.org/conduct.html
+[techwhirl]: http://techwhirl.com/conference-report-friendly-diverse-rust-camp/
 
 ## News
 
