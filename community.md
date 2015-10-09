@@ -15,7 +15,6 @@ religion, or similar personal characteristic. Our [code of
 conduct][coc] must be observed in
 all matters relating to Rust online.
 
-[internals]: https://internals.rust-lang.org/
 [coc]: https://www.rust-lang.org/conduct.html
 
 ## News
@@ -83,9 +82,10 @@ Rust Programming Language Forum is for general discussion and broader questions.
 [Rust Moderation Team][mod_team]
 
 If you feel you have been or are being harassed or made uncomfortable
-by a community member, please contact any of the [Rust moderation
-team][mod_team] immediately. Whether you're a regular contributor or a
-newcomer, we care about making this community a safe place for you.
+by a community member, please [contact][mod_team_email] any of the
+Rust moderation team immediately. Whether you're a regular contributor
+or a newcomer, we care about making this community a safe place for
+you.
 
 [rust_irc]: irc://moznet/rust
 [rustc_irc]: irc://moznet/rustc
@@ -105,6 +105,7 @@ newcomer, we care about making this community a safe place for you.
 [forum]: https://users.rust-lang.org/ 
 [twitter]: https://twitter.com/rustlang
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
+[mod_team_email]: mailto:rust-mods@googlegroups.com
 
 ## User Groups
 
@@ -140,8 +141,8 @@ and Infrastructure Team][tool_team] is responsible for support for
 Cargo, Multirust, and CI Infrastructure. The [Community
 Team][community_team] is responsible for coordinating events,
 outreach, commercial users, teaching materials, and exposure. The
-[Moderation Team][mod_team] is responsible for helping to upholding
-the [code of conduct][coc].
+[Moderation Team][mod_team] is responsible for helping to uphold the
+[code of conduct][coc].
 
 [teams]: https://www.rust-lang.org/team.html
 [core_team]: https://www.rust-lang.org/team.html#Core
@@ -161,6 +162,11 @@ language has the most contributors of any programming language. If you
 want to join in the fun but aren't sure what to work on, please take
 a look at [how to contribute][contribute].
 
+[Rust Internals Forum][internals]
+
+This is the main forum for discussing the design and implementation of
+Rust.
+
 [Github][github]
 
 This is where all the source code resides.
@@ -176,6 +182,7 @@ features entering the language and standard libraries.
 [Issue Tracking][issue_tracking]
 
 [contribute]: ./how_to_contribute.html
+[internals]: https://internals.rust-lang.org/
 [codetriage]: http://www.codetriage.com
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
