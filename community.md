@@ -142,8 +142,8 @@ might reveal someone who has asked it before.
 There are more than 50 [Rust User Groups][user_group] worldwide in over 20
 countries totaling over 7,000 members. Rustaceans meet periodically in Rust User
 Groups. Its a great introduction to the community and a great way to learn and
-socialize with other people with a similar interest. Meetings are usually
-monthly and very informal. Meetings are open to everyone.
+socialize with other people with a similar interest. Meetings are
+usually held monthly and very informal. Meetings are open to everyone.
 
 There's a global [calendar][calendar] for keeping up with Rust events.
 
@@ -160,8 +160,8 @@ through open discussion and consensus, under the stewardship of various
 development process, overseeing the introduction of new features, and ultimately
 making decisions for which there is no consensus (this happens rarely).
 
-* The [Language Design Team][language_team] is responsible for design of new
-language features.
+* The [Language Design Team][language_team] is responsible for the
+  design of new language features.
 
 * The [Library Team][library_team] is responsible for the Rust standard
 library, rust-lang crates, and conventions.
@@ -196,7 +196,7 @@ reach out to the team leader, who can help get you started.
 
 ## Rust Development
 
-Rust has had over [1,200 different contributors][]authors], a number that grows
+Rust has had over [1,200 different contributors][authors], a number that grows
 every single week. We'd love for you to join that list! If you aren't sure what
 to work on or how to get started, take a look at our
 [how to contribute][contribute] page.
