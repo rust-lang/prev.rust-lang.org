@@ -29,7 +29,7 @@ above to jump to any particular section.
 # Getting Started  <a name="getting_started"></a>
 
 If you haven't seen Rust at all yet, the first thing you should read
-is the introduction to [The Rust Programming Language][rust]. It'll
+is the introduction to [The Rust Programming Language][rustbook]. It'll
 give you a good idea of what Rust is like.
 
 The book provides a lengthy explanation of Rust, its syntax, and its
@@ -41,30 +41,31 @@ Rust.
 resource, but was then donated to the Rust project. As the name
 implies, it teaches you Rust through a series of small examples.
 
-[rust_by_example]: ["http://rustbyexample.com/"]
+[rustbook]: https://doc.rust-lang.org/book/
+[rust_by_example]: http://rustbyexample.com/
 
 # The Standard Library<a name="standard_library"></a>
 
-We have [API documentation][TODO] for the entire standard library. There's a
+We have [API documentation][rustdocs] for the entire standard library. There's a
 list of crates on the left with more specific sections, or you can use
 the search bar at the top to search for something if you know its
 name.
 
-[TODO]: [TODO]
+[rustdocs]: https://doc.rust-lang.org/
 
 # Community &amp; Getting Help <a name="community_and_help"></a>
 
 If you need help with something, or just want to talk about Rust with
 others, there are a few places you can do that:
 
-The Rust IRC channels on [irc.mozilla.org][mozilla_irc] are the
+The Rust IRC channels on [irc.mozilla.org][irc_mozilla] are the
 fastest way to get help.
 
 \#rust is the general discussion channel, and you'll find people
 willing to help you with any questions you may have.
 
 There are also three specialty channels:
-\#rust-gamedev" and #rust-osdev are for game development and operating
+\#rust-gamedev and #rust-osdev are for game development and operating
 system development, respectively. There's also #rust-internals, which
 is for discussion of the development of Rust itself.
 
@@ -78,14 +79,18 @@ There is also a [user forum][user_forum], for all user-oriented
 discussion, and a [developer forum][developer_forum], where the
 development of Rust itself is discussed.
 
-[irc_mozilla]: "irc://irc.mozilla.org/"
+[irc_mozilla]: https://wiki.mozilla.org/IRC
+[stack_overflow]: http://stackoverflow.com/questions/tagged/rust
+[reddit]: https://www.reddit.com/r/rust/
+[user_forum]: https://users.rust-lang.org/
+[developer_forum]: https://internals.rust-lang.org/
 
 # Specification<a name="specification"></a>
 
 Rust does not have an exact specification, but an effort to describe as much of
-the language in as much detail as possible is in [the reference][reference]</a>.
+the language in as much detail as possible is in [the Reference][reference]</a>.
 
-[reference]: reference.html
+[reference]: https://doc.rust-lang.org/reference.html
 
 # Tools<a name="tools"></a>
 Rust is still a young language, so there isn't a ton of tooling yet,
@@ -98,29 +103,23 @@ lots of good documentation.
 
 [Rustdoc][rustdoc] is used to generate documentation for Rust code.
 
-[rustdoc]: "book/documentation.html"
+[rustdoc]: https://doc.rust-lang.org/book/documentation.html
 
 # FAQs<a name="faqs"></a>
 
-There are questions that are asked quite often, so we've made FAQs for
+There are questions that are asked quite often, so we've made a FAQ for
 them:
 
-- [Language Design FAQ][language_design_faq]
-- [Language FAQ][language_faq]
-- [Project FAQ][project_faq]
-- [How to submit a bug report][bug_report]
+- [FAQ][faq]
 
-[language_design_faq]: "complement-design-faq.html"
-[language_faq]: "complement-lang-faq.html"
-[project_faq]: "complement-project-faq.html"
-[bug_report]: "https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#bug-reports"
+[faq]: "faq.md"
 
-# The Error Index<a name="error_index">
+# The Error Index<a name="error_index"></a>
 
 If you encounter an error while compiling your code you may be able to
 look it up in the [Rust Compiler Error Index][error_index].
 
-[error_index]: "https://doc.rust-lang.org/error-index.html"
+[error_index]: https://doc.rust-lang.org/error-index.html
 
 # Community Translations<a name="translations"></a>
 
