@@ -98,7 +98,7 @@ teams:
   - name: Moderation
     responsibility: "helping uphold the <a href='http://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, erickt, niconii]
-    email: rust-mods@googlegroups.com
+    email: rust-mods [at] rust-lang [dot] org
 
 # Information on sites to get profile information from
 sites:
