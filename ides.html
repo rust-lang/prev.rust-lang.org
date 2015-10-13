@@ -25,8 +25,6 @@
 
 <a id="plan"></a><h2 class="clear">The plan</h2>
 
-<p>Good IDE support requires a number of components - the compiler must be modified to operate in a different mode, we must provide name and type information from the compiler to the IDE, and we must write plugins for the IDEs themselves so they know what to do with Rust projects. We want to work on all three of these components in parallel.</p>
-
 <p>To work with an IDE, the compiler must respond to changes made by the users in milliseconds and be able to cope with incomplete code. To manage this we propose modifying the compiler to support incremental and lazy compilation, and in the long-run, operate as a long-running daemon process. The compiler must also be more robust and be able to continue compilation in the face of parsing and name resolution errors.</p>
 
 <p>We propose a new tool, an 'oracle' which takes input from the compiler, maintains a project-wide view of the code and it's type information, and provides data about the project to IDEs and other tools. The oracle is a long-running daemon and presents an API via IPC.</p>
