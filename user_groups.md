@@ -7,12 +7,12 @@ There are more than 50 Rust User Groups worldwide in over 20 countries
 with over 7,000 members. Rustaceans meet periodically in Rust User
 Groups.  Its a great introduction to the community and a great way to
 learn and socialize with other people with a similar interest.
-Meetings are usually monthly and very informal. Meetings are open to
+Meetings are usually informal and open to
 everyone. If you have started a new user group and with to add it to
 this list, please contact the [Rust Community
 Team](./team.html#Community) or
 even better, open a pull request against
-[rust_www](https://github.com/rust-lang/rust-www/blob/master/user_groups.md).
+[this website](https://github.com/rust-lang/rust-www/blob/master/user_groups.md).
 
 ### Australia
 

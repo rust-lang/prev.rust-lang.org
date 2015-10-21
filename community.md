@@ -5,8 +5,8 @@ title: Community
 
 # Rust Community
 
-Rust has a lot going for it as a language, but its greatest strength
-is its tight-knit community and its focus on kindness and inclusivity.
+Rust is an amazing programming language, but its greatest strength
+is its kind and inclusive community.
 
 We are committed to providing a friendly, safe and welcoming
 environment for all, regardless of gender, sexual orientation,
@@ -41,7 +41,7 @@ The Rust community has an [*unofficial* subreddit][reddit] where
 virtually everything happening in the Rust community is discussed.
 The forum abides by the [official code of conduct][reddit_coc].
 
-We also have an official [Twitter][twitter] account,
+We also have an official [Twitter][twitter] account.
 
 [twir]: http://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
@@ -64,7 +64,7 @@ you.
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
 [mod_team_email]: mailto:rust-mods@googlegroups.com
 
-### IRC channels
+### IRC Channels
 
 Rustaceans maintain a number of friendly, high-traffic IRC channels.
 
@@ -80,24 +80,26 @@ the right channel.
 There are also some more specific IRC channels
 noted below.
 
-**Core channels**:
-- [#rust][rust_irc] is for all things Rust;
-- [#rust-internals][internals_irc] is for discussion of other Rust implementation topics;
-- [#rustc][rustc_irc] is the home of the [compiler team][compiler_team];
-- [#rust-libs][libs_irc] is the home of the [libraries team][library_team];
-- [#rust-tools][tools_irc] is the home of the [tools and infrastructure team][tool_team];
-- [#rust-lang][lang_irc] is the home of the [language team][language_team];
-- [#rust-community][community_irc] is the home of the [community team][community_team];
+#### Core channels
 
-**Topical channels**:
-- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager;
-- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust;
-- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans;
-- [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust;
-- [#rust-osdev][osdev_irc] is for people doing OS development in Rust;
-- [#rust-webdev][webdev_irc] is for people doing web development in Rust;
-- [#rust-gamedev][gamedev_irc] is for people doing game development in Rust;
-- [#rust-bots][bots_irc] notifcations about Rust from a selection of bots.
+- [#rust][rust_irc] is for all things Rust
+- [#rust-internals][internals_irc] is for discussion of other Rust implementation topics
+- [#rustc][rustc_irc] is the home of the [compiler team][compiler_team]
+- [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
+- [#rust-tools][tools_irc] is the home of the [tools and infrastructure team][tool_team]
+- [#rust-lang][lang_irc] is the home of the [language team][language_team]
+- [#rust-community][community_irc] is the home of the [community team][community_team]
+
+#### Topical channels
+
+- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
+- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
+- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
+- [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
+- [#rust-osdev][osdev_irc] is for people doing OS development in Rust
+- [#rust-webdev][webdev_irc] is for people doing web development in Rust
+- [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
+- [#rust-bots][bots_irc] notifcations about Rust from a selection of bots
 
 [rust_irc]: irc://moznet/rust
 [rustc_irc]: irc://moznet/rustc
@@ -115,7 +117,7 @@ noted below.
 [servo_irc]: irc://moznet/servo
 [bots_irc]: irc://moznet/rust-bots
 
-### Discourse Forums
+### Discussion Forums
 
 We have two forums for asynchronous discussion:
 
@@ -150,7 +152,7 @@ There's a global [calendar][calendar] for keeping up with Rust events.
 [user_group]: ./user_groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
 
-## The teams
+## The Teams
 
 Rust has a community-driven development process where most decisions are made
 through open discussion and consensus, under the stewardship of various
