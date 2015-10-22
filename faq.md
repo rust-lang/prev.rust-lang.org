@@ -9,7 +9,35 @@ This document exists to answer some common questions about the Rust programming 
 
 If there is some common or important question you feel is wrongly left unanswered here, feel free to [help us fix it](https://github.com/rust-lang/rust-www/blob/master/CONTRIBUTING.md).
 
-<div id="toc"></div>
+<div id="toc">
+    <h2>Table of Contents</h2><a href="#toggle-toc"></a>
+    <ol id="toc-contents">
+        <li><a href="#performance">Performance</a></li>
+        <li><a href="#concurrency">Concurrency</a></li>
+        <li><a href="#error-handling">Error Handling</a></li>
+        <li><a href="#numerics">Numerics</a></li>
+        <li><a href="#syntax">Syntax</a></li>
+        <li><a href="#lifetimes">Lifetimes</a></li>
+        <li><a href="#ownership">Ownership</a></li>
+        <li><a href="#stability">Stability</a></li>
+        <li><a href="#strings">Strings</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#documentation">Documentation</a></li>
+        <li><a href="#input-output">Input / Output</a></li>
+        <li><a href="#libraries">Libraries</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#modules-and-crates">Modules and Crates</a></li>
+        <li><a href="#generics">Generics</a></li>
+        <li><a href="#debugging">Debugging</a></li>
+        <li><a href="#low-level">Low-Level</a></li>
+        <li><a href="#cross-platform">Cross-Platform</a></li>
+        <li><a href="#design-patterns">Design Patterns</a></li>
+        <li><a href="#macros">Macros</a></li>
+        <li><a href="#other-languages">Other Languages</a></li>
+        <li><a href="#licensing">Licensing</a></li>
+        <li><a href="#naming">Naming</a></li>
+    </ol>
+</div>
 
 ## Performance
 
@@ -499,9 +527,11 @@ The main project is [Servo](https://github.com/servo/servo), an experimental bro
 
 The two biggest open source Rust projects right now are [Servo](https://github.com/servo/servo) and the [Rust compiler](https://github.com/rust-lang/rust) itself.
 
+<!--
 #### What projects are good examples of idiomatic Rust code?
 
 TODO: Write this answer.
+-->
 
 #### How can I try Rust easily?
 
@@ -597,9 +627,11 @@ fn main() {
 
 If you know this is going to happen, perhaps it saves a small number of keystrokes, but it also greatly increases the possibility for surprising error messages when you actually meant for `baz()` to be `bar::baz()`, and it decreases the readability of the code by making the meaning of a function call dependent on module declaration. These are not tradeoffs we are willing to make.
 
+<!--
 #### How do I package and archive crates from [http://crates.io](http://crates.io)?
 
 TODO: Write this answer.
+-->
 
 #### How do I do dynamic Rust library loading?
 
@@ -771,13 +803,17 @@ The `repr` attribute can be applied to such `enums` to give them the same repres
 
 ## Cross-Platform
 
+<!--
 #### How do I build a Windows binary that doesn't display the console window?
 
 TODO: Write this answer.
+-->
 
+<!--
 #### How I make the console-less binary not crash on panic!?
 
 TODO: Write this answer.
+-->
 
 #### What's the idiomatic way to express platform-specific behavior in Rust?
 

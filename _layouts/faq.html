@@ -5,94 +5,11 @@ layout: default
 <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600' rel='stylesheet' type='text/css'>
 
 <div class="faq">
-    {{ content }}
-    <div class="copyright">
-        <p>Copyright © 2011-2015 The Rust Project Developers.<br>
-        Licensed under the Apache License, Version 2.0 or the MIT license, at your option.<br>
-        This file may not be copied, modified, or distributed except according to those terms.</p>
-    </div>
+  {{ content }}
+  <div class="copyright">
+    <p>Copyright © 2011-2015 The Rust Project Developers.<br>
+    Licensed under the Apache License, Version 2.0 or the MIT license, at your option.<br>
+    This file may not be copied, modified, or distributed except according to those terms.</p>
+  </div>
 </div>
-
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<script>
-// Highlight all the TODOs to make it easier to spot them.
-var highlightToDos = function () {
-  var nodes = $(".faq p").filter(function (_, node) {
-    var text = node.textContent;
-    var first = text.slice(0, text.indexOf(" "));
-    return first == "TODO:";
-  });
-
-  $.each(nodes, function (_, node) {
-    node.innerHTML = "<div class='todo'>" + node.innerHTML + "</div>";
-  });
-};
-
-// Add replaceAt() to String, allowing us to set character c at index i.
-String.prototype.replaceAt = function(i, c) {
-  return this.substr(0, i) + c + this.substr(i + c.length);
-};
-
-// Convert the given string to a URI fragment identifier.
-var toFragmentIdentifier = function (str) {
-  var s = str.toLowerCase();
-  for (var i = 0; i < s.length; ++i) {
-    if (!/[a-z0-9]/i.test(s[i])) {
-      s = s.replaceAt(i, '-');
-    }
-  }
-  return s.replace(/-+/, '-');
-};
-
-// Make a Table of Contents and add links to the section headers.
-var makeTOC = function () {
-  // Get headers and TOC div.
-  var headers  = $(".faq h2");
-  var toc      = $(".faq #toc")[0];
-
-  // Create a document fragment.
-  var fragment = document.createDocumentFragment();
-
-  // Set TOC title.
-  var title = document.createElement("h2");
-  title.innerHTML = "Table of Contents";
-
-  // Create TOC list.
-  var list = document.createElement("ol");
-  list.id = "toc-contents";
-
-  // Create TOC toggle.
-  var toggle = document.createElement("a");
-  toggle.href = "#toggle-toc";
-
-  $.each(headers, function (_, header) {
-    // Convert the header text into a link-safe fragment identifier.
-    var id = toFragmentIdentifier(header.innerHTML);
-
-    // Create the open and close tags.
-    var link = "<a href='#" + id + "'>" + header.innerHTML + "</a>";
-
-    // Create a new link element, fill in the contents, and add it to the list.
-    var elem = document.createElement("li");
-    elem.innerHTML = link;
-    list.appendChild(elem);
-
-    // Set ID and link on the header.
-    header.id = id;
-    header.innerHTML = link;
-  });
-
-  // Add the title and list to the fragment.
-  fragment.appendChild(title);
-  fragment.appendChild(toggle);
-  fragment.appendChild(list);
-
-  // Insert the fragment into the TOC.
-  toc.appendChild(fragment);
-};
-
-highlightToDos();
-makeTOC();
-</script>
 
