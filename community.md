@@ -220,7 +220,7 @@ team business, including the progression of proposals through the RFC and
 implementation process.
 
 [authors]: https://github.com/rust-lang/rust/blob/master/AUTHORS.txt
-[contribute]: ./contributing.html
+[contribute]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
 [team_reports]: https://github.com/rust-lang/subteams
