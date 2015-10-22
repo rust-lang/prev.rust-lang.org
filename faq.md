@@ -39,7 +39,7 @@ Rust's default hashing algorithm is cryptographically secure, which means it's g
 
 Even so, it's [actually not](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6) too bad. As you can see from [these benchmark comparisons](http://cglab.ca/~abeinges/blah/hash-rs/) of different hashing implementations in Rust, Rust's SipHash implementation (the default) is a solid choice for a wide variety of purposes.
 
-#### Can I run benchmarks using test::Bencher on the beta or stable channel?
+#### Can I run benchmarks using `test::Bencher` on the beta or stable channel?
 
 Sadly, no. The `test` feature, which is necessary for testing and benchmarking in Rust, is restricted to the nightly channel.
 
@@ -65,17 +65,17 @@ That being said, having multiple aliasing `&mut T`s is never allowed. Due to the
 
 #### Why doesn't Rust have exceptions?
 
-The design issues of exception handling in programming language have been covered at length elsewhere. Exceptions complicate understanding of control-flow, they express validity/invalidity with a system outside of the type system, they interoperate poorly with multithreaded code (a major focus of Rust), the list goes on.
+The design issues for exception handling in programming language have been covered at length elsewhere. Exceptions complicate understanding of control-flow, they express validity/invalidity outside of the type system, they interoperate poorly with multithreaded code (a major focus of Rust), the list goes on.
 
-Rust instead opted for a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/nightly/book/error-handling.html#the-limits-of-combinators) (the improved chapter is only on nightly at the moment, but will be on stable soon. Everything it covers works on stable). This fits more nicely with Rust's control flow, concurrency, and everything else.
+Rust opted instead for a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/nightly/book/error-handling.html#the-limits-of-combinators) (the improved chapter is only on nightly at the moment, but will be on stable soon. Everything it covers works on stable). This fits more nicely with Rust's control flow, concurrency, and everything else.
 
 #### What's the deal with `unwrap()` everywhere?
 
-`unwrap()` is a function that gets the value out of an `Option` or `Result` and panics if its not there. It is useful both for causing catastrophic failure in certain cases, but it more useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point. `unwrap()` shouldn't be your default way to handle errors, but it is a useful tool to have when you need it.
+`unwrap()` is a function that extracts the value inside an `Option` or `Result` and panics if its not there. It is useful both for causing catastrophic failure in certain cases, but it more useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point. `unwrap()` shouldn't be your default way to handle errors, but it is a useful tool to have when you need it.
 
 #### Why do I get an error when I try to run example code that uses the `try!` macro?
 
-It's probably an issue with return types. The [`try!` macro](https://doc.rust-lang.org/stable/std/macro.try!.html) either extracts the value from a `Result`, or returns early with the error `Result` is carrying. This means that try only works for functions that return `Result` themselves, where the second type implements `From::from(err)`.
+It's probably an issue with the function's return type. The [`try!` macro](https://doc.rust-lang.org/stable/std/macro.try!.html) either extracts the value from a `Result`, or returns early with the error `Result` is carrying. This means that try only works for functions that return `Result` themselves, where the `Err`-constructed type implements `From::from(err)`.
 
 #### Is there an easier way to do error handling than having `Result`s everywhere?
 
@@ -113,7 +113,7 @@ Flexibility, simplicity, and correctness. Curly braces allow for more flexible s
 
 #### I can leave out parentheses on if conditions, why do I have to put brackets around single line blocks? Why is the C style not allowed?
 
-A single line block may not always be a single line block. Forgetting to add in the brackets when you add a line to an `if` block can be the cause of some serious programming errors (just look at Apple's ["goto fail"](https://gotofail.com/) bug). In the interest of safety, Rust makes you use the blocks every time.
+A single line block may not always be a single line block. Forgetting to add in the brackets when you add a line to an `if` block can be the cause of some serious programming errors (just look at Apple's [&ldquo;goto fail&rdquo;](https://gotofail.com/) bug). In the interest of safety, Rust makes you use the blocks every time.
 
 #### Why is there no literal syntax for dictionaries?
 
@@ -130,7 +130,7 @@ You should use an implicit return everywhere it can be used. Unless you're writi
 
 #### Why does `match` have to be exhaustive?
 
-`match` being exhaustive has some useful properties. First, if every possibility is covered by the `match`, adding further variants to the `enum` in the future will prompt a compilation failure, rather than runtime panic. Second, it makes cost explicit. In general, the only safe way to have a non-exhaustive `match` would be to panic the thread if nothing is matched, though it could fall through if the type of the `match` expression is `()`. This sort of hidden cost and special casing is against the language's philosophy. It's easy to ignore all unspecified cases by using the `_` wildcard:
+`match` being exhaustive has some useful properties. First, if every possibility is covered by the `match`, adding further variants to the `enum` in the future will cause a compilation failure, rather than an error at runtime. Second, it makes cost explicit. In general, the only safe way to have a non-exhaustive `match` would be to panic the thread if nothing is matched, though it could fall through if the type of the `match` expression is `()`. This sort of hidden cost and special casing is against the language's philosophy. It's easy to ignore all unspecified cases by using the `_` wildcard:
 
 ```rust
 match val.do_something() {
@@ -147,7 +147,7 @@ Lifetimes are Rust's answer to garbage collection. They are a way of ensuring me
 
 #### Why is the lifetime syntax the way it is?
 
-The `'a` syntax comes from the ML family of programming languages, where `'a` is used to indicate a generic type parameter. For Rust, the syntax had to be something that was unambiguous, noticable, and fit nicely in a type right alonside traits and references. Alternative syntaxes have been discussed, but this seemed to work just fine.
+The `'a` syntax comes from the ML family of programming languages, where `'a` is used to indicate a generic type parameter. For Rust, the syntax had to be something that was unambiguous, noticable, and fit nicely in a type declaration right alonside traits and references. Alternative syntaxes have been discussed, but this seems to work just fine.
 
 #### When is `Rc` useful?
 
@@ -155,7 +155,7 @@ This is covered in the [official documentation for `Rc`](https://doc.rust-lang.o
 
 #### How do I return a borrow to something I created from a function?
 
-You need to ensure that the borrowed-to item will outlive the function. This can be done in two ways: by binding the output lifetime to some input lifetime, or by declaring the output lifetime as static. The first option is significantly better than the second.
+You need to ensure that the borrowed item will outlive the function. This can be done in two ways: by binding the output lifetime to some input lifetime, or by declaring the output lifetime as static. The first option is significantly better than the second.
 
 Here is an example of the each:
 
@@ -175,7 +175,7 @@ The problem with declaring the lifetime as `static` is that it's rarely what you
 
 #### How do I return a closure from a function?
 
-To return a closure from a function, it must be what's called a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own stack frame, so it is not dependent on its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer defined (put another way, it would allow reading potentially invalid memory).
+To return a closure from a function, it must be what's called a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own stack frame, so it is not dependent on its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer defined (put another way, it would allow reading potentially invalid memory). The closure must also be wrapped in a `Box`, so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
 
 #### When are lifetimes required to be defined?
 
