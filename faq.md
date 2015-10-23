@@ -77,17 +77,13 @@ In general, tail-call optimization is not guaranteed: see [here](https://mail.mo
 
 #### Does Rust have a runtime?
 
-Rust has a [very small and limited runtime](https://github.com/Kimundi/lazy-static.rs) providing a heap, unwinding and backtrace support, and stack guards. This runtime is comparable to the [C runtime](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html), and allows for the calling of Rust functions from C without setup.
+Rust has a [very small and limited runtime]() providing a heap, unwinding and backtrace support, and stack guards. This runtime is comparable to the [C runtime](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html), and allows for the calling of Rust functions from C without setup.
 
 ## Concurrency
 
 #### Can I use globals across threads without `unsafe`?
 
-No, even if the type implements `Sync`.
-
-Types which are `Sync` are thread-safe when multiple shared references to them are used concurrently. Types which are not `Sync` are not thread-safe, and thus when used in a global require `unsafe` to use.
-
-That being said, having multiple aliasing `&mut T`s is never allowed. Due to the nature of globals the borrow checker cannot possibly ensure that a `static` obeys the borrowing rules, so taking a mutable reference to a `static` is always unsafe.
+Yes, if the type implements `Sync`, doesn't implement `Drop`, and you don't try to mutate the global value.
 
 ## Error Handling
 
@@ -201,6 +197,10 @@ fn example2<'a>(s: &'a str) -> &'static str {
 
 The problem with declaring the lifetime as `static` is that it's rarely what you actually mean, and is instead a way of escaping the lifetime system. References with a `static` lifetime outlive everything else, and this means that they can be used in ways that would otherwise be invalid with the first method.
 
+An alternative is to return an owning type like `String`. This eliminates the reference issues entirely, at the cost of possibly unnecessary allocations.
+
+There is also the `Cow` ("copy on write") type, which will only do the extra allocation if you attempt to mutate the contained value.
+
 #### How do I return a closure from a function?
 
 To return a closure from a function, it must be what's called a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own stack frame, so it is not dependent on its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer defined (put another way, it would allow reading potentially invalid memory). The closure must also be wrapped in a `Box`, so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
@@ -240,7 +240,7 @@ At the moment, you can't without `unsafe`. If you have a struct with a pointer t
 
 #### What is the difference between consuming and moving/taking ownership?
 
-Consuming means that the value has been dropped, and is no longer defined. With just a move, the value is still alive, but ownership has been transferred to a new owner, meaning the old owner can no longer modify it or lend out references.
+These are different terms for the same thing. In both cases, it means the value has been moved into a function, and moved out of the calling owner.
 
 #### Why when I pass a struct to a function the compiler says it's been moved and I can't use it anymore, when the same doesn't happen for integers?
 
@@ -292,7 +292,7 @@ Things stabilize all the time, and the beta and stable channels update every six
 
 #### How can I convert a `String` or `Vec<T>` to a slice (`&str` and `&[T]`)?
 
-Using Deref coercions! `Strings` and `Vec`s will automatically coerce to their respective slices when referenced.
+Using Deref coercions `Strings` and `Vec`s will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
 
 #### How can I convert from `&str` to `String` or the other way around?
 
@@ -337,7 +337,7 @@ let v: Vec<&str> = s.lines().collect();
 
 #### How do I do O(1) character access in a `String`?
 
-You don't, not without converting the `String` into something else. If you do that, it comes with some serious caveats. Strings in Rust are all UTF-8 encoded, and O(1) access to characters is impossible in UTF-8. If you index by bytes as you normally would in ASCII strings you'll get a UTF-8 codepoint, which may or may not be an actual character.
+`str` implements both the `Index` and `IndexMut` traits, but because Rust strings are all UTF-8, and so it can be indexed exactly as you would expect. But if you do that, it comes with some serious caveats. Strings in Rust are all UTF-8 encoded, and O(1) access to characters is impossible in UTF-8. If you index by bytes as you normally would in ASCII strings you'll get a UTF-8 codepoint, which may or may not be an actual character. If you try to index a location that is not a valid UTF-8 boundary, the operation with panic, which makes it doubly unlikely that indexing is what you're looking for.
 
 If you are absolutely certain your string is in fact ASCII, you can get O(1) access by indexing the underlying buffer like so:
 
@@ -359,7 +359,7 @@ Scanning a `str` for ASCII-range codepoints can still be done safely octet-at-a-
 
 Most "character oriented" operations on text only work under very restricted language assumptions sets such as "ASCII-range codepoints only". Outside ASCII-range, you tend to have to use a complex (non-constant-time) algorithm for determining linguistic-unit (glyph, word, paragraph) boundaries anyways. We recommend using an "honest" linguistically-aware, Unicode-approved algorithm.
 
-The `char` type is UCS4. If you honestly need to do a codepoint-at-a-time algorithm, it's trivial to write a `type wstr = [char]`, and unpack a `str` into it in a single pass, then work with the `wstr`. In other words: the fact that the language is not "decoding to UCS4 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
+The `char` type is UTF32. If you honestly need to do a codepoint-at-a-time algorithm, it's trivial to write a `type wstr = [char]`, and unpack a `str` into it in a single pass, then work with the `wstr`. In other words: the fact that the language is not "decoding to UTF32 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
 
 ## Collections
 
@@ -565,6 +565,10 @@ There are a couple developing options: [RustDT](https://github.com/RustDT/RustDT
 - There is no global inter-crate namespace; all name management occurs within a crate.
 - Using another crate binds the root of its namespace into the user's namespace.
 
+#### Why can't the Rust compiler find this library I'm `use`ing?
+
+There are a number of possible answers, but a common mistake is not realizing that `use` declarations are _always_ relative to the crate root. Try rewriting your declarations to use the paths they would use if defined in the root file of your project and see if that fixes the problem.
+
 #### Why do I have to declare module files with mod at the top level of the crate, instead of just `use`ing them?
 
 There are two ways to declare modules in Rust, inline or in another file. Here is an example of each:
@@ -662,6 +666,8 @@ Over time more and more answers will be offered for the current version, this im
 #### What is "monomorphisation"?
 
 Monomorphisation is the process by which Rust generates specific instances of a generic function based on the types of the various calls to that function. This is used to provide static dispatch for generic functions. For functions using trait objects for generics, dynamic dispatch is used instead, with calls to the function going through a vtable to identify specific function calls for the provided type implementing the given trait.
+
+In C++ people would likely know this as "template instantiation." But unlike C++, Rust's monomorphisation is an implementation detail, and not a language feature.
 
 #### What's the different between a function and a closure that doesn't capture any variables?
 
@@ -921,9 +927,9 @@ Rust doesn't currently have an equivalent to template specialization, but it is 
 
 #### How does Rust's ownership system related to move semantics in C++?
 
-In C++, moving vs copying was added on late with C++11. With Rust the concept of moving vs copying has been around from the beginning. In C++ something can be moved into a function or out of a function using r-value references and either `std::move` or `std::forward`. In Rust, moves happen for anything that does not implement the `Copy` trait (which will cause the value of the type to be copied, rather than moved). This means that moves are the default operation, and that copies must be opted into explicitly.
+In C++, moving vs copying was added on late with C++11. With Rust the concept of moving vs copying has been around from the beginning. In C++ something can be moved into a function or out of a function using r-value references and either `std::move` or `std::forward`. In Rust, moves happen for anything that does not implement the `Copy` trait (which will cause the value of the type to be copied, rather than moved). This means that moves are the default operation, and that copies must be opted into explicitly. It's also important to know that moves in Rust are destructive copies, which call `Drop` (equivalent to a C++ destructor) on the moved value.
 
-One thing to note, however is that moves are often not necessary or desirable in Rust. If the function you're writing does not require ownership of the value being passed in, it should probably be borrowed (mutably or immutable, as necessary) rather than moved or copied.
+Moves are often not necessary or desirable in Rust. If the function you're writing does not require ownership of the value being passed in, it should probably be borrowed (mutably or immutably, as necessary) rather than moved or copied.
 
 It's also useful to note that functions can explicitly require that an input parameter be copied like so:
 
@@ -939,7 +945,25 @@ The simplest way is to interoperate through C. Both Rust and C++ provide a [fore
 
 #### Does Rust have C++-style constructors?
 
-No. Functions can serve the same purpose as constructors without adding any language complexity.
+No. Functions can serve the same purpose as constructors without adding any language complexity. The usual name for the constructor-equivalent function in Rust is `new()`, although this is just a social norm rather than a language rule. The `new()` function in fact is just like any other function. An example of it looks like so:
+
+```rust
+struct Foo {
+    a: i32,
+    b: f64,
+    c: bool
+}
+
+impl Foo {
+    fn new() -> Foo {
+        Foo {
+            a: 0,
+            b: 0.0,
+            c: false
+        }
+    }
+}
+```
 
 #### Does Rust have copy constructors?
 
