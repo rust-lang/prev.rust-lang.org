@@ -24,6 +24,10 @@ even better, open a pull request against
 
 [Klagenfurt Rust Programmers](http://www.meetup.com/Klagenfurt-Rust/), Klagenfurt.
 
+### Brazil
+
+[Rust São Paulo](http://www.meetup.com/Rust-Sao-Paulo-Meetup/), São Paulo.
+
 ### Canada
 
 [Montréal Rust Language Meetup](http://www.meetup.com/Montreal-Rust-Language-Meetup/), Montréal, QC.
@@ -40,7 +44,7 @@ even better, open a pull request against
 
 [Rust Cologne/Bonn User Group](http://www.meetup.com/Rust-Cologne-Bonn/), Köln.
 
-[Rust Hack and Learn](http://www.meetup.com/Rust-Berlin/), Berlin.
+[Rust Berlin](http://www.meetup.com/Rust-Berlin/), Berlin.
 
 [Rust Meetup Hamburg](http://www.meetup.com/Rust-Meetup-Hamburg/), Hamburg.
 

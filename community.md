@@ -101,21 +101,21 @@ noted below.
 - [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
 - [#rust-bots][bots_irc] notifcations about Rust from a selection of bots
 
-[rust_irc]: irc://moznet/rust
-[rustc_irc]: irc://moznet/rustc
-[libs_irc]: irc://moznet/rust-libs
-[tools_irc]: irc://moznet/rust-tools
-[lang_irc]: irc://moznet/rust-lang
-[community_irc]: irc://moznet/rust-community
-[internals_irc]: irc://moznet/rust-internals
-[gamedev_irc]: irc://moznet/rust-gamedev
-[crypto_irc]: irc://moznet/rust-crypto
-[osdev_irc]: irc://moznet/rust-osdev
-[webdev_irc]: irc://moznet/rust-webdev
-[cargo_irc]: irc://moznet/cargo
-[offtopic_irc]: irc://moznet/rust-offtopic
-[servo_irc]: irc://moznet/servo
-[bots_irc]: irc://moznet/rust-bots
+[rust_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
+[rustc_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc 
+[libs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
+[tools_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
+[lang_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
+[community_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
+[internals_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
+[gamedev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
+[crypto_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
+[osdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
+[webdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
+[cargo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23cargo
+[offtopic_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
+[servo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23servo
+[bots_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
 
 ### Discussion Forums
 
@@ -182,10 +182,13 @@ outreach, commercial users, teaching materials, and exposure.
 [code of conduct][coc].
 
 In addition to the official team rosters, most teams also have a larger set
-of reviewers who are knowledgeable about the area and can sign off on code.
+of reviewers who are knowledgeable about the area and can sign off on
+code. If you're interested in getting involved in one of these teams,
+feel free to reach out to the team leader or any other member, who can
+help get you started.
 
-If you're interested in getting involved in one of these teams, feel free to
-reach out to the team leader, who can help get you started.
+If you are not sure where to direct an enquiry, the best starting point
+would be the [community team][community_team].
 
 [teams]: https://www.rust-lang.org/team.html
 [core_team]: https://www.rust-lang.org/team.html#Core
