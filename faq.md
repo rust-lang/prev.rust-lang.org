@@ -117,7 +117,7 @@ All things being equal, `f64` is likely a better default.
 
 #### Why can't I compare floats?
 
-You can! Floats implement the `PartialOrd` trait, which means that `>`, `<`, `<=`, and `>=` are defined for them. But they do _not_ implement the `Ord` trait, because (thanks to `NaN`) there is no total ordering for floating point numbers.
+You can! Floats implement the `PartialOrd` trait, which means that `>`, `<`, `<=`, and `>=` are defined for them. But they do _not_ implement the `Ord` trait, because (thanks to `NaN`) there is no total ordering for floating point numbers. There [is a crate](https://crates.io/crates/ordered-float) that provides a total ordering on floats by wrapping them, which may be desirable depending on your use-case.
 
 So you can do all the normal comparison operations you would expect, but you can't use the `cmp` function.
 
@@ -232,7 +232,25 @@ more efficient, but bypasses Rust's safety guarantees.
 
 #### How can I define a struct that contains a pointer to one of its own fields?
 
-At the moment, you can't without `unsafe`. If you have a struct with a pointer to one of its own fields, the Rust compiler has no way to know if the pointed-to field will be destroyed before or after the containing struct, and so it can't guarantee that the pointer into the field won't potentially point to invalid memory.
+You can, but it's useless to do so. The struct becomes permanently borrowed by itself and therefore can't be moved. Here is some code illustrating this:
+
+```rust
+use std::cell::Cell;
+
+#[derive(Debug)]
+struct Unmovable<'a> {
+    x: u32,
+    y: Cell<Option<&'a u32>>,
+}
+
+
+fn main() {
+    let test = Unmovable { x: 42, y: Cell::new(None) };
+    test.y.set(Some(&test.x));
+
+    println!("{:?}", test);
+}
+```
 
 #### What does it mean to "consume a value"?
 
