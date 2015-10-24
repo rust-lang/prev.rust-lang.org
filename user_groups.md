@@ -68,6 +68,8 @@ even better, open a pull request against
 
 ### Japan
 
+[Rust Of Us](https://rust-of-us.doorkeeper.jp/), Akihabara, Tokyo.
+
 [Rust Mokumoku Kai](https://rust.doorkeeper.jp/), Roppongi, Tokyo.
 
 [Akasaka Rust](https://akasaka-rust.doorkeeper.jp/), Akasaka, Tokyo.
