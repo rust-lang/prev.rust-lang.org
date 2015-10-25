@@ -52,7 +52,10 @@ even better, open a pull request against
 
 ### India
 
+
 [Hyderabad Rust Meetup](http://www.meetup.com/Hyderabad-Rust-Meetup/), Hyderabad.
+
+[Rust Group Bangalore](https://www.facebook.com/groups/RustBLR/1579069959026339/), Bangalore.
 
 ### Indonesia
 
