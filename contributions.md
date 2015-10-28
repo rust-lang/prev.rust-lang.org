@@ -23,16 +23,11 @@ follow our [Code of Conduct][coc].
 
 [coc]: https://www.rust-lang.org/conduct.html
 
-## Finding Something to Work On
+## Getting Started By Scanning Through Issues
 
-#### Issues
-
-If you're looking for [issues][rust_issues] on the Rust repo
-and want something easy-ish to start with, look for the [E-easy][e_easy_issues]
-or [E-mentor][e_mentor_issues] labels.
-
-Contributors with sufficient permissions on the Rust repo can help by
-adding labels to triage issues:
+One way to get started is to scan through [issues][rust_issues] on
+the Rust repo. To start with, look for the [E-easy][e_easy_issues] or
+[E-mentor][e_mentor_issues] labels. 
 
 - **Yellow A-prefixed** labels state which area of the project an
   issue relates to.
@@ -51,9 +46,14 @@ I-nominated label.
 - **Purple** metabug labels mark lists of bugs collected by other
   categories.
 
+Contributors with sufficient permissions on the Rust repo can help by
+adding labels to triage issues.
+
 [rust_issues]: https://github.com/rust-lang/rust/issues
 [e_easy_issues]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy
 [e_mentor_issues]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy+label%3AE-mentor
+
+## Getting Started by Topic
 
 #### The Rust compiler
 
