@@ -13,7 +13,7 @@ install:
 - gem install cf-s3-invalidator
 - gem install redcarpet -v 3.3.2
 - gem install jekyll
-- 'jekyll --version; redcarpet --version'
+- gem install json
 after_success: 
 - '[[ $TRAVIS_PULL_REQUEST == "false" ]] && cf-s3-inv'
 
