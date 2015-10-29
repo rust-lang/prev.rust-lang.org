@@ -176,7 +176,9 @@ tools like Cargo, multirust, rustfmt, as well as the CI Infrastructure for the
 project.
 
 * The [Community Team][community_team] is responsible for coordinating events,
-outreach, commercial users, teaching materials, and exposure.
+outreach, commercial users, teaching materials, and exposure. They can also
+direct inquiries to the correct parties when its not clear who to contact
+about something Rusty.
 
 * The [Moderation Team][mod_team] is responsible for helping to uphold the
 [code of conduct][coc].
