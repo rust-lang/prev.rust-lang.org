@@ -21,7 +21,7 @@ behavior in all official Rust forums, and is upheld by the
 
 The most important community resources for getting started with Rust are:
 
-- The [#rust][rust_irc] IRC channel, a very friendly channel that
+- The [#rust-beginners][beginners_irc] IRC channel, a very friendly channel that
   loves answering questions at any depth.
 - The [users forum][users_forum] for asynchronous discussion about all
   things Rust.
@@ -92,6 +92,7 @@ noted below.
 
 #### Topical channels
 
+- [#rust-beginners][beginners_irc] is a space for those new to Rust, lower traffic than #rust
 - [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
 - [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
 - [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
@@ -116,6 +117,7 @@ noted below.
 [offtopic_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
 [servo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23servo
 [bots_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
+[beginners_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
 
 ### Discussion Forums
 
