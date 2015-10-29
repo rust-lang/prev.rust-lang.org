@@ -5,11 +5,11 @@ title: Downloads &middot; The Rust Programming Language
 
     <div class="row install">
       <div class="col-md-4 side-header">
-        <h2>1.3.0&nbsp;</h2>
-        <h3>September 17, 2015</h3>
+        <h2>1.4.0&nbsp;</h2>
+        <h3>October 29, 2015</h3>
         <p>
 	  The
-	  <a href="http://blog.rust-lang.org/2015/09/17/Rust-1.3.html">
+	  <a href="http://blog.rust-lang.org/2015/10/28/Rust-1.4.html">
 	    current stable release of Rust
 	  </a>
 	  , updated every six weeks and backwards-compatible.
@@ -19,23 +19,28 @@ title: Downloads &middot; The Rust Programming Language
         <table class="table-features table-installers"><tbody>
           <tr>
           <td class="inst-type">Linux (.tar.gz)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.3.0-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.3.0-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.4.0-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.4.0-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
           </tr>
           <tr>
           <td class="inst-type">Mac (.pkg)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.3.0-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.3.0-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.4.0-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.4.0-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
           </tr>
           <tr>
-          <td class="inst-type">Windows (.msi)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.3.0-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.3.0-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.4.0-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.4.0-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
+          <td><a href="https://static.rust-lang.org/dist/rust-1.4.0-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
+          <td></td>
           </tr>
           <tr><td>&nbsp;</td></tr>
           <tr>
           <td class="inst-type"></td>
-          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-1.3.0-src.tar.gz"><div class="inst-button">Source</div></a></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-1.4.0-src.tar.gz"><div class="inst-button">Source</div></a></td>
           </tr>
         </tbody></table>
       </div>
@@ -52,12 +57,12 @@ title: Downloads &middot; The Rust Programming Language
 
     <div class="row">
       <div class="col-md-4 side-header">
-        <h2>Beta&nbsp; (1.4)</h2>
+        <h2>Beta&nbsp; (1.5)</h2>
         <p>
 	A preview of the upcoming stable release, intended for testing by
 	crate authors. Updated as needed.
         </p>
-        <p><em>Scheduled for stable release<br/>October 29, 2015</em>.<p>
+        <p><em>Scheduled for stable release<br/>December 10, 2015</em>.<p>
       </div>
       <div class="col-md-8">
         <table class="table-features table-installers"><tbody>
@@ -72,9 +77,14 @@ title: Downloads &middot; The Rust Programming Language
           <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
           </tr>
           <tr>
-          <td class="inst-type">Windows (.msi)</td>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
           <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
+          <td></td>
           </tr>
           <tr><td>&nbsp;</td></tr>
           <tr>
@@ -96,7 +106,7 @@ title: Downloads &middot; The Rust Programming Language
 
     <div class="row">
       <div class="col-md-4 side-header">
-        <h2>Nightly&nbsp; (1.5)</h2>
+        <h2>Nightly&nbsp; (1.6)</h2>
         <p>
         The current development branch.
 	It includes
@@ -116,11 +126,17 @@ title: Downloads &middot; The Rust Programming Language
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
           </tr>
-          <tr>
-          <td class="inst-type">Windows (.msi)</td>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
           </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-msvc.msi"><div class="inst-button">32-bit</div></a></td>
+          <td></td>
+          </tr>
+          <tr>
           <tr><td>&nbsp;</td></tr>
           <tr>
           <td class="inst-type"></td>
@@ -146,3 +162,36 @@ title: Downloads &middot; The Rust Programming Language
       </p>
       </div>
     </div>
+
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-12">
+	<a name="win-foot"></a>
+	<p>
+	  <em>†</em>
+	  There are two prominent
+	  <a href="https://en.wikipedia.org/wiki/Application_binary_interface">ABIs</a>
+	  in use on Windows: the native (MSVC) ABI used by
+	  <a href="https://www.visualstudio.com">Visual Studio</a>,
+	  and the GNU ABI used by the
+	  <a href="https://gcc.gnu.org/">GCC toolchain</a>.
+	  Which version of Rust you need depends largely on what C/C++ libraries you want to interoperate with:
+	  for interop with software produced by Visual Studio use the MSVC build of Rust; for interop with
+	  GNU software built using the
+	  <a href="https://msys2.github.io/">MinGW/MSYS2 toolchain</a>
+	  use the GNU build.
+	</p>
+	<p>
+	  MSVC builds of Rust additionally require an
+	  <a href="https://www.visualstudio.com/downloads">installation of Visual Studio</a>
+	  so rustc can use its linker.
+	  No additional software installation is necessary for basic use of the GNU build.
+	</p>
+	<p>
+	  Rust's support for the GNU ABI is more mature, and is recommended for typical
+	  uses.
+	</p>
+      </div>
+    </div>
+
