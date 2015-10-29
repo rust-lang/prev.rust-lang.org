@@ -18,9 +18,6 @@ after_success:
 
 # Build and deploy the site to the S3 bucket on push to master, unless PR
 script: jekyll build
-branches:
-  only:
-  - master
 deploy:
   provider: s3
   access_key_id: AKIAIR4V3CAS724EMHFQ
