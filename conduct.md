@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Code of Conduct
+title: The Rust Code of Conduct &middot; The Rust Programming Language
 ---
 
-# Code of Conduct
+# The Rust Code of Conduct
 
 ## Conduct
 

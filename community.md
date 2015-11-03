@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Community
+title: Rust Community &middot; The Rust Programming Language
 ---
 
 # Rust Community

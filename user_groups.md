@@ -1,6 +1,6 @@
 ---
 layout: default
-title: User Groups
+title: Rust User Groups &middot; The Rust Programming Language
 ---
 
 There are more than 50 Rust User Groups worldwide in over 20 countries
