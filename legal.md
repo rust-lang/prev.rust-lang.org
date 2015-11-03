@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Rust's legal policies
+title: Rust Legal Policies &middot; The Rust Programming Language
 ---
 
 # Copyright
