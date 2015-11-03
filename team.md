@@ -56,9 +56,6 @@ people:
     name: Patrick Walton
   pnkfelix:
     name: Felix Klock
-  rpcraig:
-    name: Rachael Craig
-    site: twitter
   sfackler:
     name: Steven Fackler
   skade:
@@ -94,7 +91,7 @@ teams:
   - name: Community
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: steveklabnik
-    members: [brson, rpcraig, skade, manishearth, steveklabnik, bstrie, erickt]
+    members: [brson, skade, manishearth, steveklabnik, bstrie, erickt]
   - name: Moderation
     responsibility: "helping uphold the <a href='http://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, erickt, niconii]
