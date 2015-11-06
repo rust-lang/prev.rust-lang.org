@@ -5,7 +5,7 @@ title: Frequently Asked Questions &middot; The Rust Programming Language
 
 # Frequently Asked Questions
 
-This document exists to answer some common questions about the Rust programming language. It is not a complete guide to the language, nor is it a tool for teaching the language. Rather, it exists as a reference to answer oft-repeated questions people in the Rust community encounter, and to clarify some of the design and history of the language.
+This page exists to answer common questions about the Rust programming language. It is not a complete guide to the language, nor is it a tool for teaching the language. It is a reference to answer oft-repeated questions people in the Rust community encounter, and to clarify the reasoning behind some of Rust's design decisions.
 
 If there is some common or important question you feel is wrongly left unanswered here, feel free to [help us fix it](https://github.com/rust-lang/rust-www/blob/master/CONTRIBUTING.md).
 
@@ -39,63 +39,63 @@ If there is some common or important question you feel is wrongly left unanswere
     </ol>
 </div>
 
-## Performance
+### Performance
 
 #### How fast is Rust?
 
-As always, this question is difficult to answer. There's still a lot of work to do on speed, and depending on what you're benchmarking, Rust has variable performance.
+Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks.
 
-That said, it is an explicit goal of Rust to be as fast as C++ for most things. Language decisions are made with performance in mind, and we want Rust to be as fast as possible. Given that Rust is built on top of LLVM, any performance improvements in it also help Rust become faster.
+It is an explicit goal of Rust to be at least as fast as C++. Language decisions are made with performance in mind, and given that Rust is built on LLVM, any LLVM performance improvements also help Rust.
 
 #### Is Rust garbage collected?
 
-No. A language that requires a GC is a language that opts into a larger, more complex runtime than Rust cares for. Rust is usable on bare metal with no extra runtime. Additionally, garbage collection is frequently a source of non-deterministic behavior. Rust provides the tools to make using a GC possible and even pleasant, but it should not be a requirement for implementing the language.
+No. A language that requires a GC is a language that opts into a larger, more complex runtime than Rust cares for. Rust is usable on bare metal with no extra runtime. Additionally, garbage collection is frequently a source of non-deterministic behavior. Rust provides the tools to make using a GC [possible and even pleasant](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/), but it is not part of the language as provided.
 
-#### Why is my program compiled with `cargo build` slow?
+#### Why is my program slow?
 
-Did you compile with the `--release` flag? The Rust language uses a lot of optimizations in release mode that make the language competitive with C and C++, but you need to explicitly ask for them, as they also result in longer compilation times that may be undesirable during development.
+Did you compile with the `--release` flag? The Rust language uses a lot of optimizations in release mode, but you need to explicitly ask for them, as they also result in longer compilation times that may be undesirable during development.
 
 #### Why is Rust compilation slow?
 
-It's a combination of factors. Both the type inference and safety-related checks are fairly complex. They make life easier for the programmer, but they require some time to run. Add in the optimizations, and Rust's compilation is slower than a simpler language that doesn't provide Rust's safety guarantees.
+Most of the compilation time is spent in type checking and code translation, with some time also used for safety checks. All of these are required for the strong guarantees Rust makes, but they require some time to run. Add in optimizations, and Rust's compilation is slower than a simpler language that doesn't provide Rust's guarantees.
 
-But all is not lost. The Rust compiler has evolved significantly over a number of years, and a lot of good work is being done to make it work faster. So expect improvements in compilation speed over time.
+But all is not lost. The Rust compiler has evolved significantly over a number of years, and a lot of good work is being done to make it work faster, and to make it feel faster during development.
 
 #### Why is Rust's HashMap so slow?
 
-Rust's default hashing algorithm is cryptographically secure, which means it's great if you need something that can't be easily guessed at, but you pay for that with slower performance relative to a non-cryptographically secure algorithm.
+By default, Rust's `HashMap` uses the [SipHash](https://131002.net/siphash/) hashing algorithm, which is designed to prevent [hash table collision attacks](http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited) while providing [reasonable performance on a variety of workloads](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6).
 
-Even so, it's [actually not](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6) too bad. As you can see from [these benchmark comparisons](http://cglab.ca/~abeinges/blah/hash-rs/) of different hashing implementations in Rust, Rust's SipHash implementation (the default) is a solid choice for a wide variety of purposes.
+While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges/blah/hash-rs/) in many cases, one case where it is notably slower than other hashing algorithms is with short keys, such as integers. This is why Rust programmers often observe slow performance with `HashMap`. The [FNV hasher](https://crates.io/crates/fnv) is frequently recommended for these cases, but be aware that it does not have the same collision-resistence properties as SipHash.
 
-#### Can I run benchmarks using `test::Bencher` on the beta or stable channel?
+#### Why can't I run benchmarks?
 
-Sadly, no. The `test` feature, which is necessary for testing and benchmarking in Rust, is restricted to the nightly channel.
+You can run benchmarks, but only on the nightly channel. Rust's benchmarking mechanism is currently unstable, as the API has not been deemed ready for stabilization. This may change in the future, but until then benchmarking can only be used on nightly.
 
 #### Does Rust do tail-call optimization?
 
-In general, tail-call optimization is not guaranteed: see [here](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html) for a detailed explanation with references. There was a [proposed extension](https://github.com/rust-lang/rfcs/pull/81) that would allow tail-call elimination in certain contexts, but it is currently postponed. The compiler is still free to optimize tail-calls [when it pleases](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization), however.
+In general, tail-call optimization is [not guaranteed](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html), but may be done in [limited circumstances](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization). There was a [proposed extension](https://github.com/rust-lang/rfcs/pull/81) that would allow tail-call elimination in certain contexts, but it is currently postponed. The compiler is still free to optimize tail-calls [when it pleases](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization), however, and the language has a word (`become`) reserved for future explicit tail calls.
 
 #### Does Rust have a runtime?
 
-Rust has a [very small and limited runtime]() providing a heap, unwinding and backtrace support, and stack guards. This runtime is comparable to the [C runtime](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html), and allows for the calling of Rust functions from C without setup.
+Rust has a [very small and limited runtime](https://doc.rust-lang.org/std/rt/) providing a heap, unwinding and backtrace support, and stack guards. This runtime is comparable to the [C runtime](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html), and allows for the calling of Rust functions from C without setup.
 
-## Concurrency
+### Concurrency
 
 #### Can I use globals across threads without `unsafe`?
 
 Yes, if the type implements `Sync`, doesn't implement `Drop`, and you don't try to mutate the global value.
 
-## Error Handling
+### Error Handling
 
 #### Why doesn't Rust have exceptions?
 
-The design issues for exception handling in programming language have been covered at length elsewhere. Exceptions complicate understanding of control-flow, they express validity/invalidity outside of the type system, they interoperate poorly with multithreaded code (a major focus of Rust), the list goes on.
+Exceptions complicate understanding of control-flow, they express validity/invalidity outside of the type system, and they interoperate poorly with multithreaded code (a major focus of Rust).
 
-Rust opted instead for a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/nightly/book/error-handling.html#the-limits-of-combinators) (the improved chapter is only on nightly at the moment, but will be on stable soon. Everything it covers works on stable). This fits more nicely with Rust's control flow, concurrency, and everything else.
+Rust prefers a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/stable/book/error-handling.html). This fits more nicely with Rust's control flow, concurrency, and everything else.
 
 #### What's the deal with `unwrap()` everywhere?
 
-`unwrap()` is a function that extracts the value inside an `Option` or `Result` and panics if its not there. It is useful both for causing catastrophic failure in certain cases, but it more useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point. `unwrap()` shouldn't be your default way to handle errors, but it is a useful tool to have when you need it.
+`unwrap()` is a function that extracts the value inside an `Option` or `Result` and panics if no value is present. It is useful in the presence of truly unrecoverable errors, but is more useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point. `unwrap()` shouldn't be your default way to handle errors, but it is a useful tool to have.
 
 #### Why do I get an error when I try to run example code that uses the `try!` macro?
 
@@ -103,9 +103,9 @@ It's probably an issue with the function's return type. The [`try!` macro](https
 
 #### Is there an easier way to do error handling than having `Result`s everywhere?
 
-If you're looking for a way to avoid handling `Result`s in other people's code, there's always `unwrap()`, but it's probably not what you actually want. `Result` is an indicator that some computation may or may not complete. The fact that some languages allow you to ignore failure cases is an anti-feature. Forcing you to handle them is one of the ways that Rust encourages safety. So, if you really don't want to handle error, use `unwrap()`, but you should probably just handle the error for real.
+If you're looking for a way to avoid handling `Result`s in other people's code, there's always `unwrap()`, but it's probably not what you actually want. `Result` is an indicator that some computation may or may not complete successfully. The fact that some languages allow you to ignore failure cases is an anti-feature. Forcing you to handle them is one of the ways that Rust encourages safety. So, if you really don't want to handle error, use `unwrap()`, but you should probably just handle the error for real.
 
-## Numerics
+### Numerics
 
 #### Should I default to using `f32` or `f64`?
 
@@ -117,44 +117,45 @@ All things being equal, `f64` is likely a better default.
 
 #### Why can't I compare floats?
 
-You can! Floats implement the `PartialOrd` trait, which means that `>`, `<`, `<=`, and `>=` are defined for them. But they do _not_ implement the `Ord` trait, because (thanks to `NaN`) there is no total ordering for floating point numbers. There [is a crate](https://crates.io/crates/ordered-float) that provides a total ordering on floats by wrapping them, which may be desirable depending on your use-case.
-
-So you can do all the normal comparison operations you would expect, but you can't use the `cmp` function.
+You can! Floats implement the `PartialOrd` trait, which means that `>`, `<`, `<=`, and `>=` are defined for them. But they do _not_ implement the `Ord` trait, because (thanks to `NaN`) there is no total ordering for floating point numbers. There [is a crate](https://crates.io/crates/ordered-float) that provides a total ordering on floats by wrapping them, which may be desirable depending on your use-case. You can still do all of the normal comparison operations you would expect, but you can't use the `cmp` function.
 
 #### Why can't I use `f32` or `f64` as `HashMap` keys?
 
-In order to be used as a key in a `HashMap`, a type must implement the `Eq` and `Hash` traits. `f32` and `f64` implement `PartialEq`, but not `Eq`, because both types include `NaN` (stands for "not a number"). `NaN` values are not equal to any float, and are not equal to each other, so there is no total ordering over floating point types in Rust. This means that `f32` and `f64` can't be used as keys in a HashMap.
+In order to be used as a key in a `HashMap`, a type must implement the `Eq` and `Hash` traits. `f32` and `f64` implement `PartialEq`, but not `Eq`, because both types include `NaN` (stands for "not a number"). `NaN` values are [not equal to any float, and are not equal to each other](https://en.wikipedia.org/wiki/NaN). This means that `f32` and `f64` can't be used as keys in a HashMap.
 
 #### How can I convert between numeric types?
 
 There are three ways: the `as` keyword, which does simple casting for primitive types, the `Into` and `From` traits, which are implemented for a number of type conversions (and which you can implement for your own types), and `transmute`, which is an unsafe function that tells the compiler to treat the bits of one type as those of another type.
 
-## Syntax
+### Syntax
 
 #### Why curly braces? Why can't everything be like Haskell/Python?
 
-Flexibility, simplicity, and correctness. Curly braces allow for more flexible syntax for the programmer, a simpler parser in the compiler, and help reduce the possibility of logic mistakes caused by incorrect indentation, like Apple's classic [goto fail](https://gotofail.com/) bug.
+Use of curly braces to denote blocks is a common design choice in a variety of programming languages, and Rust's consistency is useful for people already familiar with the style.
+
+Curly braces also allow for more flexible syntax for the programmer, a simpler parser in the compiler, and help reduce the possibility of logic mistakes caused by incorrect indentation, like Apple's classic [goto fail](https://gotofail.com/) bug.
 
 #### I can leave out parentheses on if conditions, why do I have to put brackets around single line blocks? Why is the C style not allowed?
 
-A single line block may not always be a single line block. Forgetting to add in the brackets when you add a line to an `if` block can be the cause of some serious programming errors (just look at Apple's [&ldquo;goto fail&rdquo;](https://gotofail.com/) bug). In the interest of safety, Rust makes you use the blocks every time.
+Rust does not require parentheses around the conditional for `if`, `else if`, and the like. If C-style bracketless blocks were allowed, there would be no clear delineation between the condition and the body of the block. Requiring braces also eliminates the dangling-else problem, where nested if-else expressions can lead to ambiguity.
 
 #### Why is there no literal syntax for dictionaries?
 
-Dictionaries (or `HashMap`s in Rust parlance) aren't a primitive data type, and so they don't get literal syntax. If you want to make a `HashMap`, use `HashMap::new()`.
+Dictionaries (or `HashMap`s in Rust parlance) aren't a primitive data type, and so they don't get literal syntax. If you want more convenient syntax for `HashMap` creation, you can [create a macro](http://stackoverflow.com/questions/27582739/how-do-i-create-a-hashmap-literal/27582993#27582993) to provide it.
 
 #### When should I use an implicit return?
 
-You should use an implicit return everywhere it can be used. Unless you're writing an early return (before the end of a function, where typing `return` is mandatory), it should be implicit.
+Implicit returns are simply a coding style option, and can be used anywhere they make sense. While early returns require an explicit `return`, any other return can be made implicit according to your preferences or the preferences of your project.
 
 #### Why aren't function signatures inferred?
 
-- Mechanically, it simplifies the inference algorithm; inference only requires looking at one function at a time.
-- The same simplification goes double for human readers. A reader does not need an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
+- Mechanically, it simplifies the inference algorithm, as inference only requires looking at one function at a time.
+- Mandatory function signatures help enforce interface stability at both the module and crate level.
+- It improves code comprehension for programmer, eliminating the need for an  IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 
 #### Why does `match` have to be exhaustive?
 
-`match` being exhaustive has some useful properties. First, if every possibility is covered by the `match`, adding further variants to the `enum` in the future will cause a compilation failure, rather than an error at runtime. Second, it makes cost explicit. In general, the only safe way to have a non-exhaustive `match` would be to panic the thread if nothing is matched, though it could fall through if the type of the `match` expression is `()`. This sort of hidden cost and special casing is against the language's philosophy. It's easy to ignore all unspecified cases by using the `_` wildcard:
+`match` being exhaustive has some useful properties. First, if every possibility is covered by the `match`, adding further variants to an `enum` in the future will cause a compilation failure, rather than an error at runtime. Second, it makes cost explicit. In general, the only safe way to have a non-exhaustive `match` would be to panic the thread if nothing is matched, though it could fall through if the type of the `match` expression is `()`. This sort of hidden cost and special casing is against the language's philosophy. It is easy to ignore all unspecified cases by using the `_` wildcard:
 
 ```rust
 match val.do_something() {
@@ -163,11 +164,11 @@ match val.do_something() {
 }
 ```
 
-## Lifetimes
+### Lifetimes
 
 #### Why lifetimes?
 
-Lifetimes are Rust's answer to garbage collection. They are a way of ensuring memory safety without paying hefty performance costs. They are based on a variety of academic work, which can be found in the [Rust book](https://doc.rust-lang.org/stable/book/academic-research.html#type-system).
+Lifetimes are Rust's answer to the question of memory safety. They allow Rust to ensure memory safety without mechanisms like garbage collection which carry hefty performance costs. They are based on a variety of academic work, which can be found in the [Rust book](https://doc.rust-lang.org/stable/book/academic-research.html#type-system).
 
 #### Why is the lifetime syntax the way it is?
 
@@ -181,7 +182,7 @@ This is covered in the [official documentation for `Rc`](https://doc.rust-lang.o
 
 You need to ensure that the borrowed item will outlive the function. This can be done in two ways: by binding the output lifetime to some input lifetime, or by declaring the output lifetime as static. The first option is significantly better than the second.
 
-Here is an example of the each:
+Here is an example of each:
 
 ```rust
 // The first method
@@ -203,11 +204,11 @@ There is also the `Cow` ("copy on write") type, which will only do the extra all
 
 #### How do I return a closure from a function?
 
-To return a closure from a function, it must be what's called a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own stack frame, so it is not dependent on its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer defined (put another way, it would allow reading potentially invalid memory). The closure must also be wrapped in a `Box`, so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
+To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid (put another way, it would allow reading potentially invalid memory). The closure must also be wrapped in a `Box`, so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
 
 #### When are lifetimes required to be defined?
 
-Lifetimes can often be elided, as explained in the ["Lifetime elision" section](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision) of the Rust book. "Elided lifetimes" are those lifetimes with are implicit in any code containing references. They are automatically inserted by the compiler with the three following rules:
+Lifetimes can often be elided, as explained in the ["Lifetime elision" section](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision) of the Rust book. "Elided lifetimes" are those lifetimes which are implicit in any code containing references. They are automatically inserted by the compiler with the three following rules:
 
 - Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
 - If there is exactly one input lifetime, elided or not, that lifetime is assigned to all elided lifetimes in the return values of that function.
@@ -219,20 +220,21 @@ If these rules would result in incorrect code elsewhere, then the Rust compiler 
 
 Data values in the language can only be constructed through a fixed set of initializer forms. Each of those forms requires that its inputs already be initialized. A liveness analysis ensures that local variables are initialized before use.
 
-## Ownership
+### Ownership
 
 #### How can I implement a graph or other data structure that contains cycles?
 
-There are two major options:
+There are three major options:
 
 - You can implement it using `Weak` or `Rc` to allow shared ownership of nodes,
 although this approach pays the cost of memory management.
 - You can implement it using `unsafe` code using raw pointers. This will be
 more efficient, but bypasses Rust's safety guarantees.
+- Using vectors and indices into those vectors. There are [several](http://smallcultfollowing.com/babysteps/blog/2015/04/06/modeling-graphs-in-rust-using-vector-indices/) [available](http://featherweightmusings.blogspot.com/2015/04/graphs-in-rust.html) examples and explanations of this approach.
 
 #### How can I define a struct that contains a pointer to one of its own fields?
 
-You can, but it's useless to do so. The struct becomes permanently borrowed by itself and therefore can't be moved. Here is some code illustrating this:
+It's possible, but useless to do so. The struct becomes permanently borrowed by itself and therefore can't be moved. Here is some code illustrating this:
 
 ```rust
 use std::cell::Cell;
@@ -254,15 +256,15 @@ fn main() {
 
 #### What does it mean to "consume a value"?
 
-"Consuming a value" means taking ownership of a value and then dropping it. When this is done, the value can't be used elsewhere.
+"Consuming a value" means taking ownership of a value. When this is done, the value can't be used elsewhere.
 
 #### What is the difference between consuming and moving/taking ownership?
 
 These are different terms for the same thing. In both cases, it means the value has been moved into a function, and moved out of the calling owner.
 
-#### Why when I pass a struct to a function the compiler says it's been moved and I can't use it anymore, when the same doesn't happen for integers?
+#### Why can I use integers after passing them to a function, but not structs?
 
-If a type implements the `Copy` trait, then it will be copied when passed to a function. All numeric types in Rust implement `Copy`, but function types do not, so they are moved instead. This means that the function can no longer be used elsewhere, unless it is moved back out of the function via the return.
+If a type implements the `Copy` trait, then it will be copied when passed to a function. All numeric types in Rust implement `Copy`, but struct types do not implement `Copy` by default, so they are moved instead. This means that the struct can no longer be used elsewhere, unless it is moved back out of the function via the return.
 
 #### How do you deal with a "Use of moved value" error?
 
@@ -270,7 +272,9 @@ This error means that the value you're trying to use has been moved to a new own
 
 #### What are the rules for using `self`, `&self`, or `&mut self` in a method declaration?
 
-If a method needs to consume the struct, declare it with `self` as the first parameter, if it only needs a reference use `&self`, and if it needs to mutate the struct without consuming it use `&mut self`.
+- Use `self` when a function needs to consume the type
+- Use `&self` when a function only needs a reference to the type
+- Use `&mut self` when a function needs to mutate the type without consuming it
 
 #### How can I understand the borrow checker?
 
@@ -281,7 +285,7 @@ There is a certain desire to act as if the borrow checker is some mysterious zen
 > - one or more references (&T) to a resource.
 > - exactly one mutable reference (&mut T)
 
-Understanding these rules and understanding [lifetimes](https://doc.rust-lang.org/stable/book/lifetimes.html) is all you need to do to understand the borrow checker.
+Understanding these rules and [lifetimes](https://doc.rust-lang.org/stable/book/lifetimes.html) is all you need to do to understand the borrow checker.
 
 #### How do deref coercions work?
 
@@ -298,19 +302,19 @@ A Deref implementation indicates that the implementing type may be converted int
 
 You can see a [full list of `Deref` implementations](https://doc.rust-lang.org/stable/std/ops/trait.Deref.html#implementors) for the standard library in the documentation.
 
-## Stability
+### Stability
 
 #### Can I use unstable features in the beta or stable channel?
 
 No, you cannot. Rust works hard to provide strong guarantees about the stability of the APIs provided on the beta and stable channels. When something is unstable, it means that we can't provide those guarantees for it yet, and don't want people relying on it staying the same. This gives us the opportunity to try changes in the wild on the nightly channel, while still maintaining strong guarantees for people seeking stability.
 
-Things stabilize all the time, and the beta and stable channels update every six weeks, so if you're waiting for a feature to be available without using the nightly channel, it should hopefully happen quickly.
+Things stabilize all the time, and the beta and stable channels update every six weeks. If you're waiting for a feature to be available without using the nightly channel, it should hopefully be available soon.
 
-## Strings
+### Strings
 
 #### How can I convert a `String` or `Vec<T>` to a slice (`&str` and `&[T]`)?
 
-Using Deref coercions `Strings` and `Vec`s will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
+Using Deref coercions, `Strings` and `Vec`s will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
 
 #### How can I convert from `&str` to `String` or the other way around?
 
@@ -351,21 +355,19 @@ let v: Vec<&str> = s.lines().collect();
 
 #### What are the differences between the different string types?
 
-`String` is an owned string type, while `&str` is a string slice. For a more detailed explanation, [check out the Rust book](https://doc.rust-lang.org/stable/book/).
+`String` is an owned string type, while `&str` is a string slice. For a more detailed explanation, [check out the Rust book](https://doc.rust-lang.org/stable/book/strings.html).
 
 #### How do I do O(1) character access in a `String`?
 
-`str` implements both the `Index` and `IndexMut` traits, but because Rust strings are all UTF-8, and so it can be indexed exactly as you would expect. But if you do that, it comes with some serious caveats. Strings in Rust are all UTF-8 encoded, and O(1) access to characters is impossible in UTF-8. If you index by bytes as you normally would in ASCII strings you'll get a UTF-8 codepoint, which may or may not be an actual character. If you try to index a location that is not a valid UTF-8 boundary, the operation with panic, which makes it doubly unlikely that indexing is what you're looking for.
+Rust strings are UTF-8 encoded, and so one visual "character" may in fact be composed of multiple bytes of "code points." Rust provides several `String` methods which provide iterators over characters (`String::chars()`), bytes (`String::bytes()`), lines (`String::lines()`), and others which should perform as expected in O(n) time instead.
 
-If you are absolutely certain your string is in fact ASCII, you can get O(1) access by indexing the underlying buffer like so:
+If you are absolutely certain your string is in fact ASCII (and that each visual character is therefore one byte in size), you can get O(1) access by indexing the underlying buffer like so:
 
 ```rust
 let s = "This is a test.";
 let bytes = s.into_bytes();
 let c = bytes[2];  // 'i' character
 ```
-
-But remember that this operation is almost certainly wrong most of the time.
 
 #### Why are strings UTF-8 by default?
 
@@ -375,15 +377,15 @@ This does mean that indexed access to a Unicode codepoint inside a `str` value i
 
 Scanning a `str` for ASCII-range codepoints can still be done safely octet-at-a-time. If you use `.as_bytes()`, pulling out a `u8` costs only `O(1)` and produces a value that can be cast and compared to an ASCII-range `char`. So if you're (say) line-breaking on `'\n'`, octet-based treatment still works. UTF8 was well-designed this way.
 
-Most "character oriented" operations on text only work under very restricted language assumptions sets such as "ASCII-range codepoints only". Outside ASCII-range, you tend to have to use a complex (non-constant-time) algorithm for determining linguistic-unit (glyph, word, paragraph) boundaries anyways. We recommend using an "honest" linguistically-aware, Unicode-approved algorithm.
+Most "character oriented" operations on text only work under very restricted language assumptions such as "ASCII-range codepoints only". Outside ASCII-range, you tend to have to use a complex (non-constant-time) algorithm for determining linguistic-unit (glyph, word, paragraph) boundaries anyway. We recommend using an "honest" linguistically-aware, Unicode-approved algorithm.
 
-The `char` type is UTF32. If you honestly need to do a codepoint-at-a-time algorithm, it's trivial to write a `type wstr = [char]`, and unpack a `str` into it in a single pass, then work with the `wstr`. In other words: the fact that the language is not "decoding to UTF32 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
+The `char` type is UTF32. If you are sure you need to do a codepoint-at-a-time algorithm, it's trivial to write a `type wstr = [char]`, and unpack a `str` into it in a single pass, then work with the `wstr`. In other words: the fact that the language is not "decoding to UTF32 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
 
-## Collections
+### Collections
 
 #### Can I implement data structures like vectors and linked lists efficiently in Rust?
 
-If your reason for implementing these data structures is to use them for other programs, there's no need, as all the common data structures are provided with the standard library.
+If your reason for implementing these data structures is to use them for other programs, there's no need, as efficient implementations of these data structures are provided by the standard library.
 
 If, however, your reason is simply to learn, then you will likely need to dip into unsafe code. While these data structures _can_ be implemented entirely in safe Rust, the performance is likely to be worse than they would be with the use of unsafe code. The simple reason for this is that data structures like vectors and link lists rely on pointer and memory operations that are disallowed by safe Rust.
 
@@ -391,26 +393,7 @@ For example, a doubly-linked list requires that there be two mutable references 
 
 #### How can I join a `Vec` (or an array) of strings into a single string?
 
-Whether the strings are owned strings (`String`) or string slices (`&str`), you can accomplish this with a fold, like so:
-
-```rust
-fn main() {
-  // For vector of `&str`
-  let v1 = vec!["This ", "is ", "a ", "sentence."];
-  let s1 = v1.iter.fold(String::new(), |acc, s| acc.push_str(s));
-  println!("{}", s1);  // >> This is a sentence.
-
-  // For vector of `String`
-  let v2 = vec![
-    "This ".to_owned(),
-    "is ".to_owned(),
-    "another ".to_owned(),
-    "sentence.".to_owned()
-  ];
-  let s2 = v2.iter.fold(String::new(), |acc, &s| acc.push_str(s));
-  println!("{}", s2);  // >> This is another sentence.
-}
-```
+You can do this using the [`join()`](http://doc.rust-lang.org/std/slice/trait.SliceConcatExt.html#tymethod.join) and [`concat()`](http://doc.rust-lang.org/std/slice/trait.SliceConcatExt.html#tymethod.concat) iterator methods. These allow the concatenation of items being iterated over, with `join()` inserting a separator of your choosing.
 
 #### How can I iterate over a `Vec<T>` without moving/consuming it?
 
@@ -426,21 +409,13 @@ println!("\nLength: {}", v.len());
 
 The way Rust `for` loops work, they actually call `into_iter()` (which is defined in the `IntoIterator` trait) for whatever you are trying to iterate over. `IntoIterator` is implemented for `&'a Vec<T>` and `&'a mut Vec<T>`, meaning you can iterate over a vector without consuming it just be using `&v` or `&mut v` (for some vector `v`).
 
-#### How do you write a linked list in Rust?
-
-You probably don't need to. The Rust standard library provides a doubly-linked list for free. But if you're looking to do it just for personal edification, there are three ways of doing it:
-
-- Write it as a classic algebraic data-type (also called a "cons list"). This is easiest, but the performance characteristics aren't good at all
-- Write it using `Weak` or `Rc` to allow shared ownership of nodes. This can work, but is also a pain. If you're using `Rc`, you need some way to break cycles, otherwise no memory will ever be freed.
-- Use `unsafe`. This is the most performant, but also the toughest, because you can't rely on Rust's safety guarantees.
-
 #### Why do I need to type the array size in the array declaration?
 
 You don't necessarily have to. If you're declaring an array directly, the size is inferred based on the number of elements. But if you're declaring a function that takes an array, the compiler has to know how big that array will be.
 
-One thing to note is that currently Rust doesn't offer generics over arrays of different size. This is being worked on, but isn't available currently. If you'd like to accept a contiguous container of a variable number of values, use a Vec or slice (depending on whether you need ownership).
+One thing to note is that currently Rust doesn't offer generics over arrays of different size. This is a planned feature, but isn't available currently. If you'd like to accept a contiguous container of a variable number of values, use a Vec or slice (depending on whether you need ownership).
 
-## Documentation
+### Documentation
 
 #### Where do I report issues in the Rust documentation?
 
@@ -450,23 +425,33 @@ You can report issues in the Rust documentation on the Rust compiler [issue trac
 
 When you use `cargo doc` to generate documentation for your own project, it also generates docs for the active dependency versions. These are put into the `target/doc` directory of your project. Use `cargo doc --open` to open the docs after building them, or just open up `target/doc/index.html` yourself after building the docs.
 
-## Input / Output
+### Input / Output
 
 #### How do I read a file into a `String`?
 
 Using the `read_to_string()` method, which is defined on the `Read` trait in `std::io`.
 
 ```rust
-fn main() {
-  let mut f = try!(File::open("foo.txt"));
+fn read_file(path: &str) -> Result<String, std::io::Error> {
+  let mut f = try!(File::open(path));
   let mut s = String::new();
   try!(f.read_to_string(&mut s));  // `s` contains the contents of "foo.txt"
+  s
+}
+
+fn main() {
+  match read_file("foo.txt") {
+    Ok(_) => println!("Got file contents!"),
+    Err(err) => println!("Getting file contents failed with error: {}", err)
+  };
 }
 ```
 
 #### How do I read file input efficiently?
 
-The [`File` type](https://doc.rust-lang.org/stable/std/fs/struct.File.html) implements the `Read` trait, which has a variety of functions for reading and writing data, including `read()`, `read_to_end()`, `bytes()`, `chars()`, and `take()`. Each of these functions reads in a certain amount of input from a given file. `read()` reads input until the provided buffer is full. `read_to_end()` reads the entire buffer into a vector, allocating as much space as is needed. `bytes()` and `chars()` allow you to iterate over the bytes and characters of the file, respectively. Finally, `take()` allows you to read up to an arbitrary number of bytes from the file. Collectively, these should allow you to efficiently read in any data you need.
+The [`File` type](https://doc.rust-lang.org/stable/std/fs/struct.File.html) implements the `Read` trait, which has a variety of functions for reading and writing data, including `read()`, `read_to_end()`, `bytes()`, `chars()`, and `take()`. Each of these functions reads in a certain amount of input from a given file. `read()` reads as much input as the underlying system will provide in a single call. `read_to_end()` reads the entire buffer into a vector, allocating as much space as is needed. `bytes()` and `chars()` allow you to iterate over the bytes and characters of the file, respectively. Finally, `take()` allows you to read up to an arbitrary number of bytes from the file. Collectively, these should allow you to efficiently read in any data you need.
+
+For buffered reads, use the [`BufReader`](http://doc.rust-lang.org/stable/std/io/struct.BufReader.html) struct, which helps to reduce the number of system calls when reading.
 
 #### How do I get command line arguments in Rust?
 
@@ -474,11 +459,13 @@ The easiest way is to use `std::env::Args`, which provides an iterator over the 
 
 If you're looking for something more powerful, the [getopt](https://doc.rust-lang.org/getopts/getopts/index.html) and [docopt](https://github.com/docopt/docopt.rs) crates are both solid options.
 
-## Libraries
+If you're looking for something more powerful, there are a [number of options on crates.io](https://crates.io/keywords/argument).
+
+### Libraries
 
 #### How can I make an HTTP request?
 
-[Hyper](https://github.com/hyperium/hyper) is the most popular, but there are [a number of others as well](https://crates.io/search?q=http).
+[Hyper](https://github.com/hyperium/hyper) is the most popular, but there are [a number of others as well](https://crates.io/keywords/http).
 
 #### How can I write a GUI application in Rust?
 
@@ -500,7 +487,7 @@ Not yet! Want to write one?
 
 Yes you can! The major game programming library for Rust is [Piston](http://www.piston.rs/), and there's a whole [community for game programming in Rust](https://www.reddit.com/r/rust_gamedev/) as well.
 
-## Project
+### Project
 
 #### What is this project's goal?
 
@@ -782,7 +769,7 @@ The following operators can be overloaded:
 
 There are some types in Rust that have a partial ordering, or partial equality, but no total ordering or total equality. The floating point types `f32` and `f64` are examples of this. Because a floating point value may be `NaN`, and because `NaN`s aren't equal to any other floating point type, nor less than or greater to any other floating point type, nor equal to each other, these types _can't_ implement `Eq` and `Ord`, although they _can_ implement `PartialEq` and `PartialOrd`.
 
-## Debugging
+### Debugging
 
 #### How do I debug Rust programs?
 
@@ -792,7 +779,7 @@ Rust programs can be debugged using gdb or lldb, same as C and C++. In fact, eve
 
 This error is usually caused by `unwrap()`ing a `None` or `Err`. Enabling backtraces by setting the environment variable `RUST_BACKTRACE=1` helps with getting more information. Compiling in debug mode (the default for `cargo build` is also helpful). Using a debugger like the provided `rust-gdb` or `rust-lldb` is also helpful.
 
-## Low-Level
+### Low-Level
 
 #### How do I `memcpy` bytes?
 
@@ -825,7 +812,7 @@ enum CLike {
 
 The `repr` attribute can be applied to such `enums` to give them the same representation as a primitive. This allows using Rust `enum`s in FFI where C `enum`s are also used, for most use cases. The attribute can also be applied to `struct`s to get the same layout as a C `struct` would.
 
-## Cross-Platform
+### Cross-Platform
 
 <!--
 #### How do I build a Windows binary that doesn't display the console window?
@@ -855,7 +842,7 @@ There [are efforts](https://www.bignerdranch.com/blog/building-an-ios-app-in-rus
 
 Cross compilation is possible in Rust, but it requires a bit of work to set up, which is covered here: https://github.com/japaric/ruststrap/blob/master/1-how-to-cross-compile.md
 
-## Design Patterns
+### Design Patterns
 
 #### Is Rust object oriented?
 
@@ -905,9 +892,7 @@ A nice replacement is the [lazy-static](https://github.com/rust-lang-nursery/laz
 
 Not currently. Rust macros are so-called hygienic macros, not the unlimited compile-time syntax editing you see in C. Macro invocations can only appear in places where they are explicitly supported: items, methods declarations, statements, expressions, and patterns. Here, "method declarations" means a blank space where a method can be put. They can't be used to complete a partial method declaration. By the same logic, they can't be used to complete a partial variable declaration.
 
-## Other Languages
-
-### C
+### Other Languages
 
 #### How can I implement something like `struct X { static int X; };` in Rust?
 
@@ -930,8 +915,6 @@ Yes. Calling C code from Rust is simple and exactly as efficient as calling C co
 #### Can C code call Rust code?
 
 Yes. The Rust code has to be exposed via an `extern` declaration, which makes it C-ABI compatible. Such a function can be passed to C code as a function pointer or, if given the `#[no_mangle]` attribute to disable symbol mangling, can be called directly from C code.
-
-### C++
 
 #### I already write perfect C++. What does Rust give me?
 
@@ -991,13 +974,9 @@ Not exactly. Types which implement `Copy` will do a standard C-like "shallow cop
 
 No. Values of all types are moved via `memcpy`. This makes writing generic unsafe code much simpler since assignment, passing and returning are known to never have a side effect like unwinding.
 
-### Swift
-
 #### Why does Rust not have the ? and ! like in Swift?
 
 In Swift, `?` is used to indicate an optional value. This is already done by `Option` in Rust, and so `?` is not needed. Similarly, `!` is used to "unwrap" an optional value in Swift, which is done by the `unwrap()` function in Rust. In both cases, Rust opted for slightly longer names which more clearly indicate intent. Also, in Rust the `!` symbol already indicates logical negation and macro calls, and does not need a third meaning.
-
-### Go
 
 #### How are Go and Rust similar, and how are they different?
 
@@ -1014,13 +993,11 @@ Rust is probably not the best choice in every situation. If you're considering u
 
 `rustfmt` is [right here](https://github.com/nrc/rustfmt/), and is being actively developed to make reading Rust code as easy and predictable as possible.
 
-### Haskell
-
 #### How do Rust traits compare to Haskell typeclasses?
 
 Rust traits are similar to Haskell typeclasses, but are currently not as powerful. Rust traits cannot express functional dependencies or type families, nor does Rust have full support for higher-kinded types. Some of these may be added in the future, but are not provided currently.
 
-## Licensing
+### Licensing
 
 #### Why a dual MIT/ASL2 License?
 
@@ -1030,7 +1007,7 @@ The Apache license includes important protection against patent aggression, but 
 
 This is partly due to preference of the original developer (Graydon), and partly due to the fact that languages tend to have a wider audience and more diverse set of possible embeddings and end-uses than products such as web browsers. We'd like to appeal to as many of those potential contributors as possible.
 
-## Naming
+### Naming
 
 #### Why is the language called Rust?
 
