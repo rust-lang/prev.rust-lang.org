@@ -105,6 +105,8 @@ even better, open a pull request against
 
 [Rust Madrid](http://www.meetup.com/Rust-Madrid/), Madrid.
 
+[Rust Barcelona](http://www.meetup.com/Rust-Barcelona/), Barcelona.
+
 ### South Korea
 
 [Rust Seoul](http://www.meetup.com/Rust-Seoul/), Seoul.
