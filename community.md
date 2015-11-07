@@ -21,9 +21,9 @@ behavior in all official Rust forums, and is upheld by the
 
 The most important community resources for getting started with Rust are:
 
-- The [#rust-beginners][beginners_irc] IRC channel, a very friendly channel that
+- [#rust-beginners][beginners_irc], an IRC channel that
   loves answering questions at any depth.
-- The [users forum][users_forum] for asynchronous discussion about all
+- The [users forum][users_forum], for asynchronous discussion about all
   things Rust.
 - The [This Week in Rust][twir] newsletter, to keep up with what's
   happening in the community.
@@ -39,9 +39,9 @@ about major developments.
 
 The Rust community has an [*unofficial* subreddit][reddit] where
 virtually everything happening in the Rust community is discussed.
-The forum abides by the [official code of conduct][reddit_coc].
+It abides by the [official code of conduct][reddit_coc].
 
-We also have an official [Twitter][twitter] account.
+We also have a [Twitter][twitter] account.
 
 [twir]: http://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
@@ -53,11 +53,9 @@ We also have an official [Twitter][twitter] account.
 
 ### Moderation
 
-[Rust Moderation Team][mod_team]
-
 If you feel you have been or are being harassed or made uncomfortable
 by a community member, please [contact][mod_team_email] any of the
-Rust moderation team immediately. Whether you're a regular contributor
+[Rust Moderation Team][mod_team] immediately. Whether you are a regular contributor
 or a newcomer, we care about making the community a safe space for
 you.
 
