@@ -52,7 +52,6 @@ even better, open a pull request against
 
 ### India
 
-
 [Hyderabad Rust Meetup](http://www.meetup.com/Hyderabad-Rust-Meetup/), Hyderabad.
 
 [Rust Group Bangalore](https://www.facebook.com/groups/RustBLR/1579069959026339/), Bangalore.
@@ -96,6 +95,10 @@ even better, open a pull request against
 ### Poland
 
 [Rust Warsaw](http://www.meetup.com/Rust-Warsaw/), Warsaw.
+
+### Russia
+
+[Rust in Moscow](http://www.meetup.com/Rust-%D0%B2-%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B5/), Moscow.
 
 ### Singapore
 
