@@ -34,6 +34,8 @@ deploy:
 # awscli to submit it
 after_success: 
 - '[[ $TRAVIS_PULL_REQUEST == "false" ]] && python travis/inval-list.py'
+
+after_deploy:
 - '[[ $TRAVIS_PULL_REQUEST == "false" ]] && ~/.local/bin/aws cloudfront create-invalidation
   --invalidation-batch file://payload.json --distribution-id E25WPEM258W4SB'
 
