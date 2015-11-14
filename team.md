@@ -7,6 +7,8 @@ title: The Rust Team &middot; The Rust Programming Language
 people:
   aatch:
     name: James Miller
+  arielb1:
+    name: Ariel Ben-Yehuda
   alexcrichton:
     name: Alex Crichton
     irc: acrichto
@@ -82,7 +84,7 @@ teams:
     lead: aturon
   - name: Compiler
     responsibility: "compiler internals, optimizations"
-    members: [eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister]
+    members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister]
     lead: nikomatsakis
   - name: Tooling and infrastructure
     responsibility: "tool support (e.g. Cargo, multirust), CI infrastructure, etc."
