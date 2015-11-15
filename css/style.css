@@ -391,64 +391,80 @@ ul.laundry-list {
     margin-top: 2rem;
     margin-bottom: 8rem;
     padding-top: 4rem;
-    padding-right: 4rem;
 }
+
+    @media screen and (min-width: 820px) {
+        .faq {
+            padding-right: 4rem;
+        }
+    }
 
     .faq p,
     .faq ul,
     .faq ol,
     .faq blockquote,
     .faq pre {
-        margin: 0 0 1rem 6rem;
+        margin: 0 0 1rem;
         font-family: "Source Serif Pro";
     }
 
-    .faq ul,
-    .faq ol {
-        padding: 0;
-    }
-
-    .faq ul {
-        counter-reset: uli;
-    }
-
-        .faq ul > li {
-            list-style: none;
-            position: relative;
-        }
-
-            .faq ul > li:before {
-                content: counter(uli);
-                counter-increment: uli;
-                color: #999;
-                position: absolute;
-                top: 0;
-                left: -1.5em;
-                width: 1em;
-                font-family: "Fira Sans";
-                text-align: right;
+        @media screen and (min-width: 820px) {
+            .faq p,
+            .faq ul,
+            .faq ol,
+            .faq blockquote,
+            .faq pre {
+                margin-left: 6rem;
             }
 
-    .faq ol {
-        counter-reset: oli;
-    }
-
-        .faq ol > li {
-            list-style: none;
-            position: relative;
+        .faq ul,
+        .faq ol {
+            padding: 0;
         }
 
-            .faq ol > li:before {
-                content: counter(oli);
-                counter-increment: oli;
-                color: #999;
-                position: absolute;
-                top: 0;
-                left: -1.5em;
-                width: 1em;
-                font-family: "Fira Sans";
-                text-align: right;
+        .faq ul {
+            counter-reset: uli;
+        }
+
+            .faq ul > li {
+                list-style: none;
+                position: relative;
             }
+
+                .faq ul > li:before {
+                    content: counter(uli);
+                    counter-increment: uli;
+                    color: #999;
+                    position: absolute;
+                    top: 0;
+                    left: -1.5em;
+                    width: 1em;
+                    font-family: "Fira Sans";
+                    text-align: right;
+                }
+
+        .faq ol {
+            counter-reset: oli;
+        }
+
+            .faq ol > li {
+                list-style: none;
+                position: relative;
+            }
+
+                .faq ol > li:before {
+                    content: counter(oli);
+                    counter-increment: oli;
+                    color: #999;
+                    position: absolute;
+                    top: 0;
+                    left: -1.5em;
+                    width: 1em;
+                    font-family: "Fira Sans";
+                    text-align: right;
+                }
+
+    }
 
     .faq blockquote {
         border-left: .25em solid #dedede;
@@ -462,10 +478,16 @@ ul.laundry-list {
     .faq h1 {
         font-size: 2.5em;
         line-height: 1.5em;
-        margin: 0 0 1rem 6rem;
+        margin: 0 0 1rem;
         font-weight: 400;
         position: relative;
     }
+
+        @media screen and (min-width: 820px) {
+            .faq h1 {
+                margin-left: 6rem;
+            }
+        }
 
     .faq h2 {
         font-size: 2em;
@@ -512,9 +534,9 @@ ul.laundry-list {
     .faq code {
         display: inline-block;
         padding: .1em .2em 0;
+        font-size: 0.9em;
         line-height: 1em;
         background-color: #f7f7f7;
-        border-radius: .15em;
         font-weight: 400;
         font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
     }
@@ -567,3 +589,4 @@ ul.laundry-list {
         content: counter(tos);
         counter-increment: tos;
     }
+
