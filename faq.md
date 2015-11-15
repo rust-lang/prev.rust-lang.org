@@ -549,6 +549,18 @@ There are several ways. You can:
 
 Rust started with a goal of creating a safe but usable systems programming language. In pursuit of this goal it explored a lot of ideas, some of which it kept (lifetimes, traits) while others were discarded (the typestate system). Also, in the run up to 1.0 a lot of the standard library was rewritten. Some of this was out of a desire to improve the old versions of the APIs. Some of it was out of a desire for improved Windows support.
 
+#### How does Rust language versioning work?
+
+Rust maintains three "channels": stable, beta, and nightly. Stable and beta are updated every six weeks, with the current nightly becoming the new beta, and the current beta becoming the new stable. Language and standard library features marked unstable or hidden behind feature gates may only be used on the nightly channel.
+
+Anything marked stable will not change without a major version update with three exceptions:
+
+- Fixing compiler bugs
+- Patching safety holes
+- Changing type inference to require new annotations
+
+For details, read the Rust blog post ["Stability as a Deliverable."](http://blog.rust-lang.org/2014/10/30/Stability.html)
+
 #### What IDE should I use?
 
 There are a couple developing options: [RustDT](https://github.com/RustDT/RustDT) is a Rust plugin for Eclipse, while [SolidOak](https://github.com/oakes/SolidOak) is a from-scratch Rust IDE. Both are solid options for a Rust IDE. Rust also integrates well with a variety of text editors. Detailed information about both text editor and IDE support can be found at [areweideyet.com](http://areweideyet.com/).
