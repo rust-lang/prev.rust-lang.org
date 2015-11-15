@@ -581,6 +581,8 @@ There are a couple developing options: [RustDT](https://github.com/RustDT/RustDT
 
 There are a number of possible answers, but a common mistake is not realizing that `use` declarations are _always_ relative to the crate root. Try rewriting your declarations to use the paths they would use if defined in the root file of your project and see if that fixes the problem.
 
+There are also `self` and `super`, which disambiguate `use` paths as being relative to the current module or parent module, respectively.
+
 #### Why do I have to declare module files with mod at the top level of the crate, instead of just `use`ing them?
 
 There are two ways to declare modules in Rust, inline or in another file. Here is an example of each:
