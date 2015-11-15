@@ -176,7 +176,7 @@ The `'a` syntax comes from the ML family of programming languages, where `'a` is
 
 #### When is `Rc` useful?
 
-This is covered in the [official documentation for `Rc`](https://doc.rust-lang.org/stable/std/rc/). In short, `Rc` and its thread-safe cousin `Arc` are useful to express shared ownership of an immutable value, and have the system automatically deallocate the associated memory when no one has access to it.
+This is covered in the [official documentation for `Rc`](https://doc.rust-lang.org/stable/std/rc/), Rust's non-atomically reference-counted pointer type. In short, `Rc` and its thread-safe cousin `Arc` are useful to express shared ownership of an immutable value, and have the system automatically deallocate the associated memory when no one has access to it.
 
 #### How do I return a borrow to something I created from a function?
 
@@ -359,27 +359,23 @@ let v: Vec<&str> = s.lines().collect();
 
 #### How do I do O(1) character access in a `String`?
 
-Rust strings are UTF-8 encoded, and so one visual "character" may in fact be composed of multiple bytes of "code points." Rust provides several `String` methods which provide iterators over characters (`String::chars()`), bytes (`String::bytes()`), lines (`String::lines()`), and others which should perform as expected in O(n) time instead.
+Rust strings are UTF-8 encoded. A single visual character in UTF-8 is not necessarily a single byte as it would be in an ASCII-encoded string. Each byte is called a "code unit" (In UTF-16, code units 2 bytes instead. In UTF-32 they are 4 bytes). "Code points" are composed of one or more code units, and combine in "grapheme clusters" which most closely approximate characters.
 
-If you are absolutely certain your string is in fact ASCII (and that each visual character is therefore one byte in size), you can get O(1) access by indexing the underlying buffer like so:
-
-```rust
-let s = "This is a test.";
-let bytes = s.into_bytes();
-let c = bytes[2];  // 'i' character
-```
+Thus, even though you may index on bytes in a UTF-8 string, you can't access the `i`th code point or grapheme cluster in constant time. However, if you know at which byte that desired code point or grapheme cluster begins, then you _can_ access it in constant time. Functions including `str::find()` and regex matches return byte indices, facilitating this sort of access.
 
 #### Why are strings UTF-8 by default?
 
 The `str` type is UTF-8 because we observe more text in the wild in this encoding – particularly in network transmissions, which are endian-agnostic – and we think it's best that the default treatment of I/O not involve having to recode codepoints in each direction.
 
-This does mean that indexed access to a Unicode codepoint inside a `str` value is an O(n) operation. On the one hand, this is clearly undesirable; on the other hand, this problem is full of trade-offs and we'd like to point a few important qualifications:
+This does mean that locating a particular Unicode codepoint inside a string is an O(n) operation, although if the starting byte index is already known then they can be accessed in O(1) as expected. On the one hand, this is clearly undesirable; on the other hand, this problem is full of trade-offs and we'd like to point a few important qualifications:
 
-Scanning a `str` for ASCII-range codepoints can still be done safely octet-at-a-time. If you use `.as_bytes()`, pulling out a `u8` costs only `O(1)` and produces a value that can be cast and compared to an ASCII-range `char`. So if you're (say) line-breaking on `'\n'`, octet-based treatment still works. UTF8 was well-designed this way.
+Scanning a `str` for ASCII-range codepoints can still be done safely byte-at-a-time. If you use `.as_bytes()`, pulling out a `u8` costs only `O(1)` and produces a value that can be cast and compared to an ASCII-range `char`. So if you're (say) line-breaking on `'\n'`, byte-based treatment still works. UTF8 was well-designed this way.
 
 Most "character oriented" operations on text only work under very restricted language assumptions such as "ASCII-range codepoints only". Outside ASCII-range, you tend to have to use a complex (non-constant-time) algorithm for determining linguistic-unit (glyph, word, paragraph) boundaries anyway. We recommend using an "honest" linguistically-aware, Unicode-approved algorithm.
 
 The `char` type is UTF32. If you are sure you need to do a codepoint-at-a-time algorithm, it's trivial to write a `type wstr = [char]`, and unpack a `str` into it in a single pass, then work with the `wstr`. In other words: the fact that the language is not "decoding to UTF32 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
+
+For a more in-depth explanation of why UTF-8 is usually preferable over UTF-16 or UTF-32, read the [UTF-8 Everywhere manifesto](http://utf8everywhere.org/).
 
 ### Collections
 
@@ -457,8 +453,6 @@ For buffered reads, use the [`BufReader`](http://doc.rust-lang.org/stable/std/io
 
 The easiest way is to use `std::env::Args`, which provides an iterator over the input arguments.
 
-If you're looking for something more powerful, the [getopt](https://doc.rust-lang.org/getopts/getopts/index.html) and [docopt](https://github.com/docopt/docopt.rs) crates are both solid options.
-
 If you're looking for something more powerful, there are a [number of options on crates.io](https://crates.io/keywords/argument).
 
 ### Libraries
@@ -485,7 +479,7 @@ Not yet! Want to write one?
 
 #### Can I write a video game in Rust?
 
-Yes you can! The major game programming library for Rust is [Piston](http://www.piston.rs/), and there's a whole [community for game programming in Rust](https://www.reddit.com/r/rust_gamedev/) as well.
+Yes you can! The major game programming library for Rust is [Piston](http://www.piston.rs/), and there's both a [subreddit for game programming in Rust](https://www.reddit.com/r/rust_gamedev/) and an IRC channel (`#rust-gamedev` on [Mozilla IRC](https://wiki.mozilla.org/IRC))  as well.
 
 ### Project
 
@@ -503,7 +497,7 @@ Rust exists as alternative language that provides both efficient code and a comf
 
 #### Is this project controlled by Mozilla?
 
-No. Rust started as Graydon Hoare's part-time side project in 2006 and remained so for over 3 years. Mozilla got involved in 2009 once the language was mature enough to run basic tests and demonstrate its core concepts. Though it remains sponsored by Mozilla, Rust is developed by a diverse community of enthusiasts from many different places around the world.
+No. Rust started as Graydon Hoare's part-time side project in 2006 and remained so for over 3 years. Mozilla got involved in 2009 once the language was mature enough to run basic tests and demonstrate its core concepts. Though it remains sponsored by Mozilla, Rust is developed by a diverse community of enthusiasts from many different places around the world. The [Rust Team](https://www.rust-lang.org/team.html) is composed of both Mozilla and non-Mozilla members.
 
 #### What are explicit non-goals of Rust?
 
@@ -546,17 +540,18 @@ The easiest way to try Rust is through the [Playground](https://play.rust-lang.o
 
 There are several ways. You can:
 
-- Post in [/r/rust](https://www.reddit.com/r/rust), the official Rust subreddit
 - Post in [users.rust-lang.org](https://users.rust-lang.org/), the official Rust forum
 - Ask in the official [Rust IRC channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) (#rust on irc.mozilla.org)
+- Ask on [StackOverflow](http://stackoverflow.com/questions/tagged/rust) with the "rust" tag
+- Post in [/r/rust](https://www.reddit.com/r/rust), the official Rust subreddit
 
 #### Why has Rust changed so much over time?
 
-Rust started with a goal of creating a safe but usable systems programming language. In pursuit of this goal it explored a lot of ideas, some of which it kept (lifetimes, traits) others which it discarded (the typestate system). Also, in the run up to 1.0 a lot of the standard library was rewritten. Some of this was out of a desire to improve the old versions of the APIs. Some of it was out of a desire for improved Windows support.
+Rust started with a goal of creating a safe but usable systems programming language. In pursuit of this goal it explored a lot of ideas, some of which it kept (lifetimes, traits) while others were discarded (the typestate system). Also, in the run up to 1.0 a lot of the standard library was rewritten. Some of this was out of a desire to improve the old versions of the APIs. Some of it was out of a desire for improved Windows support.
 
 #### What IDE should I use?
 
-There are a couple developing options: [RustDT](https://github.com/RustDT/RustDT) is a Rust plugin for Eclipse, while [SolidOak](https://github.com/oakes/SolidOak) is a from-scratch Rust IDE. Both are solid options for a Rust IDE.
+There are a couple developing options: [RustDT](https://github.com/RustDT/RustDT) is a Rust plugin for Eclipse, while [SolidOak](https://github.com/oakes/SolidOak) is a from-scratch Rust IDE. Both are solid options for a Rust IDE. Rust also integrates well with a variety of text editors. Detailed information about both text editor and IDE support can be found at [areweideyet.com](http://areweideyet.com/).
 
 ## Modules and Crates
 
@@ -615,7 +610,7 @@ As explained on the Cargo [configuration documentation](http://doc.crates.io/con
 
 #### Why can't the compiler find the method implementation even through I'm already `use`ing the crate?
 
-For methods defined on a trait, you have to explicitly import the trait declaration. This means it's not enough to import a module where a struct implements the trait, you must also important the module containing the trait itself.
+For methods defined on a trait, you have to explicitly import the trait declaration. This means it's not enough to import a module where a struct implements the trait, you must also import the trait itself.
 
 #### Why can't the compiler infer `use` declarations for me?
 
@@ -644,7 +639,7 @@ TODO: Write this answer.
 
 #### How do I do dynamic Rust library loading?
 
-Importing dynamic libraries in Rust is done using [`std::dynamic_lib`](https://doc.rust-lang.org/std/dynamic_lib/index.html). Note that this entire module is currently marked unstable, and that a number of things may change in the current implementation.
+Importing dynamic libraries in Rust can be with [libloading](https://crates.io/crates/libloading), which provides a cross-platform system for dynamic linking.
 
 #### Why doesn't [http://crates.io](http://crates.io) have namespaces?
 
@@ -674,13 +669,13 @@ Monomorphisation is the process by which Rust generates specific instances of a 
 
 In C++ people would likely know this as "template instantiation." But unlike C++, Rust's monomorphisation is an implementation detail, and not a language feature.
 
-#### What's the different between a function and a closure that doesn't capture any variables?
+#### What's the difference between a function and a closure that doesn't capture any variables?
 
 Functions are a built-in primitive of the language, while closures are essentially syntactic sugar for one of three traits: `Fn`, `FnMut`, and `FnOnce`. When you make a closure, the Rust compiler automatically creates a struct implementing the appropriate trait of those three and containing the captured environment variables as members, and makes it so the the struct can be called as a function.
 
 The big difference between these traits is how they take the `self` parameter. `Fn` takes `&self`, `FnMut` takes `&mut self`, and `FnOnce` takes `self`.
 
-#### What are higher-kinded types, why should I want them, and why doesn't Rust have them?
+#### What are higher-kinded types, why would I want them, and why doesn't Rust have them?
 
 Let's go through these one by one:
 
@@ -706,25 +701,38 @@ These are called [associated types](https://doc.rust-lang.org/stable/book/associ
 
 #### Does Rust have type reflection?
 
-Rust does have limited type reflection through the `Reflect` and `Any` traits. `Reflect` is a marker trait (meaning it has no functions associated with it) that indicates a function expects a type which can be reflected over. It is implemented for all types. `Any` is automatically implemented for any type that is both `Reflect` and `'static`, and is used for basic dynamic typing, as in the following example:
+Rust does have limited type reflection through the `Reflect` and `Any` traits. `Reflect` is a marker trait (meaning it has no functions associated with it) that indicates a function expects a type which can be reflected over. It is implemented for all types. `Any` is automatically implemented for any type that is both `Reflect` and `'static`, and is used for basic dynamic typing, as in the following example, which implements a map indexed on the type of the mapped-to value:
 
 ```rust
-use std::any::Any;
-fn foo<T: Any>(x: &T) {
-    let any: &Any = x;
-    if any.is::<u32>() { println!("u32"); }
+use std::any::{Any, TypeId};
+use std::collections::HashMap;
+
+type Entry = Box<Any>;
+
+#[derive(Debug)]
+struct AnyMap(HashMap<TypeId, Entry>);
+
+impl AnyMap {
+    fn new() -> Self {
+        AnyMap(HashMap::new())
+    }
+
+    fn insert<T: Any + 'static>(&mut self, val: T) -> Option<Entry>{
+        self.0.insert(TypeId::of::<T>(), Box::new(val) as Entry)
+    }
+
+    fn get<T: Any>(&self) -> Option<&T> {
+        self.0.get(&TypeId::of::<T>()).unwrap().downcast_ref()
+    }
 }
-```
 
-Note that the above could be equivalently written as:
+fn main() {
+    let mut map = AnyMap::new();
+    map.insert(123i32);
+    map.insert(456i64);
 
-```rust
-#![feature(reflect_marker)]
-use std::marker::Reflect;
-use std::any::Any;
-fn foo<T: Reflect + 'static>(x: &T) {
-    let any: &Any = x;
-    if any.is::<u32>() { println!("u32"); }
+    println!("{:?}", map);
+    println!("{:?}", map.get::<i32>());
 }
 ```
 
@@ -791,7 +799,7 @@ Absolutely. Rust programs can be set to not load the standard library using the 
 
 #### Can I write an operating system in Rust?
 
-Yes! In fact there are several projects underway doing just that, including [reenix](https://github.com/scialex/reenix) and [RustOS](https://github.com/ryanra/RustOS).
+Yes! In fact there are several projects underway doing just that, including [reenix](https://github.com/scialex/reenix), [RustOS](https://github.com/ryanra/RustOS), and [redox](http://www.redox-os.org/).
 
 #### How can I read or write numeric types like `i32` or `f64` in big-endian or little-endian format in a file or other byte stream?
 
@@ -840,7 +848,7 @@ There [are efforts](https://www.bignerdranch.com/blog/building-an-ios-app-in-rus
 
 #### How do I cross-compile in Rust?
 
-Cross compilation is possible in Rust, but it requires a bit of work to set up, which is covered here: https://github.com/japaric/ruststrap/blob/master/1-how-to-cross-compile.md
+Cross compilation is possible in Rust, but it requires [a bit of work](https://github.com/japaric/ruststrap/blob/master/1-how-to-cross-compile.md) to set up. Rust does distribute [copies of the standard library](http://static.rust-lang.org/dist/) for each of the supported platforms, which are contained in the `rust-std-*` files for each of the build directories found on the distribution page.
 
 ### Design Patterns
 
@@ -856,17 +864,21 @@ The easiest way is to use the `Option` type in whatever function you're using to
 
 Globals in Rust can be done using `const` declarations for compile-time computed global constants, while `static` can be used for mutable globals. Note that modifying a `static` variable requires the use of `unsafe`, as it allows for data races, one of the things guaranteed not to happen in safe Rust.
 
-#### How can I set compile-time constants that are defined procedurally (equivalent to constexpr in C++)?
+You can also use the `RefCell` and `Option` type to provide interior mutability of an optional global value. It is important to note that `RefCell`s are not thread-safe.
 
-Rust currently has limited support for compile time constants. You can define primitives using `const` declarations (similar to `static`, but immutable). You can also define some compile-time constants using compiler plugins. The closest thing you have to full Compile-Time Function Evaluation (CTFE) is the [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) crate, which lazily evaluates constants (guaranteed to be evaluated once) at runtime, rather than evaluating them at compile time. CTFE is open for consideration in the future, it simply hasn't been a priority thus far.
+#### How can I set compile-time constants that are defined procedurally?
+
+Rust currently has limited support for compile time constants. You can define primitives using `const` declarations (similar to `static`, but immutable) as well as define `const` functions and inherent methods.
+
+To define procedural constants that can't be defined via these mechanisms, use the [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) crate, which emulates compile-time evaluation by automatically evaluating the constant at first use.
 
 #### Can I run initialization code that happens before main?
 
-Rust has no concept of "life before `main`". The closest you'll see can be done through the ["lazy_static"](https://github.com/Kimundi/lazy-static.rs) crate, which simulates a "before main" by lazily initializing static variables at their first usage.
+Rust has no cross-platform concept of "life before `main`". The closest you'll see can be done through the [`lazy_static`](https://github.com/Kimundi/lazy-static.rs) crate, which simulates a "before main" by lazily initializing static variables at their first usage.
 
-#### How do I map OO concepts to Rust?
+#### How do I map object-oriented concepts to Rust?
 
-Trying to directly map object oriented programming concepts to Rust is unlikely to be fruitful. Rust has its own features and its own way of doing things, and you are better off learning how to use them than you are trying to simulate another style the language wasn't designed for.
+That depends. There _are_ ways of translating object-oriented concepts like [multiple inheritance](https://www.reddit.com/r/rust/comments/2sryuw/ideaquestion_about_multiple_inheritence/) to Rust, but as Rust is not object-oriented the result of the translation may look substantially different from its appearance in an OO language.
 
 #### Why doesn't Rust have inheritance?
 
@@ -884,7 +896,7 @@ No. Globals can not have a non-constant-expression constructor and cannot have a
 
 See the [C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) about the "static initialization order fiasco", and [Eric Lippert's blog](http://ericlippert.com/2013/02/06/static-constructors-part-one/) for the challenges in C#, which also has this feature.
 
-A nice replacement is the [lazy-static](https://github.com/rust-lang-nursery/lazy-static.rs) library by Marvin Löbel.
+However, `thread_local!` variables (which are restricted to a single thread) are effectively global for the thread in which they are defined, and may have a non-constant constructor and destructor.
 
 ## Macros
 
@@ -902,7 +914,7 @@ Rust does not have `static` fields as shown in the code snippet above. Instead, 
 
 Converting a C-style enum to an integer to an integer can be done with a simple `as` expression, like `e as i64` (where `e` is some enum).
 
-Converting in the other direction is a little tougher, as Rust can't statically ensure that the conversion is valid. As such, it requires `unsafe` via `unsafe::reinterpret_cast()`.
+Converting in the other direction is a little tougher, as Rust can't statically ensure that the conversion is valid. As such, it requires `unsafe` via `mem::transmute()`.
 
 #### Why does Rust not have an ABI like C does, and why do I have to annotate things with extern?
 
@@ -928,7 +940,7 @@ Rust doesn't currently have an equivalent to template specialization, but it is 
 
 #### How does Rust's ownership system related to move semantics in C++?
 
-In C++, moving vs copying was added on late with C++11. With Rust the concept of moving vs copying has been around from the beginning. In C++ something can be moved into a function or out of a function using r-value references and either `std::move` or `std::forward`. In Rust, moves happen for anything that does not implement the `Copy` trait (which will cause the value of the type to be copied, rather than moved). This means that moves are the default operation, and that copies must be opted into explicitly. It's also important to know that moves in Rust are destructive copies, which call `Drop` (equivalent to a C++ destructor) on the moved value.
+In C++, moving vs copying was added on late with C++11. With Rust the concept of moving vs copying has been around from the beginning. In C++ something can be moved into a function or out of a function using r-value references and either `std::move` or `std::forward`. In Rust, moves happen for anything that does not implement the `Copy` trait (which will cause the value of the type to be copied, rather than moved). This means that moves are the default operation, and that copies must be opted into explicitly. It's also important to know that moves in Rust leave the moved-out variable as uninitialized memory. This is is contrast to C++, where moves must leave behind a value, resulting the use of dummy values in things like `std::thread`.
 
 Moves are often not necessary or desirable in Rust. If the function you're writing does not require ownership of the value being passed in, it should probably be borrowed (mutably or immutably, as necessary) rather than moved or copied.
 
@@ -983,7 +995,7 @@ In Swift, `?` is used to indicate an optional value. This is already done by `Op
 Rust and Go have substantially different design goals, and so differ substantially. The following differences are not the only ones (which are too numerous to list), but are a few of the more important ones:
 
 - Rust is lower level than Go, comparable with C, C++, D, and Nim. It provides access to memory management primitives that do not exist in Go (which has a garbage collector)
-- Rust's focus is on ensuring safety and efficiency while also providing high-level affordances, while Go's is on being a small, simple language which compiles quickly and can work nicely with a variety of tools.
+- Rust's focus is on ensuring safety and efficiency while also providing high-level affordances, while Go's is on being a small, simple language which compiles quickly and can work nicely with a variety of tools
 - Rust has strong support for generics, which Go does not
 - Rust has strong influences from the world of functional programming, including a type system which draws from Haskell's typeclasses. Go has a simpler type system, using interfaces for basic generic programming
 
