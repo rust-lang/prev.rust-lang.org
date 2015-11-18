@@ -39,75 +39,75 @@ If there is some common or important question you feel is wrongly left unanswere
 
 <h2 id="performance">Performance</h2>
 
-#### How fast is Rust?
+### How fast is Rust?
 
 Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks.
 
 It is an explicit goal of Rust to be at least as fast as C++. Language decisions are made with performance in mind, and given that Rust is built on LLVM, any LLVM performance improvements also help Rust.
 
-#### Is Rust garbage collected?
+### Is Rust garbage collected?
 
 No. A language that requires a GC is a language that opts into a larger, more complex runtime than Rust cares for. Rust is usable on bare metal with no extra runtime.
 
 Additionally, garbage collection is frequently a source of non-deterministic behavior. Rust provides the tools to make using a GC [possible and even pleasant](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/), but it is not part of the language as provided.
 
-#### Why is my program slow?
+### Why is my program slow?
 
 If you compiled with Cargo, did you use the `--release` flag? If you compiled with `rustc` directly, did you use the `-O` flag? Either of these will compile with optimizations turned on. The Rust languages uses a lot of optimizations to create efficient machine code, but you need to explicitly ask for them, as they also result in longer compilation times that may be undesirable during development.
 
-#### Why is Rust compilation slow?
+### Why is Rust compilation slow?
 
 Most of the compilation time is spent in type checking and code translation, with some time also used for safety checks. All of these are required for the strong guarantees Rust makes, but they require some time to run. Add in optimizations, and Rust's compilation is slower than a simpler language that doesn't provide Rust's guarantees.
 
 But all is not lost. The Rust compiler has evolved significantly over a number of years, and a lot of good work is being done to make it work faster, and to make it feel faster during development.
 
-#### Why is Rust's HashMap so slow?
+### Why is Rust's HashMap so slow?
 
 By default, Rust's `HashMap` uses the [SipHash](https://131002.net/siphash/) hashing algorithm, which is designed to prevent [hash table collision attacks](http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited) while providing [reasonable performance on a variety of workloads](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6).
 
 While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges/blah/hash-rs/) in many cases, one case where it is notably slower than other hashing algorithms is with short keys, such as integers. This is why Rust programmers often observe slow performance with `HashMap`. The [FNV hasher](https://crates.io/crates/fnv) is frequently recommended for these cases, but be aware that it does not have the same collision-resistence properties as SipHash.
 
-#### Why can't I run benchmarks?
+### Why can't I run benchmarks?
 
 You can run benchmarks, but only on the nightly channel. Rust's benchmarking mechanism is currently unstable, as the API has not been deemed ready for stabilization. This may change in the future, but until then benchmarking can only be used on nightly.
 
-#### Does Rust do tail-call optimization?
+### Does Rust do tail-call optimization?
 
 In general, tail-call optimization is [not guaranteed](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html), but may be done in [limited circumstances](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization). There was a [proposed extension](https://github.com/rust-lang/rfcs/pull/81) that would allow tail-call elimination in certain contexts, but it is currently postponed. The compiler is still free to optimize tail-calls [when it pleases](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization), however, and the language has a word (`become`) reserved for future explicit tail calls.
 
-#### Does Rust have a runtime?
+### Does Rust have a runtime?
 
 Rust has a [very small and limited runtime](https://doc.rust-lang.org/std/rt/) providing a heap, backtraces, unwinding, and stack guards. This runtime is comparable to the [C runtime](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html), and allows for the calling of Rust functions from C without setup.
 
 <h2 id="syntax">Syntax</h2>
 
-#### Why curly braces? Why can't everything be like Haskell/Python?
+### Why curly braces? Why can't everything be like Haskell/Python?
 
 Use of curly braces to denote blocks is a common design choice in a variety of programming languages, and Rust's consistency is useful for people already familiar with the style.
 
 Curly braces also allow for more flexible syntax for the programmer, a simpler parser in the compiler, and help reduce the possibility of logic mistakes caused by incorrect indentation, like Apple's [goto fail](https://gotofail.com/) bug.
 
-#### I can leave out parentheses on `if` conditions, why do I have to put brackets around single line blocks? Why is the C style not allowed?
+### I can leave out parentheses on `if` conditions, why do I have to put brackets around single line blocks? Why is the C style not allowed?
 
 Rust does not require parentheses around the conditional for `if`, `else if`, and the like. If C-style bracketless blocks were allowed, there would be no clear delineation between the condition and the body of the block. Requiring braces also eliminates the dangling-else problem, where nested if-else expressions can be to ambiguous.
 
-#### Why is there no literal syntax for dictionaries?
+### Why is there no literal syntax for dictionaries?
 
 There are two data types in the Rust standard library that fit the definition of a "dictionary": `BTreeMap` and `HashMap`, but they have different performance characteristics, and it's not clear which one should be the default for any potential dictionary literal syntax. Rust prefers to make performance costs explicit, and any selection of a default from these two choices may lead to performance surprises that undermine this intention.
 
 If you want a more convenient syntax for `BTreeMap` or `HashMap` creation, you can [create a macro](http://stackoverflow.com/questions/27562739/how-do-i-create-a-hashmap-literal/27582993#27582993) to provide it.
 
-#### When should I use an implicit return?
+### When should I use an implicit return?
 
 Implicit returns are simply a coding style option, and can be used anywhere they make sense. While early returns require an explicit `return`, any other return can be made implicit according to your preferences or the preferences of your project.
 
-#### Why aren't function signatures inferred?
+### Why aren't function signatures inferred?
 
 - Mechanically, it simplifies the inference algorithm, as inference only requires looking at one function at a time.
 - Mandatory function signatures help enforce interface stability at both the module and crate level.
 - It improves code comprehension for programmer, eliminating the need for an  IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 
-#### Why does `match` have to be exhaustive?
+### Why does `match` have to be exhaustive?
 
 `match` being exhaustive has some useful properties. First, if every possibility is covered by the `match`, adding further variants to an `enum` in the future will cause a compilation failure, rather than an error at runtime. Second, it makes cost explicit. In general, the only safe way to have a non-exhaustive `match` would be to panic the thread if nothing is matched, though it could fall through if the type of the `match` expression is `()`. This sort of hidden cost and special casing is against the language's philosophy. It is easy to ignore all unspecified cases by using the `_` wildcard:
 
@@ -120,7 +120,7 @@ match val.do_something() {
 
 <h2 id="numerics">Numerics</h2>
 
-#### Should I default to using `f32` or `f64`?
+### Should I default to using `f32` or `f64`?
 
 The choice of which to use is dependent on the focus of the program.
 
@@ -128,25 +128,25 @@ If you're interested in the greatest degree of precision with your floating poin
 
 All things being equal, `f64` is likely a better default.
 
-#### Why can't I compare floats?
+### Why can't I compare floats?
 
 You can! Floats implement the `PartialOrd` trait, which means that `>`, `<`, `<=`, and `>=` are defined for them. But they do _not_ implement the `Ord` trait, because (thanks to `NaN`) there is no total ordering for floating point numbers. There [is a crate](https://crates.io/crates/ordered-float) that provides a total ordering on floats by wrapping them, which may be desirable depending on your use-case. You can still do all of the normal comparison operations you would expect, but you can't use the `cmp` function.
 
-#### Why can't I use `f32` or `f64` as `HashMap` keys?
+### Why can't I use `f32` or `f64` as `HashMap` keys?
 
 In order to be used as a key in a `HashMap`, a type must implement the `Eq` and `Hash` traits. `f32` and `f64` implement `PartialEq`, but not `Eq`, because both types include `NaN` (stands for "not a number"). `NaN` values are [not equal to any float, and are not equal to each other](https://en.wikipedia.org/wiki/NaN). This means that `f32` and `f64` can't be used as keys in a HashMap.
 
-#### How can I convert between numeric types?
+### How can I convert between numeric types?
 
 There are three ways: the `as` keyword, which does simple casting for primitive types, the `Into` and `From` traits, which are implemented for a number of type conversions (and which you can implement for your own types), and `transmute`, which is an unsafe function that tells the compiler to treat the bits of one type as those of another type.
 
 <h2 id="strings">Strings</h2>
 
-#### How can I convert a `String` or `Vec<T>` to a slice (`&str` and `&[T]`)?
+### How can I convert a `String` or `Vec<T>` to a slice (`&str` and `&[T]`)?
 
 Using Deref coercions, `Strings` and `Vec`s will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
 
-#### How can I convert from `&str` to `String` or the other way around?
+### How can I convert from `&str` to `String` or the other way around?
 
 `String`s are automatically converted into `&str` when you take a reference of them. For example, the following code works:
 
@@ -174,7 +174,7 @@ fn main() {
 }
 ```
 
-#### How do I split a `String` into lines?
+### How do I split a `String` into lines?
 
 The [`lines()`](https://doc.rust-lang.org/stable/std/string/struct.String.html#method.lines) function for `String`s provides an iterator over the lines of a string, which can then be `collect()`ed into a container of lines like so:
 
@@ -183,17 +183,17 @@ let s = "This\nis\na\ntest";
 let v: Vec<&str> = s.lines().collect();
 ```
 
-#### What are the differences between the different string types?
+### What are the differences between the different string types?
 
 `String` is an owned string type, while `&str` is a string slice. For a more detailed explanation, [check out the Rust book](https://doc.rust-lang.org/stable/book/strings.html).
 
-#### How do I do O(1) character access in a `String`?
+### How do I do O(1) character access in a `String`?
 
 Rust strings are UTF-8 encoded. A single visual character in UTF-8 is not necessarily a single byte as it would be in an ASCII-encoded string. Each byte is called a "code unit" (In UTF-16, code units 2 bytes instead. In UTF-32 they are 4 bytes). "Code points" are composed of one or more code units, and combine in "grapheme clusters" which most closely approximate characters.
 
 Thus, even though you may index on bytes in a UTF-8 string, you can't access the `i`th code point or grapheme cluster in constant time. However, if you know at which byte that desired code point or grapheme cluster begins, then you _can_ access it in constant time. Functions including `str::find()` and regex matches return byte indices, facilitating this sort of access.
 
-#### Why are strings UTF-8 by default?
+### Why are strings UTF-8 by default?
 
 The `str` type is UTF-8 because we observe more text in the wild in this encoding – particularly in network transmissions, which are endian-agnostic – and we think it's best that the default treatment of I/O not involve having to recode codepoints in each direction.
 
@@ -209,7 +209,7 @@ For a more in-depth explanation of why UTF-8 is usually preferable over UTF-16 o
 
 <h2 id="collections">Collections</h2>
 
-#### Can I implement data structures like vectors and linked lists efficiently in Rust?
+### Can I implement data structures like vectors and linked lists efficiently in Rust?
 
 If your reason for implementing these data structures is to use them for other programs, there's no need, as efficient implementations of these data structures are provided by the standard library.
 
@@ -217,11 +217,11 @@ If, however, your reason is simply to learn, then you will likely need to dip in
 
 For example, a doubly-linked list requires that there be two mutable references to each node, but this violates Rust's mutable reference aliasing rules. You can solve this using `Weak<T>`, but the performance will be poorer than you likely want.
 
-#### How can I join a `Vec` (or an array) of strings into a single string?
+### How can I join a `Vec` (or an array) of strings into a single string?
 
 You can do this using the [`join()`](http://doc.rust-lang.org/std/slice/trait.SliceConcatExt.html#tymethod.join) and [`concat()`](http://doc.rust-lang.org/std/slice/trait.SliceConcatExt.html#tymethod.concat) iterator methods. These allow the concatenation of items being iterated over, with `join()` inserting a separator of your choosing.
 
-#### How can I iterate over a `Vec<T>` without moving/consuming it?
+### How can I iterate over a `Vec<T>` without moving/consuming it?
 
 The easiest way is by using `Vec`'s `IntoIterator` implementation, like so:
 
@@ -235,7 +235,7 @@ println!("\nLength: {}", v.len());
 
 The way Rust `for` loops work, they actually call `into_iter()` (which is defined in the `IntoIterator` trait) for whatever you are trying to iterate over. `IntoIterator` is implemented for `&'a Vec<T>` and `&'a mut Vec<T>`, meaning you can iterate over a vector without consuming it just be using `&v` or `&mut v` (for some vector `v`).
 
-#### Why do I need to type the array size in the array declaration?
+### Why do I need to type the array size in the array declaration?
 
 You don't necessarily have to. If you're declaring an array directly, the size is inferred based on the number of elements. But if you're declaring a function that takes an array, the compiler has to know how big that array will be.
 
@@ -243,7 +243,7 @@ One thing to note is that currently Rust doesn't offer generics over arrays of d
 
 <h2 id="ownership">Ownership</h2>
 
-#### How can I implement a graph or other data structure that contains cycles?
+### How can I implement a graph or other data structure that contains cycles?
 
 There are three major options:
 
@@ -253,7 +253,7 @@ although this approach pays the cost of memory management.
 more efficient, but bypasses Rust's safety guarantees.
 - Using vectors and indices into those vectors. There are [several](http://smallcultfollowing.com/babysteps/blog/2015/04/06/modeling-graphs-in-rust-using-vector-indices/) [available](http://featherweightmusings.blogspot.com/2015/04/graphs-in-rust.html) examples and explanations of this approach.
 
-#### How can I define a struct that contains a pointer to one of its own fields?
+### How can I define a struct that contains a pointer to one of its own fields?
 
 It's possible, but useless to do so. The struct becomes permanently borrowed by itself and therefore can't be moved. Here is some code illustrating this:
 
@@ -275,29 +275,29 @@ fn main() {
 }
 ```
 
-#### What does it mean to "consume a value"?
+### What does it mean to "consume a value"?
 
 "Consuming a value" means taking ownership of a value. When this is done, the value can't be used elsewhere.
 
-#### What is the difference between consuming and moving/taking ownership?
+### What is the difference between consuming and moving/taking ownership?
 
 These are different terms for the same thing. In both cases, it means the value has been moved into a function, and moved out of the calling owner.
 
-#### Why can I use integers after passing them to a function, but not structs?
+### Why can I use integers after passing them to a function, but not structs?
 
 If a type implements the `Copy` trait, then it will be copied when passed to a function. All numeric types in Rust implement `Copy`, but struct types do not implement `Copy` by default, so they are moved instead. This means that the struct can no longer be used elsewhere, unless it is moved back out of the function via the return.
 
-#### How do you deal with a "Use of moved value" error?
+### How do you deal with a "Use of moved value" error?
 
 This error means that the value you're trying to use has been moved to a new owner. The first thing to check is whether the move in question was necessary. If it moved into a function, it may be possible to rewrite the function to use a reference, rather than moving. It may also be possible to implement `Copy` (for implicit copying, rather than moving) or `Clone` (explicit copying) for the type in question. If none of these are possible, you may want to return ownership of the value when the function is done, thus eliminating this error.
 
-#### What are the rules for using `self`, `&self`, or `&mut self` in a method declaration?
+### What are the rules for using `self`, `&self`, or `&mut self` in a method declaration?
 
 - Use `self` when a function needs to consume the type
 - Use `&self` when a function only needs a reference to the type
 - Use `&mut self` when a function needs to mutate the type without consuming it
 
-#### How can I understand the borrow checker?
+### How can I understand the borrow checker?
 
 There is a certain desire to act as if the borrow checker is some mysterious zen master, doling out knocks on the head whenever its koans are misunderstood. The reality is a little different. In fact, the borrow checker is simply applying a couple simple rules, which can be found in the Rust book's [section on borrowing](https://doc.rust-lang.org/stable/book/references-and-borrowing.html#the-rules):
 
@@ -308,7 +308,7 @@ There is a certain desire to act as if the borrow checker is some mysterious zen
 
 Understanding these rules and [lifetimes](https://doc.rust-lang.org/stable/book/lifetimes.html) is all you need to do to understand the borrow checker.
 
-#### How do deref coercions work?
+### How do deref coercions work?
 
 [Deref coercions](https://doc.rust-lang.org/book/deref-coercions.html) exist to make using Rust more ergonomic, and are implemented via the [`Deref`](https://doc.rust-lang.org/stable/std/ops/trait.Deref.html) trait, which looks like this:
 
@@ -325,19 +325,19 @@ You can see a [full list of `Deref` implementations](https://doc.rust-lang.org/s
 
 <h2 id="lifetimes">Lifetimes</h2>
 
-#### Why lifetimes?
+### Why lifetimes?
 
 Lifetimes are Rust's answer to the question of memory safety. They allow Rust to ensure memory safety without mechanisms like garbage collection which carry hefty performance costs. They are based on a variety of academic work, which can be found in the [Rust book](https://doc.rust-lang.org/stable/book/academic-research.html#type-system).
 
-#### Why is the lifetime syntax the way it is?
+### Why is the lifetime syntax the way it is?
 
 The `'a` syntax comes from the ML family of programming languages, where `'a` is used to indicate a generic type parameter. For Rust, the syntax had to be something that was unambiguous, noticable, and fit nicely in a type declaration right alonside traits and references. Alternative syntaxes have been discussed, but this seems to work just fine.
 
-#### When is `Rc` useful?
+### When is `Rc` useful?
 
 This is covered in the [official documentation for `Rc`](https://doc.rust-lang.org/stable/std/rc/), Rust's non-atomically reference-counted pointer type. In short, `Rc` and its thread-safe cousin `Arc` are useful to express shared ownership of an immutable value, and have the system automatically deallocate the associated memory when no one has access to it.
 
-#### How do I return a borrow to something I created from a function?
+### How do I return a borrow to something I created from a function?
 
 You need to ensure that the borrowed item will outlive the function. This can be done in two ways: by binding the output lifetime to some input lifetime, or by declaring the output lifetime as static. The first option is significantly better than the second.
 
@@ -361,11 +361,11 @@ An alternative is to return an owning type like `String`. This eliminates the re
 
 There is also the `Cow` ("copy on write") type, which will only do the extra allocation if you attempt to mutate the contained value.
 
-#### How do I return a closure from a function?
+### How do I return a closure from a function?
 
 To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid (put another way, it would allow reading potentially invalid memory). The closure must also be wrapped in a `Box`, so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
 
-#### When are lifetimes required to be defined?
+### When are lifetimes required to be defined?
 
 Lifetimes can often be elided, as explained in the ["Lifetime elision" section](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision) of the Rust book. "Elided lifetimes" are those lifetimes which are implicit in any code containing references. They are automatically inserted by the compiler with the three following rules:
 
@@ -375,25 +375,25 @@ Lifetimes can often be elided, as explained in the ["Lifetime elision" section](
 
 If these rules would result in incorrect code elsewhere, then the Rust compiler will provide errors, and you will need to define the relevant lifetimes to correct that error.
 
-#### How can Rust guarantee "no null pointers"?
+### How can Rust guarantee "no null pointers"?
 
 Data values in the language can only be constructed through a fixed set of initializer forms. Each of those forms requires that its inputs already be initialized. A liveness analysis ensures that local variables are initialized before use.
 
 <h2 id="generics">Generics</h2>
 
-#### What is "monomorphisation"?
+### What is "monomorphisation"?
 
 Monomorphisation is the process by which Rust generates specific instances of a generic function based on the types of the various calls to that function. This is used to provide static dispatch for generic functions. For functions using trait objects for generics, dynamic dispatch is used instead, with calls to the function going through a vtable to identify specific function calls for the provided type implementing the given trait.
 
 In C++ people would likely know this as "template instantiation." But unlike C++, Rust's monomorphisation is an implementation detail, and not a language feature.
 
-#### What's the difference between a function and a closure that doesn't capture any variables?
+### What's the difference between a function and a closure that doesn't capture any variables?
 
 Functions are a built-in primitive of the language, while closures are essentially syntactic sugar for one of three traits: `Fn`, `FnMut`, and `FnOnce`. When you make a closure, the Rust compiler automatically creates a struct implementing the appropriate trait of those three and containing the captured environment variables as members, and makes it so the the struct can be called as a function.
 
 The big difference between these traits is how they take the `self` parameter. `Fn` takes `&self`, `FnMut` takes `&mut self`, and `FnOnce` takes `self`.
 
-#### What are higher-kinded types, why would I want them, and why doesn't Rust have them?
+### What are higher-kinded types, why would I want them, and why doesn't Rust have them?
 
 Let's go through these one by one:
 
@@ -413,11 +413,11 @@ Finally, Rust doesn't currently have them simply because they haven't been a pri
 
 (Credit to anasaziwochi for his [useful explanation](https://www.reddit.com/r/rust/comments/2av5tv/why_does_rust_not_have_a_functor_trait/ciz6iwm) of higher-kinded types in Rust.)
 
-#### What do named type parameters in generic types mean?
+### What do named type parameters in generic types mean?
 
 These are called [associated types](https://doc.rust-lang.org/stable/book/associated-types.html), and they allow for the expression of trait bounds that can't be expressed with a simple `where` clause. In essence, for a generic type with some type parameters, it is often unecessary to include those type parameters in a function taking that generic type as a parameter. The function shouldn't have to care about being generic over the types which make up the generic type (say, the node and edge types in a graph), but only about being generic over the type itself.
 
-#### Does Rust have type reflection?
+### Does Rust have type reflection?
 
 Rust does have limited type reflection through the `Reflect` and `Any` traits. `Reflect` is a marker trait (meaning it has no functions associated with it) that indicates a function expects a type which can be reflected over. It is implemented for all types. `Any` is automatically implemented for any type that is both `Reflect` and `'static`, and is used for basic dynamic typing, as in the following example, which implements a map indexed on the type of the mapped-to value:
 
@@ -454,7 +454,7 @@ fn main() {
 }
 ```
 
-#### Can I override operators? Which ones and how?
+### Can I override operators? Which ones and how?
 
 You can provide custom implementations for a variety of operators using their associated traits: `Add` for `+`, `Mult` for `*`. It looks like this:
 
@@ -491,13 +491,13 @@ The following operators can be overloaded:
 | `[]`                | `Index`    |
 | `mut []`            | `IndexMut` |
 
-#### Why the split between `Eq`/`PartialEq` and `Ord`/`PartialOrd`?
+### Why the split between `Eq`/`PartialEq` and `Ord`/`PartialOrd`?
 
 There are some types in Rust that have a partial ordering, or partial equality, but no total ordering or total equality. The floating point types `f32` and `f64` are examples of this. Because a floating point value may be `NaN`, and because `NaN`s aren't equal to any other floating point type, nor less than or greater to any other floating point type, nor equal to each other, these types _can't_ implement `Eq` and `Ord`, although they _can_ implement `PartialEq` and `PartialOrd`.
 
 <h2 id="input-output">Input / Output</h2>
 
-#### How do I read a file into a `String`?
+### How do I read a file into a `String`?
 
 Using the `read_to_string()` method, which is defined on the `Read` trait in `std::io`.
 
@@ -517,13 +517,13 @@ fn main() {
 }
 ```
 
-#### How do I read file input efficiently?
+### How do I read file input efficiently?
 
 The [`File` type](https://doc.rust-lang.org/stable/std/fs/struct.File.html) implements the `Read` trait, which has a variety of functions for reading and writing data, including `read()`, `read_to_end()`, `bytes()`, `chars()`, and `take()`. Each of these functions reads in a certain amount of input from a given file. `read()` reads as much input as the underlying system will provide in a single call. `read_to_end()` reads the entire buffer into a vector, allocating as much space as is needed. `bytes()` and `chars()` allow you to iterate over the bytes and characters of the file, respectively. Finally, `take()` allows you to read up to an arbitrary number of bytes from the file. Collectively, these should allow you to efficiently read in any data you need.
 
 For buffered reads, use the [`BufReader`](http://doc.rust-lang.org/stable/std/io/struct.BufReader.html) struct, which helps to reduce the number of system calls when reading.
 
-#### How do I get command line arguments in Rust?
+### How do I get command line arguments in Rust?
 
 The easiest way is to use `std::env::Args`, which provides an iterator over the input arguments.
 
@@ -531,65 +531,65 @@ If you're looking for something more powerful, there are a [number of options on
 
 <h2 id="error-handling">Error Handling</h2>
 
-#### Why doesn't Rust have exceptions?
+### Why doesn't Rust have exceptions?
 
 Exceptions complicate understanding of control-flow, they express validity/invalidity outside of the type system, and they interoperate poorly with multithreaded code (a major focus of Rust).
 
 Rust prefers a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/stable/book/error-handling.html). This fits more nicely with Rust's control flow, concurrency, and everything else.
 
-#### What's the deal with `unwrap()` everywhere?
+### What's the deal with `unwrap()` everywhere?
 
 `unwrap()` is a function that extracts the value inside an `Option` or `Result` and panics if no value is present. It is useful in the presence of truly unrecoverable errors, but is more useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point. `unwrap()` shouldn't be your default way to handle errors, but it is a useful tool to have.
 
-#### Why do I get an error when I try to run example code that uses the `try!` macro?
+### Why do I get an error when I try to run example code that uses the `try!` macro?
 
 It's probably an issue with the function's return type. The [`try!` macro](https://doc.rust-lang.org/stable/std/macro.try!.html) either extracts the value from a `Result`, or returns early with the error `Result` is carrying. This means that `try` only works for functions that return `Result` themselves, where the `Err`-constructed type implements `From::from(err)`.
 
-#### Is there an easier way to do error handling than having `Result`s everywhere?
+### Is there an easier way to do error handling than having `Result`s everywhere?
 
 If you're looking for a way to avoid handling `Result`s in other people's code, there's always `unwrap()`, but it's probably not what you want. `Result` is an indicator that some computation may or may not complete successfully. The fact that some languages allow you to ignore failure cases is an anti-feature. Forcing you to handle them is one of the ways that Rust encourages safety. So, if you really don't want to handle an error, use `unwrap()`, but you should probably just handle the error for real.
 
 <h2 id="concurrency">Concurrency</h2>
 
-#### Can I use globals across threads without `unsafe`?
+### Can I use globals across threads without `unsafe`?
 
 Yes, if the type implements `Sync`, doesn't implement `Drop`, and you don't try to mutate the global value.
 
 <h2 id="macros">Macros</h2>
 
-#### Can I write a macro to generate identifiers?
+### Can I write a macro to generate identifiers?
 
 Not currently. Rust macros are so-called hygienic macros, not the unlimited compile-time syntax editing you see in C. Macro invocations can only appear in places where they are explicitly supported: items, methods declarations, statements, expressions, and patterns. Here, "method declarations" means a blank space where a method can be put. They can't be used to complete a partial method declaration. By the same logic, they can't be used to complete a partial variable declaration.
 
 <h2 id="debugging">Debugging</h2>
 
-#### How do I debug Rust programs?
+### How do I debug Rust programs?
 
 Rust programs can be debugged using gdb or lldb, same as C and C++. In fact, every Rust installation comes with rust-gdb and rust-lldb, wrappers over gdb and lldb with Rust pretty-printing enabled.
 
-#### `rustc` said a panic occurred in standard library code. How do I locate the mistake in my code?
+### `rustc` said a panic occurred in standard library code. How do I locate the mistake in my code?
 
 This error is usually caused by `unwrap()`ing a `None` or `Err`. Enabling backtraces by setting the environment variable `RUST_BACKTRACE=1` helps with getting more information. Compiling in debug mode (the default for `cargo build` is also helpful). Using a debugger like the provided `rust-gdb` or `rust-lldb` is also helpful.
 
 <h2 id="low-level">Low-Level</h2>
 
-#### How do I `memcpy` bytes?
+### How do I `memcpy` bytes?
 
 To copy potentially overlapping bytes, use `std::ptr::copy`. To copy nonoverlapping bytes, use `std::ptr::cpy_nonoverlapping`. Both of these functions are `unsafe`, as both can be used to subvert the language's safety guarantees. Use caution when using them.
 
-#### Can Rust reasonably function without the standard library?
+### Can Rust reasonably function without the standard library?
 
 Absolutely. Rust programs can be set to not load the standard library using the `#![no_std]` attribute. With this attribute set, you can continue to use the Rust core, which is nothing but the platform-agnostic primitives. As such, it doesn't include IO, concurrency, heap allocation, etc. Note however that `libcore` has not been stabilized.
 
-#### Can I write an operating system in Rust?
+### Can I write an operating system in Rust?
 
 Yes! In fact there are several projects underway doing just that, including [reenix](https://github.com/scialex/reenix), [RustOS](https://github.com/ryanra/RustOS), and [redox](http://www.redox-os.org/).
 
-#### How can I read or write numeric types like `i32` or `f64` in big-endian or little-endian format in a file or other byte stream?
+### How can I read or write numeric types like `i32` or `f64` in big-endian or little-endian format in a file or other byte stream?
 
 You should check out the [byteorder crate](http://burntsushi.net/rustdoc/byteorder/), which provides utilities for exactly that.
 
-#### Does Rust specify data layout?
+### Does Rust specify data layout?
 
 No. In the general case, `enum` and `struct` layout is undefined. This allows the compiler to potentially do optimizations like re-using padding for the discriminant, compacting variants of nested `enum`s, reordering fields to remove padding, etc. `enums` which carry no data ("C-like") are eligible to have a defined representation. Such `enums` are easily distinguished in that they are simply a list of names that carry no data:
 
@@ -607,36 +607,36 @@ The `repr` attribute can be applied to such `enums` to give them the same repres
 <h2 id="cross-platform">Cross-Platform</h2>
 
 <!--
-#### How do I build a Windows binary that doesn't display the console window?
+### How do I build a Windows binary that doesn't display the console window?
 
 TODO: Write this answer.
 -->
 
 <!--
-#### How I make the console-less binary not crash on panic!?
+### How I make the console-less binary not crash on panic!?
 
 TODO: Write this answer.
 -->
 
-#### What's the idiomatic way to express platform-specific behavior in Rust?
+### What's the idiomatic way to express platform-specific behavior in Rust?
 
 Platform-specific behavior can be expressed using [conditional compilation attributes](https://doc.rust-lang.org/reference.html#conditional-compilation) such as `target_os`, `target_family`, `target_endian`, etc.
 
-#### Can Rust be used for Android/iOS programming?
+### Can Rust be used for Android/iOS programming?
 
 Yes it can! There are already examples of using Rust for both [Android](https://github.com/tomaka/android-rs-glue) and [iOS](https://www.bignerdranch.com/blog/building-an-ios-app-in-rust-part-1/). It does require a bit of work to set up, but Rust functions fine on both platforms.
 
-#### Can I run my Rust program in a web browser?
+### Can I run my Rust program in a web browser?
 
 There [are efforts](https://www.bignerdranch.com/blog/building-an-ios-app-in-rust-part-1/) to make Rust run in the web browser using Emscripten. Given that Rust is implemented on top of LLVM, this should be possible, but Rust currently runs on a special patched version of LLVM, and so it is tougher than it would otherwise be. This will likely improve over time.
 
-#### How do I cross-compile in Rust?
+### How do I cross-compile in Rust?
 
 Cross compilation is possible in Rust, but it requires [a bit of work](https://github.com/japaric/ruststrap/blob/master/1-how-to-cross-compile.md) to set up. Rust does distribute [copies of the standard library](http://static.rust-lang.org/dist/) for each of the supported platforms, which are contained in the `rust-std-*` files for each of the build directories found on the distribution page.
 
 <h2 id="modules-and-crates">Modules and Crates</h2>
 
-#### What is the relationship between a module and a crate?
+### What is the relationship between a module and a crate?
 
 - A crate is a top-level compilation unit that corresponds to a single loadable object.
 - A module is a (possibly nested) unit of name-management inside a crate.
@@ -646,13 +646,13 @@ Cross compilation is possible in Rust, but it requires [a bit of work](https://g
 - There is no global inter-crate namespace; all name management occurs within a crate.
 - Using another crate binds the root of its namespace into the user's namespace.
 
-#### Why can't the Rust compiler find this library I'm `use`ing?
+### Why can't the Rust compiler find this library I'm `use`ing?
 
 There are a number of possible answers, but a common mistake is not realizing that `use` declarations are _always_ relative to the crate root. Try rewriting your declarations to use the paths they would use if defined in the root file of your project and see if that fixes the problem.
 
 There are also `self` and `super`, which disambiguate `use` paths as being relative to the current module or parent module, respectively.
 
-#### Why do I have to declare module files with mod at the top level of the crate, instead of just `use`ing them?
+### Why do I have to declare module files with mod at the top level of the crate, instead of just `use`ing them?
 
 There are two ways to declare modules in Rust, inline or in another file. Here is an example of each:
 
@@ -687,15 +687,15 @@ In the first example, the module is defined in the same file it's used. In the s
 
 A `use`ing declaration just tells the compiler to bring everything from a particular module into the current module. Without a `mod` declaration first, the compiler doesn't know if the `use`d module exists, and so can't import its contents into the current module.
 
-#### How do I configure Cargo to use a proxy?
+### How do I configure Cargo to use a proxy?
 
 As explained on the Cargo [configuration documentation](http://doc.crates.io/config.html), you can set Cargo to use a proxy by setting the "proxy" variable under `[http]` in the configuration file.
 
-#### Why can't the compiler find the method implementation even through I'm already `use`ing the crate?
+### Why can't the compiler find the method implementation even through I'm already `use`ing the crate?
 
 For methods defined on a trait, you have to explicitly import the trait declaration. This means it's not enough to import a module where a struct implements the trait, you must also import the trait itself.
 
-#### Why can't the compiler infer `use` declarations for me?
+### Why can't the compiler infer `use` declarations for me?
 
 It probably could, but you also don't want it to. While in many cases it is likely that the compiler could determine the correct module to import by simply looking for where a given identifier is defined, this may not be the case in general. Any decision rule in `rustc` for choosing between competing options would likely cause surprise and confusion, and not solve much of a problem.
 
@@ -715,16 +715,16 @@ fn main() {
 If you know this is going to happen, perhaps it saves a small number of keystrokes, but it also greatly increases the possibility for surprising error messages when you actually meant for `baz()` to be `bar::baz()`, and it decreases the readability of the code by making the meaning of a function call dependent on module declaration. These are not tradeoffs we are willing to make.
 
 <!--
-#### How do I package and archive crates from [http://crates.io](http://crates.io)?
+### How do I package and archive crates from [http://crates.io](http://crates.io)?
 
 TODO: Write this answer.
 -->
 
-#### How do I do dynamic Rust library loading?
+### How do I do dynamic Rust library loading?
 
 Importing dynamic libraries in Rust can be with [libloading](https://crates.io/crates/libloading), which provides a cross-platform system for dynamic linking.
 
-#### Why doesn't [http://crates.io](http://crates.io) have namespaces?
+### Why doesn't [http://crates.io](http://crates.io) have namespaces?
 
 Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-package-policies/1041) of [http://crates.io](http://crates.io)'s design:
 
@@ -738,7 +738,7 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 >
 > Because namespaces are strictly more complicated in a number of ways,and because they can be added compatibly in the future should they become necessary, we're going to stick with a single shared namespace.
 
-#### Why are so many Rust answers on StackOverflow wrong?
+### Why are so many Rust answers on StackOverflow wrong?
 
 The Rust language has been around for a number of years, and only reached version 1.0 in May of 2015. In the time before then the language changed significantly, and a number of StackOverflow answers were given at the time of older versions of the language.
 
@@ -746,61 +746,61 @@ Over time more and more answers will be offered for the current version, this im
 
 <h2 id="libraries">Libraries</h2>
 
-#### How can I make an HTTP request?
+### How can I make an HTTP request?
 
 [Hyper](https://github.com/hyperium/hyper) is the most popular, but there are [a number of others as well](https://crates.io/keywords/http).
 
-#### How can I write a GUI application in Rust?
+### How can I write a GUI application in Rust?
 
 There are a variety of ways to write GUI applications in Rust. Just check out [this list of GUI frameworks](https://github.com/kud1ing/awesome-rust#gui).
 
-#### How can I parse JSON/XML?
+### How can I parse JSON/XML?
 
 [Serde](https://github.com/serde-rs/serde) is the recommended library for serialization and deserialization of Rust data to and from a number of different formats.
 
-#### Is there a standard 2D+ dimensional vector and shape crate?
+### Is there a standard 2D+ dimensional vector and shape crate?
 
 Not yet! Want to write one?
 
-#### How do I write an OpenGL app in Rust?
+### How do I write an OpenGL app in Rust?
 
 [Glium](https://github.com/tomaka/glium) is the major library for OpenGL programming in Rust. [GLFW](https://github.com/bjz/glfw-rs) is also a solid option.
 
-#### Can I write a video game in Rust?
+### Can I write a video game in Rust?
 
 Yes you can! The major game programming library for Rust is [Piston](http://www.piston.rs/), and there's both a [subreddit for game programming in Rust](https://www.reddit.com/r/rust_gamedev/) and an IRC channel (`#rust-gamedev` on [Mozilla IRC](https://wiki.mozilla.org/IRC))  as well.
 
 <h2 id="design-patterns">Design Patterns</h2>
 
-#### Is Rust object oriented?
+### Is Rust object oriented?
 
 It is multi-paradigm. Not everything is shoe-horned into a single abstraction. Many things you can do in OO languages you can do in Rust, but not everything, and not always using the same abstraction you're accustomed to.
 
-#### How do I handle configuration of a struct with optional parameters?
+### How do I handle configuration of a struct with optional parameters?
 
 The easiest way is to use the `Option` type in whatever function you're using to construct instances of the struct (usually `new()`). Another way is to use the builder pattern, where only certain functions instantiating member variables must be called before the construction of the built type.
 
-#### How do I do global variables in Rust?
+### How do I do global variables in Rust?
 
 Globals in Rust can be done using `const` declarations for compile-time computed global constants, while `static` can be used for mutable globals. Note that modifying a `static` variable requires the use of `unsafe`, as it allows for data races, one of the things guaranteed not to happen in safe Rust.
 
 You can also use the `RefCell` and `Option` type to provide interior mutability of an optional global value. It is important to note that `RefCell`s are not thread-safe.
 
-#### How can I set compile-time constants that are defined procedurally?
+### How can I set compile-time constants that are defined procedurally?
 
 Rust currently has limited support for compile time constants. You can define primitives using `const` declarations (similar to `static`, but immutable) as well as define `const` functions and inherent methods.
 
 To define procedural constants that can't be defined via these mechanisms, use the [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) crate, which emulates compile-time evaluation by automatically evaluating the constant at first use.
 
-#### Can I run initialization code that happens before main?
+### Can I run initialization code that happens before main?
 
 Rust has no cross-platform concept of "life before `main`". The closest you'll see can be done through the [`lazy_static`](https://github.com/Kimundi/lazy-static.rs) crate, which simulates a "before main" by lazily initializing static variables at their first usage.
 
-#### How do I map object-oriented concepts to Rust?
+### How do I map object-oriented concepts to Rust?
 
 That depends. There _are_ ways of translating object-oriented concepts like [multiple inheritance](https://www.reddit.com/r/rust/comments/2sryuw/ideaquestion_about_multiple_inheritence/) to Rust, but as Rust is not object-oriented the result of the translation may look substantially different from its appearance in an OO language.
 
-#### Why doesn't Rust have inheritance?
+### Why doesn't Rust have inheritance?
 
 There are two meanings for the word "inheritance": _subtyping_, and _interface sharing_. Both purposes are already handled by traits.
 
@@ -810,7 +810,7 @@ For the second, interface sharing is handled via trait methods, which define a c
 
 Rust has consistently worked to avoid having features with overlapping purposes, preferring to keep features orthogonal. For this reason, and given that the two major purposes are already handled by traits, Rust has opted not to include inheritance.
 
-#### Does Rust allow non-constant-expression values for globals?
+### Does Rust allow non-constant-expression values for globals?
 
 No. Globals can not have a non-constant-expression constructor and cannot have a destructor at all. This is an opinion of the language. Static constructors are undesirable because they can slow down program startup. Life before main is often considered a misfeature, never to be used. Rust helps this along by just not having the feature.
 
@@ -820,39 +820,39 @@ However, `thread_local!` variables (which are restricted to a single thread) are
 
 <h2 id="other-languages">Other Languages</h2>
 
-#### How can I implement something like `struct X { static int X; };` in Rust?
+### How can I implement something like `struct X { static int X; };` in Rust?
 
 Rust does not have `static` fields as shown in the code snippet above. Instead, you can declare a `static` variable in a given module, which is kept private to that module.
 
-#### How can I convert a C-style enum to an integer, or vice-versa?
+### How can I convert a C-style enum to an integer, or vice-versa?
 
 Converting a C-style enum to an integer to an integer can be done with a simple `as` expression, like `e as i64` (where `e` is some enum).
 
 Converting in the other direction is a little tougher, as Rust can't statically ensure that the conversion is valid. As such, it requires `unsafe` via `mem::transmute()`.
 
-#### Why does Rust not have an ABI like C does, and why do I have to annotate things with extern?
+### Why does Rust not have an ABI like C does, and why do I have to annotate things with extern?
 
 Committing to an ABI is a big thing, and can limit potentially advantageous language changes in the future. Given that Rust only hit 1.0 in May of 2015, it is still too early to make a commitment as big as a stable ABI. This does not mean that one won't happen in the future, though.
 
-#### Can Rust code call C code?
+### Can Rust code call C code?
 
 Yes. Calling C code from Rust is simple and exactly as efficient as calling C code from C.
 
-#### Can C code call Rust code?
+### Can C code call Rust code?
 
 Yes. The Rust code has to be exposed via an `extern` declaration, which makes it C-ABI compatible. Such a function can be passed to C code as a function pointer or, if given the `#[no_mangle]` attribute to disable symbol mangling, can be called directly from C code.
 
-#### I already write perfect C++. What does Rust give me?
+### I already write perfect C++. What does Rust give me?
 
 Modern C++ has made a lot of strides to being a safe and comfortable programming language, but it's not perfect, and it's still very easy to do things unsafely. This is something the C++ core developers are working to overcome, but C++ is limited by a long history that predates a lot of the ideas they are now trying to implement.
 
 Rust was designed from day one to be a safe systems programming language, which means it's not limited by historic design decisions that make getting safety right in C++ so complicated. In C++, safety is achieved by careful personal discipline, and is very easy to get wrong. In Rust, safety is the default.
 
-#### How do I do the equivalent of C++ template specialization in Rust?
+### How do I do the equivalent of C++ template specialization in Rust?
 
 Rust doesn't currently have an equivalent to template specialization, but it is [being worked on](https://github.com/rust-lang/rfcs/pull/1210) and will hopefully be added soon.
 
-#### How does Rust's ownership system related to move semantics in C++?
+### How does Rust's ownership system related to move semantics in C++?
 
 In C++, moving vs copying was added on late with C++11. With Rust the concept of moving vs copying has been around from the beginning. In C++ something can be moved into a function or out of a function using r-value references and either `std::move` or `std::forward`. In Rust, moves happen for anything that does not implement the `Copy` trait (which will cause the value of the type to be copied, rather than moved). This means that moves are the default operation, and that copies must be opted into explicitly. It's also important to know that moves in Rust leave the moved-out variable as uninitialized memory. This is is contrast to C++, where moves must leave behind a value, resulting the use of dummy values in things like `std::thread`.
 
@@ -866,11 +866,11 @@ fn must_copy<T: Copy>(t: T) {
 }
 ```
 
-#### How can I interoperate with C++ from Rust, or with Rust from C++?
+### How can I interoperate with C++ from Rust, or with Rust from C++?
 
 The simplest way is to interoperate through C. Both Rust and C++ provide a [foreign function interface](https://doc.rust-lang.org/book/ffi.html) for C, and can use that to communicate between each other. If writing C bindings is too tedious, you can always use [rust-bindgen](https://github.com/crabtw/rust-bindgen) to help automatically generate workable C bindings.
 
-#### Does Rust have C++-style constructors?
+### Does Rust have C++-style constructors?
 
 No. Functions can serve the same purpose as constructors without adding any language complexity. The usual name for the constructor-equivalent function in Rust is `new()`, although this is just a social norm rather than a language rule. The `new()` function in fact is just like any other function. An example of it looks like so:
 
@@ -892,19 +892,19 @@ impl Foo {
 }
 ```
 
-#### Does Rust have copy constructors?
+### Does Rust have copy constructors?
 
 Not exactly. Types which implement `Copy` will do a standard C-like "shallow copy" with no extra work (similar to "plain old data" in C++). It is impossible to implement `Copy` types that require custom copy behavior. Instead, in Rust "copy constructors" are created by implementing the `Clone` trait, and explicitly calling the `clone` method. Making user-defined copy operators explicit surfaces the underlying complexity, forcing the developer to opt-in to potentially expensive operations.
 
-#### Does Rust have move constructors?
+### Does Rust have move constructors?
 
 No. Values of all types are moved via `memcpy`. This makes writing generic unsafe code much simpler since assignment, passing and returning are known to never have a side effect like unwinding.
 
-#### Why does Rust not have the ? and ! like in Swift?
+### Why does Rust not have the ? and ! like in Swift?
 
 In Swift, `?` is used to indicate an optional value. This is already done by `Option` in Rust, and so `?` is not needed. Similarly, `!` is used to "unwrap" an optional value in Swift, which is done by the `unwrap()` function in Rust. In both cases, Rust opted for slightly longer names which more clearly indicate intent. Also, in Rust the `!` symbol already indicates logical negation and macro calls, and does not need a third meaning.
 
-#### How are Go and Rust similar, and how are they different?
+### How are Go and Rust similar, and how are they different?
 
 Rust and Go have substantially different design goals, and so differ substantially. The following differences are not the only ones (which are too numerous to list), but are a few of the more important ones:
 
@@ -915,27 +915,27 @@ Rust and Go have substantially different design goals, and so differ substantial
 
 Rust is probably not the best choice in every situation. If you're considering using either Rust or Go for a project it's probably best to try out both languages a bit and make an informed decision rather than base your decision on a small comparison of the two.
 
-#### `gofmt` is great. Where's `rustfmt`?
+### `gofmt` is great. Where's `rustfmt`?
 
 `rustfmt` is [right here](https://github.com/nrc/rustfmt/), and is being actively developed to make reading Rust code as easy and predictable as possible.
 
-#### How do Rust traits compare to Haskell typeclasses?
+### How do Rust traits compare to Haskell typeclasses?
 
 Rust traits are similar to Haskell typeclasses, but are currently not as powerful. Rust traits cannot express functional dependencies or type families, nor does Rust have full support for higher-kinded types. Some of these may be added in the future, but are not provided currently.
 
 <h2 id="documentation">Documentation</h2>
 
-#### Where do I report issues in the Rust documentation?
+### Where do I report issues in the Rust documentation?
 
 You can report issues in the Rust documentation on the Rust compiler [issue tracker](https://github.com/rust-lang/rust/issues). Make sure to read the [contributing guidelines](https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md) first.
 
-#### How do I view rustdoc documentation for a library my project depends on?
+### How do I view rustdoc documentation for a library my project depends on?
 
 When you use `cargo doc` to generate documentation for your own project, it also generates docs for the active dependency versions. These are put into the `target/doc` directory of your project. Use `cargo doc --open` to open the docs after building them, or just open up `target/doc/index.html` yourself after building the docs.
 
 <h2 id="project">Project</h2>
 
-#### What is this project's goal?
+### What is this project's goal?
 
 To design and implement a safe, concurrent, practical, static systems language.
 
@@ -947,11 +947,11 @@ Rust exists because other languages at this level of abstraction and efficiency 
 
 Rust exists as alternative language that provides both efficient code and a comfortable level of abstraction, while improving on all three of these points.
 
-#### Is this project controlled by Mozilla?
+### Is this project controlled by Mozilla?
 
 No. Rust started as Graydon Hoare's part-time side project in 2006 and remained so for over 3 years. Mozilla got involved in 2009 once the language was mature enough to run basic tests and demonstrate its core concepts. Though it remains sponsored by Mozilla, Rust is developed by a diverse community of enthusiasts from many different places around the world. The [Rust Team](https://www.rust-lang.org/team.html) is composed of both Mozilla and non-Mozilla members.
 
-#### What are explicit non-goals of Rust?
+### What are explicit non-goals of Rust?
 
 1. To employ any particularly cutting-edge technologies. Old, established techniques are better.
 2. To prize expressiveness, minimalism or elegance above other goals. These are desirable but subordinate goals.
@@ -959,25 +959,25 @@ No. Rust started as Graydon Hoare's part-time side project in 2006 and remained 
 4. To be 100% static, 100% safe, 100% reflective, or too dogmatic in any other sense. Trade-offs exist.
 5. To run on "every possible platform". It must eventually work without unnecessary compromises on widely-used hardware and software platforms.
 
-#### In which projects is Mozilla using Rust?
+### In which projects is Mozilla using Rust?
 
 The main project is [Servo](https://github.com/servo/servo), an experimental browser engine Mozilla is working on. They are also working to integrate Rust components into Firefox.
 
-#### What examples are there of large Rust projects?
+### What examples are there of large Rust projects?
 
 The two biggest open source Rust projects right now are [Servo](https://github.com/servo/servo) and the [Rust compiler](https://github.com/rust-lang/rust) itself.
 
 <!--
-#### What projects are good examples of idiomatic Rust code?
+### What projects are good examples of idiomatic Rust code?
 
 TODO: Write this answer.
 -->
 
-#### How can I try Rust easily?
+### How can I try Rust easily?
 
 The easiest way to try Rust is through the [Playground](https://play.rust-lang.org/), an online app for writing and running Rust code. If you want to try it on your system, [install it](https://www.rust-lang.org/install.html) and go through the ["Learn Rust"](https://doc.rust-lang.org/stable/book/learn-rust.html) section of the book.
 
-#### How do I get help with Rust issues?
+### How do I get help with Rust issues?
 
 There are several ways. You can:
 
@@ -986,11 +986,11 @@ There are several ways. You can:
 - Ask on [StackOverflow](http://stackoverflow.com/questions/tagged/rust) with the "rust" tag
 - Post in [/r/rust](https://www.reddit.com/r/rust), the official Rust subreddit
 
-#### Why has Rust changed so much over time?
+### Why has Rust changed so much over time?
 
 Rust started with a goal of creating a safe but usable systems programming language. In pursuit of this goal it explored a lot of ideas, some of which it kept (lifetimes, traits) while others were discarded (the typestate system). Also, in the run up to 1.0 a lot of the standard library was rewritten. Some of this was out of a desire to improve the old versions of the APIs. Some of it was out of a desire for improved Windows support.
 
-#### How does Rust language versioning work?
+### How does Rust language versioning work?
 
 Rust maintains three "channels": stable, beta, and nightly. Stable and beta are updated every six weeks, with the current nightly becoming the new beta, and the current beta becoming the new stable. Language and standard library features marked unstable or hidden behind feature gates may only be used on the nightly channel.
 
@@ -1002,25 +1002,25 @@ Anything marked stable will not change without a major version update with three
 
 For details, read the Rust blog post ["Stability as a Deliverable."](http://blog.rust-lang.org/2014/10/30/Stability.html)
 
-#### Can I use unstable features in the beta or stable channel?
+### Can I use unstable features in the beta or stable channel?
 
 No, you cannot. Rust works hard to provide strong guarantees about the stability of the APIs provided on the beta and stable channels. When something is unstable, it means that we can't provide those guarantees for it yet, and don't want people relying on it staying the same. This gives us the opportunity to try changes in the wild on the nightly channel, while still maintaining strong guarantees for people seeking stability.
 
 Things stabilize all the time, and the beta and stable channels update every six weeks. If you're waiting for a feature to be available without using the nightly channel, it should hopefully be available soon.
 
-#### What IDE should I use?
+### What IDE should I use?
 
 There are a couple developing options: [RustDT](https://github.com/RustDT/RustDT) is a Rust plugin for Eclipse, while [SolidOak](https://github.com/oakes/SolidOak) is a from-scratch Rust IDE. Both are solid options for a Rust IDE. Rust also integrates well with a variety of text editors. Detailed information about both text editor and IDE support can be found at [areweideyet.com](http://areweideyet.com/).
 
-#### Why a dual MIT/ASL2 License?
+### Why a dual MIT/ASL2 License?
 
 The Apache license includes important protection against patent aggression, but it is not compatible with the GPL, version 2. To avoid problems using Rust with GPL2, it is alternately MIT licensed.
 
-#### Why a BSD-style permissive license rather than MPL or tri-license?
+### Why a BSD-style permissive license rather than MPL or tri-license?
 
 This is partly due to preference of the original developer (Graydon), and partly due to the fact that languages tend to have a wider audience and more diverse set of possible embeddings and end-uses than products such as web browsers. We'd like to appeal to as many of those potential contributors as possible.
 
-#### Why is the language called Rust?
+### Why is the language called Rust?
 
 As [stated by Graydon Hoare](https://www.reddit.com/r/rust/comments/27jvdt/internet_archaeology_the_definitive_endall_source/), original developer of the Rust language, the name "Rust" comes from his personal interest in fungi, and because it evoked the feeling he was looking for in a programming language name. But truly, as Graydon himself put it:
 

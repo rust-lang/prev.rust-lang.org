@@ -385,19 +385,11 @@ ul.laundry-list {
 }
 
 .faq {
-    font-size: 16px;
-    line-height: 1.5em;
     border-top: 1px solid #dedede;
-    margin-top: 2rem;
-    margin-bottom: 8rem;
-    padding-top: 4rem;
+    margin-top: 2em;
+    margin-bottom: 8em;
+    padding-top: 4em;
 }
-
-    @media screen and (min-width: 820px) {
-        .faq {
-            padding-right: 4rem;
-        }
-    }
 
     .faq p,
     .faq ul,
@@ -409,62 +401,20 @@ ul.laundry-list {
     }
 
         @media screen and (min-width: 820px) {
+            .faq {
+                padding-right: 6em;
+            }
+
             .faq p,
             .faq ul,
             .faq ol,
             .faq blockquote,
-            .faq pre {
-                margin-left: 6rem;
+            .faq pre,
+            .faq h1,
+            #toc {
+                margin-left: 8rem;
             }
-
-        .faq ul,
-        .faq ol {
-            padding: 0;
         }
-
-        .faq ul {
-            counter-reset: uli;
-        }
-
-            .faq ul > li {
-                list-style: none;
-                position: relative;
-            }
-
-                .faq ul > li:before {
-                    content: counter(uli);
-                    counter-increment: uli;
-                    color: #999;
-                    position: absolute;
-                    top: 0;
-                    left: -1.5em;
-                    width: 1em;
-                    font-family: "Fira Sans";
-                    text-align: right;
-                }
-
-        .faq ol {
-            counter-reset: oli;
-        }
-
-            .faq ol > li {
-                list-style: none;
-                position: relative;
-            }
-
-                .faq ol > li:before {
-                    content: counter(oli);
-                    counter-increment: oli;
-                    color: #999;
-                    position: absolute;
-                    top: 0;
-                    left: -1.5em;
-                    width: 1em;
-                    font-family: "Fira Sans";
-                    text-align: right;
-                }
-
-    }
 
     .faq blockquote {
         border-left: .25em solid #dedede;
@@ -478,16 +428,11 @@ ul.laundry-list {
     .faq h1 {
         font-size: 2.5em;
         line-height: 1.5em;
-        margin: 0 0 1rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
         font-weight: 400;
         position: relative;
     }
-
-        @media screen and (min-width: 820px) {
-            .faq h1 {
-                margin-left: 6rem;
-            }
-        }
 
     .faq h2 {
         font-size: 2em;
@@ -498,32 +443,11 @@ ul.laundry-list {
         padding-top: 1rem;
     }
 
-        .faq h2 a {
-            color: #333;
-            text-decoration: none;
-        }
-
     .faq h3 {
-        font-size: 1.5em;
-        line-height: 1.3em;
-        font-weight: 500;
-        margin: 3rem 0 1rem;
-    }
-
-    .faq h2 + h3 {
-        margin-top: 2rem;
-    }
-
-    .faq h4 {
         font-size: 1em;
         line-height: 1.5em;
         font-weight: 500;
         margin: 2rem 0 .25rem;
-    }
-
-    .faq li {
-        margin: 0;
-        padding: 0;
     }
 
     .faq pre {
@@ -534,9 +458,10 @@ ul.laundry-list {
     .faq code {
         display: inline-block;
         padding: .1em .2em 0;
-        font-size: 0.9em;
+        font-size: 0.95em;
         line-height: 1em;
         background-color: #f7f7f7;
+        border-radius: 2px;
         font-weight: 400;
         font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
     }
@@ -546,47 +471,16 @@ ul.laundry-list {
         line-height: 1.5em;
     }
 
-    .faq .copyright {
-        font-size: .8em;
-        color: #999;
-        border-top: 1px solid #dedede;
-        margin-top: 6rem;
-        padding-top: 2rem;
-    }
-
-#toc {
-    margin-top: 2rem;
-    padding: 2rem;
-    background-color: #f7f7f7;
-    border-radius: .25em;
-    border: 1px solid #ccc;
-}
-
     #toc h2 {
-        font-family: "Fira Sans";
         border: 0;
-        margin: 0 -2rem 2rem;
-        padding: 0 2rem 1rem;
         font-size: 2rem;
         line-height: 1.5em;
-        border-bottom: 1px solid #ccc;
     }
 
     #toc ol {
-        counter-reset: tos;
-        margin: 0;
+        margin: 0 0 0 2rem;
         padding: 0;
         -webkit-columns: 150px 3;
            -moz-columns: 150px 3;
                 columns: 150px 3;
     }
-
-    #toc li {
-        margin-left: 1em;
-    }
-
-    #toc li::before {
-        content: counter(tos);
-        counter-increment: tos;
-    }
-
