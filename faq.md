@@ -507,17 +507,6 @@ No. Rust started as Graydon Hoare's part-time side project in 2006 and remained 
 4. To be 100% static, 100% safe, 100% reflective, or too dogmatic in any other sense. Trade-offs exist.
 5. To run on "every possible platform". It must eventually work without unnecessary compromises on widely-used hardware and software platforms.
 
-#### Who is using Rust?
-
-There are a number of companies using Rust, including:
-
-- [OpenDNS](https://labs.opendns.com/2013/10/04/zeromq-helping-us-block-malicious-domains/)
-- [Skylight](https://www.skylight.io/)
-- [Wit.ai](https://github.com/wit-ai/witd)
-- [Codius](https://codius.org/blog/codius-rust/)
-- [MaidSafe](http://maidsafe.net/)
-- [Terminal.com](https://www.terminal.com/)
-
 #### In which projects is Mozilla using Rust?
 
 The main project is [Servo](https://github.com/servo/servo), an experimental browser engine Mozilla is working on. They are also working to integrate Rust components into Firefox.
