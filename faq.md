@@ -49,11 +49,13 @@ It is an explicit goal of Rust to be at least as fast as C++. Language decisions
 
 #### Is Rust garbage collected?
 
-No. A language that requires a GC is a language that opts into a larger, more complex runtime than Rust cares for. Rust is usable on bare metal with no extra runtime. Additionally, garbage collection is frequently a source of non-deterministic behavior. Rust provides the tools to make using a GC [possible and even pleasant](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/), but it is not part of the language as provided.
+No. A language that requires a GC is a language that opts into a larger, more complex runtime than Rust cares for. Rust is usable on bare metal with no extra runtime.
+
+Additionally, garbage collection is frequently a source of non-deterministic behavior. Rust provides the tools to make using a GC [possible and even pleasant](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/), but it is not part of the language as provided.
 
 #### Why is my program slow?
 
-Did you compile with the `--release` flag? The Rust language uses a lot of optimizations in release mode, but you need to explicitly ask for them, as they also result in longer compilation times that may be undesirable during development.
+If you compiled with Cargo, did you use the `--release` flag? If you compiled with `rustc` directly, did you use the `-O` flag? Either of these will compile with optimizations turned on. The Rust languages uses a lot of optimizations to create efficient machine code, but you need to explicitly ask for them, as they also result in longer compilation times that may be undesirable during development.
 
 #### Why is Rust compilation slow?
 
@@ -77,7 +79,7 @@ In general, tail-call optimization is [not guaranteed](https://mail.mozilla.org/
 
 #### Does Rust have a runtime?
 
-Rust has a [very small and limited runtime](https://doc.rust-lang.org/std/rt/) providing a heap, unwinding and backtrace support, and stack guards. This runtime is comparable to the [C runtime](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html), and allows for the calling of Rust functions from C without setup.
+Rust has a [very small and limited runtime](https://doc.rust-lang.org/std/rt/) providing a heap, backtraces, unwinding, and stack guards. This runtime is comparable to the [C runtime](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html), and allows for the calling of Rust functions from C without setup.
 
 ### Concurrency
 
@@ -99,11 +101,11 @@ Rust prefers a type-based approach to error handling, which is [covered at lengt
 
 #### Why do I get an error when I try to run example code that uses the `try!` macro?
 
-It's probably an issue with the function's return type. The [`try!` macro](https://doc.rust-lang.org/stable/std/macro.try!.html) either extracts the value from a `Result`, or returns early with the error `Result` is carrying. This means that try only works for functions that return `Result` themselves, where the `Err`-constructed type implements `From::from(err)`.
+It's probably an issue with the function's return type. The [`try!` macro](https://doc.rust-lang.org/stable/std/macro.try!.html) either extracts the value from a `Result`, or returns early with the error `Result` is carrying. This means that `try` only works for functions that return `Result` themselves, where the `Err`-constructed type implements `From::from(err)`.
 
 #### Is there an easier way to do error handling than having `Result`s everywhere?
 
-If you're looking for a way to avoid handling `Result`s in other people's code, there's always `unwrap()`, but it's probably not what you actually want. `Result` is an indicator that some computation may or may not complete successfully. The fact that some languages allow you to ignore failure cases is an anti-feature. Forcing you to handle them is one of the ways that Rust encourages safety. So, if you really don't want to handle error, use `unwrap()`, but you should probably just handle the error for real.
+If you're looking for a way to avoid handling `Result`s in other people's code, there's always `unwrap()`, but it's probably not what you want. `Result` is an indicator that some computation may or may not complete successfully. The fact that some languages allow you to ignore failure cases is an anti-feature. Forcing you to handle them is one of the ways that Rust encourages safety. So, if you really don't want to handle an error, use `unwrap()`, but you should probably just handle the error for real.
 
 ### Numerics
 
@@ -133,15 +135,17 @@ There are three ways: the `as` keyword, which does simple casting for primitive 
 
 Use of curly braces to denote blocks is a common design choice in a variety of programming languages, and Rust's consistency is useful for people already familiar with the style.
 
-Curly braces also allow for more flexible syntax for the programmer, a simpler parser in the compiler, and help reduce the possibility of logic mistakes caused by incorrect indentation, like Apple's classic [goto fail](https://gotofail.com/) bug.
+Curly braces also allow for more flexible syntax for the programmer, a simpler parser in the compiler, and help reduce the possibility of logic mistakes caused by incorrect indentation, like Apple's [goto fail](https://gotofail.com/) bug.
 
-#### I can leave out parentheses on if conditions, why do I have to put brackets around single line blocks? Why is the C style not allowed?
+#### I can leave out parentheses on `if` conditions, why do I have to put brackets around single line blocks? Why is the C style not allowed?
 
-Rust does not require parentheses around the conditional for `if`, `else if`, and the like. If C-style bracketless blocks were allowed, there would be no clear delineation between the condition and the body of the block. Requiring braces also eliminates the dangling-else problem, where nested if-else expressions can lead to ambiguity.
+Rust does not require parentheses around the conditional for `if`, `else if`, and the like. If C-style bracketless blocks were allowed, there would be no clear delineation between the condition and the body of the block. Requiring braces also eliminates the dangling-else problem, where nested if-else expressions can be to ambiguous.
 
 #### Why is there no literal syntax for dictionaries?
 
-Dictionaries (or `HashMap`s in Rust parlance) aren't a primitive data type, and so they don't get literal syntax. If you want more convenient syntax for `HashMap` creation, you can [create a macro](http://stackoverflow.com/questions/27582739/how-do-i-create-a-hashmap-literal/27582993#27582993) to provide it.
+There are two data types in the Rust standard library that fit the definition of a "dictionary": `BTreeMap` and `HashMap`, but they have different performance characteristics, and it's not clear which one should be the default for any potential dictionary literal syntax. Rust prefers to make performance costs explicit, and any selection of a default from these two choices may lead to performance surprises that undermine this intention.
+
+If you want a more convenient syntax for `BTreeMap` or `HashMap` creation, you can [create a macro](http://stackoverflow.com/questions/27562739/how-do-i-create-a-hashmap-literal/27582993#27582993) to provide it.
 
 #### When should I use an implicit return?
 
