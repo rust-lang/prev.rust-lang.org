@@ -41,27 +41,29 @@ If there is some common or important question you feel is wrongly left unanswere
 
 ### How fast is Rust?
 
-Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks.
+Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks (like the [Benchmarks Game](http://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp) and [others](https://github.com/kostya/benchmarks)).
 
-It is an explicit goal of Rust to be at least as fast as C++. Language decisions are made with performance in mind, and given that Rust is built on LLVM, any LLVM performance improvements also help Rust.
+It is an explicit goal of Rust to be at least as fast as C++. Language decisions are made with performance in mind, and given that Rust is built on LLVM and strives to resemble Clang from LLVM's perspective, any LLVM performance improvements also help Rust.
 
 ### Is Rust garbage collected?
 
 No. A language that requires a GC is a language that opts into a larger, more complex runtime than Rust cares for. Rust is usable on bare metal with no extra runtime.
 
-Additionally, garbage collection is frequently a source of non-deterministic behavior. Rust provides the tools to make using a GC [possible and even pleasant](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/), but it is not part of the language as provided.
+Additionally, garbage collection is frequently a source of non-deterministic behavior. Rust provides the tools to make using third-party garbage collectors [possible](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/), but it is not part of the language as provided.
 
 ### Why is my program slow?
 
-If you compiled with Cargo, did you use the `--release` flag? If you compiled with `rustc` directly, did you use the `-O` flag? Either of these will compile with optimizations turned on. The Rust languages uses a lot of optimizations to create efficient machine code, but you need to explicitly ask for them, as they also result in longer compilation times that may be undesirable during development.
+The Rust compiler doesn't compile with optimizations unless asked to, as optimizations slow down compilation and are usually undesirable during development.
+
+If you compile with `cargo`, use the `--release` flag. If you compile with `rustc` directly, use the `-O` flag. Either of these will turn on optimizations.
 
 ### Why is Rust compilation slow?
 
-Most of the compilation time is spent in type checking and code translation, with some time also used for safety checks. All of these are required for the strong guarantees Rust makes, but they require some time to run. Add in optimizations, and Rust's compilation is slower than a simpler language that doesn't provide Rust's guarantees.
+Code translation and optimizations. Rust provides a number of high level interfaces that compile down into efficient machine code, and those translations take some time to run.
 
-But all is not lost. The Rust compiler has evolved significantly over a number of years, and a lot of good work is being done to make it work faster, and to make it feel faster during development.
+But all is not lost. The Rust compiler has evolved significantly over a number of years, and a lot of good work is being done to [make it work faster](https://github.com/rust-lang/rfcs/pull/1211), and to make it feel faster during development.
 
-### Why is Rust's HashMap so slow?
+### What hashing algorithm does Rust's `HashMap` use?
 
 By default, Rust's `HashMap` uses the [SipHash](https://131002.net/siphash/) hashing algorithm, which is designed to prevent [hash table collision attacks](http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited) while providing [reasonable performance on a variety of workloads](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6).
 
@@ -69,15 +71,15 @@ While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges
 
 ### Why can't I run benchmarks?
 
-You can run benchmarks, but only on the nightly channel. Rust's benchmarking mechanism is currently unstable, as the API has not been deemed ready for stabilization. This may change in the future, but until then benchmarking can only be used on nightly.
+You can run benchmarks, but only on the nightly channel. Rust's benchmarking mechanism is currently unstable, as the API has not been deemed ready for stabilization. This [may change in the future](https://github.com/rust-lang/rust/issues/29553), but until then benchmarking can only be used on nightly.
 
 ### Does Rust do tail-call optimization?
 
-In general, tail-call optimization is [not guaranteed](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html), but may be done in [limited circumstances](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization). There was a [proposed extension](https://github.com/rust-lang/rfcs/pull/81) that would allow tail-call elimination in certain contexts, but it is currently postponed. The compiler is still free to optimize tail-calls [when it pleases](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization), however, and the language has a word (`become`) reserved for future explicit tail calls.
+In general, tail-call optimization is [not guaranteed](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html), but may be done in [limited circumstances](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization). There was a [proposed extension](https://github.com/rust-lang/rfcs/pull/81) that would allow tail-call elimination in certain contexts, but it is currently postponed. The compiler is still free to optimize tail-calls [when it pleases](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization), however, and the language has a keyword (`become`) reserved for future explicit tail calls.
 
 ### Does Rust have a runtime?
 
-Rust has a [very small and limited runtime](https://doc.rust-lang.org/std/rt/) providing a heap, backtraces, unwinding, and stack guards. This runtime is comparable to the [C runtime](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html), and allows for the calling of Rust functions from C without setup.
+Just like C, Rust has a [very small and limited runtime](https://doc.rust-lang.org/std/rt/) providing a heap, backtraces, unwinding, and stack guards. This runtime is comparable to the [C runtime](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html), and allows for the calling of Rust functions from C without setup.
 
 <h2 id="syntax">Syntax</h2>
 
@@ -89,7 +91,7 @@ Curly braces also allow for more flexible syntax for the programmer, a simpler p
 
 ### I can leave out parentheses on `if` conditions, why do I have to put brackets around single line blocks? Why is the C style not allowed?
 
-Rust does not require parentheses around the conditional for `if`, `else if`, and the like. If C-style bracketless blocks were allowed, there would be no clear delineation between the condition and the body of the block. Requiring braces also eliminates the dangling-else problem, where nested if-else expressions can be to ambiguous.
+Whereas C requires mandatory parantheses for `if`-statements but leave brackets optional, Rust makes the opposite choice. Rust's `if`-expressions thus require strictly fewer delimiters than their C counterparts. Furthermore, the optional brackets on C's `if`-statements are well-understood as a hazard to maintenance and refactoring.
 
 ### Why is there no literal syntax for dictionaries?
 
@@ -120,11 +122,11 @@ match val.do_something() {
 
 <h2 id="numerics">Numerics</h2>
 
-### Should I default to using `f32` or `f64`?
+### Which of `f32` and `f64` should I prefer to floating-point math?
 
 The choice of which to use is dependent on the focus of the program.
 
-If you're interested in the greatest degree of precision with your floating point numbers, then `f64` is the preferred choice. If you're more interested in keeping the size of the value small, then `f32` is better.
+If you're interested in the greatest degree of precision with your floating point numbers, then `f64` is the preferred choice. If you are more interested in keeping the size of the value small or being maximally efficient, and are not concerned about the associated innacuracy of having fewer bits per value, then `f32` is better.
 
 All things being equal, `f64` is likely a better default.
 
@@ -134,17 +136,17 @@ You can! Floats implement the `PartialOrd` trait, which means that `>`, `<`, `<=
 
 ### Why can't I use `f32` or `f64` as `HashMap` keys?
 
-In order to be used as a key in a `HashMap`, a type must implement the `Eq` and `Hash` traits. `f32` and `f64` implement `PartialEq`, but not `Eq`, because both types include `NaN` (stands for "not a number"). `NaN` values are [not equal to any float, and are not equal to each other](https://en.wikipedia.org/wiki/NaN). This means that `f32` and `f64` can't be used as keys in a HashMap.
+In order to be used as a key in a `HashMap`, a type must implement the `Eq` and `Hash` traits. `f32` and `f64` implement `PartialEq`, but not `Eq`, because one of the potential values for floating-point types is `NaN` (or "not a number"). `NaN` values are [not equal to any float, and are not equal to each other](https://en.wikipedia.org/wiki/NaN). This means that `f32` and `f64` can't be used as keys in a HashMap.
 
 ### How can I convert between numeric types?
 
-There are three ways: the `as` keyword, which does simple casting for primitive types, the `Into` and `From` traits, which are implemented for a number of type conversions (and which you can implement for your own types), and `transmute`, which is an unsafe function that tells the compiler to treat the bits of one type as those of another type.
+There are two ways: the `as` keyword, which does simple casting for primitive types, and the `Into` and `From` traits, which are implemented for a number of type conversions (and which you can implement for your own types).
 
 <h2 id="strings">Strings</h2>
 
 ### How can I convert a `String` or `Vec<T>` to a slice (`&str` and `&[T]`)?
 
-Using Deref coercions, `Strings` and `Vec`s will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
+Using [Deref coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html), `Strings` and `Vec`s will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
 
 ### How can I convert from `&str` to `String` or the other way around?
 
@@ -161,7 +163,7 @@ fn main() {
 }
 ```
 
-The `to_owned()` is how you convert from a `&str` into a `String`. This is necessary because string literals in Rust are of type `&str`. In this particular example, making `s` into a `String` isn't actually necessary, and the code could be rewritten as:
+The `to_owned()` method is how you convert from a `&str` into a `String`. This is necessary because string literals in Rust are of type `&str`. In this particular example, making `s` into a `String` isn't actually necessary, and the code could be rewritten as:
 
 ```rust
 fn say_hello(name: &str) {
@@ -174,18 +176,9 @@ fn main() {
 }
 ```
 
-### How do I split a `String` into lines?
+### What are the differences between the two different string types?
 
-The [`lines()`](https://doc.rust-lang.org/stable/std/string/struct.String.html#method.lines) function for `String`s provides an iterator over the lines of a string, which can then be `collect()`ed into a container of lines like so:
-
-```rust
-let s = "This\nis\na\ntest";
-let v: Vec<&str> = s.lines().collect();
-```
-
-### What are the differences between the different string types?
-
-`String` is an owned string type, while `&str` is a string slice. For a more detailed explanation, [check out the Rust book](https://doc.rust-lang.org/stable/book/strings.html).
+`String` is a buffer of UTF-8 bytes allocated on the heap, while `&str` is a "view" into a `String` allocated elsewhere.
 
 ### How do I do O(1) character access in a `String`?
 
@@ -213,17 +206,13 @@ For a more in-depth explanation of why UTF-8 is usually preferable over UTF-16 o
 
 If your reason for implementing these data structures is to use them for other programs, there's no need, as efficient implementations of these data structures are provided by the standard library.
 
-If, however, your reason is simply to learn, then you will likely need to dip into unsafe code. While these data structures _can_ be implemented entirely in safe Rust, the performance is likely to be worse than they would be with the use of unsafe code. The simple reason for this is that data structures like vectors and link lists rely on pointer and memory operations that are disallowed by safe Rust.
+If, however, [your reason is simply to learn](http://cglab.ca/~abeinges/blah/too-many-lists/book/), then you will likely need to dip into unsafe code. While these data structures _can_ be implemented entirely in safe Rust, the performance is likely to be worse than they would be with the use of unsafe code. The simple reason for this is that data structures like vectors and link lists rely on pointer and memory operations that are disallowed by safe Rust.
 
 For example, a doubly-linked list requires that there be two mutable references to each node, but this violates Rust's mutable reference aliasing rules. You can solve this using `Weak<T>`, but the performance will be poorer than you likely want.
 
-### How can I join a `Vec` (or an array) of strings into a single string?
+### How can I iterate over a collection without moving/consuming it?
 
-You can do this using the [`join()`](http://doc.rust-lang.org/std/slice/trait.SliceConcatExt.html#tymethod.join) and [`concat()`](http://doc.rust-lang.org/std/slice/trait.SliceConcatExt.html#tymethod.concat) iterator methods. These allow the concatenation of items being iterated over, with `join()` inserting a separator of your choosing.
-
-### How can I iterate over a `Vec<T>` without moving/consuming it?
-
-The easiest way is by using `Vec`'s `IntoIterator` implementation, like so:
+The easiest way is by using the collection's `IntoIterator` implementation. Here is an example for `Vec`:
 
 ```rust
 let v = vec![1,2,3,4,5];
@@ -233,7 +222,7 @@ for item in &v {
 println!("\nLength: {}", v.len());
 ```
 
-The way Rust `for` loops work, they actually call `into_iter()` (which is defined in the `IntoIterator` trait) for whatever you are trying to iterate over. `IntoIterator` is implemented for `&'a Vec<T>` and `&'a mut Vec<T>`, meaning you can iterate over a vector without consuming it just be using `&v` or `&mut v` (for some vector `v`).
+The way Rust `for` loops work, they actually call `into_iter()` (which is defined in the `IntoIterator` trait) for whatever you are trying to iterate over. `IntoIterator` is implemented for `&Vec<T>` and `&Vec<T>`, meaning you can iterate over a vector without consuming it just be using `&v` or `&mut v` (for some vector `v`). The same is true for the other standard collections as well.
 
 ### Why do I need to type the array size in the array declaration?
 
@@ -281,9 +270,11 @@ fn main() {
 
 ### What is the difference between consuming and moving/taking ownership?
 
-These are different terms for the same thing. In both cases, it means the value has been moved into a function, and moved out of the calling owner.
+These are different terms for the same thing. In both cases, it means the value has been moved to another owner, and moved out of the calling owner.
 
 ### Why can I use integers after passing them to a function, but not structs?
+
+### Why can values of some types be used after passing them to a function, while reuse of values of other types results in an error?
 
 If a type implements the `Copy` trait, then it will be copied when passed to a function. All numeric types in Rust implement `Copy`, but struct types do not implement `Copy` by default, so they are moved instead. This means that the struct can no longer be used elsewhere, unless it is moved back out of the function via the return.
 
