@@ -19,14 +19,16 @@ behavior in all official Rust forums, and is upheld by the
 
 ## Getting Started
 
-The most important community resources for getting started with Rust are:
+The most important community resources for those new to Rust are:
 
 - [#rust-beginners][beginners_irc], an IRC channel that
   loves answering questions at any depth.
 - The [users forum][users_forum], for asynchronous discussion about all
   things Rust.
-- The [This Week in Rust][twir] newsletter, to keep up with what's
-  happening in the community.
+- [Stack Overflow][stack_overflow], the popular question and answer
+  site.
+
+[stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
 ## News
 
@@ -37,9 +39,9 @@ libraries.
 [The Rust Blog][rust_blog] is where the Rust team makes announcements
 about major developments.
 
-The Rust community has an [*unofficial* subreddit][reddit] where
-virtually everything happening in the Rust community is discussed.
-It abides by the [official code of conduct][reddit_coc].
+Nearly everything happening in Rust is discussed on the unofficial
+subreddit, [/r/rust][reddit]. It abides by the [official code of
+conduct][reddit_coc].
 
 We also have a [Twitter][twitter] account.
 
@@ -62,24 +64,17 @@ you.
 
 ## IRC Channels
 
-Rustaceans maintain a number of friendly, high-traffic IRC channels.
+Rustaceans maintain a number of friendly, high-traffic [IRC] channels on Mozilla's IRC network.
 
-The [#rust][rust_irc] channel on Moznet is a venue for general
+The [#rust][rust_irc] channel is a venue for general
 discussion about Rust, and a good place to ask for help. You'll find
-people willing to help you with any questions you may have, and
-responses are typically very fast.
+people willing to answer any questions about Rust, and
+responses are typically fast.
 
-To get involved in the development of Rust itself, for anything about
-contribution, or to find a mentor, [#rust-internals][internals_irc] is
-the right channel.
-
-There are also some more specific IRC channels
-noted below.
+Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real-time discussion about hacking on Rust itself. It is also the channel to ask questions about contributing to Rust.
 
 ### Main channels
 
-- [#rust][rust_irc] is for all things Rust
-- [#rust-internals][internals_irc] is for discussion of other Rust implementation topics
 - [#rustc][rustc_irc] is the home of the [compiler team][compiler_team]
 - [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
 - [#rust-tools][tools_irc] is the home of the [tools and infrastructure team][tool_team]
@@ -98,6 +93,7 @@ noted below.
 - [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
 - [#rust-bots][bots_irc] notifcations about Rust from a selection of bots
 
+[IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
 [rust_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
 [rustc_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc 
 [libs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
@@ -129,14 +125,6 @@ We have two forums for asynchronous discussion:
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
 
-## Stack Overflow
-
-[Stack Overflow][stack_overflow] is a question and answer site for programmers.
-The Rust community is fairly active on the site, so searching for your problem
-might reveal someone who has asked it before.
-
-[stack_overflow]: https://stackoverflow.com/questions/tagged/rust
-
 ## User Groups and Meetups
 
 There are more than 50 [Rust User Groups][user_group] worldwide in over 20
@@ -150,7 +138,7 @@ There's a global [calendar][calendar] for keeping up with Rust events.
 [user_group]: ./user_groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
 
-## The Teams
+## The Rust Team
 
 Rust has a community-driven development process where most decisions are made
 through open discussion and consensus, under the stewardship of various
@@ -186,9 +174,6 @@ of reviewers who are knowledgeable about the area and can sign off on
 code. If you're interested in getting involved in one of these teams,
 feel free to reach out to the team leader or any other member, who can
 help get you started.
-
-If you are not sure where to direct an enquiry, the best starting point
-would be the [community team][community_team].
 
 [teams]: https://www.rust-lang.org/team.html
 [core_team]: https://www.rust-lang.org/team.html#Core
