@@ -12,10 +12,17 @@ We are committed to providing a friendly, safe and welcoming
 environment for all, regardless of gender, sexual orientation,
 disability, ethnicity, religion, or similar personal
 characteristic. Our [code of conduct][coc] sets the standards for
-behavior in all official Rust forums, and is upheld by the
-[moderation team][mod_team_email].
+behavior in all official Rust forums.
+
+If you feel you have been or are
+being harassed or made uncomfortable by a community member, please
+[contact][mod_team_email] any of the [Rust Moderation Team][mod_team]
+immediately. Whether you are a regular contributor or a newcomer, we
+care about making the community a safe space for you.
 
 [coc]: https://www.rust-lang.org/conduct.html
+[mod_team]: https://www.rust-lang.org/team.html#Moderation
+[mod_team_email]: mailto:rust-mods@googlegroups.com
 
 ## Getting Started
 
@@ -45,17 +52,6 @@ We also have a [Twitter][twitter] account.
 [reddit]: https://www.reddit.com/r/rust
 [reddit_coc]: https://www.reddit.com/r/rust/comments/2rvrzx/our_code_of_conduct_please_read/
 [twitter]: https://twitter.com/rustlang
-
-## Moderation
-
-If you feel you have been or are being harassed or made uncomfortable
-by a community member, please [contact][mod_team_email] any of the
-[Rust Moderation Team][mod_team] immediately. Whether you are a regular contributor
-or a newcomer, we care about making the community a safe space for
-you.
-
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
-[mod_team_email]: mailto:rust-mods@googlegroups.com
 
 ## IRC Channels
 
