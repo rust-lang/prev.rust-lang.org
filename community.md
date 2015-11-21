@@ -23,10 +23,10 @@ The most important community resources for those new to Rust are:
 
 - [#rust-beginners][beginners_irc], an IRC channel that
   loves answering questions at any depth.
-- The [users forum][users_forum], for asynchronous discussion about all
+- The [users forum][users_forum], for discussion of all
   things Rust.
-- [Stack Overflow][stack_overflow], the popular question and answer
-  site.
+
+You may also find help on the question and answer site, [Stack Overflow][stack_overflow].
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
@@ -34,14 +34,9 @@ The most important community resources for those new to Rust are:
 
 [This Week in Rust][twir] collects the latest news, upcoming events
 and a week-by-week account of changes in the Rust language and
-libraries.
-
-[The Rust Blog][rust_blog] is where the Rust team makes announcements
-about major developments.
-
-Nearly everything happening in Rust is discussed on the unofficial
-subreddit, [/r/rust][reddit]. It abides by the [official code of
-conduct][reddit_coc].
+libraries. [The Rust Blog][rust_blog] is where the Rust team makes
+announcements about major developments. And nearly everything happening in
+Rust is discussed on the unofficial subreddit, [/r/rust][reddit].
 
 We also have a [Twitter][twitter] account.
 
