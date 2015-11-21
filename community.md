@@ -124,7 +124,7 @@ Groups. Its a great introduction to the community and a great way to learn and
 socialize with other people with a similar interest. Meetings are
 usually held monthly and very informal. Meetings are open to everyone.
 
-There's a global [calendar][calendar] for keeping up with Rust events.
+There is a global [calendar][calendar] for keeping up with Rust events.
 
 [user_group]: ./user_groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
