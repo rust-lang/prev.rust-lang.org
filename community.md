@@ -66,6 +66,8 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 
 ### Main channels
 
+- [#rust][rust_irc] is for all things Rust
+- [#rust-internals][internals_irc] is for discussion of other Rust implementation topics
 - [#rustc][rustc_irc] is the home of the [compiler team][compiler_team]
 - [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
 - [#rust-tools][tools_irc] is the home of the [tools and infrastructure team][tool_team]
