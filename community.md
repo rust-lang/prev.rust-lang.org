@@ -23,7 +23,7 @@ The most important community resources for those new to Rust are:
 
 - [#rust-beginners][beginners_irc], an IRC channel that
   loves answering questions at any depth.
-- The [users forum][users_forum], for discussion of all
+- The [Users Forum][users_forum], for discussion of all
   things Rust.
 
 You may also find help on the question and answer site, [Stack Overflow][stack_overflow].
