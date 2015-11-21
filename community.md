@@ -17,7 +17,7 @@ behavior in all official Rust forums, and is upheld by the
 
 [coc]: https://www.rust-lang.org/conduct.html
 
-## TL;DR
+## Getting Started
 
 The most important community resources for getting started with Rust are:
 
@@ -49,9 +49,7 @@ We also have a [Twitter][twitter] account.
 [reddit_coc]: https://www.reddit.com/r/rust/comments/2rvrzx/our_code_of_conduct_please_read/
 [twitter]: https://twitter.com/rustlang
 
-## How to Get Help
-
-### Moderation
+## Moderation
 
 If you feel you have been or are being harassed or made uncomfortable
 by a community member, please [contact][mod_team_email] any of the
@@ -62,7 +60,7 @@ you.
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
 [mod_team_email]: mailto:rust-mods@googlegroups.com
 
-### IRC Channels
+## IRC Channels
 
 Rustaceans maintain a number of friendly, high-traffic IRC channels.
 
@@ -78,7 +76,7 @@ the right channel.
 There are also some more specific IRC channels
 noted below.
 
-#### Core channels
+### Main channels
 
 - [#rust][rust_irc] is for all things Rust
 - [#rust-internals][internals_irc] is for discussion of other Rust implementation topics
@@ -88,7 +86,7 @@ noted below.
 - [#rust-lang][lang_irc] is the home of the [language team][language_team]
 - [#rust-community][community_irc] is the home of the [community team][community_team]
 
-#### Topical channels
+### Topical channels
 
 - [#rust-beginners][beginners_irc] is a space for those new to Rust, lower traffic than #rust
 - [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
@@ -117,7 +115,7 @@ noted below.
 [bots_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
 [beginners_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
 
-### Discussion Forums
+## Discussion Forums
 
 We have two forums for asynchronous discussion:
 
@@ -131,7 +129,7 @@ We have two forums for asynchronous discussion:
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
 
-### Stack Overflow
+## Stack Overflow
 
 [Stack Overflow][stack_overflow] is a question and answer site for programmers.
 The Rust community is fairly active on the site, so searching for your problem
