@@ -13,7 +13,7 @@ will help.
 guide][bugs]. Thanks in advance!
 
 Rust is an expansive system of projects, the most prominent of which
-are maintained by the [The Rust Project Developers][devs] in [the
+are maintained by [The Rust Project Developers][devs] in [the
 rust-lang organization on GitHub][rust-lang]. Newcomers may be
 interested in [an overview of the organization, processes, and
 policies of The Rust Project][dev_proc] and the project's
@@ -405,7 +405,7 @@ TODO: some of this RFC description could probably go in the RFC readme
 [contain-rs]: https://github.com/contain-rs
 [crate_docs]: https://users.rust-lang.org/t/lets-talk-about-ecosystem-documentation/2791
 [dev_proc]: community.html#rust-development
-[devs]: https://github.com/rust-lang/rust/blob/master/AUTHORS.txt
+[devs]: https://github.com/rust-lang/rust/graphs/contributors
 [err-issue]: https://github.com/rust-lang/rust/issues/24407
 [err]: http://doc.rust-lang.org/error-index.html
 [events]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
