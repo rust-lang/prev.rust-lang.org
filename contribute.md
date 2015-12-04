@@ -9,7 +9,7 @@ You've started learning Rust. You love it, and you want to be a part
 of it. If you're not sure how to get involved, then this page
 will help.
 
-**Just want to report a bug in Rust?** [Follow the bug reporting
+**Found a bug and need to report it?** [Follow the bug reporting
 guide][bugs]. Thanks in advance!
 
 Rust is an expansive system of projects, the most prominent of which
@@ -59,10 +59,10 @@ look for the [E-easy] or [E-mentor] labels. These are meant to be
 approachable for new Rust programmers.
 
 On `E-mentor` issues an experienced Rust developer has volunteered in
-the comments to mentor you through the solving the issue and
-[submitting the fix GitHub pull request][pull]. Contact them about the
-issue, on the issue tracker by [@mentioning] their name, on IRC, or
-through email. Note that Rust developers get a lot of notifications
+the comments to mentor you through solving the issue and [submitting
+the fix via GitHub pull request][pull]. Contact them about the issue,
+on the issue tracker by [@mentioning] their name in a comment, on IRC,
+or through email. Note that Rust developers get a lot of notifications
 and it is easy to miss some; don't hesitate to hunt them down by
 whatever means necessary!
 
@@ -84,7 +84,7 @@ project. Ask a [team member][team].
 Once you've found your way around the project and have created a few
 pull requests in a particular area, consider reviewing others' pull
 requests: good reviewership is a rare skill and always appreciated. No
-prior permission is needed &emdash; just start constructively and politely
+prior permission is needed &mdash; just start constructively and politely
 commenting on pull requests that interest you. If you want training
 on conducting good code reviews [read this guide][reviews].
 
@@ -96,14 +96,13 @@ TODO: @nrc says suggesting everybody review w/o training is bad
 <a name="docs"></a>
 ## Documentation
 
-Documentation is never good enough and there's never enough of it,
-writing documentation is a valuable way to contribute. Many aspects of
-Rust's documentation don't require deep knowledge to improve, and
-writing, reviewing, and editing documentation are great ways to learn
-Rust. Furthermore, improvements to documentation are easy to identify
-and limitless. Don't like the way something reads? Discover some
-information that wasn't documented?  Your pull request will be
-gleefully embraced.
+Documentation is never good enough and there's never enough of it.
+Many aspects of Rust's documentation don't require deep knowledge to
+improve, and writing, reviewing, and editing documentation are great
+ways to learn Rust. Furthermore, improvements to documentation are
+easy to identify and limitless. Don't like the way something reads?
+Discover some information that wasn't documented?  Your pull request
+will be gleefully embraced.
 
 ***The most impactful documentation you can write is [for the crates
 that make up the Rust ecosystem][crate_docs]***. While the in-tree
@@ -288,12 +287,11 @@ Rust to LLVM IR; [A-debuginfo], generation of metadata used by debuggers;
 issues with the standard library; [A-macros] and [A-syntaxext], both
 related to syntax extensions; and [A-typesystem], on the topic of types.
 
-There is no well-maintained guide to the architecture of the
-compiler, but [there is a small overview in-tree][rustc-guide], and
-individuals [occassionally blog what they've learned of
-rustc][rustc-tour]. The [API documentation for the crates that make up
-the compiler][internals-docs] can help with navigating the code, as
-can the source code browser [Rust DXR]. The [guide to the Rust test
+There is no well-maintained guide to the architecture of the compiler,
+but [there is a small overview in-tree][rustc-guide]. The [API
+documentation for the crates that make up the
+compiler][internals-docs] can help with navigating the code, as can
+the source code browser [Rust DXR]. The [guide to the Rust test
 suite][testsuite] will teach you how to exercise the Rust build system
 effectively, as will running [`make tips`][tips] at the command line.
 
@@ -439,7 +437,6 @@ TODO: some of this RFC description could probably go in the RFC readme
 [rust-rosetta]: https://github.com/Hoverbear/rust-rosetta
 [rustc-guide]: https://github.com/rust-lang/rust/blob/master/src/librustc/README.md
 [rustc-perf]: http://ncameron.org/perf-rustc/
-[rustc-tour]: http://tomlee.co/2014/04/03/a-more-detailed-tour-of-the-rust-compiler/
 [rustfmt]: https://github.com/nrc/rustfmt
 [src/doc]: https://github.com/rust-lang/rust/tree/master/src/doc
 [std]: http://doc.rust-lang.org/std/index.html
