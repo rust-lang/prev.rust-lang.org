@@ -84,6 +84,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#rust-osdev][osdev_irc] is for people doing OS development in Rust
 - [#rust-webdev][webdev_irc] is for people doing web development in Rust
 - [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
+- [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
 - [#rust-bots][bots_irc] notifcations about Rust from a selection of bots
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
@@ -103,6 +104,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [servo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23servo
 [bots_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
 [beginners_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
+[networking_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
 
 ## Discussion Forums
 
