@@ -22,7 +22,7 @@ care about making the community a safe space for you.
 
 [coc]: https://www.rust-lang.org/conduct.html
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
-[mod_team_email]: mailto:rust-mods@googlegroups.com
+[mod_team_email]: mailto:rust-mods@rust-lang.org
 
 ## Getting Started
 

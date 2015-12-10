@@ -94,6 +94,7 @@ teams:
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: steveklabnik
     members: [brson, skade, manishearth, steveklabnik, bstrie, erickt]
+    email: rust-community [at] rust-lang [dot] org
   - name: Moderation
     responsibility: "helping uphold the <a href='http://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, erickt, niconii]
