@@ -7,7 +7,7 @@ title: The Rust Code of Conduct &middot; The Rust Programming Language
 
 ## Conduct
 
-**Contact**: [rust-mods@googlegroups.com](mailto:rust-mods@googlegroups.com)
+**Contact**: [rust-mods@rust-lang.org](mailto:rust-mods@rust-lang.org)
 
 * We are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, disability, ethnicity, religion, or similar personal characteristic.
 * On IRC, please avoid using overtly sexual nicknames or other nicknames that might detract from a friendly, safe and welcoming environment for all.
