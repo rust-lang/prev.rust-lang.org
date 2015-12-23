@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Rust Community &middot; The Rust Programming Language
+title: The Rust Community &middot; The Rust Programming Language
 ---
 
-# Rust Community
+# The Rust Community
 
 Rust is an amazing programming language, but its greatest strength
 is its kind and inclusive community.
