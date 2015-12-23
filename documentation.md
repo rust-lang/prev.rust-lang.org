@@ -1,147 +1,84 @@
 ---
 layout: default
-title:  Documentation
+title:  Rust Documentation &middot; The Rust Programming Language
 ---
 
 # Rust Documentation
 
-- [Getting Started][getting_started]
-- [The Standard Library][standard_library]
-- [Community &amp; Getting Help][community_and_help]
-- [Specification][specification]
-- [Tools][tools]
-- [FAQs][faqs]
-- [The Error index][error_index]
-- [Community Translations][translations]
-
-Welcome to the Rust documentation! You can use the section headings
-above to jump to any particular section.
-
-[getting_started]: #getting_started
-[standard_library]: #standard_library
-[community_and_help]: #community_and_help 
-[specification]: #specification
-[tools]: #tools 
-[faqs]: #faqs 
-[error_index]: #error_index 
-[translations]: #translations
-
-# Getting Started  <a name="getting_started"></a>
-
 If you haven't seen Rust at all yet, the first thing you should read
-is the introduction to [The Rust Programming Language][rustbook]. It'll
-give you a good idea of what Rust is like.
+is the introduction to the book, [**The Rust Programming
+Language**][book]. It will give you a good idea of what Rust is like,
+show you how to install it, and explain its syntax and concepts. Upon
+completing the book, you'll be an intermediate Rust developer, and
+will have a good grasp of the fundamental ideas behind Rust.
 
-The book provides a lengthy explanation of Rust, its syntax, and its
-concepts. Upon completing the book, you'll be an intermediate Rust
-developer, and will have a good grasp of the fundamental ideas behind
-Rust.
+## Learning Rust
 
-[Rust By Example][rust_by_example] was originally a community
-resource, but was then donated to the Rust project. As the name
-implies, it teaches you Rust through a series of small examples.
+[**The Rust Programming Language**][book]. Also known as "The Book",
+The Rust Programming Language is the most comprehensive resource for
+all topics related to Rust, and is the primary official document of
+the language.
 
-[rustbook]: https://doc.rust-lang.org/book/
-[rust_by_example]: http://rustbyexample.com/
+[**Rust by Example**][rbe]. A collection of self-contained Rust
+examples on a variety of topics, executable in-browser.
 
-# The Standard Library<a name="standard_library"></a>
+[**Frequently asked questions**][faq].
 
-We have [API documentation][rustdocs] for the entire standard library. There's a
-list of crates on the left with more specific sections, or you can use
-the search bar at the top to search for something if you know its
-name.
+[**The Rustonomicon**][nomicon]. An entire book dedicated to
+explaining how to write unsafe Rust code. It is for advanced Rust
+programmers.
 
-[rustdocs]: https://doc.rust-lang.org/
+[**rust-learning**]. A community-maintained collection of resources
+for learning Rust.
 
-# Community &amp; Getting Help <a name="community_and_help"></a>
+[book]: https://doc.rust-lang.org/book/
+[rbe]: http://rust-by-example.com
+[faq]: faq.html
+[nomicon]: https://doc.rust-lang.org/nomicon/
+[**rust-learning**]: https://github.com/ctjhoa/rust-learning
 
-If you need help with something, or just want to talk about Rust with
-others, there are a few places you can do that:
+## References
 
-The Rust IRC channels on [irc.mozilla.org][irc_mozilla] are the
-fastest way to get help.
+[**Standard Library API Reference**][api]. Documentation for the
+standard library.
 
-\#rust is the general discussion channel, and you'll find people
-willing to help you with any questions you may have.
+[**The Rust Reference**][ref]. While Rust does not have a
+specification, the reference tries to describe its working in
+detail. It tends to be out of date.
 
-There are also three specialty channels:
-\#rust-gamedev and #rust-osdev are for game development and operating
-system development, respectively. There's also #rust-internals, which
-is for discussion of the development of Rust itself.
+[**The Cargo Guide**][cargo]. The documentation for Cargo,
+Rust's package manager.
 
-You can also get help on [Stack Overflow][stack_overflow]. Searching
-for your problem might reveal someone who has asked it before!
+[**Compiler Error Index**][err]. Extended explanations of
+the errors produced by the Rust compiler.
 
-There is an active [subreddit][reddit] with lots of discussion and
-news about Rust.
+[**Rust security policy**][security]. The project's policies for
+reporting, fixing and disclosing security-related bugs.
 
-There is also a [user forum][user_forum], for all user-oriented
-discussion, and a [developer forum][developer_forum], where the
-development of Rust itself is discussed.
+[**Rust copyright and trademark policies**][legal]. The Rust
+copyrights are owned by The Rust Project Developers, and its
+trademarks are owned by Mozilla. Appropriate usage of Rust's
+trademarks are described here.
 
-[irc_mozilla]: https://wiki.mozilla.org/IRC
-[stack_overflow]: http://stackoverflow.com/questions/tagged/rust
-[reddit]: https://www.reddit.com/r/rust/
-[user_forum]: https://users.rust-lang.org/
-[developer_forum]: https://internals.rust-lang.org/
+[api]: https://doc.rust-lang.org/std/
+[ref]: https://doc.rust-lang.org/reference.html
+[cargo]: http://doc.crates.io/guide.html
+[err]: https://doc.rust-lang.org/error-index.html
+[security]: security.html
+[legal]: legal.html
 
-# Specification<a name="specification"></a>
+## Nightly and beta documentation
 
-Rust does not have an exact specification, but an effort to describe as much of
-the language in as much detail as possible is in [the Reference][reference]</a>.
+Much of the official Rust documentation is also available for the
+[nightly] and [beta] releases in addition to the stable documentation
+linked above.
 
-[reference]: https://doc.rust-lang.org/reference.html
+[nightly]: http://doc.rust-lang.org/nightly/
+[beta]: http://doc.rust-lang.org/beta/
 
-# Tools<a name="tools"></a>
-Rust is still a young language, so there isn't a ton of tooling yet,
-but the tools we have are really nice.
+## Non-english resources
 
-[Cargo][cargo] is Rust's package manager, and its website contains
-lots of good documentation.
+For resources in languages other than English, see the
+[locale-specific links in rust-learning][locale].
 
-[cargo]: https://crates.io
-
-[Rustdoc][rustdoc] is used to generate documentation for Rust code.
-
-[rustdoc]: https://doc.rust-lang.org/book/documentation.html
-
-# FAQs<a name="faqs"></a>
-
-There are questions that are asked quite often, so we've made a FAQ for
-them:
-
-- [FAQ][faq]
-
-[faq]: "faq.md"
-
-# The Error Index<a name="error_index"></a>
-
-If you encounter an error while compiling your code you may be able to
-look it up in the [Rust Compiler Error Index][error_index].
-
-[error_index]: https://doc.rust-lang.org/error-index.html
-
-# Community Translations<a name="translations"></a>
-
-Several projects have been started to translate the documentation into other
-languages:
-
-
-- [Russian][russian_translation]
-- [Korean][korean_translation]
-- [Chinese][chinese_translation]
-- [Spanish][spanish_translation]
-
-[russian_translation]: https://github.com/kgv/rust_book_ru
-[korean_translation]: https://github.com/rust-kr/doc.rust-kr.org
-[chinese_translation]: https://github.com/KaiserY/rust-book-chinese
-[spanish_translation]: https://github.com/goyox86/elpr
-
-Copyright &copy; 2011-2015 The Rust Project Developers. Licensed under the
-[Apache License, Version 2.0][apache_license] or the [MIT
-license][mit_license], at your option. This file may not be copied,
-modified, or distributed except according to those terms.
-
-[apache_license]: http://www.apache.org/licenses/LICENSE-2.0
-[mit_license]: http://opensource.org/licenses/MIT
-
+[locale]: https://github.com/ctjhoa/rust-learning#locale-links
