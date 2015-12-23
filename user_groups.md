@@ -1,18 +1,18 @@
 ---
 layout: default
-title: User Groups
+title: Rust User Groups &middot; The Rust Programming Language
 ---
 
 There are more than 50 Rust User Groups worldwide in over 20 countries
 with over 7,000 members. Rustaceans meet periodically in Rust User
 Groups.  Its a great introduction to the community and a great way to
 learn and socialize with other people with a similar interest.
-Meetings are usually monthly and very informal. Meetings are open to
+Meetings are usually informal and open to
 everyone. If you have started a new user group and with to add it to
 this list, please contact the [Rust Community
 Team](./team.html#Community) or
 even better, open a pull request against
-[rust_www](https://github.com/rust-lang/rust-www/blob/master/user_groups.md).
+[this website](https://github.com/rust-lang/rust-www/blob/master/user_groups.md).
 
 ### Australia
 
@@ -23,6 +23,10 @@ even better, open a pull request against
 ### Austria
 
 [Klagenfurt Rust Programmers](http://www.meetup.com/Klagenfurt-Rust/), Klagenfurt.
+
+### Brazil
+
+[Rust São Paulo](http://www.meetup.com/Rust-Sao-Paulo-Meetup/), São Paulo.
 
 ### Canada
 
@@ -40,7 +44,7 @@ even better, open a pull request against
 
 [Rust Cologne/Bonn User Group](http://www.meetup.com/Rust-Cologne-Bonn/), Köln.
 
-[Rust Hack and Learn](http://www.meetup.com/Rust-Berlin/), Berlin.
+[Rust Berlin](http://www.meetup.com/Rust-Berlin/), Berlin.
 
 [Rust Meetup Hamburg](http://www.meetup.com/Rust-Meetup-Hamburg/), Hamburg.
 
@@ -49,6 +53,8 @@ even better, open a pull request against
 ### India
 
 [Hyderabad Rust Meetup](http://www.meetup.com/Hyderabad-Rust-Meetup/), Hyderabad.
+
+[Rust Group Bangalore](https://www.facebook.com/groups/RustBLR/1579069959026339/), Bangalore.
 
 ### Indonesia
 
@@ -63,6 +69,8 @@ even better, open a pull request against
 [Rust lang Milano](http://www.meetup.com/Rust-lang-Milano/), Milano.
 
 ### Japan
+
+[Rust Of Us](https://rust-of-us.doorkeeper.jp/), Akihabara, Tokyo.
 
 [Rust Mokumoku Kai](https://rust.doorkeeper.jp/), Roppongi, Tokyo.
 
@@ -88,6 +96,10 @@ even better, open a pull request against
 
 [Rust Warsaw](http://www.meetup.com/Rust-Warsaw/), Warsaw.
 
+### Russia
+
+[Rust in Moscow](http://www.meetup.com/Rust-%D0%B2-%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B5/), Moscow.
+
 ### Singapore
 
 [Singapore Rust Meetup](http://www.meetup.com/Singapore-Rust-Meetup/), Singapore.
@@ -95,6 +107,8 @@ even better, open a pull request against
 ### Spain
 
 [Rust Madrid](http://www.meetup.com/Rust-Madrid/), Madrid.
+
+[Rust Barcelona](http://www.meetup.com/Rust-Barcelona/), Barcelona.
 
 ### South Korea
 

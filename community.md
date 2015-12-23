@@ -1,47 +1,51 @@
 ---
 layout: default
-title: Community
+title: Rust Community &middot; The Rust Programming Language
 ---
 
 # Rust Community
 
-Rust has a lot going for it as a language, but its greatest strength
-is its tight-knit community and its focus on kindness and inclusivity.
+Rust is an amazing programming language, but its greatest strength
+is its kind and inclusive community.
 
 We are committed to providing a friendly, safe and welcoming
 environment for all, regardless of gender, sexual orientation,
 disability, ethnicity, religion, or similar personal
 characteristic. Our [code of conduct][coc] sets the standards for
-behavior in all official Rust forums, and is upheld by the
-[moderation team][mod_team_email].
+behavior in all official Rust forums.
+
+If you feel you have been or are
+being harassed or made uncomfortable by a community member, please
+[contact][mod_team_email] any of the [Rust Moderation Team][mod_team]
+immediately. Whether you are a regular contributor or a newcomer, we
+care about making the community a safe space for you.
 
 [coc]: https://www.rust-lang.org/conduct.html
+[mod_team]: https://www.rust-lang.org/team.html#Moderation
+[mod_team_email]: mailto:rust-mods@rust-lang.org
 
-## TL;DR
+## Getting Started
 
-The most important community resources for getting started with Rust are:
+The most important community resources for those new to Rust are:
 
-- The [#rust][rust_irc] IRC channel, a very friendly channel that
+- [#rust-beginners][beginners_irc], an IRC channel that
   loves answering questions at any depth.
-- The [users forum][users_forum] for asynchronous discussion about all
+- The [Users Forum][users_forum], for discussion of all
   things Rust.
-- The [This Week in Rust][twir] newsletter, to keep up with what's
-  happening in the community.
+
+You may also find help on the question and answer site, [Stack Overflow][stack_overflow].
+
+[stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
 ## News
 
 [This Week in Rust][twir] collects the latest news, upcoming events
 and a week-by-week account of changes in the Rust language and
-libraries.
+libraries. [The Rust Blog][rust_blog] is where the Rust team makes
+announcements about major developments. And nearly everything happening in
+Rust is discussed on the unofficial subreddit, [/r/rust][reddit].
 
-[The Rust Blog][rust_blog] is where the Rust team makes announcements
-about major developments.
-
-The Rust community has an [*unofficial* subreddit][reddit] where
-virtually everything happening in the Rust community is discussed.
-The forum abides by the [official code of conduct][reddit_coc].
-
-We also have an official [Twitter][twitter] account,
+We also have a [Twitter][twitter] account.
 
 [twir]: http://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
@@ -49,73 +53,60 @@ We also have an official [Twitter][twitter] account,
 [reddit_coc]: https://www.reddit.com/r/rust/comments/2rvrzx/our_code_of_conduct_please_read/
 [twitter]: https://twitter.com/rustlang
 
-## How to Get Help
+## IRC Channels
 
-### Moderation
+Rustaceans maintain a number of friendly, high-traffic [IRC] channels on Mozilla's IRC network.
 
-[Rust Moderation Team][mod_team]
-
-If you feel you have been or are being harassed or made uncomfortable
-by a community member, please [contact][mod_team_email] any of the
-Rust moderation team immediately. Whether you're a regular contributor
-or a newcomer, we care about making the community a safe space for
-you.
-
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
-[mod_team_email]: mailto:rust-mods@googlegroups.com
-
-### IRC channels
-
-Rustaceans maintain a number of friendly, high-traffic IRC channels.
-
-The [#rust][rust_irc] channel on Moznet is a venue for general
+The [#rust][rust_irc] channel is a venue for general
 discussion about Rust, and a good place to ask for help. You'll find
-people willing to help you with any questions you may have, and
-responses are typically very fast.
+people willing to answer any questions about Rust, and
+responses are typically fast.
 
-To get involved in the development of Rust itself, for anything about
-contribution, or to find a mentor, [#rust-internals][internals_irc] is
-the right channel.
+Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real-time discussion about hacking on Rust itself. It is also the channel to ask questions about contributing to Rust.
 
-There are also some more specific IRC channels
-noted below.
+### Main channels
 
-**Core channels**:
-- [#rust][rust_irc] is for all things Rust;
-- [#rust-internals][internals_irc] is for discussion of other Rust implementation topics;
-- [#rustc][rustc_irc] is the home of the [compiler team][compiler_team];
-- [#rust-libs][libs_irc] is the home of the [libraries team][library_team];
-- [#rust-tools][tools_irc] is the home of the [tools and infrastructure team][tool_team];
-- [#rust-lang][lang_irc] is the home of the [language team][language_team];
-- [#rust-community][community_irc] is the home of the [community team][community_team];
+- [#rust][rust_irc] is for all things Rust
+- [#rust-internals][internals_irc] is for discussion of other Rust implementation topics
+- [#rustc][rustc_irc] is the home of the [compiler team][compiler_team]
+- [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
+- [#rust-tools][tools_irc] is the home of the [tools and infrastructure team][tool_team]
+- [#rust-lang][lang_irc] is the home of the [language team][language_team]
+- [#rust-community][community_irc] is the home of the [community team][community_team]
 
-**Topical channels**:
-- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager;
-- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust;
-- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans;
-- [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust;
-- [#rust-osdev][osdev_irc] is for people doing OS development in Rust;
-- [#rust-webdev][webdev_irc] is for people doing web development in Rust;
-- [#rust-gamedev][gamedev_irc] is for people doing game development in Rust;
-- [#rust-bots][bots_irc] notifcations about Rust from a selection of bots.
+### Topical channels
 
-[rust_irc]: irc://moznet/rust
-[rustc_irc]: irc://moznet/rustc
-[libs_irc]: irc://moznet/rust-libs
-[tools_irc]: irc://moznet/rust-tools
-[lang_irc]: irc://moznet/rust-lang
-[community_irc]: irc://moznet/rust-community
-[internals_irc]: irc://moznet/rust-internals
-[gamedev_irc]: irc://moznet/rust-gamedev
-[crypto_irc]: irc://moznet/rust-crypto
-[osdev_irc]: irc://moznet/rust-osdev
-[webdev_irc]: irc://moznet/rust-webdev
-[cargo_irc]: irc://moznet/cargo
-[offtopic_irc]: irc://moznet/rust-offtopic
-[servo_irc]: irc://moznet/servo
-[bots_irc]: irc://moznet/rust-bots
+- [#rust-beginners][beginners_irc] is a space for those new to Rust, lower traffic than #rust
+- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
+- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
+- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
+- [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
+- [#rust-osdev][osdev_irc] is for people doing OS development in Rust
+- [#rust-webdev][webdev_irc] is for people doing web development in Rust
+- [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
+- [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
+- [#rust-bots][bots_irc] notifcations about Rust from a selection of bots
 
-### Discourse Forums
+[IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
+[rust_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
+[rustc_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc 
+[libs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
+[tools_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
+[lang_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
+[community_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
+[internals_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
+[gamedev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
+[crypto_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
+[osdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
+[webdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
+[cargo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23cargo
+[offtopic_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
+[servo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23servo
+[bots_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
+[beginners_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
+[networking_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
+
+## Discussion Forums
 
 We have two forums for asynchronous discussion:
 
@@ -129,14 +120,6 @@ We have two forums for asynchronous discussion:
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
 
-### Stack Overflow
-
-[Stack Overflow][stack_overflow] is a question and answer site for programmers.
-The Rust community is fairly active on the site, so searching for your problem
-might reveal someone who has asked it before.
-
-[stack_overflow]: https://stackoverflow.com/questions/tagged/rust
-
 ## User Groups and Meetups
 
 There are more than 50 [Rust User Groups][user_group] worldwide in over 20
@@ -145,12 +128,12 @@ Groups. Its a great introduction to the community and a great way to learn and
 socialize with other people with a similar interest. Meetings are
 usually held monthly and very informal. Meetings are open to everyone.
 
-There's a global [calendar][calendar] for keeping up with Rust events.
+There is a global [calendar][calendar] for keeping up with Rust events.
 
 [user_group]: ./user_groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
 
-## The teams
+## The Rust Team
 
 Rust has a community-driven development process where most decisions are made
 through open discussion and consensus, under the stewardship of various
@@ -174,16 +157,18 @@ tools like Cargo, multirust, rustfmt, as well as the CI Infrastructure for the
 project.
 
 * The [Community Team][community_team] is responsible for coordinating events,
-outreach, commercial users, teaching materials, and exposure.
+outreach, commercial users, teaching materials, and exposure. They can also
+direct inquiries to the correct parties when its not clear who to contact
+about something Rusty.
 
 * The [Moderation Team][mod_team] is responsible for helping to uphold the
 [code of conduct][coc].
 
 In addition to the official team rosters, most teams also have a larger set
-of reviewers who are knowledgeable about the area and can sign off on code.
-
-If you're interested in getting involved in one of these teams, feel free to
-reach out to the team leader, who can help get you started.
+of reviewers who are knowledgeable about the area and can sign off on
+code. If you're interested in getting involved in one of these teams,
+feel free to reach out to the team leader or any other member, who can
+help get you started.
 
 [teams]: https://www.rust-lang.org/team.html
 [core_team]: https://www.rust-lang.org/team.html#Core
@@ -218,7 +203,7 @@ team business, including the progression of proposals through the RFC and
 implementation process.
 
 [authors]: https://github.com/rust-lang/rust/blob/master/AUTHORS.txt
-[contribute]: ./how_to_contribute.html
+[contribute]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
 [team_reports]: https://github.com/rust-lang/subteams

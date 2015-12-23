@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Rust's legal policies
+title: Rust Legal Policies &middot; The Rust Programming Language
 ---
 
 # Copyright
@@ -74,7 +74,7 @@ The Rust Trademarks include two word marks and two logos:
 * Rust
 * Cargo
 * <img src="https://www.rust-lang.org/logos/rust-logo-blk.svg">
-* <img src="https://crates.io/assets/Cargo-Logo-Small-233a70e173f628a13c391cb95cf1d70b.png">
+* <img src="https://www.rust-lang.org/logos/cargo.png">
 
 Trademarks are names and designs that tell the world the source of a good or
 service. Protecting trademarks for an open source project is particularly
