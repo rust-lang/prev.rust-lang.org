@@ -55,7 +55,7 @@ Additionally, garbage collection is frequently a source of non-deterministic beh
 
 The Rust compiler doesn't compile with optimizations unless asked to, as optimizations slow down compilation and are usually undesirable during development.
 
-If you compile with `cargo`, use the `--release` flag. If you compile with `rustc` directly, use the `-O` flag. Either of these will turn on optimizations.
+If you compile with `cargo`, use the `--release` flag. If you compile with `rustc` directly, use the `-O` flag. Either of these will turn on optimizations. Optimizations are not turned on by default because they [slow down compilation and complicate debugging](https://users.rust-lang.org/t/why-does-cargo-build-not-optimise-by-default/4150/3?u=andrewbrinker).
 
 ### Why is Rust compilation slow?
 
@@ -379,7 +379,7 @@ Rust doesn't currently have them simply because they haven't been a priority. Th
 
 ### What do named type parameters like `<T=Foo>` in generic types mean?
 
-These are called [associated types](https://doc.rust-lang.org/stable/book/associated-types.html), and they allow for the expression of trait bounds that can't be expressed with a simple `where` clause. In essence, for a generic type with some type parameters, it is often unecessary to include those type parameters in a function taking that generic type as a parameter. The function shouldn't have to care about being generic over the types which make up the generic type (say, the node and edge types in a graph), but only about being generic over the type itself.
+These are called [associated types](https://doc.rust-lang.org/stable/book/associated-types.html), and they allow for the expression of trait bounds that can't be expressed with a `where` clause. In essence, for a generic type with some type parameters, it is often unecessary to include those type parameters in a function taking that generic type as a parameter. The function shouldn't have to care about being generic over the types which make up the generic type (say, the node and edge types in a graph), but only about being generic over the type itself.
 
 ### Can I override operators? Which ones and how?
 
@@ -776,7 +776,7 @@ Rust does not have `static` fields as shown in the code snippet above. Instead, 
 
 ### How can I convert a C-style enum to an integer, or vice-versa?
 
-Converting a C-style enum to an integer can be done with a simple `as` expression, like `e as i64` (where `e` is some enum).
+Converting a C-style enum to an integer can be done with an `as` expression, like `e as i64` (where `e` is some enum).
 
 Converting in the other direction can be done with a `match` statement, which maps different numeric values to different potential values for the enum.
 
@@ -788,7 +788,7 @@ The `extern` keyword allows Rust to use specific ABI's, such as the well-defined
 
 ### Can Rust code call C code?
 
-Yes. Calling C code from Rust is simple and exactly as efficient as calling C code from C.
+Yes. Calling C code from Rust is designed to be as efficient as calling C code from C++.
 
 ### Can C code call Rust code?
 
@@ -814,7 +814,7 @@ Rust "move"s are about transferring ownership, rather than eliminating mutable a
 
 ### How can I interoperate with C++ from Rust, or with Rust from C++?
 
-The simplest way is to interoperate through C. Both Rust and C++ provide a [foreign function interface](https://doc.rust-lang.org/book/ffi.html) for C, and can use that to communicate between each other. If writing C bindings is too tedious, you can always use [rust-bindgen](https://github.com/crabtw/rust-bindgen) to help automatically generate workable C bindings.
+Rust and C++ can interoperate through C. Both Rust and C++ provide a [foreign function interface](https://doc.rust-lang.org/book/ffi.html) for C, and can use that to communicate between each other. If writing C bindings is too tedious, you can always use [rust-bindgen](https://github.com/crabtw/rust-bindgen) to help automatically generate workable C bindings.
 
 ### Does Rust have C++-style constructors?
 
