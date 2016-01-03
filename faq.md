@@ -439,7 +439,9 @@ The following operators can be overloaded:
 
 ### Why the split between `Eq`/`PartialEq` and `Ord`/`PartialOrd`?
 
-There are some types in Rust whose values are only partially ordered, or have only partial equality. This means that there are values which are not less than or greater than each other, or values which are not equal to themselves, respectively. The floating point types `f32` and `f64` are examples of this. Because a floating point value may be `NaN`, and because `NaN`s aren't equal to any other floating point type, nor less than or greater to any other floating point type, nor equal to each other, these types _can't_ implement `Eq` and `Ord`, although they _can_ implement `PartialEq` and `PartialOrd`.
+There are some types in Rust whose values are only partially ordered, or have only partial equality. Partial ordering means that there may be values of the given type that are neither less than nor greater than each other. Partial equality means that there may be values of the given type that are not equal to themselves.
+
+Floating point types (`f32` and `f64`) are good examples of each. Any floating point type may have the value `NaN` (meaning "not a number") `NaN` is not equal to itself (`NaN == Nan` is false), and not less than or greater than any other floating point value. As such, both `f32` and `f64` implement `PartialOrd` and `PartialEq` but not `Ord` and not `Eq`.
 
 <h2 id="input-output">Input / Output</h2>
 
