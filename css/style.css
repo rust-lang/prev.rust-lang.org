@@ -484,3 +484,7 @@ ul.laundry-list {
            -moz-columns: 150px 3;
                 columns: 150px 3;
     }
+
+    .faq table {
+	margin-left: 8rem;
+    }
