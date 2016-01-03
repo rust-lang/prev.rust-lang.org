@@ -289,14 +289,14 @@ If none of these are possible, you may want to modify the function that acquired
 
 ### How can I understand the borrow checker?
 
-There is a certain desire to act as if the borrow checker is some mysterious zen master, doling out knocks on the head whenever its koans are misunderstood. The reality is a little different. In fact, the borrow checker applies only a few straightforward rules, which can be found in the Rust book's [section on borrowing](https://doc.rust-lang.org/stable/book/references-and-borrowing.html#the-rules):
+The borrow checker applies only a few rules, which can be found in the Rust book's [section on borrowing](https://doc.rust-lang.org/stable/book/references-and-borrowing.html#the-rules), when evaluating Rust code. These rules are:
 
 > First, any borrow must last for a scope no greater than that of the owner. Second, you may have one or the other of these two kinds of borrows, but not both at the same time:
 >
 > - one or more references (&T) to a resource.
 > - exactly one mutable reference (&mut T)
 
-Understanding these rules and [lifetimes](https://doc.rust-lang.org/stable/book/lifetimes.html) is all you need to do to understand the borrow checker.
+While the rules themselves are simple, making sure your code conforms to them can be complicated. It is easy to attempt to borrow a value for longer than its lifetime, or to introduce two mutable references to the same value. The borrow checker is useful because it verifies that your code follows these rules, and helps guide corrections when the code doesn't. Many new Rust programmers struggle to satisfy the borrow checker at first, but over time become more skilled at writing memory safe code with minimal borrow checker intervention.
 
 ### How do deref coercions work?
 
