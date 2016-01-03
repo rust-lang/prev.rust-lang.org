@@ -371,21 +371,11 @@ In the end, functions and closures are operationally equivalent, but have differ
 
 ### What are higher-kinded types, why would I want them, and why doesn't Rust have them?
 
-Let's go through these one by one:
+Higher-kinded types are types with unfilled parameters. Support for higher-kinded types means "incomplete" types may be used anywhere "complete" types can be used, such as in a trait `impl`.
 
-First, higher-kinded types are types that take other types as parameters. Type constructors, like `Vec` are examples. What support for higher-kinded types means is that you can use these type constructors wherever you can use types, such as in a trait `impl`.
+The lack of support for higher-kinded types makes expression of certain ideas more tedious than it would otherwise be. For example, implementing a `Functor` trait (a term for a container which can be mapped over, obeying certain rules) without higher-kinded types would be difficult, as a `Functor` should be implemented for the container regardless of the type of values it contains (that is, the `impl` should leave the containers type parameter unfilled, with no concrete type).
 
-Next, the lack of higher-kinded types makes expression of certain ideas far more tedious than it would otherwise be. For example, implementing a `Functor` trait (a term for something which can be mapped over, obeying certain rules) without higher-kinded types is a pain. With higher-kinded types, it's as simple as (note: theoretical syntax, this does not actually work, and has no guarantee to be how higher-kinded types look when and if they're implemented):
-
-```rust
-trait Functor {
-    fn fmap<A, B, F: Fn(&A) -> B>(&self, f: F) -> Self<B>;
-}
-```
-
-The part that Rust currently can't do is that `Self` above is a type constructor parameterized by another type constructor. This is what support for higher-kinded types would let you express.
-
-Finally, Rust doesn't currently have them simply because they haven't been a priority. There is nothing inherent to the language that stops us from implementing higher-kinded types, it just hasn't been done yet. There is an open RFC for implementing them, but no real proposal exists yet. If one comes around, it will definitely be considered.
+Rust doesn't currently have them simply because they haven't been a priority. There is nothing inherent to the language that stops us from implementing support for higher-kinded types, it just hasn't been done yet.
 
 ### What do named type parameters like `<T=Foo>` in generic types mean?
 
