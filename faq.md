@@ -53,9 +53,9 @@ Additionally, garbage collection is frequently a source of non-deterministic beh
 
 ### Why is my program slow?
 
-The Rust compiler doesn't compile with optimizations unless asked to, as optimizations slow down compilation and are usually undesirable during development.
+The Rust compiler doesn't compile with optimizations unless asked to, [as optimizations slow down compilation and are usually undesirable during development](https://users.rust-lang.org/t/why-does-cargo-build-not-optimise-by-default/4150/3).
 
-If you compile with `cargo`, use the `--release` flag. If you compile with `rustc` directly, use the `-O` flag. Either of these will turn on optimizations. Optimizations are not turned on by default because they [slow down compilation and complicate debugging](https://users.rust-lang.org/t/why-does-cargo-build-not-optimise-by-default/4150/3?u=andrewbrinker).
+If you compile with `cargo`, use the `--release` flag. If you compile with `rustc` directly, use the `-O` flag. Either of these will turn on optimizations.
 
 ### Why is Rust compilation slow?
 
@@ -513,7 +513,7 @@ Not currently. Rust macros are ["hygienic macros"](https://en.wikipedia.org/wiki
 
 ### How do I debug Rust programs?
 
-Rust programs can be debugged using gdb or lldb, same as C and C++. In fact, every Rust installation comes with rust-gdb and rust-lldb, wrappers over gdb and lldb with Rust pretty-printing enabled.
+Rust programs can be debugged using [gdb](http://sourceware.org/gdb/current/onlinedocs/gdb/) or [lldb](http://lldb.llvm.org/tutorial.html), same as C and C++. In fact, every Rust installation comes with rust-gdb and rust-lldb, wrappers over gdb and lldb with Rust pretty-printing enabled.
 
 ### `rustc` said a panic occurred in standard library code. How do I locate the mistake in my code?
 
