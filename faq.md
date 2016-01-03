@@ -160,12 +160,12 @@ The `to_owned()` method converts from a `&str` into a `String`, and `String`s ar
 
 ```rust
 fn main() {
-  let s = "Jane Doe".to_owned();
-  say_hello(&s);
+    let s = "Jane Doe".to_owned();
+    say_hello(&s);
 }
 
 fn say_hello(name: &str) {
-  println!("Hello {}!", name);
+    println!("Hello {}!", name);
 }
 ```
 
