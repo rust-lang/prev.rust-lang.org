@@ -77,7 +77,7 @@ You can run benchmarks, but only on the nightly channel. Rust's benchmarking mec
 
 ### Does Rust do tail-call optimization?
 
-Not generally, no. Tail-call optimization may be done in [limited circumstances](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization), but is [not guaranteed](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html). As the feature has always been desired Rust has a keyword (`become`) reserved, though it is not clear yet whether it is technically possible, nor whether it will be implemented. There was a [proposed extension](https://github.com/rust-lang/rfcs/pull/81) that would allow tail-call elimination in certain contexts, but it is currently postponed. 
+Not generally, no. Tail-call optimization may be done in [limited circumstances](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization), but is [not guaranteed](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html). As the feature has always been desired, Rust has a keyword (`become`) reserved, though it is not clear yet whether it is technically possible, nor whether it will be implemented. There was a [proposed extension](https://github.com/rust-lang/rfcs/pull/81) that would allow tail-call elimination in certain contexts, but it is currently postponed. 
 
 ### Does Rust have a runtime?
 
@@ -93,7 +93,7 @@ Curly braces also allow for more flexible syntax for the programmer, a simpler p
 
 ### I can leave out parentheses on `if` conditions, so why do I have to put brackets around single line blocks? Why is the C style not allowed?
 
-Whereas C requires mandatory parantheses for `if`-statements but leaveis brackets optional, Rust makes the opposite choice. Rust's `if`-expressions thus require strictly fewer delimiters than their C counterparts. Furthermore, the optional brackets on C's `if`-statements are well-understood as a hazard to maintenance and refactoring.
+Whereas C requires mandatory parantheses for `if`-statements but leaves brackets optional, Rust makes the opposite choice. Rust's `if`-expressions thus require strictly fewer delimiters than their C counterparts. Furthermore, the optional brackets on C's `if`-statements are well-understood as a hazard to maintenance and refactoring.
 
 ### Why is there no literal syntax for dictionaries?
 
@@ -146,7 +146,7 @@ There [is a crate](https://crates.io/crates/ordered-float) that provides a total
 
 ### How can I convert between numeric types?
 
-There are two ways: the `as` keyword, which does simple casting for primitive types, and the `Into` and `From` traits, which are implemented for a number of type conversions (and which you can implement for your own types). The `Into` and `From` traits are only implemented in cases where conversions are lossless, so for example, `f64::from(0f32)` will compile while `f32:from(0f64)` will not. `as` on the other hand will convert between any two primitive types, truncating values as necessary.
+There are two ways: the `as` keyword, which does simple casting for primitive types, and the `Into` and `From` traits, which are implemented for a number of type conversions (and which you can implement for your own types). The `Into` and `From` traits are only implemented in cases where conversions are lossless, so for example, `f64::from(0f32)` will compile while `f32:from(0f64)` will not. On the other hand, `as` will convert between any two primitive types, truncating values as necessary.
 
 <h2 id="strings">Strings</h2>
 
