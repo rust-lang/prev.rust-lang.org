@@ -804,7 +804,7 @@ Rust was designed from day one to be a safe systems programming language, which 
 
 Rust doesn't currently have an exact equivalent to template specialization, but it is [being worked on](https://github.com/rust-lang/rfcs/pull/1210) and will hopefully be added soon. However, similar effects can be achieved via [associated types](https://doc.rust-lang.org/stable/book/associated-types.html).
 
-### How does Rust's ownership system related to move semantics in C++?
+### How does Rust's ownership system relate to move semantics in C++?
 
 The notions of a "move" in Rust and a "move" in C++ are quite different, owing to the different systems in which they exist.
 
@@ -824,7 +824,7 @@ No. Functions serve the same purpose as constructors without adding language com
 struct Foo {
     a: i32,
     b: f64,
-    c: bool
+    c: bool,
 }
 
 impl Foo {
@@ -832,7 +832,7 @@ impl Foo {
         Foo {
             a: 0,
             b: 0.0,
-            c: false
+            c: false,
         }
     }
 }
@@ -854,10 +854,10 @@ In Swift, `?` is used to indicate an optional value. This is already done by `Op
 
 Rust and Go have substantially different design goals. The following differences are not the only ones (which are too numerous to list), but are a few of the more important ones:
 
-- Rust is lower level than Go, comparable with C and C++. It provides access to memory management primitives that do not exist in Go (which has a garbage collector)
-- Rust's focus is on ensuring safety and efficiency while also providing high-level affordances, while Go's is on being a small, simple language which compiles quickly and can work nicely with a variety of tools
-- Rust has strong support for generics, which Go does not
-- Rust has strong influences from the world of functional programming, including a type system which draws from Haskell's typeclasses. Go has a simpler type system, using interfaces for basic generic programming
+- Rust is lower level than Go, comparable with C and C++. It provides access to memory management primitives that do not exist in Go (which has a garbage collector).
+- Rust's focus is on ensuring safety and efficiency while also providing high-level affordances, while Go's is on being a small, simple language which compiles quickly and can work nicely with a variety of tools.
+- Rust has strong support for generics, which Go does not.
+- Rust has strong influences from the world of functional programming, including a type system which draws from Haskell's typeclasses. Go has a simpler type system, using interfaces for basic generic programming.
 
 ### `gofmt` is great. Where's `rustfmt`?
 
@@ -883,7 +883,7 @@ You can report issues in the Rust documentation on the Rust compiler [issue trac
 
 ### How do I view rustdoc documentation for a library my project depends on?
 
-When you use `cargo doc` to generate documentation for your own project, it also generates docs for the active dependency versions. These are put into the `target/doc` directory of your project. Use `cargo doc --open` to open the docs after building them, or just open up `target/doc/index.html` yourself after building the docs.
+When you use `cargo doc` to generate documentation for your own project, it also generates docs for the active dependency versions. These are put into the `target/doc` directory of your project. Use `cargo doc --open` to open the docs after building them, or just open up `target/doc/index.html` yourself.
 
 <h2 id="project">The Rust Project</h2>
 
@@ -898,7 +898,7 @@ Rust exists because other languages at this level of abstraction and efficiency 
 3. There is a lack of practical affordances.
 4. They offer limited control over resources.
 
-Rust exists as alternative language that provides both efficient code and a comfortable level of abstraction, while improving on all four of these points.
+Rust exists as an alternative that provides both efficient code and a comfortable level of abstraction, while improving on all four of these points.
 
 ### Is this project controlled by Mozilla?
 
