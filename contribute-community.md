@@ -34,7 +34,9 @@ Maintaining entry-level tasks is good not only for The Rust Project
 itself but all projects. If your project has a consistent supply of
 entry-level tasks you might institute such a program
 yourself. ***Curating entry-level tasks is one of the most effective
-methods of bringing new programmers into the project***.
+methods of bringing new programmers into the project***. If you want
+training on mentoring new contributors [read this
+guide][mentor-guide].
 
 Talk about what you are working on in the weekly "what's everyone
 working on this week" threads on [/r/rust] and [users.rust-lang.org],
@@ -77,5 +79,6 @@ Conduct training on Rust. (link to training material).
 [events]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
 [helpful]: http://blogs.msmvps.com/jonskeet/2009/02/17/answering-technical-questions-helpfully/
 [mentor]: https://users.rust-lang.org/t/mentoring-newcomers-to-the-rust-ecosystem/3088
+[mentor-guide]: http://manishearth.github.io/blog/2016/01/03/making-your-open-source-project-newcomer-friendly/
 [user groups]: user_groups.html
 [users.rust-lang.org]: https://users.rust-lang.org

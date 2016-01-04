@@ -15,28 +15,26 @@ guide][bugs]. Thanks in advance!
 Rust is an expansive system of projects, the most prominent of which
 are maintained by [The Rust Project Developers][devs] in [the
 rust-lang organization on GitHub][rust-lang]. Newcomers may be
-interested in [an overview of the organization, processes, and
-policies of The Rust Project][dev_proc] and the project's
-[CONTRIBUTING.md] file, which explains the specifics of contributing
-to [rust-lang/rust].
+interested in the project's [CONTRIBUTING.md] file, which explains the
+mechanics of contributing to [rust-lang/rust].
 
 There are many ways to contribute to the success of Rust.
 This guide focuses on a few avenues for the new contributor:
 
-* [Finding, triaging and fixing issues](contribute-bugs.html). The
+* [**Finding, triaging and fixing issues**](contribute-bugs.html). The
   basic work of maintaining a large and active project like Rust.
-* [Documentation](contribute-docs.html). Not just official
+* [**Documentation**](contribute-docs.html). Not just official
   documentation, but also for crates, blog posts, and other unofficial
   sources.
-* [Community building](contribute-community.html). Helping your fellow
+* [**Community building**](contribute-community.html). Helping your fellow
   Rustacean, and expanding the reach of Rust.
-* [Tooling, IDEs and infrastructure](contribute-tools.html). The
+* [**Tooling, IDEs and infrastructure**](contribute-tools.html). The
   important pieces that make using a language practical and painless.
-* [Libraries](contribute-libs.html). Rust's suitability for any
+* [**Libraries**](contribute-libs.html). Rust's suitability for any
   particular task is mostly dependent on availability of quality
   libraries.
-* [Language, compiler and the standard
-  library](contribute-compiler.html). Language design, feature
+* [**Language, compiler and the standard
+  library**](contribute-compiler.html). Language design, feature
   implementation, performance improvement.
 
 If you need additional guidance ask on [#rust-internals] or
@@ -47,7 +45,7 @@ contributors are expected to follow our [Code of Conduct][coc]. If you
 have questions about this please inquire with the [community team].
 
 <!--
-TODO: The overview link doesn't go somewhere enlightening. Write it.
+TODO: Write a guide to rust processes and governance to link from here
 TODO: List of active initiatives
 TODO: Write guide to advertising Rust projects to link from
 libs / community building
