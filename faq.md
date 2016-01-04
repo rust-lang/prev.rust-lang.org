@@ -317,7 +317,7 @@ You can see a [full list of `Deref` implementations](https://doc.rust-lang.org/s
 
 ### Why lifetimes?
 
-Lifetimes are Rust's answer to the question of memory safety. They allow Rust to ensure memory safety without garbage collection, which can have undesirable implications for performance. They are based on a variety of academic work, which can be found in the [Rust book](https://doc.rust-lang.org/stable/book/academic-research.html#type-system).
+Lifetimes are Rust's answer to the question of memory safety. They allow Rust to ensure memory safety without the performance costs of garbage collection. They are based on a variety of academic work, which can be found in the [Rust book](https://doc.rust-lang.org/stable/book/academic-research.html#type-system).
 
 ### Why is the lifetime syntax the way it is?
 
@@ -333,7 +333,7 @@ You need to ensure that the borrowed item will outlive the function. This can be
 
 ### How do I return a closure from a function?
 
-To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid (put another way, it would allow reading potentially invalid memory). The closure must also be wrapped in a `Box`, so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
+To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a `Box`, so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
 
 ### When are lifetimes required to be defined?
 
@@ -373,7 +373,7 @@ In the end, functions and closures are operationally equivalent, but have differ
 
 Higher-kinded types are types with unfilled parameters. Support for higher-kinded types means "incomplete" types may be used anywhere "complete" types can be used, such as in a trait `impl`.
 
-The lack of support for higher-kinded types makes expression of certain ideas more tedious than it would otherwise be. For example, implementing a `Functor` trait (a term for a container which can be mapped over, obeying certain rules) without higher-kinded types would be difficult, as a `Functor` should be implemented for the container regardless of the type of values it contains (that is, the `impl` should leave the containers type parameter unfilled, with no concrete type).
+The lack of support for higher-kinded types makes expression of certain ideas more tedious than it would otherwise be. For example, implementing a `Functor` trait (a term for a container which can be mapped over, obeying certain rules) without higher-kinded types would be difficult, as a `Functor` should be implemented for the container regardless of the type of values it contains. With higher-kinded types, the Functor `impl` for some container could leave the container's type parameter unfilled, with no concrete type.
 
 Rust doesn't currently have them simply because they haven't been a priority. There is nothing inherent to the language that stops us from implementing support for higher-kinded types, it just hasn't been done yet.
 
@@ -441,7 +441,7 @@ The following operators can be overloaded:
 
 There are some types in Rust whose values are only partially ordered, or have only partial equality. Partial ordering means that there may be values of the given type that are neither less than nor greater than each other. Partial equality means that there may be values of the given type that are not equal to themselves.
 
-Floating point types (`f32` and `f64`) are good examples of each. Any floating point type may have the value `NaN` (meaning "not a number") `NaN` is not equal to itself (`NaN == Nan` is false), and not less than or greater than any other floating point value. As such, both `f32` and `f64` implement `PartialOrd` and `PartialEq` but not `Ord` and not `Eq`.
+Floating point types (`f32` and `f64`) are good examples of each. Any floating point type may have the value `NaN` (meaning "not a number"). `NaN` is not equal to itself (`NaN == Nan` is false), and not less than or greater than any other floating point value. As such, both `f32` and `f64` implement `PartialOrd` and `PartialEq` but not `Ord` and not `Eq`.
 
 <h2 id="input-output">Input / Output</h2>
 
@@ -451,17 +451,17 @@ Using the `read_to_string()` method, which is defined on the `Read` trait in `st
 
 ```rust
 fn read_file(path: &str) -> Result<String, std::io::Error> {
-  let mut f = try!(File::open(path));
-  let mut s = String::new();
-  try!(f.read_to_string(&mut s));  // `s` contains the contents of "foo.txt"
-  s
+    let mut f = try!(File::open(path));
+    let mut s = String::new();
+    try!(f.read_to_string(&mut s));  // `s` contains the contents of "foo.txt"
+    s
 }
 
 fn main() {
-  match read_file("foo.txt") {
-    Ok(_) => println!("Got file contents!"),
-    Err(err) => println!("Getting file contents failed with error: {}", err)
-  };
+    match read_file("foo.txt") {
+        Ok(_) => println!("Got file contents!"),
+        Err(err) => println!("Getting file contents failed with error: {}", err)
+    };
 }
 ```
 
@@ -517,7 +517,7 @@ Rust programs can be debugged using [gdb](http://sourceware.org/gdb/current/onli
 
 ### `rustc` said a panic occurred in standard library code. How do I locate the mistake in my code?
 
-This error is usually caused by `unwrap()`ing a `None` or `Err` in client code. Enabling backtraces by setting the environment variable `RUST_BACKTRACE=1` helps with getting more information. Compiling in debug mode (the default for `cargo build` is also helpful). Using a debugger like the provided `rust-gdb` or `rust-lldb` is also helpful.
+This error is usually caused by `unwrap()`ing a `None` or `Err` in client code. Enabling backtraces by setting the environment variable `RUST_BACKTRACE=1` helps with getting more information. Compiling in debug mode (the default for `cargo build`) is also helpful. Using a debugger like the provided `rust-gdb` or `rust-lldb` is also helpful.
 
 <h2 id="low-level">Low-Level</h2>
 
@@ -529,7 +529,7 @@ To copy potentially overlapping bytes, use `std::ptr::copy`. To copy nonoverlapp
 
 ### Can Rust function reasonably without the standard library?
 
-Absolutely. Rust programs can be set to not load the standard library using the `#![no_std]` attribute. With this attribute set, you can continue to use the Rust core library, which is nothing but the platform-agnostic primitives. As such, it doesn't include IO, concurrency, heap allocation, etc. Note however that `libcore` has not been stabilized.
+Absolutely. Rust programs can be set to not load the standard library using the `#![no_std]` attribute. With this attribute set, you can continue to use the Rust core library, which is nothing but the platform-agnostic primitives. As such, it doesn't include IO, concurrency, heap allocation, etc.
 
 ### Can I write an operating system in Rust?
 
@@ -643,7 +643,7 @@ A `use`ing declaration just tells the compiler to bring everything from a partic
 
 As explained on the Cargo [configuration documentation](http://doc.crates.io/config.html), you can set Cargo to use a proxy by setting the "proxy" variable under `[http]` in the configuration file.
 
-### Why can't the compiler find the method implementation even through I'm already `use`ing the crate?
+### Why can't the compiler find the method implementation even though I'm already `use`ing the crate?
 
 For methods defined on a trait, you have to explicitly import the trait declaration. This means it's not enough to import a module where a struct implements the trait, you must also import the trait itself.
 
