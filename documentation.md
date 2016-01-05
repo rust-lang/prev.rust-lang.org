@@ -52,6 +52,13 @@ Rust's package manager.
 [**Compiler Error Index**][err]. Extended explanations of
 the errors produced by the Rust compiler.
 
+[api]: https://doc.rust-lang.org/std/
+[ref]: https://doc.rust-lang.org/reference.html
+[cargo]: http://doc.crates.io/guide.html
+[err]: https://doc.rust-lang.org/error-index.html
+
+## Project policies
+
 [**Rust security policy**][security]. The project's policies for
 reporting, fixing and disclosing security-related bugs.
 
@@ -60,10 +67,6 @@ copyrights are owned by The Rust Project Developers, and its
 trademarks are owned by Mozilla. Appropriate usage of Rust's
 trademarks are described here.
 
-[api]: https://doc.rust-lang.org/std/
-[ref]: https://doc.rust-lang.org/reference.html
-[cargo]: http://doc.crates.io/guide.html
-[err]: https://doc.rust-lang.org/error-index.html
 [security]: security.html
 [legal]: legal.html
 
