@@ -390,7 +390,7 @@ Lifetimes can often be elided, as explained in the ["Lifetime elision" section](
 
 - Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
 - If there is exactly one input lifetime, elided or not, that lifetime is assigned to all elided lifetimes in the return values of that function.
-- If there are multiple input lifetimes, but one of them is &self or &mut self, the lifetime of self is assigned to all elided output lifetimes.
+- If there are multiple input lifetimes, but one of them is `&self` or `&mut` self, the lifetime of self is assigned to all elided output lifetimes.
 
 If these rules would result in incorrect code elsewhere, then the Rust compiler will provide errors, and you will need to define the relevant lifetimes to correct that error.
 
