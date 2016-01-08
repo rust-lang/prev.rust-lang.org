@@ -422,11 +422,13 @@ Even if a closure does not capture any environment variables, it is represeted a
 
 ### What are higher-kinded types, why would I want them, and why doesn't Rust have them?
 
-Higher-kinded types are types with unfilled parameters. Support for higher-kinded types means "incomplete" types may be used anywhere "complete" types can be used, such as in a trait `impl`.
+Higher-kinded types are typed with unfilled parameters. Type constructors, like `Vec<T>`, `Result<T, E>`, and `HashMap<K, V, S>` are all examples of higher-kinded types. Support for higher-kinded types means these "incomplete" types may be used anywhere "complete" types can be used, such as trait `impl`s.
 
-The lack of support for higher-kinded types makes expression of certain ideas more tedious than it would otherwise be. For example, implementing a `Functor` trait (a term for a container which can be mapped over, obeying certain rules) without higher-kinded types would be difficult, as a `Functor` should be implemented for the container regardless of the type of values it contains. With higher-kinded types, the Functor `impl` for some container could leave the container's type parameter unfilled, with no concrete type.
+Any complete type, like `i32`, `bool`, or `char` is of kind `*`. A type with one parameter, like `Vec<T>` is of kind `* -> *`, meaning that `Vec<T>` takes in a complete type like `i32` and returns a complete type `Vec<i32>`. A type which three parameters, like `HashMap<K, V, S>` is of kind `* -> * -> * -> *`, and takes in three complete types (like `i32`, `String`, and `RandomState`) to produce a new complete type `HashMap<i32, String, RandomState>`.
 
-Rust doesn't currently have them simply because they haven't been a priority. There is nothing inherent to the language that stops us from implementing support for higher-kinded types, it just hasn't been done yet.
+The lack of support for higher-kinded types makes expression of certain ideas more tedious than it would otherwise be. For example, implementing a `Functor` trait (a term for a container which can be mapped over, obeying certain rules) without higher-kinded types requires explicit and otherwise unnecessary handling of the container's type parameters. With higher-kined types, a `Functor` `impl` can ignore the parameters entirely.
+
+Rust doesn't currently have support for higher-kinded types because it hasn't been a priority. There is nothing inherent to the language that stops the support from being implemented. It just hasn't been done yet.
 
 ### What do named type parameters like `<T=Foo>` in generic types mean?
 
