@@ -229,7 +229,7 @@ println!("\nLength: {}", v.len());
 
 Rust `for` loops call `into_iter()` (defined on the `IntoIterator` trait) for whatever they're iterating over. Anything implementing the `IntoIterator` trait may be looped over with a `for` loop. `IntoIterator` is implemented for `&Vec` and `&mut Vec`, causing the iterator from `into_iter()` to borrow the contents of the collection, rather than moving/consuming them. The same is true for other standard collections as well.
 
-If a moving/consuming iterator is desired, write the `for` loop without `&` or `&mut` on the collection.
+If a moving/consuming iterator is desired, write the `for` loop without `&` or `&mut` in the iteration.
 
 ### Why do I need to type the array size in the array declaration?
 
