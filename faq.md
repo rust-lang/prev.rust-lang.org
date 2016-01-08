@@ -75,9 +75,9 @@ Finally, while Rust's preferred strategy of monomorphising generics (ala C++) pr
 
 ### Why are Rust's `HashMap`s slow?
 
-By default, Rust's `HashMap` uses the [SipHash](https://131002.net/siphash/) hashing algorithm, which is designed to prevent [hash table collision attacks](http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited) while providing [reasonable performance on a variety of workloads](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6).
+By default, Rust's [`HashMap`](https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html) uses the [SipHash](https://131002.net/siphash/) hashing algorithm, which is designed to prevent [hash table collision attacks](http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited) while providing [reasonable performance on a variety of workloads](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6).
 
-While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges/blah/hash-rs/) in many cases, one case where it is notably slower than other hashing algorithms is with short keys, such as integers. This is why Rust programmers often observe slow performance with `HashMap`. The [FNV hasher](https://crates.io/crates/fnv) is frequently recommended for these cases, but be aware that it does not have the same collision-resistance properties as SipHash.
+While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges/blah/hash-rs/) in many cases, one case where it is notably slower than other hashing algorithms is with short keys, such as integers. This is why Rust programmers often observe slow performance with [`HashMap`](https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html). The [FNV hasher](https://crates.io/crates/fnv) is frequently recommended for these cases, but be aware that it does not have the same collision-resistance properties as SipHash.
 
 ### Why is there no integrated benchmarking infrastructure?
 
@@ -144,27 +144,27 @@ If in doubt, choose `f64` for the greater precision.
 
 ### Why can't I use `f32` or `f64` as `HashMap` keys?
 
-In order to be used as a key in a `HashMap`, a type must implement the `Eq` and `Hash` traits. `f32` and `f64` implement `PartialEq`, but not `Eq`, because one of the potential values for floating-point types is `NaN` (or "not a number"). `NaN` values are [not equal to any float, and are not equal to each other](https://en.wikipedia.org/wiki/NaN). This means that `f32` and `f64` can't be used as keys in a HashMap.
+In order to be used as a key in a [`HashMap`](https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html), a type must implement the [`Eq`](https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html) and [`Hash`](https://doc.rust-lang.org/stable/std/hash/trait.Hash.html) traits. [`f32`](https://doc.rust-lang.org/stable/std/primitive.f32.html) and [`f64`](https://doc.rust-lang.org/stable/std/primitive.f64.html) implement [`PartialEq`](https://doc.rust-lang.org/stable/std/cmp/trait.PartialEq.html), but not `Eq`, because one of the potential values for floating-point types is `NaN` (or "not a number"). `NaN` values are [not equal to any float, and are not equal to each other](https://en.wikipedia.org/wiki/NaN). This means that `f32` and `f64` can't be used as keys in a HashMap.
 
 ### Why can't I compare floats?
 
-Floats can be compared in some circumstances, but not others. Floats do implement the `PartialOrd` trait, which means that `>`, `<`, `<=`, and `>=` are defined for them. But they do _not_ implement the `Ord` trait, because (thanks to `NaN`) [there is no total ordering for floating point numbers](https://en.wikipedia.org/wiki/IEEE_floating_point#Total-ordering_predicate). The practical effect of this is that data structures that require a total ordering, such as [`BTreeMap`](http://doc.rust-lang.org/std/collections/struct.BTreeMap.html) do not work with floating point numbers.
+Floats can be compared in some circumstances, but not others. Floats do implement the [`PartialOrd`](https://doc.rust-lang.org/stable/std/cmp/trait.PartialOrd.html) trait, which means that `>`, `<`, `<=`, and `>=` are defined for them. But they do _not_ implement the [`Ord`](https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html) trait, because (thanks to `NaN`) [there is no total ordering for floating point numbers](https://en.wikipedia.org/wiki/IEEE_floating_point#Total-ordering_predicate). The practical effect of this is that data structures that require a total ordering, such as [`BTreeMap`](http://doc.rust-lang.org/std/collections/struct.BTreeMap.html) do not work with floating point numbers.
 
 There [is a crate](https://crates.io/crates/ordered-float) that provides a total ordering on floats by wrapping them, which may be desirable depending on your use-case. You can still do all of the normal comparison operations you would expect, but you can't use the `cmp` function.
 
 ### How can I convert between numeric types?
 
-There are two ways: the `as` keyword, which does simple casting for primitive types, and the `Into` and `From` traits, which are implemented for a number of type conversions (and which you can implement for your own types). The `Into` and `From` traits are only implemented in cases where conversions are lossless, so for example, `f64::from(0f32)` will compile while `f32:from(0f64)` will not. On the other hand, `as` will convert between any two primitive types, truncating values as necessary.
+There are two ways: the `as` keyword, which does simple casting for primitive types, and the [`Into`](https://doc.rust-lang.org/stable/std/convert/trait.Into.html) and [`From`](https://doc.rust-lang.org/stable/std/convert/trait.From.html) traits, which are implemented for a number of type conversions (and which you can implement for your own types). The `Into` and `From` traits are only implemented in cases where conversions are lossless, so for example, `f64::from(0f32)` will compile while `f32:from(0f64)` will not. On the other hand, `as` will convert between any two primitive types, truncating values as necessary.
 
 <h2 id="strings">Strings</h2>
 
 ### How can I convert a `String` or `Vec<T>` to a slice (`&str` and `&[T]`)?
 
-Using [Deref coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html), `Strings` and `Vec`s will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
+Using [Deref coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html), [`String`s](https://doc.rust-lang.org/stable/std/string/struct.String.html) and [`Vec`s](https://doc.rust-lang.org/stable/std/vec/struct.Vec.html) will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
 
 ### How can I convert from `&str` to `String` or the other way around?
 
-The `to_owned()` method converts from a `&str` into a `String`, and `String`s are automatically converted into `&str` when you borrow a reference to them. Both are demonstrated in the following example:
+The [`to_owned()`](https://doc.rust-lang.org/stable/std/borrow/trait.ToOwned.html#tymethod.to_owned) method converts from a [`&str`](https://doc.rust-lang.org/stable/std/primitive.str.html) into a [`String`](https://doc.rust-lang.org/stable/std/string/struct.String.html), and `String`s are automatically converted into `&str` when you borrow a reference to them. Both are demonstrated in the following example:
 
 ```rust
 fn main() {
@@ -179,7 +179,7 @@ fn say_hello(name: &str) {
 
 ### What are the differences between the two different string types?
 
-`String` is an owned buffer of UTF-8 bytes allocated on the heap. Mutable `String`s can be modified, growing their capacity as needed. `&str` is a fixed-capacity "view" into a `String` allocated elsewhere, commonly on the heap, in the case of slices dereferenced from `String`s, or in static memory, in the case of string literals.
+[`String`](https://doc.rust-lang.org/stable/std/string/struct.String.html) is an owned buffer of UTF-8 bytes allocated on the heap. Mutable `String`s can be modified, growing their capacity as needed. `&str` is a fixed-capacity "view" into a `String` allocated elsewhere, commonly on the heap, in the case of slices dereferenced from `String`s, or in static memory, in the case of string literals.
 
 `&str` is a primitive type implemented by the Rust language, while `String` is implemented in the standard library.
 
