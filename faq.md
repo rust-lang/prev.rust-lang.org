@@ -333,7 +333,15 @@ The borrow checker applies only a few rules, which can be found in the Rust book
 > - one or more references (&T) to a resource.
 > - exactly one mutable reference (&mut T)
 
-While the rules themselves are simple, making sure your code conforms to them can be complicated. It is easy to attempt to borrow a value for longer than its lifetime, or to introduce two mutable references to the same value. The borrow checker is useful because it verifies that your code follows these rules, and helps guide corrections when the code doesn't. Many new Rust programmers struggle to satisfy the borrow checker at first, but over time become more skilled at writing memory safe code with minimal borrow checker intervention.
+While the rules themselves are simple, following them consistently is not, particularly for those unaccustomed to reasoning about lifetimes and ownership.
+
+The first step in understanding the borrow checker is reading the errors it produces. A lot of work has been put into making sure the borrow checker provides quality assistance in resolving the issues it identifies. When you encounter a borrow checker problem, the first step is to slowly and carefully read the error reported, and to only approach the code after you understand the error being described.
+
+The second step is to become familiar with the ownership and mutability-related container types provided by the Rust standard library, including `Cell`, `RefCell`, and `Cow`. These are useful and necessary tools for expressing certain ownership and mutability sutations, and have been written to be of minimal performance cost.
+
+The single most important part of understanding the borrow checker is practice. Rust's strong static analyses guarantees are strict and quite different from what many programmers have worked with before. It will take some time to become completely comfortable with everything.
+
+If you find yourself struggling with the borrow checker, or running out of patience, always feel free to reach out to the [Rust community](https://www.rust-lang.org/community.html) for help.
 
 ### How do deref coercions work?
 
