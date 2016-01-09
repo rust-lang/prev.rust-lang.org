@@ -111,7 +111,25 @@ This design choice of using Rust's macro facilities to initialize collections wi
 
 ### When should I use an implicit return?
 
-Implicit returns are simply a coding style option, and can be used as the final line in a block expression. While early returns require an explicit `return` keyword, any other return can be made implicit according to your preferences or the preferences of your project. In the Rust project itself, the style guidelines lean toward preferring implicit returns.
+Rust is a very expression-oriented language, and implicit returns are part of that design. `if`s, `match`es, and normal blocks are all expressions in Rust. For example, the following code checks if an `i64` is odd, returning the result with an implicit return:
+
+```rust
+fn is_odd(x: i64) -> bool {
+    if x % 2 == 1 { true } else { false }
+}
+```
+
+Although it can be simplified even further like so:
+
+```rust
+fn is_odd(x: i64) -> bool {
+    x % 2 == 1
+}
+```
+
+In each example, the last line of the function is the return value of that function. It is important to note that if a function ends in a semicolon, its return type will be `()`, indicating no returned value. Implicit returns must omit the semicolon to work.
+
+Explicit returns are only used if an implicit return is impossible because you are returning before the end of the function's body. While each of the above functions could have been written with a `return` keyword and semicolon, doing so would be unnecessarily verbose, and inconsistent with the conventions of Rust code.
 
 ### Why aren't function signatures inferred?
 
@@ -556,7 +574,9 @@ If you're looking for a way to avoid handling `Result`s in other people's code, 
 
 ### Can I use static values across threads without an `unsafe` block?
 
-Yes, if the type implements `Sync`, doesn't implement `Drop`, and you don't try to mutate the value.
+Mutation is safe if it's synchronized. Mutating a static `Mutex<T>` (lazily initialized via the [lazy_static](https://crates.io/crates/lazy_static/) crate) does not require an `unsafe` block, nor does mutating a static `AtomicUsize` (which can be initialized without lazy_static).
+
+More generally, if a type implements `Sync` and does not implement `Drop`, it [can be used in a `static`](https://doc.rust-lang.org/book/const-and-static.html#static).
 
 <h2 id="macros">Macros</h2>
 
@@ -793,9 +813,7 @@ The easiest way is to use the `Option` type in whatever function you're using to
 
 ### How do I do global variables in Rust?
 
-Globals in Rust can be done using `const` declarations for compile-time computed global constants, while `static` can be used for mutable globals. Note that modifying a `static` variable requires the use of `unsafe`, as it allows for data races, one of the things guaranteed not to happen in safe Rust. One important distinction between `const` and `static` values is that you can take references to `static` values, but not references to `const` values, which don't have a specified memory location. For more information on `const` vs. `static`, read [the Rust book](https://doc.rust-lang.org/book/const-and-static.html).
-
-You can also use the `RefCell` and `Option` type to provide interior mutability of an optional global value. It is important to note that `RefCell`s are not thread-safe.
+Globals in Rust can be done using `const` declarations for compile-time computed global constants, while `static` can be used for mutable globals. Note that modifying a `static mut` variable requires the use of `unsafe`, as it allows for data races, one of the things guaranteed not to happen in safe Rust. One important distinction between `const` and `static` values is that you can take references to `static` values, but not references to `const` values, which don't have a specified memory location. For more information on `const` vs. `static`, read [the Rust book](https://doc.rust-lang.org/book/const-and-static.html).
 
 ### How can I set compile-time constants that are defined procedurally?
 
@@ -822,6 +840,8 @@ Rust has consistently worked to avoid having features with overlapping purposes,
 No. Globals cannot have a non-constant-expression constructor and cannot have a destructor at all. Static constructors are undesirable because portably ensuring a static initialization order is difficult. Life before main is often considered a misfeature, so Rust does not allow it.
 
 See the [C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) about the "static initialization order fiasco", and [Eric Lippert's blog](http://ericlippert.com/2013/02/06/static-constructors-part-one/) for the challenges in C#, which also has this feature.
+
+You can approximate non-constant-expression globals with the [lazy_static](https://crates.io/crates/lazy_static/) crate.
 
 <h2 id="other-languages">Other Languages</h2>
 
@@ -900,10 +920,6 @@ Not exactly. Types which implement `Copy` will do a standard C-like "shallow cop
 ### Does Rust have move constructors?
 
 No. Values of all types are moved via `memcpy`. This makes writing generic unsafe code much simpler since assignment, passing and returning are known to never have a side effect like unwinding.
-
-### Why does Rust not have the ? and ! like in Swift?
-
-In Swift, `?` is used to indicate an optional value. This is already done by `Option` in Rust, and so `?` is not needed. Similarly, `!` is used to "unwrap" an optional value in Swift, which is done by the `unwrap()` function in Rust. In both cases, Rust opted for slightly longer names which more clearly indicate intent. Also, in Rust the `!` symbol already indicates logical negation and macro calls, and does not need a third meaning.
 
 ### How are Go and Rust similar, and how are they different?
 
