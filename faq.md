@@ -75,9 +75,9 @@ Finally, while Rust's preferred strategy of monomorphising generics (ala C++) pr
 
 ### Why are Rust's `HashMap`s slow?
 
-By default, Rust's [`HashMap`](https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html) uses the [SipHash](https://131002.net/siphash/) hashing algorithm, which is designed to prevent [hash table collision attacks](http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited) while providing [reasonable performance on a variety of workloads](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6).
+By default, Rust's [`HashMap`][HashMap] uses the [SipHash](https://131002.net/siphash/) hashing algorithm, which is designed to prevent [hash table collision attacks](http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited) while providing [reasonable performance on a variety of workloads](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6).
 
-While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges/blah/hash-rs/) in many cases, one case where it is notably slower than other hashing algorithms is with short keys, such as integers. This is why Rust programmers often observe slow performance with [`HashMap`](https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html). The [FNV hasher](https://crates.io/crates/fnv) is frequently recommended for these cases, but be aware that it does not have the same collision-resistance properties as SipHash.
+While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges/blah/hash-rs/) in many cases, one case where it is notably slower than other hashing algorithms is with short keys, such as integers. This is why Rust programmers often observe slow performance with [`HashMap`][HashMap]. The [FNV hasher](https://crates.io/crates/fnv) is frequently recommended for these cases, but be aware that it does not have the same collision-resistance properties as SipHash.
 
 ### Why is there no integrated benchmarking infrastructure?
 
@@ -85,7 +85,7 @@ You can run benchmarks, but only on the nightly channel. Rust's benchmarking mec
 
 ### Does Rust do tail-call optimization?
 
-Not generally, no. Tail-call optimization may be done in [limited circumstances](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization), but is [not guaranteed](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html). As the feature has always been desired, Rust has a keyword (`become`) reserved, though it is not clear yet whether it is technically possible, nor whether it will be implemented. There was a [proposed extension](https://github.com/rust-lang/rfcs/pull/81) that would allow tail-call elimination in certain contexts, but it is currently postponed. 
+Not generally, no. Tail-call optimization may be done in [limited circumstances](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization), but is [not guaranteed](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html). As the feature has always been desired, Rust has a keyword (`become`) reserved, though it is not clear yet whether it is technically possible, nor whether it will be implemented. There was a [proposed extension](https://github.com/rust-lang/rfcs/pull/81) that would allow tail-call elimination in certain contexts, but it is currently postponed.
 
 ### Does Rust have a runtime?
 
@@ -105,17 +105,17 @@ Whereas C requires mandatory parentheses for `if`-statement conditionals but lea
 
 ### Why is there no literal syntax for dictionaries?
 
-The reason Rust does not have syntax for initializing dictionaries &mdash; or collections in general &mdash; is due to Rust's overall design preference for limiting the size of the *language* while enabling powerful *libraries*. The only type of collection that Rust has direct syntax for initializing is the array type, which is also the only type of collection built into the language. Note that Rust does not even have syntax for initializing the common `Vec` collection type, instead the standard library defines the [`vec!`](http://doc.rust-lang.org/std/macro.vec!.html) macro.
+The reason Rust does not have syntax for initializing dictionaries &mdash; or collections in general &mdash; is due to Rust's overall design preference for limiting the size of the *language* while enabling powerful *libraries*. The only type of collection that Rust has direct syntax for initializing is the array type, which is also the only type of collection built into the language. Note that Rust does not even have syntax for initializing the common [`Vec`][Vec] collection type, instead the standard library defines the [`vec!`][VecMacro] macro.
 
-This design choice of using Rust's macro facilities to initialize collections will likely be extended generically to other collections in the future, enabling simple initialization of not only `HashMap` and `Vec`, but also other collection types such as [`BTreeMap`](http://doc.rust-lang.org/collections/struct.BTreeMap.html). In the meantime, if you want a more convenient syntax for initializing collections, you can [create your own macro](http://stackoverflow.com/questions/27582739/how-do-i-create-a-hashmap-literal) to provide it.
+This design choice of using Rust's macro facilities to initialize collections will likely be extended generically to other collections in the future, enabling simple initialization of not only [`HashMap`][HashMap] and [`Vec`][Vec], but also other collection types such as [`BTreeMap`][BTreeMap]. In the meantime, if you want a more convenient syntax for initializing collections, you can [create your own macro](http://stackoverflow.com/questions/27582739/how-do-i-create-a-hashmap-literal) to provide it.
 
 ### When should I use an implicit return?
 
-Rust is a very expression-oriented language, and implicit returns are part of that design. `if`s, `match`es, and normal blocks are all expressions in Rust. For example, the following code checks if an `i64` is odd, returning the result with an implicit return:
+Rust is a very expression-oriented language, and implicit returns are part of that design. `if`s, `match`es, and normal blocks are all expressions in Rust. For example, the following code checks if an [`i64`][i64] is odd, returning the result with an implicit return:
 
 ```rust
 fn is_odd(x: i64) -> bool {
-    if x % 2 == 1 { true } else { false }
+    if x % 2 != 0 { true } else { false }
 }
 ```
 
@@ -123,7 +123,7 @@ Although it can be simplified even further like so:
 
 ```rust
 fn is_odd(x: i64) -> bool {
-    x % 2 == 1
+    x % 2 != 0
 }
 ```
 
@@ -156,41 +156,41 @@ match val.do_something() {
 
 The choice of which to use is dependent on the purpose of the program.
 
-If you are interested in the greatest degree of precision with your floating point numbers, then prefer `f64`. If you are more interested in keeping the size of the value small or being maximally efficient, and are not concerned about the associated inaccuracy of having fewer bits per value, then `f32` is better. Operations on `f32` are usually faster, even on 64-bit hardware. As a common example, graphics programming typically uses `f32` because it requires high performance, and 32-bit floats are sufficient for representing pixels on the screen.
+If you are interested in the greatest degree of precision with your floating point numbers, then prefer [`f64`][f64]. If you are more interested in keeping the size of the value small or being maximally efficient, and are not concerned about the associated inaccuracy of having fewer bits per value, then [`f32`][f32] is better. Operations on [`f32`][f32] are usually faster, even on 64-bit hardware. As a common example, graphics programming typically uses [`f32`][f32] because it requires high performance, and 32-bit floats are sufficient for representing pixels on the screen.
 
-If in doubt, choose `f64` for the greater precision.
+If in doubt, choose [`f64`][f64] for the greater precision.
 
 ### Why can't I compare floats?
 
-Floats can be compared with the `==`, `!=`, `<`, `<=`, `>`, and `>=` operators, and with the `partial_cmp()` function. `==` and `!=` are part of the `PartialEq` trait, while `<`, `<=`, `>`, `>=`, and `partial_cmp()` are part of the `PartialOrd` trait.
+Floats can be compared with the `==`, `!=`, `<`, `<=`, `>`, and `>=` operators, and with the `partial_cmp()` function. `==` and `!=` are part of the [`PartialEq`][PartialEq] trait, while `<`, `<=`, `>`, `>=`, and `partial_cmp()` are part of the [`PartialOrd`][PartialOrd] trait.
 
-Floats cannot be compared with the `cmp()` function, which is part of the `Ord` trait, as there is no total ordering for floats. Furthermore, there is no total equality relation for floats, and so they also do not implement the `Eq` trait.
+Floats cannot be compared with the `cmp()` function, which is part of the [`Ord`][Ord] trait, as there is no total ordering for floats. Furthermore, there is no total equality relation for floats, and so they also do not implement the [`Eq`][Eq] trait.
 
 There is no total ordering or equality on floats because the floating-point value `NaN` is not less than, greater than, or equal to any other floating-point value or itself.
 
-Because floats do not implement `Eq` or `Ord`, they may not be used in types whose trait bounds require those traits, such as `BTreeMap`.
+Because floats do not implement [`Eq`][Eq] or [`Ord`][Ord], they may not be used in types whose trait bounds require those traits, such as [`BTreeMap`][BTreeMap].
 
-There [is a crate](https://crates.io/crates/ordered-float) that wraps `f32` and `f64` to provide `Ord` and `Eq` implementations, which may be useful in certain cases.
+There [is a crate](https://crates.io/crates/ordered-float) that wraps [`f32`][f32] and [`f64`][f64] to provide [`Ord`][Ord] and [`Eq`][Eq] implementations, which may be useful in certain cases.
 
 ### Why can't I use `f32` or `f64` as `HashMap` keys?
 
-In order to be used as a key in a [`HashMap`](https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html), a type must implement the [`Eq`](https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html) and [`Hash`](https://doc.rust-lang.org/stable/std/hash/trait.Hash.html) traits. `Eq` is required because keys have to be capable of being tested for equality, otherwise indexing on keys wouldn't work. `Hash` is required so that the type may be hashed by `HashMap`'s hashing algorithm.
+In order to be used as a key in a [`HashMap`][HashMap], a type must implement the [`Eq`][Eq] and [`Hash`][Hash] traits. [`Eq`][Eq] is required because keys have to be capable of being tested for equality, otherwise indexing on keys wouldn't work. [`Hash`][Hash] is required so that the type may be hashed by [`HashMap`'s][HashMap] hashing algorithm.
 
-[`f32`](https://doc.rust-lang.org/stable/std/primitive.f32.html) and [`f64`](https://doc.rust-lang.org/stable/std/primitive.f64.html) implement [`PartialEq`](https://doc.rust-lang.org/stable/std/cmp/trait.PartialEq.html), but not `Eq` This is because one of the potential values for floating-point types is `NaN` (or "not a number"). Per the IEEE floating-point specification, `NaN` values are [not equal to any other floating-point value, and not equal to each other](https://en.wikipedia.org/wiki/NaN). This means there is no total equality relation for floating-point types, and thus that `f32` and `f64` can't implement `Eq` and can't used as keys in a `HashMap`.
+[`f32`][f32] and [`f64`][f64] implement [`PartialEq`][PartialEq], but not [`Eq`][Eq] This is because one of the potential values for floating-point types is `NaN` (or "not a number"). Per the IEEE floating-point specification, `NaN` values are [not equal to any other floating-point value, and not equal to each other](https://en.wikipedia.org/wiki/NaN). This means there is no total equality relation for floating-point types, and thus that [`f32`][f32] and [`f64`][f64] can't implement [`Eq`][Eq] and can't used as keys in a [`HashMap`][HashMap].
 
 ### How can I convert between numeric types?
 
-There are two ways: the `as` keyword, which does simple casting for primitive types, and the [`Into`](https://doc.rust-lang.org/stable/std/convert/trait.Into.html) and [`From`](https://doc.rust-lang.org/stable/std/convert/trait.From.html) traits, which are implemented for a number of type conversions (and which you can implement for your own types). The `Into` and `From` traits are only implemented in cases where conversions are lossless, so for example, `f64::from(0f32)` will compile while `f32:from(0f64)` will not. On the other hand, `as` will convert between any two primitive types, truncating values as necessary.
+There are two ways: the `as` keyword, which does simple casting for primitive types, and the [`Into`][Into] and [`From`][From] traits, which are implemented for a number of type conversions (and which you can implement for your own types). The [`Into`][Into] and [`From`][From] traits are only implemented in cases where conversions are lossless, so for example, `f64::from(0f32)` will compile while `f32:from(0f64)` will not. On the other hand, `as` will convert between any two primitive types, truncating values as necessary.
 
 <h2 id="strings">Strings</h2>
 
 ### How can I convert a `String` or `Vec<T>` to a slice (`&str` and `&[T]`)?
 
-Using [Deref coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html), [`String`s](https://doc.rust-lang.org/stable/std/string/struct.String.html) and [`Vec`s](https://doc.rust-lang.org/stable/std/vec/struct.Vec.html) will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
+Using [Deref coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html), [`String`s][String] and [`Vec`s][Vec] will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
 
 ### How can I convert from `&str` to `String` or the other way around?
 
-The [`to_owned()`](https://doc.rust-lang.org/stable/std/borrow/trait.ToOwned.html#tymethod.to_owned) method converts from a [`&str`](https://doc.rust-lang.org/stable/std/primitive.str.html) into a [`String`](https://doc.rust-lang.org/stable/std/string/struct.String.html), and `String`s are automatically converted into `&str` when you borrow a reference to them. Both are demonstrated in the following example:
+The [`to_owned()`][to_owned] method converts from a [`&str`][str] into a [`String`][String], and [`String`s][String] are automatically converted into [`&str`][str] when you borrow a reference to them. Both are demonstrated in the following example:
 
 ```rust
 fn main() {
@@ -205,29 +205,29 @@ fn say_hello(name: &str) {
 
 ### What are the differences between the two different string types?
 
-[`String`](https://doc.rust-lang.org/stable/std/string/struct.String.html) is an owned buffer of UTF-8 bytes allocated on the heap. Mutable `String`s can be modified, growing their capacity as needed. `&str` is a fixed-capacity "view" into a `String` allocated elsewhere, commonly on the heap, in the case of slices dereferenced from `String`s, or in static memory, in the case of string literals.
+[`String`][String] is an owned buffer of UTF-8 bytes allocated on the heap. Mutable [`String`s][String] can be modified, growing their capacity as needed. [`&str`][str] is a fixed-capacity "view" into a [`String`][String] allocated elsewhere, commonly on the heap, in the case of slices dereferenced from [`String`s][String], or in static memory, in the case of string literals.
 
-`&str` is a primitive type implemented by the Rust language, while `String` is implemented in the standard library.
+[`&str`][str] is a primitive type implemented by the Rust language, while [`String`][String] is implemented in the standard library.
 
 ### How do I do O(1) character access in a `String`?
 
 You cannot. At least not without a firm understanding of what you mean by "character", and preprocessing the string to find the index of the desired character.
 
-Rust strings are UTF-8 encoded. A single visual character in UTF-8 is not necessarily a single byte as it would be in an ASCII-encoded string. Each byte is called a "code unit" (in UTF-16, code units are 2 bytes; in UTF-32 they are 4 bytes). "Code points" are composed of one or more code units, and combine in "grapheme clusters" which most closely approximate characters. 
+Rust strings are UTF-8 encoded. A single visual character in UTF-8 is not necessarily a single byte as it would be in an ASCII-encoded string. Each byte is called a "code unit" (in UTF-16, code units are 2 bytes; in UTF-32 they are 4 bytes). "Code points" are composed of one or more code units, and combine in "grapheme clusters" which most closely approximate characters.
 
-Thus, even though you may index on bytes in a UTF-8 string, you can't access the `i`th code point or grapheme cluster in constant time. However, if you know at which byte that desired code point or grapheme cluster begins, then you _can_ access it in constant time. Functions including `str::find()` and regex matches return byte indices, facilitating this sort of access.
+Thus, even though you may index on bytes in a UTF-8 string, you can't access the `i`th code point or grapheme cluster in constant time. However, if you know at which byte that desired code point or grapheme cluster begins, then you _can_ access it in constant time. Functions including [`str::find()`][str__find] and regex matches return byte indices, facilitating this sort of access.
 
 ### Why are strings UTF-8 by default?
 
-The `str` type is UTF-8 because we observe more text in the wild in this encoding – particularly in network transmissions, which are endian-agnostic – and we think it's best that the default treatment of I/O not involve having to recode codepoints in each direction.
+The [`str`][str] type is UTF-8 because we observe more text in the wild in this encoding – particularly in network transmissions, which are endian-agnostic – and we think it's best that the default treatment of I/O not involve having to recode codepoints in each direction.
 
 This does mean that locating a particular Unicode codepoint inside a string is an O(n) operation, although if the starting byte index is already known then they can be accessed in O(1) as expected. On the one hand, this is clearly undesirable; on the other hand, this problem is full of trade-offs and we'd like to point out a few important qualifications:
 
-Scanning a `str` for ASCII-range codepoints can still be done safely byte-at-a-time. If you use `.as_bytes()`, pulling out a `u8` costs only `O(1)` and produces a value that can be cast and compared to an ASCII-range `char`. So if you're (say) line-breaking on `'\n'`, byte-based treatment still works. UTF-8 was well-designed this way.
+Scanning a [`str`][str] for ASCII-range codepoints can still be done safely byte-at-a-time. If you use [`.as_bytes()`][str__as_bytes], pulling out a [`u8`][u8] costs only `O(1)` and produces a value that can be cast and compared to an ASCII-range [`char`][char]. So if you're (say) line-breaking on `'\n'`, byte-based treatment still works. UTF-8 was well-designed this way.
 
 Most "character oriented" operations on text only work under very restricted language assumptions such as "ASCII-range codepoints only". Outside ASCII-range, you tend to have to use a complex (non-constant-time) algorithm for determining linguistic-unit (glyph, word, paragraph) boundaries anyway. We recommend using an "honest" linguistically-aware, Unicode-approved algorithm.
 
-The `char` type is UTF32. If you are sure you need to do a codepoint-at-a-time algorithm, it's trivial to write a `type wstr = [char]`, and unpack a `str` into it in a single pass, then work with the `wstr`. In other words: the fact that the language is not "decoding to UTF32 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
+The [`char`][char] type is UTF-32. If you are sure you need to do a codepoint-at-a-time algorithm, it's trivial to write a `type wstr = [char]`, and unpack a [`str`][str] into it in a single pass, then work with the `wstr`. In other words: the fact that the language is not "decoding to UTF32 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
 
 For a more in-depth explanation of why UTF-8 is usually preferable over UTF-16 or UTF-32, read the [UTF-8 Everywhere manifesto](http://utf8everywhere.org/).
 
@@ -239,11 +239,11 @@ If your reason for implementing these data structures is to use them for other p
 
 If, however, [your reason is simply to learn](http://cglab.ca/~abeinges/blah/too-many-lists/book/), then you will likely need to dip into unsafe code. While these data structures _can_ be implemented entirely in safe Rust, the performance is likely to be worse than it would be with the use of unsafe code. The simple reason for this is that data structures like vectors and linked lists rely on pointer and memory operations that are disallowed in safe Rust.
 
-For example, a doubly-linked list requires that there be two mutable references to each node, but this violates Rust's mutable reference aliasing rules. You can solve this using `Weak<T>`, but the performance will be poorer than you likely want. With unsafe code you can bypass the mutable reference aliasing rule restriction, but must manually verify that your code introduces no memory safety violations.
+For example, a doubly-linked list requires that there be two mutable references to each node, but this violates Rust's mutable reference aliasing rules. You can solve this using [`Weak<T>`][Weak], but the performance will be poorer than you likely want. With unsafe code you can bypass the mutable reference aliasing rule restriction, but must manually verify that your code introduces no memory safety violations.
 
 ### How can I iterate over a collection without moving/consuming it?
 
-The easiest way is by using the collection's `IntoIterator` implementation. Here is an example for `&Vec`:
+The easiest way is by using the collection's [`IntoIterator`][IntoIterator] implementation. Here is an example for [`&Vec`][Vec]:
 
 ```rust
 let v = vec![1,2,3,4,5];
@@ -253,7 +253,7 @@ for item in &v {
 println!("\nLength: {}", v.len());
 ```
 
-Rust `for` loops call `into_iter()` (defined on the `IntoIterator` trait) for whatever they're iterating over. Anything implementing the `IntoIterator` trait may be looped over with a `for` loop. `IntoIterator` is implemented for `&Vec` and `&mut Vec`, causing the iterator from `into_iter()` to borrow the contents of the collection, rather than moving/consuming them. The same is true for other standard collections as well.
+Rust `for` loops call `into_iter()` (defined on the [`IntoIterator`][IntoIterator] trait) for whatever they're iterating over. Anything implementing the [`IntoIterator`][IntoIterator] trait may be looped over with a `for` loop. [`IntoIterator`][IntoIterator] is implemented for [`&Vec`][Vec] and [`&mut Vec`][Vec], causing the iterator from `into_iter()` to borrow the contents of the collection, rather than moving/consuming them. The same is true for other standard collections as well.
 
 If a moving/consuming iterator is desired, write the `for` loop without `&` or `&mut` in the iteration.
 
@@ -261,7 +261,7 @@ If a moving/consuming iterator is desired, write the `for` loop without `&` or `
 
 You don't necessarily have to. If you're declaring an array directly, the size is inferred based on the number of elements. But if you're declaring a function that takes an array, the compiler has to know how big that array will be.
 
-One thing to note is that currently Rust doesn't offer generics over arrays of different size. If you'd like to accept a contiguous container of a variable number of values, use a `Vec` or slice (depending on whether you need ownership).
+One thing to note is that currently Rust doesn't offer generics over arrays of different size. If you'd like to accept a contiguous container of a variable number of values, use a [`Vec`][Vec] or slice (depending on whether you need ownership).
 
 <h2 id="ownership">Ownership</h2>
 
@@ -269,12 +269,12 @@ One thing to note is that currently Rust doesn't offer generics over arrays of d
 
 There are four major options:
 
-- You can implement it using `Rc` and `Weak` to allow shared ownership of nodes,
+- You can implement it using [`Rc`][Rc] and [`Weak`][Weak] to allow shared ownership of nodes,
 although this approach pays the cost of memory management.
 - You can implement it using `unsafe` code using raw pointers. This will be
 more efficient, but bypasses Rust's safety guarantees.
 - Using vectors and indices into those vectors. There are [several](http://smallcultfollowing.com/babysteps/blog/2015/04/06/modeling-graphs-in-rust-using-vector-indices/) [available](http://featherweightmusings.blogspot.com/2015/04/graphs-in-rust.html) examples and explanations of this approach.
-- Using borrowed references with `UnsafeCell`. There are [explanations and code](https://github.com/nrc/r4cppp/blob/master/graphs/README.md#node-and-unsafecell) available for this approach.
+- Using borrowed references with [`UnsafeCell`][UnsafeCell]. There are [explanations and code](https://github.com/nrc/r4cppp/blob/master/graphs/README.md#node-and-unsafecell) available for this approach.
 
 ### How can I define a struct that contains a pointer to one of its own fields?
 
@@ -308,13 +308,13 @@ These are different terms for the same thing. In both cases, it means the value 
 
 ### Why can values of some types be used after passing them to a function, while reuse of values of other types results in an error?
 
-If a type implements the `Copy` trait, then it will be copied when passed to a function. All numeric types in Rust implement `Copy`, but struct types do not implement `Copy` by default, so they are moved instead. This means that the struct can no longer be used elsewhere, unless it is moved back out of the function via the return.
+If a type implements the [`Copy`][Copy] trait, then it will be copied when passed to a function. All numeric types in Rust implement [`Copy`][Copy], but struct types do not implement [`Copy`][Copy] by default, so they are moved instead. This means that the struct can no longer be used elsewhere, unless it is moved back out of the function via the return.
 
 ### How do you deal with a "use of moved value" error?
 
-This error means that the value you're trying to use has been moved to a new owner. The first thing to check is whether the move in question was necessary: if it moved into a function, it may be possible to rewrite the function to use a reference, rather than moving. Otherwise if the type being moved implements `Clone`, then calling `clone()` on it before moving will move a copy of it, leaving the original still available for further use. Note though that cloning a value should typically be the last resort since cloning can be expensive, causing further allocations.
+This error means that the value you're trying to use has been moved to a new owner. The first thing to check is whether the move in question was necessary: if it moved into a function, it may be possible to rewrite the function to use a reference, rather than moving. Otherwise if the type being moved implements [`Clone`][Clone], then calling `clone()` on it before moving will move a copy of it, leaving the original still available for further use. Note though that cloning a value should typically be the last resort since cloning can be expensive, causing further allocations.
 
-If the moved value is of your own custom type, consider implementing `Copy` (for implicit copying, rather than moving) or `Clone` (explicit copying). `Copy` is most commonly implemented with `#[derive(Copy, Clone)]` (`Copy` requires `Clone`), and `Clone` with `#[derive(Clone)]`.
+If the moved value is of your own custom type, consider implementing [`Copy`][Copy] (for implicit copying, rather than moving) or [`Clone`][Clone] (explicit copying). [`Copy`][Copy] is most commonly implemented with `#[derive(Copy, Clone)]` ([`Copy`][Copy] requires [`Clone`][Clone]), and [`Clone`][Clone] with `#[derive(Clone)]`.
 
 If none of these are possible, you may want to modify the function that acquired ownership to return ownership of the value when the function exits.
 
@@ -337,7 +337,7 @@ While the rules themselves are simple, following them consistently is not, parti
 
 The first step in understanding the borrow checker is reading the errors it produces. A lot of work has been put into making sure the borrow checker provides quality assistance in resolving the issues it identifies. When you encounter a borrow checker problem, the first step is to slowly and carefully read the error reported, and to only approach the code after you understand the error being described.
 
-The second step is to become familiar with the ownership and mutability-related container types provided by the Rust standard library, including `Cell`, `RefCell`, and `Cow`. These are useful and necessary tools for expressing certain ownership and mutability sutations, and have been written to be of minimal performance cost.
+The second step is to become familiar with the ownership and mutability-related container types provided by the Rust standard library, including [`Cell`][Cell], [`RefCell`][RefCell], and [`Cow`][Cow]. These are useful and necessary tools for expressing certain ownership and mutability sutations, and have been written to be of minimal performance cost.
 
 The single most important part of understanding the borrow checker is practice. Rust's strong static analyses guarantees are strict and quite different from what many programmers have worked with before. It will take some time to become completely comfortable with everything.
 
@@ -345,7 +345,7 @@ If you find yourself struggling with the borrow checker, or running out of patie
 
 ### How do deref coercions work?
 
-[Deref coercions](https://doc.rust-lang.org/book/deref-coercions.html) exist to make using Rust more ergonomic, and are implemented via the [`Deref`](https://doc.rust-lang.org/stable/std/ops/trait.Deref.html) trait.
+[Deref coercions](https://doc.rust-lang.org/book/deref-coercions.html) exist to make using Rust more ergonomic, and are implemented via the [`Deref`][Deref] trait.
 
 A Deref implementation indicates that the implementing type may be converted into a target by a call to the `deref` method, which takes an immutable reference to the calling type and returns a reference (of the same lifetime) to the target type. The `*` prefix operator is shorthand for the `deref` method.
 
@@ -369,7 +369,7 @@ The `'a` syntax comes from the ML family of programming languages, where `'a` is
 
 ### When is `Rc` useful?
 
-This is covered in the [official documentation for `Rc`](https://doc.rust-lang.org/stable/std/rc/), Rust's non-atomically reference-counted pointer type. In short, `Rc` and its thread-safe cousin `Arc` are useful to express shared ownership, and have the system automatically deallocate the associated memory when no one has access to it.
+This is covered in the official documentation for [`Rc`][Rc], Rust's non-atomically reference-counted pointer type. In short, [`Rc`][Rc] and its thread-safe cousin [`Arc`][Arc] are useful to express shared ownership, and have the system automatically deallocate the associated memory when no one has access to it.
 
 ### How do I return a borrow to something I created from a function?
 
@@ -388,7 +388,7 @@ fn create_borrowed<'a>(pool: &'a Pool,
 }
 ```
 
-An alternative is to eliminate the references entirely by returning an owning type like `String`:
+An alternative is to eliminate the references entirely by returning an owning type like [`String`][String]:
 
 ```rust
 fn happy_birthday(name: &str, age: i64) -> String {
@@ -398,7 +398,7 @@ fn happy_birthday(name: &str, age: i64) -> String {
 
 This approach is simpler, but often results in unnecessary allocations.
 
-There is also the `Cow` ("copy on write") type, which will only do the extra allocation if you attempt to mutate the contained value:
+There is also the [`Cow`][Cow] ("copy on write") type, which will only do the extra allocation if you attempt to mutate the contained value:
 
 ```rust
 use std::borrow::Cow;
@@ -416,7 +416,7 @@ fn abs_all(input: &mut Cow<[i32]>) {
 
 ### How do I return a closure from a function?
 
-To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a `Box`, so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
+To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a [`Box`][Box], so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
 
 ### When are lifetimes required to be explicit?
 
@@ -434,7 +434,7 @@ The only way to construct a value of type `&Foo` or `&mut Foo` is to specify an 
 
 ### How do I express the absence of a value without `null`?
 
-You can do that with the [`Option`](https://doc.rust-lang.org/stable/std/option/index.html) type, which can either be `Some(T)` or `None`. `Some(T)` indicates that a value of type `T` is contained within, while `None` indicates the absence of a value.
+You can do that with the [`Option`][Option] type, which can either be `Some(T)` or `None`. `Some(T)` indicates that a value of type `T` is contained within, while `None` indicates the absence of a value.
 
 <h2 id="generics">Generics</h2>
 
@@ -448,17 +448,17 @@ Functions that accept [trait objects](http://doc.rust-lang.org/book/trait-object
 
 Functions and closures are operationally equivalent, but have different runtime representations due to their differing implementations.
 
-Functions are a built-in primitive of the language, while closures are essentially syntactic sugar for one of three traits: `Fn`, `FnMut`, and `FnOnce`. When you make a closure, the Rust compiler automatically creates a struct implementing the appropriate trait of those three and containing the captured environment variables as members, and makes it so the struct can be called as a function. Bare functions can not capture an environment.
+Functions are a built-in primitive of the language, while closures are essentially syntactic sugar for one of three traits: [`Fn`][Fn], [`FnMut`][FnMut], and [`FnOnce`][FnOnce]. When you make a closure, the Rust compiler automatically creates a struct implementing the appropriate trait of those three and containing the captured environment variables as members, and makes it so the struct can be called as a function. Bare functions can not capture an environment.
 
-The big difference between these traits is how they take the `self` parameter. `Fn` takes `&self`, `FnMut` takes `&mut self`, and `FnOnce` takes `self`.
+The big difference between these traits is how they take the `self` parameter. [`Fn`][Fn] takes `&self`, [`FnMut`][FnMut] takes `&mut self`, and [`FnOnce`][FnOnce] takes `self`.
 
 Even if a closure does not capture any environment variables, it is represeted at runtime as two points, same as any other closure.
 
 ### What are higher-kinded types, why would I want them, and why doesn't Rust have them?
 
-Higher-kinded types are typed with unfilled parameters. Type constructors, like `Vec<T>`, `Result<T, E>`, and `HashMap<K, V, S>` are all examples of higher-kinded types. Support for higher-kinded types means these "incomplete" types may be used anywhere "complete" types can be used, such as trait `impl`s.
+Higher-kinded types are typed with unfilled parameters. Type constructors, like [`Vec<T>`][Vec], [`Result<T, E>`][Result], and [`HashMap<K, V, S>`][HashMap] are all examples of higher-kinded types. Support for higher-kinded types means these "incomplete" types may be used anywhere "complete" types can be used, such as trait `impl`s.
 
-Any complete type, like `i32`, `bool`, or `char` is of kind `*`. A type with one parameter, like `Vec<T>` is of kind `* -> *`, meaning that `Vec<T>` takes in a complete type like `i32` and returns a complete type `Vec<i32>`. A type which three parameters, like `HashMap<K, V, S>` is of kind `* -> * -> * -> *`, and takes in three complete types (like `i32`, `String`, and `RandomState`) to produce a new complete type `HashMap<i32, String, RandomState>`.
+Any complete type, like [`i32`][i32], [`bool`][bool], or [`char`][char] is of kind `*`. A type with one parameter, like [`Vec<T>`][Vec] is of kind `* -> *`, meaning that [`Vec<T>`][Vec] takes in a complete type like [`i32`][i32] and returns a complete type `Vec<i32>`. A type which three parameters, like [`HashMap<K, V, S>`][HashMap] is of kind `* -> * -> * -> *`, and takes in three complete types (like [`i32`][32], [`String`][String], and [`RandomState`][RandomState]) to produce a new complete type `HashMap<i32, String, RandomState>`.
 
 The lack of support for higher-kinded types makes expression of certain ideas more tedious than it would otherwise be. For example, implementing a `Functor` trait (a term for a container which can be mapped over, obeying certain rules) without higher-kinded types requires explicit and otherwise unnecessary handling of the container's type parameters. With higher-kined types, a `Functor` `impl` can ignore the parameters entirely.
 
@@ -472,7 +472,7 @@ Associated types exist because, for a generic type with some type parameters, it
 
 ### Can I overload operators? Which ones and how?
 
-You can provide custom implementations for a variety of operators using their associated traits: `Add` for `+`, `Mul` for `*`. It looks like this:
+You can provide custom implementations for a variety of operators using their associated traits: [`Add`][Add] for `+`, [`Mul`][Mul] for `*`. It looks like this:
 
 ```rust
 use std::ops::Add;
@@ -490,53 +490,36 @@ impl Add for Foo {
 
 The following operators can be overloaded:
 
-| Operation           | Trait        |
-|:--------------------|:-------------|
-| `+`                 | [`Add`]      |
-| `binary -`          | [`Sub`]      |
-| `*`                 | [`Mul`]      |
-| `/`                 | [`Div`]      |
-| `unary -`           | [`Neg`]      |
-| `%`                 | [`Rem`]      |
-| `&`                 | [`BitAnd`]   |
-| <code>&#124;</code> | [`BitOr`]    |
-| `^`                 | [`BitXor`]   |
-| `!`                 | [`Not`]      |
-| `<<`                | [`Shl`]      |
-| `>>`                | [`Shr`]      |
-| `*`                 | [`Deref`]    |
-| `mut *`             | [`DerefMut`] |
-| `[]`                | [`Index`]    |
-| `mut []`            | [`IndexMut`] |
-
-[`Add`]: https://doc.rust-lang.org/stable/std/ops/trait.Add.html
-[`Sub`]: https://doc.rust-lang.org/stable/std/ops/trait.Sub.html
-[`Mul`]: https://doc.rust-lang.org/stable/std/ops/trait.Mul.html
-[`Div`]: https://doc.rust-lang.org/stable/std/ops/trait.Div.html
-[`Neg`]: https://doc.rust-lang.org/stable/std/ops/trait.Neg.html
-[`Rem`]: https://doc.rust-lang.org/stable/std/ops/trait.Rem.html
-[`BitAnd`]: https://doc.rust-lang.org/stable/std/ops/trait.BitAnd.html
-[`BitOr`]: https://doc.rust-lang.org/stable/std/ops/trait.BitOr.html
-[`BitXor`]: https://doc.rust-lang.org/stable/std/ops/trait.BitXor.html
-[`Not`]: https://doc.rust-lang.org/stable/std/ops/trait.Not.html
-[`Shl`]: https://doc.rust-lang.org/stable/std/ops/trait.Shl.html
-[`Shr`]: https://doc.rust-lang.org/stable/std/ops/trait.Shr.html
-[`Deref`]: https://doc.rust-lang.org/stable/std/ops/trait.Deref.html
-[`DerefMut`]: https://doc.rust-lang.org/stable/std/ops/trait.DerefMut.html
-[`Index`]: https://doc.rust-lang.org/stable/std/ops/trait.Index.html
-[`IndexMut`]: https://doc.rust-lang.org/stable/std/ops/trait.IndexMut.html
+| Operation           | Trait                  |
+|:--------------------|:-----------------------|
+| `+`                 | [`Add`][Add]           |
+| `binary -`          | [`Sub`][Sub]           |
+| `*`                 | [`Mul`][Mul]           |
+| `/`                 | [`Div`][Div]           |
+| `unary -`           | [`Neg`][Neg]           |
+| `%`                 | [`Rem`][Rem]           |
+| `&`                 | [`BitAnd`][BitAnd]     |
+| <code>&#124;</code> | [`BitOr`][BitOr]       |
+| `^`                 | [`BitXor`][BitXor]     |
+| `!`                 | [`Not`][Not]           |
+| `<<`                | [`Shl`][Shl]           |
+| `>>`                | [`Shr`][Shr]           |
+| `*`                 | [`Deref`][Deref]       |
+| `mut *`             | [`DerefMut`][DerefMut] |
+| `[]`                | [`Index`][Index]       |
+| `mut []`            | [`IndexMut`][IndexMut] |
 
 ### Why the split between `Eq`/`PartialEq` and `Ord`/`PartialOrd`?
 
 There are some types in Rust whose values are only partially ordered, or have only partial equality. Partial ordering means that there may be values of the given type that are neither less than nor greater than each other. Partial equality means that there may be values of the given type that are not equal to themselves.
 
-Floating point types (`f32` and `f64`) are good examples of each. Any floating point type may have the value `NaN` (meaning "not a number"). `NaN` is not equal to itself (`NaN == Nan` is false), and not less than or greater than any other floating point value. As such, both `f32` and `f64` implement `PartialOrd` and `PartialEq` but not `Ord` and not `Eq`.
+Floating point types ([`f32`][f32] and [`f64`][f64]) are good examples of each. Any floating point type may have the value `NaN` (meaning "not a number"). `NaN` is not equal to itself (`NaN == Nan` is false), and not less than or greater than any other floating point value. As such, both [`f32`][f32] and [`f64`][f64] implement [`PartialOrd`][PartialOrd] and [`PartialEq`][PartialEq] but not [`Ord`][Ord] and not [`Eq`][Eq].
 
 <h2 id="input-output">Input / Output</h2>
 
 ### How do I read a file into a `String`?
 
-Using the `read_to_string()` method, which is defined on the `Read` trait in `std::io`.
+Using the [`read_to_string()`][read__read_to_string] method, which is defined on the [`Read`][Read] trait in [`std::io`][std-io].
 
 ```rust
 fn read_file(path: &str) -> Result<String, std::io::Error> {
@@ -556,13 +539,13 @@ fn main() {
 
 ### How do I read file input efficiently?
 
-The [`File` type](https://doc.rust-lang.org/stable/std/fs/struct.File.html) implements the `Read` trait, which has a variety of functions for reading and writing data, including `read()`, `read_to_end()`, `bytes()`, `chars()`, and `take()`. Each of these functions reads a certain amount of input from a given file. `read()` reads as much input as the underlying system will provide in a single call. `read_to_end()` reads the entire buffer into a vector, allocating as much space as is needed. `bytes()` and `chars()` allow you to iterate over the bytes and characters of the file, respectively. Finally, `take()` allows you to read up to an arbitrary number of bytes from the file. Collectively, these should allow you to efficiently read in any data you need.
+The [`File`][File] type implements the [`Read`][Read] trait, which has a variety of functions for reading and writing data, including [`read()`][read__read], [`read_to_end()`][read__read_to_end], [`bytes()`][read__bytes], [`chars()`][read__chars], and [`take()`][read__take]. Each of these functions reads a certain amount of input from a given file. [`read()`][read__read] reads as much input as the underlying system will provide in a single call. [`read_to_end()`][read__read_to_end] reads the entire buffer into a vector, allocating as much space as is needed. [`bytes()`][read__bytes] and [`chars()`][read__chars] allow you to iterate over the bytes and characters of the file, respectively. Finally, [`take()`][read__take] allows you to read up to an arbitrary number of bytes from the file. Collectively, these should allow you to efficiently read in any data you need.
 
-For buffered reads, use the [`BufReader`](http://doc.rust-lang.org/stable/std/io/struct.BufReader.html) struct, which helps to reduce the number of system calls when reading.
+For buffered reads, use the [`BufReader`][BufReader] struct, which helps to reduce the number of system calls when reading.
 
 ### How do I get command line arguments in Rust?
 
-The easiest way is to use `std::env::Args`, which provides an iterator over the input arguments.
+The easiest way is to use [`Args`][Args], which provides an iterator over the input arguments.
 
 If you're looking for something more powerful, there are a [number of options on crates.io](https://crates.io/keywords/argument).
 
@@ -576,23 +559,23 @@ Rust prefers a type-based approach to error handling, which is [covered at lengt
 
 ### What's the deal with `unwrap()` everywhere?
 
-`unwrap()` is a function that extracts the value inside an `Option` or `Result` and panics if no value is present. It is useful in the presence of truly unrecoverable errors, but is more useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point. `unwrap()` shouldn't be your default way to handle errors, but it is a useful tool to have.
+`unwrap()` is a function that extracts the value inside an [`Option`][Option] or [`Result`][Result] and panics if no value is present. It is useful in the presence of truly unrecoverable errors, but is more useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point. `unwrap()` shouldn't be your default way to handle errors, but it is a useful tool to have.
 
 ### Why do I get an error when I try to run example code that uses the `try!` macro?
 
-It's probably an issue with the function's return type. The [`try!` macro](https://doc.rust-lang.org/stable/std/macro.try!.html) either extracts the value from a `Result`, or returns early with the error `Result` is carrying. This means that `try` only works for functions that return `Result` themselves, where the `Err`-constructed type implements `From::from(err)`. In particular, this means that the `try!` macro cannot work inside the `main` function.
+It's probably an issue with the function's return type. The [`try!`][TryMacro] macro either extracts the value from a [`Result`][Result], or returns early with the error [`Result`][Result] is carrying. This means that [`try`][TryMacro] only works for functions that return [`Result`][Result] themselves, where the `Err`-constructed type implements `From::from(err)`. In particular, this means that the [`try!`][TryMacro] macro cannot work inside the `main` function.
 
 ### Is there an easier way to do error handling than having `Result`s everywhere?
 
-If you're looking for a way to avoid handling `Result`s in other people's code, there's always `unwrap()`, but it's probably not what you want. `Result` is an indicator that some computation may or may not complete successfully. Requiring you to handle these failures explicitly is one of the ways that Rust encourages robustness. If you really don't want to handle an error, use `unwrap()`, but know that doing so means that the given code will cause the entire process to panic on failure, which is usually undesirable.
+If you're looking for a way to avoid handling [`Result`s][Result] in other people's code, there's always [`unwrap()`][unwrap], but it's probably not what you want. [`Result`][Result] is an indicator that some computation may or may not complete successfully. Requiring you to handle these failures explicitly is one of the ways that Rust encourages robustness. If you really don't want to handle an error, use [`unwrap()`][unwrap], but know that doing so means that the given code will cause the entire process to panic on failure, which is usually undesirable.
 
 <h2 id="concurrency">Concurrency</h2>
 
 ### Can I use static values across threads without an `unsafe` block?
 
-Mutation is safe if it's synchronized. Mutating a static `Mutex<T>` (lazily initialized via the [lazy-static](https://crates.io/crates/lazy_static/) crate) does not require an `unsafe` block, nor does mutating a static `AtomicUsize` (which can be initialized without lazy_static).
+Mutation is safe if it's synchronized. Mutating a static [`Mutex`][Mutex] (lazily initialized via the [lazy-static](https://crates.io/crates/lazy_static/) crate) does not require an `unsafe` block, nor does mutating a static [`AtomicUsize`][AtomicUsize] (which can be initialized without lazy_static).
 
-More generally, if a type implements `Sync` and does not implement `Drop`, it [can be used in a `static`](https://doc.rust-lang.org/book/const-and-static.html#static).
+More generally, if a type implements [`Sync`][Sync] and does not implement [`Drop`][Drop], it [can be used in a `static`](https://doc.rust-lang.org/book/const-and-static.html#static).
 
 <h2 id="macros">Macros</h2>
 
@@ -608,15 +591,15 @@ Rust programs can be debugged using [gdb](http://sourceware.org/gdb/current/onli
 
 ### `rustc` said a panic occurred in standard library code. How do I locate the mistake in my code?
 
-This error is usually caused by `unwrap()`ing a `None` or `Err` in client code. Enabling backtraces by setting the environment variable `RUST_BACKTRACE=1` helps with getting more information. Compiling in debug mode (the default for `cargo build`) is also helpful. Using a debugger like the provided `rust-gdb` or `rust-lldb` is also helpful.
+This error is usually caused by [`unwrap()`ing][unwrap] a `None` or `Err` in client code. Enabling backtraces by setting the environment variable `RUST_BACKTRACE=1` helps with getting more information. Compiling in debug mode (the default for `cargo build`) is also helpful. Using a debugger like the provided `rust-gdb` or `rust-lldb` is also helpful.
 
 <h2 id="low-level">Low-Level</h2>
 
 ### How do I `memcpy` bytes?
 
-If you want to clone an existing slice safely, you can use `std::slice::clone_from_slice`. This function is currently unstable, but [should be stabilized soon](https://internals.rust-lang.org/t/stabilizing-basic-functions-on-arrays-and-slices/2868).
+If you want to clone an existing slice safely, you can use [`clone_from_slice`][clone_from_slice]. This function is currently unstable, but [should be stabilized soon](https://internals.rust-lang.org/t/stabilizing-basic-functions-on-arrays-and-slices/2868).
 
-To copy potentially overlapping bytes, use `std::ptr::copy`. To copy nonoverlapping bytes, use `std::ptr::cpy_nonoverlapping`. Both of these functions are `unsafe`, as both can be used to subvert the language's safety guarantees. Take care when using them.
+To copy potentially overlapping bytes, use [`copy`][copy]. To copy nonoverlapping bytes, use [`cpy_nonoverlapping`][copy_nonoverlapping]. Both of these functions are `unsafe`, as both can be used to subvert the language's safety guarantees. Take care when using them.
 
 ### Can Rust function reasonably without the standard library?
 
@@ -825,7 +808,7 @@ That depends. There _are_ ways of translating object-oriented concepts like [mul
 
 ### How do I handle configuration of a struct with optional parameters?
 
-The easiest way is to use the `Option` type in whatever function you're using to construct instances of the struct (usually `new()`). Another way is to use the [builder pattern](https://aturon.github.io/ownership/builders.html), where only certain functions instantiating member variables must be called before the construction of the built type.
+The easiest way is to use the [`Option`][Option] type in whatever function you're using to construct instances of the struct (usually `new()`). Another way is to use the [builder pattern](https://aturon.github.io/ownership/builders.html), where only certain functions instantiating member variables must be called before the construction of the built type.
 
 ### How do I do global variables in Rust?
 
@@ -901,7 +884,7 @@ The notions of a "move" in Rust and a "move" in C++ are quite different, owing t
 
 In C++, R-value references come from a temporary value, or are explicitly created from a named value via `std::move`. In this way, C++ enforces that no mutable references exist to the moved-out value, so that the memory may be safely invalidated. In Rust, mutable aliases are statically eliminated by the borrow checker, and so the rough equivalent of C++'s R-values are found in Rust's mutable references (`&mut`), which can only be used if no other mutable alias already exists to the given memory location.
 
-Rust "move"s are about transferring ownership, rather than eliminating mutable aliases (which are handled via the borrow checker). By default, the ownership of any function parameter is transferred into the function and out of the parameter at the call site, unless that parameter's type implements the `Copy` trait, in which case a shallow copy of the value is used to instantiate the actual parameter of the function. Rust's "move"s are often unecessary and undesirable. If the function you're writing does not require ownership of the value being passed in, that value should probably be borrowed (mutably or immutably, as necessary) rather than moved or copied.
+Rust "move"s are about transferring ownership, rather than eliminating mutable aliases (which are handled via the borrow checker). By default, the ownership of any function parameter is transferred into the function and out of the parameter at the call site, unless that parameter's type implements the [`Copy`][Copy] trait, in which case a shallow copy of the value is used to instantiate the actual parameter of the function. Rust's "move"s are often unecessary and undesirable. If the function you're writing does not require ownership of the value being passed in, that value should probably be borrowed (mutably or immutably, as necessary) rather than moved or copied.
 
 ### How can I interoperate with C++ from Rust, or with Rust from C++?
 
@@ -931,7 +914,7 @@ impl Foo {
 
 ### Does Rust have copy constructors?
 
-Not exactly. Types which implement `Copy` will do a standard C-like "shallow copy" with no extra work (similar to "plain old data" in C++). It is impossible to implement `Copy` types that require custom copy behavior. Instead, in Rust "copy constructors" are created by implementing the `Clone` trait, and explicitly calling the `clone` method. Making user-defined copy operators explicit surfaces the underlying complexity, forcing the developer to opt-in to potentially expensive operations.
+Not exactly. Types which implement [`Copy`][Copy] will do a standard C-like "shallow copy" with no extra work (similar to "plain old data" in C++). It is impossible to implement [`Copy`][Copy] types that require custom copy behavior. Instead, in Rust "copy constructors" are created by implementing the [`Clone`][Clone] trait, and explicitly calling the [`clone`][clone] method. Making user-defined copy operators explicit surfaces the underlying complexity, forcing the developer to opt-in to potentially expensive operations.
 
 ### Does Rust have move constructors?
 
@@ -1058,3 +1041,81 @@ The Apache license includes important protection against patent aggression, but 
 
 This is partly due to preference of the original developer (Graydon), and partly due to the fact that languages tend to have a wider audience and more diverse set of possible embeddings and end-uses than products such as web browsers. We'd like to appeal to as many of those potential contributors as possible.
 
+[Vec]: https://doc.rust-lang.org/stable/std/vec/struct.Vec.html
+[HashMap]: https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html
+[Into]: https://doc.rust-lang.org/stable/std/convert/trait.Into.html
+[From]: https://doc.rust-lang.org/stable/std/convert/trait.From.html
+[Eq]: https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html
+[PartialEq]: https://doc.rust-lang.org/stable/std/cmp/trait.PartialEq.html
+[Ord]: https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html
+[PartialOrd]: https://doc.rust-lang.org/stable/std/cmp/trait.PartialOrd.html
+[f32]: https://doc.rust-lang.org/stable/std/primitive.f32.html
+[f64]: https://doc.rust-lang.org/stable/std/primitive.f64.html
+[i32]: https://doc.rust-lang.org/stable/std/primitive.i32.html
+[i64]: https://doc.rust-lang.org/stable/std/primitive.i64.html
+[bool]: https://doc.rust-lang.org/stable/std/primitive.bool.html
+[Hash]: https://doc.rust-lang.org/stable/std/hash/trait.Hash.html
+[BTreeMap]: https://doc.rust-lang.org/stable/std/collections/struct.BTreeMap.html
+[VecMacro]: https://doc.rust-lang.org/stable/std/macro.vec!.html
+[String]: https://doc.rust-lang.org/stable/std/string/struct.String.html
+[to_owned]: https://doc.rust-lang.org/stable/std/borrow/trait.ToOwned.html#tymethod.to_owned
+[str]: https://doc.rust-lang.org/stable/std/primitive.str.html
+[str__find]: https://doc.rust-lang.org/stable/std/primitive.str.html#method.find
+[str__as_bytes]: https://doc.rust-lang.org/stable/std/primitive.str.html#method.as_bytes
+[u8]: https://doc.rust-lang.org/stable/std/primitive.u8.html
+[char]: https://doc.rust-lang.org/stable/std/primitive.char.html
+[Weak]: https://doc.rust-lang.org/stable/std/rc/struct.Weak.html
+[IntoIterator]: https://doc.rust-lang.org/stable/std/iter/trait.IntoIterator.html
+[Rc]: https://doc.rust-lang.org/stable/std/rc/struct.Rc.html
+[UnsafeCell]: https://doc.rust-lang.org/stable/std/cell/struct.UnsafeCell.html
+[Copy]: https://doc.rust-lang.org/stable/std/marker/trait.Copy.html
+[Clone]: https://doc.rust-lang.org/stable/std/clone/trait.Clone.html
+[Cell]: https://doc.rust-lang.org/stable/std/cell/struct.Cell.html
+[RefCell]: https://doc.rust-lang.org/stable/std/cell/struct.RefCell.html
+[Cow]: https://doc.rust-lang.org/stable/std/borrow/enum.Cow.html
+[Deref]: https://doc.rust-lang.org/stable/std/ops/trait.Deref.html
+[Arc]: https://doc.rust-lang.org/stable/std/sync/struct.Arc.html
+[Box]: https://doc.rust-lang.org/stable/std/boxed/struct.Box.html
+[Option]: https://doc.rust-lang.org/stable/std/option/enum.Option.html
+[Fn]: https://doc.rust-lang.org/stable/std/ops/trait.Fn.html
+[FnMut]: https://doc.rust-lang.org/stable/std/ops/trait.FnMut.html
+[FnOnce]: https://doc.rust-lang.org/stable/std/ops/trait.FnOnce.html
+[Result]: https://doc.rust-lang.org/stable/std/result/enum.Result.html
+[RandomState]: https://doc.rust-lang.org/stable/std/collections/hash_map/struct.RandomState.html
+[Add]: https://doc.rust-lang.org/stable/std/ops/trait.Add.html
+[Sub]: https://doc.rust-lang.org/stable/std/ops/trait.Sub.html
+[Mul]: https://doc.rust-lang.org/stable/std/ops/trait.Mul.html
+[Div]: https://doc.rust-lang.org/stable/std/ops/trait.Div.html
+[Neg]: https://doc.rust-lang.org/stable/std/ops/trait.Neg.html
+[Rem]: https://doc.rust-lang.org/stable/std/ops/trait.Rem.html
+[BitAnd]: https://doc.rust-lang.org/stable/std/ops/trait.BitAnd.html
+[BitOr]: https://doc.rust-lang.org/stable/std/ops/trait.BitOr.html
+[BitXor]: https://doc.rust-lang.org/stable/std/ops/trait.BitXor.html
+[Not]: https://doc.rust-lang.org/stable/std/ops/trait.Not.html
+[Shl]: https://doc.rust-lang.org/stable/std/ops/trait.Shl.html
+[Shr]: https://doc.rust-lang.org/stable/std/ops/trait.Shr.html
+[Deref]: https://doc.rust-lang.org/stable/std/ops/trait.Deref.html
+[DerefMut]: https://doc.rust-lang.org/stable/std/ops/trait.DerefMut.html
+[Index]: https://doc.rust-lang.org/stable/std/ops/trait.Index.html
+[IndexMut]: https://doc.rust-lang.org/stable/std/ops/trait.IndexMut.html
+[read__read_to_string]: https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.read_to_string
+[Read]: https://doc.rust-lang.org/stable/std/io/trait.Read.html
+[std-io]: https://doc.rust-lang.org/stable/std/io/index.html
+[File]: https://doc.rust-lang.org/stable/std/fs/struct.File.html
+[read__read]: https://doc.rust-lang.org/stable/std/io/trait.Read.html#tymethod.read
+[read__read_to_end]: https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.read_to_end
+[read__bytes]: https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.bytes
+[read__chars]: https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.chars
+[read__take]: https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.take
+[BufReader]: https://doc.rust-lang.org/stable/std/io/struct.BufReader.html
+[Args]: https://doc.rust-lang.org/stable/std/env/struct.Args.html
+[TryMacro]: https://doc.rust-lang.org/stable/std/macro.try!.html
+[unwrap]: https://doc.rust-lang.org/stable/core/option/enum.Option.html#method.unwrap
+[Mutex]: https://doc.rust-lang.org/stable/std/sync/struct.Mutex.html
+[AtomicUsize]: https://doc.rust-lang.org/stable/std/sync/atomic/struct.AtomicUsize.html
+[Sync]: https://doc.rust-lang.org/stable/std/marker/trait.Sync.html
+[Drop]: https://doc.rust-lang.org/stable/std/ops/trait.Drop.html
+[clone_from_slice]: https://doc.rust-lang.org/stable/std/primitive.slice.html#method.clone_from_slice
+[copy]: https://doc.rust-lang.org/stable/std/ptr/fn.copy.html
+[copy_nonoverlapping]: https://doc.rust-lang.org/stable/std/ptr/fn.copy_nonoverlapping.html
+[clone]: https://doc.rust-lang.org/stable/std/clone/trait.Clone.html#tymethod.clone
