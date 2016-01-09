@@ -590,7 +590,7 @@ If you're looking for a way to avoid handling `Result`s in other people's code, 
 
 ### Can I use static values across threads without an `unsafe` block?
 
-Mutation is safe if it's synchronized. Mutating a static `Mutex<T>` (lazily initialized via the [lazy_static](https://crates.io/crates/lazy_static/) crate) does not require an `unsafe` block, nor does mutating a static `AtomicUsize` (which can be initialized without lazy_static).
+Mutation is safe if it's synchronized. Mutating a static `Mutex<T>` (lazily initialized via the [lazy-static](https://crates.io/crates/lazy_static/) crate) does not require an `unsafe` block, nor does mutating a static `AtomicUsize` (which can be initialized without lazy_static).
 
 More generally, if a type implements `Sync` and does not implement `Drop`, it [can be used in a `static`](https://doc.rust-lang.org/book/const-and-static.html#static).
 
@@ -839,7 +839,7 @@ To define procedural constants that can't be defined via these mechanisms, use t
 
 ### Can I run initialization code that happens before main?
 
-Rust has no concept of "life before `main`". The closest you'll see can be done through the [`lazy_static`](https://github.com/Kimundi/lazy-static.rs) crate, which simulates a "before main" by lazily initializing static variables at their first usage.
+Rust has no concept of "life before `main`". The closest you'll see can be done through the [`lazy-static`](https://github.com/Kimundi/lazy-static.rs) crate, which simulates a "before main" by lazily initializing static variables at their first usage.
 
 ### Why doesn't Rust have inheritance?
 
@@ -857,7 +857,7 @@ No. Globals cannot have a non-constant-expression constructor and cannot have a 
 
 See the [C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) about the "static initialization order fiasco", and [Eric Lippert's blog](http://ericlippert.com/2013/02/06/static-constructors-part-one/) for the challenges in C#, which also has this feature.
 
-You can approximate non-constant-expression globals with the [lazy_static](https://crates.io/crates/lazy_static/) crate.
+You can approximate non-constant-expression globals with the [lazy-static](https://crates.io/crates/lazy_static/) crate.
 
 <h2 id="other-languages">Other Languages</h2>
 
