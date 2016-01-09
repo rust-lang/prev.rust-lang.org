@@ -160,15 +160,23 @@ If you are interested in the greatest degree of precision with your floating poi
 
 If in doubt, choose `f64` for the greater precision.
 
-### Why can't I use `f32` or `f64` as `HashMap` keys?
-
-In order to be used as a key in a [`HashMap`](https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html), a type must implement the [`Eq`](https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html) and [`Hash`](https://doc.rust-lang.org/stable/std/hash/trait.Hash.html) traits. [`f32`](https://doc.rust-lang.org/stable/std/primitive.f32.html) and [`f64`](https://doc.rust-lang.org/stable/std/primitive.f64.html) implement [`PartialEq`](https://doc.rust-lang.org/stable/std/cmp/trait.PartialEq.html), but not `Eq`, because one of the potential values for floating-point types is `NaN` (or "not a number"). `NaN` values are [not equal to any float, and are not equal to each other](https://en.wikipedia.org/wiki/NaN). This means that `f32` and `f64` can't be used as keys in a HashMap.
-
 ### Why can't I compare floats?
 
-Floats can be compared in some circumstances, but not others. Floats do implement the [`PartialOrd`](https://doc.rust-lang.org/stable/std/cmp/trait.PartialOrd.html) trait, which means that `>`, `<`, `<=`, and `>=` are defined for them. But they do _not_ implement the [`Ord`](https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html) trait, because (thanks to `NaN`) [there is no total ordering for floating point numbers](https://en.wikipedia.org/wiki/IEEE_floating_point#Total-ordering_predicate). The practical effect of this is that data structures that require a total ordering, such as [`BTreeMap`](http://doc.rust-lang.org/std/collections/struct.BTreeMap.html) do not work with floating point numbers.
+Floats can be compared with the `==`, `!=`, `<`, `<=`, `>`, and `>=` operators, and with the `partial_cmp()` function. `==` and `!=` are part of the `PartialEq` trait, while `<`, `<=`, `>`, `>=`, and `partial_cmp()` are part of the `PartialOrd` trait.
 
-There [is a crate](https://crates.io/crates/ordered-float) that provides a total ordering on floats by wrapping them, which may be desirable depending on your use-case. You can still do all of the normal comparison operations you would expect, but you can't use the `cmp` function.
+Floats cannot be compared with the `cmp()` function, which is part of the `Ord` trait, as there is no total ordering for floats. Furthermore, there is no total equality relation for floats, and so they also do not implement the `Eq` trait.
+
+There is no total ordering or equality on floats because the floating-point value `NaN` is not less than, greater than, or equal to any other floating-point value or itself.
+
+Because floats do not implement `Eq` or `Ord`, they may not be used in types whose trait bounds require those traits, such as `BTreeMap`.
+
+There [is a crate](https://crates.io/crates/ordered-float) that wraps `f32` and `f64` to provide `Ord` and `Eq` implementations, which may be useful in certain cases.
+
+### Why can't I use `f32` or `f64` as `HashMap` keys?
+
+In order to be used as a key in a [`HashMap`](https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html), a type must implement the [`Eq`](https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html) and [`Hash`](https://doc.rust-lang.org/stable/std/hash/trait.Hash.html) traits. `Eq` is required because keys have to be capable of being tested for equality, otherwise indexing on keys wouldn't work. `Hash` is required so that the type may be hashed by `HashMap`'s hashing algorithm.
+
+[`f32`](https://doc.rust-lang.org/stable/std/primitive.f32.html) and [`f64`](https://doc.rust-lang.org/stable/std/primitive.f64.html) implement [`PartialEq`](https://doc.rust-lang.org/stable/std/cmp/trait.PartialEq.html), but not `Eq` This is because one of the potential values for floating-point types is `NaN` (or "not a number"). Per the IEEE floating-point specification, `NaN` values are [not equal to any other floating-point value, and not equal to each other](https://en.wikipedia.org/wiki/NaN). This means there is no total equality relation for floating-point types, and thus that `f32` and `f64` can't implement `Eq` and can't used as keys in a `HashMap`.
 
 ### How can I convert between numeric types?
 
