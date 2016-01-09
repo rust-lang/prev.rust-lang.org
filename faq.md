@@ -418,15 +418,15 @@ fn abs_all(input: &mut Cow<[i32]>) {
 
 To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a `Box`, so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
 
-### When are lifetimes required to be defined?
+### When are lifetimes required to be explicit?
 
-Lifetimes can often be elided, as explained in the ["Lifetime elision" section](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision) of the Rust book. "Elided lifetimes" are those lifetimes which are implicit in any code containing references. They are automatically inserted by the compiler with the three following rules:
+Lifetimes must be explicit when the rules for automatic lifetime inference result in compilation errors. The Rust compiler tries its best to automatically infer correct lifetimes (called ["elided lifetimes"](https://doc.rust-lang.org/stable/book/lifetimes.html#lifetime-elision)) based on the following rules:
 
 - Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
 - If there is exactly one input lifetime, elided or not, that lifetime is assigned to all elided lifetimes in the return values of that function.
 - If there are multiple input lifetimes, but one of them is `&self` or `&mut` self, the lifetime of self is assigned to all elided output lifetimes.
 
-If these rules would result in incorrect code elsewhere, then the Rust compiler will provide errors, and you will need to define the relevant lifetimes to correct that error.
+If these rules result in compilation errors, the Rust compiler will provide an error message indicating the error caused, and suggesting a potential solution based on which step of the inference process caused the error.
 
 ### How can Rust guarantee "no null pointers"?
 
