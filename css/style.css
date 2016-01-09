@@ -383,3 +383,108 @@ ul.laundry-list {
 	text-align: right;
 	margin: 5px 10px 0 0;
 }
+
+.faq {
+    border-top: 1px solid #dedede;
+    margin-top: 2em;
+    margin-bottom: 8em;
+    padding-top: 4em;
+}
+
+    .faq p,
+    .faq ul,
+    .faq ol,
+    .faq blockquote,
+    .faq pre {
+        margin: 0 0 1rem;
+        font-family: "Source Serif Pro";
+    }
+
+        @media screen and (min-width: 820px) {
+            .faq {
+                padding-right: 6em;
+            }
+
+            .faq p,
+            .faq ul,
+            .faq ol,
+            .faq blockquote,
+            .faq pre,
+            .faq h1,
+            #toc {
+                margin-left: 8rem;
+            }
+        }
+
+    .faq blockquote {
+        border-left: .25em solid #dedede;
+        padding-left: 2rem;
+    }
+
+        .faq blockquote p {
+            margin: 0;
+        }
+
+    .faq h1 {
+        font-size: 2.5em;
+        line-height: 1.5em;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-weight: 400;
+        position: relative;
+    }
+
+    .faq h2 {
+        font-size: 2em;
+        line-height: 1.5em;
+        margin: 3rem 0 1rem;
+        font-weight: 400;
+        border-top: 4px solid #dedede;
+        padding-top: 1rem;
+    }
+
+    .faq h3 {
+        font-size: 1em;
+        line-height: 1.5em;
+        font-weight: 500;
+        margin: 2rem 0 .25rem;
+    }
+
+    .faq pre {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .faq code {
+        display: inline-block;
+        padding: .1em .2em 0;
+        font-size: 0.95em;
+        line-height: 1em;
+        background-color: #f7f7f7;
+        border-radius: 2px;
+        font-weight: 400;
+        font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    }
+
+    .faq pre code {
+        font-size: 1em;
+        line-height: 1.5em;
+    }
+
+    #toc h2 {
+        border: 0;
+        font-size: 2rem;
+        line-height: 1.5em;
+    }
+
+    #toc ol {
+        margin: 0 0 0 2rem;
+        padding: 0;
+        -webkit-columns: 150px 3;
+           -moz-columns: 150px 3;
+                columns: 150px 3;
+    }
+
+    .faq table {
+	margin-left: 8rem;
+    }
