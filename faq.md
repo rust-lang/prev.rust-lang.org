@@ -341,7 +341,7 @@ The second step is to become familiar with the ownership and mutability-related 
 
 The single most important part of understanding the borrow checker is practice. Rust's strong static analyses guarantees are strict and quite different from what many programmers have worked with before. It will take some time to become completely comfortable with everything.
 
-If you find yourself struggling with the borrow checker, or running out of patience, always feel free to reach out to the [Rust community](https://www.rust-lang.org/community.html) for help.
+If you find yourself struggling with the borrow checker, or running out of patience, always feel free to reach out to the [Rust community](community.html) for help.
 
 ### How do deref coercions work?
 
@@ -458,7 +458,7 @@ Even if a closure does not capture any environment variables, it is represeted a
 
 Higher-kinded types are typed with unfilled parameters. Type constructors, like [`Vec<T>`][Vec], [`Result<T, E>`][Result], and [`HashMap<K, V, S>`][HashMap] are all examples of higher-kinded types. Support for higher-kinded types means these "incomplete" types may be used anywhere "complete" types can be used, such as trait `impl`s.
 
-Any complete type, like [`i32`][i32], [`bool`][bool], or [`char`][char] is of kind `*`. A type with one parameter, like [`Vec<T>`][Vec] is of kind `* -> *`, meaning that [`Vec<T>`][Vec] takes in a complete type like [`i32`][i32] and returns a complete type `Vec<i32>`. A type which three parameters, like [`HashMap<K, V, S>`][HashMap] is of kind `* -> * -> * -> *`, and takes in three complete types (like [`i32`][32], [`String`][String], and [`RandomState`][RandomState]) to produce a new complete type `HashMap<i32, String, RandomState>`.
+Any complete type, like [`i32`][i32], [`bool`][bool], or [`char`][char] is of kind `*`. A type with one parameter, like [`Vec<T>`][Vec] is of kind `* -> *`, meaning that [`Vec<T>`][Vec] takes in a complete type like [`i32`][i32] and returns a complete type `Vec<i32>`. A type which three parameters, like [`HashMap<K, V, S>`][HashMap] is of kind `* -> * -> * -> *`, and takes in three complete types (like [`i32`][i32], [`String`][String], and [`RandomState`][RandomState]) to produce a new complete type `HashMap<i32, String, RandomState>`.
 
 The lack of support for higher-kinded types makes expression of certain ideas more tedious than it would otherwise be. For example, implementing a `Functor` trait (a term for a container which can be mapped over, obeying certain rules) without higher-kinded types requires explicit and otherwise unnecessary handling of the container's type parameters. With higher-kined types, a `Functor` `impl` can ignore the parameters entirely.
 
