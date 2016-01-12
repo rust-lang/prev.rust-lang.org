@@ -474,6 +474,10 @@ ul.laundry-list {
     line-height: 1.5em;
 }
 
+.faq a > h3 {
+    color: black;
+}
+
 #toc h2 {
     border: 0;
     font-size: 2rem;
