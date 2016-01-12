@@ -1,0 +1,10 @@
+p.clear {
+    clear: both;
+}
+div.contents {
+    margin: 20px;
+    padding: 20px;
+    float: right;
+    border: 1px black solid;
+    border-radius: 20px;
+}
