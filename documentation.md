@@ -46,6 +46,10 @@ standard library.
 specification, the reference tries to describe its working in
 detail. It tends to be out of date.
 
+[**Syntax Index**][syn]. This appendix from The Book contains examples
+of all syntax in Rust cross-referenced with the section of The Book
+that describes it.
+
 [**The Cargo Guide**][cargo]. The documentation for Cargo,
 Rust's package manager.
 
@@ -53,6 +57,7 @@ Rust's package manager.
 the errors produced by the Rust compiler.
 
 [api]: https://doc.rust-lang.org/std/
+[syn]: https://doc.rust-lang.org/book/syntax-index.html
 [ref]: https://doc.rust-lang.org/reference.html
 [cargo]: http://doc.crates.io/guide.html
 [err]: https://doc.rust-lang.org/error-index.html
