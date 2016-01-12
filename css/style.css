@@ -60,10 +60,15 @@ ul.menu li {
 	margin-top: 0em;
 	margin-bottom: 0em;
 }
+ul.menu li.menu {
+	margin-top: 3em;
+}
 ul.menu h2 {
-	font-size: 15.4px;
+	font-size: 20px;
 	font-weight: 500;
-	margin: .8em 0;
+	margin: 1em;
+	display: inline;
+	line-height: 1.5em;
 }
 ul.menu li>ul {
 	margin-top: .5em;
