@@ -208,26 +208,18 @@ If you are interested in the greatest degree of precision with your floating poi
 If in doubt, choose [`f64`][f64] for the greater precision.
 
 <a href="#why-cant-i-compare-floats" name="why-cant-i-compare-floats">
-### Why can't I compare floats?
+### Why can't I compare floats or use them as `HashMap` or `BTreeMap` keys?
 </a>
 
 Floats can be compared with the `==`, `!=`, `<`, `<=`, `>`, and `>=` operators, and with the `partial_cmp()` function. `==` and `!=` are part of the [`PartialEq`][PartialEq] trait, while `<`, `<=`, `>`, `>=`, and `partial_cmp()` are part of the [`PartialOrd`][PartialOrd] trait.
 
 Floats cannot be compared with the `cmp()` function, which is part of the [`Ord`][Ord] trait, as there is no total ordering for floats. Furthermore, there is no total equality relation for floats, and so they also do not implement the [`Eq`][Eq] trait.
 
-There is no total ordering or equality on floats because the floating-point value `NaN` is not less than, greater than, or equal to any other floating-point value or itself.
+There is no total ordering or equality on floats because the floating-point value [`NaN`](https://en.wikipedia.org/wiki/NaN) is not less than, greater than, or equal to any other floating-point value or itself.
 
-Because floats do not implement [`Eq`][Eq] or [`Ord`][Ord], they may not be used in types whose trait bounds require those traits, such as [`BTreeMap`][BTreeMap].
+Because floats do not implement [`Eq`][Eq] or [`Ord`][Ord], they may not be used in types whose trait bounds require those traits, such as [`BTreeMap`][BTreeMap] or [`HashMap`][HashMap]. This is important because these types *assume* their keys provide a total ordering or total equality relation, and will malfunction otherwise.
 
 There [is a crate](https://crates.io/crates/ordered-float) that wraps [`f32`][f32] and [`f64`][f64] to provide [`Ord`][Ord] and [`Eq`][Eq] implementations, which may be useful in certain cases.
-
-<a href="#why-cant-i-use-floats-as-hashmap-keys" name="why-cant-i-use-floats-as-hashmap-keys">
-### Why can't I use `f32` or `f64` as `HashMap` keys?
-</a>
-
-In order to be used as a key in a [`HashMap`][HashMap], a type must implement the [`Eq`][Eq] and [`Hash`][Hash] traits. [`Eq`][Eq] is required because keys have to be capable of being tested for equality, otherwise indexing on keys wouldn't work. [`Hash`][Hash] is required so that the type may be hashed by [`HashMap`'s][HashMap] hashing algorithm.
-
-[`f32`][f32] and [`f64`][f64] implement [`PartialEq`][PartialEq], but not [`Eq`][Eq] This is because one of the potential values for floating-point types is `NaN` (or "not a number"). Per the IEEE floating-point specification, `NaN` values are [not equal to any other floating-point value, and not equal to each other](https://en.wikipedia.org/wiki/NaN). This means there is no total equality relation for floating-point types, and thus that [`f32`][f32] and [`f64`][f64] can't implement [`Eq`][Eq] and can't used as keys in a [`HashMap`][HashMap].
 
 <a href="#how-can-i-convert-between-numeric-types" name="how-can-i-convert-between-numeric-types">
 ### How can I convert between numeric types?
