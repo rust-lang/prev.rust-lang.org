@@ -879,7 +879,7 @@ pub fn f() {
 
 In the first example, the module is defined in the same file it's used. In the second example, the module declaration in the main file tells the compiler to look for either `hello.rs` or `hello/mod.rs`, and to load that file.
 
-A `use`ing declaration just tells the compiler to bring everything from a particular module into the current module. Without a `mod` declaration first, the compiler doesn't know if the `use`d module exists, and so can't import its contents into the current module.
+A `use` declaration just tells the compiler to bring *existing* names (reachable through some path) into scope. A `mod` declaration tells the compiler to *define* a module, and also brings that module's name into scope the same as `use` would.
 
 <a href="#how-do-i-configure-cargo-to-use-a-proxy" name="how-do-i-configure-cargo-to-use-a-proxy">
 ### How do I configure Cargo to use a proxy?
@@ -897,7 +897,7 @@ For methods defined on a trait, you have to explicitly import the trait declarat
 ### Why can't the compiler infer `use` declarations for me?
 </a>
 
-It probably could, but you also don't want it to. While in many cases it is likely that the compiler could determine the correct module to import by simply looking for where a given identifier is defined, this may not be the case in general. Any decision rule in `rustc` for choosing between competing options would likely cause surprise and confusion, and not solve much of a problem.
+It probably could, but you also don't want it to. While in many cases it is likely that the compiler could determine the correct module to import by simply looking for where a given identifier is defined, this may not be the case in general. Any decision rule in `rustc` for choosing between competing options would likely cause surprise and confusion in some cases, and Rust prefers to be explicit about where names are coming from.
 
 For example, the compiler could say that in the case of competing identifier definitions the definition from the earliest imported module is chosen. So if both module `foo` and module `bar` define the identifier `baz`, but `foo` is the first registered module, the compiler would insert `use foo::baz;`.
 
@@ -913,6 +913,8 @@ fn main() {
 ```
 
 If you know this is going to happen, perhaps it saves a small number of keystrokes, but it also greatly increases the possibility for surprising error messages when you actually meant for `baz()` to be `bar::baz()`, and it decreases the readability of the code by making the meaning of a function call dependent on module declaration. These are not tradeoffs we are willing to make.
+
+However, in the future, an IDE could help manage declarations, which gives you the best of both worlds: machine assistance for pulling in names, but explicit declarations about where those names are coming from.
 
 <!--
 ### How do I package and archive crates from [http://crates.io](http://crates.io)?
