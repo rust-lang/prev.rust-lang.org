@@ -1022,6 +1022,10 @@ To define procedural constants that can't be defined via these mechanisms, use t
 
 Rust has no concept of "life before `main`". The closest you'll see can be done through the [`lazy-static`](https://github.com/Kimundi/lazy-static.rs) crate, which simulates a "before main" by lazily initializing static variables at their first usage.
 
+<!--
+
+This answer needs significant work. Let's revise after the initial posting. --aturon
+
 <a href="#why-doesnt-rust-have-inheritance" name="why-doesnt-rust-have-inheritance">
 ### Why doesn't Rust have inheritance?
 </a>
@@ -1033,6 +1037,8 @@ For the first, subtyping exists for polymorphism, which traits already provide.
 For the second, interface sharing is handled via trait methods, which define a collection of related functions that must be implemented for any implementation of the trait.
 
 Rust has consistently worked to avoid having features with overlapping purposes, preferring to keep features orthogonal. For this reason, and given that the two major purposes are already handled by traits, Rust has opted not to include inheritance.
+
+-->
 
 <a href="#does-rust-allow-non-constant-expression-values-for-globals" name="does-rust-allow-non-constant-expression-values-for-globals">
 ### Does Rust allow non-constant-expression values for globals?
