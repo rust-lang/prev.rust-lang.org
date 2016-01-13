@@ -138,7 +138,7 @@ Whereas C requires mandatory parentheses for `if`-statement conditionals but lea
 ### Why is there no literal syntax for dictionaries?
 </a>
 
-The reason Rust does not have syntax for initializing dictionaries &mdash; or collections in general &mdash; is due to Rust's overall design preference for limiting the size of the *language* while enabling powerful *libraries*. The only type of collection that Rust has direct syntax for initializing is the array type, which is also the only type of collection built into the language. Note that Rust does not even have syntax for initializing the common [`Vec`][Vec] collection type, instead the standard library defines the [`vec!`][VecMacro] macro.
+Rust's overall design preference is for limiting the size of the *language* while enabling powerful *libraries*. While Rust does provide initialization syntax for arrays and string literals, these are the only collection types built into the language. Other library-defined types, including the ubiquitous [`Vec`][Vec] collection type, use macros for initialization like the [`vec!`][VecMacro] macro.
 
 This design choice of using Rust's macro facilities to initialize collections will likely be extended generically to other collections in the future, enabling simple initialization of not only [`HashMap`][HashMap] and [`Vec`][Vec], but also other collection types such as [`BTreeMap`][BTreeMap]. In the meantime, if you want a more convenient syntax for initializing collections, you can [create your own macro](http://stackoverflow.com/questions/27582739/how-do-i-create-a-hashmap-literal) to provide it.
 
@@ -146,7 +146,7 @@ This design choice of using Rust's macro facilities to initialize collections wi
 ### When should I use an implicit return?
 </a>
 
-Rust is a very expression-oriented language, and implicit returns are part of that design. `if`s, `match`es, and normal blocks are all expressions in Rust. For example, the following code checks if an [`i64`][i64] is odd, returning the result with an implicit return:
+Rust is a very expression-oriented language, and "implicit returns" are part of that design. Constructs like `if`s, `match`es, and normal blocks are all expressions in Rust. For example, the following code checks if an [`i64`][i64] is odd, returning the result by simply yielding it as a value:
 
 ```rust
 fn is_odd(x: i64) -> bool {
@@ -162,7 +162,7 @@ fn is_odd(x: i64) -> bool {
 }
 ```
 
-In each example, the last line of the function is the return value of that function. It is important to note that if a function ends in a semicolon, its return type will be `()`, indicating no returned value. Implicit returns must omit the semicolon to work.
+In each example, the last line of the function is the return value of that function. It is important to note that if a block ends in a semicolon, its return type will be `()`, indicating no returned value. Implicit returns must omit the semicolon to work.
 
 Explicit returns are only used if an implicit return is impossible because you are returning before the end of the function's body. While each of the above functions could have been written with a `return` keyword and semicolon, doing so would be unnecessarily verbose, and inconsistent with the conventions of Rust code.
 
@@ -170,15 +170,21 @@ Explicit returns are only used if an implicit return is impossible because you a
 ### Why aren't function signatures inferred?
 </a>
 
-- Mandatory function signatures help enforce interface stability at both the module and crate level.
-- It improves code comprehension for the programmer, eliminating the need for an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
+In Rust, declarations tend to come with explicit types, while actual code has its types inferred. There are several reasons for this design:
+
+- Mandatory declaration signatures help enforce interface stability at both the module and crate level.
+- Signatures improve code comprehension for the programmer, eliminating the need for an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 - Mechanically, it simplifies the inference algorithm, as inference only requires looking at one function at a time.
 
 <a href="#why-does-match-have-to-be-exhaustive" name="why-does-match-have-to-be-exhaustive">
 ### Why does `match` have to be exhaustive?
 </a>
 
-`match` being exhaustive has some useful properties. First, if every possibility is covered by the `match`, adding variants to the `enum` in the future will cause a compilation failure, rather than an error at runtime. Second, it makes the semantics of the default case explicit: in general, the only safe way to have a non-exhaustive `match` would be to panic the thread if nothing is matched. Early versions of Rust did not require `match` cases to be exhaustive and it was found to be a great source of bugs.
+To aid in refactoring and clarity.
+
+First, if every possibility is covered by the `match`, adding variants to the `enum` in the future will cause a compilation failure, rather than an error at runtime. This compiler assistance makes fearless refactoring possible in Rust.
+
+Second, exhaustive checking makes the semantics of the default case explicit: in general, the only safe way to have a non-exhaustive `match` would be to panic the thread if nothing is matched. Early versions of Rust did not require `match` cases to be exhaustive and it was found to be a great source of bugs.
 
 It is easy to ignore all unspecified cases by using the `_` wildcard:
 
