@@ -703,7 +703,7 @@ It's probably an issue with the function's return type. The [`try!`][TryMacro] m
 
 If you're looking for a way to avoid handling [`Result`s][Result] in other people's code, there's always [`unwrap()`][unwrap], but it's probably not what you want. [`Result`][Result] is an indicator that some computation may or may not complete successfully. Requiring you to handle these failures explicitly is one of the ways that Rust encourages robustness. Rust provides tools like the [`try!` macro][TryMacro] to make handling failures ergonomic.
 
-If you really don't want to handle an error, use [`unwrap()`][unwrap], but know that doing so means that the given code will cause the entire process to panic on failure, which is usually undesirable.
+If you really don't want to handle an error, use [`unwrap()`][unwrap], but know that doing so means that the code panic on failure, which usually results in a shutting down the process.
 
 <h2 id="concurrency">Concurrency</h2>
 
@@ -879,7 +879,7 @@ pub fn f() {
 
 In the first example, the module is defined in the same file it's used. In the second example, the module declaration in the main file tells the compiler to look for either `hello.rs` or `hello/mod.rs`, and to load that file.
 
-A `use` declaration just tells the compiler to bring *existing* names (reachable through some path) into scope. A `mod` declaration tells the compiler to *define* a module, and also brings that module's name into scope the same as `use` would.
+A `use` declaration just tells the compiler to bring *existing* names (reachable through some path) into scope. A `mod` declaration tells the compiler to *define* a module, and like all other declaration forms, also brings the name of the module into scope.
 
 <a href="#how-do-i-configure-cargo-to-use-a-proxy" name="how-do-i-configure-cargo-to-use-a-proxy">
 ### How do I configure Cargo to use a proxy?
