@@ -854,7 +854,7 @@ In Swift, `?` is used to indicate an optional value. This is already done by `Op
 
 Rust and Go have substantially different design goals. The following differences are not the only ones (which are too numerous to list), but are a few of the more important ones:
 
-- Rust is lower level than Go, comparable with C and C++. It provides access to memory management primitives that do not exist in Go (which has a garbage collector).
+- Rust is lower level than Go. For example, Rust does not require a garbage collector, whereas Go does. In general, Rust affords a level of control that is comparable to C or C++.
 - Rust's focus is on ensuring safety and efficiency while also providing high-level affordances, while Go's is on being a small, simple language which compiles quickly and can work nicely with a variety of tools.
 - Rust has strong support for generics, which Go does not.
 - Rust has strong influences from the world of functional programming, including a type system which draws from Haskell's typeclasses. Go has a simpler type system, using interfaces for basic generic programming.
