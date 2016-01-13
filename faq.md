@@ -459,7 +459,7 @@ Lifetimes are Rust's answer to the question of memory safety. They allow Rust to
 ### Why is the lifetime syntax the way it is?
 </a>
 
-The `'a` syntax comes from the ML family of programming languages, where `'a` is used to indicate a generic type parameter. For Rust, the syntax had to be something that was unambiguous, noticeable, and fit nicely in a type declaration right alonside traits and references. Alternative syntaxes have been discussed, but no alternative syntax has been demonstrated to be clearly better.
+The `'a` syntax comes from the ML family of programming languages, where `'a` is used to indicate a generic type parameter. For Rust, the syntax had to be something that was unambiguous, noticeable, and fit nicely in a type declaration right alongside traits and references. Alternative syntaxes have been discussed, but no alternative syntax has been demonstrated to be clearly better.
 
 <a href="#how-do-i-return-a-borrow-to-something-i-created-from-a-function" name="how-do-i-return-a-borrow-to-something-i-created-from-a-function">
 ### How do I return a borrow to something I created from a function?
@@ -510,19 +510,20 @@ fn abs_all(input: &mut Cow<[i32]>) {
 ### When are lifetimes required to be explicit?
 </a>
 
-Lifetimes must be explicit when the rules for automatic lifetime inference result in compilation errors. The Rust compiler tries its best to automatically infer correct lifetimes (called ["elided lifetimes"](https://doc.rust-lang.org/stable/book/lifetimes.html#lifetime-elision)) based on the following rules:
+Rust has a shorthand for leaving off lifetimes that covers the vast majority of cases in practice.
+This shorthand is called [lifetime elision](https://doc.rust-lang.org/stable/book/lifetimes.html#lifetime-elision), and encompasses three rules:
 
 - Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
 - If there is exactly one input lifetime, elided or not, that lifetime is assigned to all elided lifetimes in the return values of that function.
-- If there are multiple input lifetimes, but one of them is `&self` or `&mut` self, the lifetime of self is assigned to all elided output lifetimes.
+- If there are multiple input lifetimes, but one of them is `&self` or `&mut self`, the lifetime of `self` is assigned to all elided output lifetimes.
 
 If these rules result in compilation errors, the Rust compiler will provide an error message indicating the error caused, and suggesting a potential solution based on which step of the inference process caused the error.
 
 <a href="#how-can-rust-guarantee-no-null-pointers" name="how-can-rust-guarantee-no-null-pointers">
-### How can Rust guarantee "no null pointers"?
+### How can Rust guarantee "no null pointers" and "no dangling pointers"?
 </a>
 
-The only way to construct a value of type `&Foo` or `&mut Foo` is to specify an existing value of type `Foo` that the reference points to. In this way Rust makes sure no null references are introduced.
+The only way to construct a value of type `&Foo` or `&mut Foo` is to specify an existing value of type `Foo` that the reference points to. The reference "borrows" the original value for a given region of code (the lifetime of the reference), and the value being borrowed from cannot be moved or destroyed for the duration of the borrow.
 
 <a href="#how-do-i-express-the-absense-of-a-value-without-null" name="how-do-i-express-the-absense-of-a-value-without-null">
 ### How do I express the absence of a value without `null`?
