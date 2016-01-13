@@ -700,7 +700,7 @@ Over time more and more answers will be offered for the current version, thus im
 
 ### How can I make an HTTP request?
 
-[Hyper](https://github.com/hyperium/hyper) is the most popular, but there are [a number of others as well](https://crates.io/keywords/http).
+The standard library does not include an implementation of HTTP, so you will want to use an external crate. [Hyper](https://github.com/hyperium/hyper) is the most popular, but there are [a number of others as well](https://crates.io/keywords/http).
 
 ### How can I write a GUI application in Rust?
 
