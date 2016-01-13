@@ -319,11 +319,13 @@ Rust `for` loops call `into_iter()` (defined on the [`IntoIterator`][IntoIterato
 
 If a moving/consuming iterator is desired, write the `for` loop without `&` or `&mut` in the iteration.
 
+If you need direct access to a borrowing iterator, you can usually get it by calling the `iter()` method.
+
 <a href="#why-do-i-need-to-type-the-array-size-in-the-array-declaration" name="why-do-i-need-to-type-the-array-size-in-the-array-declaration">
 ### Why do I need to type the array size in the array declaration?
 </a>
 
-You don't necessarily have to. If you're declaring an array directly, the size is inferred based on the number of elements. But if you're declaring a function that takes an array, the compiler has to know how big that array will be.
+You don't necessarily have to. If you're declaring an array directly, the size is inferred based on the number of elements. But if you're declaring a function that takes a fixed-size array, the compiler has to know how big that array will be.
 
 One thing to note is that currently Rust doesn't offer generics over arrays of different size. If you'd like to accept a contiguous container of a variable number of values, use a [`Vec`][Vec] or slice (depending on whether you need ownership).
 
