@@ -944,14 +944,6 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 >
 > Because namespaces are strictly more complicated in a number of ways,and because they can be added compatibly in the future should they become necessary, we're going to stick with a single shared namespace.
 
-<a href="#why-are-so-many-rust-answers-on-stackoverflow-wrong" name="why-are-so-many-rust-answers-on-stackoverflow-wrong">
-### Why are so many Rust answers on StackOverflow wrong?
-</a>
-
-The Rust language has been around for a number of years, and only reached version 1.0 in May of 2015. In the time before then the language changed significantly, and a number of StackOverflow answers were given at the time of older versions of the language.
-
-Over time more and more answers will be offered for the current version, thus improving this issue as the proportion of out-of-date answers is reduced.
-
 <h2 id="libraries">Libraries</h2>
 
 <a href="#how-can-i-make-an-http-request" name="how-can-i-make-an-http-request">
@@ -1186,6 +1178,14 @@ Some specific difference between Haskell typeclasses and Rust traits include:
 - A subset of Rust's traits (the ["object safe"](https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md) ones) can be used for dynamic dispatch via trait objects. The same feature is available in Haskell via GHC's `ExistentialQuantification`.
 
 <h2 id="documentation">Documentation</h2>
+
+<a href="#why-are-so-many-rust-answers-on-stackoverflow-wrong" name="why-are-so-many-rust-answers-on-stackoverflow-wrong">
+### Why are so many Rust answers on StackOverflow wrong?
+</a>
+
+The Rust language has been around for a number of years, and only reached version 1.0 in May of 2015. In the time before then the language changed significantly, and a number of StackOverflow answers were given at the time of older versions of the language.
+
+Over time more and more answers will be offered for the current version, thus improving this issue as the proportion of out-of-date answers is reduced.
 
 <a href="#where-do-i-report-issues-in-the-rust-documentation" name="where-do-i-report-issues-in-the-rust-documentation">
 ### Where do I report issues in the Rust documentation?
