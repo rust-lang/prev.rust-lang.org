@@ -335,13 +335,27 @@ You need to ensure that the borrowed item will outlive the function. This can be
 
 To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a `Box`, so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
 
-### When are lifetimes required to be defined?
+### Why do some references have lifetimes, like `&'a T`, and some do not, like `&T`?
 
-Lifetimes can often be elided, as explained in the ["Lifetime elision" section](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision) of the Rust book. "Elided lifetimes" are those lifetimes which are implicit in any code containing references. They are automatically inserted by the compiler with the three following rules:
+In fact, *all* reference types have a lifetime, but most of the time you do not have to write
+it explicitly. The rules are as follows:
 
-- Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
-- If there is exactly one input lifetime, elided or not, that lifetime is assigned to all elided lifetimes in the return values of that function.
-- If there are multiple input lifetimes, but one of them is &self or &mut self, the lifetime of self is assigned to all elided output lifetimes.
+1. Within a function body, you never have to write a lifetime explicitly; the correct value
+   should always be inferred.
+2. Within a function *signature* (for example, in the types of its
+   arguments, or its return type), you *may* have to write a lifetime
+   explicitly. Lifetimes there use a simple defaulting scheme called
+   ["lifetime elision"](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision),
+   which consists of the following three rules:
+
+   - Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
+   - If there is exactly one input lifetime, elided or not, that
+     lifetime is assigned to all elided lifetimes in the return values
+     of that function.
+   - If there are multiple input lifetimes, but one of them is &self
+     or &mut self, the lifetime of self is assigned to all elided
+     output lifetimes.
+3. Finally, in a `struct` or `enum` definition, all lifetimes must be explicitly declared.
 
 If these rules would result in incorrect code elsewhere, then the Rust compiler will provide errors, and you will need to define the relevant lifetimes to correct that error.
 
