@@ -637,7 +637,7 @@ pub fn f() {
 
 In the first example, the module is defined in the same file it's used. In the second example, the module declaration in the main file tells the compiler to look for either `hello.rs` or `hello/mod.rs`, and to load that file.
 
-A `use`ing declaration just tells the compiler to bring everything from a particular module into the current module. Without a `mod` declaration first, the compiler doesn't know if the `use`d module exists, and so can't import its contents into the current module.
+Note the difference between `mod` and `use`: `mod` declares that a module exists, whereas `use` references a module declared elsewhere, bringing its contents into scope within the current module.
 
 ### How do I configure Cargo to use a proxy?
 
