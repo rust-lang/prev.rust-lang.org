@@ -49,15 +49,22 @@ If there is some common or important question you feel is wrongly left unanswere
 
 Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks (like the [Benchmarks Game](http://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp) and [others](https://github.com/kostya/benchmarks)).
 
-It is an explicit goal of Rust to be at least as fast as C++. Language decisions are made with performance in mind, and given that Rust is built on LLVM and strives to resemble Clang from LLVM's perspective, any LLVM performance improvements also help Rust.
+Like C++, Rust takes [zero-cost abstractions](http://blog.rust-lang.org/2015/05/11/traits.html) as one of its core principles: none of Rusts abstractions impose a global performance penalty, nor is there overhead from any runtime system.
+
+Given that Rust is built on LLVM and strives to resemble Clang from LLVM's perspective, any LLVM performance improvements also help Rust. In the long run, the richer information in Rust's type system should also enable optimizations that are difficult or impossible for C/C++ code.
 
 <a href="#is-rust-garbage-collected" name="is-rust-garbage-collected">
 ### Is Rust garbage collected?
 </a>
 
-No. A language that requires a GC is a language that opts into a larger, more complex runtime than Rust cares for. Rust is usable on bare metal with no extra runtime.
+No. One of Rust's key innovations is guaranteeing memory safety (no segfaults) *without* requiring garbage collection.
 
-Additionally, garbage collection is frequently a source of non-deterministic behavior. Rust provides tools to make using third-party garbage collectors [possible](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/), but it is not part of the language as provided.
+By avoiding GC, Rust can offer numerous benefits: predictable cleanup of resources, lower overhead for memory management, and essentially no runtime system. All of these traits make Rust lean and easy to embed into arbitrary contexts, and make it much easier to [integrate Rust code with languages that have a GC](http://calculist.org/blog/2015/12/23/neon-node-rust/).
+
+Rust avoids the need for GC through its system of ownership and borrowing, but that same system helps with a host of other problems, including
+[resource management in general](http://blog.skylight.io/rust-means-never-having-to-close-a-socket/) and [concurrency](http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html).
+
+Finally, Rust gives you the tools to [use or implement third-party garbage collectors](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/), but it is not part of the language as provided.
 
 <a href="#why-is-my-program-slow" name="why-is-my-program-slow">
 ### Why is my program slow?
@@ -83,7 +90,7 @@ Secondly, the Rust compiler suffers from long-standing technical debt, and notab
 
 Thirdly, Rust's use of LLVM for code generation is a double-edged sword: while it enables Rust to have world-class runtime performance, LLVM is a large framework that is not focused on compile-time performance, particularly when working with poor-quality inputs.
 
-Finally, while Rust's preferred strategy of monomorphising generics (ala C++) produces fast code, it demands that significantly more code be generated than other translation strategies.
+Finally, while Rust's preferred strategy of monomorphising generics (ala C++) produces fast code, it demands that significantly more code be generated than other translation strategies. Rust programmers can use trait objects to trade away this code bloat by using dynamic dispatch instead.
 
 <a href="#why-are-rusts-hashmaps-slow" name="why-are-rusts-hashmaps-slow">
 ### Why are Rust's `HashMap`s slow?
@@ -97,7 +104,7 @@ While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges
 ### Why is there no integrated benchmarking infrastructure?
 </a>
 
-You can run benchmarks, but only on the nightly channel. Rust's benchmarking mechanism is currently unstable, as the API has not been deemed ready for stabilization. This [may change in the future](https://github.com/rust-lang/rust/issues/29553), but until then benchmarking can only be used on nightly.
+There is, but it's only available on the nightly channel. We ultimately plan to build a pluggable system for integrated benchmarks, but in the meantime, the current system is [considered unstable](https://github.com/rust-lang/rust/issues/29553).
 
 <a href="#does-rust-do-tail-call-optimization" name="does-rust-do-tail-call-optimization">
 ### Does Rust do tail-call optimization?
