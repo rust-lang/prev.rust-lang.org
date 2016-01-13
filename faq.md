@@ -685,7 +685,11 @@ Rust prefers a type-based approach to error handling, which is [covered at lengt
 ### What's the deal with `unwrap()` everywhere?
 </a>
 
-`unwrap()` is a function that extracts the value inside an [`Option`][Option] or [`Result`][Result] and panics if no value is present. It is useful in the presence of truly unrecoverable errors, but is more useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point. `unwrap()` shouldn't be your default way to handle errors, but it is a useful tool to have.
+`unwrap()` is a function that extracts the value inside an [`Option`][Option] or [`Result`][Result] and panics if no value is present.
+
+`unwrap()` shouldn't be your default way to handle errors you expect to arise, such as incorrect user input. In production code, it should be treated like an assertion that the value is non-empty, which will crash the program if violated.
+
+It's also useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point.
 
 <a href="#why-do-i-get-errors-with-try" name="why-do-i-get-errors-with-try">
 ### Why do I get an error when I try to run example code that uses the `try!` macro?
@@ -697,7 +701,9 @@ It's probably an issue with the function's return type. The [`try!`][TryMacro] m
 ### Is there an easier way to do error handling than having `Result`s everywhere?
 </a>
 
-If you're looking for a way to avoid handling [`Result`s][Result] in other people's code, there's always [`unwrap()`][unwrap], but it's probably not what you want. [`Result`][Result] is an indicator that some computation may or may not complete successfully. Requiring you to handle these failures explicitly is one of the ways that Rust encourages robustness. If you really don't want to handle an error, use [`unwrap()`][unwrap], but know that doing so means that the given code will cause the entire process to panic on failure, which is usually undesirable.
+If you're looking for a way to avoid handling [`Result`s][Result] in other people's code, there's always [`unwrap()`][unwrap], but it's probably not what you want. [`Result`][Result] is an indicator that some computation may or may not complete successfully. Requiring you to handle these failures explicitly is one of the ways that Rust encourages robustness. Rust provides tools like the [`try!` macro][TryMacro] to make handling failures ergonomic.
+
+If you really don't want to handle an error, use [`unwrap()`][unwrap], but know that doing so means that the given code will cause the entire process to panic on failure, which is usually undesirable.
 
 <h2 id="concurrency">Concurrency</h2>
 
