@@ -729,7 +729,7 @@ Not currently. Rust macros are ["hygienic macros"](https://en.wikipedia.org/wiki
 ### How do I debug Rust programs?
 </a>
 
-Rust programs can be debugged using [gdb](http://sourceware.org/gdb/current/onlinedocs/gdb/) or [lldb](http://lldb.llvm.org/tutorial.html), same as C and C++. In fact, every Rust installation comes with one or both of rust-gdb and rust-lldb (depending on platform support). These are wrappers over gdb and lldb with Rust pretty-printing enabled.
+Rust programs can be debugged using [gdb](http://sourceware.org/gdb/current/onlinedocs/gdb/) or [lldb](http://lldb.llvm.org/tutorial.html), the same as C and C++. In fact, every Rust installation comes with one or both of rust-gdb and rust-lldb (depending on platform support). These are wrappers over gdb and lldb with Rust pretty-printing enabled.
 
 <a href="#how-do-i-locate-a-panic" name="how-do-i-locate-a-panic">
 ### `rustc` said a panic occurred in standard library code. How do I locate the mistake in my code?
