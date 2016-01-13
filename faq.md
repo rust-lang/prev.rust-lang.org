@@ -233,7 +233,10 @@ There are two ways: the `as` keyword, which does simple casting for primitive ty
 ### How can I convert a `String` or `Vec<T>` to a slice (`&str` and `&[T]`)?
 </a>
 
+Usually, you can pass a reference to a `String` or `Vec<T>` wherever a slice is expected.
 Using [Deref coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html), [`String`s][String] and [`Vec`s][Vec] will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
+
+In some cases, such as generic code, it's necessary to convert manually. Manual conversions can be achieved using the slicing operator, like so: `&my_vec[..]`.
 
 <a href="#how-to-convert-between-str-and-string" name="how-to-convert-between-str-and-string">
 ### How can I convert from `&str` to `String` or the other way around?
