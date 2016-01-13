@@ -806,11 +806,58 @@ Rust doesn't currently have an exact equivalent to template specialization, but 
 
 ### How does Rust's ownership system relate to move semantics in C++?
 
-The notions of a "move" in Rust and a "move" in C++ are quite different, owing to the different systems in which they exist.
+The underlying concepts are similar, but the two systems work very
+differently in practice. In both systems, "moving" a value is a way to
+transfer ownership of its underlying resources. For example, moving a
+string would transfer the string's buffer rather than copying it.
 
-In C++, R-value references come from a temporary value, or are explicitly created from a named value via `std::move`. In this way, C++ enforces that no mutable references exist to the moved-out value, so that the memory may be safely invalidated. In Rust, mutable aliases are statically eliminated by the borrow checker, and so the rough equivalent of C++'s R-values are found in Rust's mutable references (`&mut`), which can only be used if no other mutable alias already exists to the given memory location.
+In Rust, ownership transfer is the default behavior. For example, if I
+write a function that takes a `String` as argument, this function will
+take ownership of the `String` value supplied by its caller:
 
-Rust "move"s are about transferring ownership, rather than eliminating mutable aliases (which are handled via the borrow checker). By default, the ownership of any function parameter is transferred into the function and out of the parameter at the call site, unless that parameter's type implements the `Copy` trait, in which case a shallow copy of the value is used to instantiate the actual parameter of the function. Rust's "move"s are often unecessary and undesirable. If the function you're writing does not require ownership of the value being passed in, that value should probably be borrowed (mutably or immutably, as necessary) rather than moved or copied.
+```rust
+fn process(s: String) { }
+
+fn caller() {
+    let s = String::from("Hello, world!");
+    process(s); // Transfers ownership of `s` to `process`
+    process(s); // Error! ownership already transferred.
+}
+```
+
+As you can see in the snippet above, in the function `caller`, the
+first call to `process` transfers ownership of the variable `s`. The
+compiler tracks ownership, so the second call to `process` results in
+an error, because it is illegal to give away ownership of the same
+value twice. Rust will also prevent you from moving a value if there
+is an outstanding reference into that value.
+
+C++ takes a different approach. In C++, the default is to copy a value
+(to invoke the copy constructor, more specifically). However, callees
+can declare their arguments using an "rvalue reference", like
+`string&&`, to indicate that they will take ownership of some of the
+resources owned by that argument (in this case, the string's internal
+buffer). The caller then must either pass a temporary expression or
+make an explicit move using `std::move`. The rough equivalent to the
+function `process` above, then, would be:
+
+```
+void process(string&& s) { }
+
+void caller() {
+    string s("Hello, world!");
+    process(std::move(s));
+    process(std::move(s));
+}
+```
+
+C++ compilers are not obligated to track moves. For example, the code
+above compiles without a warning or error, at least using the default
+settings on clang. Moreover, in C++ ownership of the string `s` itself
+(if not its internal buffer) remains with `caller`, and so the
+destructor for `s` will run when `caller` returns, even though it has
+been moved (in Rust, in contrast, moved values are dropped only by
+their new owners).
 
 ### How can I interoperate with C++ from Rust, or with Rust from C++?
 
