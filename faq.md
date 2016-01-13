@@ -537,7 +537,10 @@ You can do that with the [`Option`][Option] type, which can either be `Some(T)` 
 ### What is "monomorphisation"?
 </a>
 
-Monomorphisation is the process by which Rust translates to machine code specific instances of a generic function based on the parameter types of calls to that function. During monomorphisisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
+Monomorphisation specializes each use of a generic function (or structure) with specific instance,
+based on the parameter types of calls to that function (or uses of the structure).
+
+During monomorphisisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
 
 Functions that accept [trait objects](http://doc.rust-lang.org/book/trait-objects.html) instead of type parameters do not undergo monomorphisation. Instead, methods on the trait objects are dispatched dynamically at runtime.
 
@@ -551,19 +554,23 @@ Functions are a built-in primitive of the language, while closures are essential
 
 The big difference between these traits is how they take the `self` parameter. [`Fn`][Fn] takes `&self`, [`FnMut`][FnMut] takes `&mut self`, and [`FnOnce`][FnOnce] takes `self`.
 
-Even if a closure does not capture any environment variables, it is represeted at runtime as two points, same as any other closure.
+Even if a closure does not capture any environment variables, it is represeted at runtime as two pointers, the same as any other closure.
 
 <a href="#what-are-higher-kinded-types" name="what-are-higher-kinded-types">
 ### What are higher-kinded types, why would I want them, and why doesn't Rust have them?
 </a>
 
-Higher-kinded types are typed with unfilled parameters. Type constructors, like [`Vec<T>`][Vec], [`Result<T, E>`][Result], and [`HashMap<K, V, S>`][HashMap] are all examples of higher-kinded types. Support for higher-kinded types means these "incomplete" types may be used anywhere "complete" types can be used, such as trait `impl`s.
+Higher-kinded types are types with unfilled parameters. Type constructors, like [`Vec`][Vec], [`Result`][Result], and [`HashMap`][HashMap] are all examples of higher-kinded types: each requires some additional type parameters in order to actually denote a specific type, like `Vec<u32>`. Support for higher-kinded types means these "incomplete" types may be used anywhere "complete" types can be used, including as generics for functions.
 
 Any complete type, like [`i32`][i32], [`bool`][bool], or [`char`][char] is of kind `*`. A type with one parameter, like [`Vec<T>`][Vec] is of kind `* -> *`, meaning that [`Vec<T>`][Vec] takes in a complete type like [`i32`][i32] and returns a complete type `Vec<i32>`. A type which three parameters, like [`HashMap<K, V, S>`][HashMap] is of kind `* -> * -> * -> *`, and takes in three complete types (like [`i32`][i32], [`String`][String], and [`RandomState`][RandomState]) to produce a new complete type `HashMap<i32, String, RandomState>`.
 
-The lack of support for higher-kinded types makes expression of certain ideas more tedious than it would otherwise be. For example, implementing a `Functor` trait (a term for a container which can be mapped over, obeying certain rules) without higher-kinded types requires explicit and otherwise unnecessary handling of the container's type parameters. With higher-kined types, a `Functor` `impl` can ignore the parameters entirely.
+In addition to these examples, type constructors can take *lifetime* arguments, which we'll denote as `Lt`. For example, `slice::Iter` has kind `Lt -> * -> *`, because it must be instantiated like `Iter<'a, u32>`.
 
-Rust doesn't currently have support for higher-kinded types because it hasn't been a priority. There is nothing inherent to the language that stops the support from being implemented. It just hasn't been done yet.
+The lack of support for higher-kinded types makes it difficult to write certain kinds of generic code. It's particularly problematic for abstracting over concepts like iterators, since iterators are often parameterized over a lifetime at least. That in turn has prevented the creation of traits abstracting over Rust's collections.
+
+Another common example is concepts like functors or monads, both of which are type constructors, rather than single types.
+
+Rust doesn't currently have support for higher-kinded types because it hasn't been a priority compared to other improvements we want to make. Since the design is a major, cross-cutting change, we also want to approach it carefully. But there's no inherent reason for the current lack of support.
 
 <a href="#what-do-named-type-parameters-in-generic-types-mean" name="what-do-named-type-parameters-in-generic-types-mean">
 ### What do named type parameters like `<T=Foo>` in generic types mean?
@@ -571,13 +578,13 @@ Rust doesn't currently have support for higher-kinded types because it hasn't be
 
 These are called [associated types](https://doc.rust-lang.org/stable/book/associated-types.html), and they allow for the expression of trait bounds that can't be expressed with a `where` clause. For example, a generic bound `X: Bar<T=Foo>` means "`X` must implement the trait `Bar`, and in that implementation of `Bar`, `X` must choose `Foo` for `Bar`'s associated type, `T`." Examples of where such a constraint cannot be expressed via a `where` clause include trait objects like `Box<Bar<T=Foo>>`.
 
-Associated types exist because, for a generic type with some type parameters, it is often unecessary to include those type parameters in a function taking that generic type as a parameter. The function shouldn't have to care about being generic over the types which make up the generic type (say, the node and edge types in a graph), but only about being generic over the type itself.
+Associated types exist because generics often involve families of types, where one type determines all of the others in a family. For example, a trait for graphs might have as its `Self` type the graph itself, and have associated types for nodes and for edges. Each graph type uniquely determines the associated types. Using associated types makes it much more concise to work with these families of types, and also provides better type inference in many cases.
 
 <a href="#how-do-i-overload-operators" name="how-do-i-overload-operators">
 ### Can I overload operators? Which ones and how?
 </a>
 
-You can provide custom implementations for a variety of operators using their associated traits: [`Add`][Add] for `+`, [`Mul`][Mul] for `*`. It looks like this:
+You can provide custom implementations for a variety of operators using their associated traits: [`Add`][Add] for `+`, [`Mul`][Mul] for `*`, and so on. It looks like this:
 
 ```rust
 use std::ops::Add;
@@ -621,6 +628,8 @@ The following operators can be overloaded:
 There are some types in Rust whose values are only partially ordered, or have only partial equality. Partial ordering means that there may be values of the given type that are neither less than nor greater than each other. Partial equality means that there may be values of the given type that are not equal to themselves.
 
 Floating point types ([`f32`][f32] and [`f64`][f64]) are good examples of each. Any floating point type may have the value `NaN` (meaning "not a number"). `NaN` is not equal to itself (`NaN == Nan` is false), and not less than or greater than any other floating point value. As such, both [`f32`][f32] and [`f64`][f64] implement [`PartialOrd`][PartialOrd] and [`PartialEq`][PartialEq] but not [`Ord`][Ord] and not [`Eq`][Eq].
+
+As explained in [the earlier question on floats](#why-cant-i-compare-floats), these distinctions are important because some collections rely on total orderings/equality in order to give correct results.
 
 <h2 id="input-output">Input / Output</h2>
 
