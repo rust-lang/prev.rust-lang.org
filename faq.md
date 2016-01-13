@@ -782,7 +782,7 @@ Converting in the other direction can be done with a `match` statement, which ma
 
 ### Why does Rust not have a stable ABI like C does, and why do I have to annotate things with extern?
 
-Committing to an ABI is a big decision that can limit potentially advantageous language changes in the future. Given that Rust only hit 1.0 in May of 2015, it is still too early to make a commitment as big as a stable ABI. This does not mean that one won't happen in the future, though.
+Committing to an ABI is a big decision that can limit potentially advantageous language changes in the future. Given that Rust only hit 1.0 in May of 2015, it is still too early to make a commitment as big as a stable ABI. This does not mean that one won't happen in the future, though. (Though C++ has managed to go for many years without specifying a stable ABI.)
 
 The `extern` keyword allows Rust to use specific ABI's, such as the well-defined C ABI, for interop with other languages.
 
