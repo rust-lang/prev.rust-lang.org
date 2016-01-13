@@ -298,20 +298,27 @@ The borrow checker applies only a few rules, which can be found in the Rust book
 
 While the rules themselves are simple, making sure your code conforms to them can be complicated. It is easy to attempt to borrow a value for longer than its lifetime, or to introduce two mutable references to the same value. The borrow checker is useful because it verifies that your code follows these rules, and helps guide corrections when the code doesn't. Many new Rust programmers struggle to satisfy the borrow checker at first, but over time become more skilled at writing memory safe code with minimal borrow checker intervention.
 
-### How do deref coercions work?
+### What is a deref coercion and hoes does it work?
 
-[Deref coercions](https://doc.rust-lang.org/book/deref-coercions.html) exist to make using Rust more ergonomic, and are implemented via the [`Deref`](https://doc.rust-lang.org/stable/std/ops/trait.Deref.html) trait, which looks like
+A [deref coercion](https://doc.rust-lang.org/book/deref-coercions.html) is a handy coercion
+that automatically converts references to pointers (e.g., `&Rc<T>` or `&Box<T>`) into references
+to their contents (e.g., `&T`). Deref coercions exist to make using Rust more ergonomic.
 
-```rust
-pub trait Deref {
-    type Target: ?Sized;
-    fn deref(&self) -> &Self::Target;
-}
-```
+The most common sorts of deref coercions are:
 
-A Deref implementation indicates that the implementing type may be converted into `Target` by a call to the `deref` function, which takes an immutable reference of a certain lifetime to the calling struct, and returns a reference of the same lifetime to the target. The `*` prefix operator is shorthand for the `deref` method.
+- `&Rc<T>` to `&T`
+- `&Box<T>` to `&T`
+- `&Arc<T>` to `&T`
+- `&Vec<T>` to `&[T]`
+- `&String` to `&str`
 
-You can see a [full list of `Deref` implementations](https://doc.rust-lang.org/stable/std/ops/trait.Deref.html#implementors) for the standard library in the documentation.
+In general though, a deref coercion permits coercion `&T` to `&U` if
+`T` can be dereferenced to `U`. Dereferencing in Rust is an
+overloadable operator controlled by the
+[`Deref`](https://doc.rust-lang.org/stable/std/ops/trait.Deref.html)
+trait. You can see a
+[full list of `Deref` implementations](https://doc.rust-lang.org/stable/std/ops/trait.Deref.html#implementors)
+for the standard library in the documentation.
 
 <h2 id="lifetimes">Lifetimes</h2>
 
