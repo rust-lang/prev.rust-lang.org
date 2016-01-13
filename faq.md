@@ -47,9 +47,21 @@ It is an explicit goal of Rust to be at least as fast as C++. Language decisions
 
 ### Is Rust garbage collected?
 
-No. A language that requires a GC is a language that opts into a larger, more complex runtime than Rust cares for. Rust is usable on bare metal with no extra runtime.
+No. A language that requires a GC is a language that opts into a
+larger, more complex runtime than Rust cares for. Rust is usable on
+bare metal with no extra runtime. In practice, most Rust programs rely
+on reference counting through the standard library's
+[`Rc`](http://doc.rust-lang.org/std/rc/struct.Rc.html) and
+[`Arc`](http://doc.rust-lang.org/std/sync/struct.Arc.html) types.
 
-Additionally, garbage collection is frequently a source of non-deterministic behavior. Rust provides tools to make using third-party garbage collectors [possible](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/), but it is not part of the language as provided.
+We are however investigating *optional* garbage collection as a future
+extension. The goal is to enable smooth integration with
+garbage-collected runtimes, such as those offered by the
+[Spidermonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
+and [V8](https://developers.google.com/v8/?hl=en) JavaScript engines.
+Finally, some people have investigated implementing
+[pure Rust garbage collectors](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/)
+without compiler support.
 
 ### Why is my program slow?
 
