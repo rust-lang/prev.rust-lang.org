@@ -335,7 +335,7 @@ One thing to note is that currently Rust doesn't offer generics over arrays of d
 ### How can I implement a graph or other data structure that contains cycles?
 </a>
 
-There are four major options:
+There are at least four options (discussed at length in a [draft book](http://cglab.ca/~abeinges/blah/too-many-lists/book/):
 
 - You can implement it using [`Rc`][Rc] and [`Weak`][Weak] to allow shared ownership of nodes,
 although this approach pays the cost of memory management.
@@ -368,17 +368,11 @@ fn main() {
 }
 ```
 
-<a href="#what-does-it-mean-to-consume-a-value" name="what-does-it-mean-to-consume-a-value">
-### What does it mean to "consume a value"?
-</a>
-
-"Consuming a value" means taking ownership of a value. When this is done, the value can't be used elsewhere. "Consume" is a fairly evocative term for this event.
-
 <a href="#what-is-the-difference-between-consuming-and-taking-ownership" name="what-is-the-difference-between-consuming-and-taking-ownership">
-### What is the difference between consuming and moving/taking ownership?
+### What is the difference between passing by value, consuming, moving, and transferring ownership?
 </a>
 
-These are different terms for the same thing. In both cases, it means the value has been moved to another owner, and moved out of the calling owner.
+These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it.
 
 <a href="#why-can-values-of-some-types-by-reused-while-others-are-consumed" name="why-can-values-of-some-types-by-reused-while-others-are-consumed">
 ### Why can values of some types be used after passing them to a function, while reuse of values of other types results in an error?
@@ -400,9 +394,9 @@ If none of these are possible, you may want to modify the function that acquired
 ### What are the rules for using `self`, `&self`, or `&mut self` in a method declaration?
 </a>
 
-- Use `self` when a function needs to consume the type
-- Use `&self` when a function only needs a read-only reference to the type
-- Use `&mut self` when a function needs to mutate the type without consuming it
+- Use `self` when a function needs to consume the value
+- Use `&self` when a function only needs a read-only reference to the value
+- Use `&mut self` when a function needs to mutate the value without consuming it
 
 <a href="#how-can-i-understand-the-borrow-checker" name="how-can-i-understand-the-borrow-checker">
 ### How can I understand the borrow checker?
@@ -424,6 +418,18 @@ The second step is to become familiar with the ownership and mutability-related 
 The single most important part of understanding the borrow checker is practice. Rust's strong static analyses guarantees are strict and quite different from what many programmers have worked with before. It will take some time to become completely comfortable with everything.
 
 If you find yourself struggling with the borrow checker, or running out of patience, always feel free to reach out to the [Rust community](community.html) for help.
+
+<a href="#when-is-rc-useful" name="when-is-rc-useful">
+### When is `Rc` useful?
+</a>
+
+This is covered in the official documentation for [`Rc`][Rc], Rust's non-atomically reference-counted pointer type. In short, [`Rc`][Rc] and its thread-safe cousin [`Arc`][Arc] are useful to express shared ownership, and have the system automatically deallocate the associated memory when no one has access to it.
+
+<a href="#how-do-i-return-a-closure-from-a-function" name="how-do-i-return-a-closure-from-a-function">
+### How do I return a closure from a function?
+</a>
+
+To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a [`Box`][Box], so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
 
 <a href="#how-do-deref-coercions-work" name="how-do-deref-coercions-work">
 ### How do deref coercions work?
@@ -454,12 +460,6 @@ Lifetimes are Rust's answer to the question of memory safety. They allow Rust to
 </a>
 
 The `'a` syntax comes from the ML family of programming languages, where `'a` is used to indicate a generic type parameter. For Rust, the syntax had to be something that was unambiguous, noticeable, and fit nicely in a type declaration right alonside traits and references. Alternative syntaxes have been discussed, but no alternative syntax has been demonstrated to be clearly better.
-
-<a href="#when-is-rc-useful" name="when-is-rc-useful">
-### When is `Rc` useful?
-</a>
-
-This is covered in the official documentation for [`Rc`][Rc], Rust's non-atomically reference-counted pointer type. In short, [`Rc`][Rc] and its thread-safe cousin [`Arc`][Arc] are useful to express shared ownership, and have the system automatically deallocate the associated memory when no one has access to it.
 
 <a href="#how-do-i-return-a-borrow-to-something-i-created-from-a-function" name="how-do-i-return-a-borrow-to-something-i-created-from-a-function">
 ### How do I return a borrow to something I created from a function?
@@ -505,12 +505,6 @@ fn abs_all(input: &mut Cow<[i32]>) {
     }
 }
 ```
-
-<a href="#how-do-i-return-a-closure-from-a-function" name="how-do-i-return-a-closure-from-a-function">
-### How do I return a closure from a function?
-</a>
-
-To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a [`Box`][Box], so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
 
 <a href="#when-are-lifetimes-required-to-be-explicit" name="when-are-lifetimes-required-to-be-explicit">
 ### When are lifetimes required to be explicit?
