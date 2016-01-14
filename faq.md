@@ -49,15 +49,22 @@ If there is some common or important question you feel is wrongly left unanswere
 
 Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks (like the [Benchmarks Game](http://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp) and [others](https://github.com/kostya/benchmarks)).
 
-It is an explicit goal of Rust to be at least as fast as C++. Language decisions are made with performance in mind, and given that Rust is built on LLVM and strives to resemble Clang from LLVM's perspective, any LLVM performance improvements also help Rust.
+Like C++, Rust takes [zero-cost abstractions](http://blog.rust-lang.org/2015/05/11/traits.html) as one of its core principles: none of Rusts abstractions impose a global performance penalty, nor is there overhead from any runtime system.
+
+Given that Rust is built on LLVM and strives to resemble Clang from LLVM's perspective, any LLVM performance improvements also help Rust. In the long run, the richer information in Rust's type system should also enable optimizations that are difficult or impossible for C/C++ code.
 
 <a href="#is-rust-garbage-collected" name="is-rust-garbage-collected">
 ### Is Rust garbage collected?
 </a>
 
-No. A language that requires a GC is a language that opts into a larger, more complex runtime than Rust cares for. Rust is usable on bare metal with no extra runtime.
+No. One of Rust's key innovations is guaranteeing memory safety (no segfaults) *without* requiring garbage collection.
 
-Additionally, garbage collection is frequently a source of non-deterministic behavior. Rust provides tools to make using third-party garbage collectors [possible](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/), but it is not part of the language as provided.
+By avoiding GC, Rust can offer numerous benefits: predictable cleanup of resources, lower overhead for memory management, and essentially no runtime system. All of these traits make Rust lean and easy to embed into arbitrary contexts, and make it much easier to [integrate Rust code with languages that have a GC](http://calculist.org/blog/2015/12/23/neon-node-rust/).
+
+Rust avoids the need for GC through its system of ownership and borrowing, but that same system helps with a host of other problems, including
+[resource management in general](http://blog.skylight.io/rust-means-never-having-to-close-a-socket/) and [concurrency](http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html).
+
+Finally, Rust gives you the tools to [use or implement third-party garbage collectors](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/), but it is not part of the language as provided.
 
 <a href="#why-is-my-program-slow" name="why-is-my-program-slow">
 ### Why is my program slow?
@@ -83,7 +90,7 @@ Secondly, the Rust compiler suffers from long-standing technical debt, and notab
 
 Thirdly, Rust's use of LLVM for code generation is a double-edged sword: while it enables Rust to have world-class runtime performance, LLVM is a large framework that is not focused on compile-time performance, particularly when working with poor-quality inputs.
 
-Finally, while Rust's preferred strategy of monomorphising generics (ala C++) produces fast code, it demands that significantly more code be generated than other translation strategies.
+Finally, while Rust's preferred strategy of monomorphising generics (ala C++) produces fast code, it demands that significantly more code be generated than other translation strategies. Rust programmers can use trait objects to trade away this code bloat by using dynamic dispatch instead.
 
 <a href="#why-are-rusts-hashmaps-slow" name="why-are-rusts-hashmaps-slow">
 ### Why are Rust's `HashMap`s slow?
@@ -97,7 +104,7 @@ While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges
 ### Why is there no integrated benchmarking infrastructure?
 </a>
 
-You can run benchmarks, but only on the nightly channel. Rust's benchmarking mechanism is currently unstable, as the API has not been deemed ready for stabilization. This [may change in the future](https://github.com/rust-lang/rust/issues/29553), but until then benchmarking can only be used on nightly.
+There is, but it's only available on the nightly channel. We ultimately plan to build a pluggable system for integrated benchmarks, but in the meantime, the current system is [considered unstable](https://github.com/rust-lang/rust/issues/29553).
 
 <a href="#does-rust-do-tail-call-optimization" name="does-rust-do-tail-call-optimization">
 ### Does Rust do tail-call optimization?
@@ -131,7 +138,7 @@ Whereas C requires mandatory parentheses for `if`-statement conditionals but lea
 ### Why is there no literal syntax for dictionaries?
 </a>
 
-The reason Rust does not have syntax for initializing dictionaries &mdash; or collections in general &mdash; is due to Rust's overall design preference for limiting the size of the *language* while enabling powerful *libraries*. The only type of collection that Rust has direct syntax for initializing is the array type, which is also the only type of collection built into the language. Note that Rust does not even have syntax for initializing the common [`Vec`][Vec] collection type, instead the standard library defines the [`vec!`][VecMacro] macro.
+Rust's overall design preference is for limiting the size of the *language* while enabling powerful *libraries*. While Rust does provide initialization syntax for arrays and string literals, these are the only collection types built into the language. Other library-defined types, including the ubiquitous [`Vec`][Vec] collection type, use macros for initialization like the [`vec!`][VecMacro] macro.
 
 This design choice of using Rust's macro facilities to initialize collections will likely be extended generically to other collections in the future, enabling simple initialization of not only [`HashMap`][HashMap] and [`Vec`][Vec], but also other collection types such as [`BTreeMap`][BTreeMap]. In the meantime, if you want a more convenient syntax for initializing collections, you can [create your own macro](http://stackoverflow.com/questions/27582739/how-do-i-create-a-hashmap-literal) to provide it.
 
@@ -139,7 +146,7 @@ This design choice of using Rust's macro facilities to initialize collections wi
 ### When should I use an implicit return?
 </a>
 
-Rust is a very expression-oriented language, and implicit returns are part of that design. `if`s, `match`es, and normal blocks are all expressions in Rust. For example, the following code checks if an [`i64`][i64] is odd, returning the result with an implicit return:
+Rust is a very expression-oriented language, and "implicit returns" are part of that design. Constructs like `if`s, `match`es, and normal blocks are all expressions in Rust. For example, the following code checks if an [`i64`][i64] is odd, returning the result by simply yielding it as a value:
 
 ```rust
 fn is_odd(x: i64) -> bool {
@@ -163,15 +170,21 @@ Explicit returns are only used if an implicit return is impossible because you a
 ### Why aren't function signatures inferred?
 </a>
 
-- Mandatory function signatures help enforce interface stability at both the module and crate level.
-- It improves code comprehension for the programmer, eliminating the need for an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
+In Rust, declarations tend to come with explicit types, while actual code has its types inferred. There are several reasons for this design:
+
+- Mandatory declaration signatures help enforce interface stability at both the module and crate level.
+- Signatures improve code comprehension for the programmer, eliminating the need for an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 - Mechanically, it simplifies the inference algorithm, as inference only requires looking at one function at a time.
 
 <a href="#why-does-match-have-to-be-exhaustive" name="why-does-match-have-to-be-exhaustive">
 ### Why does `match` have to be exhaustive?
 </a>
 
-`match` being exhaustive has some useful properties. First, if every possibility is covered by the `match`, adding variants to the `enum` in the future will cause a compilation failure, rather than an error at runtime. Second, it makes the semantics of the default case explicit: in general, the only safe way to have a non-exhaustive `match` would be to panic the thread if nothing is matched. Early versions of Rust did not require `match` cases to be exhaustive and it was found to be a great source of bugs.
+To aid in refactoring and clarity.
+
+First, if every possibility is covered by the `match`, adding variants to the `enum` in the future will cause a compilation failure, rather than an error at runtime. This compiler assistance makes fearless refactoring possible in Rust.
+
+Second, exhaustive checking makes the semantics of the default case explicit: in general, the only safe way to have a non-exhaustive `match` would be to panic the thread if nothing is matched. Early versions of Rust did not require `match` cases to be exhaustive and it was found to be a great source of bugs.
 
 It is easy to ignore all unspecified cases by using the `_` wildcard:
 
@@ -195,26 +208,18 @@ If you are interested in the greatest degree of precision with your floating poi
 If in doubt, choose [`f64`][f64] for the greater precision.
 
 <a href="#why-cant-i-compare-floats" name="why-cant-i-compare-floats">
-### Why can't I compare floats?
+### Why can't I compare floats or use them as `HashMap` or `BTreeMap` keys?
 </a>
 
 Floats can be compared with the `==`, `!=`, `<`, `<=`, `>`, and `>=` operators, and with the `partial_cmp()` function. `==` and `!=` are part of the [`PartialEq`][PartialEq] trait, while `<`, `<=`, `>`, `>=`, and `partial_cmp()` are part of the [`PartialOrd`][PartialOrd] trait.
 
 Floats cannot be compared with the `cmp()` function, which is part of the [`Ord`][Ord] trait, as there is no total ordering for floats. Furthermore, there is no total equality relation for floats, and so they also do not implement the [`Eq`][Eq] trait.
 
-There is no total ordering or equality on floats because the floating-point value `NaN` is not less than, greater than, or equal to any other floating-point value or itself.
+There is no total ordering or equality on floats because the floating-point value [`NaN`](https://en.wikipedia.org/wiki/NaN) is not less than, greater than, or equal to any other floating-point value or itself.
 
-Because floats do not implement [`Eq`][Eq] or [`Ord`][Ord], they may not be used in types whose trait bounds require those traits, such as [`BTreeMap`][BTreeMap].
+Because floats do not implement [`Eq`][Eq] or [`Ord`][Ord], they may not be used in types whose trait bounds require those traits, such as [`BTreeMap`][BTreeMap] or [`HashMap`][HashMap]. This is important because these types *assume* their keys provide a total ordering or total equality relation, and will malfunction otherwise.
 
 There [is a crate](https://crates.io/crates/ordered-float) that wraps [`f32`][f32] and [`f64`][f64] to provide [`Ord`][Ord] and [`Eq`][Eq] implementations, which may be useful in certain cases.
-
-<a href="#why-cant-i-use-floats-as-hashmap-keys" name="why-cant-i-use-floats-as-hashmap-keys">
-### Why can't I use `f32` or `f64` as `HashMap` keys?
-</a>
-
-In order to be used as a key in a [`HashMap`][HashMap], a type must implement the [`Eq`][Eq] and [`Hash`][Hash] traits. [`Eq`][Eq] is required because keys have to be capable of being tested for equality, otherwise indexing on keys wouldn't work. [`Hash`][Hash] is required so that the type may be hashed by [`HashMap`'s][HashMap] hashing algorithm.
-
-[`f32`][f32] and [`f64`][f64] implement [`PartialEq`][PartialEq], but not [`Eq`][Eq] This is because one of the potential values for floating-point types is `NaN` (or "not a number"). Per the IEEE floating-point specification, `NaN` values are [not equal to any other floating-point value, and not equal to each other](https://en.wikipedia.org/wiki/NaN). This means there is no total equality relation for floating-point types, and thus that [`f32`][f32] and [`f64`][f64] can't implement [`Eq`][Eq] and can't used as keys in a [`HashMap`][HashMap].
 
 <a href="#how-can-i-convert-between-numeric-types" name="how-can-i-convert-between-numeric-types">
 ### How can I convert between numeric types?
@@ -228,7 +233,10 @@ There are two ways: the `as` keyword, which does simple casting for primitive ty
 ### How can I convert a `String` or `Vec<T>` to a slice (`&str` and `&[T]`)?
 </a>
 
+Usually, you can pass a reference to a `String` or `Vec<T>` wherever a slice is expected.
 Using [Deref coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html), [`String`s][String] and [`Vec`s][Vec] will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
+
+In some cases, such as generic code, it's necessary to convert manually. Manual conversions can be achieved using the slicing operator, like so: `&my_vec[..]`.
 
 <a href="#how-to-convert-between-str-and-string" name="how-to-convert-between-str-and-string">
 ### How can I convert from `&str` to `String` or the other way around?
@@ -311,11 +319,13 @@ Rust `for` loops call `into_iter()` (defined on the [`IntoIterator`][IntoIterato
 
 If a moving/consuming iterator is desired, write the `for` loop without `&` or `&mut` in the iteration.
 
+If you need direct access to a borrowing iterator, you can usually get it by calling the `iter()` method.
+
 <a href="#why-do-i-need-to-type-the-array-size-in-the-array-declaration" name="why-do-i-need-to-type-the-array-size-in-the-array-declaration">
 ### Why do I need to type the array size in the array declaration?
 </a>
 
-You don't necessarily have to. If you're declaring an array directly, the size is inferred based on the number of elements. But if you're declaring a function that takes an array, the compiler has to know how big that array will be.
+You don't necessarily have to. If you're declaring an array directly, the size is inferred based on the number of elements. But if you're declaring a function that takes a fixed-size array, the compiler has to know how big that array will be.
 
 One thing to note is that currently Rust doesn't offer generics over arrays of different size. If you'd like to accept a contiguous container of a variable number of values, use a [`Vec`][Vec] or slice (depending on whether you need ownership).
 
@@ -325,7 +335,7 @@ One thing to note is that currently Rust doesn't offer generics over arrays of d
 ### How can I implement a graph or other data structure that contains cycles?
 </a>
 
-There are four major options:
+There are at least four options (discussed at length in [Too Many Linked Lists](http://cglab.ca/~abeinges/blah/too-many-lists/book/):
 
 - You can implement it using [`Rc`][Rc] and [`Weak`][Weak] to allow shared ownership of nodes,
 although this approach pays the cost of memory management.
@@ -358,17 +368,11 @@ fn main() {
 }
 ```
 
-<a href="#what-does-it-mean-to-consume-a-value" name="what-does-it-mean-to-consume-a-value">
-### What does it mean to "consume a value"?
-</a>
-
-"Consuming a value" means taking ownership of a value. When this is done, the value can't be used elsewhere. "Consume" is a fairly evocative term for this event.
-
 <a href="#what-is-the-difference-between-consuming-and-taking-ownership" name="what-is-the-difference-between-consuming-and-taking-ownership">
-### What is the difference between consuming and moving/taking ownership?
+### What is the difference between passing by value, consuming, moving, and transferring ownership?
 </a>
 
-These are different terms for the same thing. In both cases, it means the value has been moved to another owner, and moved out of the calling owner.
+These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it.
 
 <a href="#why-can-values-of-some-types-by-reused-while-others-are-consumed" name="why-can-values-of-some-types-by-reused-while-others-are-consumed">
 ### Why can values of some types be used after passing them to a function, while reuse of values of other types results in an error?
@@ -390,9 +394,9 @@ If none of these are possible, you may want to modify the function that acquired
 ### What are the rules for using `self`, `&self`, or `&mut self` in a method declaration?
 </a>
 
-- Use `self` when a function needs to consume the type
-- Use `&self` when a function only needs a read-only reference to the type
-- Use `&mut self` when a function needs to mutate the type without consuming it
+- Use `self` when a function needs to consume the value
+- Use `&self` when a function only needs a read-only reference to the value
+- Use `&mut self` when a function needs to mutate the value without consuming it
 
 <a href="#how-can-i-understand-the-borrow-checker" name="how-can-i-understand-the-borrow-checker">
 ### How can I understand the borrow checker?
@@ -414,6 +418,18 @@ The second step is to become familiar with the ownership and mutability-related 
 The single most important part of understanding the borrow checker is practice. Rust's strong static analyses guarantees are strict and quite different from what many programmers have worked with before. It will take some time to become completely comfortable with everything.
 
 If you find yourself struggling with the borrow checker, or running out of patience, always feel free to reach out to the [Rust community](community.html) for help.
+
+<a href="#when-is-rc-useful" name="when-is-rc-useful">
+### When is `Rc` useful?
+</a>
+
+This is covered in the official documentation for [`Rc`][Rc], Rust's non-atomically reference-counted pointer type. In short, [`Rc`][Rc] and its thread-safe cousin [`Arc`][Arc] are useful to express shared ownership, and have the system automatically deallocate the associated memory when no one has access to it.
+
+<a href="#how-do-i-return-a-closure-from-a-function" name="how-do-i-return-a-closure-from-a-function">
+### How do I return a closure from a function?
+</a>
+
+To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a [`Box`][Box], so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
 
 <a href="#how-do-deref-coercions-work" name="how-do-deref-coercions-work">
 ### How do deref coercions work?
@@ -443,13 +459,7 @@ Lifetimes are Rust's answer to the question of memory safety. They allow Rust to
 ### Why is the lifetime syntax the way it is?
 </a>
 
-The `'a` syntax comes from the ML family of programming languages, where `'a` is used to indicate a generic type parameter. For Rust, the syntax had to be something that was unambiguous, noticeable, and fit nicely in a type declaration right alonside traits and references. Alternative syntaxes have been discussed, but no alternative syntax has been demonstrated to be clearly better.
-
-<a href="#when-is-rc-useful" name="when-is-rc-useful">
-### When is `Rc` useful?
-</a>
-
-This is covered in the official documentation for [`Rc`][Rc], Rust's non-atomically reference-counted pointer type. In short, [`Rc`][Rc] and its thread-safe cousin [`Arc`][Arc] are useful to express shared ownership, and have the system automatically deallocate the associated memory when no one has access to it.
+The `'a` syntax comes from the ML family of programming languages, where `'a` is used to indicate a generic type parameter. For Rust, the syntax had to be something that was unambiguous, noticeable, and fit nicely in a type declaration right alongside traits and references. Alternative syntaxes have been discussed, but no alternative syntax has been demonstrated to be clearly better.
 
 <a href="#how-do-i-return-a-borrow-to-something-i-created-from-a-function" name="how-do-i-return-a-borrow-to-something-i-created-from-a-function">
 ### How do I return a borrow to something I created from a function?
@@ -496,29 +506,24 @@ fn abs_all(input: &mut Cow<[i32]>) {
 }
 ```
 
-<a href="#how-do-i-return-a-closure-from-a-function" name="how-do-i-return-a-closure-from-a-function">
-### How do I return a closure from a function?
-</a>
-
-To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a [`Box`][Box], so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
-
 <a href="#when-are-lifetimes-required-to-be-explicit" name="when-are-lifetimes-required-to-be-explicit">
 ### When are lifetimes required to be explicit?
 </a>
 
-Lifetimes must be explicit when the rules for automatic lifetime inference result in compilation errors. The Rust compiler tries its best to automatically infer correct lifetimes (called ["elided lifetimes"](https://doc.rust-lang.org/stable/book/lifetimes.html#lifetime-elision)) based on the following rules:
+Rust has a shorthand for leaving off lifetimes that covers the vast majority of cases in practice.
+This shorthand is called [lifetime elision](https://doc.rust-lang.org/stable/book/lifetimes.html#lifetime-elision), and encompasses three rules:
 
 - Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
 - If there is exactly one input lifetime, elided or not, that lifetime is assigned to all elided lifetimes in the return values of that function.
-- If there are multiple input lifetimes, but one of them is `&self` or `&mut` self, the lifetime of self is assigned to all elided output lifetimes.
+- If there are multiple input lifetimes, but one of them is `&self` or `&mut self`, the lifetime of `self` is assigned to all elided output lifetimes.
 
 If these rules result in compilation errors, the Rust compiler will provide an error message indicating the error caused, and suggesting a potential solution based on which step of the inference process caused the error.
 
 <a href="#how-can-rust-guarantee-no-null-pointers" name="how-can-rust-guarantee-no-null-pointers">
-### How can Rust guarantee "no null pointers"?
+### How can Rust guarantee "no null pointers" and "no dangling pointers"?
 </a>
 
-The only way to construct a value of type `&Foo` or `&mut Foo` is to specify an existing value of type `Foo` that the reference points to. In this way Rust makes sure no null references are introduced.
+The only way to construct a value of type `&Foo` or `&mut Foo` is to specify an existing value of type `Foo` that the reference points to. The reference "borrows" the original value for a given region of code (the lifetime of the reference), and the value being borrowed from cannot be moved or destroyed for the duration of the borrow.
 
 <a href="#how-do-i-express-the-absense-of-a-value-without-null" name="how-do-i-express-the-absense-of-a-value-without-null">
 ### How do I express the absence of a value without `null`?
@@ -532,7 +537,10 @@ You can do that with the [`Option`][Option] type, which can either be `Some(T)` 
 ### What is "monomorphisation"?
 </a>
 
-Monomorphisation is the process by which Rust translates to machine code specific instances of a generic function based on the parameter types of calls to that function. During monomorphisisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
+Monomorphisation specializes each use of a generic function (or structure) with specific instance,
+based on the parameter types of calls to that function (or uses of the structure).
+
+During monomorphisisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
 
 Functions that accept [trait objects](http://doc.rust-lang.org/book/trait-objects.html) instead of type parameters do not undergo monomorphisation. Instead, methods on the trait objects are dispatched dynamically at runtime.
 
@@ -546,19 +554,23 @@ Functions are a built-in primitive of the language, while closures are essential
 
 The big difference between these traits is how they take the `self` parameter. [`Fn`][Fn] takes `&self`, [`FnMut`][FnMut] takes `&mut self`, and [`FnOnce`][FnOnce] takes `self`.
 
-Even if a closure does not capture any environment variables, it is represeted at runtime as two points, same as any other closure.
+Even if a closure does not capture any environment variables, it is represeted at runtime as two pointers, the same as any other closure.
 
 <a href="#what-are-higher-kinded-types" name="what-are-higher-kinded-types">
 ### What are higher-kinded types, why would I want them, and why doesn't Rust have them?
 </a>
 
-Higher-kinded types are typed with unfilled parameters. Type constructors, like [`Vec<T>`][Vec], [`Result<T, E>`][Result], and [`HashMap<K, V, S>`][HashMap] are all examples of higher-kinded types. Support for higher-kinded types means these "incomplete" types may be used anywhere "complete" types can be used, such as trait `impl`s.
+Higher-kinded types are types with unfilled parameters. Type constructors, like [`Vec`][Vec], [`Result`][Result], and [`HashMap`][HashMap] are all examples of higher-kinded types: each requires some additional type parameters in order to actually denote a specific type, like `Vec<u32>`. Support for higher-kinded types means these "incomplete" types may be used anywhere "complete" types can be used, including as generics for functions.
 
 Any complete type, like [`i32`][i32], [`bool`][bool], or [`char`][char] is of kind `*`. A type with one parameter, like [`Vec<T>`][Vec] is of kind `* -> *`, meaning that [`Vec<T>`][Vec] takes in a complete type like [`i32`][i32] and returns a complete type `Vec<i32>`. A type which three parameters, like [`HashMap<K, V, S>`][HashMap] is of kind `* -> * -> * -> *`, and takes in three complete types (like [`i32`][i32], [`String`][String], and [`RandomState`][RandomState]) to produce a new complete type `HashMap<i32, String, RandomState>`.
 
-The lack of support for higher-kinded types makes expression of certain ideas more tedious than it would otherwise be. For example, implementing a `Functor` trait (a term for a container which can be mapped over, obeying certain rules) without higher-kinded types requires explicit and otherwise unnecessary handling of the container's type parameters. With higher-kined types, a `Functor` `impl` can ignore the parameters entirely.
+In addition to these examples, type constructors can take *lifetime* arguments, which we'll denote as `Lt`. For example, `slice::Iter` has kind `Lt -> * -> *`, because it must be instantiated like `Iter<'a, u32>`.
 
-Rust doesn't currently have support for higher-kinded types because it hasn't been a priority. There is nothing inherent to the language that stops the support from being implemented. It just hasn't been done yet.
+The lack of support for higher-kinded types makes it difficult to write certain kinds of generic code. It's particularly problematic for abstracting over concepts like iterators, since iterators are often parameterized over a lifetime at least. That in turn has prevented the creation of traits abstracting over Rust's collections.
+
+Another common example is concepts like functors or monads, both of which are type constructors, rather than single types.
+
+Rust doesn't currently have support for higher-kinded types because it hasn't been a priority compared to other improvements we want to make. Since the design is a major, cross-cutting change, we also want to approach it carefully. But there's no inherent reason for the current lack of support.
 
 <a href="#what-do-named-type-parameters-in-generic-types-mean" name="what-do-named-type-parameters-in-generic-types-mean">
 ### What do named type parameters like `<T=Foo>` in generic types mean?
@@ -566,13 +578,13 @@ Rust doesn't currently have support for higher-kinded types because it hasn't be
 
 These are called [associated types](https://doc.rust-lang.org/stable/book/associated-types.html), and they allow for the expression of trait bounds that can't be expressed with a `where` clause. For example, a generic bound `X: Bar<T=Foo>` means "`X` must implement the trait `Bar`, and in that implementation of `Bar`, `X` must choose `Foo` for `Bar`'s associated type, `T`." Examples of where such a constraint cannot be expressed via a `where` clause include trait objects like `Box<Bar<T=Foo>>`.
 
-Associated types exist because, for a generic type with some type parameters, it is often unecessary to include those type parameters in a function taking that generic type as a parameter. The function shouldn't have to care about being generic over the types which make up the generic type (say, the node and edge types in a graph), but only about being generic over the type itself.
+Associated types exist because generics often involve families of types, where one type determines all of the others in a family. For example, a trait for graphs might have as its `Self` type the graph itself, and have associated types for nodes and for edges. Each graph type uniquely determines the associated types. Using associated types makes it much more concise to work with these families of types, and also provides better type inference in many cases.
 
 <a href="#how-do-i-overload-operators" name="how-do-i-overload-operators">
 ### Can I overload operators? Which ones and how?
 </a>
 
-You can provide custom implementations for a variety of operators using their associated traits: [`Add`][Add] for `+`, [`Mul`][Mul] for `*`. It looks like this:
+You can provide custom implementations for a variety of operators using their associated traits: [`Add`][Add] for `+`, [`Mul`][Mul] for `*`, and so on. It looks like this:
 
 ```rust
 use std::ops::Add;
@@ -616,6 +628,8 @@ The following operators can be overloaded:
 There are some types in Rust whose values are only partially ordered, or have only partial equality. Partial ordering means that there may be values of the given type that are neither less than nor greater than each other. Partial equality means that there may be values of the given type that are not equal to themselves.
 
 Floating point types ([`f32`][f32] and [`f64`][f64]) are good examples of each. Any floating point type may have the value `NaN` (meaning "not a number"). `NaN` is not equal to itself (`NaN == Nan` is false), and not less than or greater than any other floating point value. As such, both [`f32`][f32] and [`f64`][f64] implement [`PartialOrd`][PartialOrd] and [`PartialEq`][PartialEq] but not [`Ord`][Ord] and not [`Eq`][Eq].
+
+As explained in [the earlier question on floats](#why-cant-i-compare-floats), these distinctions are important because some collections rely on total orderings/equality in order to give correct results.
 
 <h2 id="input-output">Input / Output</h2>
 
@@ -671,7 +685,11 @@ Rust prefers a type-based approach to error handling, which is [covered at lengt
 ### What's the deal with `unwrap()` everywhere?
 </a>
 
-`unwrap()` is a function that extracts the value inside an [`Option`][Option] or [`Result`][Result] and panics if no value is present. It is useful in the presence of truly unrecoverable errors, but is more useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point. `unwrap()` shouldn't be your default way to handle errors, but it is a useful tool to have.
+`unwrap()` is a function that extracts the value inside an [`Option`][Option] or [`Result`][Result] and panics if no value is present.
+
+`unwrap()` shouldn't be your default way to handle errors you expect to arise, such as incorrect user input. In production code, it should be treated like an assertion that the value is non-empty, which will crash the program if violated.
+
+It's also useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point.
 
 <a href="#why-do-i-get-errors-with-try" name="why-do-i-get-errors-with-try">
 ### Why do I get an error when I try to run example code that uses the `try!` macro?
@@ -683,7 +701,9 @@ It's probably an issue with the function's return type. The [`try!`][TryMacro] m
 ### Is there an easier way to do error handling than having `Result`s everywhere?
 </a>
 
-If you're looking for a way to avoid handling [`Result`s][Result] in other people's code, there's always [`unwrap()`][unwrap], but it's probably not what you want. [`Result`][Result] is an indicator that some computation may or may not complete successfully. Requiring you to handle these failures explicitly is one of the ways that Rust encourages robustness. If you really don't want to handle an error, use [`unwrap()`][unwrap], but know that doing so means that the given code will cause the entire process to panic on failure, which is usually undesirable.
+If you're looking for a way to avoid handling [`Result`s][Result] in other people's code, there's always [`unwrap()`][unwrap], but it's probably not what you want. [`Result`][Result] is an indicator that some computation may or may not complete successfully. Requiring you to handle these failures explicitly is one of the ways that Rust encourages robustness. Rust provides tools like the [`try!` macro][TryMacro] to make handling failures ergonomic.
+
+If you really don't want to handle an error, use [`unwrap()`][unwrap], but know that doing so means that the code panic on failure, which usually results in a shutting down the process.
 
 <h2 id="concurrency">Concurrency</h2>
 
@@ -709,7 +729,7 @@ Not currently. Rust macros are ["hygienic macros"](https://en.wikipedia.org/wiki
 ### How do I debug Rust programs?
 </a>
 
-Rust programs can be debugged using [gdb](http://sourceware.org/gdb/current/onlinedocs/gdb/) or [lldb](http://lldb.llvm.org/tutorial.html), same as C and C++. In fact, every Rust installation comes with one or both of rust-gdb and rust-lldb (depending on platform support). These are wrappers over gdb and lldb with Rust pretty-printing enabled.
+Rust programs can be debugged using [gdb](http://sourceware.org/gdb/current/onlinedocs/gdb/) or [lldb](http://lldb.llvm.org/tutorial.html), the same as C and C++. In fact, every Rust installation comes with one or both of rust-gdb and rust-lldb (depending on platform support). These are wrappers over gdb and lldb with Rust pretty-printing enabled.
 
 <a href="#how-do-i-locate-a-panic" name="how-do-i-locate-a-panic">
 ### `rustc` said a panic occurred in standard library code. How do I locate the mistake in my code?
@@ -859,7 +879,7 @@ pub fn f() {
 
 In the first example, the module is defined in the same file it's used. In the second example, the module declaration in the main file tells the compiler to look for either `hello.rs` or `hello/mod.rs`, and to load that file.
 
-A `use`ing declaration just tells the compiler to bring everything from a particular module into the current module. Without a `mod` declaration first, the compiler doesn't know if the `use`d module exists, and so can't import its contents into the current module.
+A `use` declaration just tells the compiler to bring *existing* names (reachable through some path) into scope. A `mod` declaration tells the compiler to *define* a module, and like all other declaration forms, also brings the name of the module into scope.
 
 <a href="#how-do-i-configure-cargo-to-use-a-proxy" name="how-do-i-configure-cargo-to-use-a-proxy">
 ### How do I configure Cargo to use a proxy?
@@ -877,7 +897,7 @@ For methods defined on a trait, you have to explicitly import the trait declarat
 ### Why can't the compiler infer `use` declarations for me?
 </a>
 
-It probably could, but you also don't want it to. While in many cases it is likely that the compiler could determine the correct module to import by simply looking for where a given identifier is defined, this may not be the case in general. Any decision rule in `rustc` for choosing between competing options would likely cause surprise and confusion, and not solve much of a problem.
+It probably could, but you also don't want it to. While in many cases it is likely that the compiler could determine the correct module to import by simply looking for where a given identifier is defined, this may not be the case in general. Any decision rule in `rustc` for choosing between competing options would likely cause surprise and confusion in some cases, and Rust prefers to be explicit about where names are coming from.
 
 For example, the compiler could say that in the case of competing identifier definitions the definition from the earliest imported module is chosen. So if both module `foo` and module `bar` define the identifier `baz`, but `foo` is the first registered module, the compiler would insert `use foo::baz;`.
 
@@ -893,6 +913,8 @@ fn main() {
 ```
 
 If you know this is going to happen, perhaps it saves a small number of keystrokes, but it also greatly increases the possibility for surprising error messages when you actually meant for `baz()` to be `bar::baz()`, and it decreases the readability of the code by making the meaning of a function call dependent on module declaration. These are not tradeoffs we are willing to make.
+
+However, in the future, an IDE could help manage declarations, which gives you the best of both worlds: machine assistance for pulling in names, but explicit declarations about where those names are coming from.
 
 <!--
 ### How do I package and archive crates from [http://crates.io](http://crates.io)?
@@ -921,14 +943,6 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 > In short, we don't think the Cargo ecosystem would be better off if Piston chose a name like `bvssvni/game-engine` (allowing other users to choose `wycats/game-engine`) instead of simply `piston`.<br><br>
 >
 > Because namespaces are strictly more complicated in a number of ways,and because they can be added compatibly in the future should they become necessary, we're going to stick with a single shared namespace.
-
-<a href="#why-are-so-many-rust-answers-on-stackoverflow-wrong" name="why-are-so-many-rust-answers-on-stackoverflow-wrong">
-### Why are so many Rust answers on StackOverflow wrong?
-</a>
-
-The Rust language has been around for a number of years, and only reached version 1.0 in May of 2015. In the time before then the language changed significantly, and a number of StackOverflow answers were given at the time of older versions of the language.
-
-Over time more and more answers will be offered for the current version, thus improving this issue as the proportion of out-of-date answers is reduced.
 
 <h2 id="libraries">Libraries</h2>
 
@@ -1008,6 +1022,10 @@ To define procedural constants that can't be defined via these mechanisms, use t
 
 Rust has no concept of "life before `main`". The closest you'll see can be done through the [`lazy-static`](https://github.com/Kimundi/lazy-static.rs) crate, which simulates a "before main" by lazily initializing static variables at their first usage.
 
+<!--
+
+This answer needs significant work. Let's revise after the initial posting. --aturon
+
 <a href="#why-doesnt-rust-have-inheritance" name="why-doesnt-rust-have-inheritance">
 ### Why doesn't Rust have inheritance?
 </a>
@@ -1019,6 +1037,8 @@ For the first, subtyping exists for polymorphism, which traits already provide.
 For the second, interface sharing is handled via trait methods, which define a collection of related functions that must be implemented for any implementation of the trait.
 
 Rust has consistently worked to avoid having features with overlapping purposes, preferring to keep features orthogonal. For this reason, and given that the two major purposes are already handled by traits, Rust has opted not to include inheritance.
+
+-->
 
 <a href="#does-rust-allow-non-constant-expression-values-for-globals" name="does-rust-allow-non-constant-expression-values-for-globals">
 ### Does Rust allow non-constant-expression values for globals?
@@ -1164,6 +1184,14 @@ Some specific difference between Haskell typeclasses and Rust traits include:
 - A subset of Rust's traits (the ["object safe"](https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md) ones) can be used for dynamic dispatch via trait objects. The same feature is available in Haskell via GHC's `ExistentialQuantification`.
 
 <h2 id="documentation">Documentation</h2>
+
+<a href="#why-are-so-many-rust-answers-on-stackoverflow-wrong" name="why-are-so-many-rust-answers-on-stackoverflow-wrong">
+### Why are so many Rust answers on StackOverflow wrong?
+</a>
+
+The Rust language has been around for a number of years, and only reached version 1.0 in May of 2015. In the time before then the language changed significantly, and a number of StackOverflow answers were given at the time of older versions of the language.
+
+Over time more and more answers will be offered for the current version, thus improving this issue as the proportion of out-of-date answers is reduced.
 
 <a href="#where-do-i-report-issues-in-the-rust-documentation" name="where-do-i-report-issues-in-the-rust-documentation">
 ### Where do I report issues in the Rust documentation?
