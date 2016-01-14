@@ -478,6 +478,12 @@ ul.laundry-list {
     color: black;
 }
 
+.faq ol ul {
+    padding-left: 0px;
+    margin-top: 0.5em;
+    margin-left: 1em;
+}
+
 #toc h2 {
     border: 0;
     font-size: 2rem;
