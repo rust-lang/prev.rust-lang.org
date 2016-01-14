@@ -422,7 +422,7 @@ ul.laundry-list {
     font-size: 1em;
     line-height: 1.5em;
     font-weight: 500;
-    margin: 2rem 0 .25rem;
+    margin: 2rem 0 .5rem;
 }
 
 @media screen and (min-width: 820px) {
@@ -474,7 +474,7 @@ ul.laundry-list {
     line-height: 1.5em;
 }
 
-.faq a > h3 {
+.faq h3 > a {
     color: black;
 }
 
