@@ -32,7 +32,7 @@ programmers.
 for learning Rust.
 
 [book]: https://doc.rust-lang.org/book/
-[rbe]: http://rust-by-example.com
+[rbe]: http://rustbyexample.com
 [faq]: faq.html
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [**rust-learning**]: https://github.com/ctjhoa/rust-learning
