@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Rust Community &middot; The Rust Programming Language
+title: The Rust Community &middot; The Rust Programming Language
 ---
 
-# Rust Community
+# The Rust Community
 
 Rust is an amazing programming language, but its greatest strength
 is its kind and inclusive community.
@@ -129,6 +129,7 @@ socialize with other people with a similar interest. Meetings are
 usually held monthly and very informal. Meetings are open to everyone.
 
 There is a global [calendar][calendar] for keeping up with Rust events.
+Contact the [community team][community_team] to add your own.
 
 [user_group]: ./user_groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
@@ -179,12 +180,11 @@ help get you started.
 [community_team]: https://www.rust-lang.org/team.html#Community
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
 
+<a name="rust-development"></a>
 ## Rust Development
 
 Rust has had over [1,200 different contributors][authors], a number that grows
-every single week. We'd love for you to join that list! If you aren't sure what
-to work on or how to get started, take a look at our
-[how to contribute][contribute] page.
+every single week. [We'd love for you to join that list][contribute]!
 
 As mentioned above, the [Rust Internals Forum][internals_forum] is dedicated to
 discussing the design and implementation of Rust. A lot of discussion also
@@ -203,7 +203,7 @@ team business, including the progression of proposals through the RFC and
 implementation process.
 
 [authors]: https://github.com/rust-lang/rust/blob/master/AUTHORS.txt
-[contribute]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md
+[contribute]: contribute.html
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
 [team_reports]: https://github.com/rust-lang/subteams
