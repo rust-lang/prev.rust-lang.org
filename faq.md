@@ -64,7 +64,19 @@ By avoiding GC, Rust can offer numerous benefits: predictable cleanup of resourc
 Rust avoids the need for GC through its system of ownership and borrowing, but that same system helps with a host of other problems, including
 [resource management in general](http://blog.skylight.io/rust-means-never-having-to-close-a-socket/) and [concurrency](http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html).
 
-Finally, Rust gives you the tools to [use or implement third-party garbage collectors](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/), but it is not part of the language as provided.
+In practice, instead of GC Rust programs rely on reference counting through the
+standard library's
+[`Rc`](http://doc.rust-lang.org/std/rc/struct.Rc.html) and
+[`Arc`](http://doc.rust-lang.org/std/sync/struct.Arc.html) types.
+
+We are however investigating *optional* garbage collection as a future
+extension. The goal is to enable smooth integration with
+garbage-collected runtimes, such as those offered by the
+[Spidermonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
+and [V8](https://developers.google.com/v8/?hl=en) JavaScript engines.
+Finally, some people have investigated implementing
+[pure Rust garbage collectors](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/)
+without compiler support.
 
 <a href="#why-is-my-program-slow" name="why-is-my-program-slow">
 ### Why is my program slow?
@@ -431,11 +443,13 @@ This is covered in the official documentation for [`Rc`][Rc], Rust's non-atomica
 
 To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a [`Box`][Box], so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
 
-<a href="#how-do-deref-coercions-work" name="how-do-deref-coercions-work">
-### How do deref coercions work?
+<a href="#what-are-deref-coercions" name="what-are-deref-coercions">
+### What is a deref coercion and how does it work?
 </a>
 
-[Deref coercions](https://doc.rust-lang.org/book/deref-coercions.html) exist to make using Rust more ergonomic, and are implemented via the [`Deref`][Deref] trait.
+A [deref coercion](https://doc.rust-lang.org/book/deref-coercions.html) is a handy coercion
+that automatically converts references to pointers (e.g., `&Rc<T>` or `&Box<T>`) into references
+to their contents (e.g., `&T`). Deref coercions exist to make using Rust more ergonomic, and are implemented via the [`Deref`][Deref] trait.
 
 A Deref implementation indicates that the implementing type may be converted into a target by a call to the `deref` method, which takes an immutable reference to the calling type and returns a reference (of the same lifetime) to the target type. The `*` prefix operator is shorthand for the `deref` method.
 
@@ -445,7 +459,13 @@ They're called "coercions" because of the following rule, quoted here [from the 
 
 For example, if you have a `&Rc<String>`, it will coerce via this rule into a `&String`, which then coerces to a `&str` in the same way. So if a function takes a `&str` parameter, you can pass in a `&Rc<String>` directly, with all coercions handled automatically via the `Deref` trait.
 
-You can see a [full list of `Deref` implementations](https://doc.rust-lang.org/stable/std/ops/trait.Deref.html#implementors) for the standard library in the documentation.
+The most common sorts of deref coercions are:
+
+- `&Rc<T>` to `&T`
+- `&Box<T>` to `&T`
+- `&Arc<T>` to `&T`
+- `&Vec<T>` to `&[T]`
+- `&String` to `&str`
 
 <h2 id="lifetimes">Lifetimes</h2>
 
@@ -490,32 +510,29 @@ fn happy_birthday(name: &str, age: i64) -> String {
 
 This approach is simpler, but often results in unnecessary allocations.
 
-There is also the [`Cow`][Cow] ("copy on write") type, which will only do the extra allocation if you attempt to mutate the contained value:
-
-```rust
-use std::borrow::Cow;
-
-fn abs_all(input: &mut Cow<[i32]>) {
-    for i in 0..input.len() {
-        let v = input[i];
-        if v < 0 {
-            // clones into a vector the first time (if not already owned)
-            input.to_mut()[i] = -v;
-        }
-    }
-}
-```
-
 <a href="#when-are-lifetimes-required-to-be-explicit" name="when-are-lifetimes-required-to-be-explicit">
-### When are lifetimes required to be explicit?
+### Why do some references have lifetimes, like `&'a T`, and some do not, like `&T`?
 </a>
 
-Rust has a shorthand for leaving off lifetimes that covers the vast majority of cases in practice.
-This shorthand is called [lifetime elision](https://doc.rust-lang.org/stable/book/lifetimes.html#lifetime-elision), and encompasses three rules:
+In fact, *all* reference types have a lifetime, but most of the time you do not have to write
+it explicitly. The rules are as follows:
 
-- Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
-- If there is exactly one input lifetime, elided or not, that lifetime is assigned to all elided lifetimes in the return values of that function.
-- If there are multiple input lifetimes, but one of them is `&self` or `&mut self`, the lifetime of `self` is assigned to all elided output lifetimes.
+1. Within a function body, you never have to write a lifetime explicitly; the correct value
+   should always be inferred.
+2. Within a function *signature* (for example, in the types of its
+   arguments, or its return type), you *may* have to write a lifetime
+   explicitly. Lifetimes there use a simple defaulting scheme called
+   ["lifetime elision"](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision),
+   which consists of the following three rules:
+
+   - Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
+   - If there is exactly one input lifetime, elided or not, that
+     lifetime is assigned to all elided lifetimes in the return values
+     of that function.
+   - If there are multiple input lifetimes, but one of them is &self
+     or &mut self, the lifetime of self is assigned to all elided
+     output lifetimes.
+3. Finally, in a `struct` or `enum` definition, all lifetimes must be explicitly declared.
 
 If these rules result in compilation errors, the Rust compiler will provide an error message indicating the error caused, and suggesting a potential solution based on which step of the inference process caused the error.
 
@@ -879,7 +896,7 @@ pub fn f() {
 
 In the first example, the module is defined in the same file it's used. In the second example, the module declaration in the main file tells the compiler to look for either `hello.rs` or `hello/mod.rs`, and to load that file.
 
-A `use` declaration just tells the compiler to bring *existing* names (reachable through some path) into scope. A `mod` declaration tells the compiler to *define* a module, and like all other declaration forms, also brings the name of the module into scope.
+Note the difference between `mod` and `use`: `mod` declares that a module exists, whereas `use` references a module declared elsewhere, bringing its contents into scope within the current module.
 
 <a href="#how-do-i-configure-cargo-to-use-a-proxy" name="how-do-i-configure-cargo-to-use-a-proxy">
 ### How do I configure Cargo to use a proxy?
@@ -950,7 +967,7 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 ### How can I make an HTTP request?
 </a>
 
-[Hyper](https://github.com/hyperium/hyper) is the most popular, but there are [a number of others as well](https://crates.io/keywords/http).
+The standard library does not include an implementation of HTTP, so you will want to use an external crate. [Hyper](https://github.com/hyperium/hyper) is the most popular, but there are [a number of others as well](https://crates.io/keywords/http).
 
 <a href="#how-can-i-write-a-gui-application" name="how-can-i-write-a-gui-application">
 ### How can I write a GUI application in Rust?
@@ -1070,7 +1087,7 @@ Converting in the other direction can be done with a `match` statement, which ma
 ### Why does Rust not have a stable ABI like C does, and why do I have to annotate things with extern?
 </a>
 
-Committing to an ABI is a big decision that can limit potentially advantageous language changes in the future. Given that Rust only hit 1.0 in May of 2015, it is still too early to make a commitment as big as a stable ABI. This does not mean that one won't happen in the future, though.
+Committing to an ABI is a big decision that can limit potentially advantageous language changes in the future. Given that Rust only hit 1.0 in May of 2015, it is still too early to make a commitment as big as a stable ABI. This does not mean that one won't happen in the future, though. (Though C++ has managed to go for many years without specifying a stable ABI.)
 
 The `extern` keyword allows Rust to use specific ABI's, such as the well-defined C ABI, for interop with other languages.
 
@@ -1104,11 +1121,58 @@ Rust doesn't currently have an exact equivalent to template specialization, but 
 ### How does Rust's ownership system relate to move semantics in C++?
 </a>
 
-The notions of a "move" in Rust and a "move" in C++ are quite different, owing to the different systems in which they exist.
+The underlying concepts are similar, but the two systems work very
+differently in practice. In both systems, "moving" a value is a way to
+transfer ownership of its underlying resources. For example, moving a
+string would transfer the string's buffer rather than copying it.
 
-In C++, R-value references come from a temporary value, or are explicitly created from a named value via `std::move`. In this way, C++ enforces that no mutable references exist to the moved-out value, so that the memory may be safely invalidated. In Rust, mutable aliases are statically eliminated by the borrow checker, and so the rough equivalent of C++'s R-values are found in Rust's mutable references (`&mut`), which can only be used if no other mutable alias already exists to the given memory location.
+In Rust, ownership transfer is the default behavior. For example, if I
+write a function that takes a `String` as argument, this function will
+take ownership of the `String` value supplied by its caller:
 
-Rust "move"s are about transferring ownership, rather than eliminating mutable aliases (which are handled via the borrow checker). By default, the ownership of any function parameter is transferred into the function and out of the parameter at the call site, unless that parameter's type implements the [`Copy`][Copy] trait, in which case a shallow copy of the value is used to instantiate the actual parameter of the function. Rust's "move"s are often unecessary and undesirable. If the function you're writing does not require ownership of the value being passed in, that value should probably be borrowed (mutably or immutably, as necessary) rather than moved or copied.
+```rust
+fn process(s: String) { }
+
+fn caller() {
+    let s = String::from("Hello, world!");
+    process(s); // Transfers ownership of `s` to `process`
+    process(s); // Error! ownership already transferred.
+}
+```
+
+As you can see in the snippet above, in the function `caller`, the
+first call to `process` transfers ownership of the variable `s`. The
+compiler tracks ownership, so the second call to `process` results in
+an error, because it is illegal to give away ownership of the same
+value twice. Rust will also prevent you from moving a value if there
+is an outstanding reference into that value.
+
+C++ takes a different approach. In C++, the default is to copy a value
+(to invoke the copy constructor, more specifically). However, callees
+can declare their arguments using an "rvalue reference", like
+`string&&`, to indicate that they will take ownership of some of the
+resources owned by that argument (in this case, the string's internal
+buffer). The caller then must either pass a temporary expression or
+make an explicit move using `std::move`. The rough equivalent to the
+function `process` above, then, would be:
+
+```
+void process(string&& s) { }
+
+void caller() {
+    string s("Hello, world!");
+    process(std::move(s));
+    process(std::move(s));
+}
+```
+
+C++ compilers are not obligated to track moves. For example, the code
+above compiles without a warning or error, at least using the default
+settings on clang. Moreover, in C++ ownership of the string `s` itself
+(if not its internal buffer) remains with `caller`, and so the
+destructor for `s` will run when `caller` returns, even though it has
+been moved (in Rust, in contrast, moved values are dropped only by
+their new owners).
 
 <a href="#how-to-interoperate-with-cxx" name="how-to-interoperate-with-cxx">
 ### How can I interoperate with C++ from Rust, or with Rust from C++?
@@ -1144,7 +1208,7 @@ impl Foo {
 ### Does Rust have copy constructors?
 </a>
 
-Not exactly. Types which implement [`Copy`][Copy] will do a standard C-like "shallow copy" with no extra work (similar to "plain old data" in C++). It is impossible to implement [`Copy`][Copy] types that require custom copy behavior. Instead, in Rust "copy constructors" are created by implementing the [`Clone`][Clone] trait, and explicitly calling the [`clone`][clone] method. Making user-defined copy operators explicit surfaces the underlying complexity, forcing the developer to opt-in to potentially expensive operations.
+Not exactly. Types which implement `Copy` will do a standard C-like "shallow copy" with no extra work (similar to "plain old data" in C++). It is impossible to implement `Copy` types that require custom copy behavior. Instead, in Rust "copy constructors" are created by implementing the `Clone` trait, and explicitly calling the `clone` method. Making user-defined copy operators explicit surfaces the underlying complexity, making it easier for the developer to identify potentially expensive operations.
 
 <a href="#does-rust-have-move-constructors" name="does-rust-have-move-constructors">
 ### Does Rust have move constructors?
@@ -1158,7 +1222,7 @@ No. Values of all types are moved via `memcpy`. This makes writing generic unsaf
 
 Rust and Go have substantially different design goals. The following differences are not the only ones (which are too numerous to list), but are a few of the more important ones:
 
-- Rust provides access to memory management primitives that do not exist in Go, which has a garbage collector.
+- Rust is lower level than Go. For example, Rust does not require a garbage collector, whereas Go does. In general, Rust affords a level of control that is comparable to C or C++.
 - Rust's focus is on ensuring safety and efficiency while also providing high-level affordances, while Go's is on being a small, simple language which compiles quickly and can work nicely with a variety of tools.
 - Rust has strong support for generics, which Go does not.
 - Rust has strong influences from the world of functional programming, including a type system which draws from Haskell's typeclasses. Go has a simpler type system, using interfaces for basic generic programming.
