@@ -16,6 +16,7 @@ If there is some common or important question you feel is wrongly left unanswere
 <div id="toc">
     <h2>Table of Contents</h2><a href="#toggle-toc"></a>
     <ol id="toc-contents">
+        <li><a href="#project">The Rust Project</a></li>
         <li><a href="#performance">Performance</a></li>
         <li><a href="#syntax">Syntax</a></li>
         <li><a href="#numerics">Numerics</a></li>
@@ -36,10 +37,122 @@ If there is some common or important question you feel is wrongly left unanswere
         <li><a href="#design-patterns">Design Patterns</a></li>
         <li><a href="#other-languages">Other Languages</a></li>
         <li><a href="#documentation">Documentation</a></li>
-        <li><a href="#project">The Rust Project</a></li>
 
     </ol>
 </div>
+
+
+<h2 id="project">The Rust Project</h2>
+
+<h3><a href="#what-is-this-projects-goal" name="what-is-this-projects-goal">
+What is this project's goal?
+</a></h3>
+
+To design and implement a safe, concurrent, practical systems language.
+
+Rust exists because other languages at this level of abstraction and efficiency are unsatisfactory. In particular:
+
+1. There is too little attention paid to safety.
+2. They have poor concurrency support.
+3. There is a lack of practical affordances.
+4. They offer limited control over resources.
+
+Rust exists as an alternative that provides both efficient code and a comfortable level of abstraction, while improving on all four of these points.
+
+<h3><a href="#is-this-project-controlled-by-mozilla" name="is-this-project-controlled-by-mozilla">
+Is this project controlled by Mozilla?
+</a></h3>
+
+No. Rust started as Graydon Hoare's part-time side project in 2006 and remained so for over 3 years. Mozilla got involved in 2009 once the language was mature enough to run basic tests and demonstrate its core concepts. Though it remains sponsored by Mozilla, Rust is developed by a diverse community of enthusiasts from many different places around the world. The [Rust Team](https://www.rust-lang.org/team.html) is composed of both Mozilla and non-Mozilla members, and `rustc` (Rust's compiler) has had over [1,000 unique contributors](https://github.com/rust-lang/rust/) so far.
+
+As far as [project governance](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md) goes, Rust is managed by a core team that sets the vision and priorities for the project, and accepts input on the design of the language via RFC proposals. There are also subteams to guide and foster development of particular areas of interest, including Rust libraries, Rust tools, and moderation of the official Rust communities. For changes which do not require an RFC, decisions are made through pull requests on the [`rustc` repository](https://github.com/rust-lang/rust).
+
+<h3><a href="#what-are-some-non-goals" name="what-are-some-non-goals">
+What are some non-goals of Rust?
+</a></h3>
+
+1. We do not employ any particularly cutting-edge technologies. Old, established techniques are better.
+2. We do not prize expressiveness, minimalism or elegance above other goals. These are desirable but subordinate goals.
+3. We do not intend to cover the complete feature-set of C++, or any other language. Rust should provide majority-case features.
+4. We do not intend to be 100% static, 100% safe, 100% reflective, or too dogmatic in any other sense. Trade-offs exist.
+5. We do not demand that Rust run on "every possible platform". It must eventually work without unnecessary compromises on widely-used hardware and software platforms.
+
+<h3><a href="#how-does-mozilla-use-rust" name="how-does-mozilla-use-rust">
+In which projects is Mozilla using Rust?
+</a></h3>
+
+The main project is [Servo](https://github.com/servo/servo), an experimental browser engine Mozilla is working on. They are also working to [integrate Rust components](https://bugzilla.mozilla.org/show_bug.cgi?id=1135640) into Firefox.
+
+<h3><a href="#what-examples-are-there-of-large-rust-projects" name="what-examples-are-there-of-large-rust-projects">
+What examples are there of large Rust projects?
+</a></h3>
+
+The two biggest open source Rust projects right now are [Servo](https://github.com/servo/servo) and the [Rust compiler](https://github.com/rust-lang/rust) itself.
+
+<!--
+### What projects are good examples of idiomatic Rust code?
+
+TODO: Write this answer.
+-->
+
+<h3><a href="#how-can-i-try-rust-easily" name="how-can-i-try-rust-easily">
+How can I try Rust easily?
+</a></h3>
+
+The easiest way to try Rust is through the [playpen](https://play.rust-lang.org/), an online app for writing and running Rust code. If you want to try Rust on your system, [install it](https://www.rust-lang.org/install.html) and go through the ["Learn Rust"](https://doc.rust-lang.org/stable/book/learn-rust.html) section of the book.
+
+<h3><a href="#how-do-i-get-help-with-rust-issues" name="how-do-i-get-help-with-rust-issues">
+How do I get help with Rust issues?
+</a></h3>
+
+There are several ways. You can:
+
+- Post in [users.rust-lang.org](https://users.rust-lang.org/), the official Rust forum
+- Ask in the official [Rust IRC channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) (#rust on irc.mozilla.org)
+- Ask on [StackOverflow](http://stackoverflow.com/questions/tagged/rust) with the "rust" tag
+- Post in [/r/rust](https://www.reddit.com/r/rust), the official Rust subreddit
+
+<h3><a href="#why-has-rust-changed-so-much" name="why-has-rust-changed-so-much">
+Why has Rust changed so much over time?
+</a></h3>
+
+Rust started with a goal of creating a safe but usable systems programming language. In pursuit of this goal it explored a lot of ideas, some of which it kept (lifetimes, traits) while others were discarded (the typestate system, green threading). Also, in the run up to 1.0 a lot of the standard library was rewritten as early designs were updated to best use Rust's features and provide quality, consistent cross-platform APIs.
+
+<h3><a href="#how-does-rust-language-versioning-work" name="how-does-rust-language-versioning-work">
+How does Rust language versioning work?
+</a></h3>
+
+Rust's language versioning follows [SemVer](http://semver.org/), with backwards incompatible changes of stable APIs only allowed in minor versions if those changes fix compiler bugs, patch safety holes, or change type inference to require additional annotation.
+
+Rust maintains three "release channels": stable, beta, and nightly. Stable and beta are updated every six weeks, with the current nightly becoming the new beta, and the current beta becoming the new stable. Language and standard library features marked unstable or hidden behind feature gates may only be used on the nightly channel.
+
+For details, read the Rust blog post ["Stability as a Deliverable."](http://blog.rust-lang.org/2014/10/30/Stability.html)
+
+<h3><a href="#can-i-use-unstable-features-on-the-beta-or-stable-channel" name="can-i-use-unstable-features-on-the-beta-or-stable-channel">
+Can I use unstable features on the beta or stable channel?
+</a></h3>
+
+No, you cannot. Rust works hard to provide strong guarantees about the stability of the features provided on the beta and stable channels. When something is unstable, it means that we can't provide those guarantees for it yet, and don't want people relying on it staying the same. This gives us the opportunity to try changes in the wild on the nightly channel, while still maintaining strong guarantees for people seeking stability.
+
+Things stabilize all the time, and the beta and stable channels update every six weeks. If you're waiting for a feature to be available without using the nightly channel, you can locate its tracking issue by checking the [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable) tag on the issue tracker.
+
+<h3><a href="#what-ide-should-i-use" name="what-ide-should-i-use">
+What IDE should I use?
+</a></h3>
+
+There are a number of options for development environment with Rust, all of which are detailed on the official [IDE support page](https://www.rust-lang.org/ides.html).
+
+<h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
+Why a dual MIT/ASL2 License?
+</a></h3>
+
+The Apache license includes important protection against patent aggression, but it is not compatible with the GPL, version 2. To avoid problems using Rust with GPL2, it is alternately MIT licensed.
+
+<h3><a href="#why-a-permissive-license" name="why-a-permissive-license">
+Why a BSD-style permissive license rather than MPL or tri-license?
+</a></h3>
+
+This is partly due to preference of the original developer (Graydon), and partly due to the fact that languages tend to have a wider audience and more diverse set of possible embeddings and end-uses than products such as web browsers. We'd like to appeal to as many of those potential contributors as possible.
 
 <h2 id="performance">Performance</h2>
 
@@ -1268,118 +1381,6 @@ How do I view rustdoc documentation for a library my project depends on?
 </a></h3>
 
 When you use `cargo doc` to generate documentation for your own project, it also generates docs for the active dependency versions. These are put into the `target/doc` directory of your project. Use `cargo doc --open` to open the docs after building them, or just open up `target/doc/index.html` yourself.
-
-<h2 id="project">The Rust Project</h2>
-
-<h3><a href="#what-is-this-projects-goal" name="what-is-this-projects-goal">
-What is this project's goal?
-</a></h3>
-
-To design and implement a safe, concurrent, practical systems language.
-
-Rust exists because other languages at this level of abstraction and efficiency are unsatisfactory. In particular:
-
-1. There is too little attention paid to safety.
-2. They have poor concurrency support.
-3. There is a lack of practical affordances.
-4. They offer limited control over resources.
-
-Rust exists as an alternative that provides both efficient code and a comfortable level of abstraction, while improving on all four of these points.
-
-<h3><a href="#is-this-project-controlled-by-mozilla" name="is-this-project-controlled-by-mozilla">
-Is this project controlled by Mozilla?
-</a></h3>
-
-No. Rust started as Graydon Hoare's part-time side project in 2006 and remained so for over 3 years. Mozilla got involved in 2009 once the language was mature enough to run basic tests and demonstrate its core concepts. Though it remains sponsored by Mozilla, Rust is developed by a diverse community of enthusiasts from many different places around the world. The [Rust Team](https://www.rust-lang.org/team.html) is composed of both Mozilla and non-Mozilla members, and `rustc` (Rust's compiler) has had over [1,000 unique contributors](https://github.com/rust-lang/rust/) so far.
-
-As far as [project governance](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md) goes, Rust is managed by a core team that sets the vision and priorities for the project, and accepts input on the design of the language via RFC proposals. There are also subteams to guide and foster development of particular areas of interest, including Rust libraries, Rust tools, and moderation of the official Rust communities. For changes which do not require an RFC, decisions are made through pull requests on the [`rustc` repository](https://github.com/rust-lang/rust).
-
-<h3><a href="#what-are-some-non-goals" name="what-are-some-non-goals">
-What are some non-goals of Rust?
-</a></h3>
-
-1. We do not employ any particularly cutting-edge technologies. Old, established techniques are better.
-2. We do not prize expressiveness, minimalism or elegance above other goals. These are desirable but subordinate goals.
-3. We do not intend to cover the complete feature-set of C++, or any other language. Rust should provide majority-case features.
-4. We do not intend to be 100% static, 100% safe, 100% reflective, or too dogmatic in any other sense. Trade-offs exist.
-5. We do not demand that Rust run on "every possible platform". It must eventually work without unnecessary compromises on widely-used hardware and software platforms.
-
-<h3><a href="#how-does-mozilla-use-rust" name="how-does-mozilla-use-rust">
-In which projects is Mozilla using Rust?
-</a></h3>
-
-The main project is [Servo](https://github.com/servo/servo), an experimental browser engine Mozilla is working on. They are also working to [integrate Rust components](https://bugzilla.mozilla.org/show_bug.cgi?id=1135640) into Firefox.
-
-<h3><a href="#what-examples-are-there-of-large-rust-projects" name="what-examples-are-there-of-large-rust-projects">
-What examples are there of large Rust projects?
-</a></h3>
-
-The two biggest open source Rust projects right now are [Servo](https://github.com/servo/servo) and the [Rust compiler](https://github.com/rust-lang/rust) itself.
-
-<!--
-### What projects are good examples of idiomatic Rust code?
-
-TODO: Write this answer.
--->
-
-<h3><a href="#how-can-i-try-rust-easily" name="how-can-i-try-rust-easily">
-How can I try Rust easily?
-</a></h3>
-
-The easiest way to try Rust is through the [playpen](https://play.rust-lang.org/), an online app for writing and running Rust code. If you want to try Rust on your system, [install it](https://www.rust-lang.org/install.html) and go through the ["Learn Rust"](https://doc.rust-lang.org/stable/book/learn-rust.html) section of the book.
-
-<h3><a href="#how-do-i-get-help-with-rust-issues" name="how-do-i-get-help-with-rust-issues">
-How do I get help with Rust issues?
-</a></h3>
-
-There are several ways. You can:
-
-- Post in [users.rust-lang.org](https://users.rust-lang.org/), the official Rust forum
-- Ask in the official [Rust IRC channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) (#rust on irc.mozilla.org)
-- Ask on [StackOverflow](http://stackoverflow.com/questions/tagged/rust) with the "rust" tag
-- Post in [/r/rust](https://www.reddit.com/r/rust), the official Rust subreddit
-
-<h3><a href="#why-has-rust-changed-so-much" name="why-has-rust-changed-so-much">
-Why has Rust changed so much over time?
-</a></h3>
-
-Rust started with a goal of creating a safe but usable systems programming language. In pursuit of this goal it explored a lot of ideas, some of which it kept (lifetimes, traits) while others were discarded (the typestate system, green threading). Also, in the run up to 1.0 a lot of the standard library was rewritten as early designs were updated to best use Rust's features and provide quality, consistent cross-platform APIs.
-
-<h3><a href="#how-does-rust-language-versioning-work" name="how-does-rust-language-versioning-work">
-How does Rust language versioning work?
-</a></h3>
-
-Rust's language versioning follows [SemVer](http://semver.org/), with backwards incompatible changes of stable APIs only allowed in minor versions if those changes fix compiler bugs, patch safety holes, or change type inference to require additional annotation.
-
-Rust maintains three "release channels": stable, beta, and nightly. Stable and beta are updated every six weeks, with the current nightly becoming the new beta, and the current beta becoming the new stable. Language and standard library features marked unstable or hidden behind feature gates may only be used on the nightly channel.
-
-For details, read the Rust blog post ["Stability as a Deliverable."](http://blog.rust-lang.org/2014/10/30/Stability.html)
-
-<h3><a href="#can-i-use-unstable-features-on-the-beta-or-stable-channel" name="can-i-use-unstable-features-on-the-beta-or-stable-channel">
-Can I use unstable features on the beta or stable channel?
-</a></h3>
-
-No, you cannot. Rust works hard to provide strong guarantees about the stability of the features provided on the beta and stable channels. When something is unstable, it means that we can't provide those guarantees for it yet, and don't want people relying on it staying the same. This gives us the opportunity to try changes in the wild on the nightly channel, while still maintaining strong guarantees for people seeking stability.
-
-Things stabilize all the time, and the beta and stable channels update every six weeks. If you're waiting for a feature to be available without using the nightly channel, you can locate its tracking issue by checking the [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable) tag on the issue tracker.
-
-<h3><a href="#what-ide-should-i-use" name="what-ide-should-i-use">
-What IDE should I use?
-</a></h3>
-
-There are a number of options for development environment with Rust, all of which are detailed on the official [IDE support page](https://www.rust-lang.org/ides.html).
-
-<h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
-Why a dual MIT/ASL2 License?
-</a></h3>
-
-The Apache license includes important protection against patent aggression, but it is not compatible with the GPL, version 2. To avoid problems using Rust with GPL2, it is alternately MIT licensed.
-
-<h3><a href="#why-a-permissive-license" name="why-a-permissive-license">
-Why a BSD-style permissive license rather than MPL or tri-license?
-</a></h3>
-
-This is partly due to preference of the original developer (Graydon), and partly due to the fact that languages tend to have a wider audience and more diverse set of possible embeddings and end-uses than products such as web browsers. We'd like to appeal to as many of those potential contributors as possible.
 
 [Vec]: https://doc.rust-lang.org/stable/std/vec/struct.Vec.html
 [HashMap]: https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html
