@@ -162,7 +162,7 @@ fn is_odd(x: i64) -> bool {
 }
 ```
 
-In each example, the last line of the function is the return value of that function. It is important to note that if a block ends in a semicolon, its return type will be `()`, indicating no returned value. Implicit returns must omit the semicolon to work.
+In each example, the last line of the function is the return value of that function. It is important to note that if a function ends in a semicolon, its return type will be `()`, indicating no returned value. Implicit returns must omit the semicolon to work.
 
 Explicit returns are only used if an implicit return is impossible because you are returning before the end of the function's body. While each of the above functions could have been written with a `return` keyword and semicolon, doing so would be unnecessarily verbose, and inconsistent with the conventions of Rust code.
 
@@ -335,7 +335,7 @@ One thing to note is that currently Rust doesn't offer generics over arrays of d
 ### How can I implement a graph or other data structure that contains cycles?
 </a>
 
-There are at least four options (discussed at length in a [draft book](http://cglab.ca/~abeinges/blah/too-many-lists/book/):
+There are at least four options (discussed at length in [Too Many Linked Lists](http://cglab.ca/~abeinges/blah/too-many-lists/book/):
 
 - You can implement it using [`Rc`][Rc] and [`Weak`][Weak] to allow shared ownership of nodes,
 although this approach pays the cost of memory management.
