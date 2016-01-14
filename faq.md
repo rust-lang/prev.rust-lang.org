@@ -29,7 +29,7 @@ If there is some common or important question you feel is wrongly left unanswere
         <li><a href="#error-handling">Error Handling</a></li>
         <li><a href="#concurrency">Concurrency</a></li>
         <li><a href="#macros">Macros</a></li>
-        <li><a href="#debugging">Debugging</a></li>
+        <li><a href="#debugging">Debugging and Tooling</a></li>
         <li><a href="#low-level">Low-Level</a></li>
         <li><a href="#cross-platform">Cross-Platform</a></li>
         <li><a href="#modules-and-crates">Modules and Crates</a></li>
@@ -135,12 +135,6 @@ Can I use unstable features on the beta or stable channel?
 No, you cannot. Rust works hard to provide strong guarantees about the stability of the features provided on the beta and stable channels. When something is unstable, it means that we can't provide those guarantees for it yet, and don't want people relying on it staying the same. This gives us the opportunity to try changes in the wild on the nightly channel, while still maintaining strong guarantees for people seeking stability.
 
 Things stabilize all the time, and the beta and stable channels update every six weeks. If you're waiting for a feature to be available without using the nightly channel, you can locate its tracking issue by checking the [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable) tag on the issue tracker.
-
-<h3><a href="#what-ide-should-i-use" name="what-ide-should-i-use">
-What IDE should I use?
-</a></h3>
-
-There are a number of options for development environment with Rust, all of which are detailed on the official [IDE support page](https://www.rust-lang.org/ides.html).
 
 <h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
 Why a dual MIT/ASL2 License?
@@ -853,7 +847,7 @@ Can I write a macro to generate identifiers?
 
 Not currently. Rust macros are ["hygienic macros"](https://en.wikipedia.org/wiki/Hygienic_macro), which intentionally avoid capturing or creating identifiers that may cause unexpected collisions with other identifiers. Their capabilities are significantly different than the style of macros commonly associated with the C preprocessor. Macro invocations can only appear in places where they are explicitly supported: items, method declarations, statements, expressions, and patterns. Here, "method declarations" means a blank space where a method can be put. They can't be used to complete a partial method declaration. By the same logic, they can't be used to complete a partial variable declaration.
 
-<h2 id="debugging">Debugging</h2>
+<h2 id="debugging">Debugging and Tooling</h2>
 
 <h3><a href="#how-do-i-debug-rust-programs" name="how-do-i-debug-rust-programs">
 How do I debug Rust programs?
@@ -866,6 +860,18 @@ Rust programs can be debugged using [gdb](http://sourceware.org/gdb/current/onli
 </a></h3>
 
 This error is usually caused by [`unwrap()`ing][unwrap] a `None` or `Err` in client code. Enabling backtraces by setting the environment variable `RUST_BACKTRACE=1` helps with getting more information. Compiling in debug mode (the default for `cargo build`) is also helpful. Using a debugger like the provided `rust-gdb` or `rust-lldb` is also helpful.
+
+<h3><a href="#what-ide-should-i-use" name="what-ide-should-i-use">
+What IDE should I use?
+</a></h3>
+
+There are a number of options for development environment with Rust, all of which are detailed on the official [IDE support page](https://www.rust-lang.org/ides.html).
+
+<h3><a href="#wheres-rustfmt" name="wheres-rustfmt">
+<code>gofmt</code> is great. Where's <code>rustfmt</code>?
+</a></h3>
+
+`rustfmt` is [right here](https://github.com/rust-lang-nursery/rustfmt), and is being actively developed to make reading Rust code as easy and predictable as possible.
 
 <h2 id="low-level">Low-Level</h2>
 
@@ -1339,12 +1345,6 @@ Rust and Go have substantially different design goals. The following differences
 - Rust's focus is on ensuring safety and efficiency while also providing high-level affordances, while Go's is on being a small, simple language which compiles quickly and can work nicely with a variety of tools.
 - Rust has strong support for generics, which Go does not.
 - Rust has strong influences from the world of functional programming, including a type system which draws from Haskell's typeclasses. Go has a simpler type system, using interfaces for basic generic programming.
-
-<h3><a href="#wheres-rustfmt" name="wheres-rustfmt">
-<code>gofmt</code> is great. Where's <code>rustfmt</code>?
-</a></h3>
-
-`rustfmt` is [right here](https://github.com/rust-lang-nursery/rustfmt), and is being actively developed to make reading Rust code as easy and predictable as possible.
 
 <h3><a href="#how-do-rust-traits-compare-to-haskell-typeclasses" name="how-do-rust-traits-compare-to-haskell-typeclasses">
 How do Rust traits compare to Haskell typeclasses?
