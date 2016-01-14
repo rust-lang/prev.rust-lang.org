@@ -318,7 +318,7 @@ match val.do_something() {
 <h2 id="numerics">Numerics</h2>
 
 <h3><a href="#which-type-of-float-should-i-use" name="which-type-of-float-should-i-use">
-Which of <code>`32`</code> and <code>`f64`</code> should I prefer for floating-point math?
+Which of <code>`f32`</code> and <code>`f64`</code> should I prefer for floating-point math?
 </a></h3>
 
 The choice of which to use is dependent on the purpose of the program.
@@ -455,7 +455,7 @@ One thing to note is that currently Rust doesn't offer generics over arrays of d
 How can I implement a graph or other data structure that contains cycles?
 </a></h3>
 
-There are at least four options (discussed at length in [Too Many Linked Lists](http://cglab.ca/~abeinges/blah/too-many-lists/book/):
+There are at least four options (discussed at length in [Too Many Linked Lists](http://cglab.ca/~abeinges/blah/too-many-lists/book/)):
 
 - You can implement it using [`Rc`][Rc] and [`Weak`][Weak] to allow shared ownership of nodes,
 although this approach pays the cost of memory management.
