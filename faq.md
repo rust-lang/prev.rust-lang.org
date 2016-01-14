@@ -882,7 +882,7 @@ How do I <code>memcpy</code> bytes?
 
 If you want to clone an existing slice safely, you can use [`clone_from_slice`][clone_from_slice]. This function is currently unstable, but [should be stabilized soon](https://internals.rust-lang.org/t/stabilizing-basic-functions-on-arrays-and-slices/2868).
 
-To copy potentially overlapping bytes, use [`copy`][copy]. To copy nonoverlapping bytes, use [`cpy_nonoverlapping`][copy_nonoverlapping]. Both of these functions are `unsafe`, as both can be used to subvert the language's safety guarantees. Take care when using them.
+To copy potentially overlapping bytes, use [`copy`][copy]. To copy nonoverlapping bytes, use [`copy_nonoverlapping`][copy_nonoverlapping]. Both of these functions are `unsafe`, as both can be used to subvert the language's safety guarantees. Take care when using them.
 
 <h3><a href="#does-rust-work-without-the-standard-library" name="does-rust-work-without-the-standard-library">
 Can Rust function reasonably without the standard library?
