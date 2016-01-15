@@ -47,7 +47,7 @@ Rust is discussed on the unofficial subreddit, [/r/rust][reddit].
 
 We also have a [Twitter][twitter] account.
 
-[twir]: http://this-week-in-rust.org/
+[twir]: https://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
 [reddit]: https://www.reddit.com/r/rust
 [reddit_coc]: https://www.reddit.com/r/rust/comments/2rvrzx/our_code_of_conduct_please_read/
