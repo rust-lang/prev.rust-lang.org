@@ -1354,7 +1354,7 @@ Rust traits are similar to Haskell typeclasses, but are currently not as powerfu
 
 Some specific difference between Haskell typeclasses and Rust traits include:
 
-- Rust traits have an implicit first parameter called `Self`. `trait Bar` in Rust corresponds to `class Bar self` in Haskell, and `trait Bar<Foo>` in Rust corresponds to `class Boo foo self` in Haskell.
+- Rust traits have an implicit first parameter called `Self`. `trait Bar` in Rust corresponds to `class Bar self` in Haskell, and `trait Bar<Foo>` in Rust corresponds to `class Bar foo self` in Haskell.
 - "Supertraits" or "superclass constraints" in Rust are written `trait Sub: Super`, compared to `class Super self => Sub self` in Haskell.
 - Rust forbids orphan instances, resulting in different coherence rules in Rust compared to Haskell.
 - Rust's `impl` resolution considers the relevant `where` clauses and trait bounds when deciding whether two `impl`s overlap, or choosing between potential `impl`s. Haskell only considers the constraints in the `instance` declaration, disregarding any constraints provided elsewhere.
