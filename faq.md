@@ -111,7 +111,7 @@ There are several ways. You can:
 - Post in [users.rust-lang.org](https://users.rust-lang.org/), the official Rust users forum
 - Ask in the official [Rust IRC channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) (#rust on irc.mozilla.org)
 - Ask on [StackOverflow](http://stackoverflow.com/questions/tagged/rust) with the "rust" tag
-- Post in [/r/rust](https://www.reddit.com/r/rust), the official Rust subreddit
+- Post in [/r/rust](https://www.reddit.com/r/rust), the unofficial Rust subreddit
 
 <h3><a href="#why-has-rust-changed-so-much" name="why-has-rust-changed-so-much">
 Why has Rust changed so much over time?
