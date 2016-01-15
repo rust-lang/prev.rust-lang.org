@@ -345,7 +345,7 @@ There [is a crate](https://crates.io/crates/ordered-float) that wraps [`f32`][f3
 How can I convert between numeric types?
 </a></h3>
 
-There are two ways: the `as` keyword, which does simple casting for primitive types, and the [`Into`][Into] and [`From`][From] traits, which are implemented for a number of type conversions (and which you can implement for your own types). The [`Into`][Into] and [`From`][From] traits are only implemented in cases where conversions are lossless, so for example, `f64::from(0f32)` will compile while `f32:from(0f64)` will not. On the other hand, `as` will convert between any two primitive types, truncating values as necessary.
+There are two ways: the `as` keyword, which does simple casting for primitive types, and the [`Into`][Into] and [`From`][From] traits, which are implemented for a number of type conversions (and which you can implement for your own types). The [`Into`][Into] and [`From`][From] traits are only implemented in cases where conversions are lossless, so for example, `f64::from(0f32)` will compile while `f32::from(0f64)` will not. On the other hand, `as` will convert between any two primitive types, truncating values as necessary.
 
 <h2 id="strings">Strings</h2>
 
