@@ -110,7 +110,7 @@ There are several ways. You can:
 
 - Post in [users.rust-lang.org](https://users.rust-lang.org/), the official Rust users forum
 - Ask in the official [Rust IRC channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) (#rust on irc.mozilla.org)
-- Ask on [StackOverflow](http://stackoverflow.com/questions/tagged/rust) with the "rust" tag
+- Ask on [Stack Overflow](http://stackoverflow.com/questions/tagged/rust) with the "rust" tag
 - Post in [/r/rust](https://www.reddit.com/r/rust), the unofficial Rust subreddit
 
 <h3><a href="#why-has-rust-changed-so-much" name="why-has-rust-changed-so-much">
@@ -1366,10 +1366,10 @@ Some specific difference between Haskell typeclasses and Rust traits include:
 <h2 id="documentation">Documentation</h2>
 
 <h3><a href="#why-are-so-many-rust-answers-on-stackoverflow-wrong" name="why-are-so-many-rust-answers-on-stackoverflow-wrong">
-Why are so many Rust answers on StackOverflow wrong?
+Why are so many Rust answers on Stack Overflow wrong?
 </a></h3>
 
-The Rust language has been around for a number of years, and only reached version 1.0 in May of 2015. In the time before then the language changed significantly, and a number of StackOverflow answers were given at the time of older versions of the language.
+The Rust language has been around for a number of years, and only reached version 1.0 in May of 2015. In the time before then the language changed significantly, and a number of Stack Overflow answers were given at the time of older versions of the language.
 
 Over time more and more answers will be offered for the current version, thus improving this issue as the proportion of out-of-date answers is reduced.
 
