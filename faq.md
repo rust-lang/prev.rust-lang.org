@@ -268,19 +268,19 @@ When should I use an implicit return?
 
 Rust is a very expression-oriented language, and "implicit returns" are part of that design. Constructs like `if`s, `match`es, and normal blocks are all expressions in Rust. For example, the following code checks if an [`i64`][i64] is odd, returning the result by simply yielding it as a value:
 
-```rust
+{% highlight rust %}
 fn is_odd(x: i64) -> bool {
     if x % 2 != 0 { true } else { false }
 }
-```
+{% endhighlight %}
 
 Although it can be simplified even further like so:
 
-```rust
+{% highlight rust %}
 fn is_odd(x: i64) -> bool {
     x % 2 != 0
 }
-```
+{% endhighlight %}
 
 In each example, the last line of the function is the return value of that function. It is important to note that if a function ends in a semicolon, its return type will be `()`, indicating no returned value. Implicit returns must omit the semicolon to work.
 
@@ -308,12 +308,12 @@ Second, exhaustive checking makes the semantics of the default case explicit: in
 
 It is easy to ignore all unspecified cases by using the `_` wildcard:
 
-```rust
+{% highlight rust %}
 match val.do_something() {
     Cat(a) => { /* ... */ }
     _      => { /* ... */ }
 }
-```
+{% endhighlight %}
 
 <h2 id="numerics">Numerics</h2>
 
@@ -364,7 +364,7 @@ How can I convert from <code>&amp;str</code> to <code>String</code> or the other
 
 The [`to_owned()`][to_owned] method converts from a [`&str`][str] into a [`String`][String], and [`String`s][String] are automatically converted into [`&str`][str] when you borrow a reference to them. Both are demonstrated in the following example:
 
-```rust
+{% highlight rust %}
 fn main() {
     let s = "Jane Doe".to_owned();
     say_hello(&s);
@@ -373,7 +373,7 @@ fn main() {
 fn say_hello(name: &str) {
     println!("Hello {}!", name);
 }
-```
+{% endhighlight %}
 
 <h3><a href="#what-are-the-differences-between-str-and-string" name="what-are-the-differences-between-str-and-string">
 What are the differences between the two different string types?
@@ -427,13 +427,13 @@ How can I iterate over a collection without moving/consuming it?
 
 The easiest way is by using the collection's [`IntoIterator`][IntoIterator] implementation. Here is an example for [`&Vec`][Vec]:
 
-```rust
+{% highlight rust %}
 let v = vec![1,2,3,4,5];
 for item in &v {
     print!("{} ", item);
 }
 println!("\nLength: {}", v.len());
-```
+{% endhighlight %}
 
 Rust `for` loops call `into_iter()` (defined on the [`IntoIterator`][IntoIterator] trait) for whatever they're iterating over. Anything implementing the [`IntoIterator`][IntoIterator] trait may be looped over with a `for` loop. [`IntoIterator`][IntoIterator] is implemented for [`&Vec`][Vec] and [`&mut Vec`][Vec], causing the iterator from `into_iter()` to borrow the contents of the collection, rather than moving/consuming them. The same is true for other standard collections as well.
 
@@ -470,7 +470,7 @@ How can I define a struct that contains a pointer to one of its own fields?
 
 It's possible, but useless to do so. The struct becomes permanently borrowed by itself and therefore can't be moved. Here is some code illustrating this:
 
-```rust
+{% highlight rust %}
 use std::cell::Cell;
 
 #[derive(Debug)]
@@ -486,7 +486,7 @@ fn main() {
 
     println!("{:?}", test);
 }
-```
+{% endhighlight %}
 
 <h3><a href="#what-is-the-difference-between-consuming-and-moving" name="what-is-the-difference-between-consuming-and-moving">
 What is the difference between passing by value, consuming, moving, and transferring ownership?
@@ -595,7 +595,7 @@ How do I return a borrow to something I created from a function?
 
 You need to ensure that the borrowed item will outlive the function. This can be done by binding the output lifetime to some input lifetime like so:
 
-```rust
+{% highlight rust %}
 type Pool = TypedArena<Thing>;
 
 // (the lifetime below is only written explicitly for
@@ -606,15 +606,15 @@ fn create_borrowed<'a>(pool: &'a Pool,
                        y: i32) -> &'a Thing {
     pool.alloc(Thing { x: x, y: y })
 }
-```
+{% endhighlight %}
 
 An alternative is to eliminate the references entirely by returning an owning type like [`String`][String]:
 
-```rust
+{% highlight rust %}
 fn happy_birthday(name: &str, age: i64) -> String {
     format!("Hello {}! You're {} years old!", name, age)
 }
-```
+{% endhighlight %}
 
 This approach is simpler, but often results in unnecessary allocations.
 
@@ -710,7 +710,7 @@ Can I overload operators? Which ones and how?
 
 You can provide custom implementations for a variety of operators using their associated traits: [`Add`][Add] for `+`, [`Mul`][Mul] for `*`, and so on. It looks like this:
 
-```rust
+{% highlight rust %}
 use std::ops::Add;
 
 struct Foo;
@@ -722,7 +722,7 @@ impl Add for Foo {
         self
     }
 }
-```
+{% endhighlight %}
 
 The following operators can be overloaded:
 
@@ -763,7 +763,7 @@ How do I read a file into a <code>String</code>?
 
 Using the [`read_to_string()`][read__read_to_string] method, which is defined on the [`Read`][Read] trait in [`std::io`][std-io].
 
-```rust
+{% highlight rust %}
 fn read_file(path: &str) -> Result<String, std::io::Error> {
     let mut f = try!(File::open(path));
     let mut s = String::new();
@@ -777,7 +777,7 @@ fn main() {
         Err(err) => println!("Getting file contents failed with error: {}", err)
     };
 }
-```
+{% endhighlight %}
 
 <h3><a href="#how-do-i-read-file-input-efficiently" name="how-do-i-read-file-input-efficiently">
 How do I read file input efficiently?
@@ -907,14 +907,14 @@ Does Rust guarantee a specific data layout?
 
 Not by default. In the general case, `enum` and `struct` layouts are undefined. This allows the compiler to potentially do optimizations like re-using padding for the discriminant, compacting variants of nested `enum`s, reordering fields to remove padding, etc. `enums` which carry no data ("C-like") are eligible to have a defined representation. Such `enums` are easily distinguished in that they are simply a list of names that carry no data:
 
-```rust
+{% highlight rust %}
 enum CLike {
     A,
     B = 32,
     C = 34,
     D
 }
-```
+{% endhighlight %}
 
 The `#[repr(C)]` attribute can be applied to such `enums` to give them the same representation they would have in equivalent C code. This allows using Rust `enum`s in FFI code where C `enum`s are also used, for most use cases. The attribute can also be applied to `struct`s to get the same layout as a C `struct` would.
 
@@ -986,7 +986,7 @@ Why do I have to declare module files with <code>mod</code> at the top level of 
 
 There are two ways to declare modules in Rust, inline or in another file. Here is an example of each:
 
-```rust
+{% highlight rust %}
 // In main.rs
 mod hello {
     pub fn f() {
@@ -997,9 +997,9 @@ mod hello {
 fn main() {
     hello::f();
 }
-```
+{% endhighlight %}
 
-```rust
+{% highlight rust %}
 // In main.rs
 mod hello;
 
@@ -1011,7 +1011,7 @@ fn main() {
 pub fn f() {
     println!("hello!");
 }
-```
+{% endhighlight %}
 
 In the first example, the module is defined in the same file it's used. In the second example, the module declaration in the main file tells the compiler to look for either `hello.rs` or `hello/mod.rs`, and to load that file.
 
@@ -1037,7 +1037,7 @@ It probably could, but you also don't want it to. While in many cases it is like
 
 For example, the compiler could say that in the case of competing identifier definitions the definition from the earliest imported module is chosen. So if both module `foo` and module `bar` define the identifier `baz`, but `foo` is the first registered module, the compiler would insert `use foo::baz;`.
 
-```rust
+{% highlight rust %}
 mod foo;
 mod bar;
 
@@ -1046,7 +1046,7 @@ mod bar;
 fn main() {
   baz();
 }
-```
+{% endhighlight %}
 
 If you know this is going to happen, perhaps it saves a small number of keystrokes, but it also greatly increases the possibility for surprising error messages when you actually meant for `baz()` to be `bar::baz()`, and it decreases the readability of the code by making the meaning of a function call dependent on module declaration. These are not tradeoffs we are willing to make.
 
@@ -1249,7 +1249,7 @@ In Rust, ownership transfer is the default behavior. For example, if I
 write a function that takes a `String` as argument, this function will
 take ownership of the `String` value supplied by its caller:
 
-```rust
+{% highlight rust %}
 fn process(s: String) { }
 
 fn caller() {
@@ -1257,7 +1257,7 @@ fn caller() {
     process(s); // Transfers ownership of `s` to `process`
     process(s); // Error! ownership already transferred.
 }
-```
+{% endhighlight %}
 
 As you can see in the snippet above, in the function `caller`, the
 first call to `process` transfers ownership of the variable `s`. The
@@ -1275,7 +1275,7 @@ buffer). The caller then must either pass a temporary expression or
 make an explicit move using `std::move`. The rough equivalent to the
 function `process` above, then, would be:
 
-```
+{% highlight rust %}
 void process(string&& s) { }
 
 void caller() {
@@ -1283,7 +1283,7 @@ void caller() {
     process(std::move(s));
     process(std::move(s));
 }
-```
+{% endhighlight %}
 
 C++ compilers are not obligated to track moves. For example, the code
 above compiles without a warning or error, at least using the default
@@ -1305,7 +1305,7 @@ Does Rust have C++-style constructors?
 
 No. Functions serve the same purpose as constructors without adding language complexity. The usual name for the constructor-equivalent function in Rust is `new()`, although this is just a convention rather than a language rule. The `new()` function in fact is just like any other function. An example of it looks like so:
 
-```rust
+{% highlight rust %}
 struct Foo {
     a: i32,
     b: f64,
@@ -1321,7 +1321,7 @@ impl Foo {
         }
     }
 }
-```
+{% endhighlight %}
 
 <h3><a href="#does-rust-have-copy-constructors" name="does-rust-have-copy-constructors">
 Does Rust have copy constructors?
