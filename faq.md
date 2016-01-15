@@ -764,11 +764,14 @@ How do I read a file into a <code>String</code>?
 Using the [`read_to_string()`][read__read_to_string] method, which is defined on the [`Read`][Read] trait in [`std::io`][std-io].
 
 ```rust
+use std::io::Read;
+use std::fs::File;
+
 fn read_file(path: &str) -> Result<String, std::io::Error> {
     let mut f = try!(File::open(path));
     let mut s = String::new();
     try!(f.read_to_string(&mut s));  // `s` contains the contents of "foo.txt"
-    s
+    Ok(s)
 }
 
 fn main() {
