@@ -464,8 +464,8 @@ more efficient, but bypasses Rust's safety guarantees.
 - Using vectors and indices into those vectors. There are [several](http://smallcultfollowing.com/babysteps/blog/2015/04/06/modeling-graphs-in-rust-using-vector-indices/) [available](http://featherweightmusings.blogspot.com/2015/04/graphs-in-rust.html) examples and explanations of this approach.
 - Using borrowed references with [`UnsafeCell`][UnsafeCell]. There are [explanations and code](https://github.com/nrc/r4cppp/blob/master/graphs/README.md#node-and-unsafecell) available for this approach.
 
-<h3><a href="#how-can-i-define-a-struct-that-contains-a-pointer-to-one-of-its-own-fields" name="how-can-i-define-a-struct-that-contains-a-pointer-to-one-of-its-own-fields">
-How can I define a struct that contains a pointer to one of its own fields?
+<h3><a href="#how-can-i-define-a-struct-that-contains-a-reference-to-one-of-its-own-fields" name="how-can-i-define-a-struct-that-contains-a-reference-to-one-of-its-own-fields">
+How can I define a struct that contains a reference to one of its own fields?
 </a></h3>
 
 It's possible, but useless to do so. The struct becomes permanently borrowed by itself and therefore can't be moved. Here is some code illustrating this:
