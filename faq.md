@@ -173,10 +173,7 @@ By avoiding GC, Rust can offer numerous benefits: predictable cleanup of resourc
 Rust avoids the need for GC through its system of ownership and borrowing, but that same system helps with a host of other problems, including
 [resource management in general](http://blog.skylight.io/rust-means-never-having-to-close-a-socket/) and [concurrency](http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html).
 
-In practice, instead of GC Rust programs rely on reference counting through the
-standard library's
-[`Rc`](http://doc.rust-lang.org/std/rc/struct.Rc.html) and
-[`Arc`](http://doc.rust-lang.org/std/sync/struct.Arc.html) types.
+For when single ownership does not suffice, Rust programs rely on the standard reference-counting smart pointer type, [`Rc`](http://doc.rust-lang.org/std/rc/struct.Rc.html), and its thread-safe counterpart, [`Arc`](http://doc.rust-lang.org/std/sync/struct.Arc.html), instead of GC.
 
 We are however investigating *optional* garbage collection as a future
 extension. The goal is to enable smooth integration with
