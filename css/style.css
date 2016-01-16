@@ -490,10 +490,14 @@ ul.laundry-list {
     line-height: 1.5em;
 }
 
+#toc .contents {
+    -webkit-columns: 3 150px;
+    -moz-columns: 3 150px;
+    columns: 3 150px;
+    -webkit-perspective: 1;
+}
+
 #toc ol {
     margin: 0 0 0 2rem;
     padding: 0;
-    -webkit-columns: 150px 3;
-    -moz-columns: 150px 3;
-    columns: 150px 3;
 }
