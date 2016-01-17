@@ -684,7 +684,7 @@ What are higher-kinded types, why would I want them, and why doesn't Rust have t
 
 Higher-kinded types are types with unfilled parameters. Type constructors, like [`Vec`][Vec], [`Result`][Result], and [`HashMap`][HashMap] are all examples of higher-kinded types: each requires some additional type parameters in order to actually denote a specific type, like `Vec<u32>`. Support for higher-kinded types means these "incomplete" types may be used anywhere "complete" types can be used, including as generics for functions.
 
-Any complete type, like [`i32`][i32], [`bool`][bool], or [`char`][char] is of kind `*`. A type with one parameter, like [`Vec<T>`][Vec] is of kind `* -> *`, meaning that [`Vec<T>`][Vec] takes in a complete type like [`i32`][i32] and returns a complete type `Vec<i32>`. A type which three parameters, like [`HashMap<K, V, S>`][HashMap] is of kind `* -> * -> * -> *`, and takes in three complete types (like [`i32`][i32], [`String`][String], and [`RandomState`][RandomState]) to produce a new complete type `HashMap<i32, String, RandomState>`.
+Any complete type, like [`i32`][i32], [`bool`][bool], or [`char`][char] is of kind `*`. A type with one parameter, like [`Vec<T>`][Vec] is of kind `* -> *`, meaning that [`Vec<T>`][Vec] takes in a complete type like [`i32`][i32] and returns a complete type `Vec<i32>`. A type with three parameters, like [`HashMap<K, V, S>`][HashMap] is of kind `* -> * -> * -> *`, and takes in three complete types (like [`i32`][i32], [`String`][String], and [`RandomState`][RandomState]) to produce a new complete type `HashMap<i32, String, RandomState>`.
 
 In addition to these examples, type constructors can take *lifetime* arguments, which we'll denote as `Lt`. For example, `slice::Iter` has kind `Lt -> * -> *`, because it must be instantiated like `Iter<'a, u32>`.
 
@@ -828,7 +828,7 @@ Is there an easier way to do error handling than having <code>Result</code>s eve
 
 If you're looking for a way to avoid handling [`Result`s][Result] in other people's code, there's always [`unwrap()`][unwrap], but it's probably not what you want. [`Result`][Result] is an indicator that some computation may or may not complete successfully. Requiring you to handle these failures explicitly is one of the ways that Rust encourages robustness. Rust provides tools like the [`try!` macro][TryMacro] to make handling failures ergonomic.
 
-If you really don't want to handle an error, use [`unwrap()`][unwrap], but know that doing so means that the code panic on failure, which usually results in a shutting down the process.
+If you really don't want to handle an error, use [`unwrap()`][unwrap], but know that doing so means that the code panics on failure, which usually results in a shutting down the process.
 
 <h2 id="concurrency">Concurrency</h2>
 
@@ -1079,7 +1079,7 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 >
 > In short, we don't think the Cargo ecosystem would be better off if Piston chose a name like `bvssvni/game-engine` (allowing other users to choose `wycats/game-engine`) instead of simply `piston`.<br><br>
 >
-> Because namespaces are strictly more complicated in a number of ways,and because they can be added compatibly in the future should they become necessary, we're going to stick with a single shared namespace.
+> Because namespaces are strictly more complicated in a number of ways, and because they can be added compatibly in the future should they become necessary, we're going to stick with a single shared namespace.
 
 <h2 id="libraries">Libraries</h2>
 
