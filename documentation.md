@@ -6,55 +6,67 @@ title:  Rust Documentation &middot; The Rust Programming Language
 # Rust Documentation
 
 If you haven't seen Rust at all yet, the first thing you should read
-is the introduction to the book, [**The Rust Programming
-Language**][book]. It will give you a good idea of what Rust is like,
+is the introduction to the book, [The Rust Programming
+Language][book]. It will give you a good idea of what Rust is like,
 show you how to install it, and explain its syntax and concepts. Upon
 completing the book, you'll be an intermediate Rust developer, and
 will have a good grasp of the fundamental ideas behind Rust.
 
 ## Learning Rust
 
-[**The Rust Programming Language**][book]. Also known as "The Book",
-The Rust Programming Language is the most comprehensive resource for
-all topics related to Rust, and is the primary official document of
-the language.
+### [The Rust Programming Language][book]
 
-[**Rust by Example**][rbe]. A collection of self-contained Rust
-examples on a variety of topics, executable in-browser.
+Also known as "The Book", The Rust Programming Language is the most
+comprehensive resource for all topics related to Rust, and is the
+primary official document of the language.
 
-[**Frequently asked questions**][faq].
+### [Rust by Example][rbe]
 
-[**The Rustonomicon**][nomicon]. An entire book dedicated to
-explaining how to write unsafe Rust code. It is for advanced Rust
-programmers.
+A collection of self-contained Rust examples on a variety of topics,
+executable in-browser.
 
-[**rust-learning**]. A community-maintained collection of resources
-for learning Rust.
+### [Frequently asked questions][faq].
+
+A series of answers to common questions from the Rust community.
+
+### [The Rustonomicon][nomicon]
+
+An entire book dedicated to explaining how to write unsafe Rust code.
+It is for advanced Rust programmers.
+
+### [rust-learning][rust-learning]
+
+A community-maintained collection of resources for learning Rust.
 
 [book]: https://doc.rust-lang.org/book/
 [rbe]: http://rustbyexample.com
 [faq]: faq.html
 [nomicon]: https://doc.rust-lang.org/nomicon/
-[**rust-learning**]: https://github.com/ctjhoa/rust-learning
+[rust-learning]: https://github.com/ctjhoa/rust-learning
 
 ## References
 
-[**Standard Library API Reference**][api]. Documentation for the
-standard library.
+### [Standard Library API Reference][api]
 
-[**The Rust Reference**][ref]. While Rust does not have a
-specification, the reference tries to describe its working in
-detail. It tends to be out of date.
+Documentation for the standard library.
 
-[**Syntax Index**][syn]. This appendix from The Book contains examples
-of all syntax in Rust cross-referenced with the section of The Book
-that describes it.
+### [The Rust Reference][ref]
 
-[**The Cargo Guide**][cargo]. The documentation for Cargo,
-Rust's package manager.
+While Rust does not have a specification, the reference tries to
+describe its working in detail. It tends to be out of date.
 
-[**Compiler Error Index**][err]. Extended explanations of
-the errors produced by the Rust compiler.
+### [Syntax Index][syn]
+
+This appendix from The Book contains examples of all syntax in Rust
+cross-referenced with the section of The Book that describes it.
+
+### [The Cargo Guide][cargo]
+
+The documentation for Cargo, Rust's package manager.
+
+### [Compiler Error Index][err]
+
+Extended explanations of the errors produced by the Rust compiler.
 
 [api]: https://doc.rust-lang.org/std/
 [syn]: https://doc.rust-lang.org/book/syntax-index.html
@@ -64,13 +76,16 @@ the errors produced by the Rust compiler.
 
 ## Project policies
 
-[**Rust security policy**][security]. The project's policies for
-reporting, fixing and disclosing security-related bugs.
+### [Rust security policy][security]
 
-[**Rust copyright and trademark policies**][legal]. The Rust
-copyrights are owned by The Rust Project Developers, and its
-trademarks are owned by Mozilla. Appropriate usage of Rust's
-trademarks are described here.
+The project's policies for reporting, fixing and disclosing
+security-related bugs.
+
+### [Rust copyright and trademark policies][legal]
+
+The Rust copyrights are owned by The Rust Project Developers, and its
+trademarks are owned by Mozilla. Appropriate usage of Rust's trademarks
+are described here.
 
 [security]: security.html
 [legal]: legal.html
@@ -90,3 +105,4 @@ For resources in languages other than English, see the
 [locale-specific links in rust-learning][locale].
 
 [locale]: https://github.com/ctjhoa/rust-learning#locale-links
+
