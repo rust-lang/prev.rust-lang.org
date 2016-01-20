@@ -118,7 +118,7 @@ There are several ways. You can:
 Why has Rust changed so much over time?
 </a></h3>
 
-Rust started with a goal of creating a safe but usable systems programming language. In pursuit of this goal it explored a lot of ideas, some of which it kept (lifetimes, traits) while others were discarded (the typestate system, green threading). Also, in the run up to 1.0 a lot of the standard library was rewritten as early designs were updated to best use Rust's features and provide quality, consistent cross-platform APIs.
+Rust started with a goal of creating a safe but usable systems programming language. In pursuit of this goal it explored a lot of ideas, some of which it kept (lifetimes, traits) while others were discarded (the typestate system, green threading). Also, in the run up to 1.0 a lot of the standard library was rewritten as early designs were updated to best use Rust's features and provide quality, consistent cross-platform APIs. Now that Rust has reached 1.0, the language is guaranteed to be "stable"; and while it may continue to evolve, code which works on current Rust should continue to work on future releases.
 
 <h3><a href="#how-does-rust-language-versioning-work" name="how-does-rust-language-versioning-work">
 How does Rust language versioning work?
@@ -353,6 +353,8 @@ How can I convert a <code>String</code> or <code>Vec&lt;T&gt;</code> to a slice 
 
 Usually, you can pass a reference to a `String` or `Vec<T>` wherever a slice is expected.
 Using [Deref coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html), [`String`s][String] and [`Vec`s][Vec] will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
+
+Methods implemented on `&str` and `&[T]` can be accessed directly on `String` and `Vec<T>`. For example, `some_string.char_at(0)` will work even though `char_at` is a method on `&str` and `some_string` is a `String`.
 
 In some cases, such as generic code, it's necessary to convert manually. Manual conversions can be achieved using the slicing operator, like so: `&my_vec[..]`.
 
@@ -969,7 +971,6 @@ What is the relationship between a module and a crate?
 - A module is a (possibly nested) unit of code organization inside a crate.
 - A crate contains an implicit, un-named top-level module.
 - Recursive definitions can span modules, but not crates.
-- Using another crate binds the root of its namespace into the user's namespace.
 
 <h3><a href="#why-cant-the-rust-compiler-find-a-library-im-using" name="why-cant-the-rust-compiler-find-a-library-im-using">
 Why can't the Rust compiler find this library I'm <code>use</code>ing?
