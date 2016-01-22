@@ -24,7 +24,7 @@ Although Rust can be run under both the gdb and lldb debuggers with
 limited success, there are still many cases where debugging does not
 work as expected.  The [A-debuginfo] issue tracks these.
 
-For ideas for more tooling projects to contributo to see
+For ideas for more tooling projects to contribute to see
 [awesome-rust].
 
 There are often other tooling projects of interest just waiting for
