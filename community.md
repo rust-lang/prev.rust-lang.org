@@ -131,7 +131,7 @@ usually held monthly and very informal. Meetings are open to everyone.
 There is a global [calendar][calendar] for keeping up with Rust events.
 Contact the [community team][community_team] to add your own.
 
-[user_group]: ./user_groups.html
+[user_group]: ./user-groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
 
 ## The Rust Team
