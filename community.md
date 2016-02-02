@@ -202,7 +202,7 @@ Roughly weekly, the Rust teams produce [team reports][team_reports] tracking
 team business, including the progression of proposals through the RFC and
 implementation process.
 
-[authors]: https://github.com/rust-lang/rust/blob/master/AUTHORS.txt
+[authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
 [contribute]: contribute.html
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
