@@ -31,10 +31,10 @@ there. The [error index][err] provides extended explanations of the
 errors produced by the compiler. As new errors are added this
 documentation [must be maintained][err-issue], so there always
 errors not reflected in the index to be added. Most in-tree
-documentation lives in the [src/doc] directory. Finally, this document
+documentation lives in the [src/doc] directory. These are all covered by
+the [A-docs] label on that issue tracker. Finally, this document
 and other website materials are maintained in the [Rust website Git repository].
-To contribute simply edit it and submit a pull request. These are all covered by
-the [A-docs] label on the issue tracker.
+To contribute simply edit it and submit a pull request.
 
 A great deal of important Rust documentation does not live in the main
 repository, or is not maintained by the project, but is still
