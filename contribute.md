@@ -21,20 +21,20 @@ mechanics of contributing to [rust-lang/rust].
 There are many ways to contribute to the success of Rust.
 This guide focuses on a few avenues for the new contributor:
 
-* [**Finding, triaging and fixing issues**](contribute-bugs.html). The
+* [Finding, triaging and fixing issues](contribute-bugs.html). The
   basic work of maintaining a large and active project like Rust.
-* [**Documentation**](contribute-docs.html). Not just official
+* [Documentation](contribute-docs.html). Not just official
   documentation, but also for crates, blog posts, and other unofficial
   sources.
-* [**Community building**](contribute-community.html). Helping your fellow
+* [Community building](contribute-community.html). Helping your fellow
   Rustacean, and expanding the reach of Rust.
-* [**Tooling, IDEs and infrastructure**](contribute-tools.html). The
+* [Tooling, IDEs and infrastructure](contribute-tools.html). The
   important pieces that make using a language practical and painless.
-* [**Libraries**](contribute-libs.html). Rust's suitability for any
+* [Libraries](contribute-libs.html). Rust's suitability for any
   particular task is mostly dependent on availability of quality
   libraries.
-* [**Language, compiler and the standard
-  library**](contribute-compiler.html). Language design, feature
+* [Language, compiler and the standard
+  library](contribute-compiler.html). Language design, feature
   implementation, performance improvement.
 
 If you need additional guidance ask on [#rust-internals] or
