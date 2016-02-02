@@ -188,7 +188,7 @@ every single week. [We'd love for you to join that list][contribute]!
 
 As mentioned above, the [Rust Internals Forum][internals_forum] is dedicated to
 discussing the design and implementation of Rust. A lot of discussion also
-happens on Github:
+happens on GitHub:
 
 - The [main repository][github] and [issue tracker][issue_tracking] are the
   front lines of the implementation work. Our reviewers strive to be friendly
