@@ -20,7 +20,8 @@ title: The Rust Code of Conduct &middot; The Rust Programming Language
 
 ## Moderation
 
-These are the policies for upholding our community's standards of conduct in our communication channels, most notably in Rust-related IRC channels.
+
+These are the policies for upholding our community's standards of conduct. If you feel that a thread needs moderation, please contact the [Rust moderation team](/team.html#Moderation).
 
 1. Remarks that violate the Rust standards of conduct, including hateful, hurtful, oppressive, or exclusionary remarks, are not allowed. (Cursing is allowed, but never targeting another user, and never in a hateful manner.)
 2. Remarks that moderators find inappropriate, whether listed in the code of conduct or not, are also not allowed.
@@ -34,5 +35,7 @@ These are the policies for upholding our community's standards of conduct in our
 In the Rust community we strive to go the extra step to look out for each other. Don't just aim to be technically unimpeachable, try to be your best self. In particular, avoid flirting with offensive or sensitive issues, particularly if they're off-topic; this all too often leads to unnecessary fights, hurt feelings, and damaged trust; worse, it can drive people away from the community entirely.
 
 And if someone takes issue with something you said or did, resist the urge to be defensive. Just stop doing what it was they complained about and apologize. Even if you feel you were misinterpreted or unfairly accused, chances are good there was something you could've communicated better — remember that it's your responsibility to make your fellow Rustaceans comfortable. Everyone wants to get along and we are all here first and foremost because we want to talk about cool technology. You will find that people will be eager to assume good intent and forgive as long as you earn their trust.
+
+The enforcement policies listed above apply to all official Rust venues; including official IRC channels (#rust, #rust-internals, #rust-tools, #rust-libs, #rustc, #rust-beginners, #rust-docs, #rust-community, #rust-lang, and #cargo); GitHub repositories under rust-lang, rust-lang-nursery, and rust-lang-deprecated; and all forums under rust-lang.org (users.rust-lang.org, internals.rust-lang.org). For other projects adopting the Rust Code of Conduct, please contact the maintainers of those projects for enforcement. If you wish to use this code of conduct for your own project, consider explicitly mentioning your moderation policy or making a copy with your own moderation policy so as to avoid confusion.
 
 *Adapted from the [Node.js Policy on Trolling](http://blog.izs.me/post/30036893703/policy-on-trolling) as well as the [Contributor Covenant v1.3.0](http://contributor-covenant.org/version/1/3/0/).*
