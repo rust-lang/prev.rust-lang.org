@@ -244,13 +244,13 @@ Why curly braces? Why can't Rust's syntax be like Haskell's or Python's?
 
 Use of curly braces to denote blocks is a common design choice in a variety of programming languages, and Rust's consistency is useful for people already familiar with the style.
 
-Curly braces also allow for more flexible syntax for the programmer, a simpler parser in the compiler, and help reduce the possibility of logic mistakes caused by incorrect indentation, like Apple's [goto fail](https://gotofail.com/) bug.
+Curly braces also allow for more flexible syntax for the programmer and a simpler parser in the compiler.
 
 <h3><a href="#why-brackets-around-blocks" name="why-brackets-around-blocks">
 I can leave out parentheses on <code>if</code> conditions, so why do I have to put brackets around single line blocks? Why is the C style not allowed?
 </a></h3>
 
-Whereas C requires mandatory parentheses for `if`-statement conditionals but leaves brackets optional, Rust makes the opposite choice for its `if`-expressions. This keeps the conditional clearly separate from the body and avoids the hazard of optional brackets, which can lead to easy-to-miss errors during refactoring.
+Whereas C requires mandatory parentheses for `if`-statement conditionals but leaves brackets optional, Rust makes the opposite choice for its `if`-expressions. This keeps the conditional clearly separate from the body and avoids the hazard of optional brackets, which can lead to easy-to-miss errors during refactoring, like Apple's [goto fail](https://gotofail.com/) bug.
 
 <h3><a href="#why-no-literal-syntax-for-dictionaries" name="why-no-literal-syntax-for-dictionaries">
 Why is there no literal syntax for dictionaries?
