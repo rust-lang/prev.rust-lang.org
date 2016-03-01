@@ -1,7 +1,4 @@
 name: The Rust Programming Language
-markdown: redcarpet
-redcarpet:
-  extensions: ["tables"]
 stable: "1.7.0"
 stable_date: "March 3, 2016"
 stable_blog: "/2016/03/02/Rust-1.7.html"
