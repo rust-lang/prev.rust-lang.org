@@ -4,7 +4,7 @@ redcarpet:
   extensions: ["tables"]
 stable: "1.7.0"
 stable_date: "March 3, 2016"
-stable_blog: "/2016/03/03/Rust-1.7.html"
+stable_blog: "/2016/03/02/Rust-1.7.html"
 beta: "1.8"
 beta_date: "April 14, 2016"
 nightly: "1.9"
