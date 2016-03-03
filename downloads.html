@@ -5,11 +5,11 @@ title: Downloads &middot; The Rust Programming Language
 
     <div class="row install">
       <div class="col-md-4 side-header">
-        <h2 id="stable">1.7.0&nbsp;</h2>
-        <h3>March 3, 2016</h3>
+        <h2 id="stable">{{ site.stable }}&nbsp;</h2>
+        <h3>{{ site.stable_date }}</h3>
         <p>
 	  The
-	  <a href="http://blog.rust-lang.org/2016/03/03/Rust-1.7.html">
+          <a href="http://blog.rust-lang.org{{ site.stable_blog }}">
 	    current stable release of Rust
 	  </a>
 	  , updated every six weeks and backwards-compatible.
@@ -19,28 +19,28 @@ title: Downloads &middot; The Rust Programming Language
         <table class="table-features table-installers"><tbody>
           <tr>
           <td class="inst-type">Linux (.tar.gz)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.7.0-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.7.0-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
           </tr>
           <tr>
           <td class="inst-type">Mac (.pkg)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.7.0-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.7.0-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
           </tr>
           <tr>
           <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.7.0-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.7.0-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
           </tr>
           <tr>
           <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
-          <td><a href="https://static.rust-lang.org/dist/rust-1.7.0-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
           <td></td>
           </tr>
           <tr><td>&nbsp;</td></tr>
           <tr>
           <td class="inst-type"></td>
-          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-1.7.0-src.tar.gz"><div class="inst-button">Source</div></a></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz"><div class="inst-button">Source</div></a></td>
           </tr>
         </tbody></table>
       </div>
@@ -57,12 +57,12 @@ title: Downloads &middot; The Rust Programming Language
 
     <div class="row">
       <div class="col-md-4 side-header">
-        <h2 id="beta">Beta&nbsp; (1.8)</h2>
+        <h2 id="beta">Beta&nbsp; ({{ site.beta }})</h2>
         <p>
 	A preview of the upcoming stable release, intended for testing by
 	crate authors. Updated as needed.
         </p>
-        <p><em>Scheduled for stable release<br/>April 14, 2016</em>.<p>
+        <p><em>Scheduled for stable release<br/>{{ site.beta_date }}</em>.<p>
       </div>
       <div class="col-md-8">
         <table class="table-features table-installers"><tbody>
@@ -106,7 +106,7 @@ title: Downloads &middot; The Rust Programming Language
 
     <div class="row">
       <div class="col-md-4 side-header">
-        <h2 id="nightly">Nightly&nbsp; (1.9)</h2>
+        <h2 id="nightly">Nightly&nbsp; ({{ site.nightly }})</h2>
         <p>
         The current development branch.
 	It includes
