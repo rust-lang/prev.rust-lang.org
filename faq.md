@@ -957,7 +957,7 @@ Not yet, but there are efforts underway to make Rust compile to the web with [Em
 How do I cross-compile in Rust?
 </a></h3>
 
-Cross compilation is possible in Rust, but it requires [a bit of work](https://github.com/japaric/ruststrap/blob/master/1-how-to-cross-compile.md) to set up. Every Rust compiler is a cross-compiler, but libraries need to be cross-compiled for the target platform.
+Cross compilation is possible in Rust, but it requires [a bit of work](https://github.com/japaric/rust-cross/blob/master/README.md) to set up. Every Rust compiler is a cross-compiler, but libraries need to be cross-compiled for the target platform.
 
 Rust does distribute [copies of the standard library](http://static.rust-lang.org/dist/) for each of the supported platforms, which are contained in the `rust-std-*` files for each of the build directories found on the distribution page, but there are not yet automated ways to install them.
 
