@@ -1,24 +1,15 @@
-function detect_platform() {
-  "use strict";
-  var os = "unknown";
-
-  if (os == "unknown") {
-    if (navigator.platform == "Linux x86_64") {os = "x86_64-unknown-linux-gnu";}
-    if (navigator.platform == "Linux i686") {os = "i686-unknown-linux-gnu";}
-  }
-
-  // I wish I knew by know, but I don't. Try harder.
-  if (os == "unknown") {
-    if (navigator.appVersion.indexOf("Win")!=-1) {os = "x86_64-pc-windows-gnu";}
-    if (navigator.appVersion.indexOf("Mac")!=-1) {os = "x86_64-apple-darwin";}
-    if (navigator.appVersion.indexOf("Linux")!=-1) {os = "x86_64-unknown-linux-gnu";}
-  }
-
-  return os;
-}
-
 (function () {
   "use strict";
+
+  function detect_platform() {
+    if (navigator.platform === "Linux i686") { return "i686-unknown-linux-gnu";}
+    if (navigator.platform === "Linux x86_64") { return "x86_64-unknown-linux-gnu";}
+    if (navigator.appVersion.indexOf("Linux")  !== -1) { return "x86_64-unknown-linux-gnu";}
+    if (navigator.appVersion.indexOf("Mac") !== -1) { return "x86_64-apple-darwin";}
+    if (navigator.appVersion.indexOf("Win") !== -1) { return"x86_64-pc-windows-gnu";}
+    return "unknown";
+  }
+
   var platform = detect_platform();
 
   var rec_package_name = "{{ site.stable }}";
