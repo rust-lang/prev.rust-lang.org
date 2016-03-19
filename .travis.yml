@@ -17,9 +17,9 @@ branches:
   - master
 deploy:
   provider: s3
-  access_key_id: AKIAIR4V3CAS724EMHFQ
+  access_key_id: AKIAIDW6AYUZL5LIEXEQ
   secret_access_key:
-    secure: "gX42IFLGe9uc48EfuvYR25r/ptX70Tk5dTpdVAaxBd5oLBqm6PbDRGMA2mFIFwlUEPhRzsI7Rp0tUZF2zvdCA1dDQASRu8F3rA0OunQzZRT2wTnWOt2pTk8lFcg6i5R41I/EriAtY2C9JCL2YAtiQb6FJcgiYrXUmxxH5P/MjTg="
+    secure: "jlWAaG7awqiUpu650cH+/Yo4BT4naMO2YCTqgPUYq8P8AZFQ59GkuWLPR330lMg3om0y2WZLg95ksEsw7b91EYj20NMyaDhqCOrLoT1PwLePC2/3+CpVcxO0mX89CR9v11WFpMdd89sP3dc25jb/4ervDKP0s8iFoNcnrZmAQXQ="
   bucket: www-rust-lang-org
   acl: public_read
   skip_cleanup: true
