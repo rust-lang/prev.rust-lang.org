@@ -73,7 +73,7 @@ people:
 teams:
   - name: Core
     responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
-    members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, pcwalton, huonw]
+    members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, pcwalton, huonw, erickt]
   - name: Language design
     responsibility: "designing new language features"
     members: [nrc, pnkfelix, nikomatsakis, aturon, huonw]
@@ -92,12 +92,12 @@ teams:
     lead: alexcrichton
   - name: Community
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
-    lead: steveklabnik
+    lead: erickt
     members: [brson, skade, manishearth, steveklabnik, bstrie, erickt]
     email: community-team [at] rust-lang [dot] org
   - name: Moderation
     responsibility: "helping uphold the <a href='http://www.rust-lang.org/conduct.html'>code of conduct</a>"
-    members: [mbrubeck, BurntSushi, manishearth, pnkfelix, erickt, niconii]
+    members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
     email: rust-mods [at] rust-lang [dot] org
 
 # Information on sites to get profile information from
