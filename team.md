@@ -23,6 +23,8 @@ people:
   BurntSushi:
     name: Andrew Gallant
     irc: burntsushi
+  carols10cents:
+    name: Carol Nichols
   dotdash:
     name: Björn Steinbrink
     irc: doener
@@ -93,7 +95,7 @@ teams:
   - name: Community
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt
-    members: [brson, skade, manishearth, steveklabnik, bstrie, erickt]
+    members: [brson, carols10cents, skade, manishearth, steveklabnik, bstrie, erickt]
     email: community-team [at] rust-lang [dot] org
   - name: Moderation
     responsibility: "helping uphold the <a href='http://www.rust-lang.org/conduct.html'>code of conduct</a>"
