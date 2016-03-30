@@ -24,6 +24,8 @@ care about making the community a safe space for you.
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
+---
+
 ## Getting Started
 
 The most important community resources for those new to Rust are:
@@ -36,6 +38,8 @@ The most important community resources for those new to Rust are:
 You may also find help on the question and answer site, [Stack Overflow][stack_overflow].
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
+
+---
 
 ## News
 
@@ -52,6 +56,8 @@ We also have a [Twitter][twitter] account.
 [reddit]: https://www.reddit.com/r/rust
 [reddit_coc]: https://www.reddit.com/r/rust/comments/2rvrzx/our_code_of_conduct_please_read/
 [twitter]: https://twitter.com/rustlang
+
+---
 
 ## IRC Channels
 
@@ -121,6 +127,8 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [webdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
 [docs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-docs
 
+---
+
 ## Discussion Forums
 
 We have two forums for asynchronous discussion:
@@ -135,6 +143,8 @@ We have two forums for asynchronous discussion:
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
 
+---
+
 ## User Groups and Meetups
 
 There are more than 50 [Rust User Groups][user_group] worldwide in over 20
@@ -148,6 +158,8 @@ Contact the [community team][community_team] to add your own.
 
 [user_group]: ./user-groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
+
+---
 
 ## The Rust Team
 
@@ -194,6 +206,8 @@ help get you started.
 [tool_team]: https://www.rust-lang.org/team.html#Tooling-and-infrastructure
 [community_team]: https://www.rust-lang.org/team.html#Community
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
+
+---
 
 ## Rust Development
 
