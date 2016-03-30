@@ -67,6 +67,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 ### Main channels
 
 - [#rust][rust_irc] is for all things Rust
+- [#rust-beginners][beginners_irc] is a space for those new to Rust, lower traffic than #rust
 - [#rust-internals][internals_irc] is for discussion of other Rust implementation topics
 - [#rustc][rustc_irc] is the home of the [compiler team][compiler_team]
 - [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
@@ -74,37 +75,49 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#rust-lang][lang_irc] is the home of the [language team][language_team]
 - [#rust-community][community_irc] is the home of the [community team][community_team]
 
+### International channels
+
+- [#rust-br][br_irc] é dedicado à programação de Ferrugem no Brasil
+- [#rust-de][de_irc] ist für die allgemeine Diskussion über Rust auf Deutsch
+- [#rust-es][es_irc] es para una discusión general sobre Rust en español
+- [#rust-fr][fr_irc] est dédié à la programmation en Rust et français
+- [#rust-ru][ru_irc] для общей дискуссии о ржавчине на русском языке
+
 ### Topical channels
 
-- [#rust-beginners][beginners_irc] is a space for those new to Rust, lower traffic than #rust
 - [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
-- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
-- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
+- [#rust-bots][bots_irc] notifcations about Rust from a selection of bots
 - [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
-- [#rust-osdev][osdev_irc] is for people doing OS development in Rust
-- [#rust-webdev][webdev_irc] is for people doing web development in Rust
 - [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
 - [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
-- [#rust-bots][bots_irc] notifcations about Rust from a selection of bots
+- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
+- [#rust-osdev][osdev_irc] is for people doing OS development in Rust
+- [#rust-webdev][webdev_irc] is for people doing web development in Rust
+- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
-[rust_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
-[rustc_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc 
-[libs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
-[tools_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
-[lang_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
-[community_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
-[internals_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
-[gamedev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
-[crypto_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
-[osdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
-[webdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
-[cargo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23cargo
-[offtopic_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
-[servo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23servo
-[bots_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
 [beginners_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
+[bots_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
+[br_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-br
+[cargo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23cargo
+[community_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
+[crypto_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
+[de_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
+[es_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-es
+[fr_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-fr
+[gamedev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
+[internals_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
+[lang_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
+[libs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
 [networking_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
+[offtopic_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
+[osdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
+[ru_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
+[rust_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
+[rustc_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
+[servo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23servo
+[tools_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
+[webdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
 
 ## Discussion Forums
 
