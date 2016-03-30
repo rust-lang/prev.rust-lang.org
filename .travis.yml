@@ -6,7 +6,7 @@ rvm:
 sudo: false
 
 install: 
-- gem install jekyll -v 2.5.3
+- bundle install
 - pip install --user awscli
 - ~/.local/bin/aws configure set preview.cloudfront true
 
