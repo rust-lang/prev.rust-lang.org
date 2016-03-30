@@ -14,7 +14,7 @@ everyone. If you have started a new user group and with to add it to
 this list, please contact the [Rust Community
 Team](./team.html#Community) or
 even better, open a pull request against
-[this website](https://github.com/rust-lang/rust-www/blob/master/user_groups.md).
+[this website](https://github.com/rust-lang/rust-www/blob/master/user-groups.md).
 
 ## Australia
 
