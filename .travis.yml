@@ -11,7 +11,7 @@ install:
 - ~/.local/bin/aws configure set preview.cloudfront true
 
 # Build and deploy the site to the S3 bucket on push to master, unless PR
-script: jekyll build
+script: bundle exec jekyll build
 branches:
   only:
   - master
