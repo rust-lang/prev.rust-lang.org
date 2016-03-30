@@ -187,7 +187,7 @@ the [Rust security disclosure process](https://www.rust-lang.org/security.html).
   <a href="{{ site.url | replace:'%nick',nick }}">
     <div class="name">{{ person.name }}</div>
     <div class="irc">irc: {% if person.irc %}{{ person.irc }}{% else %}{{ nick }}{% endif %}</div>
-    <img class="headshot" src="{{ site.avatar | replace:'%nick',nick }}">
+    <img class="headshot" src="{{ site.avatar | replace:'%nick',nick }}" alt="{{ person.name }}">
   </a>
 </li>
 {% endfor %}
