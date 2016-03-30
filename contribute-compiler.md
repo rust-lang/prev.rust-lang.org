@@ -96,7 +96,7 @@ TODO: some of this RFC description could probably go in the RFC readme
 [I-slow]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AI-slow
 [Rust DXR]: https://dxr.mozilla.org/rust/source/src
 [ice]: https://users.rust-lang.org/t/glacier-a-big-ol-pile-of-ice/3380
-[internals-docs]: http://manishearth.github.com/rust-internals-docs
+[internals-docs]: http://manishearth.github.io/rust-internals-docs
 [internals.rust-lang.org]: https://internals.rust-lang.org/
 [issue-fcp]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AB-unstable+label%3Afinal-comment-period
 [mir]: https://github.com/rust-lang/rust/issues/27840
