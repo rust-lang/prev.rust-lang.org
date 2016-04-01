@@ -77,16 +77,16 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 
 ### International channels
 
-- [#rust-br][br_irc] é dedicado à programação de Ferrugem no Brasil
+- [#rust-br][br_irc] é dedicado à discussão sobre Rust no Brasil
 - [#rust-de][de_irc] ist für die allgemeine Diskussion über Rust auf Deutsch
 - [#rust-es][es_irc] es para una discusión general sobre Rust en español
 - [#rust-fr][fr_irc] est dédié à la programmation en Rust et français
-- [#rust-ru][ru_irc] для общей дискуссии о ржавчине на русском языке
+- [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
 
 ### Topical channels
 
 - [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
-- [#rust-bots][bots_irc] notifcations about Rust from a selection of bots
+- [#rust-bots][bots_irc] notifications about Rust from a selection of bots
 - [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
 - [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
 - [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
