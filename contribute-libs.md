@@ -20,8 +20,8 @@ difficulty. Here are some ideas:
 * Familiarize yourself with the best Rust libraries through
   [awesome-rust] and [libs.rs].
 * Some larger projects, including the web browser [Servo], the HTTP
-  library [hyper], the source-formatter [rustfmt], and the lint
-  collection [clippy], tag issues with 'easy' labels for new
+  library [hyper], the source-formatter [rustfmt], the Unix library bindings
+  [nix], and the lint collection [clippy], tag issues with 'easy' labels for new
   contributors.
 * Get involved with one of the active Rust-oriented GitHub
   organizations, such as [PistonDevelopers], [servo], [redox-os],
@@ -58,6 +58,7 @@ TODO: Not sure #rust-libs is the place to direct people
 [iron]: https://github.com/iron
 [lib-prac]: https://pascalhertleif.de/artikel/good-practices-for-writing-rust-libraries/
 [libs.rs]: http://libs.rs
+[nix]: https://github.com/nix-rust/nix/
 [redox-os]: https://github.com/redox-os
 [requested]: https://github.com/rust-lang/rfcs/labels/A-community-library
 [rust-lang-nursery]: https://github.com/rust-lang-nursery

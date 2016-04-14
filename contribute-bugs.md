@@ -21,7 +21,8 @@ whatever means necessary!
 
 Other projects in Rust maintain similar entry-level tasks, including
 the web browser [Servo], the HTTP library [hyper], the
-source-formatter [rustfmt], and the lint collection [clippy].
+source-formatter [rustfmt], the Unix library bindings [nix],
+and the lint collection [clippy].
 
 While Rust has an [extensive test suite][test] there is always more to
 test. The [E-needstest] label indicates issues that are thought to be
@@ -55,6 +56,7 @@ TODO: @nrc says suggesting everybody review w/o training is bad
 [clippy]: https://github.com/Manishearth/rust-clippy
 [hyper]: https://github.com/hyperium/hyper
 [issue tracker]: https://github.com/rust-lang/rust/issues
+[nix]: https://github.com/nix-rust/nix/
 [pull]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#pull-requests
 [reviews]: http://blog.originate.com/blog/2014/09/29/effective-code-reviews/
 [rustfmt]: https://github.com/nrc/rustfmt
