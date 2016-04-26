@@ -72,6 +72,8 @@ even better, open a pull request against
 
 ## Japan
 
+[Tokyo Rust](http://www.meetup.com/Tokyo-Rust-Meetup/), Tokyo.
+
 [Rust Of Us](https://rust-of-us.doorkeeper.jp/), Akihabara, Tokyo.
 
 [Rust Mokumoku Kai](https://rust.doorkeeper.jp/), Roppongi, Tokyo.
