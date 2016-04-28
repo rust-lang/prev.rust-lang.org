@@ -502,6 +502,14 @@ ul.laundry-list {
     padding: 0;
 }
 
+#users > h1 {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    font-size: 2.5em;
+    font-weight: 400;
+}
+
 #users > div > div {
     text-align: center;
 }
@@ -565,4 +573,9 @@ ul.laundry-list {
 #users em {
     font-weight: bold;
     word-spacing: 1em;
+}
+
+#users #user-add-info {
+    text-align: center;
+    padding-top: 50px;
 }
