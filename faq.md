@@ -95,7 +95,7 @@ The two biggest open source Rust projects right now are [Servo](https://github.c
 Who else is using Rust?
 </a></h3>
 
-[A growing number of organizations!](users.html)
+[A growing number of organizations!](friends.html)
 
 <!--
 ### What projects are good examples of idiomatic Rust code?

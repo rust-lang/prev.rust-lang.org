@@ -505,9 +505,19 @@ ul.laundry-list {
 #users > h1 {
     text-align: center;
     padding-top: 10px;
-    padding-bottom: 50px;
     font-size: 2.5em;
     font-weight: 400;
+    margin: 0px;
+    padding-top: 50px;
+}
+
+#users > h2 {
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-weight: 400;
+    margin: 0px;
+    padding-bottom: 60px;
 }
 
 #users > div > div {
