@@ -1,0 +1,64 @@
+# Rust user logos
+
+# If you are a "production" user of Rust, you are encouraged to add
+# your organization's information here to have it displayed on and
+# linked from the Rust web page. Organizations are listed
+# alphabetically.
+
+# The 'how' field should be one short sentence, ideally with a link
+# providing evidence (other prospective users will be interested to
+# know details). The UI for this can't accomodate more than about two
+# lines of text.
+
+# To have your pull request accepted, you must additionally provide us
+# the name and email of a contact within your organization who the
+# Rust team can contact should we need to make changes to the web
+# page. You may either do this on the pull request itself, or
+# alternately email rust-logos@rust-lang.org with the subject line
+# "Rust User Logo Contact". This information will be kept private.
+
+# Logos will be displayed against a white background and constrained
+# via CSS to a width of 200px by 100px. To support high-resolution
+# displays, consider submitting your image at a resolution of at least
+# 400px by 200px.
+
+-
+  name: Autumn
+  url: http://autumnai.com
+  logo: autumn.png
+  how: "<a href='https://medium.com/@autumn_eng/about-rust-s-machine-learning-community-4cda5ec8a790'>Machine learning in Rust</a>."
+-
+  name: Dropbox
+  url: https://www.dropbox.com
+  logo: dropbox.svg
+  how: "<a href='http://www.wired.com/2016/03/epic-story-dropboxs-exodus-amazon-cloud-empire/'>Optimizing cloud file-storage</a>."
+-
+  name: Ethcore
+  url: https://ethcore.io
+  logo: ethcore.png
+  how: "<a href='https://ethcore.io/parity.html'>Powering the Ethereum revolution.</a>"
+-
+  name: Faraday
+  url: http://faraday.io
+  logo: faraday.svg
+  how: "<a href='https://github.com/faradayio/credentials_to_env'>Securely transferring credentials.</a>"
+-
+  name: MaidSafe
+  url: http://www.maidsafe.net
+  logo: maidsafe.svg
+  how: "Building a decentralised data and communications network."
+-
+  name: Mozilla
+  url: https:://www.mozilla.org
+  logo: mozilla.png
+  how: "Building the <a href='http://servo.org'>Servo</a> browser engine, <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1135640'>integrating into Firefox</a>, other projects."
+-
+  name: Tessel
+  url: https://www.tessel.io
+  logo: tessel.svg
+  how: "Single-board computing platform supports Rust applications."
+-
+  name: Tilde
+  url: http://www.tilde.org
+  logo: tilde.png
+  how: "<a href='http://blog.skylight.io/rust-means-never-having-to-close-a-socket/'>Optimizing Skylight</a>, the Rails profiler."

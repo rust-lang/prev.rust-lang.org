@@ -91,6 +91,12 @@ What examples are there of large Rust projects?
 
 The two biggest open source Rust projects right now are [Servo](https://github.com/servo/servo) and the [Rust compiler](https://github.com/rust-lang/rust) itself.
 
+<h3><a href="#who-else-is-using-rust" name="who-else-is-using-rust">
+Who else is using Rust?
+</a></h3>
+
+[A growing number of organizations!](friends.html)
+
 <!--
 ### What projects are good examples of idiomatic Rust code?
 

@@ -501,3 +501,91 @@ ul.laundry-list {
     margin: 0 0 0 2rem;
     padding: 0;
 }
+
+#users > h1 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 2.5em;
+    font-weight: 400;
+    margin: 0px;
+    padding-top: 50px;
+}
+
+#users > h2 {
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-weight: 400;
+    margin: 0px;
+    padding-bottom: 60px;
+}
+
+#users > div > div {
+    text-align: center;
+}
+
+#users .user-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 100px;
+}
+
+#users .user-container a {
+    line-height: 100px;
+}
+
+#users img {
+    max-width: 200px;
+    max-height: 100px;
+    vertical-align: middle;
+}
+
+#users .details {
+    margin: 2em;
+}
+
+#users .fade-in {
+    transition: opacity 0.5s linear;
+}
+
+#users .fade-out {
+    transition: opacity 0.1s ease-in-out;
+}
+
+#users .fade-in * {
+    z-index: 1;
+}
+
+#users .fade-out * {
+    z-index: -1;
+}
+
+#users .user-details-row-1 div {
+    height: 2em;
+    margin-top: 0em;
+}
+
+#users .user-details-row-2 div {
+    height: 2em;
+    margin-top: -2em;
+}
+
+#users .user-details-row-3 div {
+    height: 2em;
+    margin-top: -2em;
+}
+
+#users .details p {
+    margin: 0px;
+}
+
+#users em {
+    font-weight: bold;
+    word-spacing: 1em;
+}
+
+#users #user-add-info {
+    text-align: center;
+    padding-top: 50px;
+}
