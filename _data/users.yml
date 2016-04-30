@@ -49,7 +49,7 @@
   how: "Building a decentralised data and communications network."
 -
   name: Mozilla
-  url: https:://www.mozilla.org
+  url: https://www.mozilla.org
   logo: mozilla.png
   how: "Building the <a href='http://servo.org'>Servo</a> browser engine, <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1135640'>integrating into Firefox</a>, other projects."
 -
