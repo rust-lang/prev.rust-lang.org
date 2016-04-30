@@ -53,6 +53,11 @@
   logo: mozilla.png
   how: "Building the <a href='http://servo.org'>Servo</a> browser engine, <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1135640'>integrating into Firefox</a>, other projects."
 -
+  name: OneSignal
+  url: https://onesignal.com
+  logo: onesignal.svg
+  how: "High volume, cross platform push notification <a href='https://onesignal.com/blog/announcing-our-new-delivery-backend/'>delivery</a>"
+-
   name: Tessel
   url: https://www.tessel.io
   logo: tessel.svg
