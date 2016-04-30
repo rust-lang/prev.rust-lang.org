@@ -72,8 +72,13 @@ copyrights are owned by The Rust Project Developers, and its
 trademarks are owned by Mozilla. Appropriate usage of Rust's
 trademarks are described here.
 
+[Code of Conduct][coc]. Applies to the rust-lang organization
+on GitHub, the official forums, IRC channels, and various
+other corners of the Rust world.
+
 [security]: security.html
 [legal]: legal.html
+[coc]: https://www.rust-lang.org/conduct.html
 
 ## Nightly and beta documentation
 
