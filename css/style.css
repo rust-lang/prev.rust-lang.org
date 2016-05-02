@@ -542,7 +542,8 @@ ul.laundry-list {
 }
 
 #users .details {
-    margin: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 #users .fade-in {
@@ -582,7 +583,6 @@ ul.laundry-list {
 
 #users em {
     font-weight: bold;
-    word-spacing: 1em;
 }
 
 #users #user-add-info {
