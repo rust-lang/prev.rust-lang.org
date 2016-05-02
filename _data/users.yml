@@ -23,10 +23,25 @@
 # 400px by 200px.
 
 -
+  name: Academia.edu
+  url: https://www.academia.edu/
+  logo: academia.edu.svg
+  how: "Turning strings into structured paper and author data, <a href='https://github.com/djudd/human-name-rb'>faster than Ruby</a>."
+-
+  name: Ather Energy
+  url: http://www.atherenergy.com/
+  logo: ather-energy.png
+  how: "Reading bike data published by different subsystems and sending them to the cloud."
+-
   name: Autumn
   url: http://autumnai.com
   logo: autumn.png
   how: "<a href='https://medium.com/@autumn_eng/about-rust-s-machine-learning-community-4cda5ec8a790'>Machine learning in Rust</a>."
+-
+  name: Coturnix
+  url: http://www.coturnix.fr/
+  logo: coturnix.png
+  how: "Machine learning and optimization for minimizing energy consumption in buildings."
 -
   name: Dropbox
   url: https://www.dropbox.com
@@ -57,6 +72,16 @@
   url: https://onesignal.com
   logo: onesignal.svg
   how: "High volume, cross platform push notification <a href='https://onesignal.com/blog/announcing-our-new-delivery-backend/'>delivery</a>"
+-
+  name: PingCAP
+  url: https://github.com/pingcap/tikv
+  logo: pingcap.svg
+  how: "Building a distributed key-value store with Rust and Raft."
+-
+  name: PurchaseClinic.com
+  url: http://purchaseclinic.com/
+  logo: purchaseclinic.com.png
+  how: "Our backend (REST API) is a 100% Rust server, based on Iron."
 -
   name: Tessel
   url: https://www.tessel.io
