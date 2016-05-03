@@ -49,6 +49,13 @@ title:  Friends of Rust &middot; The Rust Programming Language
             details.className += " fade-in";
             details.setAttribute("style", "opacity: 1;");
           };
+
+          logo.onmouseout = function() {
+            var details = document.getElementById("user-details-{{offset}}-{{forloop.index}}");
+            details.className = details.className.replace(" fade-in", "");
+            details.className = details.className.replace(" fade-out", "");
+            details.setAttribute("style", "opacity: 0;");
+          };
         </script>
       {% endfor %}
 
