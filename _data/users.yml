@@ -75,7 +75,7 @@
 -
   name: PingCAP
   url: https://github.com/pingcap/tikv
-  logo: pingcap.svg
+  logo: pingcap.png
   how: "Building a distributed key-value store with Rust and Raft."
 -
   name: PurchaseClinic.com
