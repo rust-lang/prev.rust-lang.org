@@ -23,6 +23,11 @@
 # 400px by 200px.
 
 -
+  name: 1aim
+  url: https://1aim.com/
+  logo: 1aim.svg
+  how: "Modern, secure and universal access management."
+-
   name: Academia.edu
   url: https://www.academia.edu/
   logo: academia.edu.svg
