@@ -562,6 +562,18 @@ ul.laundry-list {
     z-index: -1;
 }
 
+@media (min-width: 992px) {
+
+    #users .fade-in {
+        opacity: 1;
+    }
+
+    #users .fade-out {
+        opacity: 0;
+    }
+
+}
+
 #users .user-details-row-1 div {
     height: 2em;
     margin-top: 0em;
