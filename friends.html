@@ -31,25 +31,25 @@ title:  Friends of Rust &middot; The Rust Programming Language
             </div>
         </div>
 
-	<script type="text/javascript">
-	  var logo = document.getElementById("user-logo-{{offset}}-{{forloop.index}}");
-	  logo.onmouseover = function() {
-	    var allDetails = document.querySelectorAll(".user-detail");
-	    for (var i = 0; i < allDetails.length; i++) {
-	      var details = allDetails[i];
+        <script type="text/javascript">
+          var logo = document.getElementById("user-logo-{{offset}}-{{forloop.index}}");
+          logo.onmouseover = function() {
+            var allDetails = document.querySelectorAll(".user-detail");
+            for (var i = 0; i < allDetails.length; i++) {
+              var details = allDetails[i];
               details.className = details.className.replace(" fade-in", "");
               details.className = details.className.replace(" fade-out", "");
               details.className += " fade-out";
-	      details.setAttribute("style", "opacity: 0;");
-	    }
+              details.setAttribute("style", "opacity: 0;");
+            }
 
-	    var details = document.getElementById("user-details-{{offset}}-{{forloop.index}}");
+            var details = document.getElementById("user-details-{{offset}}-{{forloop.index}}");
             details.className = details.className.replace(" fade-in", "");
             details.className = details.className.replace(" fade-out", "");
             details.className += " fade-in";
-	    details.setAttribute("style", "opacity: 1;");
-	  };
-	</script>
+            details.setAttribute("style", "opacity: 1;");
+          };
+        </script>
       {% endfor %}
 
   </div>
