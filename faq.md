@@ -684,7 +684,7 @@ Functions are a built-in primitive of the language, while closures are essential
 
 The big difference between these traits is how they take the `self` parameter. [`Fn`][Fn] takes `&self`, [`FnMut`][FnMut] takes `&mut self`, and [`FnOnce`][FnOnce] takes `self`.
 
-Even if a closure does not capture any environment variables, it is represeted at runtime as two pointers, the same as any other closure.
+Even if a closure does not capture any environment variables, it is represented at runtime as two pointers, the same as any other closure.
 
 <h3><a href="#what-are-higher-kinded-types" name="what-are-higher-kinded-types">
 What are higher-kinded types, why would I want them, and why doesn't Rust have them?
