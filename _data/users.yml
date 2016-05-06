@@ -43,6 +43,11 @@
   logo: autumn.png
   how: "<a href='https://medium.com/@autumn_eng/about-rust-s-machine-learning-community-4cda5ec8a790'>Machine learning in Rust</a>."
 -
+  name: Beget
+  url: https://beget.com
+  logo: beget.png
+  how: "As part of backup and resource management systems."
+-
   name: Coturnix
   url: http://www.coturnix.fr/
   logo: coturnix.png
