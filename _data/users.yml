@@ -98,6 +98,11 @@
   logo: tessel.svg
   how: "Single-board computing platform supports Rust applications."
 -
+  name: thoughtram
+  url: http://thoughtram.io
+  logo: thoughtram.png
+  how: "The backend of our training platform classroom.thoughtram.io is 100 % Rust using nickel.rs"
+-
   name: Tilde
   url: http://www.tilde.org
   logo: tilde.png
