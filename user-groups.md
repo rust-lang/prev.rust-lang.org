@@ -130,6 +130,10 @@ even better, open a pull request against
 
 [Rust Zurich](http://www.meetup.com/Rust-Zurich/), Zürich.
 
+## Taiwan
+
+[RUST.TW](http://www.meetup.com/RUST-TW/), Taipei
+
 ## UK
 
 [Rust London User Group](http://www.meetup.com/Rust-London-User-Group/), London.
