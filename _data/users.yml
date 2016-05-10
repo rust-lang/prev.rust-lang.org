@@ -33,6 +33,11 @@
   logo: academia.edu.svg
   how: "Turning strings into structured paper and author data, <a href='https://github.com/djudd/human-name-rb'>faster than Ruby</a>."
 -
+  name: AppSignal
+  url: https://appsignal.com/
+  logo: appsignal.png
+  how: "Fast and robust monitoring agent for web applications."
+-
   name: Ather Energy
   url: http://www.atherenergy.com/
   logo: ather-energy.png
