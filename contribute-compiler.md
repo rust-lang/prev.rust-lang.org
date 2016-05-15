@@ -56,12 +56,12 @@ amounts of experience working together, and it is recommended to get
 involved slowly &mdash; submitting a hasty RFC without understanding
 the historical, technical, or social context is an easy way
 to make a poor impression and come away disappointed. Read the
-aforelinkd readme file to understand best how it all works. Many
+aforelinked readme file to understand best how it all works. Many
 ideas have been debated in Rust's history, some rejected, some
 postponed until the future, and the RFC [issue tracker][rfc-issues]
 catalogs some wishlist ideas that have yet to make headway into the
 language. Shortly before an RFC is accepted for implementation it
-enters 'final commemnt period', indicated by the [final-comment-period
+enters 'final comment period', indicated by the [final-comment-period
 label on the rust-lang/rfcs repository][rfc-fcp]. Likewise, before a
 feature is enabled in the stable compiler (called 'ungating') it
 enters [final-comment-period in the rust-lang/rust
