@@ -109,6 +109,6 @@
   how: "The backend of our training platform classroom.thoughtram.io is 100 % Rust using nickel.rs"
 -
   name: Tilde
-  url: http://www.tilde.org
+  url: http://www.tilde.io
   logo: tilde.png
   how: "<a href='http://blog.skylight.io/rust-means-never-having-to-close-a-socket/'>Optimizing Skylight</a>, the Rails profiler."
