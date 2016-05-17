@@ -144,6 +144,16 @@ No, you cannot. Rust works hard to provide strong guarantees about the stability
 
 Things stabilize all the time, and the beta and stable channels update every six weeks. If you're waiting for a feature to be available without using the nightly channel, you can locate its tracking issue by checking the [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable) tag on the issue tracker.
 
+<h3><a href="#what-are-feature-gates" name="what-are-feature-gates">
+What are "Feature Gates"?
+</a></h3>
+
+"Feature gates" are attributes that enable the usage of unstable language
+features. They can only be activated on the nightly channel, and allow
+developers to opt into experimental features before they are stabilized.
+Feature gates follow the same stabilization procedure as the standard library.
+
+
 <h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
 Why a dual MIT/ASL2 License?
 </a></h3>
