@@ -361,6 +361,13 @@ How can I convert between numeric types?
 
 There are two ways: the `as` keyword, which does simple casting for primitive types, and the [`Into`][Into] and [`From`][From] traits, which are implemented for a number of type conversions (and which you can implement for your own types). The [`Into`][Into] and [`From`][From] traits are only implemented in cases where conversions are lossless, so for example, `f64::from(0f32)` will compile while `f32::from(0f64)` will not. On the other hand, `as` will convert between any two primitive types, truncating values as necessary.
 
+
+<h3><a href="#why-doesnt-rust-have-increment-and-decrement-operators" name="why-doesnt-rust-have-increment-and-decrement-operators">
+Why doesn't Rust have increment and decrement operators?
+</a></h3>
+
+Rust prefers to avoid single purpose features like the increment and decrement operators, `++i` and `--i`. In addition, debate other whether to use the prefix or postfix forms of the operators, and potential semantic differences between them if both are provided, is more of a headache than is acceptable for such a limited feature.
+
 <h2 id="strings">Strings</h2>
 
 <h3><a href="#how-to-convert-string-or-vec-to-slice" name="how-to-convert-string-or-vec-to-slice">
