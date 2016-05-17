@@ -1220,6 +1220,77 @@ Converting a C-style enum to an integer can be done with an `as` expression, lik
 
 Converting in the other direction can be done with a `match` statement, which maps different numeric values to different potential values for the enum.
 
+<h3><a href="#why-do-rust-programs-use-more-memory-than-c" name="why-do-rust-programs-use-more-memory-than-c">
+Why do Rust programs use more memory than C?
+</a></h3>
+
+There are several potential explanations for a Rust program using more memory than a C program:
+
+- The Rust program wasn't compiled in release mode.
+- The Rust program is using jemalloc (the default allocator) rather than the system allocator.
+- The Rust program likely includes safety checks the C program does not.
+
+As an example, the following C program reads in a name and says "hello" to the person with that name.
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    printf("What's your name?\n");
+    char input[100] = {0};
+    scanf("%s", input);
+    printf("Hello %s!\n", input);
+    return 0;
+}
+```
+
+Rewriting this in Rust, you may get something like the following:
+
+```rust
+use std::io;
+
+fn main() {
+    println!("What's your name?");
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    println!("Hello {}!", input);
+}
+```
+
+This program, when compiled and compared against the C program, probably does use more memory. But this program is not exactly equivalent to the above C code. The equivalent Rust code would instead look something like this:
+
+```rust
+#![feature(lang_items)]
+#![feature(libc)]
+#![feature(no_std)]
+#![feature(start)]
+#![no_std]
+
+extern crate libc;
+
+extern "C" {
+    fn printf(fmt: *const u8, ...) -> i32;
+    fn scanf(fmt: *const u8, ...) -> i32;
+}
+
+#[start]
+fn start(_argc: isize, _argv: *const *const u8) -> isize {
+    unsafe {
+        printf(b"What's your name?\n\0".as_ptr());
+        let mut input = [0u8; 100];
+        scanf(b"%s\0".as_ptr(), &mut input);
+        printf(b"Hello %s!\n\0".as_ptr(), &input);
+        0
+    }
+}
+
+#[lang="eh_personality"] extern fn eh_personality() {}
+#[lang="panic_fmt"] fn panic_fmt() -> ! { loop {} }
+#[lang="stack_exhausted"] extern fn stack_exhausted() {}
+```
+
+Which should indeed roughly match C in memory usage.
+
 <h3><a href="#why-no-stable-abi" name="why-no-stable-abi">
 Why does Rust not have a stable ABI like C does, and why do I have to annotate things with extern?
 </a></h3>
