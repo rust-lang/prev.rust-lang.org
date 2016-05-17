@@ -432,6 +432,14 @@ The [`char`][char] type is UTF-32. If you are sure you need to do a codepoint-at
 
 For a more in-depth explanation of why UTF-8 is usually preferable over UTF-16 or UTF-32, read the [UTF-8 Everywhere manifesto](http://utf8everywhere.org/).
 
+<h3><a href="#why-are-there-multiple-types-of-strings-and-how-do-they-relate-to-each-other" name="why-are-there-multiple-types-of-strings-and-how-do-they-relate-to-each-other">
+Why are there multiple types of strings, and how do they relate to each other?
+</a></h3>
+
+Rust's difference string types serve different purposes. `String` and `str` are UTF-8 encoded general-purpose strings. `OsString` and `OsStr` are encoded according to the current platform, and are used when interacting with the operating system. `CString` and `CStr` are the Rust equivalent of strings in C, and are used in FFI code, and `PathBuf` and `Path` are convenience wrappers around `OsString` and `OsStr`, providing methods specific to path manipulation.
+
+These types come in pairs because of Rust's ownership system. `String`, `OsString`, `CString`, and `PathBuf` own their contents, and can be passed around like any other container. `str`, `OsStr`, `CStr`, and `Path` are views into strings found either in an owned string or in program memory, and are handed out via references from the owned string types.
+
 <h2 id="collections">Collections</h2>
 
 <h3><a href="#can-i-implement-linked-lists-in-rust" name="can-i-implement-linked-lists-in-rust">
