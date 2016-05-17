@@ -28,6 +28,11 @@
   logo: 1aim.svg
   how: "Modern, secure and universal access management."
 -
+  name: 3DR
+  url: https://3dr.com/
+  logo: 3dr.svg
+  how: "Rust handles communications through USB devices to critical components for Flight and our Mobile apps."
+-
   name: Academia.edu
   url: https://www.academia.edu/
   logo: academia.edu.svg
@@ -112,3 +117,8 @@
   url: http://www.tilde.io
   logo: tilde.png
   how: "<a href='http://blog.skylight.io/rust-means-never-having-to-close-a-socket/'>Optimizing Skylight</a>, the Rails profiler."
+-
+  name: TrafficLand
+  url: http://www.trafficland.com/
+  logo: trafficland.svg
+  how: "Video transcoding, manipulation, and analysis."
