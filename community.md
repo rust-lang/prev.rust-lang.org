@@ -193,7 +193,6 @@ help get you started.
 [community_team]: https://www.rust-lang.org/team.html#Community
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
 
-<a name="rust-development"></a>
 ## Rust Development
 
 Rust has had over [1,200 different contributors][authors], a number that grows
