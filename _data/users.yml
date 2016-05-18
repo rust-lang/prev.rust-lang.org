@@ -45,8 +45,8 @@
 -
   name: Ather Energy
   url: http://www.atherenergy.com/
-  logo: ather.png
-  how: "Reading bike data published by different subsystems and sending them to the cloud."
+  logo: ather.svg
+  how: "Sending scooter data to the cloud reliably."
 -
   name: Autumn
   url: http://autumnai.com
