@@ -38,6 +38,11 @@
   logo: academia.edu.svg
   how: "Turning strings into structured paper and author data, <a href='https://github.com/djudd/human-name-rb'>faster than Ruby</a>."
 -
+  name: Algorithmia
+  url: https://algorithmia.com/
+  logo: algorithmia.png
+  how: "<a href='http://blog.algorithmia.com/2016/05/algorithmia-now-supports-python-3-javascript-rust-ruby/'>Rust algorithm development</a> is a first-class citizen of our platform."
+-
   name: AppSignal
   url: https://appsignal.com/
   logo: appsignal.png
