@@ -132,7 +132,7 @@ How does Rust language versioning work?
 
 Rust's language versioning follows [SemVer](http://semver.org/), with backwards incompatible changes of stable APIs only allowed in minor versions if those changes fix compiler bugs, patch safety holes, or change dispatch or type inference to require additional annotation. More detailed guidelines for minor version changes are available as approved RFCs for both the [language](https://github.com/rust-lang/rfcs/blob/master/text/1122-language-semver.md) and [standard library](https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md).
 
-Rust maintains three "release channels": stable, beta, and nightly. Stable and beta are updated every six weeks, with the current nightly becoming the new beta, and the current beta becoming the new stable. Language and standard library features marked unstable or hidden behind feature gates may only be used on the nightly channel. New features land as unstable, and are "ungated" once approved by the core team and relevant subteams. This approach allows for experimentation while providing strong backwards-compatibility guarantees for the stable channel.
+Rust maintains three "release channels": stable, beta, and nightly. Stable and beta are updated every six weeks, with the current nightly becoming the new beta, and the current beta becoming the new stable. Language and standard library features marked unstable or hidden behind feature gates may only be used on the nightly release channel. New features land as unstable, and are "ungated" once approved by the core team and relevant subteams. This approach allows for experimentation while providing strong backwards-compatibility guarantees for the stable channel.
 
 For additional details, read the Rust blog post ["Stability as a Deliverable."](http://blog.rust-lang.org/2014/10/30/Stability.html)
 
@@ -140,19 +140,15 @@ For additional details, read the Rust blog post ["Stability as a Deliverable."](
 Can I use unstable features on the beta or stable channel?
 </a></h3>
 
-No, you cannot. Rust works hard to provide strong guarantees about the stability of the features provided on the beta and stable channels. When something is unstable, it means that we can't provide those guarantees for it yet, and don't want people relying on it staying the same. This gives us the opportunity to try changes in the wild on the nightly channel, while still maintaining strong guarantees for people seeking stability.
+No, you cannot. Rust works hard to provide strong guarantees about the stability of the features provided on the beta and stable channels. When something is unstable, it means that we can't provide those guarantees for it yet, and don't want people relying on it staying the same. This gives us the opportunity to try changes in the wild on the nightly release channel, while still maintaining strong guarantees for people seeking stability.
 
-Things stabilize all the time, and the beta and stable channels update every six weeks. If you're waiting for a feature to be available without using the nightly channel, you can locate its tracking issue by checking the [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable) tag on the issue tracker.
+Things stabilize all the time, and the beta and stable channels update every six weeks. If you're waiting for a feature to be available without using the nightly release channel, you can locate its tracking issue by checking the [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable) tag on the issue tracker.
 
 <h3><a href="#what-are-feature-gates" name="what-are-feature-gates">
 What are "Feature Gates"?
 </a></h3>
 
-"Feature gates" are attributes that enable the usage of unstable language
-features. They can only be activated on the nightly channel, and allow
-developers to opt into experimental features before they are stabilized.
-Feature gates follow the same stabilization procedure as the standard library.
-
+"Feature gates" are the mechanism Rust uses to stabilize features of the compiler, language, and standard library. A feature that is "gated" is accessible only on the nightly release channel, and then only when it has been explicitly enabled through `#[feature]` attributes or the `-C unstable-options` command line argument. When a feature is stabilized it becomes available on the stable release channel, and does not need to be explicitly enabled. At that point the features is considered "ungated". Feature gates allow developers to test experimental features while they are under development, before they are available in the stable language.
 
 <h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
 Why a dual MIT/ASL2 License?
@@ -238,7 +234,7 @@ While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges
 Why is there no integrated benchmarking infrastructure?
 </a></h3>
 
-There is, but it's only available on the nightly channel. We ultimately plan to build a pluggable system for integrated benchmarks, but in the meantime, the current system is [considered unstable](https://github.com/rust-lang/rust/issues/29553).
+There is, but it's only available on the nightly release channel. We ultimately plan to build a pluggable system for integrated benchmarks, but in the meantime, the current system is [considered unstable](https://github.com/rust-lang/rust/issues/29553).
 
 <h3><a href="#does-rust-do-tail-call-optimization" name="does-rust-do-tail-call-optimization">
 Does Rust do tail-call optimization?
@@ -366,7 +362,7 @@ There are two ways: the `as` keyword, which does simple casting for primitive ty
 Why doesn't Rust have increment and decrement operators?
 </a></h3>
 
-Rust prefers to avoid single purpose features like the increment and decrement operators, `++i` and `--i`. In addition, debate other whether to use the prefix or postfix forms of the operators, and potential semantic differences between them if both are provided, is more of a headache than is acceptable for such a limited feature.
+Preincrement and postincrement (and the decrement equivalents), while convenient, are also fairly complex. They require knowledge of evaluation order, and often lead to subtle bugs and undefined behavior in C and C++. `x = x + 1` or `x += 1` is only slightly longer, but unambiguous.
 
 <h2 id="strings">Strings</h2>
 
@@ -432,11 +428,11 @@ The [`char`][char] type is UTF-32. If you are sure you need to do a codepoint-at
 
 For a more in-depth explanation of why UTF-8 is usually preferable over UTF-16 or UTF-32, read the [UTF-8 Everywhere manifesto](http://utf8everywhere.org/).
 
-<h3><a href="#why-are-there-multiple-types-of-strings" name="why-are-there-multiple-types-of-strings">
+<h3><a href="#what-string-type-should-i-use" name="what-string-type-should-i-use">
 What string type should I use?
 </a></h3>
 
-Rust has four pairs of string types, [each serving a distinct purpose](http://www.suspectsemantics.com/blog/2016/03/27/string-types-in-rust/). In each pair, there is an "owned" string type, and a "slice" string type. Collectively, you end up with an organization like this:
+Rust has four pairs of string types, [each serving a distinct purpose](http://www.suspectsemantics.com/blog/2016/03/27/string-types-in-rust/). In each pair, there is an "owned" string type, and a "slice" string type. The organization looks like this:
 
 |               | "Slice" type | "Owned" type |
 |:--------------|:-------------|:-------------|
@@ -445,14 +441,7 @@ Rust has four pairs of string types, [each serving a distinct purpose](http://ww
 | OS-compatible | `OsStr`      | `OsString`   |
 | System path   | `Path`       | `PathBuf`    |
 
-If you're working with C code through the Rust FFI, use the C-compatible string types. If you're working with the operating system, including command line arguments, use the OS-compatible string types. If you're working with paths, use the system path string types. Otherwise, use the UTF-8 string types.
-
-<h3><a href="#why-are-there-multiple-types-of-strings" name="why-are-there-multiple-types-of-strings">
-Why are there multiple types of strings?
-</a></h3>
-
 Rust's difference string types serve different purposes. `String` and `str` are UTF-8 encoded general-purpose strings. `OsString` and `OsStr` are encoded according to the current platform, and are used when interacting with the operating system. `CString` and `CStr` are the Rust equivalent of strings in C, and are used in FFI code, and `PathBuf` and `Path` are convenience wrappers around `OsString` and `OsStr`, providing methods specific to path manipulation.
-
 
 <h3><a href="#why-are-there-multiple-types-of-strings" name="why-are-there-multiple-types-of-strings">
 How can I write a function that accepts both <code>&str</code> and <code>String</code>?
@@ -551,7 +540,7 @@ fn main() {
 What is the difference between passing by value, consuming, moving, and transferring ownership?
 </a></h3>
 
-These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it. If a type implements the `Copy` trait, the value will be copied rather than moved, and so the original owner can continue to use the value after the function call.
+These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it. If a type implements the `Copy` trait, the value will be copied rather than moved, and so the original owner can continue to use the value.
 
 <h3><a href="#why-can-values-of-some-types-by-reused-while-others-are-consumed" name="why-can-values-of-some-types-by-reused-while-others-are-consumed">
 Why can values of some types be used after passing them to a function, while reuse of values of other types results in an error?
@@ -849,7 +838,7 @@ The [`File`][File] type implements the [`Read`][Read] trait, which has a variety
 
 For buffered reads, use the [`BufReader`][BufReader] struct, which helps to reduce the number of system calls when reading.
 
-<h3><a href="#how-do-i-get-command-line-arguments" name="how-do-i-get-command-line-arguments">
+<h3><a href="#how-do-i-do-asynchronous-input-output-in-rust" name="how-do-i-do-asynchronous-input-output-in-rust">
 How do I do asynchronous input / output in Rust?
 </a></h3>
 
