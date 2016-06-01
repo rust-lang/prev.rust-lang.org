@@ -1267,6 +1267,7 @@ There are several potential explanations for a Rust program using more memory th
 - The Rust program wasn't compiled in release mode.
 - The Rust program is using jemalloc (the default allocator) rather than the system allocator.
 - The Rust program likely includes safety checks the C program does not.
+- The Rust program uses generics, which are monomorphized at compile time, resulting in a copy of the generic function / struct / etc. based on the specific types it's used with. This can be avoided with trait objects, which avoid monomorphisation in favor of runtime dispatch.
 
 As an example, the following C program reads in a name and says "hello" to the person with that name.
 
