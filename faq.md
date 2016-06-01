@@ -433,10 +433,40 @@ The [`char`][char] type is UTF-32. If you are sure you need to do a codepoint-at
 For a more in-depth explanation of why UTF-8 is usually preferable over UTF-16 or UTF-32, read the [UTF-8 Everywhere manifesto](http://utf8everywhere.org/).
 
 <h3><a href="#why-are-there-multiple-types-of-strings" name="why-are-there-multiple-types-of-strings">
+What string type should I use?
+</a></h3>
+
+Rust has four pairs of string types, [each serving a distinct purpose](http://www.suspectsemantics.com/blog/2016/03/27/string-types-in-rust/). In each pair, there is an "owned" string type, and a "slice" string type. Collectively, you end up with an organization like this:
+
+|               | "Slice" type | "Owned" type |
+|:--------------|:-------------|:-------------|
+| UTF-8         | `str`        | `String`     |
+| C-compatible  | `CStr`       | `CString`    |
+| OS-compatible | `OsStr`      | `OsString`   |
+| System path   | `Path`       | `PathBuf`    |
+
+If you're working with C code through the Rust FFI, use the C-compatible string types. If you're working with the operating system, including command line arguments, use the OS-compatible string types. If you're working with paths, use the system path string types. Otherwise, use the UTF-8 string types.
+
+<h3><a href="#why-are-there-multiple-types-of-strings" name="why-are-there-multiple-types-of-strings">
 Why are there multiple types of strings?
 </a></h3>
 
 Rust's difference string types serve different purposes. `String` and `str` are UTF-8 encoded general-purpose strings. `OsString` and `OsStr` are encoded according to the current platform, and are used when interacting with the operating system. `CString` and `CStr` are the Rust equivalent of strings in C, and are used in FFI code, and `PathBuf` and `Path` are convenience wrappers around `OsString` and `OsStr`, providing methods specific to path manipulation.
+
+
+<h3><a href="#why-are-there-multiple-types-of-strings" name="why-are-there-multiple-types-of-strings">
+How can I write a function that accepts both <code>&str</code> and <code>String</code>?
+</a></h3>
+
+This can be done with the [`Into`][into] trait, as in the following example, which lets code be generic over conversions. Note that you will need to call the `.into()` method within the function the bound is placed on.
+
+```rust
+fn accepts_both<S: Into<String>>(s: S) {
+    let s = s.into();   // This will convert s into a `String`,
+                        // regardless of the input type.
+    // ... the rest of the function
+}
+```
 
 <h2 id="collections">Collections</h2>
 
