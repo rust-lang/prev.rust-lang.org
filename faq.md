@@ -521,7 +521,7 @@ fn main() {
 What is the difference between passing by value, consuming, moving, and transferring ownership?
 </a></h3>
 
-These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it.
+These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it. If a type implements the `Copy` trait, the value will be copied rather than moved, and so the original owner can continue to use the value after the function call.
 
 <h3><a href="#why-can-values-of-some-types-by-reused-while-others-are-consumed" name="why-can-values-of-some-types-by-reused-while-others-are-consumed">
 Why can values of some types be used after passing them to a function, while reuse of values of other types results in an error?
@@ -818,6 +818,12 @@ How do I read file input efficiently?
 The [`File`][File] type implements the [`Read`][Read] trait, which has a variety of functions for reading and writing data, including [`read()`][read__read], [`read_to_end()`][read__read_to_end], [`bytes()`][read__bytes], [`chars()`][read__chars], and [`take()`][read__take]. Each of these functions reads a certain amount of input from a given file. [`read()`][read__read] reads as much input as the underlying system will provide in a single call. [`read_to_end()`][read__read_to_end] reads the entire buffer into a vector, allocating as much space as is needed. [`bytes()`][read__bytes] and [`chars()`][read__chars] allow you to iterate over the bytes and characters of the file, respectively. Finally, [`take()`][read__take] allows you to read up to an arbitrary number of bytes from the file. Collectively, these should allow you to efficiently read in any data you need.
 
 For buffered reads, use the [`BufReader`][BufReader] struct, which helps to reduce the number of system calls when reading.
+
+<h3><a href="#how-do-i-get-command-line-arguments" name="how-do-i-get-command-line-arguments">
+How do I do asynchronous input / output in Rust?
+</a></h3>
+
+There are several libraries providing asynchronous input / output in Rust, including [mioco](https://github.com/dpc/mioco), [coio-rs](https://github.com/zonyitoo/coio-rs), and [rotor](https://github.com/tailhook/rotor).
 
 <h3><a href="#how-do-i-get-command-line-arguments" name="how-do-i-get-command-line-arguments">
 How do I get command line arguments in Rust?
