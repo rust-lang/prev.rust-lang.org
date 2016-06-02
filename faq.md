@@ -441,7 +441,7 @@ Rust has four pairs of string types, [each serving a distinct purpose](http://ww
 | OS-compatible | `OsStr`      | `OsString`   |
 | System path   | `Path`       | `PathBuf`    |
 
-Rust's difference string types serve different purposes. `String` and `str` are UTF-8 encoded general-purpose strings. `OsString` and `OsStr` are encoded according to the current platform, and are used when interacting with the operating system. `CString` and `CStr` are the Rust equivalent of strings in C, and are used in FFI code, and `PathBuf` and `Path` are convenience wrappers around `OsString` and `OsStr`, providing methods specific to path manipulation.
+Rust's different string types serve different purposes. `String` and `str` are UTF-8 encoded general-purpose strings. `OsString` and `OsStr` are encoded according to the current platform, and are used when interacting with the operating system. `CString` and `CStr` are the Rust equivalent of strings in C, and are used in FFI code, and `PathBuf` and `Path` are convenience wrappers around `OsString` and `OsStr`, providing methods specific to path manipulation.
 
 <h3><a href="#why-are-there-multiple-types-of-strings" name="why-are-there-multiple-types-of-strings">
 How can I write a function that accepts both <code>&str</code> and <code>String</code>?
@@ -540,7 +540,7 @@ fn main() {
 What is the difference between passing by value, consuming, moving, and transferring ownership?
 </a></h3>
 
-These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it. If a type implements the `Copy` trait, the value will be copied rather than moved, and so the original owner can continue to use the value.
+These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it. If a type implements the `Copy` trait, the original owner's value won't be invalidated, and can still be used.
 
 <h3><a href="#why-can-values-of-some-types-by-reused-while-others-are-consumed" name="why-can-values-of-some-types-by-reused-while-others-are-consumed">
 Why can values of some types be used after passing them to a function, while reuse of values of other types results in an error?
@@ -1262,12 +1262,40 @@ Converting in the other direction can be done with a `match` statement, which ma
 Why do Rust programs use more memory than C?
 </a></h3>
 
-There are several potential explanations for a Rust program using more memory than a C program:
+There are several factors that contribute to Rust programs having, by default, larger binary sizes than functionally-equivalent C programs. In general, Rust's preference is to optimize for the performance of real-world programs, not the size of small programs.
 
-- The Rust program wasn't compiled in release mode.
-- The Rust program is using jemalloc (the default allocator) rather than the system allocator.
-- The Rust program likely includes safety checks the C program does not.
-- The Rust program uses generics, which are monomorphized at compile time, resulting in a copy of the generic function / struct / etc. based on the specific types it's used with. This can be avoided with trait objects, which avoid monomorphisation in favor of runtime dispatch.
+__Monomorphization__
+
+Rust monomorphizes generics, meaning that a new version of a generic function or type is generated for each concrete type it's used with in the program. For example, in the following program:
+
+```rust
+fn foo<T>(t: T) {
+    // ... do something
+}
+
+fn main() {
+    foo(10);       // i32
+    foo("hello");  // &str
+}
+```
+
+Two distinct versions of `foo` will be in the final binary, one specialized to an `i32` input, one specialized to a `&str` input. This enables efficient static dispatch of the generic function, but at the cost of a larger binary.
+
+__Debug Symbols__
+
+Rust programs compile with some debug symbols retained, even when compiling in release mode. These are used for providing backtraces on panics, and can be removed with `strip`, or another debug symbol removal tool. It is also useful to note that compiling in release mode with Cargo is equivalent to setting optimization level 3 with rustc. An alternative optimization level (called `s` or `z`) [has recently landed](https://github.com/rust-lang/rust/pull/32386) and tells the compiler to optimize for size rather than performance.
+
+__Jemalloc__
+
+Rust uses jemalloc as the default allocator, which adds some size to compiled Rust binaries. Jemalloc is chosen because it is a consistent, quality allocator that has preferable performance characteristics compared to a number of common system-provided allocators. There is work being done to [make it easier to use custom allocators](https://github.com/rust-lang/rust/issues/32838), but that work is not yet finished.
+
+__Link-Time Optimization__
+
+Rust does not do link-time optimization by default, but can be instructed to do so. This increases the amount of optimization that the Rust compiler can potentially do, and can have a small effect on binary size. This effect is likely larger in combination with the previously mentioned size optimizing mode.
+
+__Standard Library__
+
+The Rust standard library includes libbacktrace and libunwind, which may be undesirable in some programs. Using `#![no_std]` can thus result in smaller binaries, but will also usually result in substantial changes to the sort of Rust code you're writing. Note that using Rust without the standard library is often functionally closer to the equivalent C code.
 
 As an example, the following C program reads in a name and says "hello" to the person with that name.
 
@@ -1296,7 +1324,7 @@ fn main() {
 }
 ```
 
-This program, when compiled and compared against the C program, probably does use more memory. But this program is not exactly equivalent to the above C code. The equivalent Rust code would instead look something like this:
+This program, when compiled and compared against the C program, will have a larger binary and use more memory. But this program is not exactly equivalent to the above C code. The equivalent Rust code would instead look something like this:
 
 ```rust
 #![feature(lang_items)]
