@@ -447,7 +447,15 @@ Rust's different string types serve different purposes. `String` and `str` are U
 How can I write a function that accepts both <code>&str</code> and <code>String</code>?
 </a></h3>
 
-This can be done with the [`Into`][into] trait, as in the following example, which lets code be generic over conversions. Note that you will need to call the `.into()` method within the function the bound is placed on.
+There are several options, depending on the needs of the function:
+
+- If the function needs an owned string, but wants to accept any type of string, use an `Into<String>` bound.
+- If the function needs a string slice, but wants to accept any type of string, use an `AsRef<str>` bound.
+- If the function does not care about the string type, and wants to handle the two possibilities uniformly, use `Cow<str>` as the input type.
+
+__Using `Into<String>`__
+
+In this example, the function will accept both owned strings and string slices, either doing nothing or converting the input into an owned string within the function body. Note that the conversion needs to be done explicitly, and will not happen otherwise.
 
 ```rust
 fn accepts_both<S: Into<String>>(s: S) {
@@ -456,6 +464,27 @@ fn accepts_both<S: Into<String>>(s: S) {
     // ... the rest of the function
 }
 ```
+
+__Using `AsRef<str>`__
+
+In this example, the function will accept both owned strings and string slices, either doing nothing or converting the input into a string slice. This can be done automatically by taking the input by reference, like so:
+
+```rust
+fn accepts_both<S: AsRef<str>>(s: &S) {
+    // ... the body of the function
+}
+```
+
+__Using `Cow<str>`__
+
+In this example, the function takes in a `Cow<str>`, which is not a generic type but a container, containing either an owned string or string slice as needed.
+
+```rust
+fn accepts_cow(s: Cow<str>) {
+    // ... the body of the function
+}
+```
+
 
 <h2 id="collections">Collections</h2>
 
@@ -1356,7 +1385,7 @@ fn start(_argc: isize, _argv: *const *const u8) -> isize {
 #[lang="stack_exhausted"] extern fn stack_exhausted() {}
 ```
 
-Which should indeed roughly match C in memory usage.
+Which should indeed roughly match C in memory usage, at the expense of more programmer complexity, and a lack of static guarantees usually provided by Rust (avoided here with the use of `unsafe`).
 
 <h3><a href="#why-no-stable-abi" name="why-no-stable-abi">
 Why does Rust not have a stable ABI like C does, and why do I have to annotate things with extern?
