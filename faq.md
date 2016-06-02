@@ -459,8 +459,7 @@ In this example, the function will accept both owned strings and string slices, 
 
 ```rust
 fn accepts_both<S: Into<String>>(s: S) {
-    let s = s.into();   // This will convert s into a `String`,
-                        // regardless of the input type.
+    let s = s.into();   // This will convert s into a `String`.
     // ... the rest of the function
 }
 ```
