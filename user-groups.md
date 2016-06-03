@@ -83,6 +83,7 @@ even better, open a pull request against
 ## Mexico
 
 [Rust Lang Comunidad Mexico](http://www.meetup.com/rustlangmx/), Guadalajara.
+[Rust MX](http://www.meetup.com/Rust-MX/), Mexico city.
 
 ## Netherlands
 
