@@ -368,11 +368,11 @@ In some cases, such as generic code, it's necessary to convert manually. Manual 
 How can I convert from <code>&amp;str</code> to <code>String</code> or the other way around?
 </a></h3>
 
-The [`to_owned()`][to_owned] method converts from a [`&str`][str] into a [`String`][String], and [`String`s][String] are automatically converted into [`&str`][str] when you borrow a reference to them. Both are demonstrated in the following example:
+The [`to_string()`][to_string] method converts from a [`&str`][str] into a [`String`][String], and [`String`s][String] are automatically converted into [`&str`][str] when you borrow a reference to them. Both are demonstrated in the following example:
 
 ```rust
 fn main() {
-    let s = "Jane Doe".to_owned();
+    let s = "Jane Doe".to_string();
     say_hello(&s);
 }
 
@@ -1407,7 +1407,7 @@ When you use `cargo doc` to generate documentation for your own project, it also
 [BTreeMap]: https://doc.rust-lang.org/stable/std/collections/struct.BTreeMap.html
 [VecMacro]: https://doc.rust-lang.org/stable/std/macro.vec!.html
 [String]: https://doc.rust-lang.org/stable/std/string/struct.String.html
-[to_owned]: https://doc.rust-lang.org/stable/std/borrow/trait.ToOwned.html#tymethod.to_owned
+[to_string]: https://doc.rust-lang.org/stable/std/string/trait.ToString.html#tymethod.to_string
 [str]: https://doc.rust-lang.org/stable/std/primitive.str.html
 [str__find]: https://doc.rust-lang.org/stable/std/primitive.str.html#method.find
 [str__as_bytes]: https://doc.rust-lang.org/stable/std/primitive.str.html#method.as_bytes
