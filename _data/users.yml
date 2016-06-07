@@ -38,6 +38,11 @@
   logo: academia.edu.svg
   how: "Turning strings into structured paper and author data, <a href='https://github.com/djudd/human-name-rb'>faster than Ruby</a>."
 -
+  name: AgilData
+  url: http://www.agildata.com/
+  logo: agildata.svg
+  how: "<a href='http://www.agildata.com/packet-capturing-mysql-with-rust/'>MySQL packet capture tool</a>."
+-
   name: Algorithmia
   url: https://algorithmia.com/
   logo: algorithmia.png
