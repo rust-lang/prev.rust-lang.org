@@ -132,7 +132,7 @@ How does Rust language versioning work?
 
 Rust's language versioning follows [SemVer](http://semver.org/), with backwards incompatible changes of stable APIs only allowed in minor versions if those changes fix compiler bugs, patch safety holes, or change dispatch or type inference to require additional annotation. More detailed guidelines for minor version changes are available as approved RFCs for both the [language](https://github.com/rust-lang/rfcs/blob/master/text/1122-language-semver.md) and [standard library](https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md).
 
-Rust maintains three "release channels": stable, beta, and nightly. Stable and beta are updated every six weeks, with the current nightly becoming the new beta, and the current beta becoming the new stable. Language and standard library features marked unstable or hidden behind feature gates may only be used on the nightly channel. New features land as unstable, and are "ungated" once approved by the core team and relevant subteams. This approach allows for experimentation while providing strong backwards-compatibility guarantees for the stable channel.
+Rust maintains three "release channels": stable, beta, and nightly. Stable and beta are updated every six weeks, with the current nightly becoming the new beta, and the current beta becoming the new stable. Language and standard library features marked unstable or hidden behind feature gates may only be used on the nightly release channel. New features land as unstable, and are "ungated" once approved by the core team and relevant subteams. This approach allows for experimentation while providing strong backwards-compatibility guarantees for the stable channel.
 
 For additional details, read the Rust blog post ["Stability as a Deliverable."](http://blog.rust-lang.org/2014/10/30/Stability.html)
 
@@ -140,9 +140,15 @@ For additional details, read the Rust blog post ["Stability as a Deliverable."](
 Can I use unstable features on the beta or stable channel?
 </a></h3>
 
-No, you cannot. Rust works hard to provide strong guarantees about the stability of the features provided on the beta and stable channels. When something is unstable, it means that we can't provide those guarantees for it yet, and don't want people relying on it staying the same. This gives us the opportunity to try changes in the wild on the nightly channel, while still maintaining strong guarantees for people seeking stability.
+No, you cannot. Rust works hard to provide strong guarantees about the stability of the features provided on the beta and stable channels. When something is unstable, it means that we can't provide those guarantees for it yet, and don't want people relying on it staying the same. This gives us the opportunity to try changes in the wild on the nightly release channel, while still maintaining strong guarantees for people seeking stability.
 
-Things stabilize all the time, and the beta and stable channels update every six weeks. If you're waiting for a feature to be available without using the nightly channel, you can locate its tracking issue by checking the [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable) tag on the issue tracker.
+Things stabilize all the time, and the beta and stable channels update every six weeks. If you're waiting for a feature to be available without using the nightly release channel, you can locate its tracking issue by checking the [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable) tag on the issue tracker.
+
+<h3><a href="#what-are-feature-gates" name="what-are-feature-gates">
+What are "Feature Gates"?
+</a></h3>
+
+"Feature gates" are the mechanism Rust uses to stabilize features of the compiler, language, and standard library. A feature that is "gated" is accessible only on the nightly release channel, and then only when it has been explicitly enabled through `#[feature]` attributes or the `-C unstable-options` command line argument. When a feature is stabilized it becomes available on the stable release channel, and does not need to be explicitly enabled. At that point the features is considered "ungated". Feature gates allow developers to test experimental features while they are under development, before they are available in the stable language.
 
 <h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
 Why a dual MIT/ASL2 License?
@@ -228,7 +234,7 @@ While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges
 Why is there no integrated benchmarking infrastructure?
 </a></h3>
 
-There is, but it's only available on the nightly channel. We ultimately plan to build a pluggable system for integrated benchmarks, but in the meantime, the current system is [considered unstable](https://github.com/rust-lang/rust/issues/29553).
+There is, but it's only available on the nightly release channel. We ultimately plan to build a pluggable system for integrated benchmarks, but in the meantime, the current system is [considered unstable](https://github.com/rust-lang/rust/issues/29553).
 
 <h3><a href="#does-rust-do-tail-call-optimization" name="does-rust-do-tail-call-optimization">
 Does Rust do tail-call optimization?
@@ -351,6 +357,13 @@ How can I convert between numeric types?
 
 There are two ways: the `as` keyword, which does simple casting for primitive types, and the [`Into`][Into] and [`From`][From] traits, which are implemented for a number of type conversions (and which you can implement for your own types). The [`Into`][Into] and [`From`][From] traits are only implemented in cases where conversions are lossless, so for example, `f64::from(0f32)` will compile while `f32::from(0f64)` will not. On the other hand, `as` will convert between any two primitive types, truncating values as necessary.
 
+
+<h3><a href="#why-doesnt-rust-have-increment-and-decrement-operators" name="why-doesnt-rust-have-increment-and-decrement-operators">
+Why doesn't Rust have increment and decrement operators?
+</a></h3>
+
+Preincrement and postincrement (and the decrement equivalents), while convenient, are also fairly complex. They require knowledge of evaluation order, and often lead to subtle bugs and undefined behavior in C and C++. `x = x + 1` or `x += 1` is only slightly longer, but unambiguous.
+
 <h2 id="strings">Strings</h2>
 
 <h3><a href="#how-to-convert-string-or-vec-to-slice" name="how-to-convert-string-or-vec-to-slice">
@@ -414,6 +427,63 @@ Most "character oriented" operations on text only work under very restricted lan
 The [`char`][char] type is UTF-32. If you are sure you need to do a codepoint-at-a-time algorithm, it's trivial to write a `type wstr = [char]`, and unpack a [`str`][str] into it in a single pass, then work with the `wstr`. In other words: the fact that the language is not "decoding to UTF32 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
 
 For a more in-depth explanation of why UTF-8 is usually preferable over UTF-16 or UTF-32, read the [UTF-8 Everywhere manifesto](http://utf8everywhere.org/).
+
+<h3><a href="#what-string-type-should-i-use" name="what-string-type-should-i-use">
+What string type should I use?
+</a></h3>
+
+Rust has four pairs of string types, [each serving a distinct purpose](http://www.suspectsemantics.com/blog/2016/03/27/string-types-in-rust/). In each pair, there is an "owned" string type, and a "slice" string type. The organization looks like this:
+
+|               | "Slice" type | "Owned" type |
+|:--------------|:-------------|:-------------|
+| UTF-8         | `str`        | `String`     |
+| C-compatible  | `CStr`       | `CString`    |
+| OS-compatible | `OsStr`      | `OsString`   |
+| System path   | `Path`       | `PathBuf`    |
+
+Rust's different string types serve different purposes. `String` and `str` are UTF-8 encoded general-purpose strings. `OsString` and `OsStr` are encoded according to the current platform, and are used when interacting with the operating system. `CString` and `CStr` are the Rust equivalent of strings in C, and are used in FFI code, and `PathBuf` and `Path` are convenience wrappers around `OsString` and `OsStr`, providing methods specific to path manipulation.
+
+<h3><a href="#why-are-there-multiple-types-of-strings" name="why-are-there-multiple-types-of-strings">
+How can I write a function that accepts both <code>&str</code> and <code>String</code>?
+</a></h3>
+
+There are several options, depending on the needs of the function:
+
+- If the function needs an owned string, but wants to accept any type of string, use an `Into<String>` bound.
+- If the function needs a string slice, but wants to accept any type of string, use an `AsRef<str>` bound.
+- If the function does not care about the string type, and wants to handle the two possibilities uniformly, use `Cow<str>` as the input type.
+
+__Using `Into<String>`__
+
+In this example, the function will accept both owned strings and string slices, either doing nothing or converting the input into an owned string within the function body. Note that the conversion needs to be done explicitly, and will not happen otherwise.
+
+```rust
+fn accepts_both<S: Into<String>>(s: S) {
+    let s = s.into();   // This will convert s into a `String`.
+    // ... the rest of the function
+}
+```
+
+__Using `AsRef<str>`__
+
+In this example, the function will accept both owned strings and string slices, either doing nothing or converting the input into a string slice. This can be done automatically by taking the input by reference, like so:
+
+```rust
+fn accepts_both<S: AsRef<str>>(s: &S) {
+    // ... the body of the function
+}
+```
+
+__Using `Cow<str>`__
+
+In this example, the function takes in a `Cow<str>`, which is not a generic type but a container, containing either an owned string or string slice as needed.
+
+```rust
+fn accepts_cow(s: Cow<str>) {
+    // ... the body of the function
+}
+```
+
 
 <h2 id="collections">Collections</h2>
 
@@ -498,7 +568,7 @@ fn main() {
 What is the difference between passing by value, consuming, moving, and transferring ownership?
 </a></h3>
 
-These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it.
+These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it. If a type implements the `Copy` trait, the original owner's value won't be invalidated, and can still be used.
 
 <h3><a href="#why-can-values-of-some-types-by-reused-while-others-are-consumed" name="why-can-values-of-some-types-by-reused-while-others-are-consumed">
 Why can values of some types be used after passing them to a function, while reuse of values of other types results in an error?
@@ -692,7 +762,7 @@ What are higher-kinded types, why would I want them, and why doesn't Rust have t
 
 Higher-kinded types are types with unfilled parameters. Type constructors, like [`Vec`][Vec], [`Result`][Result], and [`HashMap`][HashMap] are all examples of higher-kinded types: each requires some additional type parameters in order to actually denote a specific type, like `Vec<u32>`. Support for higher-kinded types means these "incomplete" types may be used anywhere "complete" types can be used, including as generics for functions.
 
-Any complete type, like [`i32`][i32], [`bool`][bool], or [`char`][char] is of kind `*`. A type with one parameter, like [`Vec<T>`][Vec] is of kind `* -> *`, meaning that [`Vec<T>`][Vec] takes in a complete type like [`i32`][i32] and returns a complete type `Vec<i32>`. A type with three parameters, like [`HashMap<K, V, S>`][HashMap] is of kind `* -> * -> * -> *`, and takes in three complete types (like [`i32`][i32], [`String`][String], and [`RandomState`][RandomState]) to produce a new complete type `HashMap<i32, String, RandomState>`.
+Any complete type, like [`i32`][i32], [`bool`][bool], or [`char`][char] is of kind `*` (this notation comes from the field of type theory). A type with one parameter, like [`Vec<T>`][Vec] is of kind `* -> *`, meaning that [`Vec<T>`][Vec] takes in a complete type like [`i32`][i32] and returns a complete type `Vec<i32>`. A type with three parameters, like [`HashMap<K, V, S>`][HashMap] is of kind `* -> * -> * -> *`, and takes in three complete types (like [`i32`][i32], [`String`][String], and [`RandomState`][RandomState]) to produce a new complete type `HashMap<i32, String, RandomState>`.
 
 In addition to these examples, type constructors can take *lifetime* arguments, which we'll denote as `Lt`. For example, `slice::Iter` has kind `Lt -> * -> *`, because it must be instantiated like `Iter<'a, u32>`.
 
@@ -795,6 +865,12 @@ How do I read file input efficiently?
 The [`File`][File] type implements the [`Read`][Read] trait, which has a variety of functions for reading and writing data, including [`read()`][read__read], [`read_to_end()`][read__read_to_end], [`bytes()`][read__bytes], [`chars()`][read__chars], and [`take()`][read__take]. Each of these functions reads a certain amount of input from a given file. [`read()`][read__read] reads as much input as the underlying system will provide in a single call. [`read_to_end()`][read__read_to_end] reads the entire buffer into a vector, allocating as much space as is needed. [`bytes()`][read__bytes] and [`chars()`][read__chars] allow you to iterate over the bytes and characters of the file, respectively. Finally, [`take()`][read__take] allows you to read up to an arbitrary number of bytes from the file. Collectively, these should allow you to efficiently read in any data you need.
 
 For buffered reads, use the [`BufReader`][BufReader] struct, which helps to reduce the number of system calls when reading.
+
+<h3><a href="#how-do-i-do-asynchronous-input-output-in-rust" name="how-do-i-do-asynchronous-input-output-in-rust">
+How do I do asynchronous input / output in Rust?
+</a></h3>
+
+There are several libraries providing asynchronous input / output in Rust, including [mioco](https://github.com/dpc/mioco), [coio-rs](https://github.com/zonyitoo/coio-rs), and [rotor](https://github.com/tailhook/rotor).
 
 <h3><a href="#how-do-i-get-command-line-arguments" name="how-do-i-get-command-line-arguments">
 How do I get command line arguments in Rust?
@@ -1209,6 +1285,106 @@ How can I convert a C-style enum to an integer, or vice-versa?
 Converting a C-style enum to an integer can be done with an `as` expression, like `e as i64` (where `e` is some enum).
 
 Converting in the other direction can be done with a `match` statement, which maps different numeric values to different potential values for the enum.
+
+<h3><a href="#why-do-rust-programs-use-more-memory-than-c" name="why-do-rust-programs-use-more-memory-than-c">
+Why do Rust programs use more memory than C?
+</a></h3>
+
+There are several factors that contribute to Rust programs having, by default, larger binary sizes than functionally-equivalent C programs. In general, Rust's preference is to optimize for the performance of real-world programs, not the size of small programs.
+
+__Monomorphization__
+
+Rust monomorphizes generics, meaning that a new version of a generic function or type is generated for each concrete type it's used with in the program. For example, in the following program:
+
+```rust
+fn foo<T>(t: T) {
+    // ... do something
+}
+
+fn main() {
+    foo(10);       // i32
+    foo("hello");  // &str
+}
+```
+
+Two distinct versions of `foo` will be in the final binary, one specialized to an `i32` input, one specialized to a `&str` input. This enables efficient static dispatch of the generic function, but at the cost of a larger binary.
+
+__Debug Symbols__
+
+Rust programs compile with some debug symbols retained, even when compiling in release mode. These are used for providing backtraces on panics, and can be removed with `strip`, or another debug symbol removal tool. It is also useful to note that compiling in release mode with Cargo is equivalent to setting optimization level 3 with rustc. An alternative optimization level (called `s` or `z`) [has recently landed](https://github.com/rust-lang/rust/pull/32386) and tells the compiler to optimize for size rather than performance.
+
+__Jemalloc__
+
+Rust uses jemalloc as the default allocator, which adds some size to compiled Rust binaries. Jemalloc is chosen because it is a consistent, quality allocator that has preferable performance characteristics compared to a number of common system-provided allocators. There is work being done to [make it easier to use custom allocators](https://github.com/rust-lang/rust/issues/32838), but that work is not yet finished.
+
+__Link-Time Optimization__
+
+Rust does not do link-time optimization by default, but can be instructed to do so. This increases the amount of optimization that the Rust compiler can potentially do, and can have a small effect on binary size. This effect is likely larger in combination with the previously mentioned size optimizing mode.
+
+__Standard Library__
+
+The Rust standard library includes libbacktrace and libunwind, which may be undesirable in some programs. Using `#![no_std]` can thus result in smaller binaries, but will also usually result in substantial changes to the sort of Rust code you're writing. Note that using Rust without the standard library is often functionally closer to the equivalent C code.
+
+As an example, the following C program reads in a name and says "hello" to the person with that name.
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    printf("What's your name?\n");
+    char input[100] = {0};
+    scanf("%s", input);
+    printf("Hello %s!\n", input);
+    return 0;
+}
+```
+
+Rewriting this in Rust, you may get something like the following:
+
+```rust
+use std::io;
+
+fn main() {
+    println!("What's your name?");
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    println!("Hello {}!", input);
+}
+```
+
+This program, when compiled and compared against the C program, will have a larger binary and use more memory. But this program is not exactly equivalent to the above C code. The equivalent Rust code would instead look something like this:
+
+```rust
+#![feature(lang_items)]
+#![feature(libc)]
+#![feature(no_std)]
+#![feature(start)]
+#![no_std]
+
+extern crate libc;
+
+extern "C" {
+    fn printf(fmt: *const u8, ...) -> i32;
+    fn scanf(fmt: *const u8, ...) -> i32;
+}
+
+#[start]
+fn start(_argc: isize, _argv: *const *const u8) -> isize {
+    unsafe {
+        printf(b"What's your name?\n\0".as_ptr());
+        let mut input = [0u8; 100];
+        scanf(b"%s\0".as_ptr(), &mut input);
+        printf(b"Hello %s!\n\0".as_ptr(), &input);
+        0
+    }
+}
+
+#[lang="eh_personality"] extern fn eh_personality() {}
+#[lang="panic_fmt"] fn panic_fmt() -> ! { loop {} }
+#[lang="stack_exhausted"] extern fn stack_exhausted() {}
+```
+
+Which should indeed roughly match C in memory usage, at the expense of more programmer complexity, and a lack of static guarantees usually provided by Rust (avoided here with the use of `unsafe`).
 
 <h3><a href="#why-no-stable-abi" name="why-no-stable-abi">
 Why does Rust not have a stable ABI like C does, and why do I have to annotate things with extern?
