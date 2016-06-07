@@ -55,7 +55,7 @@ We also have a [Twitter][twitter] account.
 
 ## IRC Channels
 
-Rustaceans maintain a number of friendly, high-traffic [IRC] channels on Mozilla's IRC network.
+Rustaceans maintain a number of friendly, high-traffic [IRC] channels on Mozilla's IRC network, irc.mozilla.org.
 
 The [#rust][rust_irc] channel is a venue for general
 discussion about Rust, and a good place to ask for help. You'll find
