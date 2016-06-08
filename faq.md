@@ -1294,7 +1294,7 @@ There are several factors that contribute to Rust programs having, by default, l
 
 __Monomorphization__
 
-Rust monomorphizes generics, meaning that a new version of a generic function or type is generated for each concrete type it's used with in the program. For example, in the following program:
+Rust monomorphizes generics, meaning that a new version of a generic function or type is generated for each concrete type it's used with in the program. This is similar to how templates work in C++. For example, in the following program:
 
 ```rust
 fn foo<T>(t: T) {
