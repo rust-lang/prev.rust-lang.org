@@ -437,8 +437,8 @@ Rust has four pairs of string types, [each serving a distinct purpose](http://ww
 |               | "Slice" type | "Owned" type |
 |:--------------|:-------------|:-------------|
 | UTF-8         | `str`        | `String`     |
-| C-compatible  | `CStr`       | `CString`    |
 | OS-compatible | `OsStr`      | `OsString`   |
+| C-compatible  | `CStr`       | `CString`    |
 | System path   | `Path`       | `PathBuf`    |
 
 Rust's different string types serve different purposes. `String` and `str` are UTF-8 encoded general-purpose strings. `OsString` and `OsStr` are encoded according to the current platform, and are used when interacting with the operating system. `CString` and `CStr` are the Rust equivalent of strings in C, and are used in FFI code, and `PathBuf` and `Path` are convenience wrappers around `OsString` and `OsStr`, providing methods specific to path manipulation.
