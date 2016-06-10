@@ -98,7 +98,7 @@ teams:
     members: [brson, carols10cents, skade, manishearth, steveklabnik, bstrie, erickt]
     email: community-team [at] rust-lang [dot] org
   - name: Moderation
-    responsibility: "helping uphold the <a href='http://www.rust-lang.org/conduct.html'>code of conduct</a>"
+    responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
     email: rust-mods [at] rust-lang [dot] org
 

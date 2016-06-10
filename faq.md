@@ -117,7 +117,7 @@ There are several ways. You can:
 
 - Post in [users.rust-lang.org](https://users.rust-lang.org/), the official Rust users forum
 - Ask in the official [Rust IRC channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) (#rust on irc.mozilla.org)
-- Ask on [Stack Overflow](http://stackoverflow.com/questions/tagged/rust) with the "rust" tag
+- Ask on [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) with the "rust" tag
 - Post in [/r/rust](https://www.reddit.com/r/rust), the unofficial Rust subreddit
 
 <h3><a href="#why-has-rust-changed-so-much" name="why-has-rust-changed-so-much">
@@ -168,7 +168,7 @@ This is partly due to preference of the original developer (Graydon), and partly
 How fast is Rust?
 </a></h3>
 
-Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks (like the [Benchmarks Game](http://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp) and [others](https://github.com/kostya/benchmarks)).
+Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks (like the [Benchmarks Game](https://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp) and [others](https://github.com/kostya/benchmarks)).
 
 Like C++, Rust takes [zero-cost abstractions](http://blog.rust-lang.org/2015/05/11/traits.html) as one of its core principles: none of Rust's abstractions impose a global performance penalty, nor is there overhead from any runtime system.
 
@@ -185,7 +185,7 @@ By avoiding GC, Rust can offer numerous benefits: predictable cleanup of resourc
 Rust avoids the need for GC through its system of ownership and borrowing, but that same system helps with a host of other problems, including
 [resource management in general](http://blog.skylight.io/rust-means-never-having-to-close-a-socket/) and [concurrency](http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html).
 
-For when single ownership does not suffice, Rust programs rely on the standard reference-counting smart pointer type, [`Rc`](http://doc.rust-lang.org/std/rc/struct.Rc.html), and its thread-safe counterpart, [`Arc`](http://doc.rust-lang.org/std/sync/struct.Arc.html), instead of GC.
+For when single ownership does not suffice, Rust programs rely on the standard reference-counting smart pointer type, [`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html), and its thread-safe counterpart, [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html), instead of GC.
 
 We are however investigating *optional* garbage collection as a future
 extension. The goal is to enable smooth integration with
@@ -193,7 +193,7 @@ garbage-collected runtimes, such as those offered by the
 [Spidermonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
 and [V8](https://developers.google.com/v8/?hl=en) JavaScript engines.
 Finally, some people have investigated implementing
-[pure Rust garbage collectors](http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/)
+[pure Rust garbage collectors](https://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/)
 without compiler support.
 
 <h3><a href="#why-is-my-program-slow" name="why-is-my-program-slow">
@@ -270,7 +270,7 @@ Why is there no literal syntax for dictionaries?
 
 Rust's overall design preference is for limiting the size of the *language* while enabling powerful *libraries*. While Rust does provide initialization syntax for arrays and string literals, these are the only collection types built into the language. Other library-defined types, including the ubiquitous [`Vec`][Vec] collection type, use macros for initialization like the [`vec!`][VecMacro] macro.
 
-This design choice of using Rust's macro facilities to initialize collections will likely be extended generically to other collections in the future, enabling simple initialization of not only [`HashMap`][HashMap] and [`Vec`][Vec], but also other collection types such as [`BTreeMap`][BTreeMap]. In the meantime, if you want a more convenient syntax for initializing collections, you can [create your own macro](http://stackoverflow.com/questions/27582739/how-do-i-create-a-hashmap-literal) to provide it.
+This design choice of using Rust's macro facilities to initialize collections will likely be extended generically to other collections in the future, enabling simple initialization of not only [`HashMap`][HashMap] and [`Vec`][Vec], but also other collection types such as [`BTreeMap`][BTreeMap]. In the meantime, if you want a more convenient syntax for initializing collections, you can [create your own macro](https://stackoverflow.com/questions/27582739/how-do-i-create-a-hashmap-literal) to provide it.
 
 <h3><a href="#when-should-i-use-an-implicit-return" name="when-should-i-use-an-implicit-return">
 When should I use an implicit return?
@@ -537,7 +537,7 @@ There are at least four options (discussed at length in [Too Many Linked Lists](
 although this approach pays the cost of memory management.
 - You can implement it using `unsafe` code using raw pointers. This will be
 more efficient, but bypasses Rust's safety guarantees.
-- Using vectors and indices into those vectors. There are [several](http://smallcultfollowing.com/babysteps/blog/2015/04/06/modeling-graphs-in-rust-using-vector-indices/) [available](http://featherweightmusings.blogspot.com/2015/04/graphs-in-rust.html) examples and explanations of this approach.
+- Using vectors and indices into those vectors. There are [several](http://smallcultfollowing.com/babysteps/blog/2015/04/06/modeling-graphs-in-rust-using-vector-indices/) [available](https://featherweightmusings.blogspot.com/2015/04/graphs-in-rust.html) examples and explanations of this approach.
 - Using borrowed references with [`UnsafeCell`][UnsafeCell]. There are [explanations and code](https://github.com/nrc/r4cppp/blob/master/graphs/README.md#node-and-unsafecell) available for this approach.
 
 <h3><a href="#how-can-i-define-a-struct-that-contains-a-reference-to-one-of-its-own-fields" name="how-can-i-define-a-struct-that-contains-a-reference-to-one-of-its-own-fields">
@@ -742,7 +742,7 @@ based on the parameter types of calls to that function (or uses of the structure
 
 During monomorphisisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
 
-Functions that accept [trait objects](http://doc.rust-lang.org/book/trait-objects.html) instead of type parameters do not undergo monomorphisation. Instead, methods on the trait objects are dispatched dynamically at runtime.
+Functions that accept [trait objects](https://doc.rust-lang.org/book/trait-objects.html) instead of type parameters do not undergo monomorphisation. Instead, methods on the trait objects are dispatched dynamically at runtime.
 
 <h3><a href="#whats-the-difference-between-a-function-and-a-closure-that-doesnt-capture" name="whats-the-difference-between-a-function-and-a-closure-that-doesnt-capture">
 What's the difference between a function and a closure that doesn't capture any variables?
@@ -938,7 +938,7 @@ Not currently. Rust macros are ["hygienic macros"](https://en.wikipedia.org/wiki
 How do I debug Rust programs?
 </a></h3>
 
-Rust programs can be debugged using [gdb](http://sourceware.org/gdb/current/onlinedocs/gdb/) or [lldb](http://lldb.llvm.org/tutorial.html), the same as C and C++. In fact, every Rust installation comes with one or both of rust-gdb and rust-lldb (depending on platform support). These are wrappers over gdb and lldb with Rust pretty-printing enabled.
+Rust programs can be debugged using [gdb](https://sourceware.org/gdb/current/onlinedocs/gdb/) or [lldb](http://lldb.llvm.org/tutorial.html), the same as C and C++. In fact, every Rust installation comes with one or both of rust-gdb and rust-lldb (depending on platform support). These are wrappers over gdb and lldb with Rust pretty-printing enabled.
 
 <h3><a href="#how-do-i-locate-a-panic" name="how-do-i-locate-a-panic">
 <code>rustc</code> said a panic occurred in standard library code. How do I locate the mistake in my code?
@@ -1033,7 +1033,7 @@ Yes it can! There are already examples of using Rust for both [Android](https://
 Can I run my Rust program in a web browser?
 </a></h3>
 
-Not yet, but there are efforts underway to make Rust compile to the web with [Emscripten](http://kripken.github.io/emscripten-site/).
+Not yet, but there are efforts underway to make Rust compile to the web with [Emscripten](https://kripken.github.io/emscripten-site/).
 
 <h3><a href="#how-do-i-cross-compile-rust" name="how-do-i-cross-compile-rust">
 How do I cross-compile in Rust?
@@ -1041,7 +1041,7 @@ How do I cross-compile in Rust?
 
 Cross compilation is possible in Rust, but it requires [a bit of work](https://github.com/japaric/rust-cross/blob/master/README.md) to set up. Every Rust compiler is a cross-compiler, but libraries need to be cross-compiled for the target platform.
 
-Rust does distribute [copies of the standard library](http://static.rust-lang.org/dist/) for each of the supported platforms, which are contained in the `rust-std-*` files for each of the build directories found on the distribution page, but there are not yet automated ways to install them.
+Rust does distribute [copies of the standard library](https://static.rust-lang.org/dist/) for each of the supported platforms, which are contained in the `rust-std-*` files for each of the build directories found on the distribution page, but there are not yet automated ways to install them.
 
 <h2 id="modules-and-crates">Modules and Crates</h2>
 
@@ -1137,7 +1137,7 @@ If you know this is going to happen, perhaps it saves a small number of keystrok
 However, in the future, an IDE could help manage declarations, which gives you the best of both worlds: machine assistance for pulling in names, but explicit declarations about where those names are coming from.
 
 <!--
-### How do I package and archive crates from [http://crates.io](http://crates.io)?
+### How do I package and archive crates from [https://crates.io](https://crates.io)?
 
 TODO: Write this answer.
 -->
@@ -1152,7 +1152,7 @@ Import dynamic libraries in Rust with [libloading](https://crates.io/crates/libl
 Why doesn't crates.io have namespaces?
 </a></h3>
 
-Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-package-policies/1041) of [http://crates.io](http://crates.io)'s design:
+Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-package-policies/1041) of [https://crates.io](https://crates.io)'s design:
 
 > In the first month with crates.io, a number of people have asked us about the possibility of introducing [namespaced packages](https://github.com/rust-lang/crates.io/issues/58).<br><br>
 >
@@ -1266,7 +1266,7 @@ Does Rust allow non-constant-expression values for globals?
 
 No. Globals cannot have a non-constant-expression constructor and cannot have a destructor at all. Static constructors are undesirable because portably ensuring a static initialization order is difficult. Life before main is often considered a misfeature, so Rust does not allow it.
 
-See the [C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) about the "static initialization order fiasco", and [Eric Lippert's blog](http://ericlippert.com/2013/02/06/static-constructors-part-one/) for the challenges in C#, which also has this feature.
+See the [C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) about the "static initialization order fiasco", and [Eric Lippert's blog](https://ericlippert.com/2013/02/06/static-constructors-part-one/) for the challenges in C#, which also has this feature.
 
 You can approximate non-constant-expression globals with the [lazy-static](https://crates.io/crates/lazy_static/) crate.
 

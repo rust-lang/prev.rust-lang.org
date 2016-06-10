@@ -54,16 +54,16 @@ TODO: blogging, translation
 [A-docs]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-docs
 [Rust By Example]: https://github.com/rust-lang/rust-by-example
 [Rust Design Patterns]: https://github.com/nrc/patterns
-[Rust Style Guidelines]: http://doc.rust-lang.org/style/index.html
-[The Book]: http://doc.rust-lang.org/book/index.html
-[The Rust Reference]: http://doc.rust-lang.org/reference.html
-[The Rustonomicon]: http://doc.rust-lang.org/nomicon/index.html
+[Rust Style Guidelines]: https://doc.rust-lang.org/style/index.html
+[The Book]: https://doc.rust-lang.org/book/index.html
+[The Rust Reference]: https://doc.rust-lang.org/reference.html
+[The Rustonomicon]: https://doc.rust-lang.org/nomicon/index.html
 [awesome-rust]: https://github.com/kud1ing/awesome-rust
 [crate_docs]: https://users.rust-lang.org/t/lets-talk-about-ecosystem-documentation/2791
 [err-issue]: https://github.com/rust-lang/rust/issues/24407
-[err]: http://doc.rust-lang.org/error-index.html
+[err]: https://doc.rust-lang.org/error-index.html
 [rust-learning]: https://github.com/ctjhoa/rust-learning
 [rust-rosetta]: https://github.com/Hoverbear/rust-rosetta
 [src/doc]: https://github.com/rust-lang/rust/tree/master/src/doc
-[std]: http://doc.rust-lang.org/std/index.html
+[std]: https://doc.rust-lang.org/std/index.html
 [Rust website Git repository]: https://github.com/rust-lang/rust-www

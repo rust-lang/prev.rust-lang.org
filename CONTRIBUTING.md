@@ -4,7 +4,7 @@ Thank you for your interest in contributing to the Rust site!
 
 As a reminder, all contributors are expected to follow our [Code of Conduct][coc].
 
-[coc]: http://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/conduct.html
 
 ## What this repo isn't
 
