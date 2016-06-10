@@ -73,12 +73,12 @@ Conduct training on Rust. (link to training material).
 [/r/rust]: https://reddit.com/r/rust
 [E-easy]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy
 [E-mentor]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy+label%3AE-mentor
-[Stack Overflow]: http://stackoverflow.com/questions/tagged/rust
-[This Week in Rust]: http://www.this-week-in-rust.org
+[Stack Overflow]: https://stackoverflow.com/questions/tagged/rust
+[This Week in Rust]: https://this-week-in-rust.org
 [community team]: https://www.rust-lang.org/team.html#Community
 [events]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
-[helpful]: http://blogs.msmvps.com/jonskeet/2009/02/17/answering-technical-questions-helpfully/
+[helpful]: https://codeblog.jonskeet.uk/2009/02/17/answering-technical-questions-helpfully/
 [mentor]: https://users.rust-lang.org/t/mentoring-newcomers-to-the-rust-ecosystem/3088
-[mentor-guide]: http://manishearth.github.io/blog/2016/01/03/making-your-open-source-project-newcomer-friendly/
+[mentor-guide]: https://manishearth.github.io/blog/2016/01/03/making-your-open-source-project-newcomer-friendly/
 [user groups]: user-groups.html
 [users.rust-lang.org]: https://users.rust-lang.org

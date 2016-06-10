@@ -54,7 +54,7 @@
   how: "Fast and robust monitoring agent for web applications."
 -
   name: Ather Energy
-  url: http://www.atherenergy.com/
+  url: https://www.atherenergy.com/
   logo: ather.svg
   how: "Sending scooter data to the cloud reliably."
 -
@@ -96,7 +96,7 @@
   name: Mozilla
   url: https://www.mozilla.org
   logo: mozilla.png
-  how: "Building the <a href='http://servo.org'>Servo</a> browser engine, <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1135640'>integrating into Firefox</a>, other projects."
+  how: "Building the <a href='https://servo.org'>Servo</a> browser engine, <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1135640'>integrating into Firefox</a>, other projects."
 -
   name: Navitia
   url: http://www.navitia.io

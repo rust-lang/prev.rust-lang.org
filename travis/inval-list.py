@@ -3,7 +3,7 @@
 """
 This script creates an invalidation batch for use by the AWS CLI. 
 
-http://docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html
+https://docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html
 
 Files are listed from `site` and output is written to `target`. 
 """

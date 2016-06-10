@@ -49,7 +49,7 @@
 
   // Changes the height of the editor to match its contents
   function updateEditorHeight() {
-    // http://stackoverflow.com/questions/11584061/
+    // https://stackoverflow.com/questions/11584061/
     var newHeight = editor.getSession().getScreenLength()
       * editor.renderer.lineHeight
       + editor.renderer.scrollBar.getWidth();
