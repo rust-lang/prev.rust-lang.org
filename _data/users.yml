@@ -88,6 +88,11 @@
   logo: faraday.svg
   how: "<a href='https://github.com/faradayio/credentials_to_env'>Securely transferring credentials.</a>"
 -
+  name: Habitat
+  url: https://www.habitat.sh
+  logo: habitat.svg
+  how: "<a href='https://github.com/habitat-sh/habitat'>Habitat is automation that travels with the app</a>"
+-
   name: MaidSafe
   url: http://www.maidsafe.net
   logo: maidsafe.svg
