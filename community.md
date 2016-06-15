@@ -87,6 +87,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 
 - [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
 - [#rust-bots][bots_irc] notifications about Rust from a selection of bots
+- [#rust-docs][docs_irc] is the home of the unoffical documentation team
 - [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
 - [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
 - [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
@@ -118,6 +119,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [servo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23servo
 [tools_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
 [webdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
+[docs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-docs
 
 ## Discussion Forums
 
