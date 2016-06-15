@@ -91,7 +91,7 @@
   name: Habitat
   url: https://www.habitat.sh
   logo: habitat.svg
-  how: "<a href='https://github.com/habitat-sh/habitat'>Habitat is automation that travels with the app</a>"
+  how: "<a href='https://github.com/habitat-sh/habitat'>Habitat is automation that travels with the app.</a>"
 -
   name: MaidSafe
   url: http://www.maidsafe.net
@@ -106,7 +106,7 @@
   name: Navitia
   url: http://www.navitia.io
   logo: navitia.svg
-  how: "<a href='https://github.com/CanalTP/mimirsbrunn'>Geocoding service built over Elasticsearch</a>"
+  how: "<a href='https://github.com/CanalTP/mimirsbrunn'>Geocoding service built over Elasticsearch.</a>"
 -
   name: OneSignal
   url: https://onesignal.com
