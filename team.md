@@ -48,6 +48,9 @@ people:
   michaelwoerister:
     name: Michael Woerister
     irc: mw
+  nagisa:
+    name: Simonas Kazlauskas
+    irc: nagisa
   niconii:
     name: Nicolette Verlinden
     irc: niconii
@@ -86,7 +89,7 @@ teams:
     lead: aturon
   - name: Compiler
     responsibility: "compiler internals, optimizations"
-    members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister]
+    members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister, nagisa]
     lead: nikomatsakis
   - name: Tooling and infrastructure
     responsibility: "tool support (e.g. Cargo, multirust), CI infrastructure, etc."
