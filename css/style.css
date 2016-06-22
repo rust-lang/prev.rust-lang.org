@@ -185,7 +185,7 @@ p.pitch a {
 
 hr {
 	margin-top: 2em;
-	margin-bottom: 1em;
+	margin-bottom: 3em;
 	border-top: 2px solid #dedede;
 }
 
@@ -396,8 +396,10 @@ ul.laundry-list {
 .content h2 {
     font-size: 2em;
     line-height: 1.5em;
-    margin: 1rem 0;
+    margin: 3rem 0 1rem;
     font-weight: 400;
+		border-top: 2px solid #dedede;
+		padding-top: 1rem;
 }
 
 .content h3 {
@@ -412,6 +414,8 @@ ul.laundry-list {
 	font-size: 18.5px;
 	line-height: 24px;
 	margin-top: 7px;
+	border-top: none;
+	padding-top: 0;
 }
 
 .side-header h3 {

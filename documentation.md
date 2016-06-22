@@ -12,8 +12,6 @@ show you how to install it, and explain its syntax and concepts. Upon
 completing the book, you'll be an intermediate Rust developer, and
 will have a good grasp of the fundamental ideas behind Rust.
 
----
-
 ## Learning Rust
 
 [The Rust Programming Language][book]. Also known as "The Book",
@@ -38,8 +36,6 @@ for learning Rust.
 [faq]: faq.html
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning
-
----
 
 ## References
 
@@ -69,8 +65,6 @@ the errors produced by the Rust compiler.
 [err]: https://doc.rust-lang.org/error-index.html
 [release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md
 
----
-
 ## Project policies
 
 [Rust security policy][security]. The project's policies for
@@ -89,8 +83,6 @@ other corners of the Rust world.
 [legal]: legal.html
 [coc]: https://www.rust-lang.org/conduct.html
 
----
-
 ## Nightly and beta documentation
 
 Much of the official Rust documentation is also available for the
@@ -99,8 +91,6 @@ linked above.
 
 [nightly]: https://doc.rust-lang.org/nightly/
 [beta]: https://doc.rust-lang.org/beta/
-
----
 
 ## Non-english resources
 
