@@ -96,22 +96,6 @@ h3 {
 	font-weight: 500;
 }
 
-.side-header h2 {
-	font-weight: 500;
-	font-size: 18.5px;
-	line-height: 24px;
-	margin-top: 7px;
-}
-
-.side-header h3 {
-	font-size: 1em;
-	margin-top: 0px;
-}
-
-.side-header p {
-	color:  #777;
-}
-
 .table-features {
 	width: 100%;
 	margin-bottom: 18px;
@@ -414,15 +398,33 @@ ul.laundry-list {
     line-height: 1.5em;
     margin: 3rem 0 1rem;
     font-weight: 400;
-    border-top: 2px solid #dedede;
-    padding-top: 1rem;
+		border-top: 2px solid #dedede;
+		padding-top: 1rem;
 }
 
 .content h3 {
     font-size: 1em;
     line-height: 1.5em;
     font-weight: 500;
-    margin: 2rem 0 .5rem;
+    margin: .5rem 0;
+}
+
+.side-header h2 {
+	font-weight: 500;
+	font-size: 18.5px;
+	line-height: 24px;
+	margin-top: 7px;
+	border-top: none;
+	padding-top: 0;
+}
+
+.side-header h3 {
+	font-size: 1em;
+	margin-top: 0px;
+}
+
+.side-header p {
+	color:  #777;
 }
 
 @media screen and (min-width: 820px) {
