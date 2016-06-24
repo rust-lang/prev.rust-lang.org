@@ -83,6 +83,11 @@
   logo: ethcore.png
   how: "<a href='https://ethcore.io/parity.html'>Powering the Ethereum revolution.</a>"
 -
+  name: Everlane
+  url: http://www.everlane.com/
+  logo: everlane.png
+  how: "<a href='https://precompile.com/2016/06/23/shipping-forgettable-microservices-with-rust.html'>Dependable, high-performance metrics aggregation and forwarding</a>."
+-
   name: Faraday
   url: http://faraday.io
   logo: faraday.svg
