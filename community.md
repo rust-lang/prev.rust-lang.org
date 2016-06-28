@@ -169,7 +169,7 @@ library, rust-lang crates, and conventions.
 optimizations.
 
 * The [Tooling and Infrastructure Team][tool_team] is responsible for official
-tools like Cargo, multirust, rustfmt, as well as the CI Infrastructure for the
+tools like Cargo, rustup, rustfmt, as well as the CI Infrastructure for the
 project.
 
 * The [Community Team][community_team] is responsible for coordinating events,
