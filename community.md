@@ -169,8 +169,12 @@ library, rust-lang crates, and conventions.
 optimizations.
 
 * The [Tooling and Infrastructure Team][tool_team] is responsible for official
-tools like Cargo, rustup, rustfmt, as well as the CI Infrastructure for the
+tools like [Cargo], [rustup], [rustfmt], as well as the CI Infrastructure for the
 project.
+
+[Cargo]: https://crates.io
+[rustup]: https://www.rustup.rs
+[rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 
 * The [Community Team][community_team] is responsible for coordinating events,
 outreach, commercial users, teaching materials, and exposure. They can also
