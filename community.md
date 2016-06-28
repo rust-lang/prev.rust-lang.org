@@ -5,8 +5,9 @@ title: The Rust Community &middot; The Rust Programming Language
 
 # The Rust Community
 
-Rust is an amazing programming language, but its greatest strength
-is its kind and inclusive community.
+The Rust programming language has many qualities, but Rust's greatest
+strength is the community of people who come together to make working
+in Rust a rewarding experience.
 
 We are committed to providing a friendly, safe and welcoming
 environment for all, regardless of gender, sexual orientation,
