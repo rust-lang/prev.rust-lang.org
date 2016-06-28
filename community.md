@@ -5,8 +5,9 @@ title: The Rust Community &middot; The Rust Programming Language
 
 # The Rust Community
 
-Rust is an amazing programming language, but its greatest strength
-is its kind and inclusive community.
+The Rust programming language has many qualities, but Rust's greatest
+strength is the community of people who come together to make working
+in Rust a rewarding experience.
 
 We are committed to providing a friendly, safe and welcoming
 environment for all, regardless of gender, sexual orientation,
@@ -169,8 +170,12 @@ library, rust-lang crates, and conventions.
 optimizations.
 
 * The [Tooling and Infrastructure Team][tool_team] is responsible for official
-tools like Cargo, multirust, rustfmt, as well as the CI Infrastructure for the
+tools like [Cargo], [rustup], and [rustfmt], as well as the CI Infrastructure for the
 project.
+
+[Cargo]: https://crates.io
+[rustup]: https://www.rustup.rs
+[rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 
 * The [Community Team][community_team] is responsible for coordinating events,
 outreach, commercial users, teaching materials, and exposure. They can also
