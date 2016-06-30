@@ -92,6 +92,8 @@
       code: program
     });
 
+    req.timeout = 6000;
+
     // console.log("Sending", data);
     req.open('POST', "https://play.rust-lang.org/evaluate.json", true);
     req.onload = function(e) {
@@ -125,6 +127,13 @@
     req.onerror = function(e) {
       callback(false, null);
     };
+
+    req.ontimeout = function(e) {
+      var statusCode = ERROR;
+      var result = "play.rust-lang.org not responding, please check back later";
+
+      callback(statusCode, result);
+    }
 
     req.setRequestHeader("Content-Type", "application/json");
     req.send(data);
