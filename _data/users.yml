@@ -118,6 +118,11 @@
   logo: onesignal.svg
   how: "High volume, cross platform push notification <a href='https://onesignal.com/blog/announcing-our-new-delivery-backend/'>delivery</a>"
 -
+  name: Postmates
+  url: https://postmates.com/
+  logo: postmates.png
+  how: "Rust is being incubated in the Infrastructure team to write system daemons."
+-
   name: PingCAP
   url: https://github.com/pingcap/tikv
   logo: pingcap.png
