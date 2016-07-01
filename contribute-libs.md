@@ -62,6 +62,6 @@ TODO: Not sure #rust-libs is the place to direct people
 [redox-os]: https://github.com/redox-os
 [requested]: https://github.com/rust-lang/rfcs/labels/A-community-library
 [rust-lang-nursery]: https://github.com/rust-lang-nursery
-[rustfmt]: https://github.com/nrc/rustfmt
+[rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 [trending]: https://github.com/trending?l=rust
 [users.rust-lang.org]: https://users.rust-lang.org

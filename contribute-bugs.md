@@ -59,7 +59,7 @@ TODO: @nrc says suggesting everybody review w/o training is bad
 [nix]: https://github.com/nix-rust/nix/
 [pull]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#pull-requests
 [reviews]: http://blog.originate.com/blog/2014/09/29/effective-code-reviews/
-[rustfmt]: https://github.com/nrc/rustfmt
+[rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 [team]: team.html
 [test]: https://github.com/rust-lang/rust-wiki-backup/blob/master/Note-testsuite.md
 [triage]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#issue-triage
