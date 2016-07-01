@@ -116,7 +116,7 @@
   name: OneSignal
   url: https://onesignal.com
   logo: onesignal.svg
-  how: "High volume, cross platform push notification <a href='https://onesignal.com/blog/announcing-our-new-delivery-backend/'>delivery</a>"
+  how: "High volume, cross platform push notification <a href='https://onesignal.com/blog/announcing-our-new-delivery-backend/'>delivery</a>."
 -
   name: PingCAP
   url: https://github.com/pingcap/tikv
