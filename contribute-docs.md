@@ -29,7 +29,7 @@ correctly). The [Rust Style Guidelines] are so incomplete they are not
 linked prominently; an ambitious contributor can make much headway
 there. The [error index][err] provides extended explanations of the
 errors produced by the compiler. As new errors are added this
-documentation [must be maintained][err-issue], so there always
+documentation [must be maintained][err-issue], so there always are
 errors not reflected in the index to be added. Most in-tree
 documentation lives in the [src/doc] directory. These are all covered by
 the [A-docs] label on that issue tracker. Finally, this document
