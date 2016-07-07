@@ -6,7 +6,13 @@
     if (navigator.platform === "Linux x86_64") { return "x86_64-unknown-linux-gnu";}
     if (navigator.appVersion.indexOf("Linux")  !== -1) { return "x86_64-unknown-linux-gnu";}
     if (navigator.appVersion.indexOf("Mac") !== -1) { return "x86_64-apple-darwin";}
-    if (navigator.appVersion.indexOf("Win") !== -1) { return"x86_64-pc-windows-gnu";}
+    if (navigator.appVersion.indexOf("Win") !== -1) {
+      if (navigator.appVersion.indexOf("Win64") !== -1 || navigator.appVersion.indexOf("WOW64") !== -1) {
+        return "x86_64-pc-windows-gnu";
+      } else {
+        return "i686-pc-windows-gnu";
+      }
+    }
     return "unknown";
   }
 
@@ -28,6 +34,9 @@
   } else if (platform == "x86_64-pc-windows-gnu") {
     rec_version_type = "Windows installer";
     rec_download_file = "rust-" + rec_package_name + "-x86_64-pc-windows-gnu.msi";
+  } else if (platform == "i686-pc-windows-gnu") {
+    rec_version_type = "Windows installer";
+    rec_download_file = "rust-" + rec_package_name + "-i686-pc-windows-gnu.msi";
   }
 
   var rec_package_desc = rec_package_name + " (<span>" + rec_version_type + "</span>)";
