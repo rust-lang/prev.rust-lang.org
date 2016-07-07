@@ -68,6 +68,11 @@
   logo: beget.png
   how: "As part of backup and resource management systems."
 -
+  name: Coursera
+  url: https://www.coursera.org
+  logo: coursera.png
+  how: "<a href='https://building.coursera.org/blog/2016/07/07/rust-docker-in-production-coursera/'>Programming Assignments</a> in <a href='http://betacs.pro/blog/2016/07/07/docker-and-rust/'>secured Docker containers</a>."
+-
   name: Coturnix
   url: http://www.coturnix.fr/
   logo: coturnix.png
