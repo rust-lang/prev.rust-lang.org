@@ -4,7 +4,7 @@ This repository contains the source files for rust-lang.org.
 
 ## Deployment
 
-![TravisCI Badge](https://travis-ci.org/rust-lang/rust-www.svg)
+[![Build Status](https://travis-ci.org/rust-lang/rust-www.svg?branch=master)](https://travis-ci.org/rust-lang/rust-www)
 
 The site is built with TravisCI and automatically deployed to S3.
 
