@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ruby Programming Language</title>
+    <script type="text/javascript">
+      // a list of mappings, the keys are what we might get from a browser, and the
+      // values are what URL we should send that value to.
+      var languages = {
+        "en": "en-US",
+        "en-US": "en-US",
+      };
+
+      // look up the provided language in the map
+      var code = window.navigator.language || window.navigator.userLanguage || "en";
+      var language = languages[code];
+
+      // if we didn't find a supporting langauge, default to en-US
+      if (!language) { language = "en-US"; }
+
+      document.location = "/" + language + '{{ page.url }}';
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/en-US/">
+    </noscript>
+  </head>
+</html>
