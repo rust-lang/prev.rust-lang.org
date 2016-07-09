@@ -15,8 +15,16 @@ import json
 def pretty_time():
     return '-'.join(time.strftime('%c').split())
 
+def list_files(site, name):
+    base = os.path.join(site, name)
+    return [os.path.join(name, f) for f in os.listdir(base) if os.path.isfile(os.path.join(base, f))]
+
 def build_payload(site):
     files = [ f for f in os.listdir(site) if os.path.isfile(os.path.join(site,f)) ]
+
+    # translations
+    files.extend(list_files(site, "en-US"))
+
     obj = { "Paths": {
              "Quantity": len(files), 
              "Items": [ '/' + f for f in files] }, 
