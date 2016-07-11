@@ -138,6 +138,11 @@
   logo: purchaseclinic.com.png
   how: "Our backend (REST API) is a 100% Rust server, based on Iron."
 -
+  name: Sentry
+  url: https://www.getsentry.com/
+  logo: sentry-horizontal-black.svg
+  how: "<a href='http://lucumr.pocoo.org/2016/7/10/rust-rest/'>A command-line client for the Sentry API.</a>"
+-
   name: Tessel
   url: https://www.tessel.io
   logo: tessel.svg
