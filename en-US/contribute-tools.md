@@ -37,4 +37,4 @@ Rust tooling enthusiasts in [#rust-tools].
 [A-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-rustdoc
 [Cargo]: https://github.com/rust-lang/cargo/issues
 [awesome-rust]: https://github.com/kud1ing/awesome-rust
-[ides]: ides.html
+[ides]: https://forge.rust-lang.org/ides.html
