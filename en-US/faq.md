@@ -950,7 +950,7 @@ This error is usually caused by [`unwrap()`ing][unwrap] a `None` or `Err` in cli
 What IDE should I use?
 </a></h3>
 
-There are a number of options for development environment with Rust, all of which are detailed on the official [IDE support page](https://www.rust-lang.org/ides.html).
+There are a number of options for development environment with Rust, all of which are detailed on the official [IDE support page](https://forge.rust-lang.org/ides.html).
 
 <h3><a href="#wheres-rustfmt" name="wheres-rustfmt">
 <code>gofmt</code> is great. Where's <code>rustfmt</code>?
