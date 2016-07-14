@@ -159,7 +159,7 @@ the rosters, in alphabetical order.
 To contact a team, post your question or comment to [the Internals
 forum](https://internals.rust-lang.org/) and tag your post with the category
 corresponding to the team name. Note that security disclosures should follow
-the [Rust security disclosure process](https://www.rust-lang.org/security.html). 
+the [Rust security disclosure process](security.html). 
 
 {% for team in page.teams %}
 <section id="{{ team.name | replace:' ','-' }}">
