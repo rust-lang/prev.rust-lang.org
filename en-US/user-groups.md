@@ -95,7 +95,7 @@ even better, open a pull request against
 
 ## Phillipines
 
-[Rust Users Group Philippines] (https://www.facebook.com/groups/rustph/), Manila.
+[Rust Users Group Philippines](http://www.rustph.tech), Manila.
 
 [Cebu Rust Camp](https://www.meetup.com/Cebu-Rust-Camp/), Cebu.
 
