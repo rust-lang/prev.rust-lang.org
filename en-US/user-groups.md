@@ -83,6 +83,7 @@ even better, open a pull request against
 ## Mexico
 
 [Rust Lang Comunidad Mexico](https://www.meetup.com/rustlangmx/), Guadalajara.
+
 [Rust MX](https://www.meetup.com/Rust-MX/), Mexico city.
 
 ## Netherlands
@@ -138,6 +139,7 @@ even better, open a pull request against
 ## UK
 
 [Rust London User Group](https://www.meetup.com/Rust-London-User-Group/), London.
+
 [Rust Belfast User Group](https://www.meetup.com/Rust-Belfast-Meetup/), Belfast.
 
 ## Uruguay
