@@ -103,6 +103,11 @@
   logo: habitat.svg
   how: "<a href='https://github.com/habitat-sh/habitat'>Habitat is automation that travels with the app.</a>"
 -
+  name: Honeypot
+  url: https://www.honeypot.io/
+  logo: honeypot.svg
+  how: "We <a href='http://blog.honeypot.io/open-sourcing-searchspot/'>built and use Searchspot</a>, a kind of search engine based on Elasticsearch. Recruiters use it to search for the developers they're looking for."
+-
   name: MaidSafe
   url: http://www.maidsafe.net
   logo: maidsafe.svg
