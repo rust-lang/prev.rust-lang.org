@@ -81,7 +81,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#rust-br][br_irc] é dedicado à discussão sobre Rust no Brasil
 - [#rust-de][de_irc] ist für die allgemeine Diskussion über Rust auf Deutsch
 - [#rust-es][es_irc] es para una discusión general sobre Rust en español
-- [#rust-fr][fr_irc] est dédié à la programmation en Rust et français
+- [#rust-fr][fr_irc] est dédié à la programmation en Rust en français
 - [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
 
 ### Topical channels
