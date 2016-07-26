@@ -70,6 +70,14 @@ people:
     name: Vadim Chugunov
   wycats:
     name: Yehuda Katz
+  jonathandturner:
+    name: Jonathan Turner
+  badboy:
+    name: Jan-Erik Rediger
+  johannhof:
+    name: Johann Hofmann
+  booyaa:
+    name: Mark Sta Ana
 
 # Information about each team. Omit `lead` for teams without leaders.
 teams:
@@ -95,7 +103,7 @@ teams:
   - name: Community
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt
-    members: [brson, carols10cents, skade, manishearth, steveklabnik, bstrie, erickt]
+    members: [brson, carols10cents, skade, manishearth, steveklabnik, bstrie, erickt, jonathandturner, badboy, johannhof, booyaa]
     email: community-team [at] rust-lang [dot] org
   - name: Moderation
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
