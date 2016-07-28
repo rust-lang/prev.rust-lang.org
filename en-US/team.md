@@ -97,7 +97,7 @@ teams:
     members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister]
     lead: nikomatsakis
   - name: Tooling and infrastructure
-    responsibility: "tool support (e.g. Cargo, multirust), CI infrastructure, etc."
+    responsibility: "tool support (e.g. Cargo, rustup), CI infrastructure, etc."
     members: [brson, nrc, alexcrichton, vadimcn, wycats, michaelwoerister]
     lead: alexcrichton
   - name: Community
