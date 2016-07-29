@@ -34,9 +34,11 @@ people:
     name: Erick Tryzelaar
   Gankro:
     name: Alexis Beingessner
+    ex-teams: ["libs"]
   huonw:
     name: Huon Wilson
     irc: huon
+    ex-teams: ["core", "lang", "libs"]
   jseyfried:
     name: Jeffrey Seyfried
     irc: jseyfried
@@ -84,18 +86,18 @@ people:
 
 # Information about each team. Omit `lead` for teams without leaders.
 teams:
-  - name: Core
+  - name: Core team
     responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
-    members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, pcwalton, huonw, erickt]
-  - name: Language design
+    members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, pcwalton, erickt]
+  - name: Language design team
     responsibility: "designing new language features"
-    members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon, huonw]
+    members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon]
     lead: nikomatsakis
-  - name: Library
+  - name: Library team
     responsibility: "the Rust standard library, rust-lang crates, conventions"
-    members: [brson, Gankro, alexcrichton, sfackler, BurntSushi, Kimundi, aturon, huonw]
+    members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, aturon]
     lead: aturon
-  - name: Compiler
+  - name: Compiler team
     responsibility: "compiler internals, optimizations"
     members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister, jseyfried]
     lead: nikomatsakis
@@ -103,15 +105,18 @@ teams:
     responsibility: "tool support (e.g. Cargo, rustup), CI infrastructure, etc."
     members: [brson, nrc, alexcrichton, vadimcn, wycats, michaelwoerister]
     lead: alexcrichton
-  - name: Community
+  - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt
     members: [brson, skade, manishearth, johannhof, steveklabnik, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner]
     email: community-team [at] rust-lang [dot] org
-  - name: Moderation
+  - name: Moderation team
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
     email: rust-mods [at] rust-lang [dot] org
+  - name: Rust team alumni
+    responsibility: "enjoying a leisurely retirement"
+    members: [Gankro, huonw]
 
 # Information on sites to get profile information from
 sites:
@@ -136,7 +141,7 @@ sites:
 }
 .lead { font-weight: bold; }
 .lead .name::after { content: " (lead)"; }
-.irc {
+.details {
   display: none;
   position: absolute;
   bottom: 0;
@@ -146,7 +151,7 @@ sites:
   color: white;
   font-weight: normal;
 }
-.person:hover .irc {
+.person:hover .details {
    display: block;
 }
 
@@ -174,7 +179,7 @@ the [Rust security disclosure process](security.html).
 
 {% for team in page.teams %}
 <section id="{{ team.name | replace:' ','-' }}">
-<h2> {{ team.name }} team</h2>
+<h2> {{ team.name }} </h2>
 
 <strong>Responsibility</strong>: <em>{{ team.responsibility }}</em>
 
@@ -197,7 +202,12 @@ the [Rust security disclosure process](security.html).
   <li class="person {% if team.lead and team.lead == nick %}lead{% endif %}">
   <a href="{{ site.url | replace:'%nick',nick }}">
     <div class="name">{{ person.name }}</div>
-    <div class="irc">irc: {% if person.irc %}{{ person.irc }}{% else %}{{ nick }}{% endif %}</div>
+    <div class="details">
+      <div>irc: {% if person.irc %}{{ person.irc }}{% else %}{{ nick }}{% endif %}</div>
+      {% if person.ex-teams %}
+      <div>teams: {{ person.ex-teams | join: ", " }}</div>
+      {% endif %}
+    </div>
     <img class="headshot" src="{{ site.avatar | replace:'%nick',nick }}" alt="{{ person.name }}">
   </a>
 </li>
