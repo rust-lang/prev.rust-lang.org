@@ -103,7 +103,7 @@ teams:
   - name: Community
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt
-    members: [brson, carols10cents, skade, manishearth, steveklabnik, bstrie, erickt, jonathandturner, badboy, johannhof, booyaa]
+    members: [brson, skade, manishearth, johannhof, steveklabnik, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner]
     email: community-team [at] rust-lang [dot] org
   - name: Moderation
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
