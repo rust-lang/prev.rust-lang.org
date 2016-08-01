@@ -177,3 +177,8 @@
   url: http://www.trafficland.com/
   logo: trafficland.svg
   how: "Video transcoding, manipulation, and analysis."
+-
+  name: Xero
+  url: https://www.xero.com
+  logo: xero.png
+  how: "Infrastructure for beautiful accounting software."
