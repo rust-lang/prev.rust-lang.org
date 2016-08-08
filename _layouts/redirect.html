@@ -21,7 +21,10 @@
       document.location = "/" + language + '{{ page.url }}';
     </script>
     <noscript>
-      <meta http-equiv="refresh" content="0; url=/en-US/">
+      <meta http-equiv="refresh" content="0; url=/en-US{{ page.url }}">
     </noscript>
   </head>
+  <body>
+    <p><a href="/en-US{{ page.url }}">Click here</a> to be redirected.</p>
+  </body>
 </html>
