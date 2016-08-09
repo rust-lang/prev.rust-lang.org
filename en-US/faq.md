@@ -1208,7 +1208,7 @@ Yes you can! The major game programming library for Rust is [Piston](http://www.
 Is Rust object oriented?
 </a></h3>
 
-No. It is multi-paradigm. Many things you can do in OO languages you can do in Rust, but not everything, and not always using the same abstraction you're accustomed to.
+No, but it offers alternatives. Rust is multi-paradigm. Many things you can do in OO languages you can do in Rust, but not everything, and not always using the same abstraction you're accustomed to.
 
 <h3><a href="#how-do-i-map-object-oriented-concepts-to-rust" name="how-do-i-map-object-oriented-concepts-to-rust">
 How do I map object-oriented concepts to Rust?
