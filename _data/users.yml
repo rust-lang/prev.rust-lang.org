@@ -148,6 +148,11 @@
   logo: purchaseclinic.com.png
   how: "Our backend (REST API) is a 100% Rust server, based on Iron."
 -
+  name: Sandstorm
+  url: https://sandstorm.io
+  logo: sandstorm-logo-rust.svg
+  how: "The backend of <a href='https://sandstorm.io/news/2016-08-09-collections-app'>our Collections app</a> is written in Rust."
+-
   name: Sentry
   url: https://www.getsentry.com/
   logo: sentry-horizontal-black.svg
