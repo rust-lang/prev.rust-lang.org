@@ -39,6 +39,12 @@ people:
     name: Huon Wilson
     irc: huon
     ex-teams: ["core", "lang", "libs"]
+  GuillaumeGomez:
+    name: Guillaume Gomez
+    irc: imperio
+  jonathandturner:
+    name: Jonathan Turner
+    irc: jntrnr
   jseyfried:
     name: Jeffrey Seyfried
     irc: jseyfried
@@ -63,6 +69,9 @@ people:
     name: Nick Cameron
   pcwalton:
     name: Patrick Walton
+  peschkaj:
+    name: Jeremiah Peschka
+    irc: peschkaj
   pnkfelix:
     name: Felix Klock
   sfackler:
@@ -114,6 +123,9 @@ teams:
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
     email: rust-mods [at] rust-lang [dot] org
+  - name: Documentation team
+    responsibility: "ensuring Rust has fantastic documentation"
+    members: [steveklabnik, GuillaumeGomez, jonathandturner, peschkaj]
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
     members: [Gankro, huonw]
