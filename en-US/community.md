@@ -185,6 +185,9 @@ about something Rusty.
 * The [Moderation Team][mod_team] is responsible for helping to uphold the
 [code of conduct][coc].
 
+* The [Documentation Team][doc_team] is responsible for ensuring Rust has
+  fantastic documentation.
+
 In addition to the official team rosters, most teams also have a larger set
 of reviewers who are knowledgeable about the area and can sign off on
 code. If you're interested in getting involved in one of these teams,
@@ -199,6 +202,7 @@ help get you started.
 [tool_team]: https://www.rust-lang.org/team.html#Tooling-and-infrastructure
 [community_team]: https://www.rust-lang.org/team.html#Community
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
+[doc_team]: https://www.rust-lang.org/en-US/team.html#Documentation-team
 
 ## Rust Development
 
