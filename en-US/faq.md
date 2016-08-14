@@ -802,24 +802,33 @@ impl Add for Foo {
 
 The following operators can be overloaded:
 
-| Operation           | Trait                  |
-|:--------------------|:-----------------------|
-| `+`                 | [`Add`][Add]           |
-| `binary -`          | [`Sub`][Sub]           |
-| `*`                 | [`Mul`][Mul]           |
-| `/`                 | [`Div`][Div]           |
-| `unary -`           | [`Neg`][Neg]           |
-| `%`                 | [`Rem`][Rem]           |
-| `&`                 | [`BitAnd`][BitAnd]     |
-| <code>&#124;</code> | [`BitOr`][BitOr]       |
-| `^`                 | [`BitXor`][BitXor]     |
-| `!`                 | [`Not`][Not]           |
-| `<<`                | [`Shl`][Shl]           |
-| `>>`                | [`Shr`][Shr]           |
-| `*`                 | [`Deref`][Deref]       |
-| `mut *`             | [`DerefMut`][DerefMut] |
-| `[]`                | [`Index`][Index]       |
-| `mut []`            | [`IndexMut`][IndexMut] |
+| Operation            | Trait                          |
+|:---------------------|:-------------------------------|
+| `+`                  | [`Add`][Add]                   |
+| `+=`                 | [`AddAssign`][AddAssign]       |
+| `binary -`           | [`Sub`][Sub]                   |
+| `-=`                 | [`SubAssign`][SubAssign]       |
+| `*`                  | [`Mul`][Mul]                   |
+| `*=`                 | [`MulAssign`][MulAssign]       |
+| `/`                  | [`Div`][Div]                   |
+| `/=`                 | [`DivAssign`][DivAssign]       |
+| `unary -`            | [`Neg`][Neg]                   |
+| `%`                  | [`Rem`][Rem]                   |
+| `%=`                 | [`RemAssign`][RemAssign]       |
+| `&`                  | [`BitAnd`][BitAnd]             |
+| <code>&#124;</code>  | [`BitOr`][BitOr]               |
+| <code>&#124;</code>= | [`BitOrAssign`][BitOrAssign]   |
+| `^`                  | [`BitXor`][BitXor]             |
+| `^=`                 | [`BitXorAssign`][BitXorAssign] |
+| `!`                  | [`Not`][Not]                   |
+| `<<`                 | [`Shl`][Shl]                   |
+| `<<=`                | [`ShlAssign`][ShlAssign]       |
+| `>>`                 | [`Shr`][Shr]                   |
+| `>>=`                | [`ShrAssign`][ShrAssign]       |
+| `*`                  | [`Deref`][Deref]               |
+| `mut *`              | [`DerefMut`][DerefMut]         |
+| `[]`                 | [`Index`][Index]               |
+| `mut []`             | [`IndexMut`][IndexMut]         |
 
 <h3><a href="#why-the-split-between-eq-partialeq-and-ord-partialord" name="why-the-split-between-eq-partialeq-and-ord-partialord">
 Why the split between <code>Eq</code>/<code>PartialEq</code> and <code>Ord</code>/<code>PartialOrd</code>?
@@ -1608,17 +1617,27 @@ When you use `cargo doc` to generate documentation for your own project, it also
 [Result]: https://doc.rust-lang.org/stable/std/result/enum.Result.html
 [RandomState]: https://doc.rust-lang.org/stable/std/collections/hash_map/struct.RandomState.html
 [Add]: https://doc.rust-lang.org/stable/std/ops/trait.Add.html
+[AddAssign]: https://doc.rust-lang.org/stable/std/ops/trait.AddAssign.html
 [Sub]: https://doc.rust-lang.org/stable/std/ops/trait.Sub.html
+[SubAssign]: https://doc.rust-lang.org/stable/std/ops/trait.SubAssign.html
 [Mul]: https://doc.rust-lang.org/stable/std/ops/trait.Mul.html
+[MulAssign]: https://doc.rust-lang.org/stable/std/ops/trait.MulAssign.html
 [Div]: https://doc.rust-lang.org/stable/std/ops/trait.Div.html
+[DivAssign]: https://doc.rust-lang.org/stable/std/ops/trait.DivAssign.html
 [Neg]: https://doc.rust-lang.org/stable/std/ops/trait.Neg.html
 [Rem]: https://doc.rust-lang.org/stable/std/ops/trait.Rem.html
+[RemAssign]: https://doc.rust-lang.org/stable/std/ops/trait.RemAssign.html
 [BitAnd]: https://doc.rust-lang.org/stable/std/ops/trait.BitAnd.html
+[BitAndAssign]: https://doc.rust-lang.org/stable/std/ops/trait.BitAndAssign.html
 [BitOr]: https://doc.rust-lang.org/stable/std/ops/trait.BitOr.html
+[BitOrAssign]: https://doc.rust-lang.org/stable/std/ops/trait.BitOrAssign.html
 [BitXor]: https://doc.rust-lang.org/stable/std/ops/trait.BitXor.html
+[BitXorAssign]: https://doc.rust-lang.org/stable/std/ops/trait.BitXorAssign.html
 [Not]: https://doc.rust-lang.org/stable/std/ops/trait.Not.html
 [Shl]: https://doc.rust-lang.org/stable/std/ops/trait.Shl.html
+[ShlAssign]: https://doc.rust-lang.org/stable/std/ops/trait.ShlAssign.html
 [Shr]: https://doc.rust-lang.org/stable/std/ops/trait.Shr.html
+[ShrAssign]: https://doc.rust-lang.org/stable/std/ops/trait.ShrAssign.html
 [Deref]: https://doc.rust-lang.org/stable/std/ops/trait.Deref.html
 [DerefMut]: https://doc.rust-lang.org/stable/std/ops/trait.DerefMut.html
 [Index]: https://doc.rust-lang.org/stable/std/ops/trait.Index.html
