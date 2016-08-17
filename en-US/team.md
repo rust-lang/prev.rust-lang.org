@@ -30,6 +30,8 @@ people:
     irc: doener
   eddyb:
     name: Eduard Burtescu
+  edunham:
+    name: Emily Dunham
   erickt:
     name: Erick Tryzelaar
   Gankro:
@@ -117,7 +119,7 @@ teams:
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt
-    members: [brson, skade, manishearth, johannhof, steveklabnik, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner]
+    members: [brson, skade, manishearth, johannhof, steveklabnik, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, edunham]
     email: community-team [at] rust-lang [dot] org
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
