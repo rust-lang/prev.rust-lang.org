@@ -16,18 +16,24 @@ def pretty_time():
     return '-'.join(time.strftime('%c').split())
 
 def list_files(site, name):
-    base = os.path.join(site, name)
-    return [os.path.join(name, f) for f in os.listdir(base) if os.path.isfile(os.path.join(base, f))]
+    base = site + name
+    files = [name]
+    for f in os.listdir(base):
+        path = os.path.join(base, f)
+        if os.path.isfile(path):
+            files.extend([name + f])
+        if os.path.isdir(path):
+            files.extend(list_files(site, name + f + "/"))
+
+    return files
 
 def build_payload(site):
-    files = [ f for f in os.listdir(site) if os.path.isfile(os.path.join(site,f)) ]
-
     # translations
-    files.extend(list_files(site, "en-US"))
+    files = list_files(site, "/")
 
     obj = { "Paths": {
              "Quantity": len(files), 
-             "Items": [ '/' + f for f in files] }, 
+             "Items": [ f for f in files] },
              "CallerReference": "travis-" + pretty_time() }
     return obj
 
