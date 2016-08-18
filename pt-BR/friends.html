@@ -1,0 +1,71 @@
+---
+layout: basic
+title:  Friends of Rust &middot; The Rust Programming Language
+---
+
+<div id="users">
+
+  <h1>Friends of Rust</h1>
+  <h2>(Organizations running Rust in production)</h2>
+
+  {% for user in site.data.users %}
+    {% assign mod = forloop.index | minus:1 | modulo:3 %}
+    {% if mod != 0 %}
+    {% continue %}
+    {% endif %}
+
+    {% assign offset = forloop.index | minus:1 %}
+
+    <div class="row">
+      {% for user in site.data.users limit:3 offset:offset %}
+        <div class="col-md-4"
+             id="user-logo-{{offset}}-{{forloop.index}}">
+          <div class="user-container">
+            <a href="{{user.url}}" rel="nofollow" alt="{{user.name}}">
+              <img src="../user-logos/{{user.logo}}">
+            </a>
+          </div>
+          <div class="details user-detail fade-out"
+            id="user-details-{{offset}}-{{forloop.index}}">
+            <p><em>{{user.name}}</em> : {{user.how}}</p>
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          var logo = document.getElementById("user-logo-{{offset}}-{{forloop.index}}");
+          logo.onmouseover = function() {
+            var allDetails = document.querySelectorAll(".user-detail");
+            for (var i = 0; i < allDetails.length; i++) {
+              var details = allDetails[i];
+              details.className = details.className.replace(" fade-in", "");
+              details.className = details.className.replace(" fade-out", "");
+              details.className += " fade-out";
+            }
+
+            var details = document.getElementById("user-details-{{offset}}-{{forloop.index}}");
+            details.className = details.className.replace(" fade-in", "");
+            details.className = details.className.replace(" fade-out", "");
+            details.className += " fade-in";
+          };
+
+          logo.onmouseout = function() {
+            var details = document.getElementById("user-details-{{offset}}-{{forloop.index}}");
+            details.className = details.className.replace(" fade-in", "");
+            details.className = details.className.replace(" fade-out", "");
+            details.className += " fade-out";
+          };
+        </script>
+      {% endfor %}
+
+  </div>
+
+  {% endfor %}
+
+  <p id="user-add-info">
+    If your organization uses Rust in production and you want it
+    listed on this page,<br/>please
+    <a href="https://github.com/rust-lang/rust-www/issues/new?title=New+Website+Logo%3A+[insert+name]%0A&body=To+list+your+organization%27s+logo+on+the+Rust+website%2C+fill+out+the+following+information+and+click+%22submit+new+issue%22.+Alternately%2C+you+may+edit+_data%2Fusers.yml+as+described+therein+and+submit+a+pull+request.%0D%0A%0D%0A-+Organization+name%3A+%28as+you+want+it+displayed%29%0D%0A-+Homepage+url%3A+%28homepage%2Fprimary+entry+point+for+users%29%0D%0A-+Logo+url%3A+%28svg+if+possible%2C+pngs+over+400x200px+with+transparent+backgrounds+are+also+acceptable%29%0D%0A-+How+you+are+using+Rust%3A+%28one+sentence+describing+your+use+of+Rust%29%0D%0A-+Url+describing+Rust+usage%3A+%28optional+link+to+e.g.+blog+post+explaining+how+you+use+Rust%29%0D%0A-+Organization+contact%3A+%28name+and+email.+we+may+contact+you+when+updating+this+page.+alternately+you+may+email+this+information+to+user-logos%40rust-lang.org+and+it+will+be+kept+secret%29.%0D%0A">
+      open an issue and fill out the information requested therein</a>.
+  </p>
+
+</div>

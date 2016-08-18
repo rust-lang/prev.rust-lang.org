@@ -1,0 +1,23 @@
+<pre class='rust'>
+<span class='kw'>fn</span> main() {
+<span class='comment'>// Uma calculadora simples de inteiros:
+// `+` or `-` significa somar ou subtrair 1
+// `*` or `/` significa multiplicar ou dividir por 2</span>
+
+<span class='kw'>let</span> programa = <span class='string'>"+ + * - /"</span>;
+<span class='kw'>let</span> <span class='kw'>mut</span> acumulador = <span class='number'>0</span>;
+
+<span class='kw'>for</span> simbolo in programa.chars() {
+<span class='kw'>match</span> simbolo {
+    <span class='string'>'+'</span> => acumulador <span class='op'>+=</span> <span class='number'>1</span>,
+    <span class='string'>'-'</span> => acumulador <span class='op'>-=</span> <span class='number'>1</span>,
+    <span class='string'>'*'</span> => acumulador <span class='op'>*=</span> <span class='number'>2</span>,
+    <span class='string'>'/'</span> => acumulador <span class='op'>/=</span> <span class='number'>2</span>,
+    _ => { <span class='comment'>/* ignore todo o resto */</span> }
+}
+}
+
+<span class='prelude-val'>println!</span>(<span class='string'>"O programa \"{}\" gera o valor {}"</span>,
+   programa, acumulador);
+}
+</pre>
