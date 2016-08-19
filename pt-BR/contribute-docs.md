@@ -1,9 +1,9 @@
 ---
-layout: default
-title: Contributing to Rust &mdash; documentation &middot; The Rust Programming Language
+layout: pt-BR/default
+title: Contribuindo para Rust &mdash; documentação &middot; A linguagem de programação Rust
 ---
 
-# Contributing to Rust &mdash; documentation
+# Contribuindo para Rust &mdash; documentação
 
 Documentation is never good enough and there's never enough of it.
 Many aspects of Rust's documentation don't require deep knowledge to

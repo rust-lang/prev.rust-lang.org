@@ -1,9 +1,9 @@
 ---
-layout: default
-title: Contributing to Rust &mdash; language, compiler, and the standard library &middot; The Rust Programming Language
+layout: pt-BR/default
+title: Contribuindo para Rust &mdash; a linguagem, o compilador, e a biblioteca padrão &middot; A linguagem de programação Rust
 ---
 
-# Contributing to Rust &mdash; language, compiler, and the standard library
+# Contribuindo para Rust &mdash; a linguagem, o compilador, e a biblioteca padrão
 
 
 The source code to the compiler and standard library are in the main

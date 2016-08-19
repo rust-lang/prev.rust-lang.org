@@ -1,45 +1,39 @@
 ---
-layout: default
-title: Contributing to Rust &mdash; libraries &middot; The Rust Programming Language
+layout: pt-BR/default
+title: Contribuindo para Rust &mdash; bibliotecas &middot; A linguagem de programação Rust
 ---
 
-# Contributing to Rust &mdash; libraries
+# Contribuindo para Rust &mdash; bibliotecas
 
-If you want to contribute to Rust by writing volumes of Rust code,
-then libraries are where it's at: since Rust is a young language,
-there are many types of libraries that either do not exist yet
-or are incomplete and in need of improvement or competition.
+Se você deseja contribuir para Rust escrevendo volumes de código Rust,
+então nas bibliotecas é onde você vai encontrar sua oportunidade: considerando
+que Rust é uma linguagem jovem, há muitos tipos de bibliotecas que ou não existem
+ou estão incompletas e necessitam de melhoras ou concorrência.
 
-Deciding what to write that will have impact and be fun is a common
-difficulty. Here are some ideas:
+Decidir o que escrever para ter impacto e ser divertido é uma dificuldade comum.
+Aqui vão algumas ideias:
 
-* Read and participate in the weekly "what's everyone working on
-  this week" threads on [/r/rust] and [users.rust-lang.org]. These are
-  packed with exciting announcements from other Rust programmers in
-  need of collaborators.
-* Familiarize yourself with the best Rust libraries through
-  [awesome-rust] and [libs.rs].
-* Some larger projects, including the web browser [Servo], the HTTP
-  library [hyper], the source-formatter [rustfmt], the Unix library bindings
-  [nix], and the lint collection [clippy], tag issues with 'easy' labels for new
-  contributors.
-* Get involved with one of the active Rust-oriented GitHub
-  organizations, such as [PistonDevelopers], [servo], [redox-os],
-  [iron], [contain-rs], [hyperium]. It's often easier to find a place
-  to fit in with these subcommunities, they are in greater need of
-  help than rust-lang itself, and they are filled with experienced
-  Rust developers to guide you.
-* Help guide libraries from [rust-lang-nursery] into rust-lang proper.
-  Unfortunately there is not much documentation on what needs to be
-  done here; ask on [#rust-libs].
-* Inspect the RFC issue tracker for a [requested community
-  library][requested] and build it.
-* Watch [Github Trending][trending] for currently active Rust projects.
+* Leia e participe nos tópicos 'no que estão todos trabalhando nessa semana' no [/r/rust]
+  e no [users.rust-lang.org]. Eles são cheios de anúncios de outros programadores em busca
+  de colaboradores.
+* Se familiarize com as melhores bibliotecas de Rust por meio do [awesome-rust] e [libs.rs].
+* Alguns projetos maiores, como o navegador [Servo], a biblioteca HTTP [hyper], o formatador
+  [rustfmt], as *bindings* para sistemas unix [nix] e a coleção de lints [clippy], rotulam
+  problemas fáceis para novos contribuidores.
+* Se involva com algumas das organizações mais orientadas à Rust do GitHub, como
+  [PistonDevelopers], [servo], [redox-os], [iron], [contain-rs], [hyperium]. É, muitas vezes,
+  mais fácil encontrar um lugar pra se encaixar nessas sub-comunidades. Eles estão sempre em grande
+  necessidade de ajuda do que rust-lang em si, e são cheios de desenvolvedores experientes
+  prontos pra te guiar no que for preciso.
+* Ajude a guiar bibliotecas de [rust-lang-nursery] de volta à rust-lang. Infelizmente,
+  não há muita documentação sobre o que precisa ser feito lá. Pergunte em [#rust-libs].
+* Inspecione o seguidor de problemas do PDC para uma [biblioteca requisitada pela comunidade][requested]
+  e faça-o.
+* Veja o [Github Trending][trending] para projetos Rust atualmente ativos.
 
-As a library author you will want to be aware of the [best practices
-for Rust libraries][lib-prac].
+Como um autor de bibliotecas você vai querer estar ciente das [melhores práticas para bibliotecas Rust (inglês)][lib-prac].
 
-Meet other Rust library designers in [#rust-libs].
+Encontre outros designers de bibliotecas Rust em [#rust-libs].
 
 <!--
 TODO: Not sure #rust-libs is the place to direct people
