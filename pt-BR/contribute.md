@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: pt-BR/default
 title: Contribuindo para Rust &middot; A linguagem de programação Rust
 ---
 

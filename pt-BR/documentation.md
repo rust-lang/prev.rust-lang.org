@@ -1,35 +1,32 @@
 ---
-layout: default
-title:  Rust Documentation &middot; The Rust Programming Language
+layout: pt-BR/default
+title:  Documentação Rust &middot; A linguagem de programação Rust
 ---
 
-# Rust Documentation
+# Documentação Rust
 
-If you haven't seen Rust at all yet, the first thing you should read
-is the introduction to the book, [The Rust Programming
-Language][book]. It will give you a good idea of what Rust is like,
-show you how to install it, and explain its syntax and concepts. Upon
-completing the book, you'll be an intermediate Rust developer, and
-will have a good grasp of the fundamental ideas behind Rust.
+Se você ainda não viu Rust de fato, a primeira coisa que você deveria ler é a
+introdução ao livro, [A linguagem de programação Rust (inglês)][book]. Ele vai
+te dar uma boa ideia de como Rust se parece, te mostra como instalá-lo, e explica
+a sintaxe e os conceitos. Ao completar o livro, você será um desenvolvedor intermediário
+de Rust, e vai ter uma bom fundamento das ideias por trás de Rust.
 
-## Learning Rust
+## Aprendendo Rust
 
-[The Rust Programming Language][book]. Also known as "The Book",
-The Rust Programming Language is the most comprehensive resource for
-all topics related to Rust, and is the primary official document of
-the language.
+[A linguagem de programação Rust (inglês)][book]. Também conhecido como "O Livro",
+é o recurso mais compreensivel disponível sobre Rust. Todos os tópicos relacionados
+à Rust são cobertos e é o documento oficial primário sobre a linguagem.
 
-[Rust by Example][rbe]. A collection of self-contained Rust
-examples on a variety of topics, executable in-browser.
+[Rust por Exemplos (inglês)][rbe]. Uma coleção de exemplos de Rust numa variedade
+de tópicos, disponível no seu navegador.
 
-[Frequently asked questions][faq].
+[Perguntas Frequentes (FAQ)][faq].
 
-[The Rustonomicon][nomicon]. An entire book dedicated to
-explaining how to write unsafe Rust code. It is for advanced Rust
-programmers.
+[O Rustonomicon][nomicon]. Um livro inteiro dedicado a explicar como escrever código
+inseguro em Rust. Isso é para programadores Rust avançados.
 
-[rust-learning]. A community-maintained collection of resources
-for learning Rust.
+[Aprendendo Rust (inglês)][rust-learning]. Uma coleção de recursos mantidos pela comunidade sobre
+aprender Rust.
 
 [book]: https://doc.rust-lang.org/book/
 [rbe]: http://rustbyexample.com
@@ -37,26 +34,21 @@ for learning Rust.
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning
 
-## References
+## Referências
 
-[Standard Library API Reference][api]. Documentation for the
-standard library.
+[Referência da API da Biblioteca Padrão][api]. Documentação da API da biblioteca padrão.
 
-[The Rust Reference][ref]. While Rust does not have a
-specification, the reference tries to describe its working in
-detail. It tends to be out of date.
+[A Referência de Rust][ref]. Enquanto Rust ainda não possui uma especificação, a referência
+tenta descrever o seu funcionamento em detalhes. Algumas vezes está meio antigo.
 
-[Syntax Index][syn]. This appendix from The Book contains examples
-of all syntax in Rust cross-referenced with the section of The Book
-that describes it.
+[Índice de Sintaxe][syn]. Esse apêndice do Livro contêm exemplos de toda a sintaxe em Rust
+com referência da seção do livro que a descreve.
 
-[The Cargo Guide][cargo]. The documentation for Cargo,
-Rust's package manager.
+[O Guia do Cargo][cargo]. Documentação pro Cargo, o gerenciador de pacotes do Rust.
 
-[Compiler Error Index][err]. Extended explanations of
-the errors produced by the Rust compiler.
+[Índice de Erros do Compilador][err]. Explicações extendidas dos erros produzidos pelo compilador Rust.
 
-[Release Notes][release_notes]. A recording of changes made during each release.
+[Notas de Lançamento][release_notes]. Uma coleção de notas das últimas mudanças nos lançamentos de Rust.
 
 [api]: https://doc.rust-lang.org/std/
 [syn]: https://doc.rust-lang.org/book/syntax-index.html
@@ -65,36 +57,33 @@ the errors produced by the Rust compiler.
 [err]: https://doc.rust-lang.org/error-index.html
 [release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md
 
-## Project policies
+## Políticas do Projeto
 
-[Rust security policy][security]. The project's policies for
-reporting, fixing and disclosing security-related bugs.
+[Políticas de segurança][security]. As políticas do projeto para reportagem, conserto e divulgação
+de bugs relacionados à segurança.
 
-[Rust copyright and trademark policies][legal]. The Rust
-copyrights are owned by The Rust Project Developers, and its
-trademarks are owned by Mozilla. Appropriate usage of Rust's
-trademarks are described here.
+[Políticas de copyright e de marca de Rust][legal]. Os direitos sobre Rust são reservados aos
+Desenvolvedores do Projeto Rust, e suas marcas são de propriedade da Mozilla. Usos apropriados
+das marcas de Rust são descritas aqui.
 
-[Code of Conduct][coc]. Applies to the rust-lang organization
-on GitHub, the official forums, IRC channels, and various
-other corners of the Rust world.
+[Código de Conduta][coc]. Aplica à organização rust-lang no GitHub, nos fóruns oficiais,
+canais IRC e vários outros cantos do mundo Rust.
 
 [security]: security.html
 [legal]: legal.html
 [coc]: https://www.rust-lang.org/conduct.html
 
-## Nightly and beta documentation
+## Documentação sobre versões nortuna (nightly) e beta
 
-Much of the official Rust documentation is also available for the
-[nightly] and [beta] releases in addition to the stable documentation
-linked above.
+Muito da documentação oficial de Rust está também disponível para
+versões [nortuno][nightly] e [beta] em adição à documentação para estável disposta acima.
 
 [nightly]: https://doc.rust-lang.org/nightly/
 [beta]: https://doc.rust-lang.org/beta/
 
-## Non-english resources
+## Recursos em linguagem não-inglesa
 
-For resources in languages other than English, see the
-[locale-specific links in rust-learning][locale].
+Para recursos em linguagens que não sejam o Inglês,
+veja os [links de locais específicos em rust-learning][locale].
 
 [locale]: https://github.com/ctjhoa/rust-learning#locale-links

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: pt-BR/default
 title: A comunidade Rust &middot; A linguagem de programação Rust
 ---
 
@@ -167,8 +167,7 @@ também como a infraestrutura CI para o projeto.
 [rustup]: https://www.rustup.rs
 [rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 
-<!-- Essa tradução ficou meio vaga. Se puder melhorar, segue texto original: -->
-<!--
+<!-- Essa tradução ficou meio vaga. Se puder melhorar, segue texto original:
 * The [Community Team][community_team] is responsible for coordinating events,
 outreach, commercial users, teaching materials, and exposure. They can also
 direct inquiries to the correct parties when its not clear who to contact
