@@ -31,7 +31,7 @@ Essas são as políticas para confirmar os padrões de conduta da nossa comunida
 por favor contate o [time de moderação do Rust](/team.html#Moderation).
 
 1. Observações que violam o código de conduta de Rust, incluindo comentários de ódio, que machucam, opressivos ou como exclusão não
-são permitidos.
+são permitidos. (Xingamentos são permitidos, desde que não sejam destinados à outros usuarios ou numa forma odiosa)
 2. Observações que moderadores achem inapropriadas, seguindo o código de conduta ou não, também não são permitidos.
 3. Moderadores serão os primeiros a responder tais observações com um aviso.
 4. Se o aviso for ignorado, o usuário será "chutado", isso é, expulso do canal de comunicação para dar uma acalmada.
