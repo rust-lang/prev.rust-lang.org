@@ -1,0 +1,84 @@
+<div class="site-header-with-subhead">
+  <h2><a href="/friends.html">Friends of Rust</a></h2>
+  <p>(Organizations running Rust in production)</p>
+</div>
+
+<div id="users"></div>
+
+<div class="more-friends"><a href="/friends.html">All Friends of Rust</a></div>
+
+<script type="text/javascript">
+
+(function() {
+'use strict';
+
+var users = [
+{% for user in site.data.users %}{
+  url: "{{user.url}}",
+  logo: "../user-logos/{{user.logo}}",
+  name: "{{user.name}}",
+  how: "{{user.how}}"
+},
+{% endfor %}];
+
+function getRandomThree() {
+  users.sort(function(a, b) {
+      return Math.random() - 0.5;
+  });
+
+  return users.slice(0, 3);
+}
+
+function renderUser(user) {
+  var logo = document.createElement('div');
+
+  logo.innerHTML = '\
+    <div class="user-container">\
+      <a href="' + user.url + '" rel="nofollow" alt="' + user.name + '">\
+        <img src="' + user.logo + '">\
+      </a>\
+    </div>\
+    <div class="details user-detail fade-out"\
+      <p><em>' + user.name + '</em> : ' + user.how + '</p>\
+    </div>\
+  ';
+
+  logo.className = 'col-md-4';
+
+  logo.onmouseover = function() {
+    var allDetails = document.querySelectorAll(".user-detail");
+    for (var i = 0; i < allDetails.length; i++) {
+      var details = allDetails[i];
+      details.className = details.className.replace(" fade-in", "");
+      details.className = details.className.replace(" fade-out", "");
+      details.className += " fade-out";
+    }
+
+    var details = logo.querySelector(".user-detail");
+    details.className = details.className.replace(" fade-in", "");
+    details.className = details.className.replace(" fade-out", "");
+    details.className += " fade-in";
+  };
+
+  logo.onmouseout = function() {
+    var details = logo.querySelector(".user-detail");
+    details.className = details.className.replace(" fade-in", "");
+    details.className = details.className.replace(" fade-out", "");
+    details.className += " fade-out";
+  };
+
+  return logo;
+}
+
+var frag = document.createDocumentFragment();
+
+getRandomThree().map(renderUser).forEach(function(el) { frag.appendChild(el); });
+
+document.getElementById('users').appendChild(frag);
+
+
+})();
+
+
+</script>
+
