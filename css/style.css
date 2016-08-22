@@ -364,7 +364,7 @@ ul.laundry-list {
 	background-color: #FAFAFA;
 }
 
-.more-examples, .more-friends {
+.more-examples {
 	text-align: right;
 	margin: 5px 10px 0 0;
 }
@@ -427,9 +427,9 @@ ul.laundry-list {
 	color:  #777;
 }
 
-.site-header-with-subhead h2, p {
-    display: inline-block;
-    margin-right: .3em;
+h2.friends-header {
+    text-align: center;
+    margin-bottom: 0.5em;
 }
 
 @media screen and (min-width: 820px) {
