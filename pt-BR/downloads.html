@@ -1,0 +1,204 @@
+---
+layout: pt-BR/default
+title: Downloads &middot; A linguagem de programação Rust
+---
+
+    <!-- -->
+    <h1>Downloads</h1>
+
+    <hr>
+
+    <div class="row install">
+      <div class="col-md-4 side-header">
+        <h2 id="stable">{{ site.stable }}&nbsp;</h2>
+        <h3>{{ site.stable_date }}</h3>
+        <p>
+	  O
+          <a href="http://blog.rust-lang.org{{ site.stable_blog }}">
+	    atual lançamento estável de rust
+	  </a>
+	  , atualizado à cada 6 semanas e compatível com versões anteriores.
+        </p>
+      </div>
+      <div class="col-md-8">
+        <table class="table-features table-installers"><tbody>
+          <tr>
+          <td class="inst-type">Linux (.tar.gz)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac (.pkg)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">ABI GNU <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">ABI MSVC <sup>†</sup></a>) (.msi) </td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-pc-windows-msvc.msi"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td class="inst-type"></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz"><div class="inst-button">Código fonte</div></a></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p>Um jeito fácil e rápido de instalar os binários da versão estável no Linux e Mac é rodar isso no seu terminal:</p>
+        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh</code></pre>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row install">
+      <div class="col-md-4 side-header">
+        <h2 id="beta">Beta&nbsp; ({{ site.beta }})</h2>
+        <p>
+  Uma preview da versão estável que virá, intencionada para teste por
+  autores de pacotes. Atualizado à cada seis semanas e quando necessário.
+        </p>
+        <p><em>Esperado lançamento como estável:<br/>{{ site.beta_date }}</em>.<p>
+      </div>
+      <div class="col-md-8">
+        <table class="table-features table-installers"><tbody>
+          <tr>
+          <td class="inst-type">Linux (.tar.gz)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac (.pkg)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">ABI GNU <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">ABI MSVC <sup>†</sup></a>) (.msi) </td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-msvc.msi"><div class="inst-button">32-bit</div></a></td>
+          <td></td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td class="inst-type"></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-beta-src.tar.gz"><div class="inst-button">Código fonte</div></a></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p>Um jeito fácil e rápido de instalar os binários da versão beta no Linux e Mac é rodar isso no seu terminal:</p>
+        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=beta</code></pre>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row install">
+      <div class="col-md-4 side-header">
+        <h2 id="nightly">Nightly&nbsp; ({{ site.nightly }})</h2>
+        <p>
+        É o atual ramo de desenvolvimento.
+	Ele inclui
+	<a href="https://doc.rust-lang.org/book/nightly-rust.html">aspectos instáveis</a>
+	que não estão disponíveis nos lançamentos estável e beta.
+        </p>
+      </div>
+      <div class="col-md-8">
+        <table class="table-features table-installers"><tbody>
+          <tr>
+          <td class="inst-type">Linux (.tar.gz)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac (.pkg)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">ABI GNU <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">ABI MSVC <sup>†</sup></a>) (.msi) </td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-msvc.msi"><div class="inst-button">32-bit</div></a></td>
+          <td></td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td class="inst-type"></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz"><div class="inst-button">Código fonte</div></a></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p>Um jeito fácil e rápido de instalar os binários da versão nightly no Linux e Mac é rodar isso no seu terminal:</p>
+        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly</code></pre>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-12">
+      <p>
+        Descubra outros downloads nos <a href="https://static.rust-lang.org/dist/index.html">arquivos</a>.
+      </p>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-12">
+	<a id="win-foot"></a>
+	<p>
+	  <em>†</em>
+    Há duas <a href="https://en.wikipedia.org/wiki/Application_binary_interface">ABIs</a>
+    principais em uso no Windows: a ABI nativa (MSVC) usada no <a href="https://www.visualstudio.com">Visual Studio</a>
+    e a ABI GNU usada pelo <a href="https://gcc.gnu.org/">GCC</a>.
+    Qual versão de Rust você precisa depende enormemente em que tipo de bibliotecas de C/C++ você pretende
+    interoperar com:
+    Para interoperar com software compilado com o Visual Studio, use a versão MSVC de Rust; Para interoperar
+    com software GNU compilado com <a href="https://msys2.github.io/">as ferramentas MinGW/MSYS2</a>, use a
+    versão GNU.
+	</p>
+	<p>
+    Versões de MSVC de Rust requerem adicionalmente as ferramentas de desenvolvimento Microsoft Visual C++
+    para o Visual Studio 2013 ou superior.
+    A forma mais fácil de adquirir as ferramentas de desenvolvimento é instalando
+    <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
+    Microsoft Visual C++ Build Tools 2015</a> que fornece apenas as ferramentas de desenvolvimento
+    do Visual C++.
+    Outra alternativa é instalar o Visual Studio 2015 ou Visual Studio 2013 e durante a instalação,
+    selecione a parte "ferramentas para C++". Nenhum software adicional é necessário para o uso
+    básico da versão GNU.
+	</p>
+	<p>
+    O suporte de Rust para a versão GNU é mais madura, e é recomendada para a maior
+    parte dos usos comuns.
+	</p>
+    </div>
+  </div>
