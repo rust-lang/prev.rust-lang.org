@@ -120,14 +120,14 @@ teams:
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt
     members: [brson, skade, manishearth, johannhof, steveklabnik, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, edunham]
-    email: community-team [at] rust-lang [dot] org
+    email: community-team@rust-lang.org
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
     members: [steveklabnik, GuillaumeGomez, jonathandturner, peschkaj]
   - name: Moderation team
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
-    email: rust-mods [at] rust-lang [dot] org
+    email: rust-mods@rust-lang.org
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
     members: [Gankro, huonw]
