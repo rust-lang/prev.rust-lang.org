@@ -1,6 +1,6 @@
-<h2 class="friends-header"><a href="/friends.html">Friends of Rust</a></h2>
 
-<div id="users"></div>
+<div id="users" class="row"></div>
+<h2 class="friends-more">See more <a href="/friends.html">uses of Rust in production</a></h2>
 
 <script type="text/javascript">
 
@@ -11,8 +11,7 @@ var users = [
 {% for user in site.data.users %}{
   url: "{{user.url}}",
   logo: "../user-logos/{{user.logo}}",
-  name: "{{user.name}}",
-  how: "{{user.how}}"
+  name: "{{user.name}}"
 },
 {% endfor %}];
 
@@ -33,34 +32,9 @@ function renderUser(user) {
         <img src="' + user.logo + '">\
       </a>\
     </div>\
-    <div class="details user-detail fade-out"\
-      <p><em>' + user.name + '</em> : ' + user.how + '</p>\
-    </div>\
   ';
 
   logo.className = 'col-md-4';
-
-  logo.onmouseover = function() {
-    var allDetails = document.querySelectorAll(".user-detail");
-    for (var i = 0; i < allDetails.length; i++) {
-      var details = allDetails[i];
-      details.className = details.className.replace(" fade-in", "");
-      details.className = details.className.replace(" fade-out", "");
-      details.className += " fade-out";
-    }
-
-    var details = logo.querySelector(".user-detail");
-    details.className = details.className.replace(" fade-in", "");
-    details.className = details.className.replace(" fade-out", "");
-    details.className += " fade-in";
-  };
-
-  logo.onmouseout = function() {
-    var details = logo.querySelector(".user-detail");
-    details.className = details.className.replace(" fade-in", "");
-    details.className = details.className.replace(" fade-out", "");
-    details.className += " fade-out";
-  };
 
   return logo;
 }
