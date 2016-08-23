@@ -21,8 +21,8 @@ function getRandomThree() {
 
   // avoid duplicates and account for indexes taken
   if (b >= a) b++;
-  if (c >= a) c++;
-  if (c >= b) c++;
+  if (c >= Math.min(a, b)) c++;
+  if (c >= Math.max(a, b)) c++;
 
   return [users[a], users[b], users[c]];
 }
