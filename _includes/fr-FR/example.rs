@@ -1,22 +1,22 @@
-// This code is editable and runnable!
+// Ce code est éditable et exécutable !
 fn main() {
-    // A simple integer calculator:
-    // `+` or `-` means add or subtract by 1
-    // `*` or `/` means multiply or divide by 2
+    // Une calculatrice simple avec des entiers:
+    // `+` ou `-` signifie ajouter ou soustraire 1
+    // `*` ou `/` signifie multiplier ou diviser par 2
 
-    let program = "+ + * - /";
-    let mut accumulator = 0;
+    let programme = "+ + * - /";
+    let mut accumulateur = 0;
 
-    for token in program.chars() {
-        match token {
-            '+' => accumulator += 1,
-            '-' => accumulator -= 1,
-            '*' => accumulator *= 2,
-            '/' => accumulator /= 2,
-            _ => { /* ignore everything else */ }
+    for symbole in programme.chars() {
+        match symbole {
+            '+' => accumulateur += 1,
+            '-' => accumulateur -= 1,
+            '*' => accumulateur *= 2,
+            '/' => accumulateur /= 2,
+            _ => { /* on ne tiens pas compte des autres symboles */ }
         }
     }
 
-    println!("The program \"{}\" calculates the value {}",
-              program, accumulator);
+    println!("Le programme \"{}\" à calculé la valeur {}",
+              programme, accumulateur);
 }
