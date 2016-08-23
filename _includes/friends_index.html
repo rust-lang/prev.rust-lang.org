@@ -1,6 +1,6 @@
 
 <div id="users" class="row"></div>
-<h2 class="friends-more">See more <a href="/friends.html">uses of Rust in production</a></h2>
+<h2 class="friends-more">See more <a href="/friends.html">uses of Rust in production</a>.</h2>
 
 <script type="text/javascript">
 
@@ -8,11 +8,7 @@
 'use strict';
 
 var users = [
-{% for user in site.data.users %}{
-  url: "{{user.url}}",
-  logo: "../user-logos/{{user.logo}}",
-  name: "{{user.name}}"
-},
+{% for user in site.data.users %}["{{user.url}}", "{{user.logo}}", "{{user.name}}"],
 {% endfor %}];
 
 function getRandomThree() {
@@ -24,19 +20,21 @@ function getRandomThree() {
 }
 
 function renderUser(user) {
-  var logo = document.createElement('div');
+  var el = document.createElement('div');
 
-  logo.innerHTML = '\
+  var url = user[0], logo = user[1], name = user[2];
+
+  el.innerHTML = '\
     <div class="user-container">\
-      <a href="' + user.url + '" rel="nofollow" alt="' + user.name + '">\
-        <img src="' + user.logo + '">\
+      <a href="' + url + '" rel="nofollow" alt="' + name + '">\
+        <img src="../user-logos/' + logo + '">\
       </a>\
     </div>\
   ';
 
-  logo.className = 'col-md-4';
+  el.className = 'col-md-4';
 
-  return logo;
+  return el;
 }
 
 var frag = document.createDocumentFragment();
