@@ -1,0 +1,23 @@
+<pre class='rust'>
+<span class='kw'>fn</span> main() {
+<span class='comment'>// Простой целочисленный калькулятор:
+// `+` или `-` означает прибавление или вычитание единицы
+// `*` или `/` означает умножение или деление на 2</span>
+
+<span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
+<span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0</span>;
+
+<span class='kw'>for</span> token in program.chars() {
+<span class='kw'>match</span> token {
+    <span class='string'>'+'</span> => accumulator <span class='op'>+=</span> <span class='number'>1</span>,
+    <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
+    <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
+    <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
+    _ => { <span class='comment'>/* игнорируем всё остальное */</span> }
+}
+}
+
+<span class='prelude-val'>println!</span>(<span class='string'>"Программа \"{}\" производит значение {}"</span>,
+   program, accumulator);
+}
+</pre>
