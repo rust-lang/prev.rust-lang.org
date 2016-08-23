@@ -12,11 +12,19 @@ var users = [
 {% endfor %}];
 
 function getRandomThree() {
-  users.sort(function(a, b) {
-      return Math.random() - 0.5;
-  });
+  var len = users.length;
 
-  return users.slice(0, 3);
+  // pick 3, decrement scope after each pick
+  var a = (Math.random() * len--) | 0;
+  var b = (Math.random() * len--) | 0;
+  var c = (Math.random() * len)   | 0;
+
+  // avoid duplicates and account for indexes taken
+  if (b >= a) b++;
+  if (c >= a) c++;
+  if (c >= b) c++;
+
+  return [users[a], users[b], users[c]];
 }
 
 function renderUser(user) {
