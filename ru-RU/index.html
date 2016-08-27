@@ -1,59 +1,56 @@
 ---
 layout: ru-RU/basic
-title: The Rust Programming Language
+title: Язык программирования Rust
 ---
 
     <div class="row install-row">
       <div class="col-md-8">
         <p class="pitch">
-          <b>Rust</b> is a systems programming language
-          that runs blazingly fast,
-          prevents segfaults,
-          and guarantees thread safety.
+          <b>Rust</b> — безумно быстрый системный язык программирования без segfault'ов и с гарантиями потокобезопасности.
           <br/>
-          <a href="https://doc.rust-lang.org/book/README.html">Show me!</a>
+          <a href="https://doc.rust-lang.org/book/README.html">Покажите!</a>
         </p>
       </div>
       <div class="col-md-4 install-box">
         <span class="version-rec-box-inner">
-          Recommended Version:<br>
+          Рекомендуемая версия:<br>
           <span id="install-version">
             {{ site.stable }}
             (<span>source</span>)
           </span>
         </span>
         <a class="btn btn-primary" id="inst-link"
-           href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">Install</a>
-        <a class="btn btn-default" href="install.html" role="button">Other Downloads</a>
+           href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">Установить</a>
+        <a class="btn btn-default" href="install.html" role="button">Другие загрузки</a>
       </div>
     </div>
 
     <div class="row code-row">
       <div class="col-md-4">
-      <h2>Featuring</h2>
+      <h2>Возможности</h2>
       <ul class="laundry-list">
-        <li>zero-cost abstractions</li>
-        <li>move semantics</li>
-        <li>guaranteed memory safety</li>
-        <li>threads without data races</li>
-        <li>trait-based generics</li>
-        <li>pattern matching</li>
-        <li>type inference</li>
-        <li>minimal runtime</li>
-        <li>efficient C bindings</li>
+        <li>абстракции с нулевой стоимостью</li>
+        <li>семантика перемещения</li>
+        <li>гарантированная безопасность памяти</li>
+        <li>потоки без гонок данных</li>
+        <li>обобщение через типажи</li>
+        <li>сопоставление с образцом</li>
+        <li>вывод типов</li>
+        <li>маленькая среда исполнения</li>
+        <li>эффективный FFI</li>
       </ul>
       </div>
       <div class="col-md-8">
         <div id="active-code">
-          <button type="button" class="btn btn-primary btn-sm" id="run-code">Run</button>
-          <div id="editor">{% include example.rs %}</div>
+          <button type="button" class="btn btn-primary btn-sm" id="run-code">Запустить</button>
+          <div id="editor">{% include ru-RU/example.rs %}</div>
           <div id="result">
             <a id="playlink"><i class="icon-link-ext"></i></a>
           </div>
         </div>
-        <div id="static-code">{% include example.rs.html %}</div>
+        <div id="static-code">{% include ru-RU/example.rs.html %}</div>
         <div class="more-examples">
-          <a href="http://rustbyexample.com/">More examples</a>
+          <a href="http://rustbyexample.com/">Больше примеров</a>
         </div>
       </div>
     </div>
