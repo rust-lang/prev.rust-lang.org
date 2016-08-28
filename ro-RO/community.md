@@ -1,52 +1,50 @@
 ---
-layout: default
-title: The Rust Community &middot; The Rust Programming Language
+layout: ro-RO/basic
+title: Comunitatea Rust &middot; Limbajul de Programare Rust
 ---
 
-# The Rust Community
+# Comunitatea Rust
 
-The Rust programming language has many qualities, but Rust's greatest
-strength is the community of people who come together to make working
-in Rust a rewarding experience.
+Limbajul de programare Rust are multe calități, însă punctul forte este
+comunitatea oamenilor care se alătură pentru a face lucrul în Rust o experiență
+recompensatoare.
 
-We are committed to providing a friendly, safe and welcoming
-environment for all, regardless of gender, sexual orientation,
-disability, ethnicity, religion, or similar personal
-characteristic. Our [code of conduct][coc] sets the standards for
-behavior in all official Rust forums.
+Noi ne străduim să oferim un mediu prietenos, sigur și
+binevoitor tuturor, fără deosevire după gen, orientare sexuală, dizabilitate,
+etnie, religie sau alte caractere personale asemănătoare.
+[Codul nostru de conduită][coc] stabiliște standardele de comportament în toate
+forumurile oficiale Rust.
 
-If you feel you have been or are
-being harassed or made uncomfortable by a community member, please
-[contact][mod_team_email] any of the [Rust Moderation Team][mod_team]
-immediately. Whether you are a regular contributor or a newcomer, we
-care about making the community a safe space for you.
+Dacă credeți că ați fost sau sunteți hărțuit/ă sau incomodat/ă de un membru al
+comunității, vă rugăm [să contactați][mod_team_email] imediat pe cineva din
+[Echipa de Moderare Rust][mod_team]. Fie că contribuiți în mod regulat sau sunteți un
+nou-venit, noi avem grijă să facem comunitatea un spațiu sigur pentru Dvs.
 
 [coc]: https://www.rust-lang.org/conduct.html
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
-## Getting Started
+## De Bază
 
-The most important community resources for those new to Rust are:
+Cele mai importante resurse ale comunității pentru cei noi în Rust sunt:
 
-- [#rust-beginners][beginners_irc], an IRC channel that
-  loves answering questions at any depth.
-- The [Users Forum][users_forum], for discussion of all
-  things Rust.
+- [#rust-beginners][beginners_irc], un canal IRC care iubește să răspundă la
+  întrebări de oricare complexitate
+- [Forumul Utilizatorilor][users_forum], pentru discuții despre orice legat de Rust
 
-You may also find help on the question and answer site, [Stack Overflow][stack_overflow].
+De asemenea, puteți găsi ajutor pe site-ul de Q&A [Stack Overflow][stack_overflow].
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
-## News
+## Știri
 
-[This Week in Rust][twir] collects the latest news, upcoming events
-and a week-by-week account of changes in the Rust language and
-libraries. [The Rust Blog][rust_blog] is where the Rust team makes
-announcements about major developments. And nearly everything happening in
-Rust is discussed on the unofficial subreddit, [/r/rust][reddit].
+[This Week in Rust][twir] colectează cele mai noi știri și evenimente, și
+monitorizează săptămânal schimbările în limbajul de programare Rust
+și biblioteci. [Blogul Rust][rust_blog] este locul unde echipa Rust face anunțuri
+despre evoluții majore. În plus, aproape totul ce se întâmplă în Rust este discutat pe
+subredditul neoficial [/r/rust][reddit].
 
-We also have a [Twitter][twitter] account.
+De asemenea, avem un cont pe [Twitter][twitter].
 
 [twir]: https://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
@@ -54,29 +52,30 @@ We also have a [Twitter][twitter] account.
 [reddit_coc]: https://www.reddit.com/r/rust/comments/2rvrzx/our_code_of_conduct_please_read/
 [twitter]: https://twitter.com/rustlang
 
-## IRC Channels
+## Canale IRC
 
-Rustaceans maintain a number of friendly, high-traffic [IRC] channels on Mozilla's IRC network, irc.mozilla.org.
+Rustaceenii păstrează câteva canale IRC prietenoase, high-traffic pe rețeaua IRC Mozilla, irc.mozilla.org.
 
-The [#rust][rust_irc] channel is a venue for general
-discussion about Rust, and a good place to ask for help. You'll find
-people willing to answer any questions about Rust, and
-responses are typically fast.
+Canalul IRC [#rust][rust_irc] este un spațiu pentru discuții generale despre Rust
+și un loc bun de a cere ajutor. Veți găsi oameni pregătiți să răspundă la oricare
+întrebări despre Rust și răspunsurile sunt, de regulă, rapide.
 
-Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real-time discussion about hacking on Rust itself. It is also the channel to ask questions about contributing to Rust.
+Dezvoltatorii Rust se coordonează în [#rust-internals][internals_irc]. Canalul este
+pentru discuții în timp real despre dezvoltarea Rust-ului însuși. Este, la fel,
+un canal pentru a pune întrebări despre contribuirea la Rust.
 
-### Main channels
+### Canalele principale
 
-- [#rust][rust_irc] is for all things Rust
-- [#rust-beginners][beginners_irc] is a space for those new to Rust, lower traffic than #rust
-- [#rust-internals][internals_irc] is for discussion of other Rust implementation topics
-- [#rustc][rustc_irc] is the home of the [compiler team][compiler_team]
-- [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
-- [#rust-tools][tools_irc] is the home of the [tools and infrastructure team][tool_team]
-- [#rust-lang][lang_irc] is the home of the [language team][language_team]
-- [#rust-community][community_irc] is the home of the [community team][community_team]
+- [#rust][rust_irc] este pentru orice despre Rust
+- [#rust-beginners][beginners_irc] este un spațiu pentru cei noi în Rust, mai puțin trafic decât în #rust
+- [#rust-internals][internals_irc] este pentru discuții despre alte implementări ale Rust
+- [#rustc][rustc_irc] este casa [echipei compilatorului][compiler_team]
+- [#rust-libs][libs_irc] este casa [echipei bibliotecilor][library_team]
+- [#rust-tools][tools_irc] este casa [echipei uneltelor și infrastructurii][tool_team]
+- [#rust-lang][lang_irc] este casa [echipei limbajului][language_team]
+- [#rust-community][community_irc] este casa [echipei comunității][community_team]
 
-### International channels
+### Canale internaționale
 
 - [#rust-br][br_irc] é dedicado à discussão sobre Rust no Brasil
 - [#rust-de][de_irc] ist für die allgemeine Diskussion über Rust auf Deutsch
@@ -84,18 +83,18 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#rust-fr][fr_irc] est dédié à la programmation en Rust en français
 - [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
 
-### Topical channels
+### Canale tematice
 
-- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
-- [#rust-bots][bots_irc] notifications about Rust from a selection of bots
-- [#rust-docs][docs_irc] is the home of the unoffical documentation team
-- [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
-- [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
-- [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
-- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
-- [#rust-osdev][osdev_irc] is for people doing OS development in Rust
-- [#rust-webdev][webdev_irc] is for people doing web development in Rust
-- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
+- [#cargo][cargo_irc] este pentru discuții despre Cargo, package managerul Rust
+- [#rust-bots][bots_irc] oferă notificări despre Rust de la o selecție de boți
+- [#rust-docs][docs_irc] este casa echipei neoficiale de documentație
+- [#rust-crypto][crypto_irc] este pentru discuții despre criptografie în Rust
+- [#rust-gamedev][gamedev_irc] este pentru cei care dezvoltă jocuri în Rust
+- [#rust-networking][networking_irc] este pentru cei care fac și dezvoltă rețele în Rust
+- [#rust-offtopic][offtopic_irc] este pentru chat general între Rustaceeni
+- [#rust-osdev][osdev_irc] este pentru cei care dezvoltă SO în Rust
+- [#rust-webdev][webdev_irc] este pentru cei care fac web development în Rust
+- [#servo][servo_irc] este pentru discuții despre Servo, motorul de randare scris în Rust
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
 [beginners_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
@@ -122,77 +121,66 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [webdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
 [docs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-docs
 
-## Discussion Forums
+## Forumuri de Discuție
 
-We have two forums for asynchronous discussion:
+Noi avem două forumuri pentru discuție asincronă:
 
-- The [Users Forum][users_forum], a space for asking questions, posting code
-  snippets, talking about Rust projects, and so on.
+- [Forumul Utilizatorilor][users_forum], un loc pentru a pune întrebări, a posta
+  snippeturi de cod, a discuta despre proiecte Rust etc.
 
-- The [Internals Forum][internals_forum], a space dedicated to design and
-  implementation discussion about Rust itself (which includes Cargo, the
-  standard library, and other core bits of infrastructure).
+- [Forumul Internals][internals_forum], un spațiu dedicat designului și discuțiilor despre implementarea Rust-ului însuși (include Cargo, biblioteca standard și alte componente).
 
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
 
-## User Groups and Meetups
+## Grupuri de Utlizatori și Întâlniri
 
-There are more than 50 [Rust User Groups][user_group] worldwide in over 20
-countries totaling over 7,000 members. Rustaceans meet periodically in Rust User
-Groups. Its a great introduction to the community and a great way to learn and
-socialize with other people with a similar interest. Meetings are
-usually held monthly and very informal. Meetings are open to everyone.
+Există mai mult de 50 de [Grupuri de Utilizatori Rust][user_group] în peste 20 de
+țări, însumând peste 7 000 de membri. Rustaceenii se întâlnesc periodic în Grupurile de
+Utilizatori Rust. Este o introducere bună în comunitate și o modalitate excelentă
+de a învăța și socializa cu alte persoane cu interese asemnănătoare. Întâlnirile
+se petrec, de obicei, lunar și sunt foarte informale. Ele sunt deschise pentru toți.
 
-There is a global [calendar][calendar] for keeping up with Rust events.
-Contact the [community team][community_team] to add your own.
+De asemenea, există un [calendar][calendar] global pentru a fi la curent cu evenimentele Rust.
+Contactați [echipa comunității][community_team] pentru a adăuga propriul eveniment.
 
 [user_group]: ./user-groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
 
-## The Rust Team
+## Echipa Rust
 
-Rust has a community-driven development process where most decisions are made
-through open discussion and consensus, under the stewardship of various
-[teams][teams]:
+Rust are un proces de dezvoltare condus de comunitate, unde majoritatea deciziilor
+sunt luate prin discuții deschise și consens, sub administrarea diferitor [echipe][teams]:
 
-* The [Core Team][core_team] is responsible for steering the design and
-development process, overseeing the introduction of new features, and ultimately
-making decisions for which there is no consensus (this happens rarely).
+* [Echipa Centrală][core_team] este responsabilă de dirijarea procesului de design
+și dezvoltare, supravegherea introducerii de features noi și, eventual, luarea
+deciziilor când nu există un consens (aceasta se întâmplă rar).
 
-* The [Language Design Team][language_team] is responsible for the
-  design of new language features.
+* [Echipa Designului Limbajului][language_team] este responsabilă de designul noilor features ale limbajului.
 
-* The [Library Team][library_team] is responsible for the Rust standard
-library, rust-lang crates, and conventions.
+* [Echipa Bibliotecilor][library_team] este responsabilă de biblioteca standard Rust, crate-uri rust-lang și convenții.
 
-* The [Compiler Team][compiler_team] is responsible for compiler internals and
-optimizations.
+* [Echipa Compilatorului][compiler_team] este responsabilă de componentele compilatorului și optimizări.
 
-* The [Tooling and Infrastructure Team][tool_team] is responsible for official
-tools like [Cargo], [rustup], and [rustfmt], as well as the CI Infrastructure for the
-project.
+* [Echipa Uneltelor și Infrastructurii][tool_team] este responsabilă de unelte oficiale,
+cum ar fi [Cargo], [rustup] și [rustfmt], precum și de Infrastructura CI a proiectului.
 
 [Cargo]: https://crates.io
 [rustup]: https://www.rustup.rs
 [rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 
-* The [Community Team][community_team] is responsible for coordinating events,
-outreach, commercial users, teaching materials, and exposure. They can also
-direct inquiries to the correct parties when its not clear who to contact
-about something Rusty.
+* [Echipa Comunității][community_team] este responsabilă de coordonarea evenimentelor,
+outreach, utilizatori comerciali, materiale educaționale și expunere. Ea poate,
+de asemenea, să direcționeze întrebări când nu este clar la cine trebuie de apelat despre ceva legat de Rust.
 
-* The [Moderation Team][mod_team] is responsible for helping to uphold the
-[code of conduct][coc].
+* [Echipa de Moderare][mod_team] este responsabilă de asigurarea respectării [Codului de Conduită][coc].
 
-* The [Documentation Team][doc_team] is responsible for ensuring Rust has
-  fantastic documentation.
+* [Echipa de Documentare][doc_team] asigură faptul că Rust are documentație fantastică.
 
-In addition to the official team rosters, most teams also have a larger set
-of reviewers who are knowledgeable about the area and can sign off on
-code. If you're interested in getting involved in one of these teams,
-feel free to reach out to the team leader or any other member, who can
-help get you started.
+Pe lângă membrii oficiali, majoritatea echipelor au un set lărgit de referenți care
+au cunoștințe în domeniu și pot să-și dea acordul asupra codului. Dacă sunteți
+interesat/ă să participați în una din aceste echipe, contactați liderul echipei
+sau oricare alt membru, care vă poate ajuta.
 
 [teams]: https://www.rust-lang.org/team.html
 [core_team]: https://www.rust-lang.org/team.html#Core
@@ -204,26 +192,24 @@ help get you started.
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
 [doc_team]: https://www.rust-lang.org/en-US/team.html#Documentation-team
 
-## Rust Development
+## Dezvoltarea Rust
 
-Rust has had over [1,200 different contributors][authors], a number that grows
-every single week. [We'd love for you to join that list][contribute]!
+Rust are peste peste [1 200 de colaboratori diferiți][authors], un număr care crește în fiecare săptămână!
+[Am fi recunoscători dacă v-ați alătura la această listă][contribute]!
 
-As mentioned above, the [Rust Internals Forum][internals_forum] is dedicated to
-discussing the design and implementation of Rust. A lot of discussion also
-happens on GitHub:
+Cum am mai menționat, [Forumul Rust Internals][internals_forum] este dedicat
+discuțiilor despre designul și implementarea Rust. Se discută mult și pe GitHub:
 
-- The [main repository][github] and [issue tracker][issue_tracking] are the
-  front lines of the implementation work. Our reviewers strive to be friendly
-  and to help mentor newcomers, so don't hesitate to open a pull request!
+- [Repozitoriul Principal][github] și [issue tracker-ul][issue_tracking] sunt liniile
+  de front ale lucrului de implementare. Referenții noștri tind să fie prietenoși
+  și să ajute nou-veniții, așa că nu ezitați să deschideți un pull request!
 
-- The [RFC repo][rfcs] tracks our Request for Comment process, the main pathway
-  through which the Rust community and the teams reach consensus on new
-  features proposed for the language and official libraries and tools.
+- [Repozitoriul RFC][rfcs] urmărește procesul nostru de Request for Comment (Cerere de Comentarii),
+  calea principală prin care comunitatea Rust și echipele ajung la un consens
+  referitor la feature-urile propuse pentru limbaj și bibliotecile și uneltele oficiale.
 
-Roughly weekly, the Rust teams produce [team reports][team_reports] tracking
-team business, including the progression of proposals through the RFC and
-implementation process.
+Practic săptămânal, echipele Rust produc [rapoarte][team_reports] care urmăresc
+activitățile echipei, inclusiv progresul propunerilor prin RFC și procesul de implementare.
 
 [authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
 [contribute]: contribute.html
