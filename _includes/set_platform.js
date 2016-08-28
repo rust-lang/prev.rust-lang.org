@@ -8,6 +8,8 @@
 		"en-US": {"linux": "Linux binary", "windows": "Windows Installer", "mac": "Mac Installer"},
 		"pt": {"linux": "Binário Linux", "windows": "Instalador Windows", "mac": "Instalador Mac"},
 		"pt-BR": {"linux": "Binário Linux", "windows": "Instalador Windows", "mac": "Instalador Mac"},
+		"ro": {"linux": "Binarul Linux", "windows": "Instalator Windows", "mac": "Instalator Mac"},
+		"ro-RO": {"linux": "Binarul Linux", "windows": "Instalator Windows", "mac": "Instalator Mac"}
 		// Add more platforms here
 	};
 	return platforms[get_language()][platform];
