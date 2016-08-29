@@ -8,6 +8,8 @@
 		"en-US": {"linux": "Linux binary", "windows": "Windows Installer", "mac": "Mac Installer"},
 		"pt": {"linux": "Binário Linux", "windows": "Instalador Windows", "mac": "Instalador Mac"},
 		"pt-BR": {"linux": "Binário Linux", "windows": "Instalador Windows", "mac": "Instalador Mac"},
+		"ru": {"linux": "Исполняемые файлы для Linux", "windows": "Установщик для Windows", "mac": "Установщик для Mac"},
+		"ru-RU": {"linux": "Исполняемые файлы для Linux", "windows": "Установщик для Windows", "mac": "Установщик для Mac"},
 		// Add more platforms here
 	};
 	return platforms[get_language()][platform];
