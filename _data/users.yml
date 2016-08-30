@@ -51,7 +51,7 @@
   name: ANIXE
   url: http://www.anixe.pl/
   logo: anixe.png
-  how: "Building the next generation reservation systems for the travel industry."
+  how: "Building the next generation travel services trading platform in Rust."
 -
   name: AppSignal
   url: https://appsignal.com/
