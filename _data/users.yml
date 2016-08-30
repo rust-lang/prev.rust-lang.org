@@ -163,6 +163,11 @@
   logo: sentry-horizontal-black.svg
   how: "<a href='http://lucumr.pocoo.org/2016/7/10/rust-rest/'>A command-line client for the Sentry API.</a>"
 -
+  name: Snips
+  url: https://snips.ai/
+  logo: snips.svg
+  how: "<a href='https://github.com/snipsco/rust-threshold-secret-sharing'>Secure computation for mobile devices</a>"
+-
   name: Stratum Security
   url: https://stratumsecurity.com/
   logo: stratum.png
