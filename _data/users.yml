@@ -166,7 +166,7 @@
   name: Snips
   url: https://snips.ai/
   logo: snips.svg
-  how: "<a href='https://github.com/snipsco/rust-threshold-secret-sharing'>Secure computation for mobile devices</a>"
+  how: "<a href='https://github.com/snipsco/rust-threshold-secret-sharing'>AI assistants that are private by design</a>."
 -
   name: Stratum Security
   url: https://stratumsecurity.com/
