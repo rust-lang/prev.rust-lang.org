@@ -148,32 +148,56 @@ even better, open a pull request against
 
 ## USA
 
-[The Austin Rust Meetup](https://www.meetup.com/Austin-Rust-Meetup/), Austin.
-
-[Chicago Rust Meetup](https://www.meetup.com/Chicago-Rust-Meetup/), Chicago, IL.
-
-[Columbus Rust Society](https://www.meetup.com/columbus-rs/), Columbus, OH.
+### Arizona
 
 [Desert Rust](https://www.meetup.com/Desert-Rustaceans/), Phoenix, AZ.
 
-[PDXRust](https://www.meetup.com/PDXRust/), Portland, OR.
+### California
 
 [Rust Bay Area](https://www.meetup.com/Rust-Bay-Area/), San Francisco, CA.
-
-[Rust Boston](https://www.meetup.com/Boston-Rust-Meetup-25317522aNpHwZdw/), Boston, MA.
-
-[Rust Boulder/Denver](https://www.meetup.com/Rust-Boulder-Denver/), Boulder, CO.
-
-[Rust Detroit](https://www.meetup.com/rust-detroit/), Detroit, MI.
 
 [Rust Learning Group](https://www.meetup.com/Rust-Learning-Group/), Oakland, CA.
 
 [Rust Los Angeles](https://www.meetup.com/Rust-Los-Angeles/), Los Angeles, CA.
 
-[Rust NYC](https://www.meetup.com/Rust-NYC/), New York, NY
+[San Diego Rust](https://www.meetup.com/San-Diego-Rust/), San Diego, CA.
+
+### Colorado
+
+[Rust Boulder/Denver](https://www.meetup.com/Rust-Boulder-Denver/), Boulder, CO.
+
+### Illinois
+
+[Chicago Rust Meetup](https://www.meetup.com/Chicago-Rust-Meetup/), Chicago, IL.
+
+### Massachussets
+
+[Rust Boston](https://www.meetup.com/Boston-Rust-Meetup-25317522aNpHwZdw/), Boston, MA.
+
+### Michigan
+
+[Rust Detroit](https://www.meetup.com/rust-detroit/), Detroit, MI.
+
+### Minnesota
 
 [Rust Twin Cities](https://www.meetup.com/Rust-TC/), Minneapolis, MN.
 
-[San Diego Rust](https://www.meetup.com/San-Diego-Rust/), San Diego, CA.
+### New York
+
+[Rust NYC](https://www.meetup.com/Rust-NYC/), New York, NY
+
+### Ohio
+
+[Columbus Rust Society](https://www.meetup.com/columbus-rs/), Columbus, OH.
+
+### Oregon
+
+[PDXRust](https://www.meetup.com/PDXRust/), Portland, OR.
+
+### Texas
+
+[The Austin Rust Meetup](https://www.meetup.com/Austin-Rust-Meetup/), Austin, TX.
+
+### Washington
 
 [Seattle Rust Meetup](https://www.meetup.com/Seattle-Rust-Meetup/), Seattle, WA.
