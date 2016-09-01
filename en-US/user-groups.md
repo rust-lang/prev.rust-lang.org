@@ -194,6 +194,10 @@ even better, open a pull request against
 
 [PDXRust](https://www.meetup.com/PDXRust/), Portland, OR.
 
+### Pennsylvania
+
+[Pittsburgh Rust Coffee](https://www.meetup.com/Pittsburgh-Rust-Coffee/), Pittsburgh, PA.
+
 ### Texas
 
 [The Austin Rust Meetup](https://www.meetup.com/Austin-Rust-Meetup/), Austin, TX.
