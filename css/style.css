@@ -321,15 +321,6 @@ ul.laundry-list {
   border: none;
 }
 
-#result:before,
-#result:after {
-  content: " ";
-  display: table;
-}
-#result:after {
-  clear: both;
-}
-
 .ace-error-text, .ace-error-line, .ace-warning-text, .ace-warning-line {
   position: absolute;
 }
