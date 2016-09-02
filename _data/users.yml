@@ -71,7 +71,7 @@
   name: Beget
   url: https://beget.com
   logo: beget.png
-  how: "As part of backup and resource management systems."
+  how: "As part of backup, resource management systems and <a href='https://github.com/LTD-Beget/syncookied'>DDOS mitigation</a>"
 -
   name: Coursera
   url: https://www.coursera.org
