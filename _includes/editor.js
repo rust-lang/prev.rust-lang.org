@@ -16,6 +16,7 @@
   var staticCode = document.getElementById("static-code");
   var runButton = document.getElementById("run-code");
   var resultDiv = document.getElementById("result");
+  var resultPre = result.getElementsByTagName('pre')[0];
   var playLink = document.getElementById("playlink");
 
   // Background colors for program result on success/error
@@ -69,7 +70,7 @@
     if (newPlayLink) {
       playLink = resultDiv.removeChild(newPlayLink);
     }
-    resultDiv.innerHTML = "";
+    resultPre.innerHTML = "";
   }
 
   function escapeHTML(unsafe) {
@@ -145,7 +146,7 @@
     if (result == null) {
       clearResultDiv();
       resultDiv.style.backgroundColor = errorColor;
-      resultDiv.innerHTML = errMsg;
+      resultPre.innerHTML = errMsg;
     } else if (statusCode === SUCCESS) {
       handleSuccess(message);
     } else if (statusCode === WARNING) {
@@ -235,7 +236,7 @@
   runButton.addEventListener("click", function(ev) {
     resultDiv.style.display = "block";
     clearResultDiv();
-    resultDiv.innerHTML = "Running...";
+    resultPre.innerHTML = "Running...";
 
     // clear previous markers, if any
     markers.map(function(id) { editor.getSession().removeMarker(id); });
@@ -252,8 +253,8 @@
     playLink.href = programUrl;
 
     clearResultDiv();                // clear resultDiv, then add
-    resultDiv.appendChild(playLink); // playLink icon and message
-    resultDiv.innerHTML += message;
+    resultDiv.insertBefore(playLink, resultDiv.firstChild); // playLink icon and message
+    resultPre.innerHTML += message;
   }
 
   // Highlight active line when focused

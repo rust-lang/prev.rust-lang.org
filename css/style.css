@@ -316,6 +316,11 @@ ul.laundry-list {
   border-radius: 4px;
 }
 
+#result pre {
+  background: transparent;
+  border: none;
+}
+
 .ace-error-text, .ace-error-line, .ace-warning-text, .ace-warning-line {
   position: absolute;
 }
