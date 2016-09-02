@@ -253,7 +253,7 @@
     playLink.href = programUrl;
 
     clearResultDiv();                // clear resultDiv, then add
-    resultDiv.appendChild(playLink); // playLink icon and message
+    resultDiv.insertBefore(playLink, resultDiv.firstChild); // playLink icon and message
     resultPre.innerHTML += message;
   }
 
