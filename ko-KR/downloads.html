@@ -1,0 +1,202 @@
+---
+layout: ko-KR/default
+title: 다운로드 &middot; Rust 프로그래밍 언어
+---
+    <h1>다운로드</h1>
+
+    <hr>
+
+    <div class="row install">
+      <div class="col-md-4 side-header">
+        <h2 id="stable">{{ site.stable }}&nbsp;</h2>
+        <h3>{{ site.stable_date }}</h3>
+        <p>
+          <a href="http://blog.rust-lang.org{{ site.stable_blog }}">
+            Rust의 현재 안정 버전</a>입니다.
+          6주마다 갱신되며 이전 버전과 호환됩니다.
+        </p>
+      </div>
+      <div class="col-md-8">
+        <table class="table-features table-installers"><tbody>
+          <tr>
+          <td class="inst-type">Linux (.tar.gz)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64비트</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32비트</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac (.pkg)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-apple-darwin.pkg"><div class="inst-button">64비트</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-apple-darwin.pkg"><div class="inst-button">32비트</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-gnu.msi"><div class="inst-button">64비트</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-pc-windows-gnu.msi"><div class="inst-button">32비트</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-msvc.msi"><div class="inst-button">64비트</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-pc-windows-msvc.msi"><div class="inst-button">32비트</div></a></td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td class="inst-type"></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz"><div class="inst-button">소스 코드</div></a></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p>Linux와 Mac에서는 다음 명령을 셸에 입력해서 쉽게 안정 버전을 설치할 수 있습니다:</p>
+        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh</code></pre>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row install">
+      <div class="col-md-4 side-header">
+        <h2 id="beta">베타&nbsp; ({{ site.beta }})</h2>
+        <p>
+        다음 안정 버전의 맛보기 판으로, 크레이트 개발자가 테스트하는 데 쓰입니다.
+        6주마다 및 필요에 따라 갱신됩니다.
+        </p>
+        <p><em><br/>{{ site.beta_date }}</em>에 안정 버전으로 승격될 예정<p>
+      </div>
+      <div class="col-md-8">
+        <table class="table-features table-installers"><tbody>
+          <tr>
+          <td class="inst-type">Linux (.tar.gz)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64비트</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32비트</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac (.pkg)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-apple-darwin.pkg"><div class="inst-button">64비트</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-apple-darwin.pkg"><div class="inst-button">32비트</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.msi"><div class="inst-button">64비트</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-gnu.msi"><div class="inst-button">32비트</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-msvc.msi"><div class="inst-button">64비트</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-msvc.msi"><div class="inst-button">32비트</div></a></td>
+          <td></td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td class="inst-type"></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-beta-src.tar.gz"><div class="inst-button">소스 코드</div></a></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p>Linux와 Mac에서는 다음 명령을 셸에 입력해서 쉽게 베타 버전을 설치할 수 있습니다:</p>
+        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=beta</code></pre>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row install">
+      <div class="col-md-4 side-header">
+        <h2 id="nightly">나이틀리&nbsp; ({{ site.nightly }})</h2>
+        <p>
+        현재의 개발 브랜치입니다.
+        베타나 안정 버전에서 사용할 수 없는
+        <a href="https://doc.rust-lang.org/book/nightly-rust.html">불안정한 기능들</a>이 포함됩니다.
+        </p>
+      </div>
+      <div class="col-md-8">
+        <table class="table-features table-installers"><tbody>
+          <tr>
+          <td class="inst-type">Linux (.tar.gz)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64비트</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32비트</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac (.pkg)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.pkg"><div class="inst-button">64비트</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.pkg"><div class="inst-button">32비트</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.msi"><div class="inst-button">64비트</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-gnu.msi"><div class="inst-button">32비트</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-msvc.msi"><div class="inst-button">64비트</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-msvc.msi"><div class="inst-button">32비트</div></a></td>
+          <td></td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td class="inst-type"></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz"><div class="inst-button">소스 코드</div></a></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p>Linux와 Mac에서는 다음 명령을 셸에 입력해서 쉽게 나이틀리 버전을 설치할 수 있습니다:</p>
+        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly</code></pre>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-12">
+      <p>
+        <a href="https://static.rust-lang.org/dist/index.html">아카이브</a>에서 다른 다운로드를 찾을 수 있습니다.
+      </p>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-12">
+	<a id="win-foot"></a>
+	<p>
+	  <em>†</em>
+	  Windows에서는 두 개의 주요
+	  <a href="https://ko.wikipedia.org/wiki/%EC%9D%91%EC%9A%A9_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8_%EC%9D%B4%EC%A7%84_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4">ABI</a>가
+	  사용되고 있는데, 하나는
+	  <a href="https://www.visualstudio.com">Visual Studio</a>가
+	  사용하는 네이티브 (MSVC) ABI이고, 다른 하나는
+	  <a href="https://gcc.gnu.org/">GCC 툴체인</a>이
+	  사용하는 GNU ABI입니다.
+	  어느 버전의 Rust를 사용할지는 주로 함께 쓰고자 하는 C/C++ 라이브러리가 무엇이냐에 따라 결정됩니다.
+	  Visual Studio에서 만들어진 소프트웨어와 함께 쓰려면 Rust의 MSVC 빌드를 사용하십시오.
+	  <a href="https://msys2.github.io/">MinGW/MSYS2 툴체인</a>으로 빌드된 GNU 소프트웨어와 함께 쓰려면
+	  GNU 빌드를 사용하십시오.
+	</p>
+	<p>
+	  Rust의 MSVC 빌드는 추가적으로 Visual Studio 2013 또는 이후 버전을 위한
+	  Microsoft Visual C++ 빌드 도구를 필요로 합니다.
+	  빌드 도구를 가장 쉽게 받는 방법은
+	  <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
+	  Microsoft Visual C++ 빌드 도구 2015</a>를
+	  설치하는 것입니다.
+	  또는 Visual Studio 2015나 Visual Studio 2013을
+	  <a href="https://www.visualstudio.com/downloads/">설치</a>하고
+	  설치 과정에서 "C++ 도구"를 선택할 수 있습니다.
+	  GNU 빌드의 경우 기본적인 사용에는 별도의 소프트웨어 설치가 필요하지 않습니다.
+	</p>
+	<p>
+	  Rust의 GNU ABI 지원은 MSVC ABI보다 더 성숙해 있으며 일반적인 사용에 권장됩니다.
+	</p>
+    </div>
+  </div>

@@ -1,0 +1,72 @@
+---
+layout: ko-KR/basic
+title: Rust 프로그래밍 언어
+---
+
+    <div class="row install-row">
+      <div class="col-md-8">
+        <p class="pitch">
+          <b>Rust</b>는
+          매우 빠르며,
+          세그폴트를 방지하고
+          스레드 안전성을 보장하는
+          시스템 프로그래밍 언어입니다.
+          <br/>
+          <a href="https://doc.rust-lang.org/book/README.html">더 알려 주세요!</a>
+        </p>
+      </div>
+      <div class="col-md-4 install-box">
+        <span class="version-rec-box-inner">
+          권장 버전:<br>
+          <span id="install-version">
+            {{ site.stable }}
+            (<span>소스코드</span>)
+          </span>
+        </span>
+        <a class="btn btn-primary" id="inst-link"
+           href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">설치</a>
+        <a class="btn btn-default" href="install.html" role="button">다른 다운로드</a>
+      </div>
+    </div>
+
+    <div class="row code-row">
+      <div class="col-md-4">
+      <h2>기능</h2>
+      <ul class="laundry-list">
+        <li>비용 없는 추상화</li>
+        <li>"이동"(move) 의미론</li>
+        <li>메모리 안전성 보장</li>
+        <li>데이터 레이스 없는 스레딩</li>
+        <li>트레이트 기반 일반화(generic)</li>
+        <li>패턴 매칭</li>
+        <li>타입 추론</li>
+        <li>최소한의 런타임</li>
+        <li>효율적인 C 바인딩</li>
+      </ul>
+      </div>
+      <div class="col-md-8">
+        <div id="active-code">
+          <button type="button" class="btn btn-primary btn-sm" id="run-code">실행</button>
+          <div id="editor">{% include ko-KR/example.rs %}</div>
+          <div id="result">
+            <a id="playlink"><i class="icon-link-ext"></i></a>
+          </div>
+        </div>
+        <div id="static-code">{% include ko-KR/example.rs.html %}</div>
+        <div class="more-examples">
+          <a href="http://rustbyexample.com/">더 많은 예제</a>
+        </div>
+      </div>
+    </div>
+
+  <script type="text/javascript">
+    {% include include.js %}
+
+    include("https://cdn.jsdelivr.net/ace/1.1.3/noconflict/ace.js", function () {
+      include("https://cdn.jsdelivr.net/ace/1.1.3/noconflict/mode-rust.js", function () {
+        {% include editor.js %}
+      });
+    });
+
+    {% include set_platform.js %}
+  </script>
