@@ -10,7 +10,7 @@ with over 7,000 members. Rustaceans meet periodically in Rust User
 Groups.  Its a great introduction to the community and a great way to
 learn and socialize with other people with a similar interest.
 Meetings are usually informal and open to
-everyone. If you have started a new user group and with to add it to
+everyone. If you have started a new user group and wish to add it to
 this list, please contact the [Rust Community
 Team](./team.html#Community) or
 even better, open a pull request against
