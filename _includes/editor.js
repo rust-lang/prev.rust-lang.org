@@ -23,6 +23,9 @@
   var errorColor = "#F6E2E2";
   var warningColor = "#FFFBCB";
 
+  // Message to show when the program is running
+  var runningMsg = resultDiv.getAttribute("data-msg-running") || "Running...";
+
   // Error message to return when there's a server failure
   var errMsg = "The server encountered an error while running the program.";
 
@@ -235,7 +238,7 @@
   runButton.addEventListener("click", function(ev) {
     resultDiv.style.display = "block";
     clearResultDiv();
-    resultDiv.innerHTML = "Running...";
+    resultDiv.innerHTML = runningMsg;
 
     // clear previous markers, if any
     markers.map(function(id) { editor.getSession().removeMarker(id); });
