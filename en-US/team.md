@@ -14,8 +14,12 @@ people:
     irc: acrichto
   aturon:
     name: Aaron Turon
+  badboy:
+    name: Jan-Erik Rediger
   bkoropoff:
     name: Brian Koropoff
+  booyaa:
+    name: Mark Sta Ana
   brson:
     name: Brian Anderson
   bstrie:
@@ -44,9 +48,16 @@ people:
   GuillaumeGomez:
     name: Guillaume Gomez
     irc: imperio
+  japaric:
+    name: Jorge Aparicio
+  johannhof:
+    name: Johann Hofmann
   jonathandturner:
     name: Jonathan Turner
     irc: jntrnr
+  joshtriplett:
+    name: Josh Triplett
+    irc: JoshTriplett
   jseyfried:
     name: Jeffrey Seyfried
     irc: jseyfried
@@ -80,20 +91,17 @@ people:
     name: Steven Fackler
   skade:
     name: Florian Gilcher
+  solson:
+    name: Scott Olson
+    irc: scott
   steveklabnik:
     name: Steve Klabnik
   vadimcn:
     name: Vadim Chugunov
+  ubsan:
+    name: Nicole Mazzuca
   wycats:
     name: Yehuda Katz
-  jonathandturner:
-    name: Jonathan Turner
-  badboy:
-    name: Jan-Erik Rediger
-  johannhof:
-    name: Johann Hofmann
-  booyaa:
-    name: Mark Sta Ana
 
 # Information about each team. Omit `lead` for teams without leaders.
 teams:
@@ -128,6 +136,11 @@ teams:
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
     email: rust-mods@rust-lang.org
+  - name: Style team
+    members: [brson, japaric, joshtriplett, solson, steveklabnik, ubsan]
+    lead: nrc
+    responsibility: "temporary 'strike team' charged with deciding on code style guidelines and configuring Rustfmt"
+    email: style-team@rust-lang.org
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
     members: [Gankro, huonw]
