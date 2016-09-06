@@ -6,18 +6,20 @@ title: Downloads &middot; A linguagem de programação Rust
     <!-- -->
     <h1>Downloads</h1>
 
+    {% assign months = '/janeiro/fevereiro/março/abril/maio/junho/julho/agosto/setembro/outubro/novembro/dezembro' | split: '/' -%}
+    {% assign stable_month = site.stable_date | date: '%-m' | plus: '0' -%}
+    {% assign beta_month = site.beta_date | date: '%-m' | plus: '0' -%}
     <hr>
 
     <div class="row install">
       <div class="col-md-4 side-header">
         <h2 id="stable">{{ site.stable }}&nbsp;</h2>
-        <h3>{{ site.stable_date }}</h3>
+	<h3>{{ site.stable_date | date: '%-d' }} de {{ months[stable_month] }} de {{ site.stable_date | date: '%Y' }}</h3>
         <p>
 	  O
           <a href="http://blog.rust-lang.org{{ site.stable_blog }}">
-	    atual lançamento estável de rust
-	  </a>
-	  , atualizado à cada 6 semanas e compatível com versões anteriores.
+	    atual lançamento estável de rust</a>,
+	  atualizado à cada 6 semanas e compatível com versões anteriores.
         </p>
       </div>
       <div class="col-md-8">
@@ -67,7 +69,7 @@ title: Downloads &middot; A linguagem de programação Rust
   Uma preview da versão estável que virá, intencionada para teste por
   autores de pacotes. Atualizado à cada seis semanas e quando necessário.
         </p>
-        <p><em>Esperado lançamento como estável:<br/>{{ site.beta_date }}</em>.<p>
+        <p><em>Esperado lançamento como estável:<br/>{{ site.beta_date | date: '%-d' }} de {{ months[beta_month] }} de {{ site.beta_date | date: '%Y' }}</em>.<p>
       </div>
       <div class="col-md-8">
         <table class="table-features table-installers"><tbody>
