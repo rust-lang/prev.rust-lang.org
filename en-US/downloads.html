@@ -9,13 +9,12 @@ title: Downloads &middot; The Rust Programming Language
     <div class="row install">
       <div class="col-md-4 side-header">
         <h2 id="stable">{{ site.stable }}&nbsp;</h2>
-        <h3>{{ site.stable_date }}</h3>
+        <h3>{{ site.stable_date | date: "%B %-d, %Y" }}</h3>
         <p>
 	  The
           <a href="http://blog.rust-lang.org{{ site.stable_blog }}">
-	    current stable release of Rust
-	  </a>
-	  , updated every six weeks and backwards-compatible.
+	    current stable release of Rust</a>,
+	  updated every six weeks and backwards-compatible.
         </p>
       </div>
       <div class="col-md-8">
@@ -65,7 +64,7 @@ title: Downloads &middot; The Rust Programming Language
 	A preview of the upcoming stable release, intended for testing by
 	crate authors. Updated every six weeks and as needed.
         </p>
-        <p><em>Scheduled for stable release<br/>{{ site.beta_date }}</em>.<p>
+        <p><em>Scheduled for stable release<br/>{{ site.beta_date | date: "%B %-d, %Y" }}</em>.<p>
       </div>
       <div class="col-md-8">
         <table class="table-features table-installers"><tbody>

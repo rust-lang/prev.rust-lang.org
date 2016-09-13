@@ -17,7 +17,11 @@ title: The Rust Programming Language
       <div class="col-md-4 install-box">
         <span class="version-rec-box-inner">
           Recommended Version:<br>
-          <span id="install-version">
+          <span id="install-version"
+                data-type-linux="Linux binary"
+                data-type-windows="Windows Installer"
+                data-type-mac="Mac Installer"
+                data-type-source="source">
             {{ site.stable }}
             (<span>source</span>)
           </span>
@@ -47,7 +51,7 @@ title: The Rust Programming Language
         <div id="active-code">
           <button type="button" class="btn btn-primary btn-sm" id="run-code">Run</button>
           <div id="editor">{% include example.rs %}</div>
-          <div id="result">
+          <div id="result" data-msg-running="Running...">
             <a id="playlink"><i class="icon-link-ext"></i></a>
           </div>
         </div>

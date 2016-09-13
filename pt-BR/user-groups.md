@@ -14,7 +14,7 @@ everyone. If you have started a new user group and with to add it to
 this list, please contact the [Rust Community
 Team](./team.html#Community) or
 even better, open a pull request against
-[this website](https://github.com/rust-lang/rust-www/blob/master/user-groups.md).
+[this website](https://github.com/rust-lang/rust-www/blob/master/pt-BR/user-groups.md).
 
 ## Australia
 
@@ -25,6 +25,10 @@ even better, open a pull request against
 ## Austria
 
 [Klagenfurt Rust Programmers](https://www.meetup.com/Klagenfurt-Rust/), Klagenfurt.
+
+## Bolivia
+
+[Rust Bolivia](http://www.mozillabolivia.org/rust/), Santa Cruz, Bolivia.
 
 ## Brazil
 
@@ -148,32 +152,60 @@ even better, open a pull request against
 
 ## USA
 
-[The Austin Rust Meetup](https://www.meetup.com/Austin-Rust-Meetup/), Austin.
-
-[Chicago Rust Meetup](https://www.meetup.com/Chicago-Rust-Meetup/), Chicago, IL.
-
-[Columbus Rust Society](https://www.meetup.com/columbus-rs/), Columbus, OH.
+### Arizona
 
 [Desert Rust](https://www.meetup.com/Desert-Rustaceans/), Phoenix, AZ.
 
-[PDXRust](https://www.meetup.com/PDXRust/), Portland, OR.
+### California
 
 [Rust Bay Area](https://www.meetup.com/Rust-Bay-Area/), San Francisco, CA.
-
-[Rust Boston](https://www.meetup.com/Boston-Rust-Meetup-25317522aNpHwZdw/), Boston, MA.
-
-[Rust Boulder/Denver](https://www.meetup.com/Rust-Boulder-Denver/), Boulder, CO.
-
-[Rust Detroit](https://www.meetup.com/rust-detroit/), Detroit, MI.
 
 [Rust Learning Group](https://www.meetup.com/Rust-Learning-Group/), Oakland, CA.
 
 [Rust Los Angeles](https://www.meetup.com/Rust-Los-Angeles/), Los Angeles, CA.
 
-[Rust NYC](https://www.meetup.com/Rust-NYC/), New York, NY
+[San Diego Rust](https://www.meetup.com/San-Diego-Rust/), San Diego, CA.
+
+### Colorado
+
+[Rust Boulder/Denver](https://www.meetup.com/Rust-Boulder-Denver/), Boulder, CO.
+
+### Illinois
+
+[Chicago Rust Meetup](https://www.meetup.com/Chicago-Rust-Meetup/), Chicago, IL.
+
+### Massachussets
+
+[Rust Boston](https://www.meetup.com/Boston-Rust-Meetup-25317522aNpHwZdw/), Boston, MA.
+
+### Michigan
+
+[Rust Detroit](https://www.meetup.com/rust-detroit/), Detroit, MI.
+
+### Minnesota
 
 [Rust Twin Cities](https://www.meetup.com/Rust-TC/), Minneapolis, MN.
 
-[San Diego Rust](https://www.meetup.com/San-Diego-Rust/), San Diego, CA.
+### New York
+
+[Rust NYC](https://www.meetup.com/Rust-NYC/), New York, NY
+
+### Ohio
+
+[Columbus Rust Society](https://www.meetup.com/columbus-rs/), Columbus, OH.
+
+### Oregon
+
+[PDXRust](https://www.meetup.com/PDXRust/), Portland, OR.
+
+### Pennsylvania
+
+[Pittsburgh Rust Coffee](https://www.meetup.com/Pittsburgh-Rust-Coffee/), Pittsburgh, PA.
+
+### Texas
+
+[The Austin Rust Meetup](https://www.meetup.com/Austin-Rust-Meetup/), Austin, TX.
+
+### Washington
 
 [Seattle Rust Meetup](https://www.meetup.com/Seattle-Rust-Meetup/), Seattle, WA.

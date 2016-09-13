@@ -1,7 +1,7 @@
 name: The Rust Programming Language
 stable: "1.11.0"
-stable_date: "August 18, 2016"
+stable_date: "2016-08-18"
 stable_blog: "/2016/08/18/Rust-1.11.html"
 beta: "1.12"
-beta_date: "September 29, 2016"
+beta_date: "2016-09-29"
 nightly: "1.13"
