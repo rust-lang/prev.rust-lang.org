@@ -1,21 +1,20 @@
 ---
 layout: default
-title: Téléchargements &middot; Langage de programmation Rust
+title: Téléchagements &middot; The Rust Programming Language
 ---
-    <h1>Downloads</h1>
+    <h1>Téléchargements</h1>
 
     <hr>
 
     <div class="row install">
       <div class="col-md-4 side-header">
         <h2 id="stable">{{ site.stable }}&nbsp;</h2>
-        <h3>{{ site.stable_date }}</h3>
+        <h3>{{ site.stable_date | date: "%B %-d, %Y" }}</h3>
         <p>
-	  La
+	  The
           <a href="http://blog.rust-lang.org{{ site.stable_blog }}">
-	    version actuelle de Rust
-	  </a>
-	  , mise à jour toutes les 6 semaines et rétrocompatible.
+	    la version stable de Rust</a>,
+	  mise-à-jour toutes les six semaines et rétro-compatible.
         </p>
       </div>
       <div class="col-md-8">
@@ -51,7 +50,7 @@ title: Téléchargements &middot; Langage de programmation Rust
 
      <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <p>Un moyen simple d’installer les binaires stables pour Linux et Mac est de lancer ceci dans votre terminal&nbsp;:</p>
+        <p>Pour installer facilement les binaires pour Linux et Mac, exécutez dans votre shell:</p>
         <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh</code></pre>
       </div>
     </div>
@@ -62,10 +61,10 @@ title: Téléchargements &middot; Langage de programmation Rust
       <div class="col-md-4 side-header">
         <h2 id="beta">Beta&nbsp; ({{ site.beta }})</h2>
         <p>
-	Une préversion de la prochaine version stable, destinée aux tests pour les
-	auteurs de paquets. Mise à jour toutes les 6 semaines et si besoin.
+	        Un aperçu de la prochaine version stable pour que les auteurs de
+          crates puissent tester. Mise à jour toutes les six semaines et au besoin.
         </p>
-        <p><em>Stabilisation prévue&nbsp;:<br/>{{ site.beta_date }}</em>.<p>
+        <p><em>Programmé pour une version stable le<br/>{{ site.beta_date | date: "%B %-d, %Y" }}</em>.<p>
       </div>
       <div class="col-md-8">
         <table class="table-features table-installers"><tbody>
@@ -101,7 +100,7 @@ title: Téléchargements &middot; Langage de programmation Rust
 
      <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <p>Un moyen simple d’installer les binaires bêtas pour Linux et Mac est de lancer ceci dans votre terminal&nbsp;:</p>
+        <p>Pour installer facilement les binaires beta pour Linux et Mac, exécutez dans votre shell:</p>
         <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=beta</code></pre>
       </div>
     </div>
@@ -112,10 +111,10 @@ title: Téléchargements &middot; Langage de programmation Rust
       <div class="col-md-4 side-header">
         <h2 id="nightly">Nightly&nbsp; ({{ site.nightly }})</h2>
         <p>
-        La branche de développement actuelle.
-	Elle inclue
-	<a href="https://doc.rust-lang.org/book/nightly-rust.html">des fonctionnalités instables</a>
-	qui ne font pas partie des versions bêtas ou stables.
+        La branche de dévelopement courante.
+	Elle inclus
+	<a href="https://doc.rust-lang.org/book/nightly-rust.html">des éléments non-stables</a>
+	qui ne sont pas disponibles dans les versions beta ou stable.
         </p>
       </div>
       <div class="col-md-8">
@@ -152,7 +151,7 @@ title: Téléchargements &middot; Langage de programmation Rust
 
      <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <p>Un moyen simple d’installer les binaires nightly pour Linux et Mac est de lancer ceci dans votre terminal&nbsp;:</p>
+        <p>Pour installer facilement les binaires nightly pour Linux et Mac, exécutez dans votre shell:</p>
         <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly</code></pre>
       </div>
     </div>
@@ -162,8 +161,17 @@ title: Téléchargements &middot; Langage de programmation Rust
     <div class="row">
       <div class="col-md-12">
       <p>
-        Retrouvez les autres téléchargements dans <a href="https://static.rust-lang.org/dist/index.html">les archives.</a>
+        Découvrez d'autres téléchargements dans <a href="https://static.rust-lang.org/dist/index.html">les archives.</a>
       </p>
+      </div>
+    </div>
+
+    <hr/>
+
+     <div class="row">
+      <div class="col-md-12">
+        <p>Si vous avez installé Rust en utilisant le script shell, exécutez ceci pour désinstaller:</p>
+        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --uninstall</code></pre>
       </div>
     </div>
 
@@ -174,32 +182,31 @@ title: Téléchargements &middot; Langage de programmation Rust
 	<a id="win-foot"></a>
 	<p>
 	  <em>†</em>
-	  There are two prominent
+	  Il y a deux principales
 	  <a href="https://en.wikipedia.org/wiki/Application_binary_interface">ABIs</a>
-	  in use on Windows: the native (MSVC) ABI used by
+	  utilisées sur Windows: l'ABI native (MSVC) utilisée par
 	  <a href="https://www.visualstudio.com">Visual Studio</a>,
-	  and the GNU ABI used by the
-	  <a href="https://gcc.gnu.org/">GCC toolchain</a>.
-	  Which version of Rust you need depends largely on what C/C++ libraries you want to interoperate with:
-	  for interop with software produced by Visual Studio use the MSVC build of Rust; for interop with
-	  GNU software built using the
-	  <a href="https://msys2.github.io/">MinGW/MSYS2 toolchain</a>
-	  use the GNU build.
+	  et l'ABI GNU utilisée par la
+	  <a href="https://gcc.gnu.org/">suite d'outils GCC</a>.
+	  La version de Rust dont vous avez besoin depends principalement d'avec quelles librairies C/C++ vous voulez intéragir:
+	  pour une interopérabilité avec des logiciels générés via Visual Studio utilisez le build MSVC de Rust. Pour une interopérabilité avec
+	  des logiciels GNU produits avec
+	  <a href="https://msys2.github.io/">la suite d'outils MinGW/MSYS2</a>
+	  utilisez le build GNU.
 	</p>
 	<p>
-	  MSVC builds of Rust additionally require the Microsoft Visual
-          C++ build tools for Visual Studio 2013 or later.
-	  The easiest way to acquire the build tools is by installing
+	  Les builds MSVC de Rust nécessitent en outre les outils de compilation Microsoft Visual
+          C++ pour Visual Studio 2013 et plus.
+	  Pour obtenir ces outils de compilation, installez
 	  <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
 	  Microsoft Visual C++ Build Tools 2015</a>
-	  which provides just the Visual C++ build tools.
-	  Alternately, you can <a href="https://www.visualstudio.com/downloads/">install</a>
-	  Visual Studio 2015 or Visual Studio 2013 and during install select the "C++ tools".
-	  No additional software installation is necessary for basic use of the GNU build.
+	  qui fournis seulement les outils de compilation Visual C++.
+	  Alternativement, vous pouvez <a href="https://www.visualstudio.com/downloads/">installer</a>
+	  Visual Studio 2015 ou Visual Studio 2013 et pendant l'installation selectionner "C++ tools".
+	  Il n'est pas nécessaire d'installer d'autres logiciels pour l'utilisation basique du build GNU.
 	</p>
 	<p>
-	  Rust's support for the GNU ABI is more mature, and is recommended for typical
-	  uses.
+	  Le support de Rust pour l'ABI GNU est plus mature et est recommandé pour les usages classiques.
 	</p>
     </div>
   </div>
