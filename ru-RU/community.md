@@ -1,4 +1,4 @@
-﻿---
+---
 layout: ru-RU/default
 title: The Rust Community &middot; The Rust Programming Language
 ---
@@ -40,9 +40,9 @@ title: The Rust Community &middot; The Rust Programming Language
 
 ## Новости
 
-[This Week in Rust][twir] собирает в одном месте последние 
+[This Week in Rust][twir] собирает в одном месте последние
 новости, предстоящие встречи и недельную статистику изменений в Rust
-и его библиотеках. [Блог Rust][rust_blog] - место, где 
+и его библиотеках. [Блог Rust][rust_blog] - место, где
 команда Rust сообщает о важных изменениях. Также практически каждое событие
 в Rust обсуждается на неофициальном сабреддите, [/r/rust][reddit].
 
@@ -56,7 +56,7 @@ title: The Rust Community &middot; The Rust Programming Language
 
 ## IRC каналы
 
-Сообщество Rust поддерживает несколько дружелюбных, 
+Сообщество Rust поддерживает несколько дружелюбных,
 густонаселенных [IRC] каналов в IRC-сети Mozilla, irc.mozilla.org.
 
 [#rust][rust_irc] - канал общих обсуждений Rust, и
