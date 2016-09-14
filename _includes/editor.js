@@ -91,7 +91,7 @@
     var req = new XMLHttpRequest();
     var data = JSON.stringify({
       version: "beta",
-      optimize: "2",
+      optimize: "0",
       code: program
     });
 
