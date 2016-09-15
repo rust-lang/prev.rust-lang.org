@@ -98,29 +98,29 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
-[beginners_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
-[bots_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
-[br_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-br
-[cargo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23cargo
-[community_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
-[crypto_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
-[de_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
-[es_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-es
-[fr_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-fr
-[gamedev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
-[internals_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
-[lang_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
-[libs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
-[networking_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[offtopic_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
-[osdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
-[ru_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
-[rust_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
-[rustc_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
-[servo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23servo
-[tools_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
-[webdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
-[docs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-docs
+[beginners_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
+[bots_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
+[br_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-br
+[cargo_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23cargo
+[community_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
+[crypto_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
+[de_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
+[es_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-es
+[fr_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-fr
+[gamedev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
+[internals_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
+[lang_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
+[libs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
+[networking_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
+[offtopic_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
+[osdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
+[ru_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
+[rust_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
+[rustc_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
+[servo_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23servo
+[tools_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
+[webdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
+[docs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-docs
 
 ## Discussion Forums
 
