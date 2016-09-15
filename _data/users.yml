@@ -103,6 +103,11 @@
   logo: faraday.svg
   how: "<a href='https://github.com/faradayio/credentials_to_env'>Securely transferring credentials.</a>"
 -
+  name: Gremlin Inc
+  url: https://www.gremlininc.com
+  logo: gremlininc.svg
+  how: "Safely and efficiently causing controlled chaos."
+-
   name: Habitat
   url: https://www.habitat.sh
   logo: habitat.svg
