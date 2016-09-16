@@ -98,10 +98,6 @@ even better, open a pull request against
 
 [Wellington Rust Meetup](https://www.meetup.com/Wellington-Rust-Meetup/), Wellington.
 
-## Norway
-
-[Rust Oslo](https://www.meetup.com/Rust-Oslo/), Oslo.
-
 ## Phillipines
 
 [Rust Philippines](http://www.rustph.tech), Manila.

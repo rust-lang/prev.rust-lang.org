@@ -605,3 +605,14 @@ ul.laundry-list {
     text-align: center;
     padding-top: 50px;
 }
+
+footer {
+  border-top: 2px solid #dedede;
+  margin: 1.2em auto 0 auto;
+  padding-top: 0.6em; /* half to accomodate p tag margin */
+}
+
+footer a {
+  display: inline-block;
+  font-weight: bold;
+}
