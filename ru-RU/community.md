@@ -1,6 +1,6 @@
 ---
 layout: ru-RU/default
-title: The Rust Community &middot; The Rust Programming Language
+title: Сообщество Rust &middot; Язык Программирования Rust
 ---
 
 # Сообщество Rust
