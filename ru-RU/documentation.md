@@ -1,4 +1,4 @@
-﻿---
+---
 layout: ru-RU/default
 title: Документация Rust &middot; Язык Программирования Rust
 ---
