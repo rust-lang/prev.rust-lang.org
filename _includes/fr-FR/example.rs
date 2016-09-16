@@ -13,10 +13,10 @@ fn main() {
             '-' => accumulateur -= 1,
             '*' => accumulateur *= 2,
             '/' => accumulateur /= 2,
-            _ => { /* on ne tiens pas compte des autres symboles */ }
+            _ => { /* on ne tient pas compte des autres symboles */ }
         }
     }
 
-    println!("Le programme \"{}\" à calculé la valeur {}",
+    println!("Le programme \"{}\" a calculé la valeur {}",
               programme, accumulateur);
 }
