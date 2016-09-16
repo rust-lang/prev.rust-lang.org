@@ -36,6 +36,8 @@ This guide focuses on a few avenues for the new contributor:
 * [Language, compiler and the standard
   library](contribute-compiler.html). Language design, feature
   implementation, performance improvement.
+* [Internationalization](contribute-translations.html). Help spread the
+  Rust love by translating our site to every language.
 
 If you need additional guidance ask on [#rust-internals] or
 [internals.rust-lang.org].
