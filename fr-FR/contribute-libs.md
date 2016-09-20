@@ -1,45 +1,25 @@
 ---
 layout: default
-title: Contributing to Rust &mdash; libraries &middot; The Rust Programming Language
+title: Contribuer à Rust &mdash; les bibliothèques &middot; Rust, le langage de programmation
 ---
 
-# Contributing to Rust &mdash; libraries
+# Contribuer à Rust &mdash; les bibliothèques
 
-If you want to contribute to Rust by writing volumes of Rust code,
-then libraries are where it's at: since Rust is a young language,
-there are many types of libraries that either do not exist yet
-or are incomplete and in need of improvement or competition.
+Si vous souhaitez contribuer à Rust en écrivant des lignes et des lignes de Rust, bienvenue dans les bibliothèques. Rust est un jeune langage, de nombreuses bibliothèques n'existent pas encore, sont incomplètes ou doivent être améliorées.
 
-Deciding what to write that will have impact and be fun is a common
-difficulty. Here are some ideas:
+Il est souvent difficile de choisir quoi écrire : qu'est-ce qui sera le plus motivant ? qu'est-ce qui aura le plus grand impact ? Voici quelques idées :
 
-* Read and participate in the weekly "what's everyone working on
-  this week" threads on [/r/rust] and [users.rust-lang.org]. These are
-  packed with exciting announcements from other Rust programmers in
-  need of collaborators.
-* Familiarize yourself with the best Rust libraries through
-  [awesome-rust] and [libs.rs].
-* Some larger projects, including the web browser [Servo], the HTTP
-  library [hyper], the source-formatter [rustfmt], the Unix library bindings
-  [nix], and the lint collection [clippy], tag issues with 'easy' labels for new
-  contributors.
-* Get involved with one of the active Rust-oriented GitHub
-  organizations, such as [PistonDevelopers], [servo], [redox-os],
-  [iron], [contain-rs], [hyperium]. It's often easier to find a place
-  to fit in with these subcommunities, they are in greater need of
-  help than rust-lang itself, and they are filled with experienced
-  Rust developers to guide you.
-* Help guide libraries from [rust-lang-nursery] into rust-lang proper.
-  Unfortunately there is not much documentation on what needs to be
-  done here; ask on [#rust-libs].
-* Inspect the RFC issue tracker for a [requested community
-  library][requested] and build it.
-* Watch [Github Trending][trending] for currently active Rust projects.
+* Lisez et participez aux fils de discussion hebdomadaires « *what's everyone working on this week* » sur [/r/rust] et [users.rust-lang.org]. Ceux-ci contiennent de nombreux appels à contributions pour les projets qui ont besoin d'aide.
+* Familiarisez-vous avec les meilleures bibliothèques Rust grâce à [awesome-rust] et [libs.rs].
+* Certains projets de plus grande envergure, tels que le navigateur web [Servo], la bibliothèque HTTP [hyper], le formateur de code source [rustfmt], la bibliothèque de liaisons Unix [nix] et la suite de linting [clippy] identifient les bugs destinés aux débutants avec des étiquettes 'easy'.
+* Contribuez à des organisations GitHub actives à propos de Rust : [PistonDevelopers], [servo], [redox-os], [iron], [contain-rs], [hyperium]. Il est souvent plus simple de trouver une place au sein de ces communautés qui ont souvent plus besoin d'aide que rust-lang. De nombreux développeurs Rust expérimentés sont présents parmi elles pour vous guider.
+* Aidez les bibliothèques à évoluer de [rust-lang-nursery] vers rust-lang proper. Malheureusement, la documentation à ce sujet n'est pas très prolixe, n'hésitez pas à poser vos questions sur [#rust-libs].
+* Repérez une [demande de bibliothèque émise par la communauté][requested] sur le traqueurs des RFC puis construisez cette bibliothèque.
+* Jetez un œil sur [les dépôts en vogue][trending] pour découvrir des projets Rust actifs.
 
-As a library author you will want to be aware of the [best practices
-for Rust libraries][lib-prac].
+Si vous concevez, écrivez, maintenez une bibliothèque, il est conseillé de lire [les meilleures pratiques pour les bibliothès Rust][lib-prac].
 
-Meet other Rust library designers in [#rust-libs].
+Vous pouvez discuter avec les concepteurs de la bibliothèque Rust sur [#rust-libs].
 
 <!--
 TODO: Not sure #rust-libs is the place to direct people
