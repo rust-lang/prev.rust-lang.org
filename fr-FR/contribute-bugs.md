@@ -10,7 +10,7 @@ Au quotidien, les outils utilisés pour la maintenance du projet Rust sont
 
 Les problèmes étiquetés `E-mentor` indiquent qu'un développeur Rust expérimenté s'est porté volontaire dans les commentaires afin de vous guider lors de la résolution et de [l'envoi du correctif via une *pull request* GitHub][pull]. Vous pouvez les contacter pour le problème en question via le traqueur en les [@mentionnant][@mentioning] avec leur nom dans un commentaire, sur IRC ou via email. Note : les développeurs Rust reçoivent de nombreuses notifications et peuvent en louper certaines, n'hésitez pas à les relancer si nécessaire !
 
-D'autres projets gravitants autour de Rust maintiennent des listes de tâches analogues destinées aux débutants dont : le navigateur web [Servo][Servo], la bibliothèque HTTP [hyper][hyper], le formateur de code source [rustfmt][rustfmt], la bibliothèque de liaisons Unix [nix][nix] et la suite de *linting* [clippy][clippy].
+D'autres projets gravitant autour de Rust maintiennent des listes de tâches analogues destinées aux débutants dont : le navigateur web [Servo][Servo], la bibliothèque HTTP [hyper][hyper], le formateur de code source [rustfmt][rustfmt], la bibliothèque de liaisons Unix [nix][nix] et la suite de *linting* [clippy][clippy].
 
 Bien que Rust dispose [d'une suite de tests étendue][test], il y a toujours des endroits à tester. L'étiquette [E-needstest][E-needstest] indique que les problèmes semblent résolus mais qu'aucun test n'est associé. Écrire des cas de tests est un bon exercice pour comprendre un nouveau projet et commencer à contribuer.
 
