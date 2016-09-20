@@ -1,62 +1,28 @@
 ---
 layout: default
-title: Contributing to Rust &mdash; community building &middot; The Rust Programming Language
+title: Contribuer à Rust &mdash; construire la communauté &middot; Rust, le langage de programmation
 ---
 
-# Contributing to Rust &mdash; community building
+# Contribuer à Rust &mdash; construire la communauté
 
-Help newbies, spread the word, meet interesting people. Make Rust the
-shining example of open source development that we all want it to be.
+Aidez les nouveaux arrivants, faites passer le mot, rencontrez des personnes intéressantes. Faites que Rust soit le meilleur exemple de développement *open source*, ce que nous souhaitons tous.
 
-Keep an eye on the [#rust-beginners] channel. This is where we direct
-new Rust programmers to ask for help, and it is vital when they do
-that they receive prompt, accurate, and courteous responses. Likewise,
-[Stack Overflow], [users.rust-lang.org], and [/r/rust], are all forums
-where Rust programers commonly look for assistance. If you want
-training on answering programmers' questions [read this
-guide][helpful].
+Ayez un œil sur le canal [#rust-beginners]. C'est ici que les programmeurs débutants en Rust poseront leurs questions et demanderont de l'aide. Il est vital qu'ils reçoivent des réponses rapides, précises et courtoises. De la même façon,
+[Stack Overflow], [users.rust-lang.org] et [/r/rust] sont chacuns des forums où les développeurs Rust recherchent de l'aide. Si vous souhaitez en savoir plus sur la meilleure façon de répondre aux questions des développeurs, vous pouvez [lire ce guide][helpful].
 
-If you are already experienced in some area of the project, please
-look out for potential [E-easy] bugs. When you see an
-easy issue on the bug tracker that you know how to fix, write up a
-description of the fix and tag it with E-easy. Note that what is
-obvious to you is not obvious to a new Rust contributor, and its
-important to describe the problem and the solution clearly. It is
-thus also helpful to triage E-easy bugs for poor descrptions and
-improve them.
+Si vous avez déjà une certaine expérience sur certaines parties du projet, recherchez les bugs [E-easy]. Lorsque vous repérez un problème plutôt simple à résoudre dans le traqueur et que vous savez comment le corrigez, rédigez une description du correctif et étiqueter le bug avec E-easy. Note : ce qui peut vous paraître évident n'est pas nécessairement évident pour un nouveau contributeur et il est crucial de décrire le problème, ainsi que la solution, le plus clairement possible. Vous pouvez également aider en triant les bugs E-easy afin d'améliorer ceux dont les descriptions sont modestes.
 
-Experienced developers who are patient and communicate clearly should
-consider [mentoring new contributors][mentor]. Tag easy issues with
-[E-mentor] and mention in a comment that you will mentor. Expect people
-to contact you about the issue, and attempt to respond promptly.
+Les développeurs expérimentés qui sont patients et qui aiment communiquer devraient envisager de [guider les nouveaux contributeurs][mentor]. Étiquetez les problèmes simples avec [E-mentor] et ajoutez un commentaire indiquant que vous serez un mentor pour ce problème. Attendez vous à ce que les personnes vous contactent sur ce problème et, dans la mesure du possible, essayez de répondre rapidement.
 
-Maintaining entry-level tasks is good not only for The Rust Project
-itself but all projects. If your project has a consistent supply of
-entry-level tasks you might institute such a program
-yourself. ***Curating entry-level tasks is one of the most effective
-methods of bringing new programmers into the project***. If you want
-training on mentoring new contributors [read this
-guide][mentor-guide].
+Maintenir une liste de tâches destinées aux débutants n'est pas uniquement bénéfique au projet Rust mais à tous les projets. Si vous avez une telle liste dans votre projet, vous pouvez vous-même organiser une telle méthode. ***Gérer une liste de tâches pour les débutants représente une des méthodes les plus efficaces pour accueillir des nouveaux développeurs dans un projet***. Si vous souhaitez en savoir plus pour guider les nouveaux contributeurs, vous pouvez [lire ce guide][mentor-guide].
 
-Talk about what you are working on in the weekly "what's everyone
-working on this week" threads on [/r/rust] and [users.rust-lang.org],
-and indicate what you need help with. These are great starting points
-for collaboration.
+Vous pouvez discuter de ce que vous avez réalisé cette semaine sur les fils de discussion hebdomadaires *"what's everyone working on this week"* sur [/r/rust] et [users.rust-lang.org]. C'est l'occasion d'indiquer que vous avez besoin d'aide sur quelque chose. Ces discussions sont de bons points de départs pour collaborer.
 
-Advocate Rust in your own local community. Rust [user groups] and [events]
-are a unique and exciting part of the Rust experience: there are so
-many, and they are everywhere! If you haven't been yet, go and enjoy
-new experiences. If there is nothing Rusty going on near you then
-consider organizing something. You can poll for interest and announce
-events on [/r/rust] or [users.rust-lang.org]. Contact the [community
-team] to put events on the calendar, and thus be announced on [This
-Week in Rust].
+Promouvez Rust dans votre communauté locale. Les [groupes d'utilisateurs][user groups] et les [événements][events] Rust sont des expériences uniques et formidables : il y en a tant, à tant d'endroits. Si vous n'avez encore jamais été à un tel événement, n'hésitez pas ! S'il n'y a rien à proximité à propos de Rust, vous pouvez organiser quelque chose. Afin de savoir si des personnes sont intéressées, vous pouvez annoncer des événements sur [/r/rust] ou sur [users.rust-lang.org]. Contactez [l'équipe de la communauté][community team] afin d'inscrire les événements au calendrier pour que ceux-ci soient annoncés sur [This Week in Rust].
 
-Remember as you are advocating Rust though to be considerate of
-others' views &mdash; not everybody is going to be receptive to Rust, and
-that's just fine.
+Lorsque vous promouvez Rust, soyez respectueux des autres points de vue. Certaines personnes ne verront pas d'intérêt en Rust, ce n'est pas grave.
 
-Meet other Rust community builders in [#rust-community].
+Enfin, vous pouvez rencontrez d'autres personnes motivées pour construire une communauté Rust sur le canal [#rust-community].
 
 <!--
 Other ideas:
