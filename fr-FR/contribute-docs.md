@@ -1,49 +1,20 @@
 ---
 layout: default
-title: Contributing to Rust &mdash; documentation &middot; The Rust Programming Language
+title: Contribuer à Rust &mdash; la documentation &middot; Rust, le langage de programmation
 ---
 
-# Contributing to Rust &mdash; documentation
+# Contribuer à Rust &mdash; la documentation
 
-Documentation is never good enough and there's never enough of it.
-Many aspects of Rust's documentation don't require deep knowledge to
-improve, and writing, reviewing, and editing documentation are great
-ways to learn Rust. Furthermore, improvements to documentation are
-easy to identify and limitless. Don't like the way something reads?
-Discover some information that wasn't documented?  Your pull request
-will be gleefully embraced.
+Une documentation n'est jamais parfaite et il en manque toujours. Îl n'est pas nécessaire de connaître tous les détails de Rust pour contribuer à de nombreux aspects de la documentation. Améliorer, écrire, relire ou éditer la documentation relative à Rust sont autant de moyens d'appendre Rust. De plus, les pistes d'amélioration sont faciles à identifier et nombreuses. La formulation n'est pas claire ? Quelque chose n'est pas encore documenté ? Votre *pull request* sera acceptée avec joie.
 
-***The most impactful documentation you can write is [for the crates
-that make up the Rust ecosystem][crate_docs]***. While the in-tree
-documentation is relatively complete, the same is not yet true for
-[many of the popular crates and tools][awesome-rust] that Rust
-programmers interact with every day. Contributing API documentation to
-a popular Rust project will earn you the enduring love of its maintainer.
+***La plus précieuse documentation que vous pouvez écrire concerne [les « crates » qui constituent l'écosystème Rust][crate_docs]***. Bien que la documentation sur l'arborescence du code liée à Rust soit relativement complète, ce n'est pas encore le cas pour [de nombreuses *crates* et outils][awesome-rust] que les programmeurs Rust utilisent quotidiennement. Contribuer à la documentation d'une API concernant un projet Rust populaire vous attirera vraisemblablement la meilleure sympathie de la personne maintenant ce projet.
 
-[The Book] is the primary documentation for Rust, maintained in the
-main repository. It has its own issue label, [A-book] and
-is continually being refined. Other documentation in the main
-repository include [The Rust Reference], the [standard library API
-documentation][std], [The Rustonomicon] (a guide to using `unsafe`
-correctly). The [Rust Style Guidelines] are so incomplete they are not
-linked prominently; an ambitious contributor can make much headway
-there. The [error index][err] provides extended explanations of the
-errors produced by the compiler. As new errors are added this
-documentation [must be maintained][err-issue], so there always are
-errors not reflected in the index to be added. Most in-tree
-documentation lives in the [src/doc] directory. These are all covered by
-the [A-docs] label on that issue tracker. Finally, this document
-and other website materials are maintained in the [Rust website Git repository].
-To contribute simply edit it and submit a pull request.
+[Le livre][The book] constitue la première source de documentation pour Rust. Cette documentation est maintenue dans le dépôt principal. Elle possède sa propre étiquette pour le traqueur : [A-book] et les pages de ce livre évoluent en permanence. Les autres sources de documentation du dépôt principal sont : [la référence Rust][The Rust Reference], [la documentation de l'API de la bibliothèque standard][std], [le Rustonomicon][The Rustonomicon] (un guide pour correctement utiliser `unsafe`). [Le guide stylistique][Rust Style Guidelines] est encore trop incomplet, un contributeur ambitieux pourrait sans aucun doute faire progresser ces documents. [L'index des erreurs][err] fournit de nombreuses explications sur les erreurs produites par le compilateur. De nouvelles erreurs sont ajoutées au fur et à mesure et cette documentation [doit être maintenue][err-issue]. Il y a toujours des erreurs qui doivent être ajoutées dans cet index. La plupart de la documentation réside dans le répertoire [src/doc] et les problèmes liés sont identifiés dans le traqueur par l'étiquette [A-docs]. Enfin ce document et les autres contenus du site web sont maintenus [sur le dépôt Git du site web pour Rust][Rust website Git repository]. Pour contribuer à ce site, il suffit d'éditer et de soumettre une *pull request*.
 
-A great deal of important Rust documentation does not live in the main
-repository, or is not maintained by the project, but is still
-critically important to Rust's success. Examples of excellent Rust
-documentation that is actively developed and in need of contributors
-include [Rust By Example], [Rust Design Patterns], and [rust-rosetta].
-For other existing documentation projects to contribute to see [rust-learning].
+Une bonne partie de la documentation Rust n'est pas dans le dépôt principal et n'est pas maintenue au sein de ce projet mais cette documentation est néanmoins une condition *sine qua none* du succès de Rust. Si vous cherchez d'excellents projet de documentation, actifs et qui ont besoin de contributeurs, en voici quelques uns : [Rust By Example], [Rust Design Patterns], et [rust-rosetta].
+Pour découvrir d'autres projets de documentation auxquels contribuer, vous pouvez consulter [rust-learning].
 
-Meet other Rust documentarians in [#rust-docs].
+Vous pouvez discuter avec d'autres personnes contribuant à la documentation sur le canal [#rust-docs].
 
 <!--
 TODO: blogging, translation
