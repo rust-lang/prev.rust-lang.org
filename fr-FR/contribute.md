@@ -15,10 +15,10 @@ Il existe de nombreuses façons de contribuer à la réussite de Rust. Ce guide 
 
 * [Trouver, trier et corriger les problèmes](contribute-bugs.html). Le principal travail qui permet de maintenir un projet vaste et actif comme Rust.
 * [Documenter](contribute-docs.html). Cela n'est pas uniquement limité à la documentation officielle, on peut également documenter des *crates*, écrire des billets, etc.
-* [Développer la communauté](contribute-community.html). Aidez vos collègues  Rustacéens et faites grandir la communauté Rust.
+* [Développer la communauté](contribute-community.html). Aidez vos collègues Rustacéens et faites grandir la communauté Rust.
 * [Les outils, les EDI et l'infrastructure](contribute-tools.html). Contribuez aux composants qui font qu'un langage est pratique et simple à utiliser.
 * [Les bibliothèques](contribute-libs.html). Pour réaliser différentes tâches en Rust, il est nécessaire d'avoir de nombreuses bibliothèques de bonne qualité.
-* [Le langage, le compilateur et la bibliothèque standard](contribute-compiler.html). Cela concerne la conception du langage, l'implémentation de nouvelles fonctionnalité et l'amélioration des performances.
+* [Le langage, le compilateur et la bibliothèque standard](contribute-compiler.html). Cela concerne la conception du langage, l'implémentation de nouvelles fonctionnalités et l'amélioration des performances.
 * [L'internationalization](contribute-translations.html). Faites passer le mot en traduisant le site Rust dans votre langue.
 
 Si vous avez besoin d'une aide supplémentaire, posez vos questions sur [#rust-internals] ou sur [internals.rust-lang.org].
