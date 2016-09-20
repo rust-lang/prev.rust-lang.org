@@ -9,7 +9,7 @@ Si vous souhaitez contribuer à Rust en écrivant des lignes et des lignes de Ru
 
 Il est souvent difficile de choisir quoi écrire : qu'est-ce qui sera le plus motivant ? qu'est-ce qui aura le plus grand impact ? Voici quelques idées :
 
-* Lisez et participez aux fils de discussion hebdomadaires « *what's everyone working on this week* » sur [/r/rust] et [users.rust-lang.org]. Ceux-ci contiennent de nombreux appels à contributions pour les projets qui ont besoin d'aide.
+* Abonnez-vous et participez aux fils de discussion « *what's everyone working on this week* » sur [/r/rust] et [users.rust-lang.org]. Ceux-ci contiennent de nombreux appels à contributions pour les projets qui ont besoin d'aide.
 * Familiarisez-vous avec les meilleures bibliothèques Rust grâce à [awesome-rust] et [libs.rs].
 * Certains projets de plus grande envergure, tels que le navigateur web [Servo], la bibliothèque HTTP [hyper], le formateur de code source [rustfmt], la bibliothèque de liaisons Unix [nix] et la suite de linting [clippy] identifient les bugs destinés aux débutants avec des étiquettes 'easy'.
 * Contribuez à des organisations GitHub actives à propos de Rust : [PistonDevelopers], [servo], [redox-os], [iron], [contain-rs], [hyperium]. Il est souvent plus simple de trouver une place au sein de ces communautés qui ont souvent plus besoin d'aide que rust-lang. De nombreux développeurs Rust expérimentés sont présents parmi elles pour vous guider.
