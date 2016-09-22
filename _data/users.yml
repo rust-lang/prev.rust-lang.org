@@ -73,6 +73,11 @@
   logo: beget.png
   how: "As part of backup, resource management systems and <a href='https://github.com/LTD-Beget/syncookied'>DDOS mitigation</a>"
 -
+  name: Canonical
+  url: http://www.canonical.com
+  logo: canonical.svg
+  how: "Everything from server monitoring to middleware!"
+-
   name: Coursera
   url: https://www.coursera.org
   logo: coursera.png
