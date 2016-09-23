@@ -1,31 +1,20 @@
 ---
 layout: default
-title: Rust Legal Policies &middot; The Rust Programming Language
+title: Politique juridique relative à Rust &middot; Rust, le langage de programmation
 ---
 
 # Copyright
 
 ## Code
 
-Rust's [code](https://github.com/rust-lang/rust) is primarily distributed under
-the terms of both the MIT license and the Apache License (Version 2.0), with
-portions covered by various BSD-like licenses.
-See [LICENSE-APACHE](https://github.com/rust-lang/rust/blob/master/LICENSE-APACHE),
-[LICENSE-MIT](https://github.com/rust-lang/rust/blob/master/LICENSE-MIT),
-and [COPYRIGHT](https://github.com/rust-lang/rust/blob/master/COPYRIGHT) for details.
+Le code de Rust [code](https://github.com/rust-lang/rust) est principalement distribué sous les termes des licences MIT et Apache (version 2.0). Certaines portions du code répondent à des licences de type BSD.
+Voir [LICENSE-APACHE](https://github.com/rust-lang/rust/blob/master/LICENSE-APACHE), [LICENSE-MIT](https://github.com/rust-lang/rust/blob/master/LICENSE-MIT), et [COPYRIGHT](https://github.com/rust-lang/rust/blob/master/COPYRIGHT) pour plus de détails.
 
-## Art
+## Œuvres artistiques
 
-The Rust and Cargo logos (bitmap and vector) are owned by Mozilla and
-distributed under the terms of the
-[Creative Commons Attribution license (CC-BY)](https://creativecommons.org/licenses/by/4.0/). This
-is the most permissive Creative Commons license, and allows reuse and
-modifications for any purpose. The restrictions are that distributors must "give
-appropriate credit, provide a link to the license, and indicate if changes were
-made". **Note that use of these logos, and the Rust and Cargo names, is also
-governed by trademark; our trademark policy is described below**.
+Les logos Rust et Cargo (aux formats matriciel et vectoriel) sont la propriété de Mozilla et sont distribués selon les termes de la licence [Creative Commons Attribution (CC-BY)](https://creativecommons.org/licenses/by/4.0/). Cette licence est la plus permissive des licences Creative Commons et autorise la réutilisation et les modifications pour quelque raison que ce soit. La distribution de ces œuvres doit être effectuée en « indiquant la paternité de de l'œuvre de façon appropriée, en fournissant un lien vers la licence et en indiquant si des modifications ont été appliquées ». **Note : l'utilisation de ces logos, ainsi que des noms « Rust » et « Cargo » est également régie par les droits d'utilisation des marques déposées, décrits ci-après**.
 
-Variants of the Rust logo can be found at:
+Les différentes variantes du logo Rust peuvent être trouvées aux emplacements suivants :
 
 * [rust-logo-128x128-blk.png](/logos/rust-logo-128x128-blk.png)
 * [rust-logo-128x128-blk-v2.png](/logos/rust-logo-128x128-blk-v2.png)
@@ -42,157 +31,84 @@ Variants of the Rust logo can be found at:
 * [rust-logo-64x64.png](/logos/rust-logo-64x64.png)
 * [rust-logo-blk.svg](/logos/rust-logo-blk.svg)
 
-# Trademark policy
+# Marques déposées
 
-The Rust and Cargo names and brands make it possible to say what is officially
-part of the Rust community, and what isn't. So we're careful about where we
-allow them to appear. But at the same time, we want to allow for as much
-creative use of these brands as we can. The policy laid out here explains how we
-strike a balance. If you want to use these names or brands, especially in a
-commercial way, please read this page or feel free to
-[reach out](mailto:trademark@rust-lang.org) and ask us about it!
+Les noms et marques que sont Rust et Cargo permettent d'identifier ce qui est officiellement lié à la communauté Rust et ce qui ne l'est pas. Nous portons donc une grande attention au périmètre autorisé pour leur utilisation. Ce faisant, nous souhaitons également permettre autant d'usages créatifs que possibles pour ces marques. Le règlement décrit ici explique comment nous régissons cet équilibre. Si vous souhaitez utiliser ces noms ou marques, notamment dans un cadre commercial, veuillez lire cette page ou n'hésitez pas à [nous contacter](mailto:trademark@rust-lang.org) pour nous demander !
 
-**TL;DR**: Most non-commercial uses of the Rust/Cargo names and logos are
-allowed and do not require permission; most commercial uses require
-permission. In either case, the most important rule is that uses of the
-trademarks cannot appear official or imply any endorsement by the Rust project.
+**TL;DR** : La plupart des utilisations non-commerciales pour les noms Rust/Cargo et les logos associés sont autorisées et ne nécessitent pas de permissions. La plupart des usages commerciaux nécessitent une permission. Dans les deux cas, la règle primordiale consiste à ne pas utiliser les marques de façon officielle ou tel que l'usage signifierait toute forme d'approbation de la part du projet Rust.
 
-## The Rust trademarks
+## Marques déposées relatives à Rust
 
-The Rust programming language is an open source, community project governed by a
-core team. It is also sponsored by the Mozilla Foundation ("Mozilla"), which
-owns and protects the Rust and Cargo trademarks and logos (the "Rust
-Trademarks"). This document provides information about use of the Rust
-Trademarks specific to a programming language, as well as examples of common
-ways people might want to use these trademarks, with explanations as to whether
-those uses are OK or not or require permission. This document supplements the
-[official Mozilla trademark policy](https://www.mozilla.org/foundation/trademarks/policy/)
-which governs use of all Mozilla trademarks.
+Le langage de programmation Rust est un projet *open source* et communautaire, régi par une équipe centrale. Il est également parrainé par la fondation Mozilla (« Mozilla ») qui détient et protège les marques déposées Rust et Cargo ainsi que les logos (qui constituent les marques déposées relatives à Rust). Ce document fournit les informations relatives à l'utilisation des marques déposées du projet Rust en tant que langage de programmation ainsi que des exemples de cas d'utilisation fréquents et des explications permettant de savoir si ces usages sont autorisés, nécessistent une permission ou ne sont pas autorisés. Ce document complète [le règlement officiel de Mozilla relatif aux marques déposées](https://www.mozilla.org/foundation/trademarks/policy/) qui régit l'utilisation des différentes marques déposées relatives à Mozilla.
 
-The Rust Trademarks include two word marks and two logos:
+Les marques déposées relatives à Rust s'appliquent à deux termes et à deux logos :
 
 * Rust
 * Cargo
 * <img src="https://www.rust-lang.org/logos/rust-logo-blk.svg">
 * <img src="https://www.rust-lang.org/logos/cargo.png">
 
-Trademarks are names and designs that tell the world the source of a good or
-service. Protecting trademarks for an open source project is particularly
-important. Anyone can change the source code and produce a product from that
-code, so it's important that only the original product, or variations that have
-been approved by the project, use the project's trademarks. By limiting use of
-the Rust Trademarks, Mozilla and the Rust project can help users and developers
-know they're getting the product produced by the Rust project and not someone
-else's modified version. The trademark assures users and developers of the
-quality and safety of the product they're using.
+Les marques déposées sont des noms et des œuvres qui permettent d'indiquer au public la source d'un bien ou d'un service. La protection des marques déposées est particulièrement importante pour un projet *open source*. Toute personne peut modifier le code source et produire un produit avec ce code et il est donc important que seul le produit original ou les variations ayant été approuvées puissent utiliser les marques déposées du projet. En limitant l'utilisation des marques déposées relative à Rust, Mozilla et le projet Rust permttent aux utilisateurs et aux développeurs de savoir que le produit utilisé est bien l'œuvre du projet Rust et n'est pas une version modifiée provenant d'une autre source. La marque déposée permet de garantir la qualité et la sécurite du produit aux utilisateurs et aux développeurs.
 
-## Using the trademarks
+## Utilisation des marques déposées
 
-### Appearing official, affiliated, or endorsed
+### Apparence officielle, affiliée ou approuvée
 
-The most basic rule is that the Rust trademarks cannot be used in ways that
-appear (to a casual observer) official, affiliated, or endorsed by the Rust
-project or Mozilla, unless you have written permission from the Rust core team.
-This is the fundamental way we protect users and developers from confusion.
+La règle primordiale qui s'applique aux marques déposées relatives à Rust est la suivante : elles ne peuvent être utilisées de façons qui paraissent officielle, affiliée ou approvée par le projet Rust ou par Mozilla sans qu'il y ait eu de permission écrite de la part de l'équipe centrale du projet Rust. C'est la méthode essentielle qui nous permet de protéger les utilisateurs et les développeurs d'une confusion quelconque.
 
-Since this rule is about managing perception, it is subjective and somewhat
-difficult to nail down concretely. There are some obvious ways to avoid
-problems, like including the word "unofficial" in a very prominent way, but if
-you have any doubts, we would be more than happy to help; just send mail to
-[trademark@rust-lang.org](mailto:trademark@rust-lang.org).
+Étant donné que cette règle s'appuie sur la perception du public, elle est subjective et difficile à retranscrire concrètement. Il existe de nombreuses façon d'éviter toute ambiguïté, en ajoutant par exemple « non-officiel » de façon visible. En cas de doute, nous serions ravis de pouvoir vous aider, il vous suffit de nous écrire à [trademark@rust-lang.org](mailto:trademark@rust-lang.org).
 
-### The basics: referring to Rust/Cargo
+### Les règles de base : utiliser les termes Rust ou Cargo
 
-As with any trademark, the Rust and Cargo word marks can be used with minimal
-restriction to refer to the Rust programming language and the Cargo package
-manager and registry.
+Comme pour tout autre marque, les termes Rust et Cargo peuvent être utilisés avec peu de restrictions lorsqu'il s'agit de faire référence au langage de programmation Rust ou au système de gestion des paquets Cargo et au registre associé.
 
-They may not be used:
+Ces termes ne peuvent pas être utilisés dans les cas suivants :
 
-- to refer to any other programming language;
-- in a way that is misleading or may imply association of unrelated modules,
-  tools, documentation, or other resources with the Rust programming language;
-- in ways that confuse the community as to whether the Rust programming language
-  is open source and free to use.
+- afin de faire référence à tout autre langage de programmation ;
+- de quelque façon qui soit trompeuse ou qui implique une association avec des modules, des outils, de la documentation ou toute autre ressource sans lien avec le langage de programmation Rust ;
+- de quelque façon qui soit source de confusion envers la communauté quant au caractère *open source* et libre d'utilisation du langage de programmation Rust.
 
-### Uses that do not require explicit approval
+### Cas d'utilisation qui ne nécessitent pas d'approbation explicite
 
-There are a variety of uses that do not require explicit approval. **However, in all of the cases outlined below, you must ensure that use of the Rust trademarks does not appear official, as explained above.**
+Plusieurs cas d'utilisation ne nécessitent pas d'approbation explicite. **Cependant, pour tous les cas énumérés ci-après, vous devez vous assurer que les marques déposées relatives à Rust ne sont pas utilisées de façon officielle tel que décrit ci-avant.**
 
-* Stating accurately that software is written in the Rust programming language,
-that it is compatible with the Rust programming language, or that it contains
-the Rust programming language, is allowed. In those cases, you may use
-the Rust trademarks to indicate this, without prior approval. This is true both
-for non-commercial and commercial uses.
+* Indiquer clairement qu'un logiciel est écrit avec le langage de programmation Rust, est compatible avec le langage de programmation Rust, contient le langage de programmation Rust est autorisé. Dans ces cas de figure, vous pouvez utiliser les marques déposées Rust afin d'indiquer ce caractère, sans approbation préalable. Cela vaut à la fois pour les usages non-commerciaux et pour les usages commerciaux.
 
-* Using the Rust trademarks in the names of non-commercial products like
-RustPostgres or Rustymine, or in the name of code repositories in e.g. GitHub,
-is allowed when referring to use with or suitability for the Rust
-programming language. Such uses may also include the Rust logo, even in modified
-form. For commercial products (including crowdfunded or sponsored ones), please
-check in at [trademark@rust-lang.org](mailto:trademark@rust-lang.org) to ensure your
-use does not appear official.
+* Utiliser les marques déposées Rust en les intégrant dans des noms de produits non-commerciaux tels que RustPostgres or Rustymine ou dans les noms de dépôts logiciels (par exemple sur GitHub) est autorisé lorsque le produit est destiné à être utilisé avec le langage de programmation Rust ou qu'il est compatible avec celui-ci. Dans le cadre de tels usages, il est également permis d'utiliser le logo Rust, y compris dans une forme modifiée. Pour les produits commerciaux (ce qui inclut les produits sponsorisés ou réalisés avec un financement participatif), veuillez nous contacter [trademark@rust-lang.org](mailto:trademark@rust-lang.org) afin de vérifier l'utilisation des éléments de la marque.
 
-* Using the Rust trademarks on t-shirts, hats, and other artwork or merchandise,
-even in modified form, is allowed for your personal use or for use by a
-small group of community members, as long as they are not sold. If you want to
-distribute merchandise with Rust Trademarks at a Rust affiliated event, please
-contact us for permission at [trademark@rust-lang.org](mailto:trademark@rust-lang.org).
+* Utiliser les marques déposées Rust sur des t-shirts, casquettes ou sur tout autre support, y compris dans une forme modifiée, est autorisée dans le cadre d'une autorisation personnelle et dans le cadre d'une communauté restreinte tant que ces supports ne sont pas vendus. Si vous souhaitez distribuer des produits utilisant les marques déposées Rust lors d'un événement en lien avec Rust, veuillez nous contacter pour en obtenir la permission : [trademark@rust-lang.org](mailto:trademark@rust-lang.org).
 
-* Using the Rust trademarks (even in modified form) for social events like
-meetups, tutorials, and the like is allowed for events that are free to attend. For commercial events (including sponsored ones), please check in at [trademark@rust-lang.org](mailto:trademark@rust-lang.org). However, the words "RustCamp", "RustCon" or
-"RustConf" cannot be used without explicit permission. And, as with all of the
-above uses, the **event cannot appear to be officially endorsed or run by the Rust project** without written permission.
+* Utiliser les marques déposées Rust (y compris dans une forme modifiée) dans le cadre d'événements sociaux tels que des *meetups* ou autres est autorisé lorsque l'entrée est gratuite. Pour les événements commerciaux, y compris les événements sponsorisés, veuillez nous contacter [trademark@rust-lang.org](mailto:trademark@rust-lang.org). Les termes « RustCamp », « RustCon » et
+« RustConf » ne peuvent être employés sans autorisation explicite. À l'instar des cas d'utilisation précédents, **l'événement ne peut sembler être organisé ou soutenu officiellement par le projet Rust** sans autorisation écrite.
 
-* Using the Rust trademarks in books or publications like "Rust Journal" or
-"Rust Cookbook" is allowed.
+* Utiliser les marques déposées Rust dans des livres ou publications telles que *Rust Journal* ou *Rust Cookbook* est autorisé.
 
-* Using of the word "Rust" on websites, brochures, documentation, academic
-papers, books, and product packaging to refer to the Rust programming language
-or the Rust project is allowed.
+* Utiliser le terme « Rust » sur des sites web, des brochures, de la documentation, des articles académiques, des livres et des emballages de produit en faisant référence au langage de programmation Rust ou au projet Rust est autorisé.
 
-### Uses that require explicit approval
+### Cas d'utilisation qui nécessitent une approbation explicite
 
-* Distributing a modified version of the Rust programming language or the Cargo
-package manager and calling it Rust or Cargo requires explicit, written
-permission from the Rust core team. We will usually allow these uses as long as
-the modifications are (1) relatively small and (2) very clearly communicated to
-end-users.
+* Distribuer une version modifiée du langage de programmation Rust ou du système de gestion des paquets et l'intituler Rust ou Cargo nécessite une autorisation explicite de la part de l'équipe centrale du projet Rust. Nous autoriserons généralement ces cas d'utilisation sous réserve de deux conditions : (1) que les modifications soit relativement mineures et (2) qu'elles soient clairement communiquées aux utilisateurs finaux.
 
-* Selling t-shirts, hats, and other artwork or merchandise requires explicit,
-written permission from the Rust core team. We will usually allow these uses as
-long as (1) it is clearly communicated that the merchandise is not in any way an
-official part of the Rust project and (2) it is clearly communicated whether
-profits benefit the Rust project.
+* Vendre des t-shirts, chapeaux ou toute autre œuvre nécessite la permission écrite explicite de la part de l'équipe centrale du projet Rust. Nous autoriserons généralements ces cas d'utilisation sous réserve de deux conditions : (1) communiquer clairement que la marchandise ne fait aucunement partie officielle du projet Rust et (2) indiquer clairement si les bénéfices tirés de la vente contribueront au projet Rust.
 
-* Using the Rust trademarks within another trademark requires written permission
-from the Rust core team except as described above.
+* Utiliser les marques déposées Rust au sein d'une autre marque requiert la permission écrite de l'équipe centrale du projet Rust, exception faite des cas présentés ci-avant.
 
 ## Notes
 
-If you have any doubts about whether your intended use of a Rust Trademark
-requires permission, please contact us at
-[trademark@rust-lang.org](mailto:trademark@rust-lang.org).
+Si vous avez un doute quant à votre cas d'utilisation et afin de savoir si celui-ci nécessite une quelconque permission, veuillez-nous contacter à [trademark@rust-lang.org](mailto:trademark@rust-lang.org).
 
-This document was derived in part from the
-[Python Software Foundation Trademark Usage Policy](https://www.python.org/psf/trademarks/).
+Ce document a été adapté à partir [du règlement d'utilisation des marques déposées de la Python Software Foundation](https://www.python.org/psf/trademarks/).
 
-This document is not an official statement of Mozilla trademark policy, but
-serves to clarify Mozilla's trademark policy as it relates to Rust.
+Ce document ne constitue pas une déclaration officielle quant au règlement d'utilisation des marques déposées de Mozilla mais a pour but de clarifier les règles d'utilisation des marques déposées relatives à Rust au sein de Mozilla.
 
-## Helping Out
+## Contribuer
 
-As a member of the Rust community, please keep an eye out for questionable uses
-of the Rust logo and "Rust" word mark. You can report potential misuse to
-[trademark@rust-lang.org](mailto:trademark@rust-lang.org). We will evaluate each case
-and take appropriate action.
+En tant que membre de la communauté Rust, soyez attentif aux utilisations douteuses du logo Rust et du terme « Rust ». Vous pouvez rapporter les éventuels abus d'utilisation à [trademark@rust-lang.org](mailto:trademark@rust-lang.org). Nous évaluerons chacun des cas et entreprendront les actions nécessaires.
 
-Please do not approach users of the trademarks with a complaint. That should be
-left to Mozilla and its representatives.
+Veuillez ne pas envoyer de plaintes envers les entités qui utilisent ces marques. Ces actions doivent être entreprises par Mozilla et ses représentants.
 
-Thanks!
+Merci !
 
-## License
+## Licence
 
-Interested parties may adapt this document freely under the
-[Creative Commons CC0 license](https://creativecommons.org/publicdomain/zero/1.0/).
+Ce document peut être librement adapté selon les termes de la [licence Creative Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/).
