@@ -1,9 +1,10 @@
 ---
 layout: default
-title: The Rust Team &middot; The Rust Programming Language
+title: L'équipe Rust &middot; Rust, le langage de programmation
 
-# map from GH username to name & irc nick (irc nick can be omitted if it
-# matches GH).
+# Correspondance entre les noms d'utilisateur GitHub, les noms
+# et les pseudonymes IRC (les pseudonymes IRC peuvent être omis
+# lorsqu'ils correspondent aux noms d'utilisateurs GitHub).
 people:
   aatch:
     name: James Miller
@@ -95,44 +96,45 @@ people:
   booyaa:
     name: Mark Sta Ana
 
-# Information about each team. Omit `lead` for teams without leaders.
+# Informations à propos de chaque équipe. On omettra `lead` pour les
+# équipes sans responsable.
 teams:
-  - name: Core team
-    responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
+  - name: Équipe principale
+    responsibility: "direction générale du projet, gestion des différentes équipes, sujets transverses"
     members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, pcwalton, erickt]
-  - name: Language design team
-    responsibility: "designing new language features"
+  - name: Équipe de conception du langage
+    responsibility: "concevoir les nouvelles fonctionnalités du langage"
     members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon]
     lead: nikomatsakis
-  - name: Library team
-    responsibility: "the Rust standard library, rust-lang crates, conventions"
+  - name: Équipe pour la bibliothèque
+    responsibility: "la bibliothèque standard de Rust, les *crates* rust-lang et les conventions"
     members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, aturon]
     lead: aturon
-  - name: Compiler team
-    responsibility: "compiler internals, optimizations"
+  - name: Équipe du compilateur
+    responsibility: "le fonctionnement interne du compilateur et les optimisations"
     members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister, jseyfried]
     lead: nikomatsakis
-  - name: Tooling and infrastructure
-    responsibility: "tool support (e.g. Cargo, rustup), CI infrastructure, etc."
+  - name: Outils et infrastructure
+    responsibility: "prise en charge des outils (ex. Cargo, rustup), infrastructure d'intégration continue, etc."
     members: [brson, nrc, alexcrichton, vadimcn, wycats, michaelwoerister]
     lead: alexcrichton
-  - name: Community team
-    responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
+  - name: Équipe pour la communauté
+    responsibility: "coordinations d'événements, rayonnement du projet, utilisateurs commerciaux, outils pédagogiques et publicité du projet"
     lead: erickt
     members: [brson, skade, manishearth, johannhof, steveklabnik, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, edunham]
-    email: community-team [at] rust-lang [dot] org
-  - name: Documentation team
-    responsibility: "ensuring Rust has fantastic documentation"
+    email: community-team@rust-lang.org
+  - name: Équipe de documentation
+    responsibility: "s'assurer que Rust dispose d'une documentation fantastique"
     members: [steveklabnik, GuillaumeGomez, jonathandturner, peschkaj]
-  - name: Moderation team
-    responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
+  - name: Équipe de modération
+    responsibility: "s'assurer de la bonne tenue du <a href='https://www.rust-lang.org/conduct.html'>code de conduite</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
-    email: rust-mods [at] rust-lang [dot] org
-  - name: Rust team alumni
-    responsibility: "enjoying a leisurely retirement"
+    email: rust-mods@rust-lang.org
+  - name: Équipe des anciens
+    responsibility: "profiter d'une retraite paisible"
     members: [Gankro, huonw]
 
-# Information on sites to get profile information from
+# Les sites sur lesquels obtenir les informations
 sites:
   github:
     url: https://github.com/%nick
@@ -179,23 +181,17 @@ sites:
 }
 </style>
 
-# The Rust Team
+# L'équipe Rust
 
-The Rust project is
-[governed](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)
-by a number of teams, each focused on a specific area of concern. Below are
-the rosters, in alphabetical order.
+Le projet Rust est [gouverné](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md) par différentes équipes dont chacune est consacrée à un périmètre spécifique. La liste de ces équipes est détaillée ci-après.
 
-To contact a team, post your question or comment to [the Internals
-forum](https://internals.rust-lang.org/) and tag your post with the category
-corresponding to the team name. Note that security disclosures should follow
-the [Rust security disclosure process](security.html). 
+Afin de contacter une équipe, vous pouvez poser votre question ou commenter sur [les forums internes](https://internals.rust-lang.org/) et étiqueter votre billet avec la catégorie correspondant à l'équipe. Note : les divulgations relatives aux problèmes de sécurité doivent respecter [le processus de divulgation du projet Rust quant aux problèmes de sécurité](security.html). 
 
 {% for team in page.teams %}
 <section id="{{ team.name | replace:' ','-' }}">
 <h2> {{ team.name }} </h2>
 
-<strong>Responsibility</strong>: <em>{{ team.responsibility }}</em>
+<strong>Responsabilité</strong> : <em>{{ team.responsibility }}</em>
 
 <br />
 
@@ -217,9 +213,9 @@ the [Rust security disclosure process](security.html).
   <a href="{{ site.url | replace:'%nick',nick }}">
     <div class="name">{{ person.name }}</div>
     <div class="details">
-      <div>irc: {% if person.irc %}{{ person.irc }}{% else %}{{ nick }}{% endif %}</div>
+      <div>irc : {% if person.irc %}{{ person.irc }}{% else %}{{ nick }}{% endif %}</div>
       {% if person.ex-teams %}
-      <div>teams: {{ person.ex-teams | join: ", " }}</div>
+      <div>équipes : {{ person.ex-teams | join: ", " }}</div>
       {% endif %}
     </div>
     <img class="headshot" src="{{ site.avatar | replace:'%nick',nick }}" alt="{{ person.name }}">
