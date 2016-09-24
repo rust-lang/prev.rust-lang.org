@@ -54,6 +54,8 @@ even better, open a pull request against
 
 [Rust Meetup Hamburg](https://www.meetup.com/Rust-Meetup-Hamburg/), Hamburg.
 
+[Rust - Modern Systems Programming Leipzig](https://www.meetup.com/de-DE/Rust-Modern-Systems-Programming-in-Leipzig/), Leipzig.
+
 [Rust Munich](https://www.meetup.com/rust-munich/), München.
 
 ## India
