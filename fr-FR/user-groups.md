@@ -1,32 +1,29 @@
 ---
 layout: default
-title: Rust User Groups &middot; The Rust Programming Language
+title: Groupe d'utilisateurs Rust &middot; The Rust Programming Language
 ---
 
 # Rust User Groups
+Dans le monde entier, il existe plus 50 groupes d'utilisateurs Rust représentant 
+quelques 7000 membres répartis dans plus de 20 pays. Les "Rustaceans" se retrouvant 
+périodiquement dans ces groupes d'utilisateur. C'est une bonne introduction pour se 
+faire connaitre de la communauté et un excellent moyen d'apprendre et de se rapprocher 
+auprés d'autres personnes ayant le même cente d'ntérêt. Les rencontres sont généralement 
+informelles et ouvertes à tout le monde. Si vous avez créé un nouveau groupe d'utilisateurs, afin de l'ajouter à
+cette liste, merci de contacter: [Rust Community Team](./team.html#Community) ou, encore 
+mieux, de créer une Pull Request sur cette [forge GitHub](https://github.com/rust-lang/rust-www/blob/master/user-groups.md).
 
-There are more than 50 Rust User Groups worldwide in over 20 countries
-with over 7,000 members. Rustaceans meet periodically in Rust User
-Groups.  Its a great introduction to the community and a great way to
-learn and socialize with other people with a similar interest.
-Meetings are usually informal and open to
-everyone. If you have started a new user group and with to add it to
-this list, please contact the [Rust Community
-Team](./team.html#Community) or
-even better, open a pull request against
-[this website](https://github.com/rust-lang/rust-www/blob/master/user-groups.md).
-
-## Australia
+## Australie
 
 [Rust Melbourne](https://www.meetup.com/Rust-Melbourne/), Melbourne.
 
 [Rust Sydney](https://www.meetup.com/Rust-Sydney/), Sydney.
 
-## Austria
+## Autriche
 
 [Klagenfurt Rust Programmers](https://www.meetup.com/Klagenfurt-Rust/), Klagenfurt.
 
-## Brazil
+## Brésil
 
 [Rust São Paulo](https://www.meetup.com/Rust-Sao-Paulo-Meetup/), São Paulo.
 
@@ -42,35 +39,35 @@ even better, open a pull request against
 
 [Rust Paris](https://www.meetup.com/Rust-Paris/), Paris.
 
-## Germany
+## Allemagne
 
-[Rust Cologne/Bonn User Group](https://www.meetup.com/Rust-Cologne-Bonn/), Köln.
+[Rust Cologne/Bonn User Group](https://www.meetup.com/Rust-Cologne-Bonn/), Cologne/Born.
 
 [Rust Berlin](https://www.meetup.com/Rust-Berlin/), Berlin.
 
-[Rust Meetup Hamburg](https://www.meetup.com/Rust-Meetup-Hamburg/), Hamburg.
+[Rust Meetup Hamburg](https://www.meetup.com/Rust-Meetup-Hamburg/), Hambourg.
 
-[Rust Munich](https://www.meetup.com/rust-munich/), München.
+[Rust Munich](https://www.meetup.com/rust-munich/), Munich.
 
-## India
+## Inde
 
 [Hyderabad Rust Meetup](https://www.meetup.com/Hyderabad-Rust-Meetup/), Hyderabad.
 
 [Rust Group Bangalore](https://www.facebook.com/groups/RustBLR/1579069959026339/), Bangalore.
 
-## Indonesia
+## Indonésie
 
 [Lambda Jakarta](https://www.meetup.com/Lambda-Jakarta/), Jakarta.
 
-## Ireland
+## Irlande
 
 [Rust Dublin](https://www.meetup.com/Rust-Dublin/), Dublin.
 
-## Italy
+## Italie
 
-[Rust lang Milano](https://www.meetup.com/Rust-lang-Milano/), Milano.
+[Rust lang Milano](https://www.meetup.com/Rust-lang-Milano/), Milan.
 
-## Japan
+## Japon
 
 [Tokyo Rust](https://www.meetup.com/Tokyo-Rust-Meetup/), Tokyo.
 
@@ -80,65 +77,65 @@ even better, open a pull request against
 
 [Akasaka Rust](https://akasaka-rust.doorkeeper.jp/), Akasaka, Tokyo.
 
-## Mexico
+## Mexique
 
 [Rust Lang Comunidad Mexico](https://www.meetup.com/rustlangmx/), Guadalajara.
 
-[Rust MX](https://www.meetup.com/Rust-MX/), Mexico city.
+[Rust MX](https://www.meetup.com/Rust-MX/), Mexico.
 
-## Netherlands
+## Pays-Bas
 
 [Rust Amsterdam](https://www.meetup.com/Rust-Amsterdam/), Amsterdam.
 
-## New Zealand
+## Nouvelle Zélande
 
 [Wellington Rust Meetup](https://www.meetup.com/Wellington-Rust-Meetup/), Wellington.
 
 ## Phillipines
 
-[Rust Philippines](http://www.rustph.tech), Manila.
+[Rust Philippines](http://www.rustph.tech), Manille.
 
 [Cebu Rust Camp](https://www.meetup.com/Cebu-Rust-Camp/), Cebu.
 
-## Poland
+## Pologne
 
-[Rust Warsaw](https://www.meetup.com/Rust-Warsaw/), Warsaw.
+[Rust Warsaw](https://www.meetup.com/Rust-Warsaw/), Varsovie.
 
-## Russia
+## Russie
 
-[Rust in Moscow](https://www.meetup.com/Rust-%D0%B2-%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B5/), Moscow.
+[Rust in Moscow](https://www.meetup.com/Rust-%D0%B2-%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B5/), Moscou.
 
-## Singapore
+## Singapour
 
-[Singapore Rust Meetup](https://www.meetup.com/Singapore-Rust-Meetup/), Singapore.
+[Singapore Rust Meetup](https://www.meetup.com/Singapore-Rust-Meetup/), Singapour.
 
-## Spain
+## L'Espagne
 
 [Rust Madrid](https://www.meetup.com/Rust-Madrid/), Madrid.
 
-[Rust Barcelona](https://www.meetup.com/Rust-Barcelona/), Barcelona.
+[Rust Barcelona](https://www.meetup.com/Rust-Barcelona/), Barcelone.
 
-## South Korea
+## Corée du Sud
 
-[Rust Seoul](https://www.meetup.com/Rust-Seoul/), Seoul.
+[Rust Seoul](https://www.meetup.com/Rust-Seoul/), Séoul.
 
-## Sweden
+## Suède
 
 [Rust Skåne](https://www.meetup.com/rust-skane/), Lund.
 
-## Switzerland
+## Suisse
 
 [Rust Romandie](https://www.meetup.com/rust-romandie/), Genève.
 
 [Rust Zurich](https://www.meetup.com/Rust-Zurich/), Zürich.
 
-## Taiwan
+## Taïwan
 
 [RUST.TW](https://www.meetup.com/RUST-TW/), Taipei
 
-## UK
+## Royaume Uni
 
-[Rust London User Group](https://www.meetup.com/Rust-London-User-Group/), London.
+[Rust London User Group](https://www.meetup.com/Rust-London-User-Group/), Londres.
 
 [Rust Belfast User Group](https://www.meetup.com/Rust-Belfast-Meetup/), Belfast.
 
@@ -146,7 +143,7 @@ even better, open a pull request against
 
 [Rust Montevideo](https://www.meetup.com/Rust-Montevideo/), Montevideo.
 
-## USA
+## Etats Unis
 
 [The Austin Rust Meetup](https://www.meetup.com/Austin-Rust-Meetup/), Austin.
 
