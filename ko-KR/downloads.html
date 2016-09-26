@@ -9,7 +9,7 @@ title: 다운로드 &middot; Rust 프로그래밍 언어
     <div class="row install">
       <div class="col-md-4 side-header">
         <h2 id="stable">{{ site.stable }}&nbsp;</h2>
-        <h3>{{ site.stable_date }}</h3>
+        <h3>{{ site.stable_date | date: "%Y년 %-m월 %-d일" }}</h3>
         <p>
           <a href="http://blog.rust-lang.org{{ site.stable_blog }}">
             Rust의 현재 안정 버전</a>입니다.
@@ -63,7 +63,7 @@ title: 다운로드 &middot; Rust 프로그래밍 언어
         다음 안정 버전의 맛보기 판으로, 크레이트 개발자가 테스트하는 데 쓰입니다.
         6주마다 및 필요에 따라 갱신됩니다.
         </p>
-        <p><em><br/>{{ site.beta_date }}</em>에 안정 버전으로 승격될 예정<p>
+        <p><em><br/>{{ site.beta_date | date: "%Y년 %-m월 %-d일" }}</em>에 안정 버전으로 승격될 예정<p>
       </div>
       <div class="col-md-8">
         <table class="table-features table-installers"><tbody>

@@ -105,7 +105,7 @@ teams:
     members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon]
     lead: nikomatsakis
   - name: 라이브러리 팀
-    responsibility: "Rust 표준 라이브러리, rust-lang 크레이트들, 코딩 규칙들"
+    responsibility: "Rust 표준 라이브러리, rust-lang 크레이트들, 코딩 규약들"
     members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, aturon]
     lead: aturon
   - name: 컴파일러 팀

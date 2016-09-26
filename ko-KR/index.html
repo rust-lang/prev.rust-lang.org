@@ -18,9 +18,13 @@ title: Rust 프로그래밍 언어
       <div class="col-md-4 install-box">
         <span class="version-rec-box-inner">
           권장 버전:<br>
-          <span id="install-version">
+          <span id="install-version"
+                data-type-linux="Linux 실행파일"
+                data-type-windows="Windows 인스톨러"
+                data-type-mac="macOS 인스톨러"
+                data-type-source="소스 코드">
             {{ site.stable }}
-            (<span>소스코드</span>)
+            (<span>소스 코드</span>)
           </span>
         </span>
         <a class="btn btn-primary" id="inst-link"
@@ -48,7 +52,7 @@ title: Rust 프로그래밍 언어
         <div id="active-code">
           <button type="button" class="btn btn-primary btn-sm" id="run-code">실행</button>
           <div id="editor">{% include ko-KR/example.rs %}</div>
-          <div id="result">
+          <div id="result" data-msg-running="실행 중...">
             <a id="playlink"><i class="icon-link-ext"></i></a>
           </div>
         </div>
