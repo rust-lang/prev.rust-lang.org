@@ -78,6 +78,11 @@
   logo: canonical.svg
   how: "Everything from server monitoring to middleware!"
 -
+  name: Ceph
+  url: http://ceph.com
+  logo: ceph.png
+  how: "Rust <a href='https://github.com/ceph/ceph-rust'>bindings for librbd</a>, an interface into the Ceph storage platform."
+-
   name: Coursera
   url: https://www.coursera.org
   logo: coursera.png
