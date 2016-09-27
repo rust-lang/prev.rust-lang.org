@@ -1057,7 +1057,7 @@ Rust에서 명령행 인자를 받는 방법은 무엇인가요?
 Rust에는 왜 예외(exception)가 없나요?
 </a></h3>
 
-예외는 제어 흐름을 이해하기 복잡하게 만들고, 타입 시스템을 넘어서는 유효성/무효성을 표현하며, (Rust의 주요 촛점인) 멀티스레딩된 코드와 잘 상호 작용하지 않습니다.
+예외는 제어 흐름을 이해하기 복잡하게 만들고, 타입 시스템을 넘어서는 유효성/무효성을 표현하며, (Rust의 주요 촛점인) 멀티스레딩된 코드와 잘 상호작용하지 않습니다.
 
 Rust는 오류 처리에 타입 기반의 접근을 선호하며, [《Rust 프로그래밍 언어》에서 길게 다루고 있습니다](https://doc.rust-lang.org/stable/book/error-handling.html).
 이는 Rust의 제어 흐름, 동시성 및 여타 다른 것들에 더 잘 맞아 들어 갑니다.
@@ -1275,10 +1275,11 @@ Rust 컴파일러가 제가 <code>use</code>한 라이브러리를 찾지 못 �
 왜 모듈 파일을 정의하기 위해 크레이트 최상위에 <code>mod</code>를 넣어야 하나요? 그냥 <code>use</code>로 지정하면 안 되나요?
 </a></h3>
 
-There are two ways to declare modules in Rust, inline or in another file. Here is an example of each:
+Rust에서 모듈은 제자리에 선언하거나 다른 파일에서 선언할 수 있습니다.
+각각의 예제는 다음과 같습니다:
 
 ```rust
-// In main.rs
+// main.rs에서
 mod hello {
     pub fn f() {
         println!("hello!");
@@ -1291,22 +1292,24 @@ fn main() {
 ```
 
 ```rust
-// In main.rs
+// main.rs에서
 mod hello;
 
 fn main() {
     hello::f();
 }
 
-// In hello.rs
+// hello.rs에서
 pub fn f() {
     println!("hello!");
 }
 ```
 
-In the first example, the module is defined in the same file it's used. In the second example, the module declaration in the main file tells the compiler to look for either `hello.rs` or `hello/mod.rs`, and to load that file.
+첫 예제에서 모듈은 모듈이 사용되는 곳과 같은 파일에 정의되어 있습니다.
+둘째 예제에서 메인 파일의 모듈 선언은 컴파일러에게 `hello.rs`나 `hello/mod.rs`를 찾아 보고 그 파일을 읽으라고 말해 줍니다.
 
-Note the difference between `mod` and `use`: `mod` declares that a module exists, whereas `use` references a module declared elsewhere, bringing its contents into scope within the current module.
+`mod`와 `use`의 차이를 주목하세요.
+`mod`는 모듈이 존재한다고 선언하지만, `use`는 다른 곳에 선언된 모듈을 참조하여 그 내용물을 현재 모듈의 범위 안에 가져 옵니다.
 
 <h3><a href="#how-do-i-configure-cargo-to-use-a-proxy" name="how-do-i-configure-cargo-to-use-a-proxy">
 Cargo가 프록시를 사용하도록 설정하려면 어떻게 하나요?
@@ -1318,30 +1321,36 @@ Cargo [환경설정 문서](http://doc.crates.io/config.html)에 설명되어 �
 이미 크레이트를 <code>use</code>했는데도 왜 컴파일러가 메소드 구현을 찾지 못 하는 걸까요?
 </a></h3>
 
-For methods defined on a trait, you have to explicitly import the trait declaration. This means it's not enough to import a module where a struct implements the trait, you must also import the trait itself.
+트레이트에 선언된 메소드라면 명시적으로 트레이트 선언을 들여 와야 합니다.
+즉, 트레이트를 구현하는 구조체가 있는 모듈만 들이는 것으로 충분하지 않고, 트레이트 자신도 들여 와야 합니다.
 
 <h3><a href="#why-cant-the-compiler-infer-use-statements" name="why-cant-the-compiler-infer-use-statements">
 왜 컴파일러가 <code>use</code> 선언을 자동으로 추론하지 못 하나요?
 </a></h3>
 
-It probably could, but you also don't want it to. While in many cases it is likely that the compiler could determine the correct module to import by simply looking for where a given identifier is defined, this may not be the case in general. Any decision rule in `rustc` for choosing between competing options would likely cause surprise and confusion in some cases, and Rust prefers to be explicit about where names are coming from.
+가능할 수도 있겠지만 별로 원하는 게 아닐 겁니다.
+많은 경우 컴파일러가 단순히 주어진 식별자가 선언된 곳을 찾아 보면서 올바른 모듈을 찾아 들여 내는 것이 가능하겠지만, 일반적으로는 아닐 수 있습니다.
+서로 겨루는 선택지가 여럿 있다면 `rustc`에서 어떤 식으로 결정을 하든 일부 경우에 놀라움과 혼란을 가져올 것이고, Rust는 이름이 어디에서 오는지를 명시적으로 쓰길 선호합니다.
 
-For example, the compiler could say that in the case of competing identifier definitions the definition from the earliest imported module is chosen. So if both module `foo` and module `bar` define the identifier `baz`, but `foo` is the first registered module, the compiler would insert `use foo::baz;`.
+예를 들어 컴파일러가 서로 겨루는 식별자 선언들 중 먼저 들여 온 모듈에서 나온 선언을 선택한다고 칩시다.
+그러니까 만약 모듈 `foo`와 모듈 `bar`가 둘 다 식별자 `baz`를 정의하고, `foo`가 먼저 등록된 모듈이라면, 컴파일러는 `use foo::baz;`를 삽입하게 됩니다.
 
 ```rust
 mod foo;
 mod bar;
 
-// use foo::baz  // to be inserted by the compiler.
+// use foo::baz  // 이걸 컴파일러가 삽입합니다.
 
 fn main() {
   baz();
 }
 ```
 
-If you know this is going to happen, perhaps it saves a small number of keystrokes, but it also greatly increases the possibility for surprising error messages when you actually meant for `baz()` to be `bar::baz()`, and it decreases the readability of the code by making the meaning of a function call dependent on module declaration. These are not tradeoffs we are willing to make.
+이게 일어난다는 걸 알고 있다면 아마도 몇 글자 절약이 되기는 하겠지만, `baz()`가 사실 `bar::baz()`이 되길 원했다면 예기치 않은 오류 메시지가 나올 가능성이 크게 올라가며, 함수 호출의 의미가 모듈 선언에 의존하므로 코드의 가독성이 떨어집니다.
+이는 우리가 원하는 트레이드오프가 아닙니다.
 
-However, in the future, an IDE could help manage declarations, which gives you the best of both worlds: machine assistance for pulling in names, but explicit declarations about where those names are coming from.
+다만, 미래에는 IDE가 선언들을 다루는 걸 도와줄 수 있으며 그럼 두 접근의 장점을 모두 얻게 될 겁니다.
+기계가 이름을 가져 오는 걸 돕지만 그 이름이 어디서 오는지는 명시적인 선언을 쓰는 거죠.
 
 <!--
 ### How do I package and archive crates from [https://crates.io](https://crates.io)?
@@ -1437,27 +1446,34 @@ Rust는 여러 패러다임을 지원합니다.
 선택 인자가 있는 구조체를 설정하는 인터페이스를 어떻게 만들어야 할까요?
 </a></h3>
 
-The easiest way is to use the [`Option`][Option] type in whatever function you're using to construct instances of the struct (usually `new()`). Another way is to use the [builder pattern](https://aturon.github.io/ownership/builders.html), where only certain functions instantiating member variables must be called before the construction of the built type.
+가장 쉬운 방법은 구조체 인스턴스를 생성하는 어떤 함수에든 (보통 `new()`에) [`Option`][Option] 타입을 쓰는 겁니다.
+또 다른 방법은 [빌더(builder) 패턴](https://aturon.github.io/ownership/builders.html)을 써서, 타입을 생성하기 전에 멤버 변수를 인스턴스화하는 특정 함수들을 호출해야 하도록 하는 것입니다.
 
 <h3><a href="#how-do-i-do-global-variables" name="how-do-i-do-global-variables">
 Rust에서 전역 변수를 쓰려면 어떻게 하죠?
 </a></h3>
 
-Globals in Rust can be done using `const` declarations for compile-time computed global constants, while `static` can be used for mutable globals. Note that modifying a `static mut` variable requires the use of `unsafe`, as it allows for data races, one of the things guaranteed not to happen in safe Rust. One important distinction between `const` and `static` values is that you can take references to `static` values, but not references to `const` values, which don't have a specified memory location. For more information on `const` vs. `static`, read [the Rust book](https://doc.rust-lang.org/book/const-and-static.html).
+Rust에서 전역 변수는 컴파일 시간에 계산된 전역 상수라면 `const` 선언을 쓸 수 있고, 변경 가능한 전역 변수는 `static`을 쓸 수 있습니다.
+다만 `static mut` 변수를 변경하려면 `unsafe`가 필요한데, 이는 안전한 Rust에서는 발생하지 않는다고 보장하는 데이터 레이스(data race)가 일어날 수 있기 때문입니다.
+`const`와 `static` 값의 중요한 차이는 `static`에서는 참조를 얻을 수 있지만 `const`는 지정된 메모리 위치를 가지지 않기 때문에 불가능하다는 점입니다.
+`const`와 `static`에 대해 더 자세한 정보에 대해서는 [《Rust 프로그래밍 언어》를 읽으세요](https://doc.rust-lang.org/book/const-and-static.html).
 
 <h3><a href="#how-can-i-set-compile-time-constants-that-are-defined-procedurally" name="how-can-i-set-compile-time-constants-that-are-defined-procedurally">
 절차적으로 정의되는 컴파일 시간 상수는 어떻게 설정하나요?
 </a></h3>
 
-Rust currently has limited support for compile time constants. You can define primitives using `const` declarations (similar to `static`, but immutable and without a specified location in memory) as well as define `const` functions and inherent methods.
+Rust는 현재 컴파일 시간 상수를 제한적으로 지원합니다.
+원시 값을 `const` 선언으로 정의할 수 있고(`static`과 비슷하지만, 변경할 수 없고 메모리에서 지정된 위치를 가지지 않습니다), `const` 함수나 선천적인 메소드도 정의할 수 있습니다. 
 
-To define procedural constants that can't be defined via these mechanisms, use the [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) crate, which emulates compile-time evaluation by automatically evaluating the constant at first use.
+이 기작으로 선언할 수 없는 명령적인 상수를 선언하려면 [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) 크레이트를 사용하세요. 
+이 크레이트는 컴파일 시간 평가를 상수가 처음 사용될 때 자동으로 평가하는 걸로 흉내냅니다.
 
 <h3><a href="#can-i-run-code-before-main" name="can-i-run-code-before-main">
 `main` 이전에 실행되는 초기화 코드를 만들 수 있나요?
 </a></h3>
 
-Rust has no concept of "life before `main`". The closest you'll see can be done through the [`lazy-static`](https://github.com/Kimundi/lazy-static.rs) crate, which simulates a "before main" by lazily initializing static variables at their first usage.
+Rust에는 "`main` 이전의 삶"이라는 개념이 없습니다.
+[`lazy-static`](https://github.com/Kimundi/lazy-static.rs) 크레이트가 가장 가까운 것일텐데, 이 크레이트는 "main보다 이전"이라는 시간을 정적 변수를 처음 사용할 때 지연하여 초기화하는 걸로 흉내냅니다.
 
 <!--
 
@@ -1481,11 +1497,14 @@ Rust has consistently worked to avoid having features with overlapping purposes,
 Rust에서 상수 수식이 아닌 값을 전역에 넣을 수 있나요?
 </a></h3>
 
-No. Globals cannot have a non-constant-expression constructor and cannot have a destructor at all. Static constructors are undesirable because portably ensuring a static initialization order is difficult. Life before main is often considered a misfeature, so Rust does not allow it.
+아니요.
+전역 변수는 상수 수식이 아닌 생성자를 가질 수 없고 소멸자를 아예 가질 수 없습니다.
+정적 생성자는 정적 초기화 순서를 이식성 있는 방법으로 보장하는 게 어려워서 바람직하지 않습니다.
+main 이전의 삶은 종종 잘못된 기능으로 꼽히므로, Rust에서는 허용되지 않습니다.
 
-See the [C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) about the "static initialization order fiasco", and [Eric Lippert's blog](https://ericlippert.com/2013/02/06/static-constructors-part-one/) for the challenges in C#, which also has this feature.
+[C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12)에서 "정적 초기화 순서 사기" 부분과, 이 기능을 가지고 있는 C#에서의 도전을 다루는 [Eric Lippert의 블로그](https://ericlippert.com/2013/02/06/static-constructors-part-one/)도 보세요.
 
-You can approximate non-constant-expression globals with the [lazy-static](https://crates.io/crates/lazy_static/) crate.
+상수 수식이 아닌 전역 변수는 [lazy-static](https://crates.io/crates/lazy_static/) 크레이트로 근사할 수 있습니다.
 
 <h2 id="other-languages">다른 언어들</h2>
 
@@ -1493,29 +1512,33 @@ You can approximate non-constant-expression globals with the [lazy-static](https
 C의 <code>struct X { static int X; };</code> 같은 코드를 Rust에서는 어떻게 만드나요?
 </a></h3>
 
-Rust does not have `static` fields as shown in the code snippet above. Instead, you can declare a `static` variable in a given module, which is kept private to that module.
+Rust는 위의 코드 조각에 쓰여진 식의 `static` 필드가 없습니다.
+대신 주어진 모듈에서만 볼 수 있는 `static` 변수를 선언할 수 있습니다.
 
 <h3><a href="#how-can-i-convert-a-c-style-enum-to-an-integer" name="how-can-i-convert-a-c-style-enum-to-an-integer">
 C 스타일의 열거형을 정수로 바꾸거나 반대로 하려면 어떻게 하나요?
 </a></h3>
 
-Converting a C-style enum to an integer can be done with an `as` expression, like `e as i64` (where `e` is some enum).
+C 스타일의 열거형은 (`e`가 열거형일 때) `e as i64` 같은 식으로 `as` 수식으로 정수로 바꿀 수 있습니다.
 
-Converting in the other direction can be done with a `match` statement, which maps different numeric values to different potential values for the enum.
+반대로 바꾸려면 `match` 문장을 써서, 서로 다른 숫자 값들을 열거형의 서로 다른 가능한 값들로 대응시킬 수 있습니다.
 
 <h3><a href="#why-do-rust-programs-use-more-memory-than-c" name="why-do-rust-programs-use-more-memory-than-c">
 왜 Rust 프로그램이 C보다 많은 메모리를 사용하는 거죠?
 </a></h3>
 
-There are several factors that contribute to Rust programs having, by default, larger binary sizes than functionally-equivalent C programs. In general, Rust's preference is to optimize for the performance of real-world programs, not the size of small programs.
+Rust 프로그램이 동작이 같은 C 프로그램보다 기본값으로 더 큰 바이너리 크기를 가지는 데 영향을 미치는 여러 요소가 있습니다.
+일반적으로 Rust는 작은 프로그램의 크기보다는 현실 프로그램의 성능을 최적화하는 걸 선호합니다.
 
-__Monomorphization__
+__단형화__
 
-Rust monomorphizes generics, meaning that a new version of a generic function or type is generated for each concrete type it's used with in the program. This is similar to how templates work in C++. For example, in the following program:
+Rust는 일반화된 코드를 단형화하는데, 이는 일반화된 함수나 타입이 프로그램에서 쓰인 구체적인 타입마다 새 버전으로 생성된다는 뜻입니다.
+이는 C++에서 템플릿이 동작하는 방법과 비슷합니다.
+예를 들어 다음 프로그램에서는:
 
 ```rust
 fn foo<T>(t: T) {
-    // ... do something
+    // ... 뭔가를 함
 }
 
 fn main() {
@@ -1524,25 +1547,35 @@ fn main() {
 }
 ```
 
-Two distinct versions of `foo` will be in the final binary, one specialized to an `i32` input, one specialized to a `&str` input. This enables efficient static dispatch of the generic function, but at the cost of a larger binary.
+`foo`의 서로 다른, 하나는 `i32` 입력으로 특수화되고 다른 하나는 `&str` 입력으로 특수화된, 두 개의 버전이 최종 바이너리에 들어가게 됩니다.
+이는 일반화된 함수의 정적 디스패치를 효율적으로 만들지만 바이너리 크기의 비용을 치루어야 합니다.
 
-__Debug symbols__
+__디버그 기호__
 
-Rust programs compile with some debug symbols retained, even when compiling in release mode. These are used for providing backtraces on panics, and can be removed with `strip`, or another debug symbol removal tool. It is also useful to note that compiling in release mode with Cargo is equivalent to setting optimization level 3 with rustc. An alternative optimization level (called `s` or `z`) [has recently landed](https://github.com/rust-lang/rust/pull/32386) and tells the compiler to optimize for size rather than performance.
+Rust 프로그램은 릴리스 모드일 때도 일부 디버그 기호가 유지된 채로 컴파일됩니다.
+이는 패닉시 스택 추적(backtrace)을 제공하는 데 쓰이고, `strip`이나 다른 기호 제거 도구로 지울 수 있습니다.
+Cargo에서 릴리스 모드로 컴파일할 경우 rustc에서 최적화 레벨 3을 설정하는 거랑 같다는 것도 지적해야 겠네요.
+대안 최적화 레벨(`s` 또는 `z`라고 부릅니다)이 [최근에 들어 왔으며](https://github.com/rust-lang/rust/pull/32386) 이걸로 성능 대신 크기를 최적화해 달라고 컴파일러한테 말할 수 있습니다.
 
 __Jemalloc__
 
-Rust uses jemalloc as the default allocator, which adds some size to compiled Rust binaries. Jemalloc is chosen because it is a consistent, quality allocator that has preferable performance characteristics compared to a number of common system-provided allocators. There is work being done to [make it easier to use custom allocators](https://github.com/rust-lang/rust/issues/32838), but that work is not yet finished.
+Rust는 기본 할당자(allocator)로 jemalloc을 쓰기 때문에 컴파일된 Rust 바이너리에 얼마간의 크기가 추가됩니다.
+Jemalloc은 흔히 쓰이는 시스템에서 제공하는 할당자에 비해 성능 특징이 더 나은 일관되고 질 좋은 할당자라 선택되었습니다.
+[사용자 정의 할당자를 더 쉽게 쓸 수 있게 하는 작업](https://github.com/rust-lang/rust/issues/32838)이 진행 중입니다만 아직 완료되진 않았습니다.
 
-__Link-time optimization__
+__링크 시간 최적화__
 
-Rust does not do link-time optimization by default, but can be instructed to do so. This increases the amount of optimization that the Rust compiler can potentially do, and can have a small effect on binary size. This effect is likely larger in combination with the previously mentioned size optimizing mode.
+Rust는 기본값으로 링크 시간 최적화(link-time optimization)를 하지 않지만 이를 하도록 지정할 수 있습니다.
+이 최적화는 Rust 컴파일러가 잠재적으로 할 수 있는 최적화의 양을 늘리며, 바이너리 크기에도 작은 영향을 줄 수 있습니다.
+앞에서 언급한 크기 최적화 모드와 함께 쓰면 더 큰 효과가 있을 것입니다.
 
-__Standard library__
+__표준 라이브러리__
 
-The Rust standard library includes libbacktrace and libunwind, which may be undesirable in some programs. Using `#![no_std]` can thus result in smaller binaries, but will also usually result in substantial changes to the sort of Rust code you're writing. Note that using Rust without the standard library is often functionally closer to the equivalent C code.
+Rust 표준 라이브러리에는 libbacktrace와 libunwind가 들어 가는데 일부 프로그램에서는 바람직하지 않을 수 있습니다.
+따라서 `#![no_std]`를 쓰면 작은 바이너리가 나올 수 있지만, 보통 작성 중인 Rust 코드에 작지 않은 변화가 필요하게 됩니다.
+Rust를 표준 라이브러리 없이 사용하는 게 종종 동일한 C 코드와 기능적으로 유사하다는 점도 지적해 둡니다.
 
-As an example, the following C program reads in a name and says "hello" to the person with that name.
+예를 들어 다음 C 프로그램은 이름을 읽어서 그 이름을 가진 사람한테 "hello"라고 말합니다.
 
 ```c
 #include <stdio.h>
@@ -1556,7 +1589,7 @@ int main(void) {
 }
 ```
 
-Rewriting this in Rust, you may get something like the following:
+Rust로 이걸 재작성하면 대략 다음과 같은 게 되는데요:
 
 ```rust
 use std::io;
@@ -1569,7 +1602,9 @@ fn main() {
 }
 ```
 
-This program, when compiled and compared against the C program, will have a larger binary and use more memory. But this program is not exactly equivalent to the above C code. The equivalent Rust code would instead look something like this:
+이 프로그램을 컴파일해서 C 프로그램과 비교하면 바이너리가 더 크고 더 많은 메모리를 쓸 겁니다.
+하지만 이 프로그램은 위 C 코드와 완전히 동일하지 않습니다.
+동일한 Rust 코드는 대신 다음과 비슷하게 생겼을 겁니다:
 
 ```rust
 #![feature(lang_items)]
@@ -1601,15 +1636,18 @@ fn start(_argc: isize, _argv: *const *const u8) -> isize {
 #[lang="stack_exhausted"] extern fn stack_exhausted() {}
 ```
 
-Which should indeed roughly match C in memory usage, at the expense of more programmer complexity, and a lack of static guarantees usually provided by Rust (avoided here with the use of `unsafe`).
+실제로 이 코드는 C와 대비해서 메모리 사용량이 비슷하겠지만, 대신 프로그래머에게 더 많은 복잡도를 지우고, Rust가 보통 제공하는 정적인 보장들 또한 없습니다(여기서는 `unsafe`를 써서 보장을 제거했습니다).
 
 <h3><a href="#why-no-stable-abi" name="why-no-stable-abi">
 왜 Rust는 C 같이 안정화된 ABI가 없는 건가요? 그리고 왜 `extern`을 달아야 하는 거죠?
 </a></h3>
 
-Committing to an ABI is a big decision that can limit potentially advantageous language changes in the future. Given that Rust only hit 1.0 in May of 2015, it is still too early to make a commitment as big as a stable ABI. This does not mean that one won't happen in the future, though. (Though C++ has managed to go for many years without specifying a stable ABI.)
+ABI에 노력을 투자하는 건 앞으로 가능한, 어쩌면 득이 될 수도 있는 언어 변경을 제한할 수 있는 큰 결정입니다.
+Rust가 2015년 5월에야 1.0이 되었다는 걸 볼 때 안정된 ABI 같은 큰 투자를 하기에는 아직 너무 이릅니다.
+하지만 미래에도 일어나지 않을 거라는 얘기는 아닙니다.
+(C++가 오랫동안 안정된 ABI를 명시하지 않은 채 유지되긴 했지만요.)
 
-The `extern` keyword allows Rust to use specific ABI's, such as the well-defined C ABI, for interop with other languages.
+`extern` 예약어를 쓰면 Rust가 잘 정의된 C ABI 같이 특정한 ABI를 써서 다른 언어와 상호작용하도록 할 수 있습니다.
 
 <h3><a href="#can-rust-code-call-c-code" name="can-rust-code-call-c-code">
 Rust 코드가 C 코드를 호출할 수 있나요?
@@ -1642,46 +1680,39 @@ Rust는 여러분보다 덜 완전한 사람들을 포함하는 팀에서, 안�
 C++의 템플릿 특수화 같은 걸 Rust에서는 어떻게 할 수 있을까요?
 </a></h3>
 
-Rust doesn't currently have an exact equivalent to template specialization, but it is [being worked on](https://github.com/rust-lang/rfcs/pull/1210) and will hopefully be added soon. However, similar effects can be achieved via [associated types](https://doc.rust-lang.org/stable/book/associated-types.html).
+Rust는 현재 템플릿 특수화와 완전히 같은 기능을 가지고 있지 않지만, [현재 작업이 진행 중](https://github.com/rust-lang/rfcs/pull/1210)이며 아마 곧 추가될 것입니다.
+다만 [연관 타입](https://doc.rust-lang.org/stable/book/associated-types.html)으로 비슷한 결과를 얻을 수도 있습니다.
 
 <h3><a href="#how-does-ownership-relate-to-cxx-move-semantics" name="how-does-ownership-relate-to-cxx-move-semantics">
 Rust의 소유권 시스템이 C++의 "이동" 의미론과 어떻게 연관되나요?
 </a></h3>
 
-The underlying concepts are similar, but the two systems work very
-differently in practice. In both systems, "moving" a value is a way to
-transfer ownership of its underlying resources. For example, moving a
-string would transfer the string's buffer rather than copying it.
+기반 개념은 비슷하지만 실제로는 두 시스템은 굉장히 다르게 동작합니다.
+두 시스템 모두에서 값을 "옮기는" 건 기반하는 자원의 소유권을 이전하는 방법입니다.
+예를 들어 문자열을 옮긴다면 문자열의 버퍼를 복사하는 대신 이전하기만 할 겁니다.
 
-In Rust, ownership transfer is the default behavior. For example, if I
-write a function that takes a `String` as argument, this function will
-take ownership of the `String` value supplied by its caller:
+Rust에서 소유권 이전은 기본 동작입니다.
+예를 들어 `String`을 인자로 받는 함수를 만들었다면, 이 함수는 호출하는 쪽에서 지급한 `String` 값의 소유권을 가져 갑니다:
 
 ```rust
 fn process(s: String) { }
 
 fn caller() {
     let s = String::from("Hello, world!");
-    process(s); // Transfers ownership of `s` to `process`
-    process(s); // Error! ownership already transferred.
+    process(s); // `s`의 소유권을 `process`로 넘김
+    process(s); // 오류! 소유권이 이미 이전됨.
 }
 ```
 
-As you can see in the snippet above, in the function `caller`, the
-first call to `process` transfers ownership of the variable `s`. The
-compiler tracks ownership, so the second call to `process` results in
-an error, because it is illegal to give away ownership of the same
-value twice. Rust will also prevent you from moving a value if there
-is an outstanding reference into that value.
+위 조각에서 볼 수 있듯 `caller` 함수에서 `process`의 첫 호출은 변수 `s`의 소유권을 이전합니다.
+컴파일러는 소유권을 추적하고, 따라서 `process`의 두번째 호출에서는 같은 값의 소유권을 두 번 주는 게 불법이기에 오류가 납니다.
+Rust는 또한 값에 현재 진행형인 참조가 존재할 경우 값을 옮길 수 없게 할 것입니다.
 
-C++ takes a different approach. In C++, the default is to copy a value
-(to invoke the copy constructor, more specifically). However, callees
-can declare their arguments using an "rvalue reference", like
-`string&&`, to indicate that they will take ownership of some of the
-resources owned by that argument (in this case, the string's internal
-buffer). The caller then must either pass a temporary expression or
-make an explicit move using `std::move`. The rough equivalent to the
-function `process` above, then, would be:
+C++는 다른 접근을 취합니다.
+C++에서 기본값은 값을 복사(좀 더 정확히는 복사 생성자를 호출)하는 것입니다.
+하지만 호출되는 함수가 그 인자를 `string&&` 같이 "rvalue 참조"로 선언할 수 있으며, 이는 그들이 그 인자가 소유한 일부 자원(이 경우 문자열의 내부 버퍼)의 소유권을 넘겨 받을 거라는 걸 나타냅니다.
+이 때 호출하는 함수는 임시 수식을 넘기거나 `std::move`로 명시적으로 옮겨야 합니다.
+따라서 위의 `process` 함수와 대략적으로 같은 코드는 다음과 같을 것입니다:
 
 ```
 void process(string&& s) { }
@@ -1693,25 +1724,26 @@ void caller() {
 }
 ```
 
-C++ compilers are not obligated to track moves. For example, the code
-above compiles without a warning or error, at least using the default
-settings on clang. Moreover, in C++ ownership of the string `s` itself
-(if not its internal buffer) remains with `caller`, and so the
-destructor for `s` will run when `caller` returns, even though it has
-been moved (in Rust, in contrast, moved values are dropped only by
-their new owners).
+C++ 컴파일러는 이동을 추적할 의무가 없습니다.
+예를 들어 위 코드는, 적어도 clang의 기본 설정에서는, 경고나 오류를 내지 않고 컴파일됩니다.
+게다가 C++에서 (내장 버퍼 말고) `s` 자신의 소유권은 `caller`에 남기 때문에, `caller`가 반환될 때 `s`가 분명 이동했음에도 소멸자가 불리게 됩니다(반대로 Rust에서 이동된 값은 새 소유권자에 의해서만 소멸됩니다).
 
 <h3><a href="#how-to-interoperate-with-cxx" name="how-to-interoperate-with-cxx">
 C++에서 Rust와 상호작용하거나, Rust에서 C++와 상호작용하려면 어떻게 하나요?
 </a></h3>
 
-Rust and C++ can interoperate through C. Both Rust and C++ provide a [foreign function interface](https://doc.rust-lang.org/book/ffi.html) for C, and can use that to communicate between each other. If writing C bindings is too tedious, you can always use [rust-bindgen](https://github.com/crabtw/rust-bindgen) to help automatically generate workable C bindings.
+Rust와 C++ 둘 다 C와 상호작용할 수 있습니다.
+Rust와 C++ 모두 C와 [외부 함수 인터페이스](https://doc.rust-lang.org/book/ffi.html)를 제공하며, 이를 각자와 소통하기 위해 쓸 수 있습니다.
+C 바인딩을 만드는 게 너무 지루하다면, 언제나 [rust-bindgen](https://github.com/crabtw/rust-bindgen)을 써서 자동으로 동작하는 C 바인딩을 만드는 데 도움을 받을 수 있습니다.
 
 <h3><a href="#does-rust-have-cxx-style-constructors" name="does-rust-have-cxx-style-constructors">
 Rust에는 C++ 같은 생성자가 있나요?
 </a></h3>
 
-No. Functions serve the same purpose as constructors without adding language complexity. The usual name for the constructor-equivalent function in Rust is `new()`, although this is just a convention rather than a language rule. The `new()` function in fact is just like any other function. An example of it looks like so:
+아뇨.
+추가적인 언어 복잡도 없이 함수가 생성자와 같은 역할을 수행합니다.
+Rust에서 생성자에 대응되는 함수의 일반적인 이름은 `new()`로, 이는 언어 규칙이 아니라 단순한 규약일 따름입니다.
+`new()` 함수는 다른 함수랑 다를 바가 없고, 이런 식으로 씁니다:
 
 ```rust
 struct Foo {
@@ -1735,7 +1767,11 @@ impl Foo {
 Rust에는 복사 생성자가 있나요?
 </a></h3>
 
-Not exactly. Types which implement `Copy` will do a standard C-like "shallow copy" with no extra work (similar to "plain old data" in C++). It is impossible to implement `Copy` types that require custom copy behavior. Instead, in Rust "copy constructors" are created by implementing the `Clone` trait, and explicitly calling the `clone` method. Making user-defined copy operators explicit surfaces the underlying complexity, making it easier for the developer to identify potentially expensive operations.
+정확히는 아닙니다.
+`Copy`를 구현하는 타입은 C랑 비슷하게, 추가 작업 없이 표준적인 "얕은(shallow) 복사"를 하게 됩니다(이는 C++에서 "오래된 평범한 데이터(plain old data)"와 비슷합니다).
+사용자 정의된 복사 동작이 필요한 `Copy` 타입을 구현하는 건 불가능합니다.
+대신 Rust에서 "복사 생성자"는 `Clone` 트레이트를 구현하여 명시적으로 `clone` 메소드를 호출하는 걸로 만들어집니다.
+사용자 정의된 복사 연산자를 명시적으로 만드는 건 그 아래의 복잡도를 보여 주며, 개발자가 잠재적으로 비싼 연산을 파악하기 더 쉽게 만듭니다.
 
 <h3><a href="#does-rust-have-move-constructors" name="does-rust-have-move-constructors">
 Rust에는 이동 생성자가 있나요?
@@ -1749,26 +1785,28 @@ Rust에는 이동 생성자가 있나요?
 Go와 Rust가 비슷한 점은 무엇이고 다른 점은 무엇인가요?
 </a></h3>
 
-Rust and Go have substantially different design goals. The following differences are not the only ones (which are too numerous to list), but are a few of the more important ones:
+Rust와 Go는 상당히 다른 설계 목표를 가집니다.
+전부는 아니지만(다 나열하기에는 많습니다), 다음 차이들이 가장 중요하다고 볼 수 있습니다:
 
-- Rust is lower level than Go. For example, Rust does not require a garbage collector, whereas Go does. In general, Rust affords a level of control that is comparable to C or C++.
-- Rust's focus is on ensuring safety and efficiency while also providing high-level affordances, while Go's is on being a small, simple language which compiles quickly and can work nicely with a variety of tools.
-- Rust has strong support for generics, which Go does not.
-- Rust has strong influences from the world of functional programming, including a type system which draws from Haskell's typeclasses. Go has a simpler type system, using interfaces for basic generic programming.
+- Rust는 Go보다 저수준입니다. 예를 들어 Rust는 쓰레기 수거기(garbage collector)를 필요하지 않지만 Go는 필요로 합니다. 일반적으로 Rust는 C나 C++와 비견할 만한 제어 수준을 제공합니다.
+- Rust의 촛점은 고수준의 편안함을 제공하면서도 안전함과 효율성을 보장하는 것이며, Go의 촛점은 빠르게 컴파일되고 수많은 도구와 함께 멋지게 동작할 수 있는 작고 간단한 언어가 되고자 하는 것입니다.
+- Rust는 일반화 코드에 대한 강한 지원을 가지고 있지만 Go는 아닙니다.
+- Rust는 함수형 프로그래밍에서 많은 영향을 받았으며, 여기에는 하스켈의 타입 클래스에서 유래한 타입 시스템이 포함됩니다. Go는 더 단순한 타입 시스템을 가지고 있고 기본적인 일반화 프로그래밍을 위해 인터페이스를 사용합니다.
 
 <h3><a href="#how-do-rust-traits-compare-to-haskell-typeclasses" name="how-do-rust-traits-compare-to-haskell-typeclasses">
 Rust 트레이트를 하스켈 타입 클래스와 비교하면 어떤가요?
 </a></h3>
 
-Rust traits are similar to Haskell typeclasses, but are currently not as powerful, as Rust cannot express higher-kinded types. Rust's associated types are equivalent to Haskell type families.
+Rust 트레이트는 하스켈 타입 클래스와 비슷하지만, Rust가 상류(higher-kinded) 타입을 표현할 수 없기 때문에 덜 강력합니다.
+Rust의 연관 타입은 하스켈의 타입 무리(type family)와 동일합니다.
 
-Some specific difference between Haskell typeclasses and Rust traits include:
+하스켈 타입 클래스와 Rust 트레이트 사이에 구체적인 차이로는 이런 게 있습니다:
 
-- Rust traits have an implicit first parameter called `Self`. `trait Bar` in Rust corresponds to `class Bar self` in Haskell, and `trait Bar<Foo>` in Rust corresponds to `class Bar foo self` in Haskell.
-- "Supertraits" or "superclass constraints" in Rust are written `trait Sub: Super`, compared to `class Super self => Sub self` in Haskell.
-- Rust forbids orphan instances, resulting in different coherence rules in Rust compared to Haskell.
-- Rust's `impl` resolution considers the relevant `where` clauses and trait bounds when deciding whether two `impl`s overlap, or choosing between potential `impl`s. Haskell only considers the constraints in the `instance` declaration, disregarding any constraints provided elsewhere.
-- A subset of Rust's traits (the ["object safe"](https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md) ones) can be used for dynamic dispatch via trait objects. The same feature is available in Haskell via GHC's `ExistentialQuantification`.
+- Rsut 트레이트는 암묵적인 첫 파라미터 `Self`를 받습니다. Rust에서 `trait Bar`는 하스켈에서 `class Bar self`에 대응하고, Rust에서 `trait Bar<foo>`는 하스켈에서 `class Bar foo self`에 대응합니다.
+- Rust에서 "상위 트레이트"나 "상위 클래스 제약"은 `trait Sub: Super`라고 쓰는데 하스켈에서는 `class Super self => Sub self`라고 씁니다.
+- Rust에서는 홀로 떨어진(orphan) 인스턴스를 금지하며, 따라서 Rust의 일관성(coherence) 규칙은 하스켈과 다릅니다.
+- Rust의 `impl` 해소 과정에서는 두 `impl`이 겹치거나 잠재적인 `impl`들 사이에서 선택할 때 관련된 `where` 절과 트레이트 제약을 살펴 봅니다. 하스켈은 오로지 `instance` 선언에 있는 제약 조건만 살펴 보며 다른 곳에서 제공한 제약은 무시합니다.
+- Rust 트레이트의 부분집합(["객체 안전(object safe)"](https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md)한 것들)은 트레이트 객체를 통한 동적 디스패치에 쓰일 수 있습니다. 같은 기능이 하스켈에서는 GHC의 `ExistentialQuantification`으로 제공됩니다.
 
 <h2 id="documentation">문서</h2>
 
@@ -1792,7 +1830,9 @@ Rust 문서의 문제는 Rust 컴파일러의 [이슈 트래커](https://github.
 제 프로젝트가 의존하는 라이브러리의 rustdoc 문서를 어떻게 볼 수 있나요?
 </a></h3>
 
-When you use `cargo doc` to generate documentation for your own project, it also generates docs for the active dependency versions. These are put into the `target/doc` directory of your project. Use `cargo doc --open` to open the docs after building them, or just open up `target/doc/index.html` yourself.
+`cargo doc`으로 프로젝트의 문서를 생성할 때는 활성화되어 있는 의존하는 버전들의 문서도 함께 생성됩니다.
+이들은 프로젝트의 `target/doc` 디렉토리에 저장됩니다.
+`cargo doc --open`으로 문서가 생성된 뒤에 문서를 열어 보거나, 아니면 직접 `target/doc/index.html`을 열어 보세요.
 
 [Vec]: https://doc.rust-lang.org/stable/std/vec/struct.Vec.html
 [HashMap]: https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html
