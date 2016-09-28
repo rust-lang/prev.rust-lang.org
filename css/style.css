@@ -314,6 +314,8 @@ ul.laundry-list {
   padding: 10px;
   display: none;
   border-radius: 4px;
+  font-family: monospace;
+  font-size: 12px;
 }
 
 .ace-error-text, .ace-error-line, .ace-warning-text, .ace-warning-line {
@@ -602,4 +604,15 @@ ul.laundry-list {
 #users #user-add-info {
     text-align: center;
     padding-top: 50px;
+}
+
+footer {
+  border-top: 2px solid #dedede;
+  margin: 1.2em auto 0 auto;
+  padding-top: 0.6em; /* half to accomodate p tag margin */
+}
+
+footer a {
+  display: inline-block;
+  font-weight: bold;
 }

@@ -91,7 +91,7 @@
     var req = new XMLHttpRequest();
     var data = JSON.stringify({
       version: "beta",
-      optimize: "2",
+      optimize: "0",
       code: program
     });
 
@@ -183,28 +183,38 @@
     // Getting list of ranges with problems
     var lines = message.split(newLineRegex);
 
-    // Cleaning up the message: keeps only relevant problem output
-    var cleanMessage = lines.map(function(line) {
-      if (line.startsWith("<anon>") || line.indexOf("^") !== -1) {
-        var errIndex = line.indexOf(problem + ": ");
-        if (errIndex !== -1) {return line.slice(errIndex);}
-        return "";
-      }
-
-      // Discard playpen messages, keep the rest
-      if (line.startsWith("playpen:")) {return "";}
-      return line;
-    }).filter(function(line) {
-      return line !== "";
+    // Cleaning up the message: keeps only relevant problem output.
+    var cleanMessage = lines.filter(function(line) {
+      return !line.trim().startsWith("--> <anon>")
+        && !line.startsWith("playpen:")
+        && !line.trim().startsWith("error: aborting");
     }).map(function(line) {
       return escapeHTML(line);
+    }).filter(function(line) {
+      return line != "";
+    }).map(function(line) {
+      return line.replace(/  /g, '\u00a0\u00a0');
     }).join("<br />");
+
+    // Get all of the row:col in the message.
+    var errorLines = lines.filter(function(line) {
+      return line.indexOf("--> <anon>") !== -1;
+    }).map(function(line) {
+      var lineIndex = line.indexOf(":");
+      if (lineIndex !== -1) {
+        return line.slice(lineIndex);
+      }
+
+      return "";
+    }).filter(function(line) {
+      return line != "";
+    });
 
     // Setting message
     displayOutput(cleanMessage, editor.getValue());
 
     // Highlighting the lines
-    var ranges = parseProblems(lines);
+    var ranges = parseProblems(errorLines);
     markers = ranges.map(function(range) {
       return editor.getSession().addMarker(range, "ace-" + problem + "-line",
         "fullLine", false);
@@ -223,12 +233,10 @@
     var ranges = [];
     for (var i in lines) {
       var line = lines[i];
-      if (line.startsWith("<anon>:") && line.indexOf(": ") !== -1) {
-        var parts = line.split(/:\s?|\s+/, 5).slice(1, 5);
-        var ip = parts.map(function(p) { return parseInt(p, 10) - 1; });
-        // console.log("line:", line, parts, ip);
-        ranges.push(new Range(ip[0], ip[1], ip[2], ip[3]));
-      }
+      var parts = line.split(/:\s?|\s+/, 5).slice(1, 5);
+      var ip = parts.map(function(p) { return parseInt(p, 10) - 1; });
+      console.log("line:", line, parts, ip);
+      ranges.push(new Range(ip[0], ip[1], ip[2], ip[3]));
     }
 
     return ranges;
