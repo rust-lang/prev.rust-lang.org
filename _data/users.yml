@@ -183,6 +183,11 @@
   logo: snips.svg
   how: "<a href='https://github.com/snipsco/rust-threshold-secret-sharing'>AI assistants that are private by design</a>."
 -
+  name: Spoqa
+  url: https://www.spoqa.com/
+  logo: spoqa.png
+  how: "Our POS integration SDK is entirely written in Rust."
+-
   name: Stratum Security
   url: https://stratumsecurity.com/
   logo: stratum.png
