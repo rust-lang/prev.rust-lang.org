@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Code de conduite Rust &middot; Langage de programmation Rust
+title: Code de conduite Rust &middot; Rust, le langage de programmation
 ---
 
 # Code de conduite Rust
