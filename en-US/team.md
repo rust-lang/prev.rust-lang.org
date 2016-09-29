@@ -137,9 +137,9 @@ teams:
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
     email: rust-mods@rust-lang.org
   - name: Style team
-    members: [brson, japaric, joshtriplett, solson, steveklabnik, ubsan]
+    members: [brson, japaric, joshtriplett, nrc, solson, steveklabnik, ubsan]
     lead: nrc
-    responsibility: "temporary 'strike team' charged with deciding on code style guidelines and configuring Rustfmt"
+    responsibility: "temporary 'strike team' charged with deciding on code style guidelines and configuring Rustfmt (process specified in <a href='https://github.com/rust-lang/rfcs/blob/master/text/1607-style-rfcs.md'>RFC 1607</a>)"
     email: style-team@rust-lang.org
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
