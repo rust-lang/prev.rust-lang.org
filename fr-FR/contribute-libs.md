@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fr-FR/default
 title: Contribuer à Rust &mdash; les bibliothèques &middot; Rust, le langage de programmation
 ---
 

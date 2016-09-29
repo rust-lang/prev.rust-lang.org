@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fr-FR/default
 title: Contribuer à Rust &mdash; les outils, les EDI et l'infrastructure &middot; Rust, le langage de programmation
 ---
 

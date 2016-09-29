@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fr-FR/default
 title: Contribuer à Rust &mdash; trouver, trier et corriger les problèmes &middot; Rust, le langage de programmation
 ---
 

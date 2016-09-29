@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fr-FR/default
 title: L'équipe Rust &middot; Rust, le langage de programmation
 
 # Correspondance entre les noms d'utilisateur GitHub, les noms
@@ -185,7 +185,7 @@ sites:
 
 Le projet Rust est [gouverné](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md) par différentes équipes dont chacune est consacrée à un périmètre spécifique. La liste de ces équipes est détaillée ci-après.
 
-Afin de contacter une équipe, vous pouvez poser votre question ou commenter sur [les forums internes](https://internals.rust-lang.org/) et étiqueter votre billet avec la catégorie correspondant à l'équipe. Note : les divulgations relatives aux problèmes de sécurité doivent respecter [le processus de divulgation du projet Rust quant aux problèmes de sécurité](security.html). 
+Afin de contacter une équipe, vous pouvez poser votre question ou commenter sur [les forums internes](https://internals.rust-lang.org/) et étiqueter votre billet avec la catégorie correspondant à l'équipe. Note : les divulgations relatives aux problèmes de sécurité doivent respecter [le processus de divulgation du projet Rust quant aux problèmes de sécurité](security.html).
 
 {% for team in page.teams %}
 <section id="{{ team.name | replace:' ','-' }}">

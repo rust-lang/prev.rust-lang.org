@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fr-FR/default
 title: Code de conduite Rust &middot; Rust, le langage de programmation
 ---
 
