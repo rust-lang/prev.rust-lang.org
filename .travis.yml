@@ -1,9 +1,9 @@
-language: ruby
+﻿language: ruby
 rvm:
 - 2.1
   
 # Containers are cool!  
-sudo: required
+sudo: false
 
 install: 
 - bundle install
