@@ -3,7 +3,7 @@ rvm:
 - 2.1
   
 # Containers are cool!  
-sudo: false
+sudo: required
 
 install: 
 - bundle install
