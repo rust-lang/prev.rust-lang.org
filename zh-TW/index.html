@@ -1,60 +1,60 @@
 ﻿---
-layout: zh-CN/basic
-title: Rust程序设计语言
+layout: zh-TW/basic
+title: Rust 程式語言
 ---
 
     <div class="row install-row">
       <div class="col-md-8">
         <p class="pitch">
-          <b>Rust</b> 是一种注重高效、安全、并行的系统程序设计语言。
+          <b>Rust</b> 是一種重視高效、安全、並行的系統程式語言。
           <br/>
-          <a href="https://www.rust-lang.org/zh-CN/friends.html">使用 Rust 的项目</a>
+          <a href="friends.html">使用 Rust 開發的程式</a>
         </p>
       </div>
       <div class="col-md-4 install-box">
         <span class="version-rec-box-inner">
-          推荐版本:<br>
+          推薦版本:<br>
           <span id="install-version"
-                data-type-linux="Linux 二进制版"
-                data-type-windows="Windows 安装包"
-                data-type-mac="Mac 安装包"
-                data-type-source="源码">
+                data-type-linux="Linux 二進制包"
+                data-type-windows="Windows 安裝程式"
+                data-type-mac="Mac 安裝程式"
+                data-type-source="源文件">
             {{ site.stable }}
             (<span>source</span>)
           </span>
         </span>
         <a class="btn btn-primary" id="inst-link"
-           href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">安装</a>
-        <a class="btn btn-default" href="install.html" role="button">下载其他版本</a>
+           href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">安裝</a>
+        <a class="btn btn-default" href="install.html" role="button">下載其他版本</a>
       </div>
     </div>
 
     <div class="row code-row">
       <div class="col-md-4">
-      <h2>特点</h2>
+      <h2>語言特徵</h2>
       <ul class="laundry-list">
-        <li>零开销的抽象</li>
-        <li>转移语义</li>
-        <li>保证内存安全</li>
-        <li>没有数据竞争的线程</li>
-        <li>trait 泛型</li>
-        <li>模式匹配</li>
-        <li>类型推断</li>
-        <li>极小运行时</li>
-        <li>高效的 C 绑定</li>
+        <li>無成本抽象化</li>
+        <li>轉移語意</li>
+        <li>確保記憶體安全</li>
+        <li>無資料競爭的线程</li>
+        <li>特徵泛型</li>
+        <li>模式</li>
+        <li>型別推斷</li>
+        <li>迷你的運行時</li>
+        <li>高效的C綁定</li>
       </ul>
       </div>
       <div class="col-md-8">
         <div id="active-code">
-          <button type="button" class="btn btn-primary btn-sm" id="run-code">运行</button>
+          <button type="button" class="btn btn-primary btn-sm" id="run-code">運行</button>
           <div id="editor">{% include example.rs %}</div>
-          <div id="result" data-msg-running="运行中...">
+          <div id="result" data-msg-running="運行中...">
             <a id="playlink"><i class="icon-link-ext"></i></a>
           </div>
         </div>
         <div id="static-code">{% include zh-CN/example.rs.html %}</div>
         <div class="more-examples">
-          <a href="http://rustbyexample.com/">更多例子</a>
+          <a href="http://rustbyexample.com/">更多示例</a>
         </div>
       </div>
     </div>
