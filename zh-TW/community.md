@@ -1,17 +1,19 @@
-﻿---
+---
 layout: default
 title: The Rust Community &middot; The Rust Programming Language
 ---
 
-# Rust 社区
+# The Rust Community
 
-Rust 程序设计语言有很多优点，
-但它最大的优点则是那些有经验的人们都聚在社区。
+The Rust programming language has many qualities, but Rust's greatest
+strength is the community of people who come together to make working
+in Rust a rewarding experience.
 
-我们致力于为所有人提供一个友善、安全、热情温馨的社区环境。
-不论性别、性取向、残疾、种族、信仰或其他特征。
-Our [code of conduct][coc] sets the standards
-for behavior in all official Rust forums.
+We are committed to providing a friendly, safe and welcoming
+environment for all, regardless of gender, sexual orientation,
+disability, ethnicity, religion, or similar personal
+characteristic. Our [code of conduct][coc] sets the standards for
+behavior in all official Rust forums.
 
 If you feel you have been or are
 being harassed or made uncomfortable by a community member, please
@@ -36,7 +38,7 @@ You may also find help on the question and answer site, [Stack Overflow][stack_o
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
-## 新闻
+## News
 
 [This Week in Rust][twir] collects the latest news, upcoming events
 and a week-by-week account of changes in the Rust language and
