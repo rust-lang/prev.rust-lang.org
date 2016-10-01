@@ -1,5 +1,5 @@
 ---
-layout: fr-FR/default
+layout: fr/default
 title: L'équipe Rust &middot; Rust, le langage de programmation
 
 localized-teams:

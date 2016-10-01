@@ -1,5 +1,5 @@
 ---
-layout: fr-FR/default
+layout: fr/default
 title: Contribuer à Rust &mdash; trouver, trier et corriger les problèmes &middot; Rust, le langage de programmation
 ---
 
@@ -12,11 +12,11 @@ Les problèmes étiquetés `E-mentor` indiquent qu'un développeur Rust expérim
 
 D'autres projets gravitant autour de Rust maintiennent des listes de tâches analogues destinées aux débutants dont : le navigateur web [Servo][Servo], la bibliothèque HTTP [hyper][hyper], le formateur de code source [rustfmt][rustfmt], la bibliothèque de liaisons Unix [nix][nix] et la suite de *linting* [clippy][clippy].
 
-Bien que Rust dispose [d'une suite de tests étendue][test], il y a toujours des endroits à tester. L'étiquette [E-needstest][E-needstest] indique que les problèmes semblent résolus mais qu'aucun test n'est associé. Écrire des cas de tests est un bon exercice pour comprendre un nouveau projet et commencer à contribuer.
+Bien que Rust dispose [d'une suite de tests étendue][test], il y a toujours des endroits à tester. L'étiquette [E-needstest][E-needstest] indique que les problèmes semblent résolus, mais qu'aucun test n'est associé. Écrire des cas de tests est un bon exercice pour comprendre un nouveau projet et commencer à contribuer.
 
 Rust a toujours besoin de personnes pour [trier][triage] les problèmes : reproduire les bogues, réduire les cas de test, ajouter des étiquettes, fermer les problèmes résolus. Note : vous aurez besoin de certaines permissions élevées sur le projet GitHub mais cela s'obtient sans problème en demandant à quelqu'un d'expérimenté sur le projet. Demandez à [un membre de l'équipe][team].
 
-Une fois que vous avez trouvé comment contribuer au projet et que vous avez créé quelques *pull requests* dans un domaine donné, pensez à revoir les *pull requests* d'autres contributeurs. Avoir une bonne relecture est quelque chose de rare qui est toujours apprécié ! Il n'est pas nécessaire d'avoir une quelconque autorisation préalable &mdash; il suffit de commenter de façon constructive et polie sur les *pull requests* qui vous intéressent. Si vous souhaitez en savoir plus sur les bonnes façon de relire du code, vous pouvez [lire ce guide][reviews].
+Une fois que vous avez trouvé comment contribuer au projet et que vous avez créé quelques *pull requests* dans un domaine donné, pensez à revoir les *pull requests* d'autres contributeurs. Avoir une bonne relecture est quelque chose de rare qui est toujours apprécié ! Il n'est pas nécessaire d'avoir une quelconque autorisation préalable &mdash; il suffit de commenter de façon constructive et polie sur les *pull requests* qui vous intéressent. Si vous souhaitez en savoir plus sur les bonnes façons de relire du code, vous pouvez [lire ce guide][reviews].
 
 <!--
 TODO: weekly triage email?

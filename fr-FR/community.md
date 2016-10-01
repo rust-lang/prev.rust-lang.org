@@ -1,11 +1,11 @@
 ---
-layout: fr-FR/default
+layout: fr/default
 title: La communauté Rust &middot; Rust, le langage de programmation
 ---
 
 # La communauté Rust
 
-En tant que langage de programmation, Rust possède de nombreuses qualités mais l'un des meilleurs atouts de Rust est sa communauté : des personnes qui travaillent ensemble afin que contribuer à Rust soit une expérience enrichissante.
+En tant que langage de programmation, Rust possède de nombreuses qualités, mais l'un des meilleurs atouts de Rust est sa communauté : des personnes qui travaillent ensemble afin que contribuer à Rust soit une expérience enrichissante.
 
 Nous nous appliquons à fournir un environnement amical, sûr et accueillant pour tous, quel que soit le genre, l'orientation sexuelle, le handicap, l'appartenance ethnique, la religion ou tout aspect personnel. Notre [code de conduite][coc] définit les principes à respecter sur l'ensemble des forums officiels relatifs à Rust.
 
@@ -70,7 +70,7 @@ Les développeurs de Rust échangent sur [#rust-internals][internals_irc]. Ce ca
 
 - [#cargo][cargo_irc] où l'on discute de Cargo, le gestionnaire de paquet pour  Rust
 - [#rust-bots][bots_irc] qui reçoit des notifications à propos de Rust en provenance d'une sélection de robots
-- [#rust-docs][docs_irc] est l'espace pour l'équipe de documentation non-officielle
+- [#rust-docs][docs_irc] est l'espace pour l'équipe de documentation non officielle
 - [#rust-crypto][crypto_irc] où l'on discute de cryptographie et de Rust
 - [#rust-gamedev][gamedev_irc] où l'on discute de développement de jeux vidéo utilisant Rust
 - [#rust-networking][networking_irc] pour les personnes qui développent des outils réseaux avec Rust
@@ -135,7 +135,7 @@ Rust suit un processus de développement dirigé par la communauté où la plupa
 
 * [L'équipe de la bibliothèque][library_team] est responsable de la bibliothèque standard de Rust, des *crates* rust-lang et des conventions.
 
-* [L'équipe de compilation][compiler_team] est responsable des aspects internes liés à la compilations (implémentation et optimisation).
+* [L'équipe de compilation][compiler_team] est responsable des aspects internes liés à la compilation (implémentation et optimisation).
 
 * [L'équipe outils et infrastructure][tool_team] est responsable des outils officiels tels que [Cargo], [rustup], [rustfmt] ainsi que de l'infrastructure d'intégration continue pour le projet.
 
@@ -166,7 +166,7 @@ En plus de ces équipes officielles, la plupart des équipes incluent un ensembl
 
 Rust a plus de [1 200 contributeurs différents][authors] et cela augmente chaque semaine. [Nous serions ravis de vous compter parmi nous][contribute] !
 
-Comme indiqué ci-avant, [le forum interne][internals_forum] est dédié aux discussions concernant la conception et l'implémentation de Rust. Une bonne partie de la discussion a également lieu sur GitHub :
+Comme indiqué ci-dessus, [le forum interne][internals_forum] est dédié aux discussions concernant la conception et l'implémentation de Rust. Une bonne partie de la discussion a également lieu sur GitHub :
 
 - Le [dépôt principal][github] et le [traqueur][issue_tracking] sont les outils les plus utilisés pour le travail d'implémentation. Nos relecteurs font tout leur possible afin d'aider et de mentorer les nouveaux contributeurs, n'hésitez pas à ouvrir une *pull request* !
 
