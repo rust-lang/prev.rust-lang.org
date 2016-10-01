@@ -29,6 +29,8 @@ Rust의 성공에 기여하는 방법은 많이 있습니다.
   Rust가 특정 작업에 적절하려면 주로 그에 알맞는 고품질의 라이브러리가 필요합니다.
 * [언어, 컴파일러 및 표준 라이브러리](contribute-compiler.html).
   언어 설계, 기능 구현 및 성능 개선을 다룹니다.
+* [국제화](contribute-translations.html).
+  저희 사이트를 모든 언어로 번역해서 Rust 사랑을 전파하길 도와주세요.
 
 더 도움이 필요하다면 [#rust-internals]나 [internals.rust-lang.org]에 물어 보세요.
 

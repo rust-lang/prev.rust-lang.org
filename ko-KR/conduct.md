@@ -20,22 +20,21 @@ title: Rust 행동 규칙 &middot; Rust 프로그래밍 언어
 
 ## 중재
 
+다음은 저희 커뮤니티에서 행동의 기준을 유지하는 정책들입니다. 만약 스레드에 중재가 필요하다고 느낀다면 [Rust 중재 팀](/team.html#Moderation)에 연락해 주세요.
 
-These are the policies for upholding our community's standards of conduct. If you feel that a thread needs moderation, please contact the [Rust moderation team](/team.html#Moderation).
+1. 혐오적이거나, 악감정이 담겼거나, 불쾌스럽거나, 특정인을 배제하는 걸 포함해, Rust의 행동 표준을 위반하는 촌평은 허용되지 않습니다. (다른 사용자를 절대 겨냥하지 않고 혐오가 담기지 않았다는 전제 하에 욕설까지는 허용됩니다.)
+2. 행동 규칙에 나열되어 있는지와 상관 없이, 중재자들이 부적합하다고 판단한 촌평도 허용되지 않습니다.
+3. 중재자들은 그러한 촌평에 먼저 경고로 답할 것입니다.
+4. 경고가 무시되면, 사용자에게 진정할 시간을 주기 위해 소통 채널에서 "퇴장"시킬 것입니다.
+5. 만약 사용자가 돌아와서 계속 말썽을 일으킨다면, "추방", 즉 무기한으로 배제됩니다.
+6. 중재자의 재량에 따라 사용자가 처음으로 규칙을 위반했고 대상이 되었던 사람들에게 성실하게 사과했다면 추방을 취소할 수 있습니다.
+7. 중재자가 누군가를 추방했는데 정당화되지 않는다고 생각한다면, 그 중재자나 다른 중재자에게 **개인적으로** 문제를 제기해 주세요. 채널 안에서 추방에 대해 불평하는 건 허용되지 않습니다.
+8. 중재자들은 다른 커뮤니티 구성원보다 더 높은 기준을 적용받습니다. 중재자가 부적절한 상황을 만들어 낸다면 다른 이들보다 만회할 여지가 적다는 점을 예상해야 합니다.
 
-1. Remarks that violate the Rust standards of conduct, including hateful, hurtful, oppressive, or exclusionary remarks, are not allowed. (Cursing is allowed, but never targeting another user, and never in a hateful manner.)
-2. Remarks that moderators find inappropriate, whether listed in the code of conduct or not, are also not allowed.
-3. Moderators will first respond to such remarks with a warning.
-4. If the warning is unheeded, the user will be "kicked," i.e., kicked out of the communication channel to cool off.
-5. If the user comes back and continues to make trouble, they will be banned, i.e., indefinitely excluded.
-6. Moderators may choose at their discretion to un-ban the user if it was a first offense and they offer the offended party a genuine apology.
-7. If a moderator bans someone and you think it was unjustified, please take it up with that moderator, or with a different moderator, **in private**. Complaints about bans in-channel are not allowed.
-8. Moderators are held to a higher standard than other community members. If a moderator creates an inappropriate situation, they should expect less leeway than others.
+Rust 커뮤니티에서 우리는 서로를 신경쓰는 데 추가적인 단계를 밟으려 합니다. 단순히 기술적으로 넘볼 수 없는 경지를 목표로 하지 마시고, 인간적으로 최고가 되려 하세요. 특히 모욕적이거나 민감한 사안에 대해, 오프토픽일 경우에는 더더욱, 함부로 말하는 걸 피하세요. 안 그러면 불필요한 싸움이 일어나고, 감정을 상하게 만들며, 신뢰를 깨뜨리고, 더 심하면 사람들이 커뮤니티로부터 아예 등을 돌리게 만들 수 있습니다.
 
-In the Rust community we strive to go the extra step to look out for each other. Don't just aim to be technically unimpeachable, try to be your best self. In particular, avoid flirting with offensive or sensitive issues, particularly if they're off-topic; this all too often leads to unnecessary fights, hurt feelings, and damaged trust; worse, it can drive people away from the community entirely.
+그리고 누군가가 여러분이 말하거나 한 것에 대해 문제를 제기한다면 방어적이려는 충동을 자제하세요. 그냥 불평을 받은 것을 하길 멈추고 사과하세요. 설령 잘못 해석되었거나 부당하게 비난을 받는다 느낄지라도, 대부분의 경우 여러분이 좀 더 잘 전달하면 괜찮았을 문제일 겁니다. 주변의 Rust 사용자들을 불편하지 않게 하는 건 여러분의 책임임을 잊지 마세요. 모두가 성공하길 원하고, 애초에 우리가 여기 있는 이유는 멋진 기술에 대해 얘기하려고 하는 거니까요. 신뢰를 얻으면 사람들이 좋은 의도로 보아 주고 용서해 주려 한다는 걸 알게 될 겁니다.
 
-And if someone takes issue with something you said or did, resist the urge to be defensive. Just stop doing what it was they complained about and apologize. Even if you feel you were misinterpreted or unfairly accused, chances are good there was something you could've communicated better — remember that it's your responsibility to make your fellow Rustaceans comfortable. Everyone wants to get along and we are all here first and foremost because we want to talk about cool technology. You will find that people will be eager to assume good intent and forgive as long as you earn their trust.
+위에 나열된 적용 규칙은 모든 공식 Rust 장소에서 적용됩니다. 여기에는 공식 IRC 채널들(#rust, #rust-internals, #rust-tools, #rust-libs, #rustc, #rust-beginners, #rust-docs, #rust-community, #rust-lang, 그리고 #cargo), rust-lang, rust-lang-nursery, rust-lang-deprecated 아래의 GitHub 저장소들, 그리고 rust-lang.org 아래의 모든 포럼들(users.rust-lang.org, internals.rust-lang.org)이 포함됩니다. Rust 행동 규칙을 채택한 다른 프로젝트에서 적용을 바란다면 그 프로젝트의 관리자들에게 연락해 주세요. 혼란을 피하기 위해, 이 행동 규칙을 프로젝트에서 사용하기 원한다면 명시적으로 중재 정책을 언급하거나 이 문서를 복제해 중재 정책을 변경하는 걸 생각해 보세요.
 
-The enforcement policies listed above apply to all official Rust venues; including official IRC channels (#rust, #rust-internals, #rust-tools, #rust-libs, #rustc, #rust-beginners, #rust-docs, #rust-community, #rust-lang, and #cargo); GitHub repositories under rust-lang, rust-lang-nursery, and rust-lang-deprecated; and all forums under rust-lang.org (users.rust-lang.org, internals.rust-lang.org). For other projects adopting the Rust Code of Conduct, please contact the maintainers of those projects for enforcement. If you wish to use this code of conduct for your own project, consider explicitly mentioning your moderation policy or making a copy with your own moderation policy so as to avoid confusion.
-
-*Adapted from the [Node.js Policy on Trolling](http://blog.izs.me/post/30036893703/policy-on-trolling) as well as the [Contributor Covenant v1.3.0](http://contributor-covenant.org/version/1/3/0/).*
+*[트롤링에 대한 Node.js 정책](http://blog.izs.me/post/30036893703/policy-on-trolling)과 [기여자 행동 규칙 v1.3.0](http://contributor-covenant.org/version/1/3/0/)에서 일부 개작함.*

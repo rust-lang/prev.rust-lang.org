@@ -35,6 +35,9 @@ Rust와 관련해 모든 주제를 가장 넓게 다루는 자료이며, Rust의
 
 [표준 라이브러리 API 참조 문서][api].
 
+[docs.rs].
+[crates.io]에 올라간 모든 크레이트에 대한 문서입니다.
+
 [Rust 참조 문서][ref].
 Rust에는 언어 명세가 없지만 이 문서는 Rust의 동작을 자세히 설명하려 합니다.
 보통 구현보다 늦게 갱신됩니다.
@@ -57,6 +60,8 @@ Rust의 각 릴리스마다 바뀐 점들을 기록합니다.
 [cargo]: http://doc.crates.io/guide.html
 [err]: https://doc.rust-lang.org/error-index.html
 [release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md
+[docs.rs]: https://docs.rs
+[crates.io]: https://crates.io
 
 ## 프로젝트 정책
 

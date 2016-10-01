@@ -49,6 +49,8 @@ Rust 사용자들은 주기적으로 Rust 사용자 그룹에 모입니다.
 
 [Rust Meetup Hamburg](https://www.meetup.com/Rust-Meetup-Hamburg/), Hamburg.
 
+[Rust - Modern Systems Programming Leipzig](https://www.meetup.com/de-DE/Rust-Modern-Systems-Programming-in-Leipzig/), Leipzig.
+
 [Rust Munich](https://www.meetup.com/rust-munich/), München.
 
 ## 인도
@@ -92,6 +94,10 @@ Rust 사용자들은 주기적으로 Rust 사용자 그룹에 모입니다.
 ## 뉴질랜드
 
 [Wellington Rust Meetup](https://www.meetup.com/Wellington-Rust-Meetup/), Wellington.
+
+## 노르웨이
+
+[Rust Oslo](https://www.meetup.com/Rust-Oslo/), Oslo.
 
 ## 필리핀
 

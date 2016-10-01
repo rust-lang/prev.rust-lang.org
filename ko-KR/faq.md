@@ -754,7 +754,7 @@ Rust의 강력한 정적 분석 보장은 많은 프로그래머가 이전에 �
 안 그랬다가는, 클로저를 반환하면 더 이상 올바르지 않은 변수에 접근할 수 있게 될테니 안전하지 않게 됩니다.
 다르게 말하면 잠재적으로 잘못된 메모리를 읽을 수 있게 된단 얘기죠.
 클로저는 또한 [`Box`][Box]로 감싸져 있어서 힙에 할당되어야만 합니다.
-[《Rust 프로그래밍 언어》](https://doc.rust-lang.org/book/closures.html#returning-closures)에서 자세한 내용을 읽어 보세요.
+《[Rust 프로그래밍 언어](https://doc.rust-lang.org/book/closures.html#returning-closures)》에서 자세한 내용을 읽어 보세요.
 
 <h3><a href="#what-are-deref-coercions" name="what-are-deref-coercions">
 Deref 변환(coercion)이 무엇이고 어떻게 동작하나요?
@@ -767,7 +767,7 @@ Deref 구현은 구현하는 타입이 `deref` 메소드를 호출하여 대상 
 이 메소드는 호출되는 타입의 변경 불가능한 참조를 받아서 (같은 수명을 가지는) 대상 타입의 참조를 반환합니다.
 `*` 전위 연산자는 `deref` 메소드의 축약입니다.
 
-이들이 "변환"이라 불리는 건 [《Rust 프로그래밍 언어》](https://doc.rust-lang.org/stable/book/deref-coercions.html)에서 언급하듯 다음 규칙 때문입니다:
+이들이 "변환"이라 불리는 건 《[Rust 프로그래밍 언어](https://doc.rust-lang.org/stable/book/deref-coercions.html)》에서 언급하듯 다음 규칙 때문입니다:
 
 > 만약 타입 `U`가 `Deref<Target=T>`를 구현하면, `&U` 값은 자동으로 `&T`로 변환됩니다.
 
@@ -892,7 +892,7 @@ Rust는 어떻게 "널 포인터가 없다"는 것과 "유령 포인터(dangling
 클로저가 환경에서 아무 변수도 갈무리하지 않는다 하여도, 다른 클로저와 마찬가지로 실행 시간에는 두 개의 포인터로 표현됩니다.
 
 <h3><a href="#what-are-higher-kinded-types" name="what-are-higher-kinded-types">
-상류(higher-kinded) 타입이 무엇인가요? 왜 제가 그걸 필요로 할 수 있나요? Rust에 상류 타입이 없는 이유는 무엇인가요?
+상류(higher-kinded) 타입이 무엇인가요? 그게 어째서 필요하다는 건가요? Rust에 상류 타입이 없는 이유는 무엇인가요?
 <!-- 역주: higher-order 고차, higher-rank 상위, higher-kind 상류. -->
 </a></h3>
 
@@ -998,7 +998,7 @@ Rust의 몇몇 타입들은 그 값들이 부분적으로만 순서가 있거나
 <h2 id="input-output">입출력</h2>
 
 <h3><a href="#how-do-i-read-a-file-into-a-string" name="how-do-i-read-a-file-into-a-string">
-파일을 <code>String</code>로 읽으려면 어떻게 하나요?
+파일을 <code>String</code>으로 읽으려면 어떻게 하나요?
 </a></h3>
 
 [`std::io`][std-io]의 [`Read`][Read] 트레이트에 있는 [`read_to_string()`][read__read_to_string] 메소드를 씁니다.
@@ -1779,7 +1779,7 @@ Rust에는 이동 생성자가 있나요?
 
 아뇨.
 모든 타입의 값들은 `memcpy`로 옮겨집니다.
-덕분에 일반적인 안전하지 않은 코드를 짜기 훨씬 간단해지는데, 대입이나 인자를 넘기고 반환하는 과정에서 되감기(unwinding) 같은 부수 효과가 일어날 수 없다는 걸 보장할 수 없기 때문입니다.
+덕분에 일반적인 안전하지 않은 코드를 짜기 훨씬 간단해지는데, 대입이나 인자를 넘기고 반환하는 과정에서 되감기(unwinding) 같은 부수 효과가 일어날 수 없다는 걸 보장할 수 있기 때문입니다.
 
 <h3><a href="#compare-go-and-rust" name="compare-go-and-rust">
 Go와 Rust가 비슷한 점은 무엇이고 다른 점은 무엇인가요?
