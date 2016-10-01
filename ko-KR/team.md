@@ -14,8 +14,12 @@ people:
     irc: acrichto
   aturon:
     name: Aaron Turon
+  badboy:
+    name: Jan-Erik Rediger
   bkoropoff:
     name: Brian Koropoff
+  booyaa:
+    name: Mark Sta Ana
   brson:
     name: Brian Anderson
   bstrie:
@@ -44,9 +48,16 @@ people:
   GuillaumeGomez:
     name: Guillaume Gomez
     irc: imperio
+  japaric:
+    name: Jorge Aparicio
+  johannhof:
+    name: Johann Hofmann
   jonathandturner:
     name: Jonathan Turner
     irc: jntrnr
+  joshtriplett:
+    name: Josh Triplett
+    irc: JoshTriplett
   jseyfried:
     name: Jeffrey Seyfried
     irc: jseyfried
@@ -80,66 +91,91 @@ people:
     name: Steven Fackler
   skade:
     name: Florian Gilcher
+  solson:
+    name: Scott Olson
+    irc: scott
   steveklabnik:
     name: Steve Klabnik
   vadimcn:
     name: Vadim Chugunov
+  ubsan:
+    name: Nicole Mazzuca
   wycats:
     name: Yehuda Katz
-  jonathandturner:
-    name: Jonathan Turner
-  badboy:
-    name: Jan-Erik Rediger
-  johannhof:
-    name: Johann Hofmann
-  booyaa:
-    name: Mark Sta Ana
 
 # Information about each team. Omit `lead` for teams without leaders.
 teams:
   - name: Core team
-    label: 코어 팀
-    responsibility: "프로젝트의 전반적인 방향성, 서브팀 주도, 여러 팀을 아우르는 문제들"
+    responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
     members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, pcwalton, erickt]
   - name: Language design team
-    label: 언어 설계 팀
-    responsibility: "새 언어 기능의 개발"
+    responsibility: "designing new language features"
     members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon]
     lead: nikomatsakis
   - name: Library team
-    label: 라이브러리 팀
-    responsibility: "Rust 표준 라이브러리, rust-lang 크레이트들, 코딩 규약들"
+    responsibility: "the Rust standard library, rust-lang crates, conventions"
     members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, aturon]
     lead: aturon
   - name: Compiler team
-    label: 컴파일러 팀
-    responsibility: "컴파일러 내부, 최적화"
+    responsibility: "compiler internals, optimizations"
     members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister, jseyfried]
     lead: nikomatsakis
   - name: Tooling and infrastructure
-    label: 도구 및 인프라
-    responsibility: "도구 지원 (Cargo, rustup 등), 지속적 통합(CI) 인프라 등"
+    responsibility: "tool support (e.g. Cargo, rustup), CI infrastructure, etc."
     members: [brson, nrc, alexcrichton, vadimcn, wycats, michaelwoerister]
     lead: alexcrichton
   - name: Community team
-    label: 커뮤니티 팀
-    responsibility: "행사 조율, 소외층 지원, 상용 사용자들, 교육 자료들, 프로젝트 노출"
+    responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt
     members: [brson, skade, manishearth, johannhof, steveklabnik, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, edunham]
     email: community-team@rust-lang.org
   - name: Documentation team
-    label: 문서 팀
-    responsibility: "Rust가 환상적인 문서를 가지도록 함"
+    responsibility: "ensuring Rust has fantastic documentation"
     members: [steveklabnik, GuillaumeGomez, jonathandturner, peschkaj]
   - name: Moderation team
-    label: 중재 팀
-    responsibility: "<a href='https://www.rust-lang.org/conduct.html'>행동 규약</a>이 잘 지켜지도록 도움"
+    responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
     email: rust-mods@rust-lang.org
+  - name: Style team
+    members: [brson, japaric, joshtriplett, nrc, solson, steveklabnik, ubsan]
+    lead: nrc
+    responsibility: "temporary 'strike team' charged with deciding on code style guidelines and configuring Rustfmt (process specified in <a href='https://github.com/rust-lang/rfcs/blob/master/text/1607-style-rfcs.md'>RFC 1607</a>)"
+    email: style-team@rust-lang.org
   - name: Rust team alumni
-    label: 옛 Rust 팀
-    responsibility: "여유로운 은퇴 생활을 즐기는 중"
+    responsibility: "enjoying a leisurely retirement"
     members: [Gankro, huonw]
+
+localized:
+  Core team:
+    name: 코어 팀
+    responsibility: "프로젝트의 전반적인 방향성, 서브팀 주도, 여러 팀을 아우르는 문제들"
+  Language design team:
+    name: 언어 설계 팀
+    responsibility: "새 언어 기능의 개발"
+  Library team:
+    name: 라이브러리 팀
+    responsibility: "Rust 표준 라이브러리, rust-lang 크레이트들, 코딩 규약들"
+  Compiler team:
+    name: 컴파일러 팀
+    responsibility: "컴파일러 내부, 최적화"
+  Tooling and infrastructure:
+    name: 도구 및 인프라
+    responsibility: "도구 지원 (Cargo, rustup 등), 지속적 통합(CI) 인프라 등"
+  Community team:
+    name: 커뮤니티 팀
+    responsibility: "행사 조율, 소외층 지원, 상용 사용자들, 교육 자료들, 프로젝트 노출"
+  Documentation team:
+    name: 문서 팀
+    responsibility: "Rust가 환상적인 문서를 가지도록 함"
+  Moderation team:
+    name: 중재 팀
+    responsibility: "<a href='https://www.rust-lang.org/conduct.html'>행동 규약</a>이 잘 지켜지도록 도움"
+  Style team:
+    name: 스타일 팀
+    responsibility: "(<a href='https://github.com/rust-lang/rfcs/blob/master/text/1607-style-rfcs.md'>RFC 1607</a>에 명시된 과정에 따라) 코드 스타일 가이드라인과 Rustfmt 설정의 결정을 맡는 임시 '공격대'"
+  Rust team alumni:
+    name: 옛 Rust 팀
+    responsibility: "여유로운 은퇴 생활을 즐기는 중"
 
 # Information on sites to get profile information from
 sites:
@@ -201,9 +237,9 @@ Rust 프로젝트는 여러 팀에 의해
 
 {% for team in page.teams %}
 <section id="{{ team.name | replace:' ','-' }}">
-<h2> {{ team.label }} </h2>
+<h2> {{ page.localized[team.name].name | default: team.name }} </h2>
 
-<strong>책임</strong>: <em>{{ team.responsibility }}</em>
+<strong>책임</strong>: <em>{{ page.localized[team.name].responsibility | default: team.responsibility }}</em>
 
 <br />
 
