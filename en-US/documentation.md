@@ -42,8 +42,6 @@ for learning Rust.
 [Standard Library API Reference][api]. Documentation for the
 standard library.
 
-[docs.rs]. Documentation for all crates published to [crates.io].
-
 [The Rust Reference][ref]. While Rust does not have a
 specification, the reference tries to describe its working in
 detail. It tends to be out of date.
@@ -66,8 +64,6 @@ the errors produced by the Rust compiler.
 [cargo]: http://doc.crates.io/guide.html
 [err]: https://doc.rust-lang.org/error-index.html
 [release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md
-[docs.rs]: https://docs.rs
-[crates.io]: https://crates.io
 
 ## Project policies
 
