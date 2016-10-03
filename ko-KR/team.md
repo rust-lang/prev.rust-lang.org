@@ -163,10 +163,10 @@ localized:
     responsibility: "도구 지원 (Cargo, rustup 등), 지속적 통합(CI) 인프라 등"
   Community team:
     name: 커뮤니티 팀
-    responsibility: "행사 조율, 소외층 지원, 상용 사용자들, 교육 자료들, 프로젝트 노출"
+    responsibility: "행사 조율, 외부 연락, 상용 사용자들, 교육 자료들, 프로젝트 노출"
   Documentation team:
     name: 문서 팀
-    responsibility: "Rust가 환상적인 문서를 가지도록 함"
+    responsibility: "Rust가 멋진 문서를 가지도록 함"
   Moderation team:
     name: 중재 팀
     responsibility: "<a href='https://www.rust-lang.org/conduct.html'>행동 규약</a>이 잘 지켜지도록 도움"
