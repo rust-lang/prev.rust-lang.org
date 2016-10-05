@@ -83,6 +83,11 @@
   logo: ceph.png
   how: "Rust <a href='https://github.com/ceph/ceph-rust'>bindings for librbd</a>, an interface into the Ceph storage platform."
 -
+  name: Chef
+  url: https://www.chef.io/
+  logo: chef.svg
+  how: "<a href='https://github.com/chef/delivery-cli'>Chef lets you develop, deploy and manage infrastructure, run-time environments and applications.</a>"
+-
   name: Coursera
   url: https://www.coursera.org
   logo: coursera.png
