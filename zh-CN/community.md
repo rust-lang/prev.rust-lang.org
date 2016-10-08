@@ -1,4 +1,4 @@
-﻿---
+---
 layout: default
 title: The Rust Community &middot; The Rust Programming Language
 ---
