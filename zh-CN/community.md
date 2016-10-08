@@ -1,4 +1,4 @@
-﻿---
+---
 layout: zh-CN/default
 title: Rust 社区 &middot; Rust 程序设计语言
 ---

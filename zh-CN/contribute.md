@@ -1,42 +1,42 @@
 ---
 layout: zh-CN/default
-title: Îª Rust ÓïÑÔ×ö¹±Ï× &middot; Rust ³ÌĞòÉè¼ÆÓïÑÔ
+title: ä¸º Rust è¯­è¨€åšè´¡çŒ® &middot; Rust ç¨‹åºè®¾è®¡è¯­è¨€
 ---
 
-# Îª Rust ÓïÑÔ×ö¹±Ï×
+# ä¸º Rust è¯­è¨€åšè´¡çŒ®
 
-ÄúÒÑ¾­¿ªÊ¼Ñ§Ï° Rust ÓïÑÔ¡£ÒÀÁµËü£¬ÏëÒªÓëËüÏàÓµ¡£
-Èç¹ûÄú²»È·¶¨ÈçºÎ²ÎÓëµ½¹±Ï×µ±ÖĞ£¬ÕâÑùÒ³Ãæ¿ÉÒÔ°ïÖúÄú¡£
+æ‚¨å·²ç»å¼€å§‹å­¦ä¹  Rust è¯­è¨€ã€‚ä¾æ‹å®ƒï¼Œæƒ³è¦ä¸å®ƒç›¸æ‹¥ã€‚
+å¦‚æœæ‚¨ä¸ç¡®å®šå¦‚ä½•å‚ä¸åˆ°è´¡çŒ®å½“ä¸­ï¼Œè¿™æ ·é¡µé¢å¯ä»¥å¸®åŠ©æ‚¨ã€‚
 
-**·¢ÏÖÁËÒ»¸ö´óÂ©¶´ (bug)£¬ÈçºÎ±¨¸æ£¿** [Â©¶´±¨¸æÖ¸ÄÏ][bugs]. ÔÚ´Ë¸ĞĞ»ÄúµÄ½¨ÑÔ¡£
+**å‘ç°äº†ä¸€ä¸ªå¤§æ¼æ´ (bug)ï¼Œå¦‚ä½•æŠ¥å‘Šï¼Ÿ** [æ¼æ´æŠ¥å‘ŠæŒ‡å—][bugs]. åœ¨æ­¤æ„Ÿè°¢æ‚¨çš„å»ºè¨€ã€‚
 
 Rust is an expansive system of projects, the most prominent of which
-are maintained by [Rust ¿ª·¢Õß][devs] in [GitHub ÉÏµÄ rust-lang][rust-lang]. Newcomers may be
+are maintained by [Rust å¼€å‘è€…][devs] in [GitHub ä¸Šçš„ rust-lang][rust-lang]. Newcomers may be
 interested in the project's [CONTRIBUTING.md] file, which explains the
 mechanics of contributing to [rust-lang/rust].
 
-ÓĞºÜ¶à·½Ê½Îª Rust ÓïÑÔ×ö³ö¼«ºÃµÄ¹±Ï×£¬
-ÕâÀïÓĞ¼¸Ìõ¸øĞÂ¹±Ï×ÕßµÄ½¨Òé£º
+æœ‰å¾ˆå¤šæ–¹å¼ä¸º Rust è¯­è¨€åšå‡ºæå¥½çš„è´¡çŒ®ï¼Œ
+è¿™é‡Œæœ‰å‡ æ¡ç»™æ–°è´¡çŒ®è€…çš„å»ºè®®ï¼š
 
-* [·¢ÏÖÎÊÌâ¡¢Éó²éÎÊÌâÒÔ¼°½â¾öÎÊÌâ](contribute-bugs.html)£º
+* [å‘ç°é—®é¢˜ã€å®¡æŸ¥é—®é¢˜ä»¥åŠè§£å†³é—®é¢˜](contribute-bugs.html)ï¼š
   The basic work of maintaining a large and active project like Rust.
-* [ÎÄµµ](contribute-docs.html)£º
-  ²»Ö»ÏŞÓÚ¹Ù·½ÎÄµµ¡ª¡ª¿â¡¢²©¿Í¼°ÆäËû·Ç¹Ù·½µÄÏûÏ¢À´Ô´¡£
-* [ÉçÇø½¨Éè](contribute-community.html)
-  °ïÖúÄãÔÚRustÖĞµÄÊÖ×ã£¬ÒÔ¼°×³´óRust¡£
-* [¹¤¾ß¡¢¼¯³É¿ª·¢»·¾³ÒÔ¼°infrastructure](contribute-tools.html). The
+* [æ–‡æ¡£](contribute-docs.html)ï¼š
+  ä¸åªé™äºå®˜æ–¹æ–‡æ¡£â€”â€”åº“ã€åšå®¢åŠå…¶ä»–éå®˜æ–¹çš„æ¶ˆæ¯æ¥æºã€‚
+* [ç¤¾åŒºå»ºè®¾](contribute-community.html)
+  å¸®åŠ©ä½ åœ¨Rustä¸­çš„æ‰‹è¶³ï¼Œä»¥åŠå£®å¤§Rustã€‚
+* [å·¥å…·ã€é›†æˆå¼€å‘ç¯å¢ƒä»¥åŠinfrastructure](contribute-tools.html). The
   important pieces that make using a language practical and painless.
-* [¿â](contribute-libs.html)£º
+* [åº“](contribute-libs.html)ï¼š
   Rust's suitability for any particular task is mostly
   dependent on availability of quality libraries.
-* [ÓïÑÔ¡¢±àÒëÆ÷ºÍ±ê×¼¿â](contribute-compiler.html)£º 
-  ÓïÑÔÉè¼Æ¡¢ ¹¦ÄÜÊµÏÖ¡¢ ĞÔÄÜµÄ¸ÄÉÆ¡£
+* [è¯­è¨€ã€ç¼–è¯‘å™¨å’Œæ ‡å‡†åº“](contribute-compiler.html)ï¼š 
+  è¯­è¨€è®¾è®¡ã€ åŠŸèƒ½å®ç°ã€ æ€§èƒ½çš„æ”¹å–„ã€‚
 
-Èç¹ûÄúĞèÒª¶îÍâµÄÖ¸µ¼Çë²Î¿¼ [#rust-internals] »ò [internals.rust-lang.org]¡£
+å¦‚æœæ‚¨éœ€è¦é¢å¤–çš„æŒ‡å¯¼è¯·å‚è€ƒ [#rust-internals] æˆ– [internals.rust-lang.org]ã€‚
 
 We pride ourselves on maintaining civilized discourse, and to that end
-contributors are expected to follow our [ĞĞÎª¹æ·¶][coc]¡£
-Èç¹ûÄú»¹ÒªÆäËûÎÊÌâ¿ÉÒÔ×ÉÑ¯ÎÒÃÇµÄ[ÉçÇøÍÅ¶Ó][community team]¡£
+contributors are expected to follow our [è¡Œä¸ºè§„èŒƒ][coc]ã€‚
+å¦‚æœæ‚¨è¿˜è¦å…¶ä»–é—®é¢˜å¯ä»¥å’¨è¯¢æˆ‘ä»¬çš„[ç¤¾åŒºå›¢é˜Ÿ][community team]ã€‚
 
 <!--
 TODO: Write a guide to rust processes and governance to link from here
