@@ -38,6 +38,8 @@ aprender Rust.
 
 [Referência da API da Biblioteca Padrão][api]. Documentação da API da biblioteca padrão.
 
+[docs.rs] Documentação pra todas as crates disponíveis em [crates.io].
+
 [A Referência de Rust][ref]. Enquanto Rust ainda não possui uma especificação, a referência
 tenta descrever o seu funcionamento em detalhes. Algumas vezes está meio antigo.
 
@@ -56,6 +58,8 @@ com referência da seção do livro que a descreve.
 [cargo]: http://doc.crates.io/guide.html
 [err]: https://doc.rust-lang.org/error-index.html
 [release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md
+[docs.rs]: https://docs.rs
+[crates.io]: https://crates.io
 
 ## Políticas do Projeto
 
