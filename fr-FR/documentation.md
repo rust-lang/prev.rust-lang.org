@@ -31,7 +31,7 @@ Si vous découvrez Rust, la première chose à lire est l'introduction du livre 
 
 [La référence Rust][ref]. Bien que Rust n'ait pas de spécification, cette référence tente de décrire en détails son fonctionnement. Ces documents ne sont généralement pas à jour.
 
-[L'index syntaxique][syn]. Cette annexe contient des exemples pour tous les élémennts de syntaxe qui composent Rust ainsi que des références aux portions du livre qui les décrivent.
+[L'index syntaxique][syn]. Cette annexe contient des exemples pour tous les éléments de syntaxe qui composent Rust ainsi que des références aux portions du livre qui les décrivent.
 
 [Le guide Cargo][cargo]. La documentation pour Cargo, le gestionnaire de paquet de Rust.
 
