@@ -98,10 +98,10 @@
   logo: coturnix.png
   how: "Machine learning and optimization for minimizing energy consumption in buildings."
 -
-  name: craft.ai
+  name: craft ai
   url: http://craft.ai
   logo: craftai.png
-  how: "Our core engine is written in Rust."
+  how: "Our core machine learning engine is written in Rust."
 -
   name: Dropbox
   url: https://www.dropbox.com
