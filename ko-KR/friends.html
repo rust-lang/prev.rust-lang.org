@@ -1,0 +1,70 @@
+---
+layout: ko-KR/basic
+title:  Rust의 친구들 &middot; Rust 프로그래밍 언어
+---
+
+<div id="users">
+
+  <h1>Rust의 친구들</h1>
+  <h2>(현업에서 Rust를 사용하는 회사 및 단체들)</h2>
+
+  {% for user in site.data.users %}
+    {% assign mod = forloop.index | minus:1 | modulo:3 %}
+    {% if mod != 0 %}
+    {% continue %}
+    {% endif %}
+
+    {% assign offset = forloop.index | minus:1 %}
+
+    <div class="row">
+      {% for user in site.data.users limit:3 offset:offset %}
+        <div class="col-md-4"
+             id="user-logo-{{offset}}-{{forloop.index}}">
+          <div class="user-container">
+            <a href="{{user.url}}" rel="nofollow" alt="{{user.name}}">
+              <img src="../user-logos/{{user.logo}}">
+            </a>
+          </div>
+          <div class="details user-detail fade-out"
+            id="user-details-{{offset}}-{{forloop.index}}">
+            <p><em>{{user.name}}</em> : {{user.how}}</p>
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          var logo = document.getElementById("user-logo-{{offset}}-{{forloop.index}}");
+          logo.onmouseover = function() {
+            var allDetails = document.querySelectorAll(".user-detail");
+            for (var i = 0; i < allDetails.length; i++) {
+              var details = allDetails[i];
+              details.className = details.className.replace(" fade-in", "");
+              details.className = details.className.replace(" fade-out", "");
+              details.className += " fade-out";
+            }
+
+            var details = document.getElementById("user-details-{{offset}}-{{forloop.index}}");
+            details.className = details.className.replace(" fade-in", "");
+            details.className = details.className.replace(" fade-out", "");
+            details.className += " fade-in";
+          };
+
+          logo.onmouseout = function() {
+            var details = document.getElementById("user-details-{{offset}}-{{forloop.index}}");
+            details.className = details.className.replace(" fade-in", "");
+            details.className = details.className.replace(" fade-out", "");
+            details.className += " fade-out";
+          };
+        </script>
+      {% endfor %}
+
+  </div>
+
+  {% endfor %}
+
+  <p id="user-add-info">
+    만약 여러분의 회사나 단체가 Rust를 현업에서 사용하고 있고 이 페이지에 나타나길 원한다면,<br/>
+    <a href="https://github.com/rust-lang/rust-www/issues/new?title=New+Website+Logo%3A+[insert+name]%0A&body=To+list+your+organization%27s+logo+on+the+Rust+website%2C+fill+out+the+following+information+and+click+%22submit+new+issue%22.+Alternately%2C+you+may+edit+_data%2Fusers.yml+as+described+therein+and+submit+a+pull+request.%0D%0A%0D%0A-+Organization+name%3A+%28as+you+want+it+displayed%29%0D%0A-+Homepage+url%3A+%28homepage%2Fprimary+entry+point+for+users%29%0D%0A-+Logo+url%3A+%28svg+if+possible%2C+pngs+over+400x200px+with+transparent+backgrounds+are+also+acceptable%29%0D%0A-+How+you+are+using+Rust%3A+%28one+sentence+describing+your+use+of+Rust%29%0D%0A-+Url+describing+Rust+usage%3A+%28optional+link+to+e.g.+blog+post+explaining+how+you+use+Rust%29%0D%0A-+Organization+contact%3A+%28name+and+email.+we+may+contact+you+when+updating+this+page.+alternately+you+may+email+this+information+to+user-logos%40rust-lang.org+and+it+will+be+kept+secret%29.%0D%0A">
+      이슈를 열고 영문으로 요청된 정보를 채워 넣어 주시면 감사하겠습니다</a>.
+  </p>
+
+</div>

@@ -1,0 +1,23 @@
+<pre class='rust'>
+<span class='kw'>fn</span> main() {
+<span class='comment'>// 간단한 정수 계산기:
+// `+` 또는 `-`는 1을 더하거나 뺍니다
+// `*` 또는 `/`는 2를 곱하거나 나눕니다</span>
+
+<span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
+<span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0</span>;
+
+<span class='kw'>for</span> token in program.chars() {
+<span class='kw'>match</span> token {
+    <span class='string'>'+'</span> => accumulator <span class='op'>+=</span> <span class='number'>1</span>,
+    <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
+    <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
+    <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
+    _ => { <span class='comment'>/* 다른 문자를 무시 */</span> }
+}
+}
+
+<span class='prelude-val'>println!</span>(<span class='string'>"프로그램 \"{}\"의 계산값은 {}입니다"</span>,
+   program, accumulator);
+}
+</pre>

@@ -1,9 +1,9 @@
 ---
-layout: default
-title: The Rust Community &middot; The Rust Programming Language
+layout: zh-CN/default
+title: Rust 社区 &middot; Rust 程序设计语言
 ---
 
-# The Rust Community
+# Rust 社区
 
 The Rust programming language has many qualities, but Rust's greatest
 strength is the community of people who come together to make working
@@ -38,7 +38,7 @@ You may also find help on the question and answer site, [Stack Overflow][stack_o
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
-## News
+## 新闻
 
 [This Week in Rust][twir] collects the latest news, upcoming events
 and a week-by-week account of changes in the Rust language and
@@ -54,7 +54,7 @@ We also have a [Twitter][twitter] account.
 [reddit_coc]: https://www.reddit.com/r/rust/comments/2rvrzx/our_code_of_conduct_please_read/
 [twitter]: https://twitter.com/rustlang
 
-## IRC Channels
+## IRC 频道
 
 Rustaceans maintain a number of friendly, high-traffic [IRC] channels on Mozilla's IRC network, irc.mozilla.org.
 
@@ -65,10 +65,10 @@ responses are typically fast.
 
 Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real-time discussion about hacking on Rust itself. It is also the channel to ask questions about contributing to Rust.
 
-### Main channels
+### 主要频道
 
-- [#rust][rust_irc] is for all things Rust
-- [#rust-beginners][beginners_irc] is a space for those new to Rust, lower traffic than #rust
+- [#rust][rust_irc] 关于 Rust 的所有内容
+- [#rust-beginners][beginners_irc] Rust 语言的初学者频道, lower traffic than #rust
 - [#rust-internals][internals_irc] is for discussion of other Rust implementation topics
 - [#rustc][rustc_irc] is the home of the [compiler team][compiler_team]
 - [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
@@ -76,15 +76,16 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#rust-lang][lang_irc] is the home of the [language team][language_team]
 - [#rust-community][community_irc] is the home of the [community team][community_team]
 
-### International channels
+### 国际频道
 
-- [#rust-br][br_irc] é dedicado à discussão sobre Rust no Brasil
-- [#rust-de][de_irc] ist für die allgemeine Diskussion über Rust auf Deutsch
-- [#rust-es][es_irc] es para una discusión general sobre Rust en español
-- [#rust-fr][fr_irc] est dédié à la programmation en Rust en français
-- [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
+- [#rust-br][br_irc] 葡语频道
+- [#rust-cn][cn_org] 中文频道(非IRC频道)
+- [#rust-de][de_irc] 德语频道
+- [#rust-es][es_irc] 西语频道(西班牙语)
+- [#rust-fr][fr_irc] 法语频道
+- [#rust-ru][ru_irc] 俄语频道
 
-### Topical channels
+### 专题频道
 
 - [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
 - [#rust-bots][bots_irc] notifications about Rust from a selection of bots
@@ -102,6 +103,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [bots_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
 [br_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-br
 [cargo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23cargo
+[cn_org]: https://chat.rust-china.org/
 [community_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
 [crypto_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
 [de_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
