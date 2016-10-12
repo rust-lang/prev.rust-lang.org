@@ -100,6 +100,8 @@ people:
     name: Vadim Chugunov
   ubsan:
     name: Nicole Mazzuca
+  withoutboats:
+    name: Without Boats
   wycats:
     name: Yehuda Katz
 
@@ -110,7 +112,7 @@ teams:
     members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, pcwalton, erickt]
   - name: Language design team
     responsibility: "designing new language features"
-    members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon]
+    members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon, withoutboats]
     lead: nikomatsakis
   - name: Library team
     responsibility: "the Rust standard library, rust-lang crates, conventions"
