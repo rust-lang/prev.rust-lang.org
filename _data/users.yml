@@ -108,6 +108,11 @@
   logo: craftai.png
   how: "Our core machine learning engine is written in Rust."
 -
+  name: Delimiter
+  url: https://www.delimiter.com/
+  logo: delimiter.png
+  how: "Rust powers our bare metal provisioning system."
+-
   name: Dropbox
   url: https://www.dropbox.com
   logo: dropbox.svg
