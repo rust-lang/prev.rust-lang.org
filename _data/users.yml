@@ -73,6 +73,11 @@
   logo: beget.png
   how: "As part of backup, resource management systems and <a href='https://github.com/LTD-Beget/syncookied'>DDOS mitigation</a>"
 -
+  name: Calyptech
+  url: http://calyptech.com
+  logo: calyptech.png
+  how: "Used for high performance embedded system components as an alternative to C."
+-
   name: Canonical
   url: http://www.canonical.com
   logo: canonical.svg
