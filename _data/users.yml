@@ -138,6 +138,11 @@
   logo: honeypot.svg
   how: "We <a href='http://blog.honeypot.io/open-sourcing-searchspot/'>built and use Searchspot</a>, a kind of search engine based on Elasticsearch. Recruiters use it to search for the developers they're looking for."
 -
+  name: LINE
+  url: https://line.me/
+  logo: line.png
+  how: "For a configuration agent."
+-
   name: MaidSafe
   url: http://www.maidsafe.net
   logo: maidsafe.svg
