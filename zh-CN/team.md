@@ -1,6 +1,6 @@
 ---
-layout: default
-title: The Rust Team &middot; The Rust Programming Language
+layout: zh-CN/default
+title: Rust 团队 &middot; Rust 程序设计语言
 
 # map from GH username to name & irc nick (irc nick can be omitted if it
 # matches GH).
@@ -97,39 +97,39 @@ people:
 
 # Information about each team. Omit `lead` for teams without leaders.
 teams:
-  - name: Core team
+  - name: 核心团队
     responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
     members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, pcwalton, erickt]
-  - name: Language design team
-    responsibility: "designing new language features"
+  - name: 语言设计团队
+    responsibility: "为语言设计新特性"
     members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon]
     lead: nikomatsakis
-  - name: Library team
-    responsibility: "the Rust standard library, rust-lang crates, conventions"
+  - name: 库团队
+    responsibility: "Rust 标准库、Rust 语言的包及公约"
     members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, aturon]
     lead: aturon
-  - name: Compiler team
+  - name: 编译器开发团队
     responsibility: "compiler internals, optimizations"
     members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister, jseyfried]
     lead: nikomatsakis
-  - name: Tooling and infrastructure
-    responsibility: "tool support (e.g. Cargo, rustup), CI infrastructure, etc."
+  - name: 工具和基础组件团队
+    responsibility: "提高工具支持 (譬如 Cargo、rustup)、CI 基础控件，等。"
     members: [brson, nrc, alexcrichton, vadimcn, wycats, michaelwoerister]
     lead: alexcrichton
-  - name: Community team
+  - name: 社区团队
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt
     members: [brson, skade, manishearth, johannhof, steveklabnik, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, edunham]
     email: community-team@rust-lang.org
-  - name: Documentation team
-    responsibility: "ensuring Rust has fantastic documentation"
+  - name: 文档团队
+    responsibility: "确保 Rust 拥有极好的文档"
     members: [steveklabnik, GuillaumeGomez, jonathandturner, peschkaj]
   - name: Moderation team
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
     email: rust-mods@rust-lang.org
-  - name: Rust team alumni
-    responsibility: "enjoying a leisurely retirement"
+  - name: Rust 团队旧友
+    responsibility: "享受悠哉的退休生活"
     members: [Gankro, huonw]
 
 # Information on sites to get profile information from
@@ -154,7 +154,7 @@ sites:
   margin-bottom: 20px;
 }
 .lead { font-weight: bold; }
-.lead .name::after { content: " (lead)"; }
+.lead .name::after { content: " (负责人)"; }
 .details {
   display: none;
   position: absolute;
@@ -179,12 +179,11 @@ sites:
 }
 </style>
 
-# The Rust Team
+# Rust 团队
 
-The Rust project is
-[governed](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)
-by a number of teams, each focused on a specific area of concern. Below are
-the rosters, in alphabetical order.
+Rust 的项目是由若干个小组分别
+[管辖](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)，
+每个小组只关注特定的内容，以下是小组人名单（姓氏字母排序）。
 
 To contact a team, post your question or comment to [the Internals
 forum](https://internals.rust-lang.org/) and tag your post with the category
@@ -195,12 +194,12 @@ the [Rust security disclosure process](security.html).
 <section id="{{ team.name | replace:' ','-' }}">
 <h2> {{ team.name }} </h2>
 
-<strong>Responsibility</strong>: <em>{{ team.responsibility }}</em>
+<strong>职能</strong>: <em>{{ team.responsibility }}</em>
 
 <br />
 
 {% if team.email %}
-  <strong>Contact</strong>:
+  <strong>联系人</strong>:
   <a href="mailto:{{ team.email | uri_escape }}">{{ team.email }}</a>
 {% endif %}
 
