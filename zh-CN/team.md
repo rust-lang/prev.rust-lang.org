@@ -154,7 +154,7 @@ sites:
   margin-bottom: 20px;
 }
 .lead { font-weight: bold; }
-.lead .name::after { content: " (lead)"; }
+.lead .name::after { content: " (负责人)"; }
 .details {
   display: none;
   position: absolute;
@@ -212,7 +212,7 @@ the [Rust security disclosure process](security.html).
     {% assign sitename = "github" %}
   {% endif %}
   {% assign site = page.sites[sitename] %}
-  <li class="person {% if team.lead and team.lead == nick %}负责人{% endif %}">
+  <li class="person {% if team.lead and team.lead == nick %}lead{% endif %}">
   <a href="{{ site.url | replace:'%nick',nick }}">
     <div class="name">{{ person.name }}</div>
     <div class="details">
