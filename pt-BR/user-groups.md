@@ -1,20 +1,17 @@
 ---
-layout: default
-title: Rust User Groups &middot; The Rust Programming Language
+layout: pt-BR/default
+title: Grupos de Usuários de Rust &middot; A linguagem de programação Rust
 ---
 
-# Rust User Groups
+# Grupos de Usuários de Rust
 
-There are more than 50 Rust User Groups worldwide in over 20 countries
-with over 7,000 members. Rustaceans meet periodically in Rust User
-Groups.  Its a great introduction to the community and a great way to
-learn and socialize with other people with a similar interest.
-Meetings are usually informal and open to
-everyone. If you have started a new user group and with to add it to
-this list, please contact the [Rust Community
-Team](./team.html#Community) or
-even better, open a pull request against
-[this website](https://github.com/rust-lang/rust-www/blob/master/pt-BR/user-groups.md).
+Há mais de 50 grupos de usuários de Rust pelo mundo em mais de 20 países com
+mais de 7000 membros. Rustaceans se encontram periodicamente em grupos de usuários
+sobre Rust. É uma ótima introdução à comunidade e um ótimo jeito de aprender
+e socializar com pessoas com interesses similares.
+Encontros são usualmente informais e abertos para todos. Se você começou um novo
+grupo e deseja adicioná-lo para a lista, por favor, contate o [Time da Comunidade de Rust](./team.html#Community) ou
+até melhor, abra uma pull request para este [site](https://github.com/rust-lang/rust-www/blob/master/pt-BR/user-groups.md).
 
 ## Australia
 
@@ -30,7 +27,7 @@ even better, open a pull request against
 
 [Rust Bolivia](http://www.mozillabolivia.org/rust/), Santa Cruz, Bolivia.
 
-## Brazil
+## Brasil
 
 [Rust São Paulo](https://www.meetup.com/Rust-Sao-Paulo-Meetup/), São Paulo.
 

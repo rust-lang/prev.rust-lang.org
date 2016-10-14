@@ -1,6 +1,6 @@
 ---
-layout: default
-title: The Rust Team &middot; The Rust Programming Language
+layout: pt-BR/default
+title: O time Rust &middot; A linguagem de programação Rust
 
 # map from GH username to name & irc nick (irc nick can be omitted if it
 # matches GH).
@@ -97,39 +97,39 @@ people:
 
 # Information about each team. Omit `lead` for teams without leaders.
 teams:
-  - name: Core team
-    responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
+  - name: Time central
+    responsibility: "direção geral do projeto, liderança de subtimes, outras preocupações"
     members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, pcwalton, erickt]
-  - name: Language design team
-    responsibility: "designing new language features"
+  - name: Time de design da linguagem
+    responsibility: "pensa em novas features para a linguagem"
     members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon]
     lead: nikomatsakis
-  - name: Library team
-    responsibility: "the Rust standard library, rust-lang crates, conventions"
+  - name: Time de bibliotecas
+    responsibility: "a biblioteca padrão de Rust, crates da rust-lang, padrões"
     members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, aturon]
     lead: aturon
-  - name: Compiler team
-    responsibility: "compiler internals, optimizations"
+  - name: Time do compilador
+    responsibility: "internos do compilador, optimizações"
     members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister, jseyfried]
     lead: nikomatsakis
-  - name: Tooling and infrastructure
-    responsibility: "tool support (e.g. Cargo, rustup), CI infrastructure, etc."
+  - name: Ferramentas e infraestrutura
+    responsibility: "suporte de ferramentas (ex.: Cargo, rustup), Infraestrutura CI, etc."
     members: [brson, nrc, alexcrichton, vadimcn, wycats, michaelwoerister]
     lead: alexcrichton
-  - name: Community team
-    responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
+  - name: Time da comunidade
+    responsibility: "coordenar eventos, propaganda, usuários comerciais, materiais de ensino e exposição"
     lead: erickt
     members: [brson, skade, manishearth, johannhof, steveklabnik, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, edunham]
-    email: community-team [at] rust-lang [dot] org
-  - name: Documentation team
-    responsibility: "ensuring Rust has fantastic documentation"
+    email: community-team@rust-lang.org
+  - name: Time da documentação
+    responsibility: "se certificam de que Rust possui uma incrível documentação"
     members: [steveklabnik, GuillaumeGomez, jonathandturner, peschkaj]
-  - name: Moderation team
-    responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
+  - name: Time da moderação
+    responsibility: "mantêm firme o <a href='https://www.rust-lang.org/conduct.html'>codigo de conduta</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
-    email: rust-mods [at] rust-lang [dot] org
-  - name: Rust team alumni
-    responsibility: "enjoying a leisurely retirement"
+    email: rust-mods@rust-lang.org
+  - name: Time Rust alumni
+    responsibility: "curtir um calmo retiro"
     members: [Gankro, huonw]
 
 # Information on sites to get profile information from
@@ -179,23 +179,20 @@ sites:
 }
 </style>
 
-# The Rust Team
+# O Time Rust
 
-The Rust project is
-[governed](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)
-by a number of teams, each focused on a specific area of concern. Below are
-the rosters, in alphabetical order.
+O projeto Rust é [governado](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)
+por inúmeros times, cada um focado em uma área específica. Abaixo estão eles, em ordem alfabética.
 
-To contact a team, post your question or comment to [the Internals
-forum](https://internals.rust-lang.org/) and tag your post with the category
-corresponding to the team name. Note that security disclosures should follow
-the [Rust security disclosure process](security.html). 
+Para contactar um time, poste sua pergunta ou comentário no [Fórum dos Internos](https://internals.rust-lang.org/) e
+rotule a sua questão com a categoria que possui o nome do time. Note que revelações de falhas de segurança
+devem seguir o [Processo de revelação de falhas de Segurança](security.html).
 
 {% for team in page.teams %}
 <section id="{{ team.name | replace:' ','-' }}">
 <h2> {{ team.name }} </h2>
 
-<strong>Responsibility</strong>: <em>{{ team.responsibility }}</em>
+<strong>Responsabilidade</strong>: <em>{{ team.responsibility }}</em>
 
 <br />
 

@@ -73,6 +73,11 @@
   logo: beget.png
   how: "As part of backup, resource management systems and <a href='https://github.com/LTD-Beget/syncookied'>DDOS mitigation</a>"
 -
+  name: Calyptech
+  url: http://calyptech.com
+  logo: calyptech.png
+  how: "Used for high performance embedded system components as an alternative to C."
+-
   name: Canonical
   url: http://www.canonical.com
   logo: canonical.svg
@@ -102,6 +107,11 @@
   url: http://craft.ai
   logo: craftai.png
   how: "Our core machine learning engine is written in Rust."
+-
+  name: Delimiter
+  url: https://www.delimiter.com/
+  logo: delimiter.png
+  how: "Rust powers our bare metal provisioning system."
 -
   name: Dropbox
   url: https://www.dropbox.com
@@ -137,6 +147,11 @@
   url: https://www.honeypot.io/
   logo: honeypot.svg
   how: "We <a href='http://blog.honeypot.io/open-sourcing-searchspot/'>built and use Searchspot</a>, a kind of search engine based on Elasticsearch. Recruiters use it to search for the developers they're looking for."
+-
+  name: LINE
+  url: https://line.me/
+  logo: line.png
+  how: "For a configuration agent."
 -
   name: MaidSafe
   url: http://www.maidsafe.net
