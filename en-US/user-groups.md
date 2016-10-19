@@ -177,7 +177,9 @@ even better, open a pull request against
 [Rust Boulder/Denver](https://www.meetup.com/Rust-Boulder-Denver/), Boulder, CO.
 
 ### Florida
+
 [Rust Tampa](https://www.meetup.com/Rust-Tampa/), Tampa, FL.
+
 [South Florida Rust](https://www.meetup.com/South-Florida-Rust-Meetup/), Fort Lauderdale, FL.
 
 ### Illinois
