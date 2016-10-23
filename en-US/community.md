@@ -21,8 +21,7 @@ being harassed or made uncomfortable by a community member, please
 immediately. Whether you are a regular contributor or a newcomer, we
 care about making the community a safe space for you.
 
-[coc]: https://www.rust-lang.org/conduct.html
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
+[coc]: conduct.html
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
 ## Getting Started
@@ -194,15 +193,15 @@ code. If you're interested in getting involved in one of these teams,
 feel free to reach out to the team leader or any other member, who can
 help get you started.
 
-[teams]: https://www.rust-lang.org/team.html
-[core_team]: https://www.rust-lang.org/team.html#Core
-[language_team]: https://www.rust-lang.org/team.html#Language-design
-[library_team]: https://www.rust-lang.org/team.html#Library
-[compiler_team]: https://www.rust-lang.org/team.html#Compiler
-[tool_team]: https://www.rust-lang.org/team.html#Tooling-and-infrastructure
-[community_team]: https://www.rust-lang.org/team.html#Community
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
-[doc_team]: https://www.rust-lang.org/en-US/team.html#Documentation-team
+[teams]: team.html
+[core_team]: team.html#Core-team
+[language_team]: team.html#Language-design-team
+[library_team]: team.html#Library-team
+[compiler_team]: team.html#Compiler-team
+[tool_team]: team.html#Tooling-and-infrastructure
+[community_team]: team.html#Community-team
+[mod_team]: team.html#Moderation-team
+[doc_team]: team.html#Documentation-team
 
 ## Rust Development
 

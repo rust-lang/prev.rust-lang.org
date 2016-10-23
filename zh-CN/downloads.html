@@ -9,12 +9,11 @@ title: 下载 &middot; Rust程序设计语言
     <div class="row install">
       <div class="col-md-4 side-header">
         <h2 id="stable">{{ site.stable }}&nbsp;</h2>
-        <h3>{{ site.stable_date | date: "%B %-d, %Y" }}</h3>
+        <h3>{{ site.stable_date | date: "%Y 年 %-m 月 %-d 日" }}</h3>
         <p>
-	  The
           <a href="http://blog.rust-lang.org{{ site.stable_blog }}">
-	    current stable release of Rust</a>,
-	  updated every six weeks and backwards-compatible.
+	    当前稳定的版本</a>，
+	  保持每六周更新一次和后向兼容。
         </p>
       </div>
       <div class="col-md-8">
@@ -30,12 +29,12 @@ title: 下载 &middot; Rust程序设计语言
           <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-apple-darwin.pkg"><div class="inst-button">32位</div></a></td>
           </tr>
           <tr>
-          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>〔注〕</sup></a>) (.msi)</td>
           <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-gnu.msi"><div class="inst-button">64位</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-pc-windows-gnu.msi"><div class="inst-button">32位</div></a></td>
           </tr>
           <tr>
-          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
+          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>〔注〕</sup></a>) (.msi) </td>
           <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-msvc.msi"><div class="inst-button">64位</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-pc-windows-msvc.msi"><div class="inst-button">32位</div></a></td>
           </tr>
@@ -50,7 +49,7 @@ title: 下载 &middot; Rust程序设计语言
 
      <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <p>Linux和Mac系统中安装的快捷方法，在终端中运行：</p>
+        <p>也可以快捷的在Linux和Mac系统中的终端运行来安装Rust(稳定绿化版)：</p>
         <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh</code></pre>
       </div>
     </div>
@@ -59,12 +58,12 @@ title: 下载 &middot; Rust程序设计语言
 
     <div class="row install">
       <div class="col-md-4 side-header">
-        <h2 id="beta">Beta&nbsp; ({{ site.beta }})</h2>
+        <h2 id="beta">测试版(Beta)&nbsp; ({{ site.beta }})</h2>
         <p>
-	A preview of the upcoming stable release, intended for testing by
-	crate authors. Updated every six weeks and as needed.
+	即将推出的稳定版本，提供为库(crate) 作者测试使用。
+	每六周或必要时更新一次。
         </p>
-        <p><em>Scheduled for stable release<br/>{{ site.beta_date | date: "%B %-d, %Y" }}</em>.<p>
+        <p><em>预计将于 <br/>{{ site.beta_date | date: "%Y 年 %-m 月 %-d 日" }}</em> 推出稳定版<p>
       </div>
       <div class="col-md-8">
         <table class="table-features table-installers"><tbody>
@@ -79,12 +78,12 @@ title: 下载 &middot; Rust程序设计语言
           <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-apple-darwin.pkg"><div class="inst-button">32位</div></a></td>
           </tr>
           <tr>
-          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>〔注〕</sup></a>) (.msi)</td>
           <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.msi"><div class="inst-button">64位</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-gnu.msi"><div class="inst-button">32位</div></a></td>
           </tr>
           <tr>
-          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
+          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>〔注〕</sup></a>) (.msi) </td>
           <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-msvc.msi"><div class="inst-button">64位</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-msvc.msi"><div class="inst-button">32位</div></a></td>
           <td></td>
@@ -92,7 +91,7 @@ title: 下载 &middot; Rust程序设计语言
           <tr><td>&nbsp;</td></tr>
           <tr>
           <td class="inst-type"></td>
-          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-beta-src.tar.gz"><div class="inst-button">Source</div></a></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-beta-src.tar.gz"><div class="inst-button">源码</div></a></td>
           </tr>
         </tbody></table>
       </div>
@@ -100,7 +99,7 @@ title: 下载 &middot; Rust程序设计语言
 
      <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <p>An easy way to install the beta binaries for Linux and Mac is to run this in your shell:</p>
+        <p>也可以快捷的在Linux和Mac系统中的终端运行来安装Rust(测试绿化版)：</p>
         <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=beta</code></pre>
       </div>
     </div>
@@ -109,12 +108,12 @@ title: 下载 &middot; Rust程序设计语言
 
     <div class="row install">
       <div class="col-md-4 side-header">
-        <h2 id="nightly">Nightly&nbsp; ({{ site.nightly }})</h2>
+        <h2 id="nightly">开发版(Nightly)&nbsp; ({{ site.nightly }})</h2>
         <p>
-        The current development branch.
-	It includes
-	<a href="https://doc.rust-lang.org/book/nightly-rust.html">unstable features</a>
-	that are not available in the betas or stable releases.
+        当前正在开发的分支。
+	它包括若干
+	<a href="https://doc.rust-lang.org/book/nightly-rust.html">不稳定的特性</a>，
+	这些特性在稳定版和测试版中都是不支持的。
         </p>
       </div>
       <div class="col-md-8">
@@ -130,12 +129,12 @@ title: 下载 &middot; Rust程序设计语言
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.pkg"><div class="inst-button">32位</div></a></td>
           </tr>
           <tr>
-          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>〔注〕</sup></a>) (.msi)</td>
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.msi"><div class="inst-button">64位</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-gnu.msi"><div class="inst-button">32位</div></a></td>
           </tr>
           <tr>
-          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
+          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>〔注〕</sup></a>) (.msi) </td>
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-msvc.msi"><div class="inst-button">64位</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-msvc.msi"><div class="inst-button">32位</div></a></td>
           <td></td>
@@ -143,7 +142,7 @@ title: 下载 &middot; Rust程序设计语言
           <tr><td>&nbsp;</td></tr>
           <tr>
           <td class="inst-type"></td>
-          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz"><div class="inst-button">Source</div></a></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz"><div class="inst-button">源码</div></a></td>
           </tr>
         </tbody></table>
       </div>
@@ -151,7 +150,7 @@ title: 下载 &middot; Rust程序设计语言
 
      <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <p>An easy way to install the nightly binaries for Linux and Mac is to run this in your shell:</p>
+        <p>也可以快捷的在Linux和Mac系统中的终端运行来安装Rust(开发绿化版)：</p>
         <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly</code></pre>
       </div>
     </div>
@@ -161,7 +160,7 @@ title: 下载 &middot; Rust程序设计语言
     <div class="row">
       <div class="col-md-12">
       <p>
-        Discover other downloads in <a href="https://static.rust-lang.org/dist/index.html">the archives.</a>
+        这里是一些早期版本的 <a href="https://static.rust-lang.org/dist/index.html">存档</a>。
       </p>
       </div>
     </div>
@@ -172,33 +171,32 @@ title: 下载 &middot; Rust程序设计语言
       <div class="col-md-12">
 	<a id="win-foot"></a>
 	<p>
-	  <em>†</em>
-	  There are two prominent
+	  <em>〔注〕</em>
+	  在 Windows 操作系统中有两个可供选择
 	  <a href="https://en.wikipedia.org/wiki/Application_binary_interface">ABIs</a>
-	  in use on Windows: the native (MSVC) ABI used by
+	  的版本。使用已经安装的 (MSVC) ABI 需要
 	  <a href="https://www.visualstudio.com">Visual Studio</a>,
-	  and the GNU ABI used by the
-	  <a href="https://gcc.gnu.org/">GCC toolchain</a>.
+	  ，而使用 GNU ABI 则需要
+	  <a href="https://gcc.gnu.org/">GCC 工具链</a>.
 	  Which version of Rust you need depends largely on what C/C++ libraries you want to interoperate with:
 	  for interop with software produced by Visual Studio use the MSVC build of Rust; for interop with
 	  GNU software built using the
-	  <a href="https://msys2.github.io/">MinGW/MSYS2 toolchain</a>
+	  <a href="https://msys2.github.io/">MinGW/MSYS2 工具链</a>
 	  use the GNU build.
 	</p>
 	<p>
 	  MSVC builds of Rust additionally require the Microsoft Visual
-          C++ build tools for Visual Studio 2013 or later.
+          C++ build tools for Visual Studio 2013 或更高版本。
 	  The easiest way to acquire the build tools is by installing
 	  <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
 	  Microsoft Visual C++ Build Tools 2015</a>
 	  which provides just the Visual C++ build tools.
-	  Alternately, you can <a href="https://www.visualstudio.com/downloads/">install</a>
+	  Alternately, you can <a href="https://www.visualstudio.com/downloads/">安装</a>
 	  Visual Studio 2015 or Visual Studio 2013 and during install select the "C++ tools".
 	  No additional software installation is necessary for basic use of the GNU build.
 	</p>
 	<p>
-	  Rust's support for the GNU ABI is more mature, and is recommended for typical
-	  uses.
+	  Rust 对 GNU ABI 的支持更加成熟，建议作为典型用途。
 	</p>
     </div>
   </div>
