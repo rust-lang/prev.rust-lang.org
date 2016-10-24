@@ -51,7 +51,7 @@ title: Downloads &middot; The Rust Programming Language
      <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <p>An easy way to install the stable binaries for Linux and Mac is to run this in your shell:</p>
-        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh</code></pre>
+        <pre><code>curl https://sh.rustup.rs -sSf | sh -s -- -y</code></pre>
       </div>
     </div>
 
@@ -101,7 +101,7 @@ title: Downloads &middot; The Rust Programming Language
      <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <p>An easy way to install the beta binaries for Linux and Mac is to run this in your shell:</p>
-        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=beta</code></pre>
+        <pre><code>curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain beta</code></pre>
       </div>
     </div>
 
@@ -152,7 +152,7 @@ title: Downloads &middot; The Rust Programming Language
      <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <p>An easy way to install the nightly binaries for Linux and Mac is to run this in your shell:</p>
-        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly</code></pre>
+        <pre><code>curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain nightly</code></pre>
       </div>
     </div>
 
@@ -171,7 +171,7 @@ title: Downloads &middot; The Rust Programming Language
      <div class="row">
       <div class="col-md-12">
         <p>If you installed using the shell script, run this to uninstall:</p>
-        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --uninstall</code></pre>
+        <pre><code>rustup self uninstall</code></pre>
       </div>
     </div>
 
