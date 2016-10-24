@@ -135,6 +135,14 @@ We have two forums for asynchronous discussion:
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
 
+## YouTube Channel
+
+Rust has an [YouTube channel][youtube_channel] where video material about the
+language programming is uploaded. What you can expect are recorded presentations
+held by members of the Rust community from various conferences.
+
+[youtube_channel]: https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA
+
 ## User Groups and Meetups
 
 There are more than 50 [Rust User Groups][user_group] worldwide in over 20
