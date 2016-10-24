@@ -130,7 +130,7 @@ div.install {
 	width: 13em;
 }
 
-.table-installers div.inst-button {
+.table-installers div.inst-button, .table-installers div.pgp-button {
 	border: 1px solid #ccc;
 	text-align: center;
 	border-radius: 3px;
@@ -141,6 +141,11 @@ div.install {
 	border-color: #428BCA;
 	color: white;
 	background-color: #428BCA;
+}
+
+.table-installers div.pgp-button:hover {
+	color: black;
+	background-color: #ddd;
 }
 
 .table-installers a {
