@@ -1,8 +1,8 @@
 // Esse código é editável e rodável!
 fn main() {
     // Uma calculadora simples de inteiros:
-    // `+` or `-` significa somar ou subtrair 1
-    // `*` or `/` significa multiplicar ou dividir por 2
+    // `+` ou `-` significa somar ou subtrair 1
+    // `*` ou `/` significa multiplicar ou dividir por 2
 
     let programa = "+ + * - /";
     let mut acumulador = 0;
