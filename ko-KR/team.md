@@ -2,150 +2,7 @@
 layout: ko-KR/default
 title: Rust 팀 &middot; Rust 프로그래밍 언어
 
-# map from GH username to name & irc nick (irc nick can be omitted if it
-# matches GH).
-people:
-  aatch:
-    name: James Miller
-  arielb1:
-    name: Ariel Ben-Yehuda
-  alexcrichton:
-    name: Alex Crichton
-    irc: acrichto
-  aturon:
-    name: Aaron Turon
-  badboy:
-    name: Jan-Erik Rediger
-  bkoropoff:
-    name: Brian Koropoff
-  booyaa:
-    name: Mark Sta Ana
-  brson:
-    name: Brian Anderson
-  bstrie:
-    name: Ben Striegel
-  BurntSushi:
-    name: Andrew Gallant
-    irc: burntsushi
-  carols10cents:
-    name: Carol Nichols
-  dotdash:
-    name: Björn Steinbrink
-    irc: doener
-  eddyb:
-    name: Eduard Burtescu
-  edunham:
-    name: Emily Dunham
-  erickt:
-    name: Erick Tryzelaar
-  Gankro:
-    name: Alexis Beingessner
-    ex-teams: ["libs"]
-  huonw:
-    name: Huon Wilson
-    irc: huon
-    ex-teams: ["core", "lang", "libs"]
-  GuillaumeGomez:
-    name: Guillaume Gomez
-    irc: imperio
-  japaric:
-    name: Jorge Aparicio
-  johannhof:
-    name: Johann Hofmann
-  jonathandturner:
-    name: Jonathan Turner
-    irc: jntrnr
-  joshtriplett:
-    name: Josh Triplett
-    irc: JoshTriplett
-  jseyfried:
-    name: Jeffrey Seyfried
-    irc: jseyfried
-  Kimundi:
-    name: Marvin Löbel
-    irc: kimundi
-  manishearth:
-    name: Manish Goregaokar
-    irc: Manishearth
-  mbrubeck:
-    name: Matt Brubeck
-  michaelwoerister:
-    name: Michael Woerister
-    irc: mw
-  niconii:
-    name: Nicolette Verlinden
-    irc: niconii
-  nikomatsakis:
-    name: Niko Matsakis
-    irc: nmatsakis
-  nrc:
-    name: Nick Cameron
-  pcwalton:
-    name: Patrick Walton
-  peschkaj:
-    name: Jeremiah Peschka
-    irc: peschkaj
-  pnkfelix:
-    name: Felix Klock
-  sfackler:
-    name: Steven Fackler
-  skade:
-    name: Florian Gilcher
-  solson:
-    name: Scott Olson
-    irc: scott
-  steveklabnik:
-    name: Steve Klabnik
-  vadimcn:
-    name: Vadim Chugunov
-  ubsan:
-    name: Nicole Mazzuca
-  wycats:
-    name: Yehuda Katz
-
-# Information about each team. Omit `lead` for teams without leaders.
-teams:
-  - name: Core team
-    responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
-    members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, pcwalton, erickt]
-  - name: Language design team
-    responsibility: "designing new language features"
-    members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon]
-    lead: nikomatsakis
-  - name: Library team
-    responsibility: "the Rust standard library, rust-lang crates, conventions"
-    members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, aturon]
-    lead: aturon
-  - name: Compiler team
-    responsibility: "compiler internals, optimizations"
-    members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister, jseyfried]
-    lead: nikomatsakis
-  - name: Tooling and infrastructure
-    responsibility: "tool support (e.g. Cargo, rustup), CI infrastructure, etc."
-    members: [brson, nrc, alexcrichton, vadimcn, wycats, michaelwoerister]
-    lead: alexcrichton
-  - name: Community team
-    responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
-    lead: erickt
-    members: [brson, skade, manishearth, johannhof, steveklabnik, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, edunham]
-    email: community-team@rust-lang.org
-  - name: Documentation team
-    responsibility: "ensuring Rust has fantastic documentation"
-    members: [steveklabnik, GuillaumeGomez, jonathandturner, peschkaj]
-  - name: Moderation team
-    responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
-    members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
-    email: rust-mods@rust-lang.org
-  - name: Style team
-    members: [brson, japaric, joshtriplett, nrc, solson, steveklabnik, ubsan]
-    lead: nrc
-    responsibility: "temporary 'strike team' charged with deciding on code style guidelines and configuring Rustfmt (process specified in <a href='https://github.com/rust-lang/rfcs/blob/master/text/1607-style-rfcs.md'>RFC 1607</a>)"
-    email: style-team@rust-lang.org
-  - name: Rust team alumni
-    responsibility: "enjoying a leisurely retirement"
-    members: [Gankro, huonw]
-
-localized:
+localized-teams:
   Core team:
     name: 코어 팀
     responsibility: "프로젝트의 전반적인 방향성, 서브팀 주도, 여러 팀을 아우르는 문제들"
@@ -177,14 +34,10 @@ localized:
     name: 옛 Rust 팀
     responsibility: "여유로운 은퇴 생활을 즐기는 중"
 
-# Information on sites to get profile information from
-sites:
-  github:
-    url: https://github.com/%nick
-    avatar: https://avatars.githubusercontent.com/%nick
-  twitter:
-    url: https://twitter.com/%nick
-    avatar: https://avatars.io/twitter/%nick?size=large
+localized-ex-teams:
+  core: 코어
+  lang: 언어설계
+  libs: 라이브러리
 ---
 
 <style type="text/css">
@@ -199,7 +52,7 @@ sites:
   margin-bottom: 20px;
 }
 .lead { font-weight: bold; }
-.lead .name::after { content: " (lead)"; }
+.lead .name::after { content: " (팀장)"; }
 .details {
   display: none;
   position: absolute;
@@ -235,11 +88,11 @@ Rust 프로젝트는 여러 팀에 의해
 글에 팀 이름에 해당하는 분류를 붙여 주세요.
 보안 발표는 [Rust 보안 발표 절차](security.html)를 따라야 함을 유념해 주세요.
 
-{% for team in page.teams %}
+{% for team in site.data.team.teams %}
 <section id="{{ team.name | replace:' ','-' }}">
-<h2> {{ page.localized[team.name].name | default: team.name }} </h2>
+<h2> {{ page.localized-teams[team.name].name | default: team.name }} </h2>
 
-<strong>책임</strong>: <em>{{ page.localized[team.name].responsibility | default: team.responsibility }}</em>
+<strong>책임</strong>: <em>{{ page.localized-teams[team.name].responsibility | default: team.responsibility }}</em>
 
 <br />
 
@@ -250,23 +103,23 @@ Rust 프로젝트는 여러 팀에 의해
 
 <ul class="headshots">
 {% for nick in team.members %}
-  {% assign person = page.people[nick] %}
+  {% assign person = site.data.team.people[nick] %}
   {% if person.site %}
     {% assign sitename = person.site %}
   {% else %}
     {% assign sitename = "github" %}
   {% endif %}
-  {% assign site = page.sites[sitename] %}
+  {% assign website = site.data.team.sites[sitename] %}
   <li class="person {% if team.lead and team.lead == nick %}lead{% endif %}">
-  <a href="{{ site.url | replace:'%nick',nick }}">
+  <a href="{{ website.url | replace:'%nick',nick }}">
     <div class="name">{{ person.name }}</div>
     <div class="details">
       <div>irc: {% if person.irc %}{{ person.irc }}{% else %}{{ nick }}{% endif %}</div>
       {% if person.ex-teams %}
-      <div>teams: {{ person.ex-teams | join: ", " }}</div>
+      <div>팀: {% for ex-team in person.ex-teams %}{% if forloop.first == false %}, {% endif %}{{ page.localized-ex-teams[ex-team] | default: ex-team }}{% endfor %}</div>
       {% endif %}
     </div>
-    <img class="headshot" src="{{ site.avatar | replace:'%nick',nick }}" alt="{{ person.name }}">
+    <img class="headshot" src="{{ website.avatar | replace:'%nick',nick }}" alt="{{ person.name }}">
   </a>
 </li>
 {% endfor %}
