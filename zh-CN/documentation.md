@@ -31,19 +31,16 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 
 [标准库][api]： Rust 标准库文档
 
-[The Rust Reference][ref]. While Rust does not have a
+[Rust 语言参考手册][ref]. While Rust does not have a
 specification, the reference tries to describe its working in
 detail. It tends to be out of date.
 
-[Syntax Index][syn]. This appendix from The Book contains examples
-of all syntax in Rust cross-referenced with the section of The Book
-that describes it.
+[语法索引][syn]： 本索引中包含 Rust 中与《Rust 程序设计语言》的部分交叉引用的所有语法示例。
 
-[The Cargo Guide][cargo]. The documentation for Cargo,
-Rust's package manager.
+[Cargo 使用指导][cargo]： Cargo（Rust 的包管理器）的文档。
 
-[Compiler Error Index][err]. Extended explanations of
-the errors produced by the Rust compiler.
+
+[编译器错误索引][err]： 编译器生成错误报告的扩展说明。
 
 [Release Notes][release_notes]. A recording of changes made during each release.
 
