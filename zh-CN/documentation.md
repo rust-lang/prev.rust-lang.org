@@ -28,10 +28,9 @@ for learning Rust.
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning
 
-## References
+## 参考文献
 
-[Standard Library API Reference][api]. Documentation for the
-standard library.
+[标准库][api]： Rust 标准库文档
 
 [The Rust Reference][ref]. While Rust does not have a
 specification, the reference tries to describe its working in
