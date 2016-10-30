@@ -5,33 +5,25 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 
 # Rust 语言文档
 
-If you haven't seen Rust at all yet, the first thing you should read
-is the introduction to the book, [Rust 程序设计语言][book]。It will give you a good idea of what Rust is like,
-show you how to install it, and explain its syntax and concepts. Upon
-completing the book, you'll be an intermediate Rust developer, and
-will have a good grasp of the fundamental ideas behind Rust.
+如果您还不了解 Rust ,那么请先阅读 [Rust 程序设计语言][book]。
+它将会帮您理清思路： Rust 是什么样的语言、如何按照它、以及它的语法概念（syntax and concepts）。
+在看完本书后，您将成为一个登堂入室（intermediate）的 Rust 开发人员，并将很好地理解 Rust 背后的基本理念。
 
 ## 学习 Rust
 
-[Rust 程序设计语言][book]. Also known as "The Book",
-The Rust Programming Language is the most comprehensive resource for
-all topics related to Rust, and is the primary official document of
-the language.
+[Rust 程序设计语言][book]： Rust 相关的所有主题最全面的资源，重要的官方文档。
 
-[在实践中学 Rust][rbe]。 A collection of self-contained Rust
-examples on a variety of topics, executable in-browser.
+[在实践中学 Rust][rbe]： 关于各种主题的 Rust 示例的集合，可在线预览。
 
-[Frequently asked questions][faq].
+[常见问题][faq]
 
-[The Rustonomicon][nomicon]. An entire book dedicated to
-explaining how to write unsafe Rust code. It is for advanced Rust
-programmers.
+[Rust 高级教程][nomicon]： 为高级 Rust 工程师准备的专门讲解如何编写不安全的Rust代码的书。
 
 [rust-learning]. A community-maintained collection of resources
 for learning Rust.
 
 [book]: https://kaisery.gitbooks.io/rust-book-chinese/content/
-[rbe]: http://rustbyexample.com
+[rbe]: https://rustwiki.org/rust-by-example/
 [faq]: faq.html
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning
