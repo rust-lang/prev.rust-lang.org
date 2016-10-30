@@ -11,22 +11,21 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 
 ## 学习 Rust
 
-[Rust 程序设计语言][book]： Rust 相关的所有主题最全面的资源，重要的官方文档。
+[Rust 程序设计语言][book]： Rust 相关的所有主题最全面的资料，重要的官方文档。
 
-[在实践中学 Rust][rbe]： 关于各种主题的 Rust 示例的集合，可在线预览。
-
-[常见问题][faq]
+[在实践中学 Rust][rbe]： 关于各种主题的 Rust 示例的合集，可在线预览。
 
 [Rust 高级教程][nomicon]： 为高级 Rust 工程师准备的专门讲解如何编写不安全的Rust代码的书。
 
-[rust-learning]. A community-maintained collection of resources
-for learning Rust.
+[学习 Rust]： 由社区维护、收集的学习 Rust 资料合集。
+
+[常见问题][faq]
 
 [book]: https://kaisery.gitbooks.io/rust-book-chinese/content/
 [rbe]: https://rustwiki.org/rust-by-example/
-[faq]: faq.html
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning
+[faq]: faq.html
 
 ## 参考文献
 
