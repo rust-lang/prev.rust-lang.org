@@ -1,25 +1,24 @@
 ---
-layout: default
-title:  Rust Documentation &middot; The Rust Programming Language
+layout: zh-CN/default
+title:  Rust 语言文档 &middot; Rust 程序设计语言
 ---
 
-# Rust Documentation
+# Rust 语言文档
 
 If you haven't seen Rust at all yet, the first thing you should read
-is the introduction to the book, [The Rust Programming
-Language][book]. It will give you a good idea of what Rust is like,
+is the introduction to the book, [Rust 程序设计语言][book]。It will give you a good idea of what Rust is like,
 show you how to install it, and explain its syntax and concepts. Upon
 completing the book, you'll be an intermediate Rust developer, and
 will have a good grasp of the fundamental ideas behind Rust.
 
-## Learning Rust
+## 学习 Rust
 
-[The Rust Programming Language][book]. Also known as "The Book",
+[Rust 程序设计语言][book]. Also known as "The Book",
 The Rust Programming Language is the most comprehensive resource for
 all topics related to Rust, and is the primary official document of
 the language.
 
-[Rust by Example][rbe]. A collection of self-contained Rust
+[在实践中学 Rust][rbe]。 A collection of self-contained Rust
 examples on a variety of topics, executable in-browser.
 
 [Frequently asked questions][faq].
@@ -31,7 +30,7 @@ programmers.
 [rust-learning]. A community-maintained collection of resources
 for learning Rust.
 
-[book]: https://doc.rust-lang.org/book/
+[book]: https://kaisery.gitbooks.io/rust-book-chinese/content/
 [rbe]: http://rustbyexample.com
 [faq]: faq.html
 [nomicon]: https://doc.rust-lang.org/nomicon/
@@ -83,7 +82,7 @@ other corners of the Rust world.
 [legal]: legal.html
 [coc]: https://www.rust-lang.org/conduct.html
 
-## Nightly and beta documentation
+## 开发版与测试版文档
 
 Much of the official Rust documentation is also available for the
 [nightly] and [beta] releases in addition to the stable documentation
@@ -92,9 +91,13 @@ linked above.
 [nightly]: https://doc.rust-lang.org/nightly/
 [beta]: https://doc.rust-lang.org/beta/
 
-## Non-english resources
+## 母语文献
 
-For resources in languages other than English, see the
-[locale-specific links in rust-learning][locale].
+如果您需要非英语的本土化资料请[点击这里][locale]。  
+中文文献可以快速链接到：  
+[简体中文][locale-zh-CN]  
+[台灣正體][locale-zh-TW]  
 
 [locale]: https://github.com/ctjhoa/rust-learning#locale-links
+[locale-zh-CN]: https://kaisery.gitbooks.io/rust-book-chinese/content/
+[locale-zh-TW]: http://askeing.github.io/rust-book/

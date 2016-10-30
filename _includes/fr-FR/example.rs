@@ -1,6 +1,6 @@
-// Ce code est éditable et exécutable !
+// Ce code est modifiable et exécutable !
 fn main() {
-    // Une calculatrice simple avec des entiers:
+    // Une calculatrice simple avec des entiers :
     // `+` ou `-` signifie ajouter ou soustraire 1
     // `*` ou `/` signifie multiplier ou diviser par 2
 

@@ -30,7 +30,7 @@ title: Документация Rust &middot; Язык Программиров�
 изучения Rust.
 
 [book]: http://rurust.github.io/rust_book_ru
-[rbe]: https://gordon-f.github.io/rust-by-example-ru/
+[rbe]: https://rurust.github.io/rust-by-example-ru/
 [faq]: faq.html
 [nomicon]: https://github.com/ruRust/rustonomicon
 [rust-learning]: https://github.com/ctjhoa/rust-learning
@@ -56,7 +56,7 @@ title: Документация Rust &middot; Язык Программиров�
 [api]: https://doc.rust-lang.org/std/
 [syn]: http://rurust.github.io/rust_book_ru/src/syntax-index.html
 [ref]: https://doc.rust-lang.org/reference.html
-[cargo]: http://doc.crates.io/guide.html
+[cargo]: https://rurust.github.io/cargo-docs-ru/
 [err]: https://doc.rust-lang.org/error-index.html
 [release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md
 
