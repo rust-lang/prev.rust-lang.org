@@ -1,5 +1,5 @@
 ---
-layout: fr-FR/default
+layout: fr/default
 title: Contribuer à Rust &mdash; construire la communauté &middot; Rust, le langage de programmation
 ---
 
@@ -16,13 +16,13 @@ Les développeurs expérimentés qui sont patients et qui aiment communiquer dev
 
 Maintenir une liste de tâches destinées aux débutants n'est pas uniquement bénéfique au projet Rust mais à tous les projets. Si vous avez une telle liste dans votre projet, vous pouvez vous-même organiser une telle méthode. ***Gérer une liste de tâches pour les débutants représente une des méthodes les plus efficaces pour accueillir des nouveaux développeurs dans un projet***. Si vous souhaitez en savoir plus pour guider les nouveaux contributeurs, vous pouvez [lire ce guide][mentor-guide].
 
-Vous pouvez discuter de ce que vous avez réalisé cette semaine sur les fils de discussion hebdomadaires *"what's everyone working on this week"* sur [/r/rust] et [users.rust-lang.org]. C'est l'occasion d'indiquer que vous avez besoin d'aide sur quelque chose. Ces discussions sont de bons points de départs pour collaborer.
+Vous pouvez discuter de ce que vous avez réalisé cette semaine sur les fils de discussion hebdomadaires *"what's everyone working on this week"* sur [/r/rust] et [users.rust-lang.org]. C'est l'occasion d'indiquer que vous avez besoin d'aide sur quelque chose. Ces discussions sont de bons points de départ pour collaborer.
 
 Promouvez Rust dans votre communauté locale. Les [groupes d'utilisateurs][user groups] et les [événements][events] Rust sont des expériences uniques et formidables : il y en a tant, à tant d'endroits. Si vous n'êtes encore jamais allé à un tel événement, n'hésitez pas ! S'il n'y a rien à proximité à propos de Rust, vous pouvez organiser quelque chose. Afin de savoir si des personnes sont intéressées, vous pouvez annoncer des événements sur [/r/rust] ou sur [users.rust-lang.org]. Contactez [l'équipe de la communauté][community team] afin d'inscrire les événements au calendrier pour que ceux-ci soient annoncés sur [This Week in Rust].
 
 Lorsque vous promouvez Rust, soyez respectueux des autres points de vue. Certaines personnes ne verront pas d'intérêt en Rust, ce n'est pas grave.
 
-Enfin, vous pouvez rencontrez d'autres personnes motivées pour construire une communauté Rust sur le canal [#rust-community].
+Enfin, vous pouvez rencontrer d'autres personnes motivées pour construire une communauté Rust sur le canal [#rust-community].
 
 <!--
 Other ideas:
