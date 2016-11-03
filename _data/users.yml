@@ -93,6 +93,11 @@
   logo: chef.svg
   how: "<a href='https://github.com/chef/delivery-cli'>Chef lets you develop, deploy and manage infrastructure, run-time environments and applications.</a>"
 -
+  name: Clever Cloud
+  url: https://www.clever-cloud.com/
+  logo: clever-cloud.svg
+  how: "We <a href='https://www.clever-cloud.com/doc/rust/rust/'>host Rust web applications</a>, and a part of our infrastructure is developed in Rust."
+-
   name: Coursera
   url: https://www.coursera.org
   logo: coursera.png
