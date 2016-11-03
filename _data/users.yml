@@ -158,6 +158,11 @@
   logo: line.png
   how: "For a configuration agent."
 -
+  name: Linki Tools
+  url: http://linki.tools/
+  logo: linkitools.png
+  how: "For testing and verification of toolchains."
+-
   name: MaidSafe
   url: http://www.maidsafe.net
   logo: maidsafe.svg
