@@ -5,55 +5,42 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 
 # Rust 语言文档
 
-If you haven't seen Rust at all yet, the first thing you should read
-is the introduction to the book, [Rust 程序设计语言][book]。It will give you a good idea of what Rust is like,
-show you how to install it, and explain its syntax and concepts. Upon
-completing the book, you'll be an intermediate Rust developer, and
-will have a good grasp of the fundamental ideas behind Rust.
+如果您还不了解 Rust ,那么请先阅读 [Rust 程序设计语言][book]。
+它将会帮您理清思路： Rust 是什么样的语言、如何按照它、以及它的语法概念（syntax and concepts）。
+在看完本书后，您将成为一个登堂入室（intermediate）的 Rust 开发人员，并将很好地理解 Rust 背后的基本理念。
 
 ## 学习 Rust
 
-[Rust 程序设计语言][book]. Also known as "The Book",
-The Rust Programming Language is the most comprehensive resource for
-all topics related to Rust, and is the primary official document of
-the language.
+[Rust 程序设计语言][book]： Rust 相关的所有主题最全面的资料，重要的官方文档。
 
-[在实践中学 Rust][rbe]。 A collection of self-contained Rust
-examples on a variety of topics, executable in-browser.
+[在实践中学 Rust][rbe]： 关于各种主题的 Rust 示例的合集，可在线预览。
 
-[Frequently asked questions][faq].
+[Rust 高级教程][nomicon]： 为高级 Rust 工程师准备的专门讲解如何编写不安全的Rust代码的书。
 
-[The Rustonomicon][nomicon]. An entire book dedicated to
-explaining how to write unsafe Rust code. It is for advanced Rust
-programmers.
+[学习 Rust]： 由社区维护、收集的学习 Rust 资料合集。
 
-[rust-learning]. A community-maintained collection of resources
-for learning Rust.
+[常见问题][faq]
 
 [book]: https://kaisery.gitbooks.io/rust-book-chinese/content/
-[rbe]: http://rustbyexample.com
-[faq]: faq.html
+[rbe]: https://rustwiki.org/rust-by-example/
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning
+[faq]: faq.html
 
-## References
+## 参考文献
 
-[Standard Library API Reference][api]. Documentation for the
-standard library.
+[标准库][api]： Rust 标准库文档
 
-[The Rust Reference][ref]. While Rust does not have a
+[Rust 语言参考手册][ref]. While Rust does not have a
 specification, the reference tries to describe its working in
 detail. It tends to be out of date.
 
-[Syntax Index][syn]. This appendix from The Book contains examples
-of all syntax in Rust cross-referenced with the section of The Book
-that describes it.
+[语法索引][syn]： 本索引中包含 Rust 中与《Rust 程序设计语言》的部分交叉引用的所有语法示例。
 
-[The Cargo Guide][cargo]. The documentation for Cargo,
-Rust's package manager.
+[Cargo 使用指导][cargo]： Cargo（Rust 的包管理器）的文档。
 
-[Compiler Error Index][err]. Extended explanations of
-the errors produced by the Rust compiler.
+
+[编译器错误索引][err]： 编译器生成错误报告的扩展说明。
 
 [Release Notes][release_notes]. A recording of changes made during each release.
 

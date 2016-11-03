@@ -178,25 +178,23 @@ title: 下载 &middot; Rust程序设计语言
 	  <a href="https://www.visualstudio.com">Visual Studio</a>,
 	  ，而使用 GNU ABI 则需要
 	  <a href="https://gcc.gnu.org/">GCC 工具链</a>.
-	  Which version of Rust you need depends largely on what C/C++ libraries you want to interoperate with:
-	  for interop with software produced by Visual Studio use the MSVC build of Rust; for interop with
-	  GNU software built using the
+	  您选择哪个版本的 Rust 主要取决于您想要互操作的 C/C++ 库：
+	  与 Visual Studio 生成的软件的 interop 使用 Rust 的 MSVC build;
+	  用于与使用
 	  <a href="https://msys2.github.io/">MinGW/MSYS2 工具链</a>
-	  use the GNU build.
+	  构建的GNU软件进行互操作，使用GNU构建。
 	</p>
 	<p>
-	  MSVC builds of Rust additionally require the Microsoft Visual
-          C++ build tools for Visual Studio 2013 或更高版本。
-	  The easiest way to acquire the build tools is by installing
+	  MSVC 构建的 Rust 需要 Visual Studio 2013 或更高版本中的 Microsoft Visual C++ 构建工具。
+	  获取构建工具的快捷方法是安装
 	  <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
-	  Microsoft Visual C++ Build Tools 2015</a>
-	  which provides just the Visual C++ build tools.
-	  Alternately, you can <a href="https://www.visualstudio.com/downloads/">安装</a>
-	  Visual Studio 2015 or Visual Studio 2013 and during install select the "C++ tools".
-	  No additional software installation is necessary for basic use of the GNU build.
+	  Microsoft Visual C++ 构建工具 2015</a>，它仅仅提供 Visual C++ 构建工具。
+	  您也可以<a href="https://www.visualstudio.com/downloads/">安装</a>
+	  Visual Studio 2015 或 Visual Studio 2013 并在安装期间勾选“C++ tools”。
+	  对于GNU构建的基本使用则不需要额外的安装。
 	</p>
 	<p>
-	  Rust 对 GNU ABI 的支持更加成熟，建议作为典型用途。
+	  Rust 对 GNU ABI 的支持更加成熟，建议作为首选。
 	</p>
     </div>
   </div>
