@@ -1,8 +1,8 @@
-// Esse código é editável e rodável!
+// Esse código é editável e executável!
 fn main() {
     // Uma calculadora simples de inteiros:
-    // `+` or `-` significa somar ou subtrair 1
-    // `*` or `/` significa multiplicar ou dividir por 2
+    // `+` ou `-` significa somar ou subtrair 1
+    // `*` ou `/` significa multiplicar ou dividir por 2
 
     let programa = "+ + * - /";
     let mut acumulador = 0;
@@ -13,11 +13,9 @@ fn main() {
             '-' => acumulador -= 1,
             '*' => acumulador *= 2,
             '/' => acumulador /= 2,
-            _ => {
-                // ignore todo o resto
-            }
+            _ => { /* ignore todo o resto */ }
         }
     }
 
-    println!("O programa \"{}\" gera o valor {}", programa, acumulador);
+    println!("O programa \"{}\" calcula o valor {}", programa, acumulador);
 }

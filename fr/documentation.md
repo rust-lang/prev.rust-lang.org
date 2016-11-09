@@ -1,5 +1,5 @@
 ---
-layout: fr-FR/default
+layout: fr/default
 title:  La documentation Rust &middot; Rust, le langage de programmation
 ---
 
@@ -29,7 +29,7 @@ Si vous découvrez Rust, la première chose à lire est l'introduction du livre 
 
 [La référence de la bibliothèque standard][api]. La documentation sur la bibliothèque standard.
 
-[La référence Rust][ref]. Bien que Rust n'ait pas de spécification, cette référence tente de décrire en détails son fonctionnement. Ces documents ne sont généralement pas à jour.
+[La référence Rust][ref]. Bien que Rust n'ait pas de spécification, cette référence tente de décrire en détail son fonctionnement. Ces documents ne sont généralement pas à jour.
 
 [L'index syntaxique][syn]. Cette annexe contient des exemples pour tous les éléments de syntaxe qui composent Rust ainsi que des références aux portions du livre qui les décrivent.
 
@@ -50,7 +50,7 @@ Si vous découvrez Rust, la première chose à lire est l'introduction du livre 
 
 [La politique de sécurité pour Rust][security]. Les règles du projet Rust pour rapporter, corriger et diffuser les bugs liés à la sécurité.
 
-[La politique relative au droits d'auteur et aux marques][legal]. Les droits d'auteur sont détenus par les développeurs du projet Rust (*The Rust Project Developers*) et les marques associées sont détenues par Mozilla. Ce document décrit les conditions d'utilisation de la marque.
+[La politique relative aux droits d'auteur et aux marques][legal]. Les droits d'auteur sont détenus par les développeurs du projet Rust (*The Rust Project Developers*) et les marques associées sont détenues par Mozilla. Ce document décrit les conditions d'utilisation de la marque.
 
 [Le code de conduite][coc]. Ce document est destiné à être appliqué au sein de l'organisation rust-lang sur GitHub, sur les forums officiels, sur les canaux IRC et dans différents espaces dédiés à Rust.
 
@@ -60,12 +60,12 @@ Si vous découvrez Rust, la première chose à lire est l'introduction du livre 
 
 ## La documentation pour les versions nightly et bêta
 
-La plupart de la documentation officielle est également disponible pour les versions [nightly] et [bêta][beta] en plus de la documentation concernant la version stable présentée ci-avant.
+La majeure partie de la documentation officielle est également disponible pour les versions [nightly][nightly] et [bêta][beta] en plus de la documentation concernant la version stable présentée ci-dessus.
 
 [nightly]: https://doc.rust-lang.org/nightly/
 [beta]: https://doc.rust-lang.org/beta/
 
-## Les ressources non-anglophones
+## Les ressources non anglophones
 
 Les ressources disponibles dans d'autres langues que l'anglais sont listées parmi
 [les ressources pour chaque locale sous rust-learning][locale].

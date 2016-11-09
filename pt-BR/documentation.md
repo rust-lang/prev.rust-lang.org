@@ -77,7 +77,7 @@ canais IRC e vários outros cantos do mundo Rust.
 [legal]: legal.html
 [coc]: https://www.rust-lang.org/conduct.html
 
-## Documentação sobre versões nortuna (nightly) e beta
+## Documentação sobre versões noturna (nightly) e beta
 
 Muito da documentação oficial de Rust está também disponível para
 versões [nortuno][nightly] e [beta] em adição à documentação para estável disposta acima.

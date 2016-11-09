@@ -1,11 +1,11 @@
 ---
-layout: fr-FR/default
+layout: fr/default
 title: Contribuer à Rust &middot; Rust, le langage de programmation
 ---
 
 # Contribuer à Rust
 
-Vous avez commencé à apprendre Rust. Vous appréciez ce langage et vous souhaiter faire partie de ce projet. Si vous ne savez pas trop comment vous impliquer, cette page pourra vous aider.
+Vous avez commencé à apprendre Rust. Vous appréciez ce langage et vous souhaitez faire partie de ce projet. Si vous ne savez pas trop comment vous impliquer, cette page pourra vous aider.
 
 **Vous avez trouvé un bug et souhaitez le rapporter ?** [Suivez le guide pour rapporter un bug][bugs]. Merci d'avance !
 
@@ -19,7 +19,7 @@ Il existe de nombreuses façons de contribuer à la réussite de Rust. Ce guide 
 * [Les outils, les EDI et l'infrastructure](contribute-tools.html). Contribuez aux composants qui font qu'un langage est pratique et simple à utiliser.
 * [Les bibliothèques](contribute-libs.html). Pour réaliser différentes tâches en Rust, il est nécessaire d'avoir de nombreuses bibliothèques de bonne qualité.
 * [Le langage, le compilateur et la bibliothèque standard](contribute-compiler.html). Cela concerne la conception du langage, l'implémentation de nouvelles fonctionnalités et l'amélioration des performances.
-* [L'internationalization](contribute-translations.html). Faites passer le mot en traduisant le site Rust dans votre langue.
+* [L'internationalisation](contribute-translations.html). Faites passer le mot en traduisant le site Rust dans votre langue.
 
 Si vous avez besoin d'une aide supplémentaire, posez vos questions sur [#rust-internals] ou sur [internals.rust-lang.org].
 

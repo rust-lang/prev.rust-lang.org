@@ -1,5 +1,5 @@
 ---
-layout: fr-FR/default
+layout: fr/default
 title: Contribuer à Rust &mdash; la documentation &middot; Rust, le langage de programmation
 ---
 
@@ -11,7 +11,7 @@ Une documentation n'est jamais parfaite et il en manque toujours. Il n'est pas n
 
 [Le livre][The book] constitue la première source de documentation pour Rust. Cette documentation est maintenue dans le dépôt principal. Elle possède sa propre étiquette pour le traqueur : [A-book] et les pages de ce livre évoluent en permanence. Les autres sources de documentation du dépôt principal sont : [la référence Rust][The Rust Reference], [la documentation de l'API de la bibliothèque standard][std], [le Rustonomicon][The Rustonomicon] (un guide pour correctement utiliser `unsafe`). [Le guide stylistique][Rust Style Guidelines] est encore trop incomplet, un contributeur ambitieux pourrait sans aucun doute faire progresser ces documents. [L'index des erreurs][err] fournit de nombreuses explications sur les erreurs produites par le compilateur. De nouvelles erreurs sont ajoutées au fur et à mesure et cette documentation [doit être maintenue][err-issue]. Il y a toujours des erreurs qui doivent être ajoutées dans cet index. La plupart de la documentation réside dans le répertoire [src/doc] et les problèmes liés sont identifiés dans le traqueur par l'étiquette [A-docs]. Enfin ce document et les autres contenus du site web sont maintenus [sur le dépôt Git du site web pour Rust][Rust website Git repository]. Pour contribuer à ce site, il suffit d'éditer et de soumettre une *pull request*.
 
-Une bonne partie de la documentation Rust n'est pas dans le dépôt principal et n'est pas maintenue au sein de ce projet mais cette documentation est néanmoins une condition *sine qua none* du succès de Rust. Si vous cherchez d'excellents projet de documentation, actifs et qui ont besoin de contributeurs, en voici quelques uns : [Rust By Example], [Rust Design Patterns], et [rust-rosetta].
+Une bonne partie de la documentation Rust n'est pas dans le dépôt principal et n'est pas maintenue au sein de ce projet, mais cette documentation est néanmoins une condition *sine qua non* du succès de Rust. Si vous cherchez d'excellents projet de documentation, actifs et qui ont besoin de contributeurs, en voici quelques-uns : [Rust By Example], [Rust Design Patterns], et [rust-rosetta].
 Pour découvrir d'autres projets de documentation auxquels contribuer, vous pouvez consulter [rust-learning].
 
 Vous pouvez discuter avec d'autres personnes contribuant à la documentation sur le canal [#rust-docs].
