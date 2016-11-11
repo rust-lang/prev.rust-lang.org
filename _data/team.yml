@@ -118,6 +118,8 @@ people:
     name: Without Boats
   wycats:
     name: Yehuda Katz
+  japaric:
+    name: Jorge Aparicio
 
 # Information about each team. Omit `lead` for teams without leaders.
 #
@@ -141,7 +143,7 @@ teams:
     lead: nikomatsakis
   - name: Tooling and infrastructure
     responsibility: "tool support (e.g. Cargo, rustup), CI infrastructure, etc."
-    members: [brson, nrc, alexcrichton, vadimcn, wycats, michaelwoerister]
+    members: [japaric, brson, nrc, alexcrichton, vadimcn, wycats, michaelwoerister]
     lead: alexcrichton
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
