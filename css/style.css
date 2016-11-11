@@ -147,8 +147,8 @@ div.install {
 	text-decoration: none;
 }
 
-.install-row {
-	margin-bottom: 0em;
+.pitch-row {
+	margin-bottom: 2em;
 }
 
 p.pitch {
@@ -168,19 +168,6 @@ p.pitch {
 
 p.pitch a {
 	font-size: 80%;
-}
-
-.install-box {
-	color: #777;
-	text-align: right;
-	font-size: 130%;
-	margin-top: 0.8em;
-}
-
-.version-rec-box-inner {
-	display: block;
-	font-size: 12px;
-	text-align: center;
 }
 
 hr {
@@ -206,12 +193,6 @@ hr {
 	list-style-type: square;
 }
 
-.install-box a.btn {
-	display: block;
-	margin:1em auto;
-	max-width: 250px;
-}
-
 ul.laundry-list {
 	column-count: 2;
 	-moz-column-count: 2;
@@ -224,10 +205,6 @@ ul.laundry-list {
 }
 
 @media (min-width: 992px) {
-	.install-box a.btn {
-		font-size: 18px;
-		padding: 10px 15px;
-	}
 	ul.laundry-list {
 	  column-count: auto;
 	  -moz-column-count: auto;

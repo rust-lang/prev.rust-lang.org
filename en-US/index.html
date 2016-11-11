@@ -3,7 +3,8 @@ layout: basic
 title: The Rust Programming Language
 ---
 
-    <div class="row install-row">
+    <div class="row pitch-row">
+      <div class="col-md-2"></div>
       <div class="col-md-8">
         <p class="pitch">
           <b>Rust</b> is a systems programming language
@@ -14,22 +15,7 @@ title: The Rust Programming Language
           <b><a href="friends.html">See who's using Rust.</a></b>
         </p>
       </div>
-      <div class="col-md-4 install-box">
-        <span class="version-rec-box-inner">
-          Recommended Version:<br>
-          <span id="install-version"
-                data-type-linux="Linux binary"
-                data-type-windows="Windows Installer"
-                data-type-mac="Mac Installer"
-                data-type-source="source">
-            {{ site.stable }}
-            (<span>source</span>)
-          </span>
-        </span>
-        <a class="btn btn-primary" id="inst-link"
-           href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">Install</a>
-        <a class="btn btn-default" href="install.html" role="button">Other Downloads</a>
-      </div>
+      <div class="col-md-2"></div>
     </div>
 
     <div class="row code-row">
@@ -70,6 +56,4 @@ title: The Rust Programming Language
         {% include editor.js %}
       });
     });
-
-    {% include set_platform.js %}
   </script>
