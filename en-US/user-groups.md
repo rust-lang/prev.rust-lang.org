@@ -64,6 +64,8 @@ even better, open a pull request against
 
 [Rust Group Bangalore](https://www.facebook.com/groups/RustBLR/1579069959026339/), Bangalore.
 
+[Rust Group Coimbatore](https://github.com/dvigneshwer/Rust_Group_Coimbatore), Coimbatore.
+
 ## Indonesia
 
 [Lambda Jakarta](https://www.meetup.com/Lambda-Jakarta/), Jakarta.
