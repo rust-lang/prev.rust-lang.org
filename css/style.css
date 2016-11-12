@@ -148,7 +148,7 @@ div.install {
 }
 
 .pitch-row {
-	margin-bottom: 2em;
+	margin-bottom: 0em;
 }
 
 p.pitch {
@@ -377,15 +377,15 @@ ul.laundry-list {
     line-height: 1.5em;
     margin: 3rem 0 1rem;
     font-weight: 400;
-		border-top: 2px solid #dedede;
-		padding-top: 1rem;
+    border-top: 2px solid #dedede;
+    padding-top: 1rem;
 }
 
 .content h3 {
     font-size: 1em;
     line-height: 1.5em;
     font-weight: 500;
-    margin: .5rem 0;
+    margin: 2rem 0;
 }
 
 .side-header h2 {
@@ -592,4 +592,169 @@ footer {
 footer a {
   display: inline-block;
   font-weight: bold;
+}
+
+/* rustup install page styles */
+
+.instructions {
+    background-color: rgb(250, 250, 250);
+    margin-left: auto;
+    margin-right: auto;
+    width: 34rem;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid rgb(204, 204, 204);
+    box-shadow: 0px 1px 4px 0px rgb(204, 204, 204);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.instructions > * {
+    width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.instructions p {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.instructions hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#platform-instructions-unix > pre,
+#platform-instructions-default > div > pre {
+    background-color: #515151;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 20px 0px #444444;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#platform-instructions-win a,
+#platform-instructions-default a {
+    display: block;
+    padding-top: 0.4rem;
+    padding-bottom: 0.6rem;
+    font-family: 'Fira Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
+#platform-instructions-unknown div {
+    line-height: 2rem;
+}
+
+#platform-button {
+    width: 100%;
+    font-size: 70%;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #515151;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+.install-examples {
+    margin-top: 2rem;
+    margin-bottom: 2rem
+}
+
+.install-example-row > div:first-child {
+    text-align: right;
+    margin-top: 1rem
+}
+
+.install-example-row > div:last-child {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+}
+
+.pitch-row .release-button {
+    display: block;
+    color: white;
+    background-color: #428BCA;
+    border-radius: 3px;
+    padding-left: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 4rem;
+}
+
+.release-info-column > div {
+    margin-top: 4rem;
+}
+
+.release-info-column > div > div:first-child {
+}
+
+.release-info-column .release-version {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.release-info-column .release-date {
+    font-weight: 500;
+}
+
+/* de-emphasize the header to draw attention to the instructions */
+h1.rustup,
+h1.rustup ~ h2 {
+    color: #999;
+    font-size: 2em; /* same as h2 */
+    font-size: 2em;
+    line-height: 1.5em;
+    margin: 3rem 0 1rem;
+    font-weight: 400;
+    border-top: 2px solid #dedede;
+    padding-top: 1rem;
+}
+
+.rustup-init-table {
+    display: flex;
+    margin: 2rem;
+    justify-content: space-around;
+}
+
+.rustup-init-table > div > a {
+    display: block;
+}
+
+.installer-table {
+    display: flex;
+    margin: 2rem;
+    justify-content: space-around;
+}
+
+.installer-table > div > div {
+    text-align: right
+}
+
+.installer-table > div > div > span {
+    float: left;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.installer-table > div > div > a {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.installer-table.stable .no-stable {
+    display: none;
 }

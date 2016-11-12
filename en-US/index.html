@@ -4,7 +4,6 @@ title: The Rust Programming Language
 ---
 
     <div class="row pitch-row">
-      <div class="col-md-2"></div>
       <div class="col-md-8">
         <p class="pitch">
           <b>Rust</b> is a systems programming language
@@ -15,7 +14,13 @@ title: The Rust Programming Language
           <b><a href="friends.html">See who's using Rust.</a></b>
         </p>
       </div>
-      <div class="col-md-2"></div>
+      <div class="col-md-4 release-info-column">
+        <a class="release-button" href="install.html">
+          <div>Current release</div>
+          <div class="release-version">{{ site.stable }}</div>
+          <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
+        </a>
+      </div>
     </div>
 
     <div class="row code-row">
