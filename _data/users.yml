@@ -113,6 +113,11 @@
   logo: craftai.png
   how: "Our core machine learning engine is written in Rust."
 -
+  name: Dazta
+  url: https://www.dazta.com
+  logo: dazta.svg
+  how: "Building intelligent financial product with Rust."
+-
   name: Delimiter
   url: https://www.delimiter.com/
   logo: delimiter.png
