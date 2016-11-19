@@ -218,6 +218,11 @@
   logo: sentry-horizontal-black.svg
   how: "<a href='http://lucumr.pocoo.org/2016/7/10/rust-rest/'>A command-line client for the Sentry API.</a>"
 -
+  name: slowtec
+  url: http://www.slowtec.de/
+  logo: slowtec.svg
+  how: "Our robust & reliable automation systems are entirely written in Rust."
+-
   name: Snips
   url: https://snips.ai/
   logo: snips.svg
