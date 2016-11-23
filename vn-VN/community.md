@@ -22,7 +22,7 @@ sinh hoạt ở đó.
 
 Bạn có thể chọn:
 
-- [#rust-beginners][beginners_irc], Kênh IRC để trả về tất tần tật về Rust.
+- [#rust-beginners][beginners_irc], Kênh IRC bạn luận mọi thứ về Rust.
 hoặc
 - [Diễn đàn][users_forum], thảo luận tất tần tật về Rust cho vào đây.
 
@@ -32,9 +32,9 @@ Có lỗi xảy ra ư ? không thể nào bỏ sót [Stack Overflow][stack_overf
 
 ## Bản tin
 
-[This Week in Rust][twir] tổng hợp các tin tức mới nhất, thư viên mới nhất,
+[This Week in Rust][twir] tổng hợp các tin tức mới nhất, thư viện mới nhất,
 sự kiện sắp diễn ra, đây là cái không thể bỏ qua được nhé các Rustceans. 
-[The Rust Blog][rust_blog] là nơi core team thông báo các tính năng mới, những bản concepts đỉnh. 
+[The Rust Blog][rust_blog] là nơi core team thông báo các tính năng mới, những khái niệm mới. 
 Nếu bạn dùng Reddit, có hản một nơi cho bạn thảo luận ở Reddit luôn, [/r/rust][reddit].
 
 Bạn là người hay tweet thì đừng quên theo dõi ở [Twitter][twitter] nhé.
