@@ -1,8 +1,22 @@
-// Bạn có thể gõ bất cứ dòng code nào lên đây
-// và trải nghiệm trực tiếp ở đây
+// This code is editable and runnable!
 fn main() {
-   let dem = "1 .. 2 .. 3";
-   let tin_nhan = "Xin chào thế giới";
+    // A simple integer calculator:
+    // `+` or `-` means add or subtract by 1
+    // `*` or `/` means multiply or divide by 2
 
-   println!("{} {}!", dem, tin_nhan);
+    let program = "+ + * - /";
+    let mut accumulator = 0;
+
+    for token in program.chars() {
+        match token {
+            '+' => accumulator += 1,
+            '-' => accumulator -= 1,
+            '*' => accumulator *= 2,
+            '/' => accumulator /= 2,
+            _ => { /* ignore everything else */ }
+        }
+    }
+
+    println!("The program \"{}\" calculates the value {}",
+              program, accumulator);
 }
