@@ -1,50 +1,30 @@
 ---
-layout: default
-title: Contributing to Rust &middot; The Rust Programming Language
+layout: vn-VN/default
+title: Tham gia vào Rust &middot; The Rust Programming Language
 ---
 
-# Contributing to Rust
+# Trở thành một thành viên của Rust lang
 
-You've started learning Rust. You love it, and you want to be a part
-of it. If you're not sure how to get involved, then this page
-will help.
+Bạn đã tìm hiểu về Rust và yêu thích nó. Vậy tại sao không trở thành thành viên của Rust.
+Nếu bạn không biết bắt đầu từ đâu dưới đây sẽ là những hướng dẫn dành cho bạn.
 
-**Found a bug and need to report it?** [Follow the bug reporting
-guide][bugs]. Thanks in advance!
+**Báo cáo về lỗi?** [Hướng dẫn về reporting lỗi][bugs]. Cám ơn nhé!
 
-Rust is an expansive system of projects, the most prominent of which
-are maintained by [The Rust Project Developers][devs] in [the
-rust-lang organization on GitHub][rust-lang]. Newcomers may be
-interested in the project's [CONTRIBUTING.md] file, which explains the
-mechanics of contributing to [rust-lang/rust].
+Có rất nhiều cách để bạn trở thành thành viên của Rust:
 
-There are many ways to contribute to the success of Rust.
-This guide focuses on a few avenues for the new contributor:
+* [Tìm và sửa lỗi](contribute-bugs.html). Các công việc cở bản để duy trì Rust .
+* [Tài liệu](contribute-docs.html). Bạn có thể tham gia vào viết blog kỹ thuật hoặc viết tài liệu cho các crates.
+* [Community building](contribute-community.html). Góp sức xây dựng cộng đồng.
+* [Tooling, IDEs and infrastructure](contribute-tools.html). Một phần quan trọng không thể thiếu của mỗi ngôn ngữ.
+* [Thư viện](contribute-libs.html). Tham gia vào việc xây dựng các thư viện chất lượng cho Rust.
+* [Language, compiler và the standard
+  library](contribute-compiler.html). Thiết kế ngôn ngữ, thực hiện các tính năng mới, cải thiện hiệu suất.
+* [Internationalization](contribute-translations.html). Giúp đở việc mở rộng Rust bằng cách chuyển sang ngôn ngữ địa phương.
 
-* [Finding, triaging and fixing issues](contribute-bugs.html). The
-  basic work of maintaining a large and active project like Rust.
-* [Documentation](contribute-docs.html). Not just official
-  documentation, but also for crates, blog posts, and other unofficial
-  sources.
-* [Community building](contribute-community.html). Helping your fellow
-  Rustacean, and expanding the reach of Rust.
-* [Tooling, IDEs and infrastructure](contribute-tools.html). The
-  important pieces that make using a language practical and painless.
-* [Libraries](contribute-libs.html). Rust's suitability for any
-  particular task is mostly dependent on availability of quality
-  libraries.
-* [Language, compiler and the standard
-  library](contribute-compiler.html). Language design, feature
-  implementation, performance improvement.
-* [Internationalization](contribute-translations.html). Help spread the
-  Rust love by translating our site to every language.
-
-If you need additional guidance ask on [#rust-internals] or
+Nếu bạn cần hướng dẫn bổ sung các yêu cầu trên thì có thể vào [#rust-internals] hoặc
 [internals.rust-lang.org].
 
-We pride ourselves on maintaining civilized discourse, and to that end
-contributors are expected to follow our [Code of Conduct][coc]. If you
-have questions about this please inquire with the [community team].
+Chúng tôi tự hào về việc duy trì cộng đồng và các quy tắc ứng xử [Code of Conduct][coc]. Nếu bạn có thắc mắc về vấn đề trên có thể liên hệ với [community team].
 
 <!--
 TODO: Write a guide to rust processes and governance to link from here

@@ -1,20 +1,19 @@
 ---
-layout: default
-title: Downloads &middot; The Rust Programming Language
+layout: vn-VN/default
+title: Tài về &middot; The Rust Programming Language
 ---
-    <h1>Downloads</h1>
+    <h1>Tải về</h1>
 
     <hr>
 
     <div class="row install">
       <div class="col-md-4 side-header">
         <h2 id="stable">{{ site.stable }}&nbsp;</h2>
-        <h3>{{ site.stable_date | date: "%B %-d, %Y" }}</h3>
+        <h3>{{ site.stable_date | date: "%d - %m - %Y" }}</h3>
         <p>
-	  The
           <a href="http://blog.rust-lang.org{{ site.stable_blog }}">
-	    current stable release of Rust</a>,
-	  updated every six weeks and backwards-compatible.
+	    Phiên bản ổn định của Rust</a>,
+	  đến hẹn lại lên cách nhau 6 tuần sẽ có bản cập nhật.
         </p>
       </div>
       <div class="col-md-8">
@@ -50,7 +49,7 @@ title: Downloads &middot; The Rust Programming Language
 
      <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <p>An easy way to install the stable binaries for Linux and Mac is to run this in your shell:</p>
+        <p>Cách đơn giản đối với dùng Mac và Linux có thể cài đặt thông qua shell:</p>
         <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh</code></pre>
       </div>
     </div>
@@ -59,12 +58,11 @@ title: Downloads &middot; The Rust Programming Language
 
     <div class="row install">
       <div class="col-md-4 side-header">
-        <h2 id="beta">Beta&nbsp; ({{ site.beta }})</h2>
+        <h2 id="beta">Phiên bản dùng thử (Beta)&nbsp; ({{ site.beta }})</h2>
         <p>
-	A preview of the upcoming stable release, intended for testing by
-	crate authors. Updated every six weeks and as needed.
+	Phiên bản dùng thử các tính năng mới. Cứ 6 tuần cập nhật một lần.
         </p>
-        <p><em>Scheduled for stable release<br/>{{ site.beta_date | date: "%B %-d, %Y" }}</em>.<p>
+        <p><em>Ngày ra mắt phiên bản stable<br/>{{ site.beta_date | date: "%d - %m - %Y" }}</em>.<p>
       </div>
       <div class="col-md-8">
         <table class="table-features table-installers"><tbody>
@@ -100,7 +98,7 @@ title: Downloads &middot; The Rust Programming Language
 
      <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <p>An easy way to install the beta binaries for Linux and Mac is to run this in your shell:</p>
+        <p>Cách đơn giản đối với dùng Mac và Linux có thể cài đặt thông qua shell:</p>
         <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=beta</code></pre>
       </div>
     </div>
@@ -109,12 +107,12 @@ title: Downloads &middot; The Rust Programming Language
 
     <div class="row install">
       <div class="col-md-4 side-header">
-        <h2 id="nightly">Nightly&nbsp; ({{ site.nightly }})</h2>
+        <h2 id="nightly">Phiên bản Nightly&nbsp; ({{ site.nightly }})</h2>
         <p>
-        The current development branch.
-	It includes
-	<a href="https://doc.rust-lang.org/book/nightly-rust.html">unstable features</a>
-	that are not available in the betas or stable releases.
+        Phiên bản được ra mắt trong quá trình phát triển.
+	Bao gồm
+	<a href="https://doc.rust-lang.org/book/nightly-rust.html">tính năng chưa ổn định</a>
+	những tính năng này không có trong các phiên bản stable và beta.
         </p>
       </div>
       <div class="col-md-8">
@@ -151,7 +149,7 @@ title: Downloads &middot; The Rust Programming Language
 
      <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <p>An easy way to install the nightly binaries for Linux and Mac is to run this in your shell:</p>
+        <p>Cách đơn giản đối với dùng Mac và Linux có thể cài đặt thông qua shell:</p>
         <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly</code></pre>
       </div>
     </div>
@@ -161,7 +159,7 @@ title: Downloads &middot; The Rust Programming Language
     <div class="row">
       <div class="col-md-12">
       <p>
-        Discover other downloads in <a href="https://static.rust-lang.org/dist/index.html">the archives.</a>
+        Đa dạng cách tải về khác ở <a href="https://static.rust-lang.org/dist/index.html">thư mục lưu trữ.</a>
       </p>
       </div>
     </div>
@@ -170,7 +168,7 @@ title: Downloads &middot; The Rust Programming Language
 
      <div class="row">
       <div class="col-md-12">
-        <p>If you installed using the shell script, run this to uninstall:</p>
+        <p>Khi bạn dùng shell để cài đặt, nên gỡ cài đặt các phiên bản Rust trước đó:</p>
         <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --uninstall</code></pre>
       </div>
     </div>
@@ -182,32 +180,25 @@ title: Downloads &middot; The Rust Programming Language
 	<a id="win-foot"></a>
 	<p>
 	  <em>†</em>
-	  There are two prominent
+	  2 điểm đáng chú ý 
 	  <a href="https://en.wikipedia.org/wiki/Application_binary_interface">ABIs</a>
-	  in use on Windows: the native (MSVC) ABI used by
+	  ở Windows: (MSVC) ABI đươc sử dụng bởi
 	  <a href="https://www.visualstudio.com">Visual Studio</a>,
-	  and the GNU ABI used by the
+	  và GNU ABI được sử dụng bởi
 	  <a href="https://gcc.gnu.org/">GCC toolchain</a>.
-	  Which version of Rust you need depends largely on what C/C++ libraries you want to interoperate with:
-	  for interop with software produced by Visual Studio use the MSVC build of Rust; for interop with
-	  GNU software built using the
-	  <a href="https://msys2.github.io/">MinGW/MSYS2 toolchain</a>
-	  use the GNU build.
+	  Mỗi phiên bản của Rust phụ thuộc lớn vào thư viện C/C++ bạn muốn tương tác với:
+	  Visual Studio sư dụng MSVC; GNU sử dụng <a href="https://msys2.github.io/">MinGW/MSYS2 toolchain</a>.
 	</p>
 	<p>
-	  MSVC builds of Rust additionally require the Microsoft Visual
-          C++ build tools for Visual Studio 2013 or later.
-	  The easiest way to acquire the build tools is by installing
-	  <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
-	  Microsoft Visual C++ Build Tools 2015</a>
-	  which provides just the Visual C++ build tools.
-	  Alternately, you can <a href="https://www.visualstudio.com/downloads/">install</a>
-	  Visual Studio 2015 or Visual Studio 2013 and during install select the "C++ tools".
-	  No additional software installation is necessary for basic use of the GNU build.
+	  MSVC yêu cầu Microsoft Visual C++ của Visual Studio 2013 or mới nhất.
+	  Cách đơn giản nhất là cài đặt <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
+	  Microsoft Visual C++ Build Tools 2015</a>.
+	  Hoặc là, bạn có thể <a href="https://www.visualstudio.com/downloads/">cài đặt</a>
+	  Visual Studio 2015 hoặc Visual Studio 2013 và trong quá trình cài đặt chọn "C++ tools".
+	  Khi dùng GNU build không cần phải cài đặt thêm phần mềm nào.
 	</p>
 	<p>
-	  Rust's support for the MSVC ABI is more mature, and is recommended for typical
-	  uses.
+	  Rust's đang hoàn thiện việc hỗ trợ MSVC ABI.
 	</p>
     </div>
   </div>

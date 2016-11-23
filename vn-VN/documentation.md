@@ -1,35 +1,29 @@
 ---
-layout: default
-title:  Rust Documentation &middot; The Rust Programming Language
+layout: vn-VN/default
+title: Tài liệu Rust &middot; The Rust Programming Language
 ---
 
-# Rust Documentation
+# Cơ bản
 
-If you haven't seen Rust at all yet, the first thing you should read
-is the introduction to the book, [The Rust Programming
-Language][book]. It will give you a good idea of what Rust is like,
-show you how to install it, and explain its syntax and concepts. Upon
-completing the book, you'll be an intermediate Rust developer, and
-will have a good grasp of the fundamental ideas behind Rust.
+Nếu bạn chưa từng làm quen với Rust lần nào, thì bạn nên tham khảo
+cuốn sách này [The Rust Programming Language][book]. Cuốn sách này
+sẽ giới thiệu về cách cài đặt, cú pháp, concepts, và nhiều hơn thế nửa.
+Sau khi kết quá trình làm quen với Rust qua cuốn sách trên thì bạn có thể
+tìm hiểu sâu hơn về Rust.
 
-## Learning Rust
+## Những tài liệu hay để tìm hiểu về Rust
 
-[The Rust Programming Language][book]. Also known as "The Book",
-The Rust Programming Language is the most comprehensive resource for
-all topics related to Rust, and is the primary official document of
-the language.
+[The Rust Programming Language][book]. là điểm khởi đầu khi tìm hiểu về Rust, những bài viết ở đây đầy đủ và chi tiết về các chủ đề và tính năng của Rust.
 
-[Rust by Example][rbe]. A collection of self-contained Rust
-examples on a variety of topics, executable in-browser.
+[Rust by Example][rbe]. Nếu bạn muốn nhanh chóng hiểu Rust mà không muốn phải cài đặt bất cứ thứ gì, thì đây là nơi tốt nhất để bạn bắt đầu, những ví dụ ở đây
+được chạy trực tiếp trên trình duyệt. Thay đổi code ? Vâng bạn hoàn toàn thay đổi được code như bạn mong muốn.
 
-[Frequently asked questions][faq].
+[Những câu hỏi không biết hỏi ai][faq].
 
-[The Rustonomicon][nomicon]. An entire book dedicated to
-explaining how to write unsafe Rust code. It is for advanced Rust
-programmers.
+[The Rustonomicon][nomicon]. Một quyển sách dành tặng cho những người muốn thích vọc phá Rust, hiểu về cách viết Rust ở mức unsafe. Khuyễn cáo: không dành cho
+người mới tìm hiểu về Rust .
 
-[rust-learning]. A community-maintained collection of resources
-for learning Rust.
+[rust-learning]. Một repo tập hợp các bài viết hay và chi tiết về Rust. Nếu bạn tìm được một bài hay hoặc là bạn viết bài thì đừng quên để lại link ở đây nhé.
 
 [book]: https://doc.rust-lang.org/book/
 [rbe]: http://rustbyexample.com
@@ -37,28 +31,21 @@ for learning Rust.
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning
 
-## References
+## Thư viện
 
-[Standard Library API Reference][api]. Documentation for the
-standard library.
+[Standard Library API Reference][api]. Tài liệu về những thư viện chuẩn.
 
-[docs.rs]. Documentation for all crates published to [crates.io].
+[docs.rs]. Tài liệu những packages được public ở [crates.io].
 
-[The Rust Reference][ref]. While Rust does not have a
-specification, the reference tries to describe its working in
-detail. It tends to be out of date.
+[The Rust Reference][ref]. Những mô tả về hàm khai báo thế nào, cú pháp dùng làm sao, biến thì có mấy loại, và nhiều thuộc tính khác.
 
-[Syntax Index][syn]. This appendix from The Book contains examples
-of all syntax in Rust cross-referenced with the section of The Book
-that describes it.
+[Syntax Index][syn]. Phục lục về những cú pháp được dùng trong Rust.
 
-[The Cargo Guide][cargo]. The documentation for Cargo,
-Rust's package manager.
+[The Cargo Guide][cargo]. Tài về Cargo - công cụ để quản lý các packages của Rust.
 
-[Compiler Error Index][err]. Extended explanations of
-the errors produced by the Rust compiler.
+[Compiler Error Index][err]. Tập hợp các lỗi xảy ra trong quá trình compiler.
 
-[Release Notes][release_notes]. A recording of changes made during each release.
+[Release Notes][release_notes]. Bản ghi chép những thay đổi khi public phiên bản mới.
 
 [api]: https://doc.rust-lang.org/std/
 [syn]: https://doc.rust-lang.org/book/syntax-index.html
@@ -69,36 +56,28 @@ the errors produced by the Rust compiler.
 [docs.rs]: https://docs.rs
 [crates.io]: https://crates.io
 
-## Project policies
+## Các quy định của project
 
-[Rust security policy][security]. The project's policies for
-reporting, fixing and disclosing security-related bugs.
+[Quy định về bảo mật][security]. Những quy định về việc báo cáo, sửa chữa và công bố các lỗi bảo mật liên quan.
 
-[Rust copyright and trademark policies][legal]. The Rust
-copyrights are owned by The Rust Project Developers, and its
-trademarks are owned by Mozilla. Appropriate usage of Rust's
-trademarks are described here.
+[Quy định về bản quyền và thương hiệu][legal]. Bản quyền thuộc về tập hợp những nhà phát triển Rust, thương hiệu thuộc về Mozilla.
+Các quy định về việc dùng thương hiệu được mô tả ở đây.
 
-[Code of Conduct][coc]. Applies to the rust-lang organization
-on GitHub, the official forums, IRC channels, and various
-other corners of the Rust world.
+[Hướng dẫn về Code][coc]. Áp dùng cho tổ chức ở Github, diễn đàn, IRC, và các cộng đồng Rust trên thế giới.
 
 [security]: security.html
 [legal]: legal.html
 [coc]: https://www.rust-lang.org/conduct.html
 
-## Nightly and beta documentation
+## Tài liệu phiên bản Nightly and beta
 
-Much of the official Rust documentation is also available for the
-[nightly] and [beta] releases in addition to the stable documentation
-linked above.
+Tài liệu chính thức cho 2 phiên bản [nightly] và [beta].
 
 [nightly]: https://doc.rust-lang.org/nightly/
 [beta]: https://doc.rust-lang.org/beta/
 
-## Non-english resources
+## Nguồn khác tiếng Anh
 
-For resources in languages other than English, see the
 [locale-specific links in rust-learning][locale].
 
 [locale]: https://github.com/ctjhoa/rust-learning#locale-links

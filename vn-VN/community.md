@@ -1,51 +1,43 @@
 ---
-layout: default
-title: The Rust Community &middot; The Rust Programming Language
+layout: vn-VN/default
+title: Cộng đồng &middot; The Rust Programming Language
 ---
 
-# The Rust Community
+# Cộng đồng
 
-The Rust programming language has many qualities, but Rust's greatest
-strength is the community of people who come together to make working
-in Rust a rewarding experience.
+Sức mạnh lớn nhất của Rust là cộng đồng, mọi người cùng đến
+với nhau để tạo nên một Rust tốt nhất.
 
-We are committed to providing a friendly, safe and welcoming
-environment for all, regardless of gender, sexual orientation,
-disability, ethnicity, religion, or similar personal
-characteristic. Our [code of conduct][coc] sets the standards for
-behavior in all official Rust forums.
+Không phân biệt bạn là ai, bạn là người như thế nào, bận đến từ quốc gia,
+hay bạn theo tôn giáo nào, bất kể bạn là nam hay nữ thì nếu bạn yêu thích Rust bạn luôn được chào đón.
 
-If you feel you have been or are
-being harassed or made uncomfortable by a community member, please
-[contact][mod_team_email] any of the [Rust Moderation Team][mod_team]
-immediately. Whether you are a regular contributor or a newcomer, we
-care about making the community a safe space for you.
+Nếu bạn có bất kỳ điều gì không hiểu thì bạn có thể [liên lạc][mod_team_email] với mọi người trong
+[Ban quản trị Rust][mod_team]. Chúng luôn quan tâm đến việc tạo ra một cộng đồng an toàn để bạn
+sinh hoạt ở đó.
 
 [coc]: conduct.html
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
-## Getting Started
+## Khởi đầu
 
-The most important community resources for those new to Rust are:
+Bạn có thể chọn:
 
-- [#rust-beginners][beginners_irc], an IRC channel that
-  loves answering questions at any depth.
-- The [Users Forum][users_forum], for discussion of all
-  things Rust.
+- [#rust-beginners][beginners_irc], Kênh IRC để trả về tất tần tật về Rust.
+hoặc
+- [Diễn đàn][users_forum], thảo luận tất tần tật về Rust cho vào đây.
 
-You may also find help on the question and answer site, [Stack Overflow][stack_overflow].
+Có lỗi xảy ra ư ? không thể nào bỏ sót [Stack Overflow][stack_overflow] được.
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
-## News
+## Bản tin
 
-[This Week in Rust][twir] collects the latest news, upcoming events
-and a week-by-week account of changes in the Rust language and
-libraries. [The Rust Blog][rust_blog] is where the Rust team makes
-announcements about major developments. And nearly everything happening in
-Rust is discussed on the unofficial subreddit, [/r/rust][reddit].
+[This Week in Rust][twir] tổng hợp các tin tức mới nhất, thư viên mới nhất,
+sự kiện sắp diễn ra, đây là cái không thể bỏ qua được nhé các Rustceans. 
+[The Rust Blog][rust_blog] là nơi core team thông báo các tính năng mới, những bản concepts đỉnh. 
+Nếu bạn dùng Reddit, có hản một nơi cho bạn thảo luận ở Reddit luôn, [/r/rust][reddit].
 
-We also have a [Twitter][twitter] account.
+Bạn là người hay tweet thì đừng quên theo dõi ở [Twitter][twitter] nhé.
 
 [twir]: https://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
@@ -53,48 +45,44 @@ We also have a [Twitter][twitter] account.
 [reddit_coc]: https://www.reddit.com/r/rust/comments/2rvrzx/our_code_of_conduct_please_read/
 [twitter]: https://twitter.com/rustlang
 
-## IRC Channels
+## Kênh IRC
 
-Rustaceans maintain a number of friendly, high-traffic [IRC] channels on Mozilla's IRC network, irc.mozilla.org.
+Kênh [#rust][rust_irc] là nơi thảo luận về Rust, và giải đáp các thắc mắc của bạn. 
 
-The [#rust][rust_irc] channel is a venue for general
-discussion about Rust, and a good place to ask for help. You'll find
-people willing to answer any questions about Rust, and
-responses are typically fast.
+Kênh [#rust-internals][internals_irc] là nơi core team làm việc để cho ra những tính năng độc đáo của Rust,
+nếu bạn đủ tự tin trở thành core team và muốn vượt lên chính mình, chúc mừng bạn đã tìm đúng nơi rồi đó.
 
-Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real-time discussion about hacking on Rust itself. It is also the channel to ask questions about contributing to Rust.
+### Các kênh chính
 
-### Main channels
+- [#rust][rust_irc] chuyện trò về Rust
+- [#rust-beginners][beginners_irc] dành cho người mới tìm hiểu về Rust
+- [#rust-internals][internals_irc] nơi thảo luận về core Rust
+- [#rustc][rustc_irc] nhà của [compiler team][compiler_team]
+- [#rust-libs][libs_irc] nơi đồn trú của [libraries team][library_team]
+- [#rust-tools][tools_irc] tư gia của [tools and infrastructure team][tool_team]
+- [#rust-lang][lang_irc] đồn điền của [language team][language_team]
+- [#rust-community][community_irc] doanh trại của [community team][community_team]
 
-- [#rust][rust_irc] is for all things Rust
-- [#rust-beginners][beginners_irc] is a space for those new to Rust, lower traffic than #rust
-- [#rust-internals][internals_irc] is for discussion of other Rust implementation topics
-- [#rustc][rustc_irc] is the home of the [compiler team][compiler_team]
-- [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
-- [#rust-tools][tools_irc] is the home of the [tools and infrastructure team][tool_team]
-- [#rust-lang][lang_irc] is the home of the [language team][language_team]
-- [#rust-community][community_irc] is the home of the [community team][community_team]
+### Kênh của cộng động Rust ở các quốc gia
 
-### International channels
+- [#rust-br][br_irc] Rust ở Brazil
+- [#rust-de][de_irc] Rust ở Đan mạch
+- [#rust-es][es_irc] Rust ở Tây ban nha
+- [#rust-fr][fr_irc] Rust ở Pháp
+- [#rust-ru][ru_irc] Rust ở Nga
 
-- [#rust-br][br_irc] é dedicado à discussão sobre Rust no Brasil
-- [#rust-de][de_irc] ist für die allgemeine Diskussion über Rust auf Deutsch
-- [#rust-es][es_irc] es para una discusión general sobre Rust en español
-- [#rust-fr][fr_irc] est dédié à la programmation en Rust en français
-- [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
+### Các kênh chuyên đề
 
-### Topical channels
-
-- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
-- [#rust-bots][bots_irc] notifications about Rust from a selection of bots
-- [#rust-docs][docs_irc] is the home of the unoffical documentation team
-- [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
-- [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
-- [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
-- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
-- [#rust-osdev][osdev_irc] is for people doing OS development in Rust
-- [#rust-webdev][webdev_irc] is for people doing web development in Rust
-- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
+- [#cargo][cargo_irc] thảo luận về công cụ quản lý packages của Rust
+- [#rust-bots][bots_irc] Bots thông báo của Rust
+- [#rust-docs][docs_irc] doanh trại của team document Rust
+- [#rust-crypto][crypto_irc] nơi thảo luận về mã hoá ở Rust
+- [#rust-gamedev][gamedev_irc] ai yêu thích game thì vào đây
+- [#rust-networking][networking_irc] lĩnh vực mạng mẽo vào đây
+- [#rust-offtopic][offtopic_irc] chuyện trò linh tinh
+- [#rust-osdev][osdev_irc] phát triển OS trên bằng Rust
+- [#rust-webdev][webdev_irc] Phát triển web với Rust
+- [#servo][servo_irc] thảo luận về Servo -  trình duyệt được viết bằng Rust
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
 [beginners_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
@@ -121,85 +109,61 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [webdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
 [docs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-docs
 
-## Discussion Forums
+## Diễn đàn
 
-We have two forums for asynchronous discussion:
+- [Users Forum][users_forum], nơi để đặt các câu hỏi, chia sẽ code, chia sẽ package, ý tưởng đang làm, blah blah.
 
-- The [Users Forum][users_forum], a space for asking questions, posting code
-  snippets, talking about Rust projects, and so on.
-
-- The [Internals Forum][internals_forum], a space dedicated to design and
-  implementation discussion about Rust itself (which includes Cargo, the
-  standard library, and other core bits of infrastructure).
+- [Internals Forum][internals_forum], nơi thảo luận các về đề về thiết kế core, thực hiện các ý tưởng thiết kế
+(bao gồm cả cargo, các thư viện mặc định).
 
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
 
-## YouTube Channel
+## Youtube
 
-Rust has an [YouTube channel][youtube_channel] where video material about the
-language programming is uploaded. What you can expect are recorded presentations
-held by members of the Rust community from various conferences.
+Bạn có thể xem lại các buổi conferences trên kênh [YouTube channel][youtube_channel].
 
 [youtube_channel]: https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA
 
 ## User Groups and Meetups
 
-There are more than 50 [Rust User Groups][user_group] worldwide in over 20
-countries totaling over 7,000 members. Rustaceans meet periodically in Rust User
-Groups. Its a great introduction to the community and a great way to learn and
-socialize with other people with a similar interest. Meetings are
-usually held monthly and very informal. Meetings are open to everyone.
+Có hơn 50 [Rust User Groups][user_group] trên toàn thế giới ở 20 quốc gia khác nhau với hơn 7.000 thành viên. 
+Thường xuyên có các buổi họp mặt giữa các thành viên với nhau. Đó là nơi tốt nhất để chia sẽ ý tưởng của mình,
+giải đáp các thắc mắc.
 
-There is a global [calendar][calendar] for keeping up with Rust events.
-Contact the [community team][community_team] to add your own.
+Bạn thàm khảo [Lịch][calendar] để tham gia các buổi meetups.
+Liên hệ với [community team][community_team] để thêm lịch meetup đối với nhóm của bạn.
 
 [user_group]: ./user-groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
 
 ## The Rust Team
 
-Rust has a community-driven development process where most decisions are made
-through open discussion and consensus, under the stewardship of various
-[teams][teams]:
+Rust được phát triển dựa vào cộng đồng, và được giám giát giữa các [teams][teams]:
 
-* The [Core Team][core_team] is responsible for steering the design and
-development process, overseeing the introduction of new features, and ultimately
-making decisions for which there is no consensus (this happens rarely).
+* [Core Team][core_team] của Rust, đưa ra các quyết định về thiết kế core và phát triển, theo dõi các tính năng mới được giới thiệu.
 
-* The [Language Design Team][language_team] is responsible for the
-  design of new language features.
+* [Language Design Team][language_team] thiết kế tính năng mới của ngôn ngữ.
 
-* The [Library Team][library_team] is responsible for the Rust standard
-library, rust-lang crates, and conventions.
+* [Library Team][library_team] đảm nhận về các thư viện mặc định, rust-lang crates.
 
-* The [Compiler Team][compiler_team] is responsible for compiler internals and
-optimizations.
+* [Compiler Team][compiler_team] đảm nhận về compiler và tối ưu compiler.
 
-* The [Tooling and Infrastructure Team][tool_team] is responsible for official
-tools like [Cargo], [rustup], and [rustfmt], as well as the CI Infrastructure for the
-project.
+* [Tooling and Infrastructure Team][tool_team] đảm nhận về các công cụ hỗ trợ như [Cargo], [rustup], [rustfmt], và CI.
 
 [Cargo]: https://crates.io
 [rustup]: https://www.rustup.rs
 [rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 
-* The [Community Team][community_team] is responsible for coordinating events,
-outreach, commercial users, teaching materials, and exposure. They can also
-direct inquiries to the correct parties when its not clear who to contact
-about something Rusty.
+* [Community Team][community_team] đảm nhận về việc tổ chức sự kiện, quản lý cộng đồng.
 
-* The [Moderation Team][mod_team] is responsible for helping to uphold the
+* [Moderation Team][mod_team] đảm nhận việc giúp đỡ về
 [code of conduct][coc].
 
-* The [Documentation Team][doc_team] is responsible for ensuring Rust has
-  fantastic documentation.
+* [Documentation Team][doc_team] đảm nhận việc các tài liệu của Rust .
 
-In addition to the official team rosters, most teams also have a larger set
-of reviewers who are knowledgeable about the area and can sign off on
-code. If you're interested in getting involved in one of these teams,
-feel free to reach out to the team leader or any other member, who can
-help get you started.
+Nếu bạn yêu thích các công việc ở mỗi team thì bạn có thể liên hệ với leader hoặc memeber trong team để được tham gia vào.
+Việc tuyển chọn sẽ dựa trên kiến thức và sự hiểu biết của bạn.
 
 [teams]: team.html
 [core_team]: team.html#Core-team
@@ -213,24 +177,17 @@ help get you started.
 
 ## Rust Development
 
-Rust has had over [1,200 different contributors][authors], a number that grows
-every single week. [We'd love for you to join that list][contribute]!
+Rust có hơn [1,200 người đóng góp][authors], con số ấy vẫn tăng lên hàng tuần. 
+[Chúng tôi luôn chào đón bạn][contribute]!
 
-As mentioned above, the [Rust Internals Forum][internals_forum] is dedicated to
-discussing the design and implementation of Rust. A lot of discussion also
-happens on GitHub:
+[Rust Internals Forum][internals_forum] là nơi để thảo luận về thiết kế và thực hiện các ý tưởng đó. 
+Có một số nhánh trên GitHub:
 
-- The [main repository][github] and [issue tracker][issue_tracking] are the
-  front lines of the implementation work. Our reviewers strive to be friendly
-  and to help mentor newcomers, so don't hesitate to open a pull request!
+- [main repository][github] và [issue tracker][issue_tracking] chúng tôi luôn giúp bạn, vì vậy đừng ngại tạo pull request nhé!
 
-- The [RFC repo][rfcs] tracks our Request for Comment process, the main pathway
-  through which the Rust community and the teams reach consensus on new
-  features proposed for the language and official libraries and tools.
+- [RFC repo][rfcs] theo dõi các Request for Comment.
 
-Roughly weekly, the Rust teams produce [team reports][team_reports] tracking
-team business, including the progression of proposals through the RFC and
-implementation process.
+[team reports][team_reports] theo dõi quá trình phát triển thông qua các đề xuất RFC và quá trình thực hiện.
 
 [authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
 [contribute]: contribute.html
