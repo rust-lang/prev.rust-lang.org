@@ -1,0 +1,73 @@
+---
+layout: vn-VN/default
+title: Chính sách bảo mật &middot; The Rust Programming Language
+---
+
+<h1>Chính sách bảo mật</h1>
+
+<h2>Báo cáo về lỗi</h2>
+
+<p>Safety là một trong những core concepts của Rust, và cho đến sau này. 
+Chúng tôi vẫn muốn bảo đảm rằng Rust được thực hiện một cách an toàn.
+Rất cám ơn các bạn đã dành thời gian của mình để tìm ra các vấn đề.</p>
+
+<p>Tất các vấn đề bảo mật của Rust nên được gửi đến địa chỉ email
+<a href="mailto:security@rust-lang.org">security@rust-lang.org</a>. Những thông tin sẽ được chuyển đến team security.
+Email của bạn sẽ được xử lý trong vòng 24 giờ, và bạn sẽ nhận được một email về báo cáo đầy đủ các vấn đề
+trong vòng 48 giờ kế tiếp. Bạn có thể mã hoá nội dụng bạn gửi bằng cách dùng <a href="../rust-security-team-key.gpg.ascii">our public key</a>.
+Key này cũng là <a
+href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xEFB9860AE7520DAC">On
+MIT's keyserver</a> và <a href="#key">được sao chéo phía dưới</a>.
+
+<p>Để tránh trường hợp email của bạn bị đưa vào thư mục spam, bạn nên mô tả cụ thế tiêu đề bạn gửi. 
+Ngay sau khi trả lời report của bạn, security team sẽ cố thông báo cho bạn về tiễn độ của quá trình xử lý.
+
+<p>Nếu bạn không nhận được email phản hồi từ security team trong vòng 48 giờ hoặc trong 5 ngày liên tiếp
+dưới đây sẽ là một số hướng dẫn khác cho bạn:</p>
+
+<ul>
+    <li>Liên lạc trực tiếp với điều phối viên security (<a href="mailto:steve@steveklabnik.com">Steve Klabnik</a>
+        (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xDAE717EFE9424541">public key</a>)).</li>
+    <li>Hoặc liên lạc trực tiếp với (<a href="mailto:andersrb@gmail.com">Brian Anderson</a>
+        (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x16457A6368CFF26F">public key</a>)).</li>
+    <li>Đăng bài thông báo tại <a href="https://internals.rust-lang.org/">internals forums</a>
+    hoặc hỏi trực tiếp tại kênh #rust-internals IRC ở irc.mozilla.org.</li>
+</ul>
+
+<p>Lưu ý rằng forums và kênh #rust-internals IRC là những nơi công cộng,
+nên khi tìm ra lỗi không nên thảo luận ở trên đây.</p>
+
+<h2>Chính sách công bố</h2>
+
+<p>Quy trình thực hiện có 5 bước.</p>
+
+<ol>
+<li>Team security nhận lỗi .</li>
+
+<li>Xác nhận lỗi và công bố các phiên bản bị ảnh hưởng.</li>
+
+<li>Kiểm tra Code để tìm những vấn đề tương tự.</li>
+
+<li>Sửa chữa được chuẩn bị cho tất cả các phiên bản vẫn đang được duy trì .</li>
+
+<li><a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">
+Rust security mailing list</a> được gửi một bảng sao thông báo. Sự thay đổi sẽ được push
+lên public repo và được deploy tại rust-lang.org. Trong vòng 6h. Một bản sao của các chuyên gia
+sẽ được công bố tại Rust blog.</li> </ol>
+
+<p>Quá trình xử lý này sẽ tốn một chút thời gian, đặc biệt khi sự phối hợp với những maintainers báo trì các dự án khác.</p>
+
+<h2>Nhận các bản cập nhật bảo mật</h2>
+
+<p>Cách tốt nhất là subscribe <a
+href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">Rust
+security announcements mailing list</a>.</p>
+
+<h2>Comments on This Policy</h2>
+
+<p>Nếu bạn có những ý tưởng mới về chính sách này, bạn có thể gửi email đến
+<a href="mailto:security@rust-lang.org">security@rust-lang.org</a>.</p>
+
+<h2 id="key">Plaintext PGP Key</h2>
+
+<pre><code>{% include rust-security-team-key.gpg.ascii %}</code></pre>
