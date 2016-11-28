@@ -1,14 +1,14 @@
 ---
 layout: vi-VN/default
-title: Tài liệu Rust &middot; The Rust Programming Language
+title: Tài liệu Rust &middot; Ngôn ngữ lập trình Rust
 ---
 
 # Cơ bản
 
 Nếu bạn chưa từng làm quen với Rust lần nào, thì bạn nên tham khảo
 cuốn sách này [The Rust Programming Language][book]. Cuốn sách này
-sẽ giới thiệu về cách cài đặt, cú pháp, concepts, và nhiều hơn thế nửa.
-Sau khi kết quá trình làm quen với Rust qua cuốn sách trên thì bạn có thể
+sẽ giới thiệu về cách cài đặt, cú pháp, khái niệm, và nhiều hơn thế nữa.
+Sau khi kết thúc quá trình làm quen với Rust qua cuốn sách trên thì bạn có thể
 tìm hiểu sâu hơn về Rust.
 
 ## Những tài liệu hay để tìm hiểu về Rust
@@ -63,7 +63,7 @@ người mới tìm hiểu về Rust .
 [Quy định về bản quyền và thương hiệu][legal]. Bản quyền thuộc về tập hợp những nhà phát triển Rust, thương hiệu thuộc về Mozilla.
 Các quy định về việc dùng thương hiệu được mô tả ở đây.
 
-[Hướng dẫn về Code][coc]. Áp dùng cho tổ chức ở Github, diễn đàn, IRC, và các cộng đồng Rust trên thế giới.
+[Hướng dẫn về Code][Quy tắc hành xử]. Áp dùng cho tổ chức ở Github, diễn đàn, IRC, và các cộng đồng Rust trên thế giới.
 
 [security]: security.html
 [legal]: legal.html

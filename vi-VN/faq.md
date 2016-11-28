@@ -1,6 +1,6 @@
 ---
 layout: vi-VN/faq
-title: Frequently Asked Questions &middot; The Rust Programming Language
+title: Frequently Asked Questions &middot; Ngôn ngữ lập trình Rust
 ---
 
 # Frequently Asked Questions

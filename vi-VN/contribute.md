@@ -1,6 +1,6 @@
 ---
 layout: vi-VN/default
-title: Tham gia vào Rust &middot; The Rust Programming Language
+title: Tham gia vào Rust &middot; Ngôn ngữ lập trình Rust
 ---
 
 # Trở thành một thành viên của Rust lang

@@ -1,6 +1,6 @@
 ---
 layout: vi-VN/default
-title: Cộng đồng &middot; The Rust Programming Language
+title: Cộng đồng &middot; Ngôn ngữ lập trình Rust
 ---
 
 # Cộng đồng
@@ -8,12 +8,11 @@ title: Cộng đồng &middot; The Rust Programming Language
 Sức mạnh lớn nhất của Rust là cộng đồng, mọi người cùng đến
 với nhau để tạo nên một Rust tốt nhất.
 
-Không phân biệt bạn là ai, bạn là người như thế nào, bận đến từ quốc gia,
-hay bạn theo tôn giáo nào, bất kể bạn là nam hay nữ thì nếu bạn yêu thích Rust bạn luôn được chào đón.
+Không phân biệt bạn là ai, bạn là người như thế nào, bạnn đến từ quốc gia nào,
+hay bạn theo tôn giáo nào, bất kể bạn là nam hay nữ miễn là bạn yêu thích Rust bạn luôn được chào đón.
 
 Nếu bạn có bất kỳ điều gì không hiểu thì bạn có thể [liên lạc][mod_team_email] với mọi người trong
-[Ban quản trị Rust][mod_team]. Chúng luôn quan tâm đến việc tạo ra một cộng đồng an toàn để bạn
-sinh hoạt ở đó.
+[Ban quản trị Rust][mod_team]. Chúng tôi luôn cố gắng xây dựng một cộng đồng thân thiện để bạn thoải mái.
 
 [coc]: conduct.html
 [mod_team_email]: mailto:rust-mods@rust-lang.org
@@ -22,20 +21,20 @@ sinh hoạt ở đó.
 
 Bạn có thể chọn:
 
-- [#rust-beginners][beginners_irc], Kênh IRC bạn luận mọi thứ về Rust.
+- [#rust-beginners][beginners_irc], Kênh IRC bàn luận mọi thứ về Rust.
 hoặc
 - [Diễn đàn][users_forum], thảo luận tất tần tật về Rust cho vào đây.
 
-Có lỗi xảy ra ư ? không thể nào bỏ sót [Stack Overflow][stack_overflow] được.
+Có lỗi xảy ra ư? không thể nào bỏ sót [Stack Overflow][stack_overflow] được.
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
 ## Bản tin
 
 [This Week in Rust][twir] tổng hợp các tin tức mới nhất, thư viện mới nhất,
-sự kiện sắp diễn ra, đây là cái không thể bỏ qua được nhé các Rustceans. 
+sự kiện sắp diễn ra, đây là cái không thể bỏ qua được nhé các Rustacean.
 [The Rust Blog][rust_blog] là nơi core team thông báo các tính năng mới, những khái niệm mới. 
-Nếu bạn dùng Reddit, có hản một nơi cho bạn thảo luận ở Reddit luôn, [/r/rust][reddit].
+Nếu bạn dùng Reddit, có hẳn một nơi cho bạn thảo luận ở Reddit luôn, [/r/rust][reddit].
 
 Bạn là người hay tweet thì đừng quên theo dõi ở [Twitter][twitter] nhé.
 
@@ -50,7 +49,7 @@ Bạn là người hay tweet thì đừng quên theo dõi ở [Twitter][twitter]
 Kênh [#rust][rust_irc] là nơi thảo luận về Rust, và giải đáp các thắc mắc của bạn. 
 
 Kênh [#rust-internals][internals_irc] là nơi core team làm việc để cho ra những tính năng độc đáo của Rust,
-nếu bạn đủ tự tin trở thành core team và muốn vượt lên chính mình, chúc mừng bạn đã tìm đúng nơi rồi đó.
+nếu bạn đủ tự tin gia nhập core team và muốn vượt lên chính mình, chúc mừng bạn đã tìm đúng nơi rồi đó.
 
 ### Các kênh chính
 
@@ -73,7 +72,7 @@ nếu bạn đủ tự tin trở thành core team và muốn vượt lên chính
 
 ### Các kênh chuyên đề
 
-- [#cargo][cargo_irc] thảo luận về công cụ quản lý packages của Rust
+- [#cargo][cargo_irc] thảo luận về công cụ quản lý gói của Rust
 - [#rust-bots][bots_irc] Bots thông báo của Rust
 - [#rust-docs][docs_irc] doanh trại của team document Rust
 - [#rust-crypto][crypto_irc] nơi thảo luận về mã hoá ở Rust
@@ -121,13 +120,13 @@ nếu bạn đủ tự tin trở thành core team và muốn vượt lên chính
 
 ## Youtube
 
-Bạn có thể xem lại các buổi conferences trên kênh [YouTube channel][youtube_channel].
+Bạn có thể xem lại các buổi hội thảo trên kênh [YouTube channel][youtube_channel].
 
 [youtube_channel]: https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA
 
 ## User Groups and Meetups
 
-Có hơn 50 [Rust User Groups][user_group] trên toàn thế giới ở 20 quốc gia khác nhau với hơn 7.000 thành viên. 
+Có hơn 50 [Rust User Groups][nhóm người dùng] trên toàn thế giới ở 20 quốc gia khác nhau với hơn 7.000 thành viên. 
 Thường xuyên có các buổi họp mặt giữa các thành viên với nhau. Đó là nơi tốt nhất để chia sẽ ý tưởng của mình,
 giải đáp các thắc mắc.
 
@@ -177,7 +176,7 @@ Việc tuyển chọn sẽ dựa trên kiến thức và sự hiểu biết củ
 
 ## Rust Development
 
-Rust có hơn [1,200 người đóng góp][authors], con số ấy vẫn tăng lên hàng tuần. 
+Rust có hơn [1,200 người đóng góp][1.200 tác giả], con số ấy vẫn tăng lên hàng tuần. 
 [Chúng tôi luôn chào đón bạn][contribute]!
 
 [Rust Internals Forum][internals_forum] là nơi để thảo luận về thiết kế và thực hiện các ý tưởng đó. 
