@@ -689,39 +689,45 @@ footer a {
     color: white;
     background-color: #428BCA;
     border-radius: 3px;
-    padding-left: 4rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem;
     margin-top: 4rem;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.pitch-row .release-version > span {
+    font-weight: 500;
+}
+
+.pitch-row .release-date {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.release-info-column {
+    text-align: center;
+    font-weight: 500;
 }
 
 .release-info-column > div {
-    margin-top: 4rem;
-}
-
-.release-info-column > div > div:first-child {
+    margin-top: 6rem;
+    padding-right: 9rem;
 }
 
 .release-info-column .release-version {
     font-size: 1.5em;
-    font-weight: 500;
 }
 
 .release-info-column .release-date {
-    font-weight: 500;
+    margin-top: 1rem;
 }
 
-/* de-emphasize the header to draw attention to the instructions */
-h1.rustup,
-h1.rustup ~ h2 {
-    color: #999;
-    font-size: 2em; /* same as h2 */
-    font-size: 2em;
-    line-height: 1.5em;
-    margin: 3rem 0 1rem;
-    font-weight: 400;
-    border-top: 2px solid #dedede;
-    padding-top: 1rem;
+h1.rustup {
+    border-top: 0px;
+}
+
+.rustup-row {
+    margin-bottom: 4rem;
 }
 
 .rustup-init-table {

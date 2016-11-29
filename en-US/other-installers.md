@@ -6,10 +6,8 @@ title: Other Installation Methods &middot; The Rust Programming Language
 # Other Rust Installation Methods
 
 - [Which installer should you use?](#which)
-- [Other ways to install via `rustup`](#more-rustup)
+- [Other ways to install `rustup`](#more-rustup)
 - [Standalone installers](#standalone)
-- [The `rustup.sh` script](#rustup-sh)
-- [Obtaining Rust via other package managers](#other)
 - [Source code](#source)
 
 ## Which installer should you use?
@@ -26,9 +24,9 @@ might one _not_ want to install using those instructions?
 - Offline installation. `rustup` downloads components from the internet on
   demand. If you need to install Rust without access to the internet, `rustup`
   is not suitable.
-- Preference for the system package manager. In Linux in particular, but also on
-  macOS with [Homebrew], developers sometimes prefer to install Rust with their
-  platform's package manager.
+- Preference for the system package manager. On Linux in particular, but also on
+  macOS with [Homebrew], and Windows with [Chocolatey], developers sometimes
+  prefer to install Rust with their platform's package manager.
 - Preference against `curl | sh`. On Unix, we usually install `rustup` by
   running a shell script via `curl`. Some have concerns about the security of
   this arrangement and would prefer to download and run the installer
@@ -46,11 +44,11 @@ Rust's platform support is defined in [three tiers], which correspond closely
 with the installation methods available: in general, the Rust project provides
 binary builds for all tier 1 and tier 2 platforms, and they are all installable
 via `rustup`. Some tier 2 platforms though have only the standard library
-available, not the compiler itself; that is, they are cross-compilation targets,
-Rust code can run on those platforms, but they do not run the compiler itself.
-Such targets can be installed with the `rustup target add` command.
+available, not the compiler itself; that is, they are cross-compilation targets
+only; Rust code can run on those platforms, but they do not run the compiler
+itself. Such targets can be installed with the `rustup target add` command.
 
-## Other ways to install via `rustup`
+## Other ways to install `rustup`
 <span id="rustup"></span>
 
 The way to install `rustup` differs by platform:
@@ -143,16 +141,14 @@ If you prefer not to use the shell script, you may directly download
   </div>
 </div>
 
-Note that all builds of Rust can target all supported architectures, and on on
+Note that all builds of Rust can target all supported architectures, and on
 Windows, it is always recommended to install using the `i686-pc-windows-gnu`
-build of `rustup`, regardless of whether you are targetting the MSVC or GNU ABI,
-i686 or x86_64 architecture. Either Windows build of `rustup` will install the
-MSVC build of Rust if it detects that MSVC is installed. All four Windows builds
-of `rustup` are functionally equivalent, but the MSVC builds have a confusing
-(and temporary) limitation: they are dynamically linked to the MSVC runtime,
-which may not be installed, causing `rustup` to fail; whereas the GNU builds of
-`rustup` are statically linked. On Windows, use the `i686-pc-windows-gnu` build
-of `rustup`.
+build of `rustup`, regardless of whether you are targetting the i686 or x86_64
+architecture, the MSVC or GNU ABI. All four Windows builds of `rustup` are
+functionally equivalent, and each will install the MSVC build of Rust by
+default, but for technical reasons the i686 GNU build of rustup itself should be
+preferred. For more information about Rust on Windows see the [`rustup` Windows
+documentation][rustup-win].
 
 ## Standalone installers
 <span id="standalone"></span>
@@ -172,8 +168,7 @@ The most common reasons to use these are:
 
 Each of these binaries is signed with the [Rust signing key], which is
 [available on keybase.io], by the Rust build infrastructure, with
-[GPG]. Validating their signatures provides strong guarantees about their
-origins. In the tables below, the `.asc` files are the signatures.
+[GPG]. In the tables below, the `.asc` files are the signatures.
 
 {% for channel in site.channels %}
 
@@ -331,33 +326,6 @@ origins. In the tables below, the `.asc` files are the signatures.
 
 {% endfor %}
 
-## The `rustup.sh` script
-<span id="rustup-sh"></span>
-
-On Unixes, there's a script available for installing the standalone installers,
-`rustup.sh` (sometimes confused with `rustup`), which can be conveniently combined
-with curl to install Rust from any release channel.
-
-To install stable Rust:
-
-```
-curl -sSf https://static.rust-lang.org/rustup.sh | sh
-```
-
-To install nightly Rust:
-
-```
-curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly
-```
-
-## Obtaining Rust via other package managers
-<span id="other"></span>
-
-Rust is packaged by third-parties as well, including Homebrew, Debian, Fedora,
-and Arch Linux. The maturity and completeness of third-party packages is
-unknown, and Rust makes releases often, so for the most consistent and
-up-to-date Rust experience we recommend using the official Rust packages.
-
 ## Source code
 <span id="source"></span>
 
@@ -391,7 +359,9 @@ up-to-date Rust experience we recommend using the official Rust packages.
 [`rustup-init.exe`]: https://static.rust-lang.org/rustup/dist/i686-pc-windows-gnu/rustup-init.exe
 [`rustup-init.sh`]: https://static.rust-lang.org/rustup/rustup-init.sh
 [Homebrew]: http://brew.sh/
+[Chocolatey]: http://chocolatey.org/
 [three tiers]: https://forge.rust-lang.org/platform-support.html
 [Rust signing key]: https://static.rust-lang.org/rust-key.gpg.ascii
 [GPG]: https://gnupg.org/
 [available on keybase.io]: https://keybase.io/rust
+[rustup-win]: https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows

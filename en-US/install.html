@@ -2,6 +2,10 @@
 layout: default
 title: Installation &middot; The Rust Programming Language
 ---
+    <h1 class="rustup">Install Rust</h1>
+
+    <hr>
+
     <div class="row rustup-row">
       <div class="col-md-8 instr-column">
         <div id="platform-instructions-unix" class="instructions" style="display: none;">
@@ -35,7 +39,7 @@ title: Installation &middot; The Rust Programming Language
           <p>
             Rust runs on Windows, Linux, Mac OS X, FreeBSD and NetBSD. If
             you are on one of these platforms and are seeing this then please
-            <a href="https://github.com/rust-lang-nursery/rustup.rs/issues/new">report an issue</a>,
+            <a href="https://github.com/rust-lang/rust-www/issues/new">report an issue</a>,
             along with the following values:
             <div>
               <div>navigator.platform:</div>
@@ -68,10 +72,7 @@ title: Installation &middot; The Rust Programming Language
 
       <div class="col-md-4 release-info-column">
         <div>
-          <br>
-
-          <div>Current release</div>
-          <div class="release-version">{{ site.stable }}</div>
+          <div class="release-version">Rust <span>{{ site.stable }}</span></div>
           <a href="{{ site.stable_blog }}">
             <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
           </a>
@@ -84,76 +85,6 @@ title: Installation &middot; The Rust Programming Language
         </div>
       </div>
 
-    </div>
-
-    <h1 class="rustup">Installing Rust</h1>
-
-    <div class="row">
-      <div class="col-md-12">
-        <p>
-          The most common way to install Rust is to ↑ <em>follow the
-          instructions above</em> ↑. The installer will explain everything it
-          does, and everything you need to set up your environment. It's
-          simple, and it usually just works. If you are confident and
-          clever then ↑ <em>follow the instructions above</em> ↑. If you are
-          cautious or have questions, read on.
-        </p>
-
-        <p>
-          Follow the instructions above.
-          Doing so will install the latest stable release of Rust,
-          including the compiler, <code>rustc</code>, the build system and
-          package manager, <code>cargo</code>, and the Rust toolchain
-          manager, <code>rustup</code>, to Cargo's application directory,
-          <span class="platform-specific not-win" style="display: inline;">
-            <code>~/.cargo/bin</code>
-          </span>
-          <span class="platform-specific win" style="display: none;">
-            <code>%USERPROFILE%\.cargo\bin</code>
-          </span>
-          .
-        </p>
-      </div>
-    </div>
-
-    <div class="install-examples">
-      <div class="row install-example-row">
-        <div class="col-md-4">
-          <p>Test the installation by running</p>
-        </div>
-        <div class="col-md-6">
-          <pre class="platform-specific not-win" style="display: inline;">~/.cargo/bin/rustc --version</pre>
-          <pre class="platform-specific win" style="display: inline;">%USERPROFILE%\.cargo\bin\rustc --version</pre>
-        </div>
-      </div>
-
-      <div class="row install-example-row">
-        <div class="col-md-4">
-          <p>... which should print</p>
-        </div>
-        <div class="col-md-6">
-          <pre>{{ site.stable_full_version }}</pre>
-        </div>
-      </div>
-
-      <div class="row install-example-row">
-        <div class="col-md-4">
-          <p>To uninstall Rust, run</p>
-        </div>
-        <div class="col-md-6">
-          <pre class="platform-specific not-win" style="display: inline;">~/.cargo/bin/rustup self uninstall</pre>
-          <pre class="platform-specific win" style="display: inline;">%USERPROFILE%\.cargo\bin\rustup self uninstall</pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <p>
-          If you run into problems see the
-          <a href="TODO">troubleshooting guide</a>.
-        </p>
-      </div>
     </div>
 
     <h2>Notes about Rust installation</h2>
@@ -173,28 +104,22 @@ title: Installation &middot; The Rust Programming Language
           <a href="https://forge.rust-lang.org/platform-support.html">
              great number of platforms
           </a>, so there are many builds of Rust available at any time.
-          <code>rustup</code> manages these builds in a consistent way on every platform
-          that Rust supports, enabling
-          <a href="https://github.com/rust-lang-nursery/rustup.rs#working-with-nightly-rust">
-            installation of Rust from the beta and nightly release channels
-          </a>
-          as well as
-          <a href="https://github.com/rust-lang-nursery/rustup.rs#cross-compilation">
-            support for additional cross-compilation targets
-          </a>.
+          <code>rustup</code> manages these builds in a consistent way on every
+          platform that Rust supports, enabling installation of Rust from the
+          beta and nightly release channels as well as support for additional
+          cross-compilation targets
         </p>
 
         <p>
-          To keep your Rust installation up to date, periodically
-          run <code>rustup update</code>. For more information see the
-          <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code> documentation</a>.
+          For more information see the
+          <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md"><code>rustup</code>
+          documentation</a>.
         </p>
 
         <h3>Configuring the <code>PATH</code> environment variable</h3>
 
         <p>
-          In the Rust development environment, all tools are installed
-          to <code>cargo</code>'s
+          In the Rust development environment, all tools are installed to the
           <span class="platform-specific not-win" style="display: inline;">
             <code>~/.cargo/bin</code>
           </span>
@@ -212,16 +137,14 @@ title: Installation &middot; The Rust Programming Language
           environment variable</a>.  During installation, <code>rustup</code>,
           will attempt to configure
           <code>PATH</code>, but because of differences between platforms,
-          command shells, and bugs in <code>rustup</code> the modifications
+          command shells, and bugs in <code>rustup</code>, the modifications
           to <code>PATH</code> may not take effect until the console is
           restarted, or the user logged out, or may not succeed at all.
         </p>
 
         <p>
           If, after installation, running <code>rustc --version</code> in the
-          console fails, this is the most likely reason. Follow the
-          <a href="TODO">platform-specific instructions</a> to
-          modify <code>PATH</code> yourself.
+          console fails, this is the most likely reason.
         </p>
 
         <div class="platform-specific win">
@@ -231,52 +154,43 @@ title: Installation &middot; The Rust Programming Language
           <a id="win-foot"></a>
 
 	  <p>
-	    There are two prominent
-	    <a href="https://en.wikipedia.org/wiki/Application_binary_interface">ABIs</a>
-	    in use on Windows: the native (MSVC) ABI used by
-	    <a href="https://www.visualstudio.com">Visual Studio</a>,
-	    and the GNU ABI used by the
-	    <a href="https://gcc.gnu.org/">GCC toolchain</a>.
-	    Rust can compile for both ABIs, and which one you choose to target
-	    depends largely on what C/C++ libraries you want to interoperate with:
-	    for interop with software produced by Visual Studio use the MSVC build
-	    of Rust; for interop with GNU software built using the
-	    <a href="https://msys2.github.io/">MinGW/MSYS2 toolchain</a>
-	    use the GNU build.
-	  </p>
-
-	  <p>
-	    For best interoperability with other Windows software, Rust targets
-            the MSVC ABI by default. For this Rust requires the C++ build tools
+            On Windows, Rust additionally requires the C++ build tools
             for Visual Studio 2013 or later. The easiest way to acquire the build
             tools is by installing
 	    <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
-	      Microsoft Visual C++ Build Tools 2015</a>
-	    which provides just the Visual C++ build tools.
-	    Alternately, you can <a href="https://www.visualstudio.com/downloads/">install</a>
-	    Visual Studio 2015 or Visual Studio 2013 and during install select the "C++ tools".
-	    No additional software installation is necessary for basic use of the GNU build.
+	      Microsoft Visual C++ Build Tools 2015
+            </a>
+            which provides just the Visual C++ build tools. Alternately, you
+	    can <a href="https://www.visualstudio.com/downloads/">install</a>
+	    Visual Studio 2015 or Visual Studio 2013 and during install select
+	    the "C++ tools".
 	  </p>
 
           <p>
             For further information about configuring Rust on Windows see the
-            <a href="TODO">Windows-specific <code>rustup</code> documentation</a>.
+            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows-specific <code>rustup</code>
+            documentation</a>.
           </p>
 
         </div>
 
-        <h3>Other installation methods</h3>
+      </div>
+    </div>
 
+    <h2>Other installation methods</h3>
+
+    <div class="row">
+      <div class="col-md-12">
         <p>
           The installation described above, via
           <code>rustup</code>, is the preferred way to install Rust for most developers,
           but Rust can be
-          <a href="other-installers.html">installed via other methods as well</a>.
+          <a href="other-installers.html">installed via other methods</a>
+          as well.
         </p>
-
       </div>
     </div>
-
+    
     <script type="text/javascript">
       {% include rustup.js %}
     </script>
