@@ -8,11 +8,11 @@ title: Cộng đồng &middot; Ngôn ngữ lập trình Rust
 Sức mạnh lớn nhất của Rust là cộng đồng, mọi người cùng đến
 với nhau để tạo nên một Rust tốt nhất.
 
-Không phân biệt bạn là ai, bạn là người như thế nào, bạnn đến từ quốc gia nào,
-hay bạn theo tôn giáo nào, bất kể bạn là nam hay nữ miễn là bạn yêu thích Rust bạn luôn được chào đón.
+Không phân biệt bạn là ai, bạn là người như thế nào, bận đến từ quốc gia,
 
 Nếu bạn có bất kỳ điều gì không hiểu thì bạn có thể [liên lạc][mod_team_email] với mọi người trong
-[Ban quản trị Rust][mod_team]. Chúng tôi luôn cố gắng xây dựng một cộng đồng thân thiện để bạn thoải mái.
+[Ban quản trị Rust][mod_team]. Chúng luôn quan tâm đến việc tạo ra một cộng đồng an toàn để bạn
+sinh hoạt ở đó.
 
 [coc]: conduct.html
 [mod_team_email]: mailto:rust-mods@rust-lang.org
@@ -26,6 +26,13 @@ hoặc
 - [Diễn đàn][users_forum], thảo luận tất tần tật về Rust cho vào đây.
 
 Có lỗi xảy ra ư? không thể nào bỏ sót [Stack Overflow][stack_overflow] được.
+=======
+- [#rust-beginners][beginners_irc], Kênh IRC bạn luận mọi thứ về Rust.
+hoặc
+- [Diễn đàn][users_forum], thảo luận tất tần tật về Rust cho vào đây.
+
+Có lỗi xảy ra ư ? không thể nào bỏ sót [Stack Overflow][stack_overflow] được.
+>>>>>>> Fix conflict link
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
@@ -34,7 +41,7 @@ Có lỗi xảy ra ư? không thể nào bỏ sót [Stack Overflow][stack_overfl
 [This Week in Rust][twir] tổng hợp các tin tức mới nhất, thư viện mới nhất,
 sự kiện sắp diễn ra, đây là cái không thể bỏ qua được nhé các Rustacean.
 [The Rust Blog][rust_blog] là nơi core team thông báo các tính năng mới, những khái niệm mới. 
-Nếu bạn dùng Reddit, có hẳn một nơi cho bạn thảo luận ở Reddit luôn, [/r/rust][reddit].
+Nếu bạn dùng Reddit, có hản một nơi cho bạn thảo luận ở Reddit luôn, [/r/rust][reddit].
 
 Bạn là người hay tweet thì đừng quên theo dõi ở [Twitter][twitter] nhé.
 
