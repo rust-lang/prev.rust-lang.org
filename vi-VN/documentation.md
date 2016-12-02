@@ -63,7 +63,7 @@ người mới tìm hiểu về Rust .
 [Quy định về bản quyền và thương hiệu][legal]. Bản quyền thuộc về tập hợp những nhà phát triển Rust, thương hiệu thuộc về Mozilla.
 Các quy định về việc dùng thương hiệu được mô tả ở đây.
 
-[Hướng dẫn về Code][Quy tắc hành xử]. Áp dùng cho tổ chức ở Github, diễn đàn, IRC, và các cộng đồng Rust trên thế giới.
+[Quy tắc hành xư][coc]. Áp dùng cho tổ chức ở Github, diễn đàn, IRC, và các cộng đồng Rust trên thế giới.
 
 [security]: security.html
 [legal]: legal.html
