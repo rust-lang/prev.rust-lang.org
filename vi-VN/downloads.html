@@ -1,0 +1,204 @@
+---
+layout: vi-VN/default
+title: Tài về &middot; The Rust Programming Language
+---
+    <h1>Tải về</h1>
+
+    <hr>
+
+    <div class="row install">
+      <div class="col-md-4 side-header">
+        <h2 id="stable">{{ site.stable }}&nbsp;</h2>
+        <h3>{{ site.stable_date | date: "%d - %m - %Y" }}</h3>
+        <p>
+          <a href="http://blog.rust-lang.org{{ site.stable_blog }}">
+	    Phiên bản ổn định của Rust</a>,
+	  đến hẹn lại lên cách nhau 6 tuần sẽ có bản cập nhật.
+        </p>
+      </div>
+      <div class="col-md-8">
+        <table class="table-features table-installers"><tbody>
+          <tr>
+          <td class="inst-type">Linux (.tar.gz)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac (.pkg)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-pc-windows-msvc.msi"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td class="inst-type"></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz"><div class="inst-button">Source</div></a></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p>Cách đơn giản đối với dùng Mac và Linux có thể cài đặt thông qua shell:</p>
+        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh</code></pre>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row install">
+      <div class="col-md-4 side-header">
+        <h2 id="beta">Phiên bản dùng thử (Beta)&nbsp; ({{ site.beta }})</h2>
+        <p>
+	Phiên bản dùng thử các tính năng mới. Cứ 6 tuần cập nhật một lần.
+        </p>
+        <p><em>Ngày ra mắt phiên bản stable<br/>{{ site.beta_date | date: "%d - %m - %Y" }}</em>.<p>
+      </div>
+      <div class="col-md-8">
+        <table class="table-features table-installers"><tbody>
+          <tr>
+          <td class="inst-type">Linux (.tar.gz)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac (.pkg)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-msvc.msi"><div class="inst-button">32-bit</div></a></td>
+          <td></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td class="inst-type"></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-beta-src.tar.gz"><div class="inst-button">Source</div></a></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p>Cách đơn giản đối với dùng Mac và Linux có thể cài đặt thông qua shell:</p>
+        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=beta</code></pre>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row install">
+      <div class="col-md-4 side-header">
+        <h2 id="nightly">Phiên bản Nightly&nbsp; ({{ site.nightly }})</h2>
+        <p>
+        Phiên bản được ra mắt trong quá trình phát triển.
+	Bao gồm
+	<a href="https://doc.rust-lang.org/book/nightly-rust.html">tính năng chưa ổn định</a>
+	những tính năng này không có trong các phiên bản stable và beta.
+        </p>
+      </div>
+      <div class="col-md-8">
+        <table class="table-features table-installers"><tbody>
+          <tr>
+          <td class="inst-type">Linux (.tar.gz)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-linux-gnu.tar.gz"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-unknown-linux-gnu.tar.gz"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Mac (.pkg)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.pkg"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-msvc.msi"><div class="inst-button">32-bit</div></a></td>
+          <td></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td class="inst-type"></td>
+          <td colspan="2"><a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz"><div class="inst-button">Source</div></a></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p>Cách đơn giản đối với dùng Mac và Linux có thể cài đặt thông qua shell:</p>
+        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly</code></pre>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-12">
+      <p>
+        Đa dạng cách tải về khác ở <a href="https://static.rust-lang.org/dist/index.html">thư mục lưu trữ.</a>
+      </p>
+      </div>
+    </div>
+
+    <hr/>
+
+     <div class="row">
+      <div class="col-md-12">
+        <p>Khi bạn dùng shell để cài đặt, nên gỡ cài đặt các phiên bản Rust trước đó:</p>
+        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --uninstall</code></pre>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-12">
+	<a id="win-foot"></a>
+	<p>
+	  <em>†</em>
+	  2 điểm đáng chú ý 
+	  <a href="https://en.wikipedia.org/wiki/Application_binary_interface">ABIs</a>
+	  ở Windows: (MSVC) ABI đươc sử dụng bởi
+	  <a href="https://www.visualstudio.com">Visual Studio</a>,
+	  và GNU ABI được sử dụng bởi
+	  <a href="https://gcc.gnu.org/">GCC toolchain</a>.
+	  Mỗi phiên bản của Rust phụ thuộc lớn vào thư viện C/C++ bạn muốn tương tác với:
+	  Visual Studio sư dụng MSVC; GNU sử dụng <a href="https://msys2.github.io/">MinGW/MSYS2 toolchain</a>.
+	</p>
+	<p>
+	  MSVC yêu cầu Microsoft Visual C++ của Visual Studio 2013 or mới nhất.
+	  Cách đơn giản nhất là cài đặt <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
+	  Microsoft Visual C++ Build Tools 2015</a>.
+	  Hoặc là, bạn có thể <a href="https://www.visualstudio.com/downloads/">cài đặt</a>
+	  Visual Studio 2015 hoặc Visual Studio 2013 và trong quá trình cài đặt chọn "C++ tools".
+	  Khi dùng GNU build không cần phải cài đặt thêm phần mềm nào.
+	</p>
+	<p>
+	  Rust's đang hoàn thiện việc hỗ trợ MSVC ABI.
+	</p>
+    </div>
+  </div>
