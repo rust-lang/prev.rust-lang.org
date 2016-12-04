@@ -23,7 +23,7 @@ mechanics of contributing to [rust-lang/rust].
 * [文档](contribute-docs.html)：
   不只限于官方文档——库、博客及其他非官方的消息来源。
 * [社区建设](contribute-community.html)
-  帮助你在Rust中的手足，以及壮大Rust。
+  帮助你在 Rust 中的手足同胞，以及壮大 Rust。
 * [工具、集成开发环境以及infrastructure](contribute-tools.html). The
   important pieces that make using a language practical and painless.
 * [库](contribute-libs.html)：
@@ -34,8 +34,7 @@ mechanics of contributing to [rust-lang/rust].
 
 如果您需要额外的指导请参考 [#rust-internals] 或 [internals.rust-lang.org]。
 
-We pride ourselves on maintaining civilized discourse, and to that end
-contributors are expected to follow our [行为规范][coc]。
+我们为保持自身修养而感到自豪，因此希望贡献者遵循我们的[社区行为规范][coc]。
 如果您还要其他问题可以咨询我们的[社区团队][community team]。
 
 <!--
