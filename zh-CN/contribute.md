@@ -19,7 +19,7 @@ mechanics of contributing to [rust-lang/rust].
 这里有几条给新贡献者的建议：
 
 * [发现问题、审查问题以及解决问题](contribute-bugs.html)：
-  The basic work of maintaining a large and active project like Rust.
+  维持一个像 Rust 这样的庞大而活跃的项目基础工作。
 * [文档](contribute-docs.html)：
   不只限于官方文档——库、博客及其他非官方的消息来源。
 * [社区建设](contribute-community.html)
