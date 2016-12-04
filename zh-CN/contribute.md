@@ -24,11 +24,10 @@ mechanics of contributing to [rust-lang/rust].
   不只限于官方文档——库、博客及其他非官方的消息来源。
 * [社区建设](contribute-community.html)
   帮助你在 Rust 中的手足同胞，以及壮大 Rust。
-* [工具、集成开发环境以及infrastructure](contribute-tools.html). The
-  important pieces that make using a language practical and painless.
+* [工具、集成开发环境以及infrastructure](contribute-tools.html)：
+  语言的实用与人性化是一门好的语言的关键所在。
 * [库](contribute-libs.html)：
-  Rust's suitability for any particular task is mostly
-  dependent on availability of quality libraries.
+  Rust 对任何特定任务的适用性主要取决于那些高质量库的可用性。
 * [语言、编译器和标准库](contribute-compiler.html)： 
   语言设计、 功能实现、 性能的改善。
 
