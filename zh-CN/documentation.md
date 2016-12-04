@@ -50,19 +50,15 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 [err]: https://doc.rust-lang.org/error-index.html
 [release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md
 
-## Project policies
+## Rust 项目政策与策略
 
-[Rust security policy][security]. The project's policies for
-reporting, fixing and disclosing security-related bugs.
+[Rust 安全策略][security]。该项目策略，修复和披露安全相关问题策略。
 
-[Rust copyright and trademark policies][legal]. The Rust
-copyrights are owned by The Rust Project Developers, and its
-trademarks are owned by Mozilla. Appropriate usage of Rust's
-trademarks are described here.
+[Rust 版权和商标政策][legal]。 Rust的版权归 Rust 项目开发者所有，其商标归 Mozilla 所有。
+改政策描述了 Rust 的商标的使用范畴。
 
-[Code of Conduct][coc]. Applies to the rust-lang organization
-on GitHub, the official forums, IRC channels, and various
-other corners of the Rust world.
+[社区行为规范][coc]。 适用于包括但不仅限于 GitHub 上的 Rust-lang 组织，
+官方论坛，IRC 通道的所有 Rust 社区。
 
 [security]: security.html
 [legal]: legal.html
