@@ -10,10 +10,9 @@ title: 为 Rust 语言做贡献 &middot; Rust 程序设计语言
 
 **发现了一个大漏洞 (bug)，如何报告？** [漏洞报告指南][bugs]. 在此感谢您的建言。
 
-Rust is an expansive system of projects, the most prominent of which
-are maintained by [Rust 开发者][devs] in [GitHub 上的 rust-lang][rust-lang]. Newcomers may be
-interested in the project's [CONTRIBUTING.md] file, which explains the
-mechanics of contributing to [rust-lang/rust].
+Rust有一个庞大的项目系统，其中最突出的是由 [Rust 开发者][devs]在的GitHub上维护的[rust-lang][rust-lang]。
+如果您刚刚开始贡献之旅，您可能对项目的 [CONTRIBUTING.md] 文件感兴趣，
+它解释了对 [rust-lang/rust] 的贡献的机制。
 
 有很多方式为 Rust 语言做出极好的贡献，
 这里有几条给新贡献者的建议：
@@ -44,7 +43,7 @@ libs / community building
 -->
 
 [#rust-internals]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
-[CONTRIBUTING.md]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md
+: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md
 [bugs]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#bug-reports
 [coc]: https://www.rust-lang.org/conduct.html
 [community team]: https://www.rust-lang.org/team.html#Community
