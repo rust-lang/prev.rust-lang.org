@@ -30,14 +30,14 @@ title: Загрузки &middot; Язык программирования Rust
           <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
           </tr>
           <tr>
-          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
-          </tr>
-          <tr>
           <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
           <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-pc-windows-msvc.msi"><div class="inst-button">32-bit</div></a></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-{{ site.stable }}-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
           </tr>
           <tr><td>&nbsp;</td></tr>
           <tr>
@@ -79,15 +79,15 @@ title: Загрузки &middot; Язык программирования Rust
           <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
           </tr>
           <tr>
-          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
-          </tr>
-          <tr>
           <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
           <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-msvc.msi"><div class="inst-button">32-bit</div></a></td>
           <td></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
           </tr>
           <tr><td>&nbsp;</td></tr>
           <tr>
@@ -130,15 +130,15 @@ title: Загрузки &middot; Язык программирования Rust
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.pkg"><div class="inst-button">32-bit</div></a></td>
           </tr>
           <tr>
-          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
-          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
-          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
-          </tr>
-          <tr>
           <td class="inst-type">Windows (<a href="#win-foot">MSVC ABI <sup>†</sup></a>) (.msi) </td>
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-msvc.msi"><div class="inst-button">64-bit</div></a></td>
           <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-msvc.msi"><div class="inst-button">32-bit</div></a></td>
           <td></td>
+          </tr>
+          <tr>
+          <td class="inst-type">Windows (<a href="#win-foot">GNU ABI <sup>†</sup></a>) (.msi)</td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.msi"><div class="inst-button">64-bit</div></a></td>
+          <td><a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-gnu.msi"><div class="inst-button">32-bit</div></a></td>
           </tr>
           <tr><td>&nbsp;</td></tr>
           <tr>
@@ -163,6 +163,15 @@ title: Загрузки &middot; Язык программирования Rust
       <p>
         Вы можете просмотреть другие варианты <a href="https://static.rust-lang.org/dist/index.html">в архиве.</a>
       </p>
+      </div>
+    </div>
+
+    <hr/>
+
+     <div class="row">
+      <div class="col-md-12">
+        <p>Если для установки вы использовали shell скрипт, то для удаления выполните эту команду:</p>
+        <pre><code>curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --uninstall</code></pre>
       </div>
     </div>
 
@@ -197,7 +206,7 @@ title: Загрузки &middot; Язык программирования Rust
       Для GNU версии никакого дополнительного ПО не требуется.
     </p>
     <p>
-      Поддержка GNU ABI более проработана и рекомендуется для обычных пользователей.
+      Поддержка MSVC ABI более проработана и рекомендуется для обычных пользователей.
     </p>
     </div>
   </div>
