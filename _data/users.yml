@@ -183,6 +183,11 @@
   logo: navitia.svg
   how: "<a href='https://github.com/CanalTP/mimirsbrunn'>Geocoding service built over Elasticsearch.</a>"
 -
+  name: npm, Inc
+  url: http://www.npmjs.com
+  logo: npm.svg
+  how: "Replacing C and rewriting performance-critical bottlenecks in the registry service architecture."
+-
   name: OneSignal
   url: https://onesignal.com
   logo: onesignal.svg
