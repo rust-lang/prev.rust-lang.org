@@ -2,13 +2,14 @@
 layout: ja-JP/basic
 title: プログラミング言語Rust
 ---
-<!--日本語は私の母国語ではありません。私は中国の日本語の初心者です。私のブログで误りを発见すれば、ご提出お愿いいたします。ありがとうございました。よろしくお願いします。-->
+<!--日本語は私の母国語ではありません。私は中国の日本語の初心者です。私のブログで誤りを発見すれば、
+ご提出お愿いいたします。ありがとうございました。よろしくお願いします。-->
     <div class="row install-row">
       <div class="col-md-8">
         <p class="pitch">
           <b>Rust</b>は速度、安全性、並行性の3つのゴールにフォーカスしたシステムプログラミング言語です。
           <br/>
-          <b><a href="friends.html">Rustの友人</a></b>
+          <b><a href="friends.html">Rustを使っている企業</a></b>
         </p>
       </div>
       <div class="col-md-4 install-box">
@@ -25,16 +26,16 @@ title: プログラミング言語Rust
         </span>
         <a class="btn btn-primary" id="inst-link"
            href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">インストーラ</a>
-        <a class="btn btn-default" href="install.html" role="button">その他のダウンロード</a>
+        <a class="btn btn-default" href="install.html" role="button">その他の形式のダウンロード</a>
       </div>
     </div>
 
     <div class="row code-row">
       <div class="col-md-4">
-      <h2>特集</h2>
+      <h2>特徴</h2>
       <ul class="laundry-list">
         <li>ゼロコスト抽象化</li>
-        <li>セマンティクスを移動する</li>
+        <li>ムーブセマンティクス</li>
         <li>保証されたメモリの安全性</li>
         <li>データ競合のないスレッド</li>
         <li>トレイト</li>
@@ -46,15 +47,15 @@ title: プログラミング言語Rust
       </div>
       <div class="col-md-8">
         <div id="active-code">
-          <button type="button" class="btn btn-primary btn-sm" id="run-code">ラン</button>
+          <button type="button" class="btn btn-primary btn-sm" id="run-code">実行する</button>
           <div id="editor">{% include example.rs %}</div>
-          <div id="result" data-msg-running="操作...">
+          <div id="result" data-msg-running="実行中...">
             <a id="playlink"><i class="icon-link-ext"></i></a>
           </div>
         </div>
         <div id="static-code">{% include example.rs.html %}</div>
         <div class="more-examples">
-          <a href="http://rustbyexample.com/">より多くの例</a>
+          <a href="http://rustbyexample.com/">その他の例</a>
         </div>
       </div>
     </div>
