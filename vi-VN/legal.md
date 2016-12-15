@@ -1,31 +1,30 @@
 ---
 layout: vi-VN/default
-title: Rust Legal Policies &middot; The Rust Programming Language
+title: Chính sách bản quyền của Rust &middot; Ngôn ngữ lập trình Rust
 ---
 
-# Copyright
+# Bản quyền
 
 ## Code
 
-Rust's [code](https://github.com/rust-lang/rust) is primarily distributed under
-the terms of both the MIT license and the Apache License (Version 2.0), with
-portions covered by various BSD-like licenses.
-See [LICENSE-APACHE](https://github.com/rust-lang/rust/blob/master/LICENSE-APACHE),
+Rust's [code](https://github.com/rust-lang/rust) được phân phối chính thức dưới các điều khoản
+MIT license và the Apache License (Version 2.0), với một phần khác nhau của BSD-like licenses.
+Tham khảo chi tiết [LICENSE-APACHE](https://github.com/rust-lang/rust/blob/master/LICENSE-APACHE),
 [LICENSE-MIT](https://github.com/rust-lang/rust/blob/master/LICENSE-MIT),
-and [COPYRIGHT](https://github.com/rust-lang/rust/blob/master/COPYRIGHT) for details.
+và [COPYRIGHT](https://github.com/rust-lang/rust/blob/master/COPYRIGHT).
 
 ## Art
 
-The Rust and Cargo logos (bitmap and vector) are owned by Mozilla and
-distributed under the terms of the
-[Creative Commons Attribution license (CC-BY)](https://creativecommons.org/licenses/by/4.0/). This
-is the most permissive Creative Commons license, and allows reuse and
-modifications for any purpose. The restrictions are that distributors must "give
-appropriate credit, provide a link to the license, and indicate if changes were
-made". **Note that use of these logos, and the Rust and Cargo names, is also
-governed by trademark; our trademark policy is described below**.
+Tên Rust và Cargo logos (bitmap và vector) thuộc quyền sở hữu của Mozilla và
+được phân phối dưới dạng
+[Creative Commons Attribution license (CC-BY)](https://creativecommons.org/licenses/by/4.0/). 
+Đây là bản license cho phép bạn sử dụng lại, hoặc tuỳ chỉnh lại tuỳ mục đích sử dụng.
+Hạn chế đối với người sử dụng là phải "cung cấp credit hợp pháp, 
+cung cấp đường dẫn tới license, và chỉ ra những điểm đã thay đổi". 
+**Lưu ý với việc sử dụng những logo dưới đây, và tên Rust và tên Cargo, 
+cũng được điều chỉnh bằng thương hiệu; chính sách sở hữu thương hiệu được mô tả bên dưới**.
 
-Variants of the Rust logo can be found at:
+Danh sách các loại logo khác nhau:
 
 * [rust-logo-128x128-blk.png](/logos/rust-logo-128x128-blk.png)
 * [rust-logo-128x128-blk-v2.png](/logos/rust-logo-128x128-blk-v2.png)
@@ -42,9 +41,9 @@ Variants of the Rust logo can be found at:
 * [rust-logo-64x64.png](/logos/rust-logo-64x64.png)
 * [rust-logo-blk.svg](/logos/rust-logo-blk.svg)
 
-# Trademark policy
+# Quyền sở hữu thương hiệu
 
-The Rust and Cargo names and brands make it possible to say what is officially
+Tên Rust và Cargo và brands make it possible to say what is officially
 part of the Rust community, and what isn't. So we're careful about where we
 allow them to appear. But at the same time, we want to allow for as much
 creative use of these brands as we can. The policy laid out here explains how we
