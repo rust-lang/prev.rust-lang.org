@@ -3,7 +3,7 @@ layout: ru-RU/basic
 title: Язык программирования Rust
 ---
 
-    <div class="row install-row">
+    <div class="row pitch-row">
       <div class="col-md-8">
         <p class="pitch">
           <b>Rust</b> — безумно быстрый системный язык программирования без segfault'ов и с гарантиями потокобезопасности.
@@ -11,21 +11,11 @@ title: Язык программирования Rust
           <a href="https://doc.rust-lang.org/book/README.html">Покажите!</a>
         </p>
       </div>
-      <div class="col-md-4 install-box">
-        <span class="version-rec-box-inner">
-          Рекомендуемая версия:<br>
-          <span id="install-version"
-                data-type-linux="Исполняемые файлы для Linux"
-                data-type-windows="Установщик для Windows"
-                data-type-mac="Установщик для Mac"
-                data-type-source="source">
-            {{ site.stable }}
-            (<span>source</span>)
-          </span>
-        </span>
-        <a class="btn btn-primary" id="inst-link"
-           href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">Установить</a>
-        <a class="btn btn-default" href="install.html" role="button">Другие загрузки</a>
+      <div class="col-md-4">
+        <a class="release-button" href="install.html">
+          <div class="release-version">Install Rust <span>{{ site.stable }}</span></div>
+        </a>
+        <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
       </div>
     </div>
 
@@ -67,6 +57,4 @@ title: Язык программирования Rust
         {% include editor.js %}
       });
     });
-
-    {% include set_platform.js %}
   </script>

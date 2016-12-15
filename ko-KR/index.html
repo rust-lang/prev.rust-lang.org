@@ -3,7 +3,7 @@ layout: ko-KR/basic
 title: Rust 프로그래밍 언어
 ---
 
-    <div class="row install-row">
+    <div class="row pitch-row">
       <div class="col-md-8">
         <p class="pitch">
           <b>Rust</b>는
@@ -15,21 +15,11 @@ title: Rust 프로그래밍 언어
           <b><a href="friends.html">누가 Rust를 쓰는지 알아 보세요.</a></b>
         </p>
       </div>
-      <div class="col-md-4 install-box">
-        <span class="version-rec-box-inner">
-          권장 버전:<br>
-          <span id="install-version"
-                data-type-linux="Linux 실행파일"
-                data-type-windows="Windows 인스톨러"
-                data-type-mac="macOS 인스톨러"
-                data-type-source="소스 코드">
-            {{ site.stable }}
-            (<span>소스 코드</span>)
-          </span>
-        </span>
-        <a class="btn btn-primary" id="inst-link"
-           href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">설치</a>
-        <a class="btn btn-default" href="install.html" role="button">다른 다운로드</a>
+      <div class="col-md-4">
+        <a class="release-button" href="install.html">
+          <div class="release-version">Install Rust <span>{{ site.stable }}</span></div>
+        </a>
+        <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
       </div>
     </div>
 
@@ -71,6 +61,4 @@ title: Rust 프로그래밍 언어
         {% include editor.js %}
       });
     });
-
-    {% include set_platform.js %}
   </script>
