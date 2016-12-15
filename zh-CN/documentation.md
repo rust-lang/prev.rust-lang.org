@@ -17,7 +17,7 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 
 [Rust 高级教程][nomicon]： 为高级 Rust 工程师准备的专门讲解如何编写不安全的Rust代码的书。
 
-[学习 Rust]： 由社区维护、收集的学习 Rust 资料合集。
+[学习 Rust][rust-learning]： 由社区维护、收集的学习 Rust 资料合集。
 
 [常见问题][faq]
 
@@ -31,9 +31,8 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 
 [标准库][api]： Rust 标准库文档
 
-[Rust 语言参考手册][ref]. While Rust does not have a
-specification, the reference tries to describe its working in
-detail. It tends to be out of date.
+[Rust 语言参考手册][ref]： 当Rust还没有一个语言规范的时候，这个文档对它进行了尽可能详尽的描述。
+不过当有文档的时候某些内容可能已经过时了。
 
 [语法索引][syn]： 本索引中包含 Rust 中与《Rust 程序设计语言》的部分交叉引用的所有语法示例。
 
@@ -42,7 +41,7 @@ detail. It tends to be out of date.
 
 [编译器错误索引][err]： 编译器生成错误报告的扩展说明。
 
-[Release Notes][release_notes]. A recording of changes made during each release.
+[版本维护文档][release_notes]： 每次发布期间所做更改的记录文档。
 
 [api]: https://doc.rust-lang.org/std/
 [syn]: https://doc.rust-lang.org/book/syntax-index.html
@@ -51,19 +50,15 @@ detail. It tends to be out of date.
 [err]: https://doc.rust-lang.org/error-index.html
 [release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md
 
-## Project policies
+## Rust 项目政策与策略
 
-[Rust security policy][security]. The project's policies for
-reporting, fixing and disclosing security-related bugs.
+[Rust 安全策略][security]。该项目策略，修复和披露安全相关问题策略。
 
-[Rust copyright and trademark policies][legal]. The Rust
-copyrights are owned by The Rust Project Developers, and its
-trademarks are owned by Mozilla. Appropriate usage of Rust's
-trademarks are described here.
+[Rust 版权和商标政策][legal]。 Rust的版权归 Rust 项目开发者所有，其商标归 Mozilla 所有。
+改政策描述了 Rust 的商标的使用范畴。
 
-[Code of Conduct][coc]. Applies to the rust-lang organization
-on GitHub, the official forums, IRC channels, and various
-other corners of the Rust world.
+[社区行为规范][coc]。 适用于包括但不仅限于 GitHub 上的 Rust-lang 组织，
+官方论坛，IRC 通道的所有 Rust 社区。
 
 [security]: security.html
 [legal]: legal.html
@@ -71,9 +66,7 @@ other corners of the Rust world.
 
 ## 开发版与测试版文档
 
-Much of the official Rust documentation is also available for the
-[nightly] and [beta] releases in addition to the stable documentation
-linked above.
+除了上面链接的稳定文档外，大多数官方Rust文档也可用于[开发版][nightly]和[测试版][beta]。
 
 [nightly]: https://doc.rust-lang.org/nightly/
 [beta]: https://doc.rust-lang.org/beta/

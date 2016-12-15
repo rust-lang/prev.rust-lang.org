@@ -46,13 +46,14 @@ libraries. [The Rust Blog][rust_blog] is where the Rust team makes
 announcements about major developments. And nearly everything happening in
 Rust is discussed on the unofficial subreddit, [/r/rust][reddit].
 
-We also have a [Twitter][twitter] account.
+您也可以关注我们的[推特][twitter]账号或者是[新浪微博][weibo]。
 
 [twir]: https://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
 [reddit]: https://www.reddit.com/r/rust
 [reddit_coc]: https://www.reddit.com/r/rust/comments/2rvrzx/our_code_of_conduct_please_read/
 [twitter]: https://twitter.com/rustlang
+[weibo]: http://weibo.com/u/5616913483
 
 ## IRC 频道
 
@@ -124,7 +125,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [webdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
 [docs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-docs
 
-## Discussion Forums
+## 论坛
 
 We have two forums for asynchronous discussion:
 
@@ -152,7 +153,7 @@ Contact the [community team][community_team] to add your own.
 [user_group]: ./user-groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
 
-## The Rust Team
+## Rust 团队
 
 Rust has a community-driven development process where most decisions are made
 through open discussion and consensus, under the stewardship of various
@@ -206,7 +207,7 @@ help get you started.
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
 [doc_team]: https://www.rust-lang.org/en-US/team.html#Documentation-team
 
-## Rust Development
+## Rust 开发
 
 Rust has had over [1,200 different contributors][authors], a number that grows
 every single week. [We'd love for you to join that list][contribute]!
