@@ -46,13 +46,14 @@ libraries. [The Rust Blog][rust_blog] is where the Rust team makes
 announcements about major developments. And nearly everything happening in
 Rust is discussed on the unofficial subreddit, [/r/rust][reddit].
 
-We also have a [Twitter][twitter] account.
+您也可以关注我们的[推特][twitter]账号或者是[新浪微博][weibo]。
 
 [twir]: https://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
 [reddit]: https://www.reddit.com/r/rust
 [reddit_coc]: https://www.reddit.com/r/rust/comments/2rvrzx/our_code_of_conduct_please_read/
 [twitter]: https://twitter.com/rustlang
+[weibo]: http://weibo.com/u/5616913483
 
 ## IRC 频道
 
