@@ -3,7 +3,7 @@ layout: fr/basic
 title: Langage de programmation Rust
 ---
   <!-- -->
-    <div class="row install-row">
+    <div class="row pitch-row">
       <div class="col-md-8">
         <p class="pitch">
           <b>Rust</b> est un langage de programmation système ultra-rapide,
@@ -13,17 +13,11 @@ title: Langage de programmation Rust
           <a href="https://doc.rust-lang.org/book/README.html">Montre-moi&nbsp;!</a>
         </p>
       </div>
-      <div class="col-md-4 install-box">
-        <span class="version-rec-box-inner">
-          Version recommandée&nbsp;:<br>
-          <span id="install-version">
-            {{ site.stable }}
-            (<span>source</span>)
-          </span>
-        </span>
-        <a class="btn btn-primary" id="inst-link"
-           href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">Installer</a>
-        <a class="btn btn-default" href="install.html" role="button">Autres téléchargements</a>
+      <div class="col-md-4">
+        <a class="release-button" href="install.html">
+          <div class="release-version">Install Rust <span>{{ site.stable }}</span></div>
+        </a>
+        <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
       </div>
     </div>
 
@@ -65,6 +59,4 @@ title: Langage de programmation Rust
         {% include editor.js %}
       });
     });
-
-    {% include set_platform.js %}
   </script>
