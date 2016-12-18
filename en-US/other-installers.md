@@ -261,8 +261,8 @@ Each of these binaries is signed with the [Rust signing key], which is
     </div>
     <div class="no-stable">
       <span>powerpc64-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-powerpc64-unknown-linux-gnu.pkg">.pkg</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-powerpc64-unknown-linux-gnu.pkg.asc">.asc</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-powerpc64-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-powerpc64-unknown-linux-gnu.tar.gz.asc">.asc</a>
     </div>
     <div class="no-stable">
       <span>powerpc64le-unknown-linux-gnu</span>
