@@ -226,8 +226,8 @@ Each of these binaries is signed with the [Rust signing key], which is
     </div>
     <div>
       <span>i686-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-unknown-linux-gnu.msi">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-unknown-linux-gnu.msi.asc">.asc</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-unknown-linux-gnu.tar.gz.asc">.asc</a>
     </div>
     <div class="no-stable">
       <span>mips-unknown-linux-gnu</span>
@@ -236,8 +236,8 @@ Each of these binaries is signed with the [Rust signing key], which is
     </div>
     <div class="no-stable">
       <span>mipsel-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mipsel-unknown-linux-gnu.msi">.msi</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mipsel-unknown-linux-gnu.msi.asc">.asc</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mipsel-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mipsel-unknown-linux-gnu.tar.gz.asc">.asc</a>
     </div>
     <div class="no-stable">
       <span>mips64-unknown-linux-gnuabi64</span>
@@ -246,8 +246,8 @@ Each of these binaries is signed with the [Rust signing key], which is
     </div>
     <div class="no-stable">
       <span>mips64-unknown-linux-gnuabi64</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mips64-unknown-linux-gnuabi64.msi">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mips64-unknown-linux-gnuabi64.msi.asc">.asc</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mips64-unknown-linux-gnuabi64.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mips64-unknown-linux-gnuabi64.tar.gz.asc">.asc</a>
     </div>
 
   </div>
@@ -271,8 +271,8 @@ Each of these binaries is signed with the [Rust signing key], which is
     </div>
     <div class="no-stable">
       <span>s390x-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-s390x-unknown-linux-gnu.msi">.msi</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-s390x-unknown-linux-gnu.msi.asc">.asc</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-s390x-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-s390x-unknown-linux-gnu.tar.gz.asc">.asc</a>
     </div>
     <div>
       <span>x86_64-apple-darwin</span>
@@ -337,14 +337,14 @@ Each of these binaries is signed with the [Rust signing key], which is
       <a href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz.asc">.asc</a>
     </div>
   </div>
-  <div>    
+  <div>
     <div>
       <span>Beta</span>
       <a href="https://static.rust-lang.org/dist/rustc-beta-src.tar.gz">.tar.gz</a>
       <a href="https://static.rust-lang.org/dist/rustc-beta-src.gz.asc">.asc</a>
     </div>
   </div>
-  <div>    
+  <div>
     <div>
       <span>Nightly</span>
       <a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz">.tar.gz</a>
