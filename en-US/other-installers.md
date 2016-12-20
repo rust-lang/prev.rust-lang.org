@@ -72,73 +72,21 @@ If you prefer not to use the shell script, you may directly download
 `rustup-init` for the platform of your choice:
 
 <div class="rustup-init-table">
+  {% for column in site.data.platforms.rustup %}
   <div>
-    <a href="https://static.rust-lang.org/rustup/dist/aarch64-unknown-linux-gnu/rustup-init">
-      aarch64-unknown-linux-gnu
+    {% for target in column %}
+    {% if target contains 'windows' %}
+    <a href="https://static.rust-lang.org/rustup/dist/{{ target }}/rustup-init.exe">
+      {{ target }}
     </a>
-    <a href="https://static.rust-lang.org/rustup/dist/arm-unknown-linux-gnueabi/rustup-init">
-      arm-unknown-linux-gnueabi
+    {% else %}
+    <a href="https://static.rust-lang.org/rustup/dist/{{ target }}/rustup-init">
+      {{ target }}
     </a>
-    <a href="https://static.rust-lang.org/rustup/dist/arm-unknown-linux-gnueabihf/rustup-init">
-      arm-unknown-linux-gnueabihf
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/i686-apple-darwin/rustup-init">
-      i686-apple-darwin
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/i686-pc-windows-gnu/rustup-init.exe">
-      i686-pc-windows-gnu
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/i686-pc-windows-msvc/rustup-init.exe">
-      i686-pc-windows-msvc
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/i686-unknown-linux-gnu/rustup-init">
-      i686-unknown-linux-gnu
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/mips-unknown-linux-gnu/rustup-init">
-      mips-unknown-linux-gnu
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/mipsel-unknown-linux-gnu/rustup-init.exe">
-      mipsel-unknown-linux-gnu
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/mips64-unknown-linux-gnuabi64/rustup-init.exe">
-      mips64-unknown-linux-gnuabi64
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/mips64el-unknown-linux-gnuabi64/rustup-init">
-      mips64el-unknown-linux-gnuabi64
-    </a>
+    {% endif %}
+    {% endfor %}
   </div>
-  <div>
-    <a href="https://static.rust-lang.org/rustup/dist/powerpc-unknown-linux-gnu/rustup-init">
-      powerpc-unknown-linux-gnu
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/powerpc64-unknown-linux-gnu/rustup-init">
-      powerpc64-unknown-linux-gnu
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/powerpc64le-unknown-linux-gnu/rustup-init">
-      powerpc64le-unknown-linux-gnu
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/s390x-unknown-linux-gnu/rustup-init">
-      s390x-unknown-linux-gnu
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/x86_64-apple-darwin/rustup-init">
-      x86_64-apple-darwin
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-gnu/rustup-init.exe">
-      x86_64-pc-windows-gnu
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe">
-      x86_64-pc-windows-msvc
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/x86_64-unknown-freebsd/rustup-init">
-      x86_64-unknown-freebsd
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init">
-      x86_64-unknown-linux-gnu
-    </a>
-    <a href="https://static.rust-lang.org/rustup/dist/x86_64-unknown-netbsd/rustup-init">
-      x86_64-unknown-netbsd
-    </a>
-  </div>
+  {% endfor %}
 </div>
 
 Note that all builds of Rust can target all supported architectures, and on
