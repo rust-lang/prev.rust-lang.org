@@ -89,15 +89,6 @@ If you prefer not to use the shell script, you may directly download
   {% endfor %}
 </div>
 
-Note that all builds of Rust can target all supported architectures, and on
-Windows, it is always recommended to install using the `i686-pc-windows-gnu`
-build of `rustup`, regardless of whether you are targetting the i686 or x86_64
-architecture, the MSVC or GNU ABI. All four Windows builds of `rustup` are
-functionally equivalent, and each will install the MSVC build of Rust by
-default, but for technical reasons the i686 GNU build of rustup itself should be
-preferred. For more information about Rust on Windows see the [`rustup` Windows
-documentation][rustup-win].
-
 ## Standalone installers
 <span id="standalone"></span>
 
@@ -190,4 +181,3 @@ Each of these binaries is signed with the [Rust signing key], which is
 [Rust signing key]: https://static.rust-lang.org/rust-key.gpg.ascii
 [GPG]: https://gnupg.org/
 [available on keybase.io]: https://keybase.io/rust
-[rustup-win]: https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows
