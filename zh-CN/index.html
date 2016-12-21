@@ -3,7 +3,7 @@ layout: zh-CN/basic
 title: Rust 程序设计语言
 ---
 
-    <div class="row install-row">
+    <div class="row pitch-row">
       <div class="col-md-8">
         <p class="pitch">
           <b>Rust</b> 是一种注重高效、安全、并行的系统程序语言。
@@ -11,21 +11,11 @@ title: Rust 程序设计语言
           <b><a href="friends.html">看看谁在使用 Rust</a></b>
         </p>
       </div>
-      <div class="col-md-4 install-box">
-        <span class="version-rec-box-inner">
-          推荐版本:<br>
-          <span id="install-version"
-                data-type-linux="Linux 绿化版"
-                data-type-windows="Windows 安装包"
-                data-type-mac="Mac 安装包"
-                data-type-source="源码">
-            {{ site.stable }}
-            (<span>source</span>)
-          </span>
-        </span>
-        <a class="btn btn-primary" id="inst-link"
-           href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">安装</a>
-        <a class="btn btn-default" href="install.html" role="button">下载其他版本</a>
+      <div class="col-md-4">
+        <a class="release-button" href="install.html">
+          <div class="release-version">Install Rust <span>{{ site.stable }}</span></div>
+        </a>
+        <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
       </div>
     </div>
 
@@ -68,6 +58,4 @@ title: Rust 程序设计语言
         {% include editor.js %}
       });
     });
-
-    {% include set_platform.js %}
   </script>

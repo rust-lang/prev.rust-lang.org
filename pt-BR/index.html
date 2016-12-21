@@ -3,7 +3,7 @@ layout: pt-BR/basic
 title: A Linguagem de Programação Rust
 ---
   <!-- -->
-    <div class="row install-row">
+    <div class="row pitch-row">
       <div class="col-md-8">
         <p class="pitch">
           <b>Rust</b> é uma linguagem de programação de sistemas
@@ -14,21 +14,11 @@ title: A Linguagem de Programação Rust
           <b><a href="friends.html">Veja quem está usando Rust.</a></b>
         </p>
       </div>
-      <div class="col-md-4 install-box">
-        <span class="version-rec-box-inner">
-          Versão recomendada:<br>
-          <span id="install-version"
-                data-type-linux="Binário Linux"
-                data-type-windows="Instalador Windows"
-                data-type-mac="Instalador Mac"
-                data-type-source="source">
-            {{ site.stable }}
-            (<span>source</span>)
-          </span>
-        </span>
-        <a class="btn btn-primary" id="inst-link"
-           href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">Instalar</a>
-        <a class="btn btn-default" href="install.html" role="button">Outros downloads</a>
+      <div class="col-md-4">
+        <a class="release-button" href="install.html">
+          <div class="release-version">Instale Rust<span>{{ site.stable }}</span></div>
+        </a>
+        <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
       </div>
     </div>
 
@@ -42,7 +32,7 @@ title: A Linguagem de Programação Rust
         <li>threads sem <i>data races</i></li>
         <li>genéricos com <i>traits</i></li>
         <li>pattern matching</li>
-        <li>dedução de tipo</li>
+        <li>inferência de tipo</li>
         <li>sistema de execução mínimo</li>
         <li><i>bindings</i> para C eficientes</li>
       </ul>
@@ -70,6 +60,4 @@ title: A Linguagem de Programação Rust
         {% include editor.js %}
       });
     });
-
-    {% include set_platform.js %}
   </script>
