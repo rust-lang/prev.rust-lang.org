@@ -109,6 +109,8 @@ Each of these binaries is signed with the [Rust signing key], which is
 [available on keybase.io], by the Rust build infrastructure, with
 [GPG]. In the tables below, the `.asc` files are the signatures.
 
+Past releases can be found in [the archives].
+
 {% for channel in site.channels %}
 
 ### {{ channel.name | capitalize }} ({{ channel.vers }})
@@ -181,3 +183,4 @@ Each of these binaries is signed with the [Rust signing key], which is
 [Rust signing key]: https://static.rust-lang.org/rust-key.gpg.ascii
 [GPG]: https://gnupg.org/
 [available on keybase.io]: https://keybase.io/rust
+[the archives]: https://static.rust-lang.org/dist/index.html
