@@ -760,7 +760,3 @@ h1.rustup {
     margin-left: 1em;
     margin-right: 1em;
 }
-
-.installer-table.stable .no-stable {
-    display: none;
-}

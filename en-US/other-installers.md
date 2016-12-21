@@ -121,155 +121,33 @@ Each of these binaries is signed with the [Rust signing key], which is
 {% for channel in site.channels %}
 
 ### {{ channel.name | capitalize }} ({{ channel.vers }})
-<!-- TODO: parameterize id's and tarball names -->
-<span id="stable"></span>
+<span id="{{ channel.name }}"></span>
 
 <div class="installer-table {{ channel.name }}">
+  {% for column in site.data.platforms[channel.name] %}
   <div>
-
+    {% for target in column %}
     <div>
-      <span>aarch64-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-aarch64-unknown-linux-gnu.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-aarch64-unknown-linux-gnu.tar.gz.asc">.asc</a>
+      <span>{{ target }}</span>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-{{ target }}.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-{{ target }}.tar.gz.asc">.asc</a>
     </div>
+    {% if target contains 'windows' %}
     <div>
-      <span>arm-unknown-linux-gnueabi</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-arm-unknown-linux-gnueabi.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-arm-unknown-linux-gnueabi.tar.gz.asc">.asc</a>
+      <span>{{ target }}</span>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-{{ target }}.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-{{ target }}.msi.asc">.asc</a>
     </div>
+    {% elsif target contains 'darwin' %}
     <div>
-      <span>arm-unknown-linux-gnueabihf</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-arm-unknown-linux-gnueabihf.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-arm-unknown-linux-gnueabihf.tar.gz.asc">.asc</a>
+      <span>{{ target }}</span>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-{{ target }}.pkg">.pkg</a>
+      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-{{ target }}.pkg.asc">.asc</a>
     </div>
-    <div>
-      <span>i686-apple-darwin</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-apple-darwin.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-apple-darwin.tar.gz.asc">.asc</a>
-    </div>
-    <div>
-      <span>i686-apple-darwin</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-apple-darwin.pkg">.pkg</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-apple-darwin.pkg.asc">.asc</a>
-    </div>
-    <div>
-      <span>i686-pc-windows-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-pc-windows-gnu.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-pc-windows-gnu.tar.gz.asc">.asc</a>
-    </div>
-    <div>
-      <span>i686-pc-windows-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-pc-windows-gnu.msi">.msi</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-pc-windows-gnu.msi.asc">.asc</a>
-    </div>
-    <div>
-      <span>i686-pc-windows-msvc</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-pc-windows-msvc.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-pc-windows-msvc.tar.gz.asc">.asc</a>
-    </div>
-    <div>
-      <span>i686-pc-windows-msvc</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-pc-windows-msvc.msi">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-pc-windows-msvc.msi.asc">.asc</a>
-    </div>
-    <div>
-      <span>i686-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-unknown-linux-gnu.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-i686-unknown-linux-gnu.tar.gz.asc">.asc</a>
-    </div>
-    <div class="no-stable">
-      <span>mips-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mips-unknown-linux-gnu.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mips-unknown-linux-gnu.tar.gz.asc">.asc</a>
-    </div>
-    <div class="no-stable">
-      <span>mipsel-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mipsel-unknown-linux-gnu.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mipsel-unknown-linux-gnu.tar.gz.asc">.asc</a>
-    </div>
-    <div class="no-stable">
-      <span>mips64-unknown-linux-gnuabi64</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mips64-unknown-linux-gnuabi64.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mips64-unknown-linux-gnuabi64.tar.gz.asc">.asc</a>
-    </div>
-    <div class="no-stable">
-      <span>mips64-unknown-linux-gnuabi64</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mips64-unknown-linux-gnuabi64.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-mips64-unknown-linux-gnuabi64.tar.gz.asc">.asc</a>
-    </div>
-
+    {% endif %}
+    {% endfor %}
   </div>
-
-  <div>
-
-    <div class="no-stable">
-      <span>powerpc-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-powerpc-unknown-linux-gnu.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-powerpc-unknown-linux-gnu.tar.gz.asc">.asc</a>
-    </div>
-    <div class="no-stable">
-      <span>powerpc64-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-powerpc64-unknown-linux-gnu.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-powerpc64-unknown-linux-gnu.tar.gz.asc">.asc</a>
-    </div>
-    <div class="no-stable">
-      <span>powerpc64le-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-powerpc64le-unknown-linux-gnu.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-powerpc64le-unknown-linux-gnu.tar.gz.asc">.asc</a>
-    </div>
-    <div class="no-stable">
-      <span>s390x-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-s390x-unknown-linux-gnu.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-s390x-unknown-linux-gnu.tar.gz.asc">.asc</a>
-    </div>
-    <div>
-      <span>x86_64-apple-darwin</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-apple-darwin.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-apple-darwin.tar.gz.asc">.asc</a>
-    </div>
-    <div>
-      <span>x86_64-apple-darwin</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-apple-darwin.pkg">.pkg</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-apple-darwin.pkg.asc">.asc</a>
-    </div>
-    <div>
-      <span>x86_64-pc-windows-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-pc-windows-gnu.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-pc-windows-gnu.tar.gz.asc">.asc</a>
-    </div>
-    <div>
-      <span>x86_64-pc-windows-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-pc-windows-gnu.msi">.msi</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-pc-windows-gnu.msi.asc">.asc</a>
-    </div>
-    <div>
-      <span>x86_64-pc-windows-msvc</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-pc-windows-msvc.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-pc-windows-msvc.tar.gz.asc">.asc</a>
-    </div>
-    <div>
-      <span>x86_64-pc-windows-msvc</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-pc-windows-msvc.msi">.msi</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-pc-windows-msvc.msi.asc">.asc</a>
-    </div>
-    <div>
-      <span>x86_64-unknown-freebsd</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-unknown-freebsd.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-unknown-freebsd.tar.gz.asc">.asc</a>
-    </div>
-    <div>
-      <span>x86_64-unknown-linux-gnu</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-unknown-linux-gnu.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-unknown-linux-gnu.tar.gz.asc">.asc</a>
-    </div>
-    <div>
-      <span>x86_64-unknown-netbsd</span>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-unknown-netbsd.tar.gz">.tar.gz</a>
-      <a href="https://static.rust-lang.org/dist/rust-{{ channel.package }}-x86_64-unknown-netbsd.tar.gz.asc">.asc</a>
-    </div>
-
-  </div>
-
+  {% endfor %}
 </div>
 
 {% endfor %}
