@@ -6,7 +6,7 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 # Rust 语言文档
 
 如果您还不了解 Rust ,那么请先阅读 [Rust 程序设计语言][book]。
-它将会帮您理清思路： Rust 是什么样的语言、如何按照它、以及它的语法概念（syntax and concepts）。
+它将会帮您理清思路： Rust 是什么样的语言、如何安装它、以及它的语法概念（syntax and concepts）。
 在看完本书后，您将成为一个登堂入室（intermediate）的 Rust 开发人员，并将很好地理解 Rust 背后的基本理念。
 
 ## 学习 Rust
