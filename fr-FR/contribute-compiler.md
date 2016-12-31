@@ -1,5 +1,5 @@
 ---
-layout: fr/default
+layout: fr-FR/default
 title: Contribuer à Rust &mdash; le langage, le compilateur et la bibliothèque standard &middot; Rust, le langage de programmation
 ---
 
