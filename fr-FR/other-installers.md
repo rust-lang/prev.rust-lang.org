@@ -1,5 +1,5 @@
 ---
-layout: fr/default
+layout: fr-FR/default
 title: Other Installation Methods &middot; The Rust Programming Language
 ---
 
