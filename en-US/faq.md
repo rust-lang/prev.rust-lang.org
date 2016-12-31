@@ -1295,8 +1295,8 @@ Converting a C-style enum to an integer can be done with an `as` expression, lik
 
 Converting in the other direction can be done with a `match` statement, which maps different numeric values to different potential values for the enum.
 
-<h3><a href="#why-do-rust-programs-use-more-memory-than-c" name="why-do-rust-programs-use-more-memory-than-c">
-Why do Rust programs use more memory than C?
+<h3><a href="#why-do-rust-programs-have-larger-binary-sizes-than-C-programs" name="why-do-rust-programs-have-larger-binary-sizes-than-C-programs">
+Why do Rust programs have larger binary sizes than C programs?
 </a></h3>
 
 There are several factors that contribute to Rust programs having, by default, larger binary sizes than functionally-equivalent C programs. In general, Rust's preference is to optimize for the performance of real-world programs, not the size of small programs.
