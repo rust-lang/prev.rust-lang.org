@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: zh-CN/default
 title: Rust User Groups &middot; The Rust Programming Language
 ---
 
