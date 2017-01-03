@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: zh-CN/default
 title: Contributing to Rust &mdash; tooling, IDEs and infrastructure &middot; The Rust Programming Language
 ---
 
