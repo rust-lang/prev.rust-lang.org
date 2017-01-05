@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: zh-CN/default
 title: Contributing to Rust &mdash; community building &middot; The Rust Programming Language
 ---
 

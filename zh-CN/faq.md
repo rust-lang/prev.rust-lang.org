@@ -1,5 +1,5 @@
 ---
-layout: faq
+layout: zh-CN/faq
 title: Frequently Asked Questions &middot; The Rust Programming Language
 ---
 

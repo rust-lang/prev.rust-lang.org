@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: zh-CN/default
 title: Rust Legal Policies &middot; The Rust Programming Language
 ---
 
