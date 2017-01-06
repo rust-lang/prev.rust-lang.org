@@ -238,6 +238,11 @@
   logo: slowtec.svg
   how: "Our robust & reliable automation systems are entirely written in Rust."
 -
+  name: SmartThings
+  url: http://www.smartthings.com/
+  logo: smartthings.png
+  how: "Memory-safe embedded applications on our <a href='https://www.smartthings.com/how-it-works'>SmartThings Hub</a> and supporting services in the cloud."
+-
   name: Snips
   url: https://snips.ai/
   logo: snips.svg
