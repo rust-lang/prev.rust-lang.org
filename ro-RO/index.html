@@ -18,7 +18,25 @@ title: Limbajul de programare Rust
         <a class="release-button" href="install.html">
           <div class="release-version">Instalează Rust <span>{{ site.stable }}</span></div>
         </a>
-        <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
+        <div class="release-date">
+          {{ site.stable_date | date: "%-d" }}
+          {% assign month = site.stable_date | date: "%-m" %}
+          {% case month %}
+            {% when '1' %}ianuarie,
+            {% when '2' %}februarie,
+            {% when '3' %}martie,
+            {% when '4' %}aprilie,
+            {% when '5' %}mai,
+            {% when '6' %}iunie,
+            {% when '7' %}iulie,
+            {% when '8' %}august,
+            {% when '9' %}septembrie,
+            {% when '10' %}octombrie,
+            {% when '11' %}noiembrie,
+            {% when '12' %}decembrie,
+          {% endcase %}
+          {{ site.stable_date | date: "%Y" }}
+        </div>
       </div>
     </div>
 
