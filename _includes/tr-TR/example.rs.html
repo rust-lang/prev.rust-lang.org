@@ -1,0 +1,23 @@
+<pre class='rust'>
+<span class='kw'>fn</span> main() {
+<span class='comment'>// Basit hesap tam sayı makinası:
+// `+` bir ile toplama, `-` bir ile çıkarma.
+// `*` iki ile çarpma, `/` iki ile bölme.</span>
+
+<span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
+<span class='kw'>let</span> <span class='kw'>mut</span> akumulator = <span class='number'>0</span>;
+
+<span class='kw'>for</span> sembol in program.chars() {
+<span class='kw'>match</span> sembol {
+    <span class='string'>'+'</span> => akumulator <span class='op'>+=</span> <span class='number'>1</span>,
+    <span class='string'>'-'</span> => akumulator <span class='op'>-=</span> <span class='number'>1</span>,
+    <span class='string'>'*'</span> => akumulator <span class='op'>*=</span> <span class='number'>2</span>,
+    <span class='string'>'/'</span> => akumulator <span class='op'>/=</span> <span class='number'>2</span>,
+    _ => { <span class='comment'>/* diğer karakterleri es geç */</span> }
+}
+}
+
+<span class='prelude-val'>println!</span>(<span class='string'>"\"{}\" programının hesaplama sonucu: {}"</span>,
+   program, akumulator);
+}
+</pre>
