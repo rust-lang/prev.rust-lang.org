@@ -1,0 +1,191 @@
+---
+layout: pl-PL/default
+title: Instalacja &middot; Język Programowania Rust
+---
+    <h1 class="rustup">Zainstaluj Rust</h1>
+
+    <div class="row rustup-row">
+      <div class="col-md-8 instr-column">
+        <div id="platform-instructions-unix" class="instructions" style="display: none;">
+          <p>Aby zainstalować Rust, uruchom podane polecenie w terminalu oraz postępuj zgodnie z instrukcjami wyświetlanymi na ekranie.</p>
+          <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+        </div>
+
+        <div id="platform-instructions-win" class="instructions" style="display: none;">
+          <p>
+            Aby zainstalować Rust, pobierz i uruchom
+            <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+            oraz postępuj zgodnie z instrukcjami wyświetlanymi na ekranie.
+          </p>
+        </div>
+
+        <div id="platform-instructions-android" class="instructions" style="display: none;">
+         <p>Wygląda na to, że używasz systemu Android.</p>
+          <p>
+            Kompilator Rust nie działa na systemie Android bezpośrednio (jeszcze),
+            ale pozwala na prostą kompilację <em>na</em> system Android.
+            Zainstaluj Rust na wspieranej platformie oraz
+            <a href="https://github.com/rust-lang-nursery/rustup.rs/#cross-compilation">
+              kieruj się instrukcjami kompilacji
+            </a>
+            aby zbudować aplikację napisaną w języku Rust na system Android.
+          </p>
+        </div>
+
+        <div id="platform-instructions-unknown" class="instructions" style="display: none;">
+          <p>Nie rozpoznaję Twojego systemu.</p>
+          <p>
+            Rust działa na Windows, Linux, Mac OS X, FreeBSD i NetBSD. Jeżeli
+            używasz jednego z tych systemów i to widzisz proszę
+            <a href="https://github.com/rust-lang/rust-www/issues/new">złóż issue</a>,
+            wraz z tymi wartościami:
+            <div>
+              <div>navigator.platform:</div>
+              <div id="nav-plat"></div>
+              <div>navigator.appVersion:</div>
+              <div id="nav-app"></div>
+            </div>
+          </p>
+        </div>
+
+        <div id="platform-instructions-default" class="instructions">
+          <div>
+            <p>Aby zainstalować Rust, uruchom podane polecenie w terminalu oraz postępuj zgodnie z instrukcjami wyświetlanymi na ekranie.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Jeżeli używasz systemu Windows,<br/>pobierz i uruchom
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              oraz postępuj zgodnie z instrukcjami wyświetlanymi na ekranie.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-4 release-info-column">
+        <div>
+          <div class="release-version">Rust <span>{{ site.stable }}</span></div>
+          <a href="{{ site.stable_blog }}">
+            <div class="release-date">{{ site.stable_date | date: "%-d %B %Y" }}</div>
+          </a>
+
+          <br>
+
+          <a id="platform-button" style="display: none;" href="#">
+            kliknij lub przyciśnij "n" aby zmienić system
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>Notki dotyczące instalacji Rust</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <h3>Zarządzanie zestawu narzędzi przez <code>rustup</code></h3>
+
+        <p>
+          Rust jest instalowany i zarządzany przez narzędzie
+          <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>.
+          Rust ma 6-tygodniowy
+          <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
+            szybki proces wydań
+          </a> i wspiera
+          <a href="https://forge.rust-lang.org/platform-support.html">
+             wiele platform</a>, więc jest dostępnych wiele wydań w każdej chwili.
+          <code>rustup</code> zarządza tymi wydaniami w konsekwentny sposób na
+          każdej platformie, jaką wspiera Rust, umożliwiając instalację Rust z
+          kanałów beta oraz nightly, a także wsparcie dodatkowych
+          celów cross-kompilacji
+        </p>
+
+        <p>
+          Po więcej informacji zajrzyj do
+          <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md">dokumentacji
+            <code>rustup</code></a>.
+        </p>
+
+        <h3>Konfigurowanie zmiennej środowiskowej <code>PATH</code></h3>
+
+        <p>
+          W środowisku programistycznym Rust, wszystkie narzędzia są instalowane
+          do katalogu
+          <span class="platform-specific not-win" style="display: inline;">
+            <code>~/.cargo/bin</code>
+          </span>
+          <span class="platform-specific win" style="display: none;">
+            <code>%USERPROFILE%\.cargo\bin</code>
+          </span>,
+          i tam znajdziesz zestaw narzędzi Rust , zawierający
+          <code>rustc</code>, <code>cargo</code> oraz <code>rustup</code>.
+        </p>
+
+        <p>
+          Zwyczajowym dla programisty Rust jest dołączenie tego katalogu do
+          <a href="https://pl.wikipedia.org/wiki/PATH_(zmienna)">zmiennej środowiskowej
+            <code>PATH</code></a>. Podczas instalacji, <code>rustup</code>,
+          spróbuje skonfigurować tę zmienną, ale ze względu na różnice pomiędzy platformami,
+          powłokami poleceń oraz błędami w <code>rustup</code>, modyfikacja
+          zmiennej <code>PATH</code> może nie przynieść efektu do restartu
+          konsoli, wylogowania użytkownika albo może w ogóle się nie udać.
+        </p>
+
+        <p>
+          Jeżeli po instalacji  uruchomienie <code>rustc --version</code>
+          w konsoli kończy się błędem jest to prawdopodobnie przyczyna złego
+          ustawienia zmiennej <code>PATH</code>.
+        </p>
+
+        <div class="platform-specific win">
+
+          <h3>Dotyczy Windows</h3>
+          <!-- This anchor is probably linked in the wild and should not be broken -->
+          <a id="win-foot"></a>
+
+	  <p>
+            W Windows, Rust dodatkowo wymaga narzędzi budowania C++
+            dla Visual Studio 2013 lub nowszego. Najprostszy sposób na zdobycie
+            narzędzi budowania to instalacja
+	    <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
+	      Microsoft Visual C++ Build Tools 2015
+      </a>,
+            który dostarcza wyłącznie narzędzi do budowania Visual C++.
+            Alternatywnie, możesz
+            <a href="https://www.visualstudio.com/downloads/">zainstalować</a>
+	    Visual Studio 2015 lub Visual Studio 2013 i podczas instalacji wybrać
+	    "C++ tools".
+	  </p>
+
+          <p>
+            Po więcej informacji dotyczących konfiguracji Rust w Windows zobacz
+            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">
+              dokumentację <code>rustup</code> dotyczącą Windows</a>.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <h2>Inne metody instalacji</h3>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          Instalacja opisana powyżej, za pomocą <code>rustup</code>
+          to preferowany sposób instalacji Rust dla większości programistów,
+          ale Rust może być także
+          <a href="other-installers.html">zainstalowany innymi sposobami</a>.
+        </p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      {% include rustup.js %}
+    </script>
