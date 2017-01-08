@@ -53,7 +53,7 @@ libs / community building
 [#rust-internals]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
 [CONTRIBUTING.md]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md
 [bugs]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#bug-reports
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/it-IT/conduct.html
 [community team]: https://www.rust-lang.org/team.html#Community
 [dev_proc]: community.html#rust-development
 [devs]: https://github.com/rust-lang/rust/graphs/contributors

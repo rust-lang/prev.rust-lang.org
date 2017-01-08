@@ -1,0 +1,98 @@
+---
+layout: it-IT/default
+title: Politica di sicurezza di Rust &middot; Linguaggio di programmazione Rust
+---
+
+<h1>Politica di sicurezza di Rust</h1>
+
+<h2>Segnalare un problema</h2>
+
+<p>La sicurezza é uno dei principi fondamentali di Rust e con tale proposito
+    vorremmo assicurarci che Rust abbia un'implementazione sicura.
+    Ti ringraziamo per aver preso del tempo per comunicare responsabilmente
+    ogni problematica da te trovata.</p>
+
+<p>Tutti i problemi di sicurezza in Rust devono essere riportati per email a 
+<a href="mailto:security@rust-lang.org">security@rust-lang.org</a>. Questo indirizzo
+consegna il messaggio a un piccolo team di sicurezza. La tua email sará visionata entro 24
+ore e riceverai una mail di risposta piú dettagliata entro 48 ore
+indicante i passi successivi per la gestione della tua segnalazione. Se preferisci, puoi
+criptare la segnalazione usando <a href="../rust-security-team-key.gpg.ascii">la nostra chiave pubblica</a>.
+Disponibile anche <a
+href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xEFB9860AE7520DAC">sul server delle chiavi del mit
+</a> e <a href="#key">su questa pagina</a>.
+
+<p>Questo indirizzo email riceve molto spam, quindi assicurati di inserire
+nell'oggetto informazioni descrittive per evitare che la segnalazione finisca ignorata. 
+Dopo la risposta iniziale, il team di sicurezza ti terrá aggiornato sui progressi
+fatti verso la risoluzione del problema e il suo annuncio al pubblico.
+Come raccomandato da <a href="https://en.wikipedia.org/wiki/RFPolicy">RFPolicy</a>,
+questi aggiornamenti verranno mandati almeno ogni cinque giorni.
+In realtá é piú probabile che sia ogni 24-48 ore.</p>
+
+<p>Se non hai ancora ricevuto risposta alla tua email dopo 48 ore o il team
+    di sicurezza non si é fatto sentire per almeno cinque giorni, ecco alcune
+    cose che puoi fare:</p>
+
+<ul>
+    <li>Contatta l'attuale coordinatore della sicurezza (<a href="mailto:steve@steveklabnik.com">Steve Klabnik</a>
+        (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xDAE717EFE9424541">chiave pubblica</a>)) direttamente.</li>
+    <li>Contatta il vice coordinatore (<a href="mailto:andersrb@gmail.com">Brian Anderson</a>
+        (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x16457A6368CFF26F">chiave pubblica</a>)) direttamente.</li>
+    <li>Posta sui <a href="https://internals.rust-lang.org/">forum di sviluppo</a>
+    o chiedi sul canale IRC #rust-internals su irc.mozilla.org.</li>
+</ul>
+
+<p>Nota bene che i forum di discussione e il canale IRC #rust-internals
+    sono aree pubbliche. Annunciando pubblicamente evita per favore di discutere
+    direttamente della problematica ma piuttosto indica di stare cercando un contatto
+    con il team di sicurezza.</p>
+
+<h2>Politica di diffusione</h2>
+
+<p>La politica di diffusione del progetto Rust si compone di 5 fasi:</p>
+
+<ol>
+<li>Il rapporto di sicurezza é ricevuto e assegnato a un amministratore.
+    Questa persona coordinerá il processo di risoluzione e rilascio.</li>
+
+<li>Il problema viene confermato e viene stilata una lista di tutte le versioni vulnerabili.</li>
+
+<li>Viene ispezionato il codice alla ricerca di problematiche associate.</li>
+
+<li>Vengono preparate modifiche per tutte le versioni in stato di manutenzione attiva
+    queste modifiche non sono condivise pubblicamente ma mantenute in locale in attesa
+    dell'annuncio.</li>
+
+<li>Alla data di fine della non divulgazione, nella <a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">
+mailing list di sicurezza del progetto Rust</a> é spedita una copia dell'annuncio. I cambiamenti
+sono inoltrati al repository pubblico e le nuove versioni sono pubblicate su rust-lang.org.
+Entro 6 ore della notifica alla mailing list, una copia dell'annuncio verrá pubblicata
+sul blog ufficiale di Rust.</li> </ol>
+
+<p>Questo processo puó richiedere un po' di tempo, specialmente quando é richiesta coordinazione
+    con gli sviluppatori di altri progetti. Verrá fatto ogni sforzo possibile per gestire la problematica
+    in maniera celere, ad ogni modo é importante seguire il processo evidenziato sopra
+    per assicurare una gestione coerente.</p>
+
+<h2>Ricevere aggiornamenti di sicurezza</h2>
+
+<p>Il miglior modo per ricevere gli aggiornamenti di sicurezza é iscriversi alla <a
+href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">mailing list di sicurezza del progetto Rust</a>. 
+La mailing list non é molto attiva e riceve le notifiche pubbliche nel momento
+in cui la non divulgazione termina.</p>
+
+<h3>Notifiche in anticipo</h3>
+
+<p>Annunceremo 72 ore prima della fine della non divulgazione a
+<a href="http://oss-security.openwall.org/wiki/mailing-lists/distros">distros@openwall</a>,
+in modo che le distribuzioni Linux possano aggiornare i loro pacchetti.</p>
+
+<h2>Commenti a questa politica</h2>
+
+<p>Se hai suggerimenti su come migliorare questa politica, manda una mail a
+<a href="mailto:security@rust-lang.org">security@rust-lang.org</a>.</p>
+
+<h2 id="key">Chiave PGP in chiaro</h2>
+
+<pre><code>{% include rust-security-team-key.gpg.ascii %}</code></pre>

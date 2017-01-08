@@ -82,7 +82,7 @@ su GitHub, i forum ufficiali, i canali IRC e in diversi angoli del mondo di Rust
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/it-IT/conduct.html
 
 ## Documentazione versioni nightly e beta
 
