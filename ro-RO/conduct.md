@@ -38,7 +38,7 @@ title: Codul de conduită Rust &middot; Limbajul de programare Rust
   vreunul din membri comunității v-a făcut să vă simțiți
   inconfortabil, vă rugăm sa contactați unul din operatorii
   canalului sau oricare persoană din
-  [echipa de modare Rust](/team.html#Moderation) imediat. Indiferent
+  [echipa de modare Rust](team.html#Moderation) imediat. Indiferent
   dacă sunteți un contribuitor activ sau un nou-venit, nouă ne pasă
   ca această comunitate să fie un loc sigur pentru dumneavoastră
   și să știți că vă suntem alaturi.
@@ -49,7 +49,7 @@ title: Codul de conduită Rust &middot; Limbajul de programare Rust
 
 Acestea sunt polițele susțin standardele de conduită ale comunității
 noastre. În cazul în care considerați că o discuție necesită
-moderare, vă rugăm să contactați [echipa de modare Rust](/team.html#Moderation).
+moderare, vă rugăm să contactați [echipa de modare Rust](team.html#Moderation).
 
 1. Remarci care contravin standardul de conduită Rust, inclusiv cele
    pline de ură, supărătoare, opresive sau care exclud, sunt
