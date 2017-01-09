@@ -21,7 +21,7 @@ powoduje, że czujesz się niekomfortowo, proszę
 natychmiastowo. Niezależnie czy jest stałym członkiem społeczności czy
 początkującym, chcemy, aby nasza społeczność była dla Ciebie bezpiecznym miejscem.
 
-[coc]: conduct.html
+[coc]: /en-US/conduct.html
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
 ## Początek
@@ -205,15 +205,15 @@ Jeżeli jesteś zainteresowany zaangażowaniem się w jednym z tych zespołów
 odezwij się do kapitana zespół lub innego członka, który może pomóc Ci rozpocząć
 współpracę.
 
-[teams]: team.html
-[core_team]: team.html#Core-team
-[language_team]: team.html#Language-design-team
-[library_team]: team.html#Library-team
-[compiler_team]: team.html#Compiler-team
-[tool_team]: team.html#Tooling-and-infrastructure
-[community_team]: team.html#Community-team
-[mod_team]: team.html#Moderation-team
-[doc_team]: team.html#Documentation-team
+[teams]: /en-US/team.html
+[core_team]: /en-US/team.html#Core-team
+[language_team]: /en-US/team.html#Language-design-team
+[library_team]: /en-US/team.html#Library-team
+[compiler_team]: /en-US/team.html#Compiler-team
+[tool_team]: /en-US/team.html#Tooling-and-infrastructure
+[community_team]: /en-US/team.html#Community-team
+[mod_team]: /en-US/team.html#Moderation-team
+[doc_team]: /en-US/team.html#Documentation-team
 
 ## Rozwój Rust 
 
