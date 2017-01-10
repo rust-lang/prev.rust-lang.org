@@ -798,73 +798,78 @@ Sono basati su una serie di articoli accademici che possono essere trovati nel [
 Perché la sintassi dei campi di esistenza é fatta cosí?
 </a></h3>
 
-The `'a` syntax comes from the ML family of programming languages, where `'a` is used to indicate a generic type parameter. For Rust, the syntax had to be something that was unambiguous, noticeable, and fit nicely in a type declaration right alongside traits and references. Alternative syntaxes have been discussed, but no alternative syntax has been demonstrated to be clearly better.
+La sintassi `'a` proviene dalla famiglia ML di linguaggi di programmazione, dove `'a` viene utilizzato per indicare un parametro di tipo generico.
+In Rust, la sintassi doveva rappresentare qualcosa di univoco, chiaramente visibile e integrato con le altre dichiarazioni dei tipi insieme ai vari tratti e riferimenti.
+Sono state prese in considerazione anche altre scelte ma nessuna sintassi alternativa si é dimostrata chiaramente migliore.
 
 <h3><a href="#how-do-i-return-a-borrow-to-something-i-created-from-a-function" name="how-do-i-return-a-borrow-to-something-i-created-from-a-function">
 Come posso ritornare un prestito a qualcosa che ho creato in una funzione?
 </a></h3>
 
-You need to ensure that the borrowed item will outlive the function. This can be done by binding the output lifetime to some input lifetime like so:
+Devi assicurarti che il campo di esistenza del valore prestato sia piú lungo di quello della funzione.
+Puoi ottenere questo effetto puoi assegnare il campo di esistenza dell'uscita a quello di un parametro di ingresso come qui:
 
 ```rust
-type Pool = TypedArena<Thing>;
+type Gruppo = TypedArena<Cosa>;
 
-// (the lifetime below is only written explicitly for
-// expository purposes; it can be omitted via the
-// elision rules described in a later FAQ entry)
-fn create_borrowed<'a>(pool: &'a Pool,
+// (Il campo di esistenza sotto é esplicitato esclusivamente
+/// per facilitarne la comprensione; esso puó essere omesso
+// tramite le regole di elisione consultabili in un'altra
+// risposta presente in questa pagina)
+
+fn crea_prestato<'a>(gruppo: &'a Gruppo,
                        x: i32,
-                       y: i32) -> &'a Thing {
-    pool.alloc(Thing { x: x, y: y })
+                       y: i32) -> &'a Cosa {
+    gruppo.alloc(Cosa { x: x, y: y })
 }
 ```
 
-An alternative is to eliminate the references entirely by returning an owning type like [`String`][String]:
+Un'alternativa é eliminare interamente il riferimento ritornando un valore posseduto come [`String`][String]:
 
 ```rust
-fn happy_birthday(name: &str, age: i64) -> String {
-    format!("Hello {}! You're {} years old!", name, age)
+fn buon_compleanno(nome: &str, eta: i64) -> String {
+    format!("Ciao {}! Hai {} anni!", nome, eta)
 }
 ```
 
-This approach is simpler, but often results in unnecessary allocations.
+Questo approccio é piú semplice ma spesso genera allocazioni in memoria non necessarie.
 
 <h3><a href="#when-are-lifetimes-required-to-be-explicit" name="when-are-lifetimes-required-to-be-explicit">
 Perché alcuni riferimenti hanno un campo di esistenza, come <code>&amp;'a T</code> e altri no, tipo <code>&amp;T</code>?
 </a></h3>
 
-In fact, *all* reference types have a lifetime, but most of the time you do not have to write
-it explicitly. The rules are as follows:
+In realtá, *tutti* i riferimenti hanno un campo di esistenza ma nella maggior parte dei casi non 
+ti devi preoccupare di gestirlo esplicitamente. Le regole sono le seguenti:
 
-1. Within a function body, you never have to write a lifetime explicitly; the correct value
-   should always be inferred.
-2. Within a function *signature* (for example, in the types of its
-   arguments, or its return type), you *may* have to write a lifetime
-   explicitly. Lifetimes there use a simple defaulting scheme called
-   ["lifetime elision"](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision),
-   which consists of the following three rules:
-  - Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
-  - If there is exactly one input lifetime, elided or not, that
-    lifetime is assigned to all elided lifetimes in the return values
-    of that function.
-  - If there are multiple input lifetimes, but one of them is &self
-    or &mut self, the lifetime of self is assigned to all elided
-    output lifetimes.
-3. Finally, in a `struct` or `enum` definition, all lifetimes must be explicitly declared.
+1. Nel corpo di una funzione non devi mai specificare un campo di esistenza esplicitamente;
+   il valore corretto dovrebbe essere sempre dedotto correttamente.
+2. Nella *dichiarazione* di una funzione (ad esempio, nei tipi dei suoi parametri
+   o il suo tipo di ritorno), *potresti* dover specificare un campo di esistenza manualmente.
+   I campi di esistenza in questo contesto utilizzano un semplice metodo chiamato
+   ["elisione del campo di esistenza"](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision),
+   che a sua volta consiste in queste tre regole:
+  - Ciascun campo di esistenza eliso nei parametri di una funzione diviene un campo di esistenza distinto.
+  - Se vi é esattamente un singolo campo di esistenza in ingresso, eliso o no, quel campo di esistenza
+    viene assegnato a tutti i campi di esistenza elisi utilizzati per i valori di ritorno di quella funzione.
+  - Se ci sono piú campi di esistenza in ingresso ma uno di quelli é un `&self` o un `&mut self`, il campo di esistenza
+    di `self` viene assegnato a tutti i campi di esistenza di uscita.
+3. Se si sta definendo una `struct` o `enum` i campi di esistenza sono da dichiarare espressamente.
 
-If these rules result in compilation errors, the Rust compiler will provide an error message indicating the error caused, and suggesting a potential solution based on which step of the inference process caused the error.
+Se queste regole danno origine a un errore di compilazione, il compilatore di Rust fornirá un messaggio di errore indicante l'errore e anche una potenziale soluzione basata sugli algoritmi di deduzione.
 
 <h3><a href="#how-can-rust-guarantee-no-null-pointers" name="how-can-rust-guarantee-no-null-pointers">
 Come puó Rust garantire l'assenza di "puntatori nulli" e "puntatori sospesi"?
 </a></h3>
 
-The only way to construct a value of type `&Foo` or `&mut Foo` is to specify an existing value of type `Foo` that the reference points to. The reference "borrows" the original value for a given region of code (the lifetime of the reference), and the value being borrowed from cannot be moved or destroyed for the duration of the borrow.
+L'unico modo di creare un valore `&Cosa` or `&mut Cosa` é di specificare un valore preesistente di tipo `Coso` a cui la referenza deve fare riferimento.
+Il riferimento in questo modo ottiene in prestito il valore originale per un determinato blocco di codice(il campo di esistenza del riferimento) e il valore prestato non puó essere spostato o distrutto per tutta la durata del prestito.
 
 <h3><a href="#how-do-i-express-the-absense-of-a-value-without-null" name="how-do-i-express-the-absense-of-a-value-without-null">
 Come faccio a indicare l'assenza di un valore senza utilizzare <code>null</code>?
 </a></h3>
 
-You can do that with the [`Option`][Option] type, which can either be `Some(T)` or `None`. `Some(T)` indicates that a value of type `T` is contained within, while `None` indicates the absence of a value.
+Puoi fare ció con il tipo [`Option`][Option] che puó alternativamente essere `Some(T)` o `None`. 
+`Some(T)` indica che un valore di tipo `T` é contenuto all'interno, mentre `None` ne indica l'assenza.
 
 <h2 id="generics">Generici</h2>
 
