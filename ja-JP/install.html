@@ -1,44 +1,44 @@
 ---
-layout: ru-RU/default
-title: Установка &middot; The Rust Programming Language
+layout: default
+title: Installation &middot; The Rust Programming Language
 ---
-    <h1 class="rustup">Установка Rust</h1>
+    <h1 class="rustup">Install Rust</h1>
 
     <div class="row rustup-row">
       <div class="col-md-8 instr-column">
         <div id="platform-instructions-unix" class="instructions" style="display: none;">
-          <p>Чтобы установить Rust, запустите эту команду в своём терминале и следуйте инструкциям на экране.</p>
+          <p>To install Rust, run the following in your terminal, then follow the onscreen instructions.</p>
           <pre>curl https://sh.rustup.rs -sSf | sh</pre>
         </div>
 
         <div id="platform-instructions-win" class="instructions" style="display: none;">
           <p>
-            Чтобы установить Rust, загрузите и запустите
+            To install Rust, download and run
             <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
-            и следуйте инструкциям на экране.
+            then follow the onscreen instructions.
           </p>
         </div>
 
         <div id="platform-instructions-android" class="instructions" style="display: none;"> 
-         <p>Похоже, вы зашли с Android.</p>
+         <p>It looks like you are running Android.</p>
           <p>
-            Компилятор Rust пока не работает на Android,
-            но вы легко можете кросс-компилировать программы <em>на</em> Android.
-            Установите Rust на поддерживаемой хостовой платформе и
+            The Rust compiler does not run on Android directly (yet),
+            but it does make it easy to cross-compile <em>to</em> Android.
+            Install Rust on a supported host platform and
             <a href="https://github.com/rust-lang-nursery/rustup.rs/#cross-compilation">
-              следуйте инструкциям по кросс-компиляции
+              follow the cross-compilation instructions
             </a>
-            чтобы собирать приложения на Rust для Android.
+            to build Rust applications for Android.
           </p>
         </div>
 
         <div id="platform-instructions-unknown" class="instructions" style="display: none;">
-          <p>Мы не распознали, на какой вы платформе.</p>
+          <p>I don't recognize your platform.</p>
           <p>
-            Rust работает на Windows, Linux, Mac OS X, FreeBSD и NetBSD. Если
-            вы используете одну из этих платформ и видите это сообщение, пожалуйста
-            <a href="https://github.com/rust-lang/rust-www/issues/new">сообщите о проблеме</a>,
-            вместе с значениями этих переменных:
+            Rust runs on Windows, Linux, Mac OS X, FreeBSD and NetBSD. If
+            you are on one of these platforms and are seeing this then please
+            <a href="https://github.com/rust-lang/rust-www/issues/new">report an issue</a>,
+            along with the following values:
             <div>
               <div>navigator.platform:</div>
               <div id="nav-plat"></div>
@@ -50,8 +50,8 @@ title: Установка &middot; The Rust Programming Language
 
         <div id="platform-instructions-default" class="instructions">
           <div>
-            <p>Чтобы установить Rust на Unix,<br/>запустите эту команду в терминале
-            и следуйте инструкциям на экране.</p>
+            <p>To install Rust, if you are running Unix,<br/>run the following
+            in your terminal, then follow the onscreen instructions.</p>
             <pre>curl https://sh.rustup.rs -sSf | sh</pre>
           </div>
 
@@ -59,9 +59,9 @@ title: Установка &middot; The Rust Programming Language
 
           <div>
             <p>
-              Если вы используете Windows,<br/>загрузите и запустите
+              If you are running Windows,<br/>download and run
               <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
-              и следуйте инструкциям на экране.
+              then follow the onscreen instructions.
             </p>
           </div>
         </div>
@@ -78,7 +78,7 @@ title: Установка &middot; The Rust Programming Language
           <br>
 
           <a id="platform-button" style="display: none;" href="#">
-            кликните или нажмите "n", чтобы переключать платформы
+            click or press "n" to cycle platforms
           </a>
         </div>
       </div>

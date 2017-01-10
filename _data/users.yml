@@ -14,7 +14,7 @@
 # the name and email of a contact within your organization who the
 # Rust team can contact should we need to make changes to the web
 # page. You may either do this on the pull request itself, or
-# alternately email rust-logos@rust-lang.org with the subject line
+# alternately email user-logos@rust-lang.org with the subject line
 # "Rust User Logo Contact". This information will be kept private.
 
 # Logos will be displayed against a white background and constrained
@@ -237,6 +237,11 @@
   url: http://www.slowtec.de/
   logo: slowtec.svg
   how: "Our robust & reliable automation systems are entirely written in Rust."
+-
+  name: SmartThings
+  url: http://www.smartthings.com/
+  logo: smartthings.png
+  how: "Memory-safe embedded applications on our <a href='https://www.smartthings.com/how-it-works'>SmartThings Hub</a> and supporting services in the cloud."
 -
   name: Snips
   url: https://snips.ai/
