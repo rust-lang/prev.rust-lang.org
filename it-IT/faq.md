@@ -1,5 +1,5 @@
 ---
-layout: it-IT/faq
+layout: it-IT/basic
 title: Domande Frequenti &middot; Linguaggio di programmazione Rust
 ---
 
@@ -407,226 +407,268 @@ Come esempio, la grafica sfrutta tipicamente gli [`f32`][f32] perché richiede a
 Nel dubbio, scegli [`f64`][f64] per una maggiore precisione.
 
 <h3><a href="#why-cant-i-compare-floats" name="why-cant-i-compare-floats">
-Why can't I compare floats or use them as <code>HashMap</code> or <code>BTreeMap</code> keys?
+Perché non posso comparare i numeri a virgola mobile o usarli come chiave per un <code>HashMap</code> o un <code>BTreeMap</code>?
 </a></h3>
 
-Floats can be compared with the `==`, `!=`, `<`, `<=`, `>`, and `>=` operators, and with the `partial_cmp()` function. `==` and `!=` are part of the [`PartialEq`][PartialEq] trait, while `<`, `<=`, `>`, `>=`, and `partial_cmp()` are part of the [`PartialOrd`][PartialOrd] trait.
+I numeri a virgola mobile si possono comparare con gli operatori `==`, `!=`, `<`, `<=`, `>`, e `>=` , e attraverso la funzione `partial_cmp()`. 
+`==` e `!=` possiedono il tratto [`PartialEq`][PartialEq], mentre `<`, `<=`, `>`, `>=`, e `partial_cmp()` possiedono il tratto [`PartialOrd`][PartialOrd].
 
-Floats cannot be compared with the `cmp()` function, which is part of the [`Ord`][Ord] trait, as there is no total ordering for floats. Furthermore, there is no total equality relation for floats, and so they also do not implement the [`Eq`][Eq] trait.
+I numeri a virgola mobile non sono confrontabili con la funzione `cmp()`, possidente il tratto [`Ord`][Ord], dato che i numeri a virgola mobile non costituiscono insieme totalmente ordinato. 
+Inoltre non esiste relazione di uguaglianza completa numeri a virgola mobile e quindi non implementano il tratto[`Eq`][Eq].
 
-There is no total ordering or equality on floats because the floating-point value [`NaN`](https://en.wikipedia.org/wiki/NaN) is not less than, greater than, or equal to any other floating-point value or itself.
+Non esiste l'ordinamento totale o l'uguaglianza tra numeri a virgola mobile a causa del valore [`NaN`](https://en.wikipedia.org/wiki/NaN) che non é minore, maggiore o uguale di alcun altro numero o sé stesso.
 
-Because floats do not implement [`Eq`][Eq] or [`Ord`][Ord], they may not be used in types whose trait bounds require those traits, such as [`BTreeMap`][BTreeMap] or [`HashMap`][HashMap]. This is important because these types *assume* their keys provide a total ordering or total equality relation, and will malfunction otherwise.
+Visto che i numeri a virgola mobile non implementano i tratti [`Eq`][Eq] o [`Ord`][Ord], non sono utilizzabili nei tipi le cui limitazioni esigono l'implementazione di queste caratteristiche, come [`BTreeMap`][BTreeMap] o [`HashMap`][HashMap]. 
+Questo é importante perché questi tipi *suppongono* che le chiavi forniscano relazioni di ordinamento totale o di uguaglianza, a pena di malfunzionamenti.
 
-There [is a crate](https://crates.io/crates/ordered-float) that wraps [`f32`][f32] and [`f64`][f64] to provide [`Ord`][Ord] and [`Eq`][Eq] implementations, which may be useful in certain cases.
+Esiste [un pacchetto](https://crates.io/crates/ordered-float) che racchiude [`f32`][f32] e [`f64`][f64] in modo da fornire i tratti [`Ord`][Ord] e [`Eq`][Eq] che potrebbe assistere in certi casi.
 
 <h3><a href="#how-can-i-convert-between-numeric-types" name="how-can-i-convert-between-numeric-types">
-How can I convert between numeric types?
+Come posso convertire tra i tipi numerici?
 </a></h3>
 
-There are two ways: the `as` keyword, which does simple casting for primitive types, and the [`Into`][Into] and [`From`][From] traits, which are implemented for a number of type conversions (and which you can implement for your own types). The [`Into`][Into] and [`From`][From] traits are only implemented in cases where conversions are lossless, so for example, `f64::from(0f32)` will compile while `f32::from(0f64)` will not. On the other hand, `as` will convert between any two primitive types, truncating values as necessary.
+Ci sono due modi: la parola chiave `as`, che esegue una semplice conversione per tipi primitivi e i tratti [`Into`][Into] e [`From`][From], 
+che sono implementati per una serie di conversioni tra tipi numerici (e che anche tu puoi implementare sui tuoi tipi).
+I tratti [`Into`][Into] e [`From`][From] sono implementati esclusivamente per le conversioni prive di perdita, qundi ad esempio, `f64::from(0f32)` funziona mentre `f32::from(0f64)` no. 
+D'altro canto, `as` convertirá tra qualsiasi coppia di tipi primitivi, effettuando i necessari troncamenti..
 
 
 <h3><a href="#why-doesnt-rust-have-increment-and-decrement-operators" name="why-doesnt-rust-have-increment-and-decrement-operators">
-Why doesn't Rust have increment and decrement operators?
+Perché Rust non possiede operatori per il decremento e incremento?
 </a></h3>
 
-Preincrement and postincrement (and the decrement equivalents), while convenient, are also fairly complex. They require knowledge of evaluation order, and often lead to subtle bugs and undefined behavior in C and C++. `x = x + 1` or `x += 1` is only slightly longer, but unambiguous.
+Gli operatori di preincremento e postincremento (e relativi opposti equivalenti), anche se convenienti presentano una discreta complessitá;
+Richiedono una conoscenza dell'ordine di esecuzione e spesso conducono a piccoli problemi e comportamenti anormali in C e C++.
+`x = x + 1` o `x += 1` é leggermente piú prolisso ma chiaro.
 
-<h2 id="strings">Strings</h2>
+<h2 id="strings">Stringhe</h2>
 
 <h3><a href="#how-to-convert-string-or-vec-to-slice" name="how-to-convert-string-or-vec-to-slice">
-How can I convert a <code>String</code> or <code>Vec&lt;T&gt;</code> to a slice (<code>&amp;str</code> and <code>&amp;[T]</code>)?
+Come posso convertire una <code>String</code> o un <code>Vec&lt;T&gt;</code> a una partizione (<code>&amp;str</code> e <code>&amp;[T]</code>)?
 </a></h3>
 
-Usually, you can pass a reference to a `String` or `Vec<T>` wherever a slice is expected.
-Using [Deref coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html), [`String`s][String] and [`Vec`s][Vec] will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
+Solitamente, puoi passare un riferimento a una `String` o ad un `Vec<T>` ovunque ci si aspetti una partizione.
+Utilizzando le [costrizione da de-riferimento](https://doc.rust-lang.org/stable/book/deref-coercions.html), [`String`][String] e [`Vec`][Vec] verrano automaticamente ridotti alle rispettive partizioni quando passate come riferimento tramite `&` o `& mut`.
 
-Methods implemented on `&str` and `&[T]` can be accessed directly on `String` and `Vec<T>`. For example, `some_string.char_at(0)` will work even though `char_at` is a method on `&str` and `some_string` is a `String`.
+I metodi implementati su `&str` e `&[T]` possono essere utilizzati direttamente su `String` e `Vec<T>`.
+Ad esempio `una_stringa.char_at(0)` funzionerá anche se `char_at` é un metodo su `&str` e `una_stringa` é una `String`.
 
-In some cases, such as generic code, it's necessary to convert manually. Manual conversions can be achieved using the slicing operator, like so: `&my_vec[..]`.
+In alcuni casi, come nella programmazione generica é necessario convertire manualmente, questa operazione é effettuabile utilizzando l'operatore di partizione, in questo modo: `&mio_vettore[..]`.
 
 <h3><a href="#how-to-convert-between-str-and-string" name="how-to-convert-between-str-and-string">
-How can I convert from <code>&amp;str</code> to <code>String</code> or the other way around?
+Come posso convertire una <code>&amp;str</code> in <code>String</code> e viceversa?
 </a></h3>
 
-The [`to_string()`][to_string] method converts from a [`&str`][str] into a [`String`][String], and [`String`s][String] are automatically converted into [`&str`][str] when you borrow a reference to them. Both are demonstrated in the following example:
+Il metodo [`to_string()`][to_string] converte una [`&str`][str] in una [`String`][String] e le [`String`][String] sono automaticamente convertite in [`&str`][str] quando ne acquisisci un riferimento. 
+Entrambe sono visibili nell'esempio seguente:
 
 ```rust
 fn main() {
-    let s = "Jane Doe".to_string();
-    say_hello(&s);
+    let s = "Maria Rossi".to_string();
+    saluta(&s);
 }
 
-fn say_hello(name: &str) {
-    println!("Hello {}!", name);
+fn saluta(nome: &str) {
+    println!("Ciao {}!", nome);
 }
 ```
 
 <h3><a href="#what-are-the-differences-between-str-and-string" name="what-are-the-differences-between-str-and-string">
-What are the differences between the two different string types?
+In cosa differiscono i due tipi stringa?
 </a></h3>
 
-[`String`][String] is an owned buffer of UTF-8 bytes allocated on the heap. Mutable [`String`s][String] can be modified, growing their capacity as needed. [`&str`][str] is a fixed-capacity "view" into a [`String`][String] allocated elsewhere, commonly on the heap, in the case of slices dereferenced from [`String`s][String], or in static memory, in the case of string literals.
+[`String`][String] é un'area di memoria allocata nel heap di byte UTF-8. 
+Le [`String`][String] mutabili possono essere modificate, espanendosi se necessario. 
+[`&str`][str] é una "vista" di capacitá fissata in una [`String`][String] allocata altrove, generalmente nel heap, in caso di partizioni riferite a [`String`][String], o in memoria statica, per le costanti letterali.
 
-[`&str`][str] is a primitive type implemented by the Rust language, while [`String`][String] is implemented in the standard library.
+[`&str`][str] é un tipo primitivo implementato nel linguaggio Rust, mentre [`String`][String] é implementato dalla libreria standard.
 
 <h3><a href="#how-do-i-do-o1-character-access-in-a-string" name="how-do-i-do-o1-character-access-in-a-string">
-How do I do O(1) character access in a <code>String</code>?
+Come accedo ai caratteri di una <code>String</code> con complessitá asintottica O(1)?
 </a></h3>
 
-You cannot. At least not without a firm understanding of what you mean by "character", and preprocessing the string to find the index of the desired character.
+Non é possibile. Senza una chiara comprensione di cosa intendi per "carattere" e una pre-elaborazione della stringa per ritrovare l'indice del carattere desiderato.
 
-Rust strings are UTF-8 encoded. A single visual character in UTF-8 is not necessarily a single byte as it would be in an ASCII-encoded string. Each byte is called a "code unit" (in UTF-16, code units are 2 bytes; in UTF-32 they are 4 bytes). "Code points" are composed of one or more code units, and combine in "grapheme clusters" which most closely approximate characters.
+Le stringhe in Rust sono codificate in UTF-8.
+Un singolo carattere UTF-8 non é obbligatoriamente grande un singolo byte come sarebbe una stringa codificata in ASCII.
+Ogni byte é chiamato una "unitá di codice" (nello UTF-16, le unitá di codice sono di 2 byte, nello UTF-32 sono di 4 byte).
+I "punti di codice" sono composti di una o piú unitá di codice, combinate in "gruppi di grafemi" che fedelmente ricalcano il concetto tradizionale di caratteri.
 
-Thus, even though you may index on bytes in a UTF-8 string, you can't access the `i`th code point or grapheme cluster in constant time. However, if you know at which byte that desired code point or grapheme cluster begins, then you _can_ access it in constant time. Functions including [`str::find()`][str__find] and regex matches return byte indices, facilitating this sort of access.
+Anche con la possibilitá di indicizzare i byte in una stringa UTF-8, non puoi accedere all'`i`-esimo elemento del gruppo di grafemi in un tempo costante.
+Ad ogni modo, se conosci a quale byte si trova il punto di codice o gruppo di grafemi desiderato, quindi _puoi_ accedervi in tempo costante.
+Le funzioni, incluse [`str::find()`][str__find] e le espressioni regolari ritornano indici dei byte, facilitando questo tipo di accesso.
 
 <h3><a href="#why-are-strings-utf-8" name="why-are-strings-utf-8">
-Why are strings UTF-8 by default?
+Perché le stringhe sono UTF-8?
 </a></h3>
 
-The [`str`][str] type is UTF-8 because we observe more text in the wild in this encoding – particularly in network transmissions, which are endian-agnostic – and we think it's best that the default treatment of I/O not involve having to recode codepoints in each direction.
+Le [`str`][str] sono UTF-8 perché nel mondo questa codifica é frequente - specialmente in trasmissioni di rete, che ignorano l'ordine di bit della piattaforma - pensiamo quindi sia meglio che il trattamento standard dell'I/O non preveda la ricodifica in entrambe le direzioni.
 
-This does mean that locating a particular Unicode codepoint inside a string is an O(n) operation, although if the starting byte index is already known then they can be accessed in O(1) as expected. On the one hand, this is clearly undesirable; on the other hand, this problem is full of trade-offs and we'd like to point out a few important qualifications:
+Questo significa che individuare un particolare punto di codice Unicode dentro una stringa é un'operazione O(n), anche se, conoscendo l'indice del byte ci si puó accedere in un tempo O(1) come previsto.
+Sotto un certo punto di vista questo é chiaramente sconveniente; ma d'altro canto questo problema é pieno di compromessi e vorremmo sottolineare alcune precisazioni importanti:
 
-Scanning a [`str`][str] for ASCII-range codepoints can still be done safely byte-at-a-time. If you use [`.as_bytes()`][str__as_bytes], pulling out a [`u8`][u8] costs only `O(1)` and produces a value that can be cast and compared to an ASCII-range [`char`][char]. So if you're (say) line-breaking on `'\n'`, byte-based treatment still works. UTF-8 was well-designed this way.
+Scorrere una [`str`][str] per valori della codifica ASCII puó essere fatto in sicurezza byte per byte,
+utilizzando [`.as_bytes()`][str__as_bytes] ed estraendo [`u8`][u8] con un costo `O(1)` e producendo valori che possono essere trasformati e comparati con la codifica ASCII con il tipo [`char`][char]. 
+Quindi se per (ad esempio) vogliamo andare a capo ad ogni `'\n'`, una ricerca byte a byte continua a essere funzionante, grazie alla flessibilitá dello standard UTF-8.
 
-Most "character oriented" operations on text only work under very restricted language assumptions such as "ASCII-range codepoints only". Outside ASCII-range, you tend to have to use a complex (non-constant-time) algorithm for determining linguistic-unit (glyph, word, paragraph) boundaries anyway. We recommend using an "honest" linguistically-aware, Unicode-approved algorithm.
+La maggior parte delle operazioni orientate ai caratteri sul testo funzionano su presupposti molto ristretti come ad esempio l'esclusione dei caratteri non ASCII.
+Anche in questo caso all'esterno della codifica ASCII si tende a utilizzare comunque un algoritmo complesso(con complessitá non costante) per determinare i bordi di caratteri, parole e paragrafi.
+Noi consigliamo di utilizzare un algoritmo "onesto", approvato da Unicode e adattato al linguaggio da considerare.
 
-The [`char`][char] type is UTF-32. If you are sure you need to do a codepoint-at-a-time algorithm, it's trivial to write a `type wstr = [char]`, and unpack a [`str`][str] into it in a single pass, then work with the `wstr`. In other words: the fact that the language is not "decoding to UTF32 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
+Il tipo [`char`][char] é UTF-32. 
+Se hai la certezza di dover richiedere l'analisi di un "punto di codice" alla volta é semplicissimo scrivere `type wstr = [char]` e caricarci dentro una [`str`][str] in un solo passaggio, per poi lavorare con il nuovo `wstr`. 
+In altre parole: il fatto che il linguaggio non decodifichi a UTF32 come prima opzione non ti deve inibire da decodificare(o ri-codificare per il processo inverso) i caratteri se necessiti di lavorare in quella codifica.
 
-For a more in-depth explanation of why UTF-8 is usually preferable over UTF-16 or UTF-32, read the [UTF-8 Everywhere manifesto](http://utf8everywhere.org/).
+Per una spiegazione piú dettagliata su perché UTF-8 é preferibile rispetto a UTF-16 o UTF-32, leggi il [manifesto di UTF-8 Everywhere](http://utf8everywhere.org/).
 
 <h3><a href="#what-string-type-should-i-use" name="what-string-type-should-i-use">
-What string type should I use?
+Quale tipo stringa dovrei usare?
 </a></h3>
 
-Rust has four pairs of string types, [each serving a distinct purpose](http://www.suspectsemantics.com/blog/2016/03/27/string-types-in-rust/). In each pair, there is an "owned" string type, and a "slice" string type. The organization looks like this:
+Rust ha quattro paia di tipi stringa, [ciascuno assolve un ruolo distinto](http://www.suspectsemantics.com/blog/2016/03/27/string-types-in-rust/).
+In ciascun paio, c'é un tipo stringa "posseduto" e un tipo stringa "partizione".
+I tipi sono suddivisi cosí:
 
-|               | "Slice" type | "Owned" type |
-|:--------------|:-------------|:-------------|
-| UTF-8         | `str`        | `String`     |
-| OS-compatible | `OsStr`      | `OsString`   |
-| C-compatible  | `CStr`       | `CString`    |
-| System path   | `Path`       | `PathBuf`    |
+|                       | tipo "Partizione" | tipo "Posseduto" |
+|:----------------------|:------------------|:-----------------|
+| UTF-8                 | `str`             | `String`         |
+| Compatibile con il SO | `OsStr`           | `OsString`       |
+| Compatibile con il C  | `CStr`            | `CString`        |
+| Percorso di sistema   | `Path`            | `PathBuf`        |
 
-Rust's different string types serve different purposes. `String` and `str` are UTF-8 encoded general-purpose strings. `OsString` and `OsStr` are encoded according to the current platform, and are used when interacting with the operating system. `CString` and `CStr` are the Rust equivalent of strings in C, and are used in FFI code, and `PathBuf` and `Path` are convenience wrappers around `OsString` and `OsStr`, providing methods specific to path manipulation.
+I diversi tipi di stringa di Rust assolvono ruoli diversi.
+`String` e `str` sono stringhe ad uso generico codificate in in UTF-8. 
+`OsString` e `OsStr` sono codificati a seconda della piattaforma corrente e sono utilizzati per interagire con il sistema operativo.
+`CString` e `CStr` sono l'equivalente in Rust delle stringhe del C, si utilizzano nelle chiamate FFI, mentre `PathBuf` e `Path` sono un'aggiunta di `OsString` e `OsStr` ed implementano metodi specifici alla manipolazione di percorsi.
 
 <h3><a href="#why-are-there-multiple-types-of-strings" name="why-are-there-multiple-types-of-strings">
-How can I write a function that accepts both <code>&str</code> and <code>String</code>?
+Come faccio a scrivere una funzione che accetti sia <code>&str</code> che <code>String</code>?
 </a></h3>
 
-There are several options, depending on the needs of the function:
+Ci sono diverse opzioni, a seconda delle necessitá della funzione:
 
-- If the function needs an owned string, but wants to accept any type of string, use an `Into<String>` bound.
-- If the function needs a string slice, but wants to accept any type of string, use an `AsRef<str>` bound.
-- If the function does not care about the string type, and wants to handle the two possibilities uniformly, use `Cow<str>` as the input type.
+- Se la funzione richiede una stringa posseduta ma vuole accettare una qualsiasi stringa utilizza la restrizione al tratto `Into<String>`.
+- Se la funzione richiede una partizione di stringa ma vuole accettare una qualsiasi stringa utilizza la restrizione al tratto `AsRef<str>`.
+- Se alla funzione non interessa del tipo di stringa e vuole gestire uniformemente le due possibilitá utilizza il tipo `Cow<str>.`
 
-__Using `Into<String>`__
+__Usare `Into<String>`__
 
-In this example, the function will accept both owned strings and string slices, either doing nothing or converting the input into an owned string within the function body. Note that the conversion needs to be done explicitly, and will not happen otherwise.
+In questo esempio, la funzione accetta sia stringhe possedute che partizioni di stringa o facendo nulla o convertendo l'ingresso in stringa posseduta. 
+Nota che la conversione deve essere fatta esplicitamente e non succede altrimenti.
 
 ```rust
-fn accepts_both<S: Into<String>>(s: S) {
-    let s = s.into();   // This will convert s into a `String`.
-    // ... the rest of the function
+fn accetta_entrambe<S: Into<String>>(s: S) {
+    let s = s.into();   // Questo converte s in una `String`.
+    // ... il resto della funzione
 }
 ```
 
-__Using `AsRef<str>`__
+__Usare `AsRef<str>`__
 
-In this example, the function will accept both owned strings and string slices, either doing nothing or converting the input into a string slice. This can be done automatically by taking the input by reference, like so:
+In questo esempio, la funzione accetta sia stringhe possedute che partizioni di stringa o facendo nulla o convertendo l'ingresso in una partizione di stringa. 
+Questo viene fatto automaticamente prendendo l'ingresso per riferimento, come qui:
 
 ```rust
-fn accepts_both<S: AsRef<str>>(s: &S) {
-    // ... the body of the function
+fn accetta_entrambe<S: AsRef<str>>(s: &S) {
+    // ... il corpo della funzione
 }
 ```
 
-__Using `Cow<str>`__
+__Usare `Cow<str>`__
 
-In this example, the function takes in a `Cow<str>`, which is not a generic type but a container, containing either an owned string or string slice as needed.
+In questo esempio, la funzione accetta un `Cow<str>`, che non é un tipo generico ma un contenitore, contenente o una stringa posseduta o una partizione di stringa all'occorrenza.
 
 ```rust
-fn accepts_cow(s: Cow<str>) {
-    // ... the body of the function
+fn accetta_cow(s: Cow<str>) {
+    // ... il corpo della funzione
 }
 ```
 
 
-<h2 id="collections">Collections</h2>
+<h2 id="collections">Collezioni</h2>
 
 <h3><a href="#can-i-implement-linked-lists-in-rust" name="can-i-implement-linked-lists-in-rust">
-Can I implement data structures like vectors and linked lists efficiently in Rust?
+Posso implementare efficientemente strutture dati come vettori e liste concatenate in Rust?
 </a></h3>
 
-If your reason for implementing these data structures is to use them for other programs, there's no need, as efficient implementations of these data structures are provided by the standard library.
+If vuoi implementare queste strutture dati per utilizzarle in altri programmi non é necessario, essendo implementazioni efficienti di queste strutture giá disponibili nella libreria standard.
 
-If, however, [your reason is simply to learn](http://cglab.ca/~abeinges/blah/too-many-lists/book/), then you will likely need to dip into unsafe code. While these data structures _can_ be implemented entirely in safe Rust, the performance is likely to be worse than it would be with the use of unsafe code. The simple reason for this is that data structures like vectors and linked lists rely on pointer and memory operations that are disallowed in safe Rust.
+Se invece, [vuoi solo imparare](http://cglab.ca/~abeinges/blah/too-many-lists/book/), probabilmente dovrai entrare nel codice insicuro.
+Anche se é _possibile_ implementarle solo con codice sicuro, le prestazioni sarebbero probabilmente peggiori di come sarebbe stato lo stesso codice con l'utilizzo di codice insicuro.
+La semplice ragione per ció é che le strutture dati come vettori e liste concatenate fanno affidamento a operazioni su puntatori e memoria che sono proibiti nel Rust sicuro.
 
-For example, a doubly-linked list requires that there be two mutable references to each node, but this violates Rust's mutable reference aliasing rules. You can solve this using [`Weak<T>`][Weak], but the performance will be poorer than you likely want. With unsafe code you can bypass the mutable reference aliasing rule restriction, but must manually verify that your code introduces no memory safety violations.
+Per esempio, una lista concatenata doppia richiede due riferimenti mutabili a ciascun nodo ma questo viola le regole di Rust sull'esclusivitá dei riferimenti mutabili.
+Si puó risolvere il problema utilizzando [`Weak<T>`][Weak], ma le prestazioni sarebbero probabilmente peggiori di quanto desiderato.
+Con il codice insicuro puoi ignorare le regole di esclusivitá ma devi verificare manualmente che il tuo codice non introduca violazioni nella sua gestione della memoria.
 
 <h3><a href="#how-can-i-iterate-over-a-collection-without-consuming-it" name="how-can-i-iterate-over-a-collection-without-consuming-it">
-How can I iterate over a collection without moving/consuming it?
+Come posso iterare una collezione senza muoverla o consumarla?
 </a></h3>
 
-The easiest way is by using the collection's [`IntoIterator`][IntoIterator] implementation. Here is an example for [`&Vec`][Vec]:
+Il modo piú semplice é utilizzare l'implementazione del tratto [`IntoIterator`][IntoIterator]. 
+Ecco qui un esempio con [`&Vec`][Vec]:
 
 ```rust
 let v = vec![1,2,3,4,5];
-for item in &v {
-    print!("{} ", item);
+for oggetto in &v {
+    print!("{} ", oggetto);
 }
-println!("\nLength: {}", v.len());
+println!("\nLunghezza: {}", v.len());
 ```
 
-Rust `for` loops call `into_iter()` (defined on the [`IntoIterator`][IntoIterator] trait) for whatever they're iterating over. Anything implementing the [`IntoIterator`][IntoIterator] trait may be looped over with a `for` loop. [`IntoIterator`][IntoIterator] is implemented for [`&Vec`][Vec] and [`&mut Vec`][Vec], causing the iterator from `into_iter()` to borrow the contents of the collection, rather than moving/consuming them. The same is true for other standard collections as well.
+I cicli `for` in Rust chiamano la funzione `into_iter()` (definita dal tratto [`IntoIterator`][IntoIterator]) per qualsiasi cosa stiano analizzando. 
+Tutto ció che implementa il tratto [`IntoIterator`][IntoIterator] puó essere traversato con un ciclo `for`. 
+[`IntoIterator`][IntoIterator] é implementato per [`&Vec`][Vec] e [`&mut Vec`][Vec], obbligando l'iteratore generato da `into_iter()` a prendere in prestito i contenuti della collezione, al posto di consumarli o muoverli. 
+Lo stesso é vero per le altre collezioni della libreria standard.
 
-If a moving/consuming iterator is desired, write the `for` loop without `&` or `&mut` in the iteration.
+Se si desidera un iteratore che muova/consumi i valori, basta scrivere lo stesso ciclo `for` omettendo `&` o `&mut`.
 
-If you need direct access to a borrowing iterator, you can usually get it by calling the `iter()` method.
+Se si necessita accesso diretto all'iteratore, vi si puó usualmente accedere invocando il metodo `iter()`.
 
 <h3><a href="#why-do-i-need-to-type-the-array-size-in-the-array-declaration" name="why-do-i-need-to-type-the-array-size-in-the-array-declaration">
-Why do I need to type the array size in the array declaration?
+Perché devo inserire la dimensione del vettore alla sua dichiarazione?
 </a></h3>
 
-You don't necessarily have to. If you're declaring an array directly, the size is inferred based on the number of elements. But if you're declaring a function that takes a fixed-size array, the compiler has to know how big that array will be.
+Non é necessario. Se dichiari direttamente un vettore, la dimensione é dedotta dal numero di elementi. Se invece dichiari una funzione che accetta un vettore di dimensione prefissata il compilatore deve avere modo di sapere quale sará la dimensione di quel vettore.
 
-One thing to note is that currently Rust doesn't offer generics over arrays of different size. If you'd like to accept a contiguous container of a variable number of values, use a [`Vec`][Vec] or slice (depending on whether you need ownership).
+Una cosa da notare é che attualmente Rust non offere generici su array di dimensioni diverse.
+Se desideri quindi accettare un contenitore continuo di un numero variabile di valori, utilizza [`Vec`][Vec] o una partizione (a seconda che tu richieda il possesso o no).
 
-<h2 id="ownership">Ownership</h2>
+<h2 id="ownership">Possesso</h2>
 
 <h3><a href="#how-can-i-implement-a-data-structure-that-contains-cycles" name="how-can-i-implement-a-data-structure-that-contains-cycles">
-How can I implement a graph or other data structure that contains cycles?
+Come posso implementare un grafo o altra struttura contenente cicli?
 </a></h3>
 
-There are at least four options (discussed at length in [Too Many Linked Lists](http://cglab.ca/~abeinges/blah/too-many-lists/book/)):
+Esistono almeno quattro diverse opzioni (largamente discusse in [Too Many Linked Lists](http://cglab.ca/~abeinges/blah/too-many-lists/book/)):
 
-- You can implement it using [`Rc`][Rc] and [`Weak`][Weak] to allow shared ownership of nodes,
-although this approach pays the cost of memory management.
-- You can implement it using `unsafe` code using raw pointers. This will be
-more efficient, but bypasses Rust's safety guarantees.
-- Using vectors and indices into those vectors. There are [several](http://smallcultfollowing.com/babysteps/blog/2015/04/06/modeling-graphs-in-rust-using-vector-indices/) [available](https://featherweightmusings.blogspot.com/2015/04/graphs-in-rust.html) examples and explanations of this approach.
-- Using borrowed references with [`UnsafeCell`][UnsafeCell]. There are [explanations and code](https://github.com/nrc/r4cppp/blob/master/graphs/README.md#node-and-unsafecell) available for this approach.
+- Puoi implementarlo usando [`Rc`][Rc] e [`Weak`][Weak] per permettere il possesso condiviso dei nodi,
+anche se questo approccio richiede la gestione della memoria.
+- Puoi implementarlo usando codice `unsafe` e i puntatori. 
+Anche se efficiente questo metodo ignora i paradigmi di sicurezza di Rust.
+- Usando vettori indici al loro interno. Esistono [diversi](http://smallcultfollowing.com/babysteps/blog/2015/04/06/modeling-graphs-in-rust-using-vector-indices/) modi [disponibili](https://featherweightmusings.blogspot.com/2015/04/graphs-in-rust.html), esempi e spiegazioni di questo metodo.
+- Usando [`UnsafeCell`][UnsafeCell]. Esistono [spiegazioni e codice](https://github.com/nrc/r4cppp/blob/master/graphs/README.md#node-and-unsafecell) per questo metodo.
 
 <h3><a href="#how-can-i-define-a-struct-that-contains-a-reference-to-one-of-its-own-fields" name="how-can-i-define-a-struct-that-contains-a-reference-to-one-of-its-own-fields">
-How can I define a struct that contains a reference to one of its own fields?
+Come posso definire una struttura che contiene un riferimento a un suo campo?
 </a></h3>
 
-It's possible, but useless to do so. The struct becomes permanently borrowed by itself and therefore can't be moved. Here is some code illustrating this:
+Si puó fare ma é inutile.
+La struttura diventa permanentemente prestata a sé stessa e quindi non puó essere copiata.
+Ecco del codice per capire meglio:
 
 ```rust
 use std::cell::Cell;
 
 #[derive(Debug)]
-struct Unmovable<'a> {
+struct Immobile<'a> {
     x: u32,
     y: Cell<Option<&'a u32>>,
 }
 
 
 fn main() {
-    let test = Unmovable { x: 42, y: Cell::new(None) };
+    let test = Immobile { x: 42, y: Cell::new(None) };
     test.y.set(Some(&test.x));
 
     println!("{:?}", test);
@@ -634,108 +676,132 @@ fn main() {
 ```
 
 <h3><a href="#what-is-the-difference-between-consuming-and-moving" name="what-is-the-difference-between-consuming-and-moving">
-What is the difference between passing by value, consuming, moving, and transferring ownership?
+Che differenza sussiste tra passare per valore, consumare, spostare e trasferire la proprietá?
 </a></h3>
 
-These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it. If a type implements the `Copy` trait, the original owner's value won't be invalidated, and can still be used.
+Sono parole diverse per dire la stessa cosa.
+In tutti i casi significa che il valore é stato trasferito a un nuovo proprietario, o che la proprietá é stata trasferita dal possessore originario, che quindi non puó piú accedervi.
+Se un tipo implementa il tratto `Copy`, il valore del proprietario originale non viene invalidato e puó essere utilizzato nuovamente.
 
 <h3><a href="#why-can-values-of-some-types-by-reused-while-others-are-consumed" name="why-can-values-of-some-types-by-reused-while-others-are-consumed">
-Why can values of some types be used after passing them to a function, while reuse of values of other types results in an error?
+Perché alcuni valori di alcuni tipi possono essere utilizzati dopo il passaggio a una funzione mentre il riutilizzo di valori di altri tipi genera errori?
 </a></h3>
 
-If a type implements the [`Copy`][Copy] trait, then it will be copied when passed to a function. All numeric types in Rust implement [`Copy`][Copy], but struct types do not implement [`Copy`][Copy] by default, so they are moved instead. This means that the struct can no longer be used elsewhere, unless it is moved back out of the function via the return.
+Se un tipo implementa il tratto [`Copy`][Copy], esso verrá copiato durante il suo passaggio a una funzione. 
+Tutti i tipi numerici in Rust implementano [`Copy`][Copy] ma le strutture in maniera predefinita non implementano [`Copy`][Copy], quindi invece di essere copiate sono mosse. 
+Ció implica che la struttura non possa piú essere utilizzata altrove, se non viene ritornata dalla funzione tramite un `return`.
 
 <h3><a href="#how-do-you-deal-with-a-use-of-moved-value-error" name="how-do-you-deal-with-a-use-of-moved-value-error">
-How do you deal with a "use of moved value" error?
+Come si gestice l'errore "utilizzo di un valore spostato"?
 </a></h3>
 
-This error means that the value you're trying to use has been moved to a new owner. The first thing to check is whether the move in question was necessary: if it moved into a function, it may be possible to rewrite the function to use a reference, rather than moving. Otherwise if the type being moved implements [`Clone`][Clone], then calling `clone()` on it before moving will move a copy of it, leaving the original still available for further use. Note though that cloning a value should typically be the last resort since cloning can be expensive, causing further allocations.
+Questo errore significa che il valore che stai cercando di utilizzare é stato trasferito a un nuovo proprietario.
+La prima cosa da controllare in questo caso é se il trasferimento era davvero necessario: se il valore era stato mosso a una funzione, potrebbe essere possibile riscriverla per utilizzare un riferimento invece che il trasferimento, ad esempio.
+Altrimenti se il tipo mosso implementa il tratto [`Clone`][Clone], chiamare `clone()` su di esso prima di muoverlo trasferirá una sua copia, mantenendo l'originale disponibile per utilizzi futuri. 
+Nota che la clonazione di un valore dovrebbe essere l'ultima spiaggia, essendo la procedura di clonazione costosa e causa di allocazioni di memoria.
 
-If the moved value is of your own custom type, consider implementing [`Copy`][Copy] (for implicit copying, rather than moving) or [`Clone`][Clone] (explicit copying). [`Copy`][Copy] is most commonly implemented with `#[derive(Copy, Clone)]` ([`Copy`][Copy] requires [`Clone`][Clone]), and [`Clone`][Clone] with `#[derive(Clone)]`.
+Se il valore mosso é uno dei tuoi tipi personalizzati, considera implementare il tratto [`Copy`][Copy] (per la copia implicita al posto del trasferimento) o [`Clone`][Clone] (copia esplicita). 
+[`Copy`][Copy] é generalmente implementato con la direttiva `#[derive(Copy, Clone)]` ([`Copy`][Copy] richiede [`Clone`][Clone]), e [`Clone`][Clone] con la direttiva `#[derive(Clone)]`.
 
-If none of these are possible, you may want to modify the function that acquired ownership to return ownership of the value when the function exits.
+Se nulla di tutto questo é possibile, probabilmente devi modificare la funzione che ha acquisito il possesso per fare in modo che restituisca la proprietá alla sua uscita.
 
 <h3><a href="#what-are-the-rules-for-different-self-types-in-methods" name="what-are-the-rules-for-different-self-types-in-methods">
-What are the rules for using <code>self</code>, <code>&amp;self</code>, or <code>&amp;mut self</code> in a method declaration?
+Quali regole disciplinano l'utilizzo di <code>self</code>, <code>&amp;self</code> o <code>&amp;mut self</code> nella dichiarazione di un metodo?
 </a></h3>
 
-- Use `self` when a function needs to consume the value
-- Use `&self` when a function only needs a read-only reference to the value
-- Use `&mut self` when a function needs to mutate the value without consuming it
+- Usa `self` quando una funzione deve consumare il valore
+- Usa `&self` quando una funzione necessita solo di una copia di sola lettura del valore
+- Usa `&mut self` quando una funzione necessita di modificare un valore ma senza consumarlo
 
 <h3><a href="#how-can-i-understand-the-borrow-checker" name="how-can-i-understand-the-borrow-checker">
-How can I understand the borrow checker?
+Come faccio a comprendere il gestore dei prestiti?
 </a></h3>
 
-The borrow checker applies only a few rules, which can be found in the Rust book's [section on borrowing](https://doc.rust-lang.org/stable/book/references-and-borrowing.html#the-rules), when evaluating Rust code. These rules are:
+Il gestore dei prestiti, mentre analizza il codice, applica poche semplici regole, che sono illustrate nella sezione del libro di Rust [dedicata ai prestiti](https://doc.rust-lang.org/stable/book/references-and-borrowing.html#the-rules).
+Queste regole sono:
 
-> First, any borrow must last for a scope no greater than that of the owner. Second, you may have one or the other of these two kinds of borrows, but not both at the same time:
+> Prima cosa, ogni prestito deve durare per un periodo di tempo non superiore alla vita del possessore originale. 
+Seconda cosa, puoi avere accesso a uno o l'altro di questi due tipi di prestiti, ma non a entrambi contemporaneamente:
 >
-> - one or more references (&T) to a resource.
-> - exactly one mutable reference (&mut T)
+> - uno o piú riferimenti (&T) a una risorsa.
+> - esattamente un riferimento mutabile (&mut T)
 
-While the rules themselves are simple, following them consistently is not, particularly for those unaccustomed to reasoning about lifetimes and ownership.
+Nonostante le regole siano molto semplici, seguirle correttamente puó essere molto complicato, specialmente per coloro che non sono abitutati a ragionare in termini di campi di esistenza e possesso.
 
-The first step in understanding the borrow checker is reading the errors it produces. A lot of work has been put into making sure the borrow checker provides quality assistance in resolving the issues it identifies. When you encounter a borrow checker problem, the first step is to slowly and carefully read the error reported, and to only approach the code after you understand the error being described.
+La prima regola é comprendere che il gestore dei prestiti identifica veramente gli errori che produce: molto lavoro é stato profuso per renderlo un assistente di qualitá nella risoluzione delle problematiche che individua.
+Quando incontri un problema segnalato dal gestore dei prestiti, il primo passo é di leggere lentamente e con attenzione l'errore e poi approcciarsi al codice una volta compreso davvero l'errore descritto.
 
-The second step is to become familiar with the ownership and mutability-related container types provided by the Rust standard library, including [`Cell`][Cell], [`RefCell`][RefCell], and [`Cow`][Cow]. These are useful and necessary tools for expressing certain ownership and mutability situations, and have been written to be of minimal performance cost.
+Il secondo passo é cercare di familiarizzare con i tipi contenitore associati con i concetti di possesso e mutabilitá forniti dalla libreria standard di Rust, includendo [`Cell`][Cell], [`RefCell`][RefCell] e [`Cow`][Cow]. 
+Questi utili e necessari strumenti possono aiutare ad esprimere efficientemente alcune situazioni complesse di possesso e mutabilitá.
 
-The single most important part of understanding the borrow checker is practice. Rust's strong static analyses guarantees are strict and quite different from what many programmers have worked with before. It will take some time to become completely comfortable with everything.
+La singola cosa piú importante nella comprensione del gestore dei prestiti é la pratica.
+La potente analisi statica fatta da Rust é particolare e molto differente da molte esperienze di programmazione precedente.
+Ci vorrá un po' di tempo per acquisire la giusta tranquillitá.
 
-If you find yourself struggling with the borrow checker, or running out of patience, always feel free to reach out to the [Rust community](community.html) for help.
+Se ti ritrovi in difficoltá con il gestore dei prestiti, oppure hai finito la pazienza, sentiti libero di chiedere un aiuto alla [comunitá di Rust](community.html).
 
 <h3><a href="#when-is-rc-useful" name="when-is-rc-useful">
-When is <code>Rc</code> useful?
+Quando puó venire utile utilizzare una <code>Rc</code>?
 </a></h3>
 
-This is covered in the official documentation for [`Rc`][Rc], Rust's non-atomically reference-counted pointer type. In short, [`Rc`][Rc] and its thread-safe cousin [`Arc`][Arc] are useful to express shared ownership, and have the system automatically deallocate the associated memory when no one has access to it.
+Questo é coperto dalla documentazione ufficiale per [`Rc`][Rc] il tipo di puntatore non-atomico utilizzante il reference counting di Rust. 
+In breve, [`Rc`][Rc] e il suo cugino, amico del multithreading [`Arc`][Arc] sono utili per indicare possesso condiviso e vengono deallocati automaticamente dal sistema quando nessuno vi accede.
 
 <h3><a href="#how-do-i-return-a-closure-from-a-function" name="how-do-i-return-a-closure-from-a-function">
-How do I return a closure from a function?
+Come posso ritornare una chiusura da una funzione?
 </a></h3>
 
-To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a [`Box`][Box], so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
+Per ritornare una chiusura da una funzione, essa deve essere una "chiusura da movimento", ovvero che essa deve essere dichiarata dalla parola `move`.
+Come [illustrato nel libro di Rust](https://doc.rust-lang.org/book/closures.html#move-closures), questo fornisce alla chiusura la sua copia delle variabili catturate, indipendentemente dal quadro di allocazione del chiamante. 
+Altrimenti, ritornare da una chiusura sarebbe insicuro, visto che permetterebbe di accedere a variabili non piú disponibili; detto in un altro modo: permetterebbe di leggere dati da locazioni di memoria errate.
+La chiusura deve anche essere racchiusa in un [`Box`][Box], in modo da essere allocata nella heap. 
+Puoi saperne di piú [nel libro](https://doc.rust-lang.org/book/closures.html#returning-closures).
 
 <h3><a href="#what-are-deref-coercions" name="what-are-deref-coercions">
-What is a deref coercion and how does it work?
+Cos'é un deriferimento forzato e come funziona?
 </a></h3>
 
-A [deref coercion](https://doc.rust-lang.org/book/deref-coercions.html) is a handy coercion
-that automatically converts references to pointers (e.g., `&Rc<T>` or `&Box<T>`) into references
-to their contents (e.g., `&T`). Deref coercions exist to make using Rust more ergonomic, and are implemented via the [`Deref`][Deref] trait.
+Un [deriferimento forzato](https://doc.rust-lang.org/book/deref-coercions.html) é una pratica conversione automatica di delle referenze 
+a puntatori (es., `&Rc<T>` or `&Box<T>`) a referenze ai loro contenuti
+(es., `&T`).
+Il deriferimento forzato esiste per rendere l'utilizzo di Rust piú comodo e sono implementati dal tratto [`Deref`][Deref].
 
-A Deref implementation indicates that the implementing type may be converted into a target by a call to the `deref` method, which takes an immutable reference to the calling type and returns a reference (of the same lifetime) to the target type. The `*` prefix operator is shorthand for the `deref` method.
+Una implementazione di `Deref` indica che il tipo implementante potrebbe essere convertito in un valore con una chiamata al metodo `deref`, che prende un riferimento immutabile al tipo chiamante e ritorna un riferimento(senza violare peró il campo di esistenza) del tipo obiettivo. 
+L'operatore `*`, se utilizzato come prefisso é un metodo piú veloce per accedere a `deref`.
 
-They're called "coercions" because of the following rule, quoted here [from the Rust book](https://doc.rust-lang.org/stable/book/deref-coercions.html):
+Sono chiamate "forzature" a causa delle regole spiegate qui [nel libro di Rust](https://doc.rust-lang.org/stable/book/deref-coercions.html):
 
-> If you have a type `U`, and it implements `Deref<Target=T>`, values of `&U` will automatically coerce to a `&T`.
+> Se hai un tipo `U` ed esso implementa `Deref<Target=T>`, i valori `&U` verranno automaticamente convertiti in `&T`.
 
-For example, if you have a `&Rc<String>`, it will coerce via this rule into a `&String`, which then coerces to a `&str` in the same way. So if a function takes a `&str` parameter, you can pass in a `&Rc<String>` directly, with all coercions handled automatically via the `Deref` trait.
+Ad esempio, se hai un `&Rc<String>`, esso verrá forzato per questa regola a `&String`, che puó essere forzato anche a `&str` nello stesso modo. 
+Quindi se una funzione accettasse un parametro `&str`, puoi passare direttamente un `&Rc<String>` e tutte le forzature e verranno gestite automaticamente dal tratto `Deref`.
 
-The most common sorts of deref coercions are:
+I tipici deriferimenti forzati sono:
 
-- `&Rc<T>` to `&T`
-- `&Box<T>` to `&T`
-- `&Arc<T>` to `&T`
-- `&Vec<T>` to `&[T]`
-- `&String` to `&str`
+- `&Rc<T>` a `&T`
+- `&Box<T>` a `&T`
+- `&Arc<T>` a `&T`
+- `&Vec<T>` a `&[T]`
+- `&String` a `&str`
 
-<h2 id="lifetimes">Lifetimes</h2>
+<h2 id="lifetimes">Campi di esistenza</h2>
 
 <h3><a href="#why-lifetimes" name="why-lifetimes">
-Why lifetimes?
+Perché i campi di esistenza?
 </a></h3>
 
-Lifetimes are Rust's answer to the question of memory safety. They allow Rust to ensure memory safety without the performance costs of garbage collection. They are based on a variety of academic work, which can be found in the [Rust book](https://doc.rust-lang.org/stable/book/bibliography.html#type-system).
+I campi di esistenza sono la soluzione di Rust al problema della sicurezza della memoria.
+Questi consentono a Rust di assicurare la sicurezza della memoria senza i costi prestazionali della garbage collection.
+Sono basati su una serie di articoli accademici che possono essere trovati nel [libro di Rust](https://doc.rust-lang.org/stable/book/bibliography.html#type-system).
 
 <h3><a href="#why-is-the-lifetime-syntax-the-way-it-is" name="why-is-the-lifetime-syntax-the-way-it-is">
-Why is the lifetime syntax the way it is?
+Perché la sintassi dei campi di esistenza é fatta cosí?
 </a></h3>
 
 The `'a` syntax comes from the ML family of programming languages, where `'a` is used to indicate a generic type parameter. For Rust, the syntax had to be something that was unambiguous, noticeable, and fit nicely in a type declaration right alongside traits and references. Alternative syntaxes have been discussed, but no alternative syntax has been demonstrated to be clearly better.
 
 <h3><a href="#how-do-i-return-a-borrow-to-something-i-created-from-a-function" name="how-do-i-return-a-borrow-to-something-i-created-from-a-function">
-How do I return a borrow to something I created from a function?
+Come posso ritornare un prestito a qualcosa che ho creato in una funzione?
 </a></h3>
 
 You need to ensure that the borrowed item will outlive the function. This can be done by binding the output lifetime to some input lifetime like so:
@@ -764,7 +830,7 @@ fn happy_birthday(name: &str, age: i64) -> String {
 This approach is simpler, but often results in unnecessary allocations.
 
 <h3><a href="#when-are-lifetimes-required-to-be-explicit" name="when-are-lifetimes-required-to-be-explicit">
-Why do some references have lifetimes, like <code>&amp;'a T</code>, and some do not, like <code>&amp;T</code>?
+Perché alcuni riferimenti hanno un campo di esistenza, come <code>&amp;'a T</code> e altri no, tipo <code>&amp;T</code>?
 </a></h3>
 
 In fact, *all* reference types have a lifetime, but most of the time you do not have to write
@@ -789,21 +855,21 @@ it explicitly. The rules are as follows:
 If these rules result in compilation errors, the Rust compiler will provide an error message indicating the error caused, and suggesting a potential solution based on which step of the inference process caused the error.
 
 <h3><a href="#how-can-rust-guarantee-no-null-pointers" name="how-can-rust-guarantee-no-null-pointers">
-How can Rust guarantee "no null pointers" and "no dangling pointers"?
+Come puó Rust garantire l'assenza di "puntatori nulli" e "puntatori sospesi"?
 </a></h3>
 
 The only way to construct a value of type `&Foo` or `&mut Foo` is to specify an existing value of type `Foo` that the reference points to. The reference "borrows" the original value for a given region of code (the lifetime of the reference), and the value being borrowed from cannot be moved or destroyed for the duration of the borrow.
 
 <h3><a href="#how-do-i-express-the-absense-of-a-value-without-null" name="how-do-i-express-the-absense-of-a-value-without-null">
-How do I express the absence of a value without <code>null</code>?
+Come faccio a indicare l'assenza di un valore senza utilizzare <code>null</code>?
 </a></h3>
 
 You can do that with the [`Option`][Option] type, which can either be `Some(T)` or `None`. `Some(T)` indicates that a value of type `T` is contained within, while `None` indicates the absence of a value.
 
-<h2 id="generics">Generics</h2>
+<h2 id="generics">Generici</h2>
 
 <h3><a href="#what-is-monomorphisation" name="what-is-monomorphisation">
-What is "monomorphisation"?
+Cos'é la "monomorfizzazione"?
 </a></h3>
 
 Monomorphisation specializes each use of a generic function (or structure) with specific instance,
@@ -937,7 +1003,7 @@ fn main() {
 ```
 
 <h3><a href="#how-do-i-read-file-input-efficiently" name="how-do-i-read-file-input-efficiently">
-How do I read file input efficiently?
+Come leggo un file efficientemente?
 </a></h3>
 
 The [`File`][File] type implements the [`Read`][Read] trait, which has a variety of functions for reading and writing data, including [`read()`][read__read], [`read_to_end()`][read__read_to_end], [`bytes()`][read__bytes], [`chars()`][read__chars], and [`take()`][read__take]. Each of these functions reads a certain amount of input from a given file. [`read()`][read__read] reads as much input as the underlying system will provide in a single call. [`read_to_end()`][read__read_to_end] reads the entire buffer into a vector, allocating as much space as is needed. [`bytes()`][read__bytes] and [`chars()`][read__chars] allow you to iterate over the bytes and characters of the file, respectively. Finally, [`take()`][read__take] allows you to read up to an arbitrary number of bytes from the file. Collectively, these should allow you to efficiently read in any data you need.
@@ -1622,15 +1688,16 @@ Some specific difference between Haskell typeclasses and Rust traits include:
 - Rust's `impl` resolution considers the relevant `where` clauses and trait bounds when deciding whether two `impl`s overlap, or choosing between potential `impl`s. Haskell only considers the constraints in the `instance` declaration, disregarding any constraints provided elsewhere.
 - A subset of Rust's traits (the ["object safe"](https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md) ones) can be used for dynamic dispatch via trait objects. The same feature is available in Haskell via GHC's `ExistentialQuantification`.
 
-<h2 id="documentation">Documentation</h2>
+<h2 id="documentation">Documentazione</h2>
 
 <h3><a href="#why-are-so-many-rust-answers-on-stackoverflow-wrong" name="why-are-so-many-rust-answers-on-stackoverflow-wrong">
-Why are so many Rust answers on Stack Overflow wrong?
+Perché su Stack Overflow molte delle risposte su Rust sono sbagliate?
 </a></h3>
 
-The Rust language has been around for a number of years, and only reached version 1.0 in May of 2015. In the time before then the language changed significantly, and a number of Stack Overflow answers were given at the time of older versions of the language.
+Il linguaggio Rust é pubblico da diversi anni e ha raggiunto la versione 1.0 a Maggio del 2015.
+Nei periodi precedenti il linguaggio ha ricevuto delle modifiche sostanziali e molte risposte fanno riferimento a versioni vecchie del linguaggio.
 
-Over time more and more answers will be offered for the current version, thus improving this issue as the proportion of out-of-date answers is reduced.
+Nel tempo sempre piú risposte saranno disponibili per la versione corrente, migliorando la problematica alterando il rapporto tra le risposte corrette e quelle sbagliate. 
 
 <h3><a href="#where-do-i-report-issues-in-the-rust-documentation" name="where-do-i-report-issues-in-the-rust-documentation">
 Dove segnalo problemi alla documentazione di Rust?
