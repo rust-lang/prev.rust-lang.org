@@ -1,6 +1,38 @@
 ---
 layout: it-IT/default
 title: Il team di Rust &middot; Linguaggio di programmazione Rust
+
+localized-teams:
+  Core team:
+    name: Team principale
+    responsibility: "dirigono il progetto e i sottogruppi, lavorano su problematiche condivise"
+  Language design team:
+    name: Team di design del linguaggio
+    responsibility: "progettano gli sviluppi del linguaggio"
+  Library team:
+    name: Team della libreria
+    responsibility: "la libreria standard di rust, i *pacchetti* rust-lang e le convenzioni"
+  Compiler team:
+    name: Team del compilatore
+    responsibility: "si occupano del compilatore e della sua ottimizzazione"
+  Tooling and infrastructure:
+    name: Utilitá e infrastrutture
+    responsibility: "lavorano agli strumenti (rustup, Cargo), alla piattaforma di controllo automatico, etc..."
+  Community team:
+    name: Team della comunitá
+    responsibility: "coordinano gli eventi, la riuscita, i rapporti con gli utenti commerciali e il materiale didattico"
+  Documentation team:
+    name: Team della documentazione
+    responsibility: "assicurano che Rust abbia una documentazione fantastica"
+  Moderation team:
+    name: Team della moderazione
+    responsibility: "assicurano il rispetto <a href='it-IT/conduct.html'>codice di comportamento</a>"
+  Style team:
+    name: Team dello stile
+    responsibility: "gruppo di azione temporaneo che delibera sulla forma del linguaggio e sullo strumento rustfmt"
+  Rust team alumni:
+    name: Team degli anziani
+    responsibility: "si godono un meritato riposo"
 ---
 
 <style type="text/css">
@@ -43,11 +75,11 @@ title: Il team di Rust &middot; Linguaggio di programmazione Rust
 # Il team di rust
 
 Il progetto Rust é
-[amminsitrato](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)
+[amministrato](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)
 da un numero di team, ciascuno focalizzato in una specifica area di competenza.
 Sotto vi é una lista, in ordine alfabetico.
 
-Per contattare un team, invia la tua domanda o commenta nel [Forum Sviluppo] (https://internals.rust-lang.org/)
+Per contattare un team, invia la tua domanda o commenta nel [Forum Sviluppo](https://internals.rust-lang.org/)
 e tagga il tuo post con la categoria corrispondente al nome del team.
 Nota che le vulnerabilitá sono soggette al [processo di annuncio vulnerabilitá](security.html). 
 
