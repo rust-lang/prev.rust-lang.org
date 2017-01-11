@@ -1,5 +1,5 @@
 ---
-layout: fr/default
+layout: fr-FR/default
 title: Groupe d'utilisateurs Rust &middot; Rust, le langage de programmation
 ---
 

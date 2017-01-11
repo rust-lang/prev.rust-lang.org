@@ -1,5 +1,5 @@
 ---
-layout: fr/default
+layout: fr-FR/default
 title: Politique juridique relative à Rust &middot; Rust, le langage de programmation
 ---
 

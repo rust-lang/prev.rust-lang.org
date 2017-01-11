@@ -1,5 +1,5 @@
 ---
-layout: fr/default
+layout: fr-FR/default
 title: Other Installation Methods &middot; The Rust Programming Language
 ---
 
@@ -156,14 +156,14 @@ Past releases can be found in [the archives].
       <a href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz.asc">.asc</a>
     </div>
   </div>
-  <div>    
+  <div>
     <div>
       <span>Beta</span>
       <a href="https://static.rust-lang.org/dist/rustc-beta-src.tar.gz">.tar.gz</a>
       <a href="https://static.rust-lang.org/dist/rustc-beta-src.gz.asc">.asc</a>
     </div>
   </div>
-  <div>    
+  <div>
     <div>
       <span>Nightly</span>
       <a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz">.tar.gz</a>
