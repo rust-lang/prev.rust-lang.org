@@ -1,5 +1,5 @@
 ---
-layout: fr/default
+layout: fr-FR/default
 title: Contribuer à Rust &mdash; la documentation &middot; Rust, le langage de programmation
 ---
 
