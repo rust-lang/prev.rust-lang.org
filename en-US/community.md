@@ -91,6 +91,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#rust-bots][bots_irc] notifications about Rust from a selection of bots
 - [#rust-docs][docs_irc] is the home of the unoffical documentation team
 - [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
+- [#rust-embedded][embedded_irc] is for people doing embedded software in Rust
 - [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
 - [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
 - [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
@@ -107,6 +108,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [crypto_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
 [de_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
 [es_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-es
+[embedded_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-embedded
 [fr_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-fr
 [gamedev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
 [internals_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
