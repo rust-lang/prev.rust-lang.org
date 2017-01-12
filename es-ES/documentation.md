@@ -1,5 +1,5 @@
 ---
-layout: es/default
+layout: es-ES/default
 title:  Documentación de Rust &middot; El lenguaje de programación Rust
 ---
 
