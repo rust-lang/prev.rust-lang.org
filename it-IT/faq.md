@@ -877,54 +877,69 @@ Puoi fare ció con il tipo [`Option`][Option] che puó alternativamente essere `
 Cos'é la "monomorfizzazione"?
 </a></h3>
 
-Monomorphisation specializes each use of a generic function (or structure) with specific instance,
-based on the parameter types of calls to that function (or uses of the structure).
+La monomorfizzazione specializza ciascun utilizzo di una funzione(o struttura) generica in base ai tipi di parametri di ciascuna chiamata(o agli utilizzi della struttura).
 
-During monomorphisisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
+Durante la monomorfizzazione viene generata una nuova versione specializzata della funzione per ciascun set univoco di tipi.
+Questa strategia, giá utilizzata nel C++, genera del codice macchina efficiente, specializzato per ciascuna chiamata e invocato staticamente, con lo svantaggio che una funzione istanziata con tanti tipi diversi 
+puó dare luogo a molta duplicazione nel codice generato, generando quindi eseguibili piú grandi rispetto ad altre strategie di traduzione.
 
-Functions that accept [trait objects](https://doc.rust-lang.org/book/trait-objects.html) instead of type parameters do not undergo monomorphisation. Instead, methods on the trait objects are dispatched dynamically at runtime.
+Le funzioni che accettano [oggetti caratterizzati solo da tratti](https://doc.rust-lang.org/book/trait-objects.html) invece dei tipi non sono soggette alla monomorfizzazione. 
+Invece, i metodi invocati su oggetti tratto sono gestiti dinamicamente durante l'esecuzione.
 
 <h3><a href="#whats-the-difference-between-a-function-and-a-closure-that-doesnt-capture" name="whats-the-difference-between-a-function-and-a-closure-that-doesnt-capture">
-What's the difference between a function and a closure that doesn't capture any variables?
+Qual'é la differenza tra una funzione e una chiusura che non cattura nessuna variabile?
 </a></h3>
 
-Functions and closures are operationally equivalent, but have different runtime representations due to their differing implementations.
+Le funzioni e le chiusure si utilizzano allo stesso modo ma hanno una gestione differente in fase di esecuzione a causa di una implementazione diversa.
 
-Functions are a built-in primitive of the language, while closures are essentially syntactic sugar for one of three traits: [`Fn`][Fn], [`FnMut`][FnMut], and [`FnOnce`][FnOnce]. When you make a closure, the Rust compiler automatically creates a struct implementing the appropriate trait of those three and containing the captured environment variables as members, and makes it so the struct can be called as a function. Bare functions can not capture an environment.
+Le funzioni sono un costrutto fondamentale del linguaggio, mentre le chiusure sono essenzialemente un modo piú semplice per indicare uno di questi tre tratti: [`Fn`][Fn], [`FnMut`][FnMut] e [`FnOnce`][FnOnce]. 
+Quando scrivi una chiusura, il compilatore di Rust automaticamente provvede a generare una struttura implementante il tratto piú idoneo tra quei tre e a catturare le variabili corrette come membri,
+generando anche la possibilitá di utilizzare la struttura come una funzione. Le strutture, al contrario, non catturano alcuna variabile.
 
-The big difference between these traits is how they take the `self` parameter. [`Fn`][Fn] takes `&self`, [`FnMut`][FnMut] takes `&mut self`, and [`FnOnce`][FnOnce] takes `self`.
+La fondamentale differenza tra questi tratti é come acquisiscono il parametro `self`.
+[`Fn`][Fn] prende `&self`, [`FnMut`][FnMut] prende `&mut self` mentre[`FnOnce`][FnOnce] prende `self`.
 
-Even if a closure does not capture any environment variables, it is represented at runtime as two pointers, the same as any other closure.
+Anche se una cattura non cattura alcuna variabile di ambiente, viene rappresentata in fase di esecuzione tramite due puntatori, come qualsiasi altra chiusura.
 
 <h3><a href="#what-are-higher-kinded-types" name="what-are-higher-kinded-types">
-What are higher-kinded types, why would I want them, and why doesn't Rust have them?
+Cosa sono i tipi di piú alto livello, perché sono richiesti e perché Rust non li implementa?
 </a></h3>
 
-Higher-kinded types are types with unfilled parameters. Type constructors, like [`Vec`][Vec], [`Result`][Result], and [`HashMap`][HashMap] are all examples of higher-kinded types: each requires some additional type parameters in order to actually denote a specific type, like `Vec<u32>`. Support for higher-kinded types means these "incomplete" types may be used anywhere "complete" types can be used, including as generics for functions.
+I tipi di piú alto livello sono tipi con parametri non specificati. I costruttori di tipi come [`Vec`][Vec], [`Result`][Result] e [`HashMap`][HashMap] sono tutti esempi di tipi di piú alto livello: 
+ciascuno richiede alcuni tipi aggiuntivi per poter denotare effettivamente il suo tipo, come nel caso di `Vec<u32>`. 
+Il supporto per i tipi di alto livello significa che questi tipi "incompleti" possono essere utilizzati ovunque possano essere utilizzati anche i tipi "completi", non escludendo le funzioni generiche.
 
-Any complete type, like [`i32`][i32], [`bool`][bool], or [`char`][char] is of kind `*` (this notation comes from the field of type theory). A type with one parameter, like [`Vec<T>`][Vec] is of kind `* -> *`, meaning that [`Vec<T>`][Vec] takes in a complete type like [`i32`][i32] and returns a complete type `Vec<i32>`. A type with three parameters, like [`HashMap<K, V, S>`][HashMap] is of kind `* -> * -> * -> *`, and takes in three complete types (like [`i32`][i32], [`String`][String], and [`RandomState`][RandomState]) to produce a new complete type `HashMap<i32, String, RandomState>`.
+Ogni tipo completo, come [`i32`][i32], [`bool`][bool], o [`char`][char] é di tipo `*` (questa notazione deriva dalla teoria correlata con il sistema dei tipi). 
+Un tipo a parametro singolo, come [`Vec<T>`][Vec] é invece `* -> *`, ovvero che vec [`Vec<T>`][Vec] accetta un tipo completo come [`i32`][i32] e ritorna il tipo completo `Vec<i32>`. 
+Un tipo con tre parametri, come [`HashMap<K, V, S>`][HashMap] é di tipo `* -> * -> * -> *` perché accetta tre tipi completi (come [`i32`][i32], [`String`][String] e [`RandomState`][RandomState]) per generare un nuovo tipo completo `HashMap<i32, String, RandomState>`.
 
-In addition to these examples, type constructors can take *lifetime* arguments, which we'll denote as `Lt`. For example, `slice::Iter` has kind `Lt -> * -> *`, because it must be instantiated like `Iter<'a, u32>`.
+In aggiunta a questi esempi, i costruttori di tipo possono accettare dei parametri sul *campo di esistenza*, che denoteremo con `Lt`.
+Ad esempio `slice::Iter` ha il tipo `Lt -> * -> *`, perché va istanziato ad esempio come `Iter<'a, u32>`.
 
-The lack of support for higher-kinded types makes it difficult to write certain kinds of generic code. It's particularly problematic for abstracting over concepts like iterators, since iterators are often parameterized over a lifetime at least. That in turn has prevented the creation of traits abstracting over Rust's collections.
+La mancanza di supporto per i tipi di piú alto livello rende difficile scrivere alcuni tipi di codice generico.
+Risulta particolarmente problematico astrarre su concetti come gli iteratori, dato che essi sono spesso parametrizzati nei confronti di uno specifico campo di esistenza.
+Queste premesse hanno impedito la creazione di tratti che astraggano ulteriormente le collezioni presenti in Rust.
 
-Another common example is concepts like functors or monads, both of which are type constructors, rather than single types.
+Un altro esempio frequente é da ricercare nei concetti di functor e monad, entrambi dei quali sono costruttori di tipi, invece che tipi individuali.
 
-Rust doesn't currently have support for higher-kinded types because it hasn't been a priority compared to other improvements we want to make. Since the design is a major, cross-cutting change, we also want to approach it carefully. But there's no inherent reason for the current lack of support.
+Rust al momento non possiede supporto per i tipi di piú alto livello perché non é stato prioritizzato lo sviluppo di questa funzione rispetto ad altre funzionalitá che rispecchiano meglio gli obiettivi del progetto.
+Essendo la progettazione di funzionalitá importanti come queste un campo minato, vorremmo procedere con cautela, non c'é un'altra ragione particolare sul perché Rust non possiede questa funzionalitá.
 
 <h3><a href="#what-do-named-type-parameters-in-generic-types-mean" name="what-do-named-type-parameters-in-generic-types-mean">
-What do named type parameters like <code>&lt;T=Foo&gt;</code> in generic types mean?
+Cosa significano i parametri fatti tipo <code>&lt;T=Foo&gt;</code> nel codice generico?
 </a></h3>
 
-These are called [associated types](https://doc.rust-lang.org/stable/book/associated-types.html), and they allow for the expression of trait bounds that can't be expressed with a `where` clause. For example, a generic bound `X: Bar<T=Foo>` means "`X` must implement the trait `Bar`, and in that implementation of `Bar`, `X` must choose `Foo` for `Bar`'s associated type, `T`." Examples of where such a constraint cannot be expressed via a `where` clause include trait objects like `Box<Bar<T=Foo>>`.
+Questi sono chiamati [tipi associati](https://doc.rust-lang.org/stable/book/associated-types.html), permettono di indicare limitazioni di tratto non esprimibili con un costrutto `where`. 
+Ad esempio, una limitazione generica `X: Bar<T=Foo>` significa che `X` deve implementare il tratto `Bar` e in tale implementazione di bar `Bar`, `X` deve scegliere `Foo` come il tipo associato di `Bar`, `T`. 
+Gli esempi in cui una limitazione di tal genere non é esprimibile con un costrutto `where` includono i tipi tratto come `Box<Bar<T=Foo>>`.
 
-Associated types exist because generics often involve families of types, where one type determines all of the others in a family. For example, a trait for graphs might have as its `Self` type the graph itself, and have associated types for nodes and for edges. Each graph type uniquely determines the associated types. Using associated types makes it much more concise to work with these families of types, and also provides better type inference in many cases.
+I tipi associati esistono perché spesso i generici riguardano famiglie di tipi, dove un tipo determina tutti gli altri membri. Per esempio, un tratto per grafi potrebbe avere per `Self` il grafo stesso e avere dei tipi correlati per i suoi nodi e vertici. Ciascun tipo grafo identifica univocamente i tipi associato, rendendo molto piú conciso lavorare con questi tipi di strutture e fornendo anche una migliore gestione sulla deduzione dei tipi in molti casi.
 
 <h3><a href="#how-do-i-overload-operators" name="how-do-i-overload-operators">
-Can I overload operators? Which ones and how?
+Posso sovrascrivere gli operatore? Se sí, quali? Come faccio?
 </a></h3>
 
-You can provide custom implementations for a variety of operators using their associated traits: [`Add`][Add] for `+`, [`Mul`][Mul] for `*`, and so on. It looks like this:
+Puoi personalizzare l'implementazione di una varietá di operatori utilizzando i loro tratti associati: [`Add`][Add] per il  `+`, [`Mul`][Mul] per il `*` e via dicendo. Si puó fare cosí:
 
 ```rust
 use std::ops::Add;
@@ -932,21 +947,21 @@ use std::ops::Add;
 struct Foo;
 
 impl Add for Foo {
-    type Output = Foo;
-    fn add(self, rhs: Foo) -> Self::Output {
-        println!("Adding!");
+    type Uscita = Foo;
+    fn add(self, rhs: Foo) -> Self::Uscita {
+        println!("Sommando!");
         self
     }
 }
 ```
 
-The following operators can be overloaded:
+I seguenti operatori possono essere sovrascritti:
 
 | Operation            | Trait                          |
 |:---------------------|:-------------------------------|
 | `+`                  | [`Add`][Add]                   |
 | `+=`                 | [`AddAssign`][AddAssign]       |
-| `binary -`           | [`Sub`][Sub]                   |
+| `- binario`          | [`Sub`][Sub]                   |
 | `-=`                 | [`SubAssign`][SubAssign]       |
 | `*`                  | [`Mul`][Mul]                   |
 | `*=`                 | [`MulAssign`][MulAssign]       |
@@ -971,38 +986,39 @@ The following operators can be overloaded:
 | `mut []`             | [`IndexMut`][IndexMut]         |
 
 <h3><a href="#why-the-split-between-eq-partialeq-and-ord-partialord" name="why-the-split-between-eq-partialeq-and-ord-partialord">
-Why the split between <code>Eq</code>/<code>PartialEq</code> and <code>Ord</code>/<code>PartialOrd</code>?
+Cosa distingue <code>Eq</code>/<code>PartialEq</code> e <code>Ord</code>/<code>PartialOrd</code>?
 </a></h3>
 
-There are some types in Rust whose values are only partially ordered, or have only partial equality. Partial ordering means that there may be values of the given type that are neither less than nor greater than each other. Partial equality means that there may be values of the given type that are not equal to themselves.
+Ci sono alcuni tipi in Rust i cui valori sono solo parzialmente ordinati oppure hanno relazioni di equivalenza parziali. Ordinamento parziale significa che potrebbero esserci valori di quel tipo che non sono né piú piccoli né piú grandi di un altro. Uguaglianza parziale significa che ci potrebbero essere dei valori di un certo tipo che non sono uguali a loro stessi.
 
-Floating point types ([`f32`][f32] and [`f64`][f64]) are good examples of each. Any floating point type may have the value `NaN` (meaning "not a number"). `NaN` is not equal to itself (`NaN == NaN` is false), and not less than or greater than any other floating point value. As such, both [`f32`][f32] and [`f64`][f64] implement [`PartialOrd`][PartialOrd] and [`PartialEq`][PartialEq] but not [`Ord`][Ord] and not [`Eq`][Eq].
+I tipi a virgola mobile ([`f32`][f32] e [`f64`][f64]) sono un buon esempio di questo. Ogni tipo in virgola mobile potrebbe avere il valore `NaN` (ovvero "non un numero"). `NaN` non é uguale a sé stesso (`NaN == NaN` é falso) e nemmeno piú grande o piú piccolo di un qualsiasi valore. 
+Di conseguenza sia [`f32`][f32] che [`f64`][f64] implementano [`PartialOrd`][PartialOrd] e [`PartialEq`][PartialEq] ma non [`Ord`][Ord] e nemmeno [`Eq`][Eq].
 
-As explained in [the earlier question on floats](#why-cant-i-compare-floats), these distinctions are important because some collections rely on total orderings/equality in order to give correct results.
+Come spiegato nella [precedente domanda sui numeri in virgola mobile](#why-cant-i-compare-floats), queste distinzioni sono importanti perché alcune collezioni fanno affidamento sul totale ordinamento/uguaglianza per funzionare.
 
 <h2 id="input-output">Input / Output</h2>
 
 <h3><a href="#how-do-i-read-a-file-into-a-string" name="how-do-i-read-a-file-into-a-string">
-How do I read a file into a <code>String</code>?
+Come legge un file in una <code>String</code>?
 </a></h3>
 
-Using the [`read_to_string()`][read__read_to_string] method, which is defined on the [`Read`][Read] trait in [`std::io`][std-io].
+Usando la funzione [`read_to_string()`][read__read_to_string], definita nel tratto [`Read`][Read] di [`std::io`][std-io].
 
 ```rust
 use std::io::Read;
 use std::fs::File;
 
-fn read_file(path: &str) -> Result<String, std::io::Error> {
+fn leggi_file(path: &str) -> Result<String, std::io::Error> {
     let mut f = try!(File::open(path));
     let mut s = String::new();
-    try!(f.read_to_string(&mut s));  // `s` contains the contents of "foo.txt"
+    try!(f.read_to_string(&mut s));  // `s` contiene il contenuto di "foo.txt"
     Ok(s)
 }
 
 fn main() {
-    match read_file("foo.txt") {
-        Ok(_) => println!("Got file contents!"),
-        Err(err) => println!("Getting file contents failed with error: {}", err)
+    match leggi_file("foo.txt") {
+        Ok(_) => println!("Letti i contenuti del file!"),
+        Err(err) => println!("Non sono riuscito a leggere i contenuti del file, errore: {}", err)
     };
 }
 ```
@@ -1011,49 +1027,57 @@ fn main() {
 Come leggo un file efficientemente?
 </a></h3>
 
-The [`File`][File] type implements the [`Read`][Read] trait, which has a variety of functions for reading and writing data, including [`read()`][read__read], [`read_to_end()`][read__read_to_end], [`bytes()`][read__bytes], [`chars()`][read__chars], and [`take()`][read__take]. Each of these functions reads a certain amount of input from a given file. [`read()`][read__read] reads as much input as the underlying system will provide in a single call. [`read_to_end()`][read__read_to_end] reads the entire buffer into a vector, allocating as much space as is needed. [`bytes()`][read__bytes] and [`chars()`][read__chars] allow you to iterate over the bytes and characters of the file, respectively. Finally, [`take()`][read__take] allows you to read up to an arbitrary number of bytes from the file. Collectively, these should allow you to efficiently read in any data you need.
+Il tipo [`File`][File] implementa il tratto [`Read`][Read] che include una moltitudine di funzioni per leggere e scrivere, includendo [`read()`][read__read], [`read_to_end()`][read__read_to_end], [`bytes()`][read__bytes], [`chars()`][read__chars] e [`take()`][read__take]. 
+Ciascuna di queste funzioni legge un pochino dal file. 
+[`read()`][read__read] legge quanto il sottostante sistema di input fornisce. 
+[`read_to_end()`][read__read_to_end] legge l'intero buffer in un vettore, allocando lo spazio necessario. [`bytes()`][read__bytes] e [`chars()`][read__chars] permettono rispettivamente di iterare sui byte e caratteri del file, respectively. 
+Inoltre, [`take()`][read__take] permette di leggere un numero arbitrario di byte dal file. Insieme, questi metodi permettono di leggere efficientemente ogni tipo di file.
 
-For buffered reads, use the [`BufReader`][BufReader] struct, which helps to reduce the number of system calls when reading.
+Per le letture con buffer utilizza la struttura [`BufReader`][BufReader] che aiuta a ridurre il carico di lavoro al sistema durante la lettura.
 
 <h3><a href="#how-do-i-do-asynchronous-input-output-in-rust" name="how-do-i-do-asynchronous-input-output-in-rust">
-How do I do asynchronous input / output in Rust?
+Come faccio a gestire input e output asincroni in Rust?
 </a></h3>
 
-There are several libraries providing asynchronous input / output in Rust, including [mioco](https://github.com/dpc/mioco), [coio-rs](https://github.com/zonyitoo/coio-rs), and [rotor](https://github.com/tailhook/rotor).
+Ci sono molte librerie che forniscono input / output asincroni in Rust, come [mioco](https://github.com/dpc/mioco), [coio-rs](https://github.com/zonyitoo/coio-rs) e [rotor](https://github.com/tailhook/rotor).
 
 <h3><a href="#how-do-i-get-command-line-arguments" name="how-do-i-get-command-line-arguments">
-How do I get command line arguments in Rust?
+Come faccio a prendere parametri da riga di comando in Rust?
 </a></h3>
 
-The easiest way is to use [`Args`][Args], which provides an iterator over the input arguments.
+Il modo piú semplice é utilizzare [`Args`][Args], che fornisce un iteratore sui parametri da riga di comando.
 
-If you're looking for something more powerful, there are a [number of options on crates.io](https://crates.io/keywords/argument).
+Se stai cercando qualcosa di piú potente, ci sono [una serie di librerie disponbili su crates.io](https://crates.io/keywords/argument).
 
-<h2 id="error-handling">Error Handling</h2>
+<h2 id="error-handling">Gestione degli errori</h2>
 
 <h3><a href="#why-doesnt-rust-have-exceptions" name="why-doesnt-rust-have-exceptions">
-Why doesn't Rust have exceptions?
+Perché Rust non ha le eccezioni?
 </a></h3>
 
-Exceptions complicate understanding of control-flow, they express validity/invalidity outside of the type system, and they interoperate poorly with multithreaded code (a major focus of Rust).
+Le eccezioni complicano la comprensione del flusso del programma, esprimono validitá o invaliditá all'infuori del sistema dei tipi e funzionano male in ambienti multicore(un obiettivo primario per Rust).
 
-Rust prefers a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/stable/book/error-handling.html). This fits more nicely with Rust's control flow, concurrency, and everything else.
+Rust preferisce un approccio alla gestione degli errori basato sui tipi come [spiegato nel dettaglio nel libro](https://doc.rust-lang.org/stable/book/error-handling.html). 
+Questo é piú compatibile con il flusso di controllo tipico di Rust, la concorrenza e tutto il resto.
 
 <h3><a href="#whats-the-deal-with-unwrap" name="whats-the-deal-with-unwrap">
-What's the deal with <code>unwrap()</code> everywhere?
+Perché c'é <code>unwrap()</code> ovunque?
 </a></h3>
 
-`unwrap()` is a function that extracts the value inside an [`Option`][Option] or [`Result`][Result] and panics if no value is present.
+`unwrap()` é una funzione che estrae il valore da una [`Option`][Option] o un [`Result`][Result] e va in errore se il valore non é presente.
 
-`unwrap()` shouldn't be your default way to handle errors you expect to arise, such as incorrect user input. In production code, it should be treated like an assertion that the value is non-empty, which will crash the program if violated.
+`unwrap()` non dovrebbe essere il tuo modo principale per gestire gli errori prevedibili, tipo un errore nell'input dell'utente.
+Nel tuo codice, dovrebbe essere trattato come test per la non nullitá di un valore, pena il mandare in errore il programma.
 
-It's also useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point.
+Viene utilizzato anche per provare velocemente quando non si vuole ancora gestire tutti i casi o negli articoli, quando la gestione degli errori potrebbe distrarre dal resto.
 
 <h3><a href="#why-do-i-get-errors-with-try" name="why-do-i-get-errors-with-try">
-Why do I get an error when I try to run example code that uses the <code>try!</code> macro?
+Perché ottengo un errore quando provo a eseguire codice di esempio che utilizza la macro <code>try!</code>?
 </a></h3>
 
-It's probably an issue with the function's return type. The [`try!`][TryMacro] macro either extracts the value from a [`Result`][Result], or returns early with the error [`Result`][Result] is carrying. This means that [`try`][TryMacro] only works for functions that return [`Result`][Result] themselves, where the `Err`-constructed type implements `From::from(err)`. In particular, this means that the [`try!`][TryMacro] macro cannot work inside the `main` function.
+Quasi sicuramente é un problema con il tipo ritornato dalla funzione. La macro [`try!`][TryMacro] estrae un valore da [`Result`][Result] o ritorna con l'errore portato in [`Result`][Result]. 
+Ció significa che [`try`][TryMacro] vale solo per le funzioni che ritornano un [`Result`][Result], dove il tipo costruito `Err` implementa `From::from(err)`. 
+In particolare ció significa che la macro [`try!`][TryMacro] non é utlizzabile nella funzione `main`.
 
 <h3><a href="#error-handling-without-result" name="error-handling-without-result">
 Is there an easier way to do error handling than having <code>Result</code>s everywhere?
@@ -1316,48 +1340,50 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 <h2 id="libraries">Libraries</h2>
 
 <h3><a href="#how-can-i-make-an-http-request" name="how-can-i-make-an-http-request">
-How can I make an HTTP request?
+Come faccio a fare una richiesta HTTP?
 </a></h3>
 
-The standard library does not include an implementation of HTTP, so you will want to use an external crate. [Hyper](https://github.com/hyperium/hyper) is the most popular, but there are [a number of others as well](https://crates.io/keywords/http).
+La libreria standard non contiene un'implementazione di HTTP quindi dovrai utilizzare un pacchetto esterno.
+[Hyper](https://github.com/hyperium/hyper) é la piú popolare ma ce ne sono [tante altre](https://crates.io/keywords/http).
 
 <h3><a href="#how-can-i-write-a-gui-application" name="how-can-i-write-a-gui-application">
-How can I write a GUI application in Rust?
+Come faccio a scrivere un applicativo con interfaccia grafica in Rust?
 </a></h3>
 
-There are a variety of ways to write GUI applications in Rust. Just check out [this list of GUI frameworks](https://github.com/kud1ing/awesome-rust#gui).
+Ci sono molti modi per fare applicazioni con interfaccia grafica in Rust. 
+Guarda questa lista di [librerie per realizzare interfacce grafiche](https://github.com/kud1ing/awesome-rust#gui).
 
 <h3><a href="#how-can-i-parse-json-xml" name="how-can-i-parse-json-xml">
-How can I parse JSON/XML?
+Come faccio a deserializzare JSON/XML?
 </a></h3>
 
-[Serde](https://github.com/serde-rs/serde) is the recommended library for serialization and deserialization of Rust data to and from a number of different formats.
+[Serde](https://github.com/serde-rs/serde) é la libreria consigliata per serializzare e deserializzare di dati in Rust da e verso una moltitudine di formati.
 
 <h3><a href="#is-there-a-standard-2d-vector-crate" name="is-there-a-standard-2d-vector-crate">
-Is there a standard 2D+ vector and shape crate?
+Esiste una libreria standard per la geometria e vettoriali 2D+?
 </a></h3>
 
-Not yet! Want to write one?
+Non ancora! Puoi farne una tu?
 
 <h3><a href="#how-do-i-write-an-opengl-app" name="how-do-i-write-an-opengl-app">
-How do I write an OpenGL app in Rust?
+Come faccio a creare un applicativo OpenGL in Rust?
 </a></h3>
 
-[Glium](https://github.com/tomaka/glium) is the major library for OpenGL programming in Rust. [GLFW](https://github.com/bjz/glfw-rs) is also a solid option.
+[Glium](https://github.com/tomaka/glium) é la principale libreria per utilizzare OpenGL in Rust. [GLFW](https://github.com/bjz/glfw-rs) é un'altra opzione valida.
 
 <h3><a href="#can-i-write-a-video-game-in-rust" name="can-i-write-a-video-game-in-rust">
-Can I write a video game in Rust?
+Posso fare un videogioco in Rust?
 </a></h3>
 
-Yes you can! The major game programming library for Rust is [Piston](http://www.piston.rs/), and there's both a [subreddit for game programming in Rust](https://www.reddit.com/r/rust_gamedev/) and an IRC channel (`#rust-gamedev` on [Mozilla IRC](https://wiki.mozilla.org/IRC))  as well.
+Certo! La principale libreria per programmare giochi in Rust é [Piston](http://www.piston.rs/) ci  sono sia un [subreddit per la creazione di videogiochi in Rust](https://www.reddit.com/r/rust_gamedev/) e un canale IRC (`#rust-gamedev` su [Mozilla IRC](https://wiki.mozilla.org/IRC)).
 
-<h2 id="design-patterns">Design Patterns</h2>
+<h2 id="design-patterns">Paradigmi di programmazione</h2>
 
 <h3><a href="#is-rust-object-oriented" name="is-rust-object-oriented">
-Is Rust object oriented?
+Rust é orientato agli oggetti?
 </a></h3>
 
-It is multi-paradigm. Many things you can do in OO languages you can do in Rust, but not everything, and not always using the same abstraction you're accustomed to.
+Rust é multi paradigma. Molte cose possibili in linguaggi orientati agli oggetti sono possibili in Rust ma non proprio tutto e non sempre utilizzando un livello di astrazione uguale a quello a cui si é abituati.
 
 <h3><a href="#how-do-i-map-object-oriented-concepts-to-rust" name="how-do-i-map-object-oriented-concepts-to-rust">
 How do I map object-oriented concepts to Rust?
