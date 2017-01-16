@@ -1080,93 +1080,110 @@ Ció significa che [`try`][TryMacro] vale solo per le funzioni che ritornano un 
 In particolare ció significa che la macro [`try!`][TryMacro] non é utlizzabile nella funzione `main`.
 
 <h3><a href="#error-handling-without-result" name="error-handling-without-result">
-Is there an easier way to do error handling than having <code>Result</code>s everywhere?
+Esiste un modo piú semplice per gestire gli errori rispetto a inserire <code>Result</code> ovunque?
 </a></h3>
 
-If you're looking for a way to avoid handling [`Result`s][Result] in other people's code, there's always [`unwrap()`][unwrap], but it's probably not what you want. [`Result`][Result] is an indicator that some computation may or may not complete successfully. Requiring you to handle these failures explicitly is one of the ways that Rust encourages robustness. Rust provides tools like the [`try!` macro][TryMacro] to make handling failures ergonomic.
+Se stai cercando un modo per evitare di gestire i [`Result`][Result] nel codice di altre persone, puoi sempre utilizzare [`unwrap()`][unwrap] ma probabilmente non é ció che desideri. 
+[`Result`][Result] indica che una qualche operazione potrebbe fallire. Richiedere di gestire esplicitamente questi problemi é uno dei tanti modi in cui Rust incoraggia la scrittura di programmi affidabili.
+Rust fornisce degli strumenti come la [macro `try!`][TryMacro] per gestire in ergonomia queste situazioni.
 
-If you really don't want to handle an error, use [`unwrap()`][unwrap], but know that doing so means that the code panics on failure, which usually results in a shutting down the process.
+Se davvero desideri non gestire un errore, utilizza [`unwrap()`][unwrap] ma sappi che fare ció implica che il codice arresterá la sua esecuzione in caso di fallimento, usualmente terminando il processo.
 
-<h2 id="concurrency">Concurrency</h2>
+<h2 id="concurrency">Concorrenza</h2>
 
 <h3><a href="#can-i-use-static-values-across-threads-without-an-unsafe-block" name="can-i-use-static-values-across-threads-without-an-unsafe-block">
-Can I use static values across threads without an <code>unsafe</code> block?
+Posso utilizzare valori statici attraverso i thread senza utilizzare <code>unsafe</code>?
 </a></h3>
 
-Mutation is safe if it's synchronized. Mutating a static [`Mutex`][Mutex] (lazily initialized via the [lazy-static](https://crates.io/crates/lazy_static/) crate) does not require an `unsafe` block, nor does mutating a static [`AtomicUsize`][AtomicUsize] (which can be initialized without lazy_static).
+La mutabilitá é sicura solo se sincronizzata. Mutare un [`Mutex`][Mutex] statico (inizializzato tramite il pacchetto [lazy-static](https://crates.io/crates/lazy_static/)) non richiede un blocco di codice `unsafe` come non lo richiede la modifica di un [`AtomicUsize`][AtomicUsize] 
+(inizializzabile anche senza lazy_static).
 
-More generally, if a type implements [`Sync`][Sync] and does not implement [`Drop`][Drop], it [can be used in a `static`](https://doc.rust-lang.org/book/const-and-static.html#static).
+Piú in generale, se un tipo implementa il tratto [`Sync`][Sync] e non implementa [`Drop`][Drop], esso [é utilizzabile in una `static`](https://doc.rust-lang.org/book/const-and-static.html#static).
 
-<h2 id="macros">Macros</h2>
+<h2 id="macros">Macro</h2>
 
 <h3><a href="#can-i-write-a-macro-to-generate-identifiers" name="can-i-write-a-macro-to-generate-identifiers">
-Can I write a macro to generate identifiers?
+Posso scrivere una macro per generare identificatori?
 </a></h3>
 
-Not currently. Rust macros are ["hygienic macros"](https://en.wikipedia.org/wiki/Hygienic_macro), which intentionally avoid capturing or creating identifiers that may cause unexpected collisions with other identifiers. Their capabilities are significantly different than the style of macros commonly associated with the C preprocessor. Macro invocations can only appear in places where they are explicitly supported: items, method declarations, statements, expressions, and patterns. Here, "method declarations" means a blank space where a method can be put. They can't be used to complete a partial method declaration. By the same logic, they can't be used to complete a partial variable declaration.
+Al momento no.
+Le macro di Rust sono ["hygienic macros"](https://en.wikipedia.org/wiki/Hygienic_macro) che intenzionalmente evitano la cattura o la creazione di identificatori che potrebbero collidere con altri. 
+Le loro capacitá sono significativamente differenti dagli stili delle macro normalmente associate ai preprocessori C. 
+Le invocazioni delle macro possono comparire sono il luoghi dove sono esplicitamente supportate: oggetti, dichiarazioni, espressioni e motivi. 
+Dove per "dichiarazioni" si intende uno spazio dove é possibile inserire un metodo. 
+Non si possono utilizzare le macro per completare una dichiarazione avventura parzialmente e seguendo la stessa logica, nemmeno per completare dichiarazioni parziali di variabili.
 
-<h2 id="debugging">Debugging and Tooling</h2>
+<h2 id="debugging">Debugging e strumentazione</h2>
 
 <h3><a href="#how-do-i-debug-rust-programs" name="how-do-i-debug-rust-programs">
-How do I debug Rust programs?
+Come si debuggano i programmi Rust?
 </a></h3>
 
-Rust programs can be debugged using [gdb](https://sourceware.org/gdb/current/onlinedocs/gdb/) or [lldb](http://lldb.llvm.org/tutorial.html), the same as C and C++. In fact, every Rust installation comes with one or both of rust-gdb and rust-lldb (depending on platform support). These are wrappers over gdb and lldb with Rust pretty-printing enabled.
+Si possono debuggare con [gdb](https://sourceware.org/gdb/current/onlinedocs/gdb/) o [lldb](http://lldb.llvm.org/tutorial.html), allo stesso modo di C e C++. 
+In realtá, ogni installazione di Rust viene fornita con uno o entrambi tra rust-gdb e rust-lldb(a seconda della piattaforma). Questi due componenti estendono gdb e lldb con funzioni per permettere una migliore esperienza.
 
 <h3><a href="#how-do-i-locate-a-panic" name="how-do-i-locate-a-panic">
-<code>rustc</code> said a panic occurred in standard library code. How do I locate the mistake in my code?
+<code>rustc</code> ha detto che del codice della libreria standard é andato in crash, come faccio a trovare il problema?
 </a></h3>
 
-This error is usually caused by [`unwrap()`ing][unwrap] a `None` or `Err` in client code. Enabling backtraces by setting the environment variable `RUST_BACKTRACE=1` helps with getting more information. Compiling in debug mode (the default for `cargo build`) is also helpful. Using a debugger like the provided `rust-gdb` or `rust-lldb` is also helpful.
+Questo errore é spesso causato dall'utilizzo di [`unwrap()`][unwrap] su un `None` o `Err`. 
+Abilitando la variabile di ambiente `RUST_BACKTRACE=1` potresti ottenere ulteriori informazioni. 
+Potrebbe essere di aiuto anche la compilazione in modalitá debug (predefinita per il comando `cargo build`). 
+Si possono anche utilizzare i sopracitati `rust-gdb` o `rust-lldb`.
 
 <h3><a href="#what-ide-should-i-use" name="what-ide-should-i-use">
-What IDE should I use?
+Quale ambiente di sviluppo integrato dovrei utilizzare?
 </a></h3>
 
-There are a number of options for development environment with Rust, all of which are detailed on the official [IDE support page](https://forge.rust-lang.org/ides.html).
+Ci sono molte opzioni per sviluppare in Rust, tutte illustrate sulla pagina ufficiale [sul supporto agli ambienti di sviluppo](https://forge.rust-lang.org/ides.html).
 
 <h3><a href="#wheres-rustfmt" name="wheres-rustfmt">
-<code>gofmt</code> is great. Where's <code>rustfmt</code>?
+<code>gofmt</code> é fantastico. Dov'é <code>rustfmt</code>?
 </a></h3>
 
-`rustfmt` is [right here](https://github.com/rust-lang-nursery/rustfmt), and is being actively developed to make reading Rust code as easy and predictable as possible.
+`rustfmt` é [proprio qui](https://github.com/rust-lang-nursery/rustfmt), sta venendo sviluppato proprio per permettere di rendere il codice Rust il piú semplice e prevedibile possibile.
 
 <h2 id="low-level">Low-Level</h2>
 
 <h3><a href="#how-do-i-memcpy-bytes" name="how-do-i-memcpy-bytes">
-How do I <code>memcpy</code> bytes?
+Come posso usare <code>memcpy</code>?
 </a></h3>
 
-If you want to clone an existing slice safely, you can use [`clone_from_slice`][clone_from_slice].
+Se vuoi clonare una partizione esistente in sicurezza, puoi usare [`clone_from_slice`][clone_from_slice].
 
-To copy potentially overlapping bytes, use [`copy`][copy]. To copy nonoverlapping bytes, use [`copy_nonoverlapping`][copy_nonoverlapping]. Both of these functions are `unsafe`, as both can be used to subvert the language's safety guarantees. Take care when using them.
+Per copiare byte potenzialmente in conflitto usa [`copy`][copy]. 
+Per copiare byte non in conflitto usa [`copy_nonoverlapping`][copy_nonoverlapping]. 
+Entrambe le funzioni elencate sono `unsafe`, visto che possono eludere le garanzie di sicurezza. Sono quindi da utilizzare con attenzione.
 
 <h3><a href="#does-rust-work-without-the-standard-library" name="does-rust-work-without-the-standard-library">
-Can Rust function reasonably without the standard library?
+Puó Rust operare senza la sua libreria standard?
 </a></h3>
 
-Absolutely. Rust programs can be set to not load the standard library using the `#![no_std]` attribute. With this attribute set, you can continue to use the Rust core library, which is nothing but the platform-agnostic primitives. As such, it doesn't include IO, concurrency, heap allocation, etc.
+Sí. I programmi Rust possono scegliere di non caricare la libreria standard utilizzando l'attributo `#![no_std]`. 
+Una volta impostato, é ancora possibile utilizzare la libreria chiave di Rust, composta esclusivamente da primitivi indipendenti dalla piattaforma di esecuzione. Essa non include IO, concorrenza, allocazioni nella heap, ecc.
 
 <h3><a href="#can-i-write-an-operating-system-in-rust" name="can-i-write-an-operating-system-in-rust">
-Can I write an operating system in Rust?
+Posso scrivere un sistema operativo in Rust?
 </a></h3>
 
-Yes! In fact there are [several projects underway doing just that](http://wiki.osdev.org/Rust).
+Sí! In realtá al momento [ci sono molti progetti che stanno facendo proprio questo](http://wiki.osdev.org/Rust).
 
 <h3><a href="#how-can-i-write-endian-independent-values" name="how-can-i-write-endian-independent-values">
-How can I read or write numeric types like <code>i32</code> or <code>f64</code> in big-endian or little-endian format in a file or other byte stream?
+Come faccio a scrivere o leggere tipi numerici come <code>i32</code> o <code>f64</code> in formato big-endian o little-endian in un file o un flusso di bit?
 </a></h3>
 
-You should check out the [byteorder crate](http://burntsushi.net/rustdoc/byteorder/), which provides utilities for exactly that.
+Dovresti provare il [pacchetto byteorder](http://burntsushi.net/rustdoc/byteorder/), che fornisce strumenti proprio per quello.
 
 <h3><a href="#does-rust-guarantee-data-layout" name="does-rust-guarantee-data-layout">
-Does Rust guarantee a specific data layout?
+Rust garantisce una specifica organizzazione dei dati?
 </a></h3>
 
-Not by default. In the general case, `enum` and `struct` layouts are undefined. This allows the compiler to potentially do optimizations like re-using padding for the discriminant, compacting variants of nested `enum`s, reordering fields to remove padding, etc. `enums` which carry no data ("C-like") are eligible to have a defined representation. Such `enums` are easily distinguished in that they are simply a list of names that carry no data:
+Non in maniera predefinita. In generale, `enum` e `struct` non sono definiti. 
+Questo per permettere al compilatore di effettuare delle ottimizzazioni tipo riutilizzare la distanziatura per il discriminante, compattare le varianti di `enum` annidate, riordinare campi per eliminare spaziature, ecc. 
+Le `enum` prive di dati ("simil-C") possono avere rappresentazione definita. Tali `enum` sono facilmente distinte dal fatto che sono semplicemente una lista di nomi senza dati:
 
 ```rust
-enum CLike {
+enum SimilC {
     A,
     B = 32,
     C = 34,
@@ -1174,9 +1191,11 @@ enum CLike {
 }
 ```
 
-The `#[repr(C)]` attribute can be applied to such `enums` to give them the same representation they would have in equivalent C code. This allows using Rust `enum`s in FFI code where C `enum`s are also used, for most use cases. The attribute can also be applied to `struct`s to get the same layout as a C `struct` would.
+L'attributo `#[repr(C)]` se applicato a tali `enum` gli fornisce la stessa rappresentazione che avrebbero avuto nel C. 
+Questo permette nella maggior parte dei casi di utilizzare le `enum` di Rust nella FFI insieme alle `enum` fornite dal C. 
+Tale attributo é applicabile alle `struct` per ottenere la stessa rappresentazione delle `struct` del C.
 
-<h2 id="cross-platform">Cross-Platform</h2>
+<h2 id="cross-platform">Multipiattaforma</h2>
 
 <!--
 ### How do I build a Windows binary that doesn't display the console window?
@@ -1191,123 +1210,129 @@ TODO: Write this answer.
 -->
 
 <h3><a href="#how-do-i-express-platform-specific-behavior" name="how-do-i-express-platform-specific-behavior">
-What's the idiomatic way to express platform-specific behavior in Rust?
+Qual'é il modo consigliato per indicare comportamenti specifici a una piattaforma in Rust?
 </a></h3>
 
-Platform-specific behavior can be expressed using [conditional compilation attributes](https://doc.rust-lang.org/reference.html#conditional-compilation) such as `target_os`, `target_family`, `target_endian`, etc.
+I comportamenti specifici alla piattaforma sono esprimibili utilizzando [attributi di compilazione condizionale](https://doc.rust-lang.org/reference.html#conditional-compilation) come ad esempio `target_os`, `target_family`, `target_endian`, ecc.
 
 <h3><a href="#can-rust-be-used-for-android-ios-programs" name="can-rust-be-used-for-android-ios-programs">
-Can Rust be used for Android/iOS programming?
+Posso programmare per Android/iOS in Rust?
 </a></h3>
 
-Yes it can! There are already examples of using Rust for both [Android](https://github.com/tomaka/android-rs-glue) and [iOS](https://www.bignerdranch.com/blog/building-an-ios-app-in-rust-part-1/). It does require a bit of work to set up, but Rust functions fine on both platforms.
+Sí! Ci sono giá alcuni esempi utilizzanti Rust sia per [Android](https://github.com/tomaka/android-rs-glue) che per [iOS](https://www.bignerdranch.com/blog/building-an-ios-app-in-rust-part-1/). 
+Richiede un pochino di lavoro di preparazione ma Rust funziona correttamente su entrambe le piattaforme.
 
 <h3><a href="#can-i-run-my-rust-program-in-a-web-browser" name="can-i-run-my-rust-program-in-a-web-browser">
-Can I run my Rust program in a web browser?
+Posso eseguire il mio programma Rust in un browser web?
 </a></h3>
 
-Not yet, but there are efforts underway to make Rust compile to the web with [Emscripten](https://kripken.github.io/emscripten-site/).
+Non ancora ma sono in corso degli sforzi per permettere di compilare Rust per il web con [Emscripten](https://kripken.github.io/emscripten-site/).
 
 <h3><a href="#how-do-i-cross-compile-rust" name="how-do-i-cross-compile-rust">
-How do I cross-compile in Rust?
+Come faccio a usare la compilazione incrociata in Rust?
 </a></h3>
 
-Cross compilation is possible in Rust, but it requires [a bit of work](https://github.com/japaric/rust-cross/blob/master/README.md) to set up. Every Rust compiler is a cross-compiler, but libraries need to be cross-compiled for the target platform.
+La compilazione incrociata é possibile in Rust ma richiede [alcune accortezze](https://github.com/japaric/rust-cross/blob/master/README.md) per essere impostata. 
+Ogni compilatore Rust permette anche la compilazione incrociata ma le librerie necessitano di essere ricompilate per ogni piattaforma obiettivo.
 
-Rust does distribute [copies of the standard library](https://static.rust-lang.org/dist/) for each of the supported platforms, which are contained in the `rust-std-*` files for each of the build directories found on the distribution page, but there are not yet automated ways to install them.
+Rust distribuisce [copie della libreria standard](https://static.rust-lang.org/dist/) per ciascuna delle piattaforme supportate, ritrovabili nei file `rust-std-*` presenti nella pagina citata ma ad oggi non esistono metodi automatizzati per installarle.
 
-<h2 id="modules-and-crates">Modules and Crates</h2>
+<h2 id="modules-and-crates">Moduli e pacchetti</h2>
 
 <h3><a href="#what-is-the-relationship-between-a-module-and-a-crate" name="what-is-the-relationship-between-a-module-and-a-crate">
-What is the relationship between a module and a crate?
+Come si correlano moduli e pacchetti?
 </a></h3>
 
-- A crate is a compilation unit, which is the smallest amount of code that the Rust compiler can operate on.
-- A module is a (possibly nested) unit of code organization inside a crate.
-- A crate contains an implicit, un-named top-level module.
-- Recursive definitions can span modules, but not crates.
+- Un pacchetto é un'unitá compilabile, ovvero la minima quantitá di codice su cui il compilatore Rust puó ancora operare.
+- Un modulo é una organizzazione di unitá compilabili(anche annidate) all'interno di un pacchetto.
+- Un pacchetto contiene un modulo implicito e senza nome nel suo livello piú alto.
+- Le definizioni ricorsive sono propagabili ai moduli ma non ai pacchetti.
 
 <h3><a href="#why-cant-the-rust-compiler-find-a-library-im-using" name="why-cant-the-rust-compiler-find-a-library-im-using">
-Why can't the Rust compiler find this library I'm <code>use</code>ing?
+Perché il compilatore Rust non riesce a trovare questa libreria che sto importando con <code>use</code>?
 </a></h3>
 
-There are a number of possible answers, but a common mistake is not realizing that `use` declarations are relative to the crate root. Try rewriting your declarations to use the paths they would use if defined in the root file of your project and see if that fixes the problem.
+Ci sono diverse possibilitá ma un errore comune é non comprendere che le dichiarazioni `use` sono relative al livello base del pacchetto. 
+Prova a riscrivere le tue dichiarazioni in modo che utilizzino i percorsi relativi alla cartella base del pacchett per provare a risolvere il problema.
 
-There are also `self` and `super`, which disambiguate `use` paths as being relative to the current module or parent module, respectively.
+Ci sono anche `self` e `super`, che rendono i percorsi di `use` riferiti rispettivamente al modulo corrente o al modulo padre.
 
-For complete information on `use`ing libraries, read the Rust book's chapter ["Crates and Modules"](https://doc.rust-lang.org/stable/book/crates-and-modules.html).
+Per ulteriori informazioni su come utilizzare  `use`, leggi il capitolo del libro di Rust ["Crates and Modules"](https://doc.rust-lang.org/stable/book/crates-and-modules.html).
 
 <h3><a href="#why-do-i-have-to-declare-modules-with-mod" name="why-do-i-have-to-declare-modules-with-mod">
-Why do I have to declare module files with <code>mod</code> at the top level of the crate, instead of just <code>use</code>ing them?
+Perché devo dichiarare i file dei moduli con <code>mod</code> al posto di poterli invocare con <code>use</code> direttamente?
 </a></h3>
 
-There are two ways to declare modules in Rust, inline or in another file. Here is an example of each:
+Ci sono due modi per dichiarare i moduli in Rust, in linea o in un altro file. Ecco un esempio:
 
 ```rust
-// In main.rs
-mod hello {
+// Dentro a main.rs
+mod ciao {
     pub fn f() {
-        println!("hello!");
+        println!("ciao!");
     }
 }
 
 fn main() {
-    hello::f();
+    ciao::f();
 }
 ```
 
 ```rust
-// In main.rs
-mod hello;
+// Dentro a main.rs
+mod ciao;
 
 fn main() {
-    hello::f();
+    ciao::f();
 }
 
-// In hello.rs
+// Dentro a ciao.rs
 pub fn f() {
-    println!("hello!");
+    println!("ciao!");
 }
 ```
 
-In the first example, the module is defined in the same file it's used. In the second example, the module declaration in the main file tells the compiler to look for either `hello.rs` or `hello/mod.rs`, and to load that file.
+Nel primo esempio, il modulo é definito nello stesso file in cui é utilizzato, nel secondo, la dichiarazione del modulo dice al compilatore di cercare o il file `ciao.rs` o `ciao/mod.rs` e di caricarlo.
 
-Note the difference between `mod` and `use`: `mod` declares that a module exists, whereas `use` references a module declared elsewhere, bringing its contents into scope within the current module.
+Notare la differenza tra `mod` e `use`: `mod` dichiara l'esistenza di un modulo, mentre `use` fa riferimento a un modulo dichiarato altrove, rendendone accessibili i suoi contenuti all'interno del modulo corrente.
 
 <h3><a href="#how-do-i-configure-cargo-to-use-a-proxy" name="how-do-i-configure-cargo-to-use-a-proxy">
-How do I configure Cargo to use a proxy?
+Come configuro Cargo all'utilizzo di un proxy?
 </a></h3>
 
-As explained on the Cargo [configuration documentation](http://doc.crates.io/config.html), you can set Cargo to use a proxy by setting the "proxy" variable under `[http]` in the configuration file.
+Come spiegato nella [guida alla configurazione di Cargo](http://doc.crates.io/config.html), puó essere impostato un proxy impostando la variabile "proxy" sotto `[http]` nel file di configurazione.
 
 <h3><a href="#why-cant-the-compile-find-method-implementations" name="why-cant-the-compile-find-method-implementations">
-Why can't the compiler find the method implementation even though I'm already <code>use</code>ing the crate?
+Perché il compilatore non riesce a trovare l'implementazione del metodo anche se ho giá specificato la direttiva <code>use</code> sul pacchetto che la contiene?
 </a></h3>
 
-For methods defined on a trait, you have to explicitly import the trait declaration. This means it's not enough to import a module where a struct implements the trait, you must also import the trait itself.
+Per i metodi definiti su un tratto, devi esplicitamente importare la dichiarazione del tratto. Questo significa che non é sufficiente importare un modulo dove una `struct` implementa un tratto, bisogna importare anche il tratto stesso.
 
 <h3><a href="#why-cant-the-compiler-infer-use-statements" name="why-cant-the-compiler-infer-use-statements">
-Why can't the compiler infer <code>use</code> declarations for me?
+Perché il compilatore non puó capire gli <code>use</code> da solo?
 </a></h3>
 
-It probably could, but you also don't want it to. While in many cases it is likely that the compiler could determine the correct module to import by simply looking for where a given identifier is defined, this may not be the case in general. Any decision rule in `rustc` for choosing between competing options would likely cause surprise and confusion in some cases, and Rust prefers to be explicit about where names are coming from.
+Probabilmente potrebbe ma non lo vorresti. Mentre in molti casi é probabile che il compilatore possa determinare correttamente il modulo da importare guardando le definizioni questo potrebbe non applicarsi a tutte le casistiche.
+Ogni decisione fatta da `rustc` genererebbe sopresa e confusione in alcuni casi e Rust preferisce essere esplicito riguardo all'origine dei nomi.
 
-For example, the compiler could say that in the case of competing identifier definitions the definition from the earliest imported module is chosen. So if both module `foo` and module `bar` define the identifier `baz`, but `foo` is the first registered module, the compiler would insert `use foo::baz;`.
+Ad esempio, il compilatore potrebbe decidere che nel casi due identificatori fossero in conflitto sia da preferire l'identificatore la cui dichiarazione é meno recente.
+In questo caso sia il modulo `foo` che il modulo `bar` definiscono l'identificatore `baz` ma `foo` viene registrato per primo e quindi il compilatore inserirebbe `use foo::baz;`.
 
 ```rust
 mod foo;
 mod bar;
 
-// use foo::baz  // to be inserted by the compiler.
+// use foo::baz  // ció che sarebbe inserito.
 
 fn main() {
   baz();
 }
 ```
 
-If you know this is going to happen, perhaps it saves a small number of keystrokes, but it also greatly increases the possibility for surprising error messages when you actually meant for `baz()` to be `bar::baz()`, and it decreases the readability of the code by making the meaning of a function call dependent on module declaration. These are not tradeoffs we are willing to make.
+Sapendo questa dinamica, probabilmente risparmieresti qualche carattere ma aumenteresti anche la possibilitá di generare degli errori imprevisti quando in realtá al posto di `baz()` intendevi `bar::baz()`, diminuendo anche la leggibilitá del codice,
+avendo reso la chiamata alla funzione dipendente dall'ordine di dichiarazione. Questi sono compromessi che Rust non ha intenzione di prendere.
 
-However, in the future, an IDE could help manage declarations, which gives you the best of both worlds: machine assistance for pulling in names, but explicit declarations about where those names are coming from.
+Ad ogni modo, in futuro, un ambiente di sviluppo integrato potrebbe assistere nella gestione delle dichiarazioni, fornendo il massimo di entrambi i mondi: assistenza automatica nelle dichiarazioni ma chiarezza sulle origini dei nomi importati.
 
 <!--
 ### How do I package and archive crates from [https://crates.io](https://crates.io)?
@@ -1316,28 +1341,28 @@ TODO: Write this answer.
 -->
 
 <h3><a href="#how-do-i-do-dynamic-rust-library-loading" name="how-do-i-do-dynamic-rust-library-loading">
-How do I do dynamic Rust library loading?
+Come carico dinamicamente librerie in Rust?
 </a></h3>
 
-Import dynamic libraries in Rust with [libloading](https://crates.io/crates/libloading), which provides a cross-platform system for dynamic linking.
+Puoi importare librerie dinamiche in Rust con [libloading](https://crates.io/crates/libloading), che fornisce un sistema multipiattaforma per il link dinamico.
 
 <h3><a href="#why-doesnt-crates-io-have-namespaces" name="why-doesnt-crates-io-have-namespaces">
-Why doesn't crates.io have namespaces?
+Perché crates.io non ha uno spazio dei nomi?
 </a></h3>
 
-Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-package-policies/1041) of [https://crates.io](https://crates.io)'s design:
+Citando la [spiegazione ufficiale](https://internals.rust-lang.org/t/crates-io-package-policies/1041) sul design di [https://crates.io](https://crates.io):
 
-> In the first month with crates.io, a number of people have asked us about the possibility of introducing [namespaced packages](https://github.com/rust-lang/crates.io/issues/58).<br><br>
+> Nel primo mese di crates.io, un buon numero di persone hanno richiesto la possibilitá di introdurre [pacchetti con spazi dei nomi](https://github.com/rust-lang/crates.io/issues/58).<br><br>
 >
-> While namespaced packages allow multiple authors to use a single, generic name, they add complexity to how packages are referenced in Rust code and in human communication about packages. At first glance, they allow multiple authors to claim names like `http`, but that simply means that people will need to refer to those packages as `wycats' http` or `reem's http`, offering little benefit over package names like `wycats-http` or `reem-http`.<br><br>
+> Mentre questi permettono a autori multipli di utilizzare un singolo nome generico, aggiungono complessitá su come i pacchetti vengono indicati nel codice Rust e nella comunicazione su di essi. A una prima occhiata questo permetterebbe a piú persone di associarsi al nome `http`, ma questo implicherebbe che per riferirsi a due pacchetti di autori diversi si debbe parlare ad esempio di `http di wycats` o di `http di reem`, offrendo pochi vantaggi rispetto a nomi come `wycats-http` o `reem-http`.<br><br>
 >
-> When we looked at package ecosystems without namespacing, we found that people tended to go with more creative names (like `nokogiri` instead of "tenderlove's libxml2"). These creative names tend to be short and memorable, in part because of the lack of any hierarchy. They make it easier to communicate concisely and unambiguously about packages. They create exciting brands. And we've seen the success of several 10,000+ package ecosystems like NPM and RubyGems whose communities are prospering within a single namespace.<br><br>
+> Inoltre, osservando questa scelta abbiamo scoperto che le persone tendono a utilizzare nomi piú creativi (come `nokogiri` invece che "libxml2 di tendelove"). Questi nomi creativi tendono a essere brevi e memorabili, in parte anche grazie della mancanza di dipendenze da altri. Rendono anche piú semplice parlare in modo conciso e non ambiguo di pacchetti, creando nuovi nomi altisonanti. Esistono diversi ecosistemi da oltre 10,000 pacchetti come NPM e RubyGems le cui comunitá prosperano anche sotto un singolo spazio dei nomi.<br><br>
 >
-> In short, we don't think the Cargo ecosystem would be better off if Piston chose a name like `bvssvni/game-engine` (allowing other users to choose `wycats/game-engine`) instead of simply `piston`.<br><br>
+> In breve, non pensiamo che l'ecosistema Cargo avrebbe giovamento se Piston scegliesse un nome come `bvssvni/game-engine` (permettendo ad altri di scegliere `wycats/game-engine`) invece che semplicemente `piston`.<br><br>
 >
-> Because namespaces are strictly more complicated in a number of ways, and because they can be added compatibly in the future should they become necessary, we're going to stick with a single shared namespace.
+> Proprio perché gli spazi dei nomi sono piú complessi in diversi ambiti ed essendo la loro aggiunta possibile se necessario, per ora abbiamo intenzione di preservare un singolo spazio dei nomi condiviso.
 
-<h2 id="libraries">Libraries</h2>
+<h2 id="libraries">Librerie</h2>
 
 <h3><a href="#how-can-i-make-an-http-request" name="how-can-i-make-an-http-request">
 Come faccio a fare una richiesta HTTP?
@@ -1386,36 +1411,42 @@ Rust é orientato agli oggetti?
 Rust é multi paradigma. Molte cose possibili in linguaggi orientati agli oggetti sono possibili in Rust ma non proprio tutto e non sempre utilizzando un livello di astrazione uguale a quello a cui si é abituati.
 
 <h3><a href="#how-do-i-map-object-oriented-concepts-to-rust" name="how-do-i-map-object-oriented-concepts-to-rust">
-How do I map object-oriented concepts to Rust?
+Come converto concetti della programmazione orientata agli oggetti in Rust?
 </a></h3>
 
-That depends. There _are_ ways of translating object-oriented concepts like [multiple inheritance](https://www.reddit.com/r/rust/comments/2sryuw/ideaquestion_about_multiple_inheritence/) to Rust, but as Rust is not object-oriented the result of the translation may look substantially different from its appearance in an OO language.
+Dipende. _Esistono_ modi per convertire concetti orientati agli oggetti come [ereditarietá multiple](https://www.reddit.com/r/rust/comments/2sryuw/ideaquestion_about_multiple_inheritence/) a Rust ma non essendo Rust orientato agli oggetti il risultato della conversione potrenne apparire sostanzialmente diverso dalla sua rappresentazione in un linguaggio orientato agli oggetti.
 
 <h3><a href="#how-do-i-configure-a-struct-with-optional-parameters" name="how-do-i-configure-a-struct-with-optional-parameters">
-How do I handle configuration of a struct with optional parameters?
+Come gestisco la configurazione di una `struct` con parametri opzionali? 
 </a></h3>
 
-The easiest way is to use the [`Option`][Option] type in whatever function you're using to construct instances of the struct (usually `new()`). Another way is to use the [builder pattern](https://aturon.github.io/ownership/builders.html), where only certain functions instantiating member variables must be called before the construction of the built type.
+Il modo piú semplice é utilizzare il tipo [`Option`][Option] in qualsiasi funzione venga utilizzata per costruire istanze della struttura (generalmente `new()`). 
+Un altro modo é utilizzare il [metodo del costruttore](https://aturon.github.io/ownership/builders.html), dove alcune funzioni devono essere chiamate dopo la costruzione del tipo.
 
 <h3><a href="#how-do-i-do-global-variables" name="how-do-i-do-global-variables">
-How do I do global variables in Rust?
+Come faccio le variabili globali in Rust?
 </a></h3>
 
-Globals in Rust can be done using `const` declarations for compile-time computed global constants, while `static` can be used for mutable globals. Note that modifying a `static mut` variable requires the use of `unsafe`, as it allows for data races, one of the things guaranteed not to happen in safe Rust. One important distinction between `const` and `static` values is that you can take references to `static` values, but not references to `const` values, which don't have a specified memory location. For more information on `const` vs. `static`, read [the Rust book](https://doc.rust-lang.org/book/const-and-static.html).
+Le globali in Rust possono essere fatte utilizzando la dichiarazione `const` per le globali computate al momento della compilazione, mentre `static` é utilizzabile per globali mutabili. 
+Nota che la modifica di una variabile `static mut` richiede `unsafe`, visto che permette problemi di concorrenza, una cosa impossibile nel Rust sicuro. 
+Una differenza importante tra `const` e `static` é che si possono prendere riferimenti a valori `static` ma non a valori `const` se privi di posizione in memoria specificata. 
+Per ulteriori informazioni su `const` e `static`, leggi [il libro di Rust](https://doc.rust-lang.org/book/const-and-static.html).
 
 <h3><a href="#how-can-i-set-compile-time-constants-that-are-defined-procedurally" name="how-can-i-set-compile-time-constants-that-are-defined-procedurally">
-How can I set compile-time constants that are defined procedurally?
+Come faccio a impostare delle costanti al momento della compilazione proceduralmente?
 </a></h3>
 
-Rust currently has limited support for compile time constants. You can define primitives using `const` declarations (similar to `static`, but immutable and without a specified location in memory) as well as define `const` functions and inherent methods.
+Rust attualmente possiede un supporto limitato per le costanti al momento della compilazione. 
+Puoi definire dei primitivi con le dichiarazioni `const` (simili a `static` ma immutabili e senza una specifica locazione in memoria) funzioni `const` e metodi correlati.
 
-To define procedural constants that can't be defined via these mechanisms, use the [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) crate, which emulates compile-time evaluation by automatically evaluating the constant at first use.
+Per definire costanti procedurali che non possono essere definite tramite questi meccanismi usa il pacchetto [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs), che emula l'assegnazione al momento della compilazione assegnando il valore al primo utilizzo.
 
 <h3><a href="#can-i-run-code-before-main" name="can-i-run-code-before-main">
-Can I run initialization code that happens before main?
+Posso eseguire del codice di inizializzazione prima di main?
 </a></h3>
 
-Rust has no concept of "life before `main`". The closest you'll see can be done through the [`lazy-static`](https://github.com/Kimundi/lazy-static.rs) crate, which simulates a "before main" by lazily initializing static variables at their first usage.
+Rust non consente l'esistenza di qualcosa prima di `main`.
+La cosa piú vicina puó essere fatta tramite il pacchetto [`lazy-static`](https://github.com/Kimundi/lazy-static.rs), simulante una situazione "pre-main" in cui le variabili statiche vengono inizializzate al loro primo utilizzo.
 
 <!--
 
@@ -1436,98 +1467,108 @@ Rust has consistently worked to avoid having features with overlapping purposes,
 -->
 
 <h3><a href="#does-rust-allow-non-constant-expression-values-for-globals" name="does-rust-allow-non-constant-expression-values-for-globals">
-Does Rust allow non-constant-expression values for globals?
+Rust permette di assegnare alle globali espressioni non costanti?
 </a></h3>
 
-No. Globals cannot have a non-constant-expression constructor and cannot have a destructor at all. Static constructors are undesirable because portably ensuring a static initialization order is difficult. Life before main is often considered a misfeature, so Rust does not allow it.
+No. Le globali non possono non avere un costruttore costante e non possiedono un destrutture. I costruttori statici sono sconvenienti perché assicurare un ordine di inizializzazione statico é complesso. Le situazioni "pre-main" sono spesso considerate sconvenienti e Rust non le consente.
 
-See the [C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) about the "static initialization order fiasco", and [Eric Lippert's blog](https://ericlippert.com/2013/02/06/static-constructors-part-one/) for the challenges in C#, which also has this feature.
+Leggi anche il [domande frequenti del C++](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) che fa menzione del "problema dell'ordine di inizializzazione per le static" e il [blog di Eric Lippert](https://ericlippert.com/2013/02/06/static-constructors-part-one/) per le problematiche in C#, che anche esso possiede queste funzioni.
 
-You can approximate non-constant-expression globals with the [lazy-static](https://crates.io/crates/lazy_static/) crate.
+Puoi emulare globali il cui valore non é costante con il pacchetto [lazy-static](https://crates.io/crates/lazy_static/).
 
-<h2 id="other-languages">Other Languages</h2>
+<h2 id="other-languages">Altri linguaggi</h2>
 
 <h3><a href="#how-can-i-use-static-fields" name="how-can-i-use-static-fields">
-How can I implement something like C's <code>struct X { static int X; };</code> in Rust?
+Come posso implementare in Rust quello che in C si puó ottenere con <code>struct X { static int X; };</code> ?
 </a></h3>
 
-Rust does not have `static` fields as shown in the code snippet above. Instead, you can declare a `static` variable in a given module, which is kept private to that module.
+Rust non possiede campi `static` come nel codice sopra. Al loro posto puoi dichiarare una varibile `static` a un determinato modulo, che viene preservata privata all'interno dello stesso.
 
 <h3><a href="#how-can-i-convert-a-c-style-enum-to-an-integer" name="how-can-i-convert-a-c-style-enum-to-an-integer">
-How can I convert a C-style enum to an integer, or vice-versa?
+Come converto una enum simil-C a un intero e vice versa?
 </a></h3>
 
-Converting a C-style enum to an integer can be done with an `as` expression, like `e as i64` (where `e` is some enum).
+Convertire una enum simil-C a un intero é possibile con l'espressione `as` come in `e as i64` (dove `e` é una enum).
 
-Converting in the other direction can be done with a `match` statement, which maps different numeric values to different potential values for the enum.
+La conversione in altre direzioni puó essere svolta tramite `match`, che associa differenti valori numerici a differenti potenziali valori per la enum.
 
 <h3><a href="#why-do-rust-programs-use-more-memory-than-c" name="why-do-rust-programs-use-more-memory-than-c">
-Why do Rust programs use more memory than C?
+Perché i programmi in Rust sono piú grandi su disco di programmi C?
 </a></h3>
 
-There are several factors that contribute to Rust programs having, by default, larger binary sizes than functionally-equivalent C programs. In general, Rust's preference is to optimize for the performance of real-world programs, not the size of small programs.
+Ci sono diversi fattori che contribuiscono alla tendenza di Rust di avere in generale file binari piú grandi di programmi funzionalmente equivalenti in C.
+In generale Rust si focalizza su ottimizzare le prestazioni di programmi reali, non le dimensioni di piccoli programmi.
 
-__Monomorphization__
+__Monomorfizzazione__
 
-Rust monomorphizes generics, meaning that a new version of a generic function or type is generated for each concrete type it's used with in the program. This is similar to how templates work in C++. For example, in the following program:
+Rust monomorfizza i generici, ovvero che viene generata una nuova versione di una funzione generica o tipo per ciascuna dichiarazione effettuata con tipi distinti. Questo assomiglia ai template in C++. Ad esempio, nel programma seguente:
 
 ```rust
 fn foo<T>(t: T) {
-    // ... do something
+    // ... qualcosa
 }
 
 fn main() {
     foo(10);       // i32
-    foo("hello");  // &str
+    foo("ciao");  // &str
 }
 ```
 
-Two distinct versions of `foo` will be in the final binary, one specialized to an `i32` input, one specialized to a `&str` input. This enables efficient static dispatch of the generic function, but at the cost of a larger binary.
+Nel file eseguibile finale vi saranno due versioni diverse di `foo`, una specifica al tipo in ingresso `i32` e l'altra specifica al tipo in ingresso `&str`. 
+Questo permette un efficiente dispacciamento statico della funzione generica ma aumentando le dimensioni dell'eseguibile finale.
 
-__Debug symbols__
+__Simboli di debug__
 
-Rust programs compile with some debug symbols retained, even when compiling in release mode. These are used for providing backtraces on panics, and can be removed with `strip`, or another debug symbol removal tool. It is also useful to note that compiling in release mode with Cargo is equivalent to setting optimization level 3 with rustc. An alternative optimization level (called `s` or `z`) [has recently landed](https://github.com/rust-lang/rust/pull/32386) and tells the compiler to optimize for size rather than performance.
+I programmi Rust sono compilati con i simboli di debug inclusi, anche se in modalitá rilascio. Questi sono utilizzabili per fornire informazioni in caso di crash e possono essere rimossi con `strip`, o un qualsiasi altro strumento per la rimozione di simboli di debug. 
+Risulta utile sapere anche che compilare in modalitá rilascio con Cargo equivale a impostare il livello di ottimizzazione 3 con rustc. 
+Un livello alternativo di ottimizzazione (chiamato `s` o `z`) [aggiunto recentemente](https://github.com/rust-lang/rust/pull/32386) indica al compilatore di focalizzarsi invece che sulle prestazioni, sulle dimensioni dell'eseguibile finale.
 
 __Jemalloc__
 
-Rust uses jemalloc as the default allocator, which adds some size to compiled Rust binaries. Jemalloc is chosen because it is a consistent, quality allocator that has preferable performance characteristics compared to a number of common system-provided allocators. There is work being done to [make it easier to use custom allocators](https://github.com/rust-lang/rust/issues/32838), but that work is not yet finished.
+Rust utilizza jemalloc come il suo allocatore predefinito, questo aumenta le dimensioni dei binari compilati.
+Jemalloc é stato scelto perché é un allocatore consistente e di qualitá con caratteristiche prestazionali preferibili rispetto agli allocatori forniti da molti sistemi. 
+Al momento si stanno facendo esperimenti su come [rendere piú facile l'utilizzo di allocatori personalizzati](https://github.com/rust-lang/rust/issues/32838) ma la funzionalitá non é stata ancora ultimata.
 
-__Link-time optimization__
+__Ottimizzazione del linker__
 
-Rust does not do link-time optimization by default, but can be instructed to do so. This increases the amount of optimization that the Rust compiler can potentially do, and can have a small effect on binary size. This effect is likely larger in combination with the previously mentioned size optimizing mode.
+Rust di base non effettua ottimizzazioni al momento del linking ma gli piú essere detto di farlo.
+Questo incrementa la quantitá di ottimizzazioni effettuabili e puó avere un effetto sulle dimensioni dei binari generati, questo effetto puó essere amplificato se in combinazione con l'opzione di ottimizzazione per dimensioni sopracitata.
 
-__Standard library__
+__Libreria standard__
 
-The Rust standard library includes libbacktrace and libunwind, which may be undesirable in some programs. Using `#![no_std]` can thus result in smaller binaries, but will also usually result in substantial changes to the sort of Rust code you're writing. Note that using Rust without the standard library is often functionally closer to the equivalent C code.
+La libreria standard di Rust include libbacktrace e libunwind, che potrebbero essere non volute in alcuni programmi. 
+Utilizzare `#![no_std]` puó quindi fornire dei binari piú piccoli ma cambia in modo sostanziale il modo in cui il codice deve essere scritto. 
+Nota che utilizzare Rust senza la libreria standard é spesso funzionalmente vicino al codice C equivalente.
 
-As an example, the following C program reads in a name and says "hello" to the person with that name.
+Per esempio, il programma seguente in C legge un nome e dice "ciao" alla persona con quel nome:
 
 ```c
 #include <stdio.h>
 
 int main(void) {
-    printf("What's your name?\n");
+    printf("Come ti chiami?\n");
     char input[100] = {0};
     scanf("%s", input);
-    printf("Hello %s!\n", input);
+    printf("Ciao %s!\n", input);
     return 0;
 }
 ```
 
-Rewriting this in Rust, you may get something like the following:
+Per riscrivere questo programma in Rust scriveresti una cosa del genere:
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("What's your name?");
+    println!("Come ti chiami?");
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
-    println!("Hello {}!", input);
+    println!("Ciao {}!", input);
 }
 ```
 
-This program, when compiled and compared against the C program, will have a larger binary and use more memory. But this program is not exactly equivalent to the above C code. The equivalent Rust code would instead look something like this:
+Questo programma, quando compilato e confrontato con il programma C avrá una dimensione maggiore e utilizzerá piú memoria ma non é esattamente equivalente al codice C che lo precede.
+Il reale equivalente in realtá assomiglia di piú a questo:
 
 ```rust
 #![feature(lang_items)]
@@ -1546,10 +1587,10 @@ extern "C" {
 #[start]
 fn start(_argc: isize, _argv: *const *const u8) -> isize {
     unsafe {
-        printf(b"What's your name?\n\0".as_ptr());
+        printf(b"Come ti chiami?\n\0".as_ptr());
         let mut input = [0u8; 100];
         scanf(b"%s\0".as_ptr(), &mut input);
-        printf(b"Hello %s!\n\0".as_ptr(), &input);
+        printf(b"Ciao %s!\n\0".as_ptr(), &input);
         0
     }
 }
@@ -1559,110 +1600,121 @@ fn start(_argc: isize, _argv: *const *const u8) -> isize {
 #[lang="stack_exhausted"] extern fn stack_exhausted() {}
 ```
 
-Which should indeed roughly match C in memory usage, at the expense of more programmer complexity, and a lack of static guarantees usually provided by Rust (avoided here with the use of `unsafe`).
+Che dovrebbe certamente eguagliare il C nell'utilizzo della memoria, incrementando peró la complessitá e rimuovendo le garanzie fornite dal codice Rust (evitate utilizzando `unsafe`).
 
 <h3><a href="#why-no-stable-abi" name="why-no-stable-abi">
-Why does Rust not have a stable ABI like C does, and why do I have to annotate things with extern?
+Perché Rust non ha una ABI stabile come il C e perché devo annotare le cose con extern?
 </a></h3>
 
-Committing to an ABI is a big decision that can limit potentially advantageous language changes in the future. Given that Rust only hit 1.0 in May of 2015, it is still too early to make a commitment as big as a stable ABI. This does not mean that one won't happen in the future, though. (Though C++ has managed to go for many years without specifying a stable ABI.)
+Dedicarsi a una ABI é una decisione importante che puó limitare i cambiamenti vantaggiosi futuri. Dato che Rust ha raggiunto la versione 1.0 a Maggio 2015 é troppo presto per impegnarsi a costruire una ABI stabile. Ció peró non implica che non possa succedere nel futuro.
+(Nonostante questo il C++ é riuscito a vivere per molti anni senza specificare una ABI stabile.)
 
-The `extern` keyword allows Rust to use specific ABI's, such as the well-defined C ABI, for interop with other languages.
+Il lemma `extern` permette di usare con Rust specifiche ABI, come quella ben definita del C, per interoperare con altri linguaggi.
 
 <h3><a href="#can-rust-code-call-c-code" name="can-rust-code-call-c-code">
-Can Rust code call C code?
+Puó il codice Rust chiamare il codice C?
 </a></h3>
 
-Yes. Calling C code from Rust is designed to be as efficient as calling C code from C++.
+Sí. Chiamare il C da Rust é progettato per avere la stessa efficienza delle chiamate di codice C dal C++.
 
 <h3><a href="#can-c-code-call-rust-code" name="can-c-code-call-rust-code">
-Can C code call Rust code?
+Puó il codice C chiamare il codice Rust?
 </a></h3>
 
-Yes. The Rust code has to be exposed via an `extern` declaration, which makes it C-ABI compatible. Such a function can be passed to C code as a function pointer or, if given the `#[no_mangle]` attribute to disable symbol mangling, can be called directly from C code.
+Sí. Il codice Rust deve essere sposto mediante una dichiarazione `extern`, che lo rende compatibile con la ABI del C. 
+Tale funzione puó essere passata al codice C come puntatore a una funzione o, se con l'attributo `#[no_mangle]` chiamata direttamente dal C.
 
 <h3><a href="#why-rust-vs-cxx" name="why-rust-vs-cxx">
-I already write perfect C++. What does Rust give me?
+Scrivo giá del C++ perfetto. Cosa mi fornisce di piú Rust?
 </a></h3>
 
-Modern C++ includes many features that make writing safe and correct code less error-prone, but it's not perfect, and it's still easy to introduce unsafety. This is something the C++ core developers are working to overcome, but C++ is limited by a long history that predates a lot of the ideas they are now trying to implement.
+Il C++ moderno include molte funzioni che rendono la scrittura di codice sicuro e corretto meno prono ad errori ma non é perfetto e rimane comunque facile introdurre vulnerabilitá.
+Gli sviluppatori del C++ stanno cercando di porre rimedio a queste problematiche ma il C++ é limitato da una lunga storia che impedisce di attuare molte idee che si vorrebbero sperimentare.
 
-Rust was designed from day one to be a safe systems programming language, which means it's not limited by historic design decisions that make getting safety right in C++ so complicated. In C++, safety is achieved by careful personal discipline, and is very easy to get wrong. In Rust, safety is the default. It gives you the ability to work in a team that includes people less perfect than you are, without having to spend your time double-checking their code for safety bugs.
+Rust é stato disegnato sin dal primo giorno per essere un linguaggio di programmazione per sistemi sicuro, questo significa che non é limitato da scelte pregresse che potrebbero impedire di raggiungere il corretto livello di sicurezza come il C++.
+In C++, la sicurezza si ottiene mediante una rigorosa disciplina personale ed é semplice commettere errori mentre in Rust, la sicurezza é predefinita. 
+Rust permette quindi di lavorare in un gruppo di persone meno perfette di te, senza dover spendere il tuo tempo per controllare il codice altrui per controllare potenziali falle di sicurezza nel codice altrui.
 
 <h3><a href="#how-to-get-cxx-style-template-specialization" name="how-to-get-cxx-style-template-specialization">
-How do I do the equivalent of C++ template specialization in Rust?
+Come creo l'equivalente della specializzazione dei template del C++ in Rust?
 </a></h3>
 
-Rust doesn't currently have an exact equivalent to template specialization, but it is [being worked on](https://github.com/rust-lang/rfcs/pull/1210) and will hopefully be added soon. However, similar effects can be achieved via [associated types](https://doc.rust-lang.org/stable/book/associated-types.html).
+Rust attualmente non ha un equivalente esatto alla specializzazione dei template ma [ci si sta lavorando su](https://github.com/rust-lang/rfcs/pull/1210) e verrá probabilmente aggiunta a presto. 
+Ad ogni modo, effetti simili si possono ottenere con i [tipi associati](https://doc.rust-lang.org/stable/book/associated-types.html).
 
 <h3><a href="#how-does-ownership-relate-to-cxx-move-semantics" name="how-does-ownership-relate-to-cxx-move-semantics">
-How does Rust's ownership system relate to move semantics in C++?
+Come si compara il sistema dei possessi in Rust con le semantiche del movimento in C++?
 </a></h3>
 
-The underlying concepts are similar, but the two systems work very
-differently in practice. In both systems, "moving" a value is a way to
-transfer ownership of its underlying resources. For example, moving a
-string would transfer the string's buffer rather than copying it.
+I concetti base sono simili ma i due sistemi differiscono nella pratica.
+In entrambi i sistemi "muovere" un valore é un modo per trasferire il possesso
+delle risorse sottostanti. Ad esempio, muovere una stringa trasferisce il suo buffer
+al posto di copiarla.
 
-In Rust, ownership transfer is the default behavior. For example, if I
-write a function that takes a `String` as argument, this function will
-take ownership of the `String` value supplied by its caller:
+In Rust il trasferimento di possesso é il comportamento standard.
+Ad esempio, se scrivo una funzione che accetta una `String` come parametro,
+questa funzione prenderá possesso del valore della `String` fornita dal chiamante:
 
 ```rust
-fn process(s: String) { }
+fn elabora(s: String) { }
 
-fn caller() {
-    let s = String::from("Hello, world!");
-    process(s); // Transfers ownership of `s` to `process`
-    process(s); // Error! ownership already transferred.
+fn chiamante() {
+    let s = String::from("Ciao mondo!");
+    elabora(s); // Trasferisce la proprietá di `s` a `elabora`
+    elabora(s); // Errore! il possesso é giá stato trasferito.
 }
 ```
 
-As you can see in the snippet above, in the function `caller`, the
-first call to `process` transfers ownership of the variable `s`. The
-compiler tracks ownership, so the second call to `process` results in
-an error, because it is illegal to give away ownership of the same
-value twice. Rust will also prevent you from moving a value if there
-is an outstanding reference into that value.
+Come puoi vedere nel frammento di codice sopra, nella funzione `chiamante`,
+la prima chiamata a `elabora` trasferisce il possesso della variabile `s`.
+Il compilatore tiene traccia del possesso, quindi una seconda chiamata a
+`elabora` genere un errore perché non é consentito trasferire il possesso
+dello stesso valore due volte.
+Rust previene anche il movimento di un valore se vi é ancora un 
+riferimente ad esso.
 
-C++ takes a different approach. In C++, the default is to copy a value
-(to invoke the copy constructor, more specifically). However, callees
-can declare their arguments using an "rvalue reference", like
-`string&&`, to indicate that they will take ownership of some of the
-resources owned by that argument (in this case, the string's internal
-buffer). The caller then must either pass a temporary expression or
-make an explicit move using `std::move`. The rough equivalent to the
-function `process` above, then, would be:
+Il C++ ha un approccio distinto, il comportamento predefinito é infatti
+di copiare un valore (nello specifico invocandone il costruttore della copia).
+Ad ogni modo i chiamati possono dichiarare i loro parametri utilizzando
+un "riferimento rvalore" come `string&&`, per indicare che prenderanno
+possesso di parte delle risorse possedute dal paramentro(in questo caso
+il buffer interno della stringa).
+Il chiamante deve quindi passare un'espressione temporanea o effettuare
+un movimento esplicito utilizzando `std::move`. 
+Un abbozzo della funzione `elabora` sopra sarebbe quindi:
 
 ```
-void process(string&& s) { }
+void elabora(string&& s) { }
 
-void caller() {
-    string s("Hello, world!");
-    process(std::move(s));
-    process(std::move(s));
+void chiamante() {
+    string s("Ciao mondo!");
+    elabora(std::move(s));
+    elabora(std::move(s));
 }
 ```
 
-C++ compilers are not obligated to track moves. For example, the code
-above compiles without a warning or error, at least using the default
-settings on clang. Moreover, in C++ ownership of the string `s` itself
-(if not its internal buffer) remains with `caller`, and so the
-destructor for `s` will run when `caller` returns, even though it has
-been moved (in Rust, in contrast, moved values are dropped only by
-their new owners).
+I compilatori C++ non sono tenuti a tenere traccia dei movimenti.
+Ad esempio, il codice sopra viene compilato senza alcun avviso o errore
+utilizzando l'ultima versione di Clang.
+Inoltre in C++ il possesso della stringa `s` stessa
+(se non del suo buffer interno) rimane in `chiamante`, e quindi il 
+destruttore di `s` verrá eseguito quando `chiamante` ritorna, anche se
+é stato spostato (in Rust, al contrario, i valori spostati sono rimossi
+dai nuovi proprietari).
 
 <h3><a href="#how-to-interoperate-with-cxx" name="how-to-interoperate-with-cxx">
-How can I interoperate with C++ from Rust, or with Rust from C++?
+Come posso interoperare il C++ da Rust, o il Rust da C++?
 </a></h3>
 
-Rust and C++ can interoperate through C. Both Rust and C++ provide a [foreign function interface](https://doc.rust-lang.org/book/ffi.html) for C, and can use that to communicate between each other. If writing C bindings is too tedious, you can always use [rust-bindgen](https://github.com/crabtw/rust-bindgen) to help automatically generate workable C bindings.
+Il Rust é il C++ possono interoperare tramite il C. Sia il Rust che il C++ forniscono una [foreign function interface](https://doc.rust-lang.org/book/ffi.html) per il C, che puó essere utilizzata per comunicare tra di loro. 
+Se scrivere dei collegamenti in C é troppo complicato, puoi sempre utilizzare [rust-bindgen](https://github.com/crabtw/rust-bindgen) per generare automaticamente dei collegamenti C++ funzionanti.
 
 <h3><a href="#does-rust-have-cxx-style-constructors" name="does-rust-have-cxx-style-constructors">
-Does Rust have C++-style constructors?
+Rust possiede dei costruttori in stile C++?
 </a></h3>
 
-No. Functions serve the same purpose as constructors without adding language complexity. The usual name for the constructor-equivalent function in Rust is `new()`, although this is just a convention rather than a language rule. The `new()` function in fact is just like any other function. An example of it looks like so:
+No. Al loro posto si utilizzano delle funzioni, il cui nome usuale é `new()`, ad ogni modo questa é semplicemente una convenzione e non una regola del linguaggio.
+La funzione `new()` é semplicemente un'altra funzione. Un esempio di ció é questo:
 
 ```rust
 struct Foo {
@@ -1683,41 +1735,45 @@ impl Foo {
 ```
 
 <h3><a href="#does-rust-have-copy-constructors" name="does-rust-have-copy-constructors">
-Does Rust have copy constructors?
+Rust possiede dei costruttori copia?
 </a></h3>
 
-Not exactly. Types which implement `Copy` will do a standard C-like "shallow copy" with no extra work (similar to "plain old data" in C++). It is impossible to implement `Copy` types that require custom copy behavior. Instead, in Rust "copy constructors" are created by implementing the `Clone` trait, and explicitly calling the `clone` method. Making user-defined copy operators explicit surfaces the underlying complexity, making it easier for the developer to identify potentially expensive operations.
+Non esattamente. I tipi che implementano `Copy` faranno una copia simil-C senza alcun lavoro aggiuntivo.
+Non é possibile peró implementare tipi `Copy` che richiedono un comportamento personalizzato alla copia.
+Al loro posto in Rust i costruttori copia sono creati implementando il tratto e successivamente chiamando il metodo `clone`.
+Permettere di definire manualmente l'operatore copia permette di ridurre la complessitá, facilitando per lo sviluppatore l'identificazione di operazioni potenzialmente costose.
 
 <h3><a href="#does-rust-have-move-constructors" name="does-rust-have-move-constructors">
-Does Rust have move constructors?
+Rust possiede dei costruttori di movimento?
 </a></h3>
 
-No. Values of all types are moved via `memcpy`. This makes writing generic unsafe code much simpler since assignment, passing and returning are known to never have a side effect like unwinding.
+No. I valori di tutti i tipi sono mossi tramite `memcpy`. 
+Questo permette di scrivere del codice `unsafe` generico molto piú semplice, dato che l'assegnazione, il passaggio e il ritorno di valori sono privi di effetti collaterali.
 
 <h3><a href="#compare-go-and-rust" name="compare-go-and-rust">
-How are Go and Rust similar, and how are they different?
+In cosa si assomigliano Go e Rust, in cosa sono invece diversi?
 </a></h3>
 
-Rust and Go have substantially different design goals. The following differences are not the only ones (which are too numerous to list), but are a few of the more important ones:
+Rust e Go hanno degli obiettivi molto differenti. Le differenze seguenti non sono le uniche (sarebbero troppe per elencarle) ma eccone alcune tra le piú importanti:
 
-- Rust is lower level than Go. For example, Rust does not require a garbage collector, whereas Go does. In general, Rust affords a level of control that is comparable to C or C++.
-- Rust's focus is on ensuring safety and efficiency while also providing high-level affordances, while Go's is on being a small, simple language which compiles quickly and can work nicely with a variety of tools.
-- Rust has strong support for generics, which Go does not.
-- Rust has strong influences from the world of functional programming, including a type system which draws from Haskell's typeclasses. Go has a simpler type system, using interfaces for basic generic programming.
+- Rust é di piú basso livello di Go. Ad esempio, Rust non richiede un garbage collector, mentre Go sí. In generale Rust permette un livello di controllo comparabile con il C o il C++.
+- Rust si focalizza sul garantire sicurezza ed efficienza mantenendo astrazioni di alto livello mentre Go vuole essere un linguaggio compatto e semplice che compila velocemente e puó funzionare con molti strumenti.
+- Rust supporta la programmazione generica, Go no.
+- Rust ha forti influenze dal mondo della programmazione funzionale, includendo il sistema dei tipi derivato dalle typeclasses di Haskell. Go ha un sistema dei tipi piú semplici, utilizzanti interfacce compatibili con la programmazione generica.
 
 <h3><a href="#how-do-rust-traits-compare-to-haskell-typeclasses" name="how-do-rust-traits-compare-to-haskell-typeclasses">
-How do Rust traits compare to Haskell typeclasses?
+Come si comparano i tratti di Rust con le typeclasses di Haskell?
 </a></h3>
 
-Rust traits are similar to Haskell typeclasses, but are currently not as powerful, as Rust cannot express higher-kinded types. Rust's associated types are equivalent to Haskell type families.
+I tratti in Rust somigliano alle typeclasses di Haskell ma attualmente non sono cosí potenti, dato che Rust non puó esprimere i tipi di piú altro livello. I tipi associati di Rust sono gli equivalenti delle famiglie di tipi di Haskell.
 
-Some specific difference between Haskell typeclasses and Rust traits include:
+Alcune differenze specifiche tra le typeclasses di Haskell e i tratti di Rust includono:
 
-- Rust traits have an implicit first parameter called `Self`. `trait Bar` in Rust corresponds to `class Bar self` in Haskell, and `trait Bar<Foo>` in Rust corresponds to `class Bar foo self` in Haskell.
-- "Supertraits" or "superclass constraints" in Rust are written `trait Sub: Super`, compared to `class Super self => Sub self` in Haskell.
-- Rust forbids orphan instances, resulting in different coherence rules in Rust compared to Haskell.
-- Rust's `impl` resolution considers the relevant `where` clauses and trait bounds when deciding whether two `impl`s overlap, or choosing between potential `impl`s. Haskell only considers the constraints in the `instance` declaration, disregarding any constraints provided elsewhere.
-- A subset of Rust's traits (the ["object safe"](https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md) ones) can be used for dynamic dispatch via trait objects. The same feature is available in Haskell via GHC's `ExistentialQuantification`.
+- I tratti in Rusta hanno un primo parametro implicito chiamato `Self`. `trait Bar` in Rust corrisponde a `class Bar self` in Haskell e `trait Bar<Foo>` in Rust corrisponde a `class Bar foo self` in Haskell.
+- I "Supertratti" o "limitatori di superclass" in Rust sono scritti `trait Sub: Super`, mentre in Haskell `class Super self => Sub self`.
+- Rust vieta istanze orfanes, indicando regole di coerenza differenti tra Rust e Haskell.
+- La risoluzione dell `impl` di Rust considera le clausole `where` e i relativi tratti per decidere se due `impl` si sovrappongono, o per scegliere tra diverse `impl` possibili. Haskell considera ció solo nelle dichiarazioni `instance`, ignorando ogni limitazione posta altrove.
+- Un sottoinsieme dei tratti di Rust (Quelli ["object safe"](https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md)) puó essere usato per il dispacciamento dinamico mediante tratti. La stessa funzionalitá é disponibile in Haskell attraverso il metodo di GHC `ExistentialQuantification`.
 
 <h2 id="documentation">Documentazione</h2>
 

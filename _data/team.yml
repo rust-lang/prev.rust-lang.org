@@ -52,6 +52,9 @@ people:
     name: Emily Dunham
   erickt:
     name: Erick Tryzelaar
+  frewsxcv:
+    name: Corey Farwell
+    irc: frewsxcv
   Gankro:
     name: Alexis Beingessner
     ex-teams: ["libs"]
@@ -152,7 +155,7 @@ teams:
     email: community-team@rust-lang.org
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
-    members: [steveklabnik, GuillaumeGomez, jonathandturner, peschkaj]
+    members: [steveklabnik, GuillaumeGomez, jonathandturner, peschkaj, frewsxcv]
   - name: Moderation team
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]

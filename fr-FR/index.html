@@ -1,0 +1,62 @@
+---
+layout: fr-FR/basic
+title: Langage de programmation Rust
+---
+  <!-- -->
+    <div class="row pitch-row">
+      <div class="col-md-8">
+        <p class="pitch">
+          <b>Rust</b> est un langage de programmation système ultra-rapide,
+          qui prévient les erreurs de segmentation
+          et garantit la sûreté entre threads.
+          <br/>
+          <a href="https://doc.rust-lang.org/book/README.html">Montre-moi&nbsp;!</a>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <a class="release-button" href="install.html">
+          <div class="release-version">Install Rust <span>{{ site.stable }}</span></div>
+        </a>
+        <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
+      </div>
+    </div>
+
+    <div class="row code-row">
+      <div class="col-md-4">
+      <h2>Fonctionnalités</h2>
+      <ul class="laundry-list">
+        <li>abstractions sans coût</li>
+        <li>sémantique de mouvement</li>
+        <li>garantie de sûreté de la mémoire</li>
+        <li>fils d’exécution sans accès concurrent</li>
+        <li>généricité avec les <i>traits</i></li>
+        <li>filtrage par motif</li>
+        <li>inférence de type</li>
+        <li>environnement d’exécution minimal</li>
+        <li><i>bindings</i> C efficaces</li>
+      </ul>
+      </div>
+      <div class="col-md-8">
+        <div id="active-code">
+          <button type="button" class="btn btn-primary btn-sm" id="run-code">Exécuter</button>
+          <div id="editor">{% include fr-FR/example.rs %}</div>
+          <div id="result">
+            <a id="playlink"><i class="icon-link-ext"></i></a>
+          </div>
+        </div>
+        <div id="static-code">{% include fr-FR/example.rs.html %}</div>
+        <div class="more-examples">
+          <a href="http://rustbyexample.com/">Plus d’exemples</a>
+        </div>
+      </div>
+    </div>
+
+  <script type="text/javascript">
+    {% include include.js %}
+
+    include("https://cdn.jsdelivr.net/ace/1.1.3/noconflict/ace.js", function () {
+      include("https://cdn.jsdelivr.net/ace/1.1.3/noconflict/mode-rust.js", function () {
+        {% include editor.js %}
+      });
+    });
+  </script>

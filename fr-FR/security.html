@@ -1,0 +1,57 @@
+---
+layout: fr-FR/default
+title: Règles relatives à la sécurité de Rust &middot; Rust, le langage de programmation
+---
+
+<h1>Règles relatives à la sécurité de Rust</h1>
+
+<h2>Rapporter un bug</h2>
+
+<p>La sécurité est l'un des principes fondamentaux de Rust. Aussi, nous souhaitons nous assurer que Rust dispose d'une implémentation sûre. Merci de prendre le temps de divulguer de façon responsable tout problème que vous pourriez trouver.</p>
+
+<p>Tous les bugs relatifs à la sécurité de Rust doivent être rapportés par courrier électronique à cette adresse : <a href="mailto:security@rust-lang.org">security@rust-lang.org</a>. Les destinataires de cette adresse forment une équipe restreinte dédiée à la sécurité. Nous prendrons connaissance de votre e-mail dans les 24 heures qui suivent sa réception et vous recevrez une réponse plus détaillée en 48 heures qui indique les étapes qui seront entreprises suite à votre rapport. Si vous le souhaitez, vous pouvez chiffrer votre rapport en utilisant <a href="../rust-security-team-key.gpg.ascii">notre clé publique</a>. Cette clé est également disponible <a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xEFB9860AE7520DAC">sur le serveur de clés du MIT</a> et est <a href="#key">reproduite ci-après</a>.
+
+<p>Cette adresse électronique reçoit de nombreux spams. Aussi, assurez-vous d'indiquer un sujet descriptif afin que votre rapport ne soit pas ignoré. Suite à la première réponse relative à votre rapport, l'équipe de sécurité fera son maximum pour vous tenir informé de l'avancé d'un correctif et de la publication. Suivant les recommandations de la <a href="https://en.wikipedia.org/wiki/RFPolicy">RFPolicy</a>, ces informations seront au moins envoyées tous les cinq jours. En réalité, ce délai est généralement de 24-48 heures.</p>
+
+<p>Si vous n'avez pas reçu de réponse à votre courrier électronique dans les 48 heures qui ont suivi ou que vous n'avez pas reçu d'informations de la part de l'équipe de sécurité depuis plus de cinq jours, voici quelques étapes à suivre :</p>
+
+<ul>
+    <li>Contactez directement le coordinateur actuel de l'équipe de sécurité (<a href="mailto:steve@steveklabnik.com">Steve Klabnik</a> (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xDAE717EFE9424541">clé publique</a>)).</li>
+    <li>Contactez directement son suppléant (<a href="mailto:andersrb@gmail.com">Brian Anderson</a> (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x16457A6368CFF26F">clé publique</a>)).</li>
+    <li>Rédigez une demande sur <a href="https://internals.rust-lang.org/">les forums internes</a> ou demandez sur le canal IRC #rust-internals sur irc.mozilla.org.</li>
+</ul>
+
+<p>Veuillez noter que les forums de discussion, ainsi que le canal #rust-internals sont des espaces publics. Lorsque vous utilisez ces moyens pour nous contacter, merci de ne pas discuter du problème de sécurité. Indiquez simplement que vous souhaitez contacter un membre de l'équipe de sécurité.</p>
+
+<h2>Règles de divulgation</h2>
+
+<p>Le processus de divulgation du projet Rust s'effectue en cinq étapes.</p>
+
+<ol>
+<li>Le rapport de sécurité est reçu et est affecté à un responsable. C'est cette personne qui coordinera le processus de correction et de sa diffusion.</li>
+
+<li>Le problème est confirmé et la liste de l'ensemble des versions impactées est dressée.</li>
+
+<li>Le code est audité afin de repérer éventuellement tout problème analogue..</li>
+
+<li>Des correctifs sont préparés pour toutes les versions qui sont encore maintenues. Ces correctifs ne sont pas transmis sur le dépôt public mais conservés de façon locale en attendant l'annonce.</li>
+
+<li>À la date d'embargo, <a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">la liste de diffusion relative à la sécurité de Rust</a> reçoit une copie de l'annonce. Les modifications des correctifs sont envoyées sur le dépôt public et les nouvelles versions sont déployées sur rust-lang.org. Six heures après cette première diffusion, une copie d'information est publiée sur le blog Rust.</li> </ol>
+
+<p>Ce processus peut prendre un certain temps, notamment lorsqu'il est nécessaire de coordiner différents mainteneurs impliqués sur d'autres projets. Tous les efforts seront faits afin de résoudre le bug de la façon la plus réactive qui soit. Toutefois, il est incontournable de respecter le processus de déploiement des versions afin de s'assurer que la divulgation est gérée de façon cohérente.</p>
+
+<h2>Recevoir les informations relatives à la sécurité</h2>
+
+<p>Afin de recevoir les annonces liées à la sécurité du projet Rust, la meilleure méthode consiste à s'abonner à <a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">la liste de diffusion pour les annonces de sécurité</a>. Cette liste de diffusion reçoit peu d'e-mails et reçoit les notifications publiques lorsque l'embargo est levé.</p>
+
+<h3>Notifications en avance</h3>
+
+<p>Nous annoncerons les vulnérabilités 72 heures avant la levée de l'embargo sur <a href="http://oss-security.openwall.org/wiki/mailing-lists/distros">distros@openwall</a> afin que les distributions Linux puissent mettre à jour leurs paquets.</p>
+
+<h2>Commentaires relatifs à ces règles</h2>
+
+<p>Si vous souhaitez nous faire part de suggestions pour améliorer ces règles, merci de nous écrire à <a href="mailto:security@rust-lang.org">security@rust-lang.org</a>.</p>
+
+<h2 id="key">Clé PGP en texte simple</h2>
+
+<pre><code>{% include rust-security-team-key.gpg.ascii %}</code></pre>
