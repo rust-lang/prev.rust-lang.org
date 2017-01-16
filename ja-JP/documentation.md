@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: ja-JP/default
 title:  Rust Documentation &middot; The Rust Programming Language
 ---
 

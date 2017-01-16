@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: ja-JP/default
 title: Other Installation Methods &middot; The Rust Programming Language
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: ja-JP/default
 title: Contributing to Rust &mdash; documentation &middot; The Rust Programming Language
 ---
 

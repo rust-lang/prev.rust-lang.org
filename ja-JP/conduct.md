@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: ja-JP/default
 title: The Rust Code of Conduct &middot; The Rust Programming Language
 ---
 
