@@ -1,62 +1,44 @@
 ---
 layout: ja-JP/default
-title: Contributing to Rust &mdash; community building &middot; The Rust Programming Language
+title: Rustへ貢献する &mdash; コミュニティの形成 &middot; The Rust Programming Language
 ---
 
-# Contributing to Rust &mdash; community building
+# Rustへ貢献する &mdash; コミュニティの形成
 
-Help newbies, spread the word, meet interesting people. Make Rust the
-shining example of open source development that we all want it to be.
+初心者を助ける、情報を広げる、面白い人に会う。
+Rustを我々の羨望するオープンソース開発の輝かしき模範にしましょう。
 
-Keep an eye on the [#rust-beginners] channel. This is where we direct
-new Rust programmers to ask for help, and it is vital when they do
-that they receive prompt, accurate, and courteous responses. Likewise,
-[Stack Overflow], [users.rust-lang.org], and [/r/rust], are all forums
-where Rust programers commonly look for assistance. If you want
-training on answering programmers' questions [read this
-guide][helpful].
+[#rust-beginners]チャネルを見ておきましょう。
+Rustの入門者にはそこで助けを求めるように指導していますし、助けを求めた時に即座に、正確で、丁寧な返事が来ると活気があります。
+同様に、[Stack Overflow]、[users.rust-lang.org]、そして[/r/rust]はRustプログラマがよく助力を求める場所です。
+プログラマの質問に答えるのを練習したいなら、[このガイド][helpful]を読むと良いでしょう。
 
-If you are already experienced in some area of the project, please
-look out for potential [E-easy] bugs. When you see an
-easy issue on the bug tracker that you know how to fix, write up a
-description of the fix and tag it with E-easy. Note that what is
-obvious to you is not obvious to a new Rust contributor, and its
-important to describe the problem and the solution clearly. It is
-thus also helpful to triage E-easy bugs for poor descrptions and
-improve them.
+もしあるプロジェクトに既に馴れているなら、[E-easy]に出来るようなバグを見付けて下さい。
+イシュートラッカー上で簡単なバグを見付けてどう直せば良いか分かる時はどう直せば良いかを書いてE-easyタグを付けて下さい。
+但し、自分にとって明らかでも他人にとっては明らかでなく、問題と解決策を明確にすることが重要だとうことを覚えておいて下さい。
+なのであまり説明のないE-easyのついたバグにもっと説明を付けるのも良い貢献です。
 
-Experienced developers who are patient and communicate clearly should
-consider [mentoring new contributors][mentor]. Tag easy issues with
-[E-mentor] and mention in a comment that you will mentor. Expect people
-to contact you about the issue, and attempt to respond promptly.
+忍耐があってコミュニケーション力のある玄人開発者は[新たなコントリビュータへのメンタリング][mentor]を考えるべきです。
+簡単なイシューに[E-mentor]タグを付け、自分がメンターをやると言及しましょう。
+誰かがそのイシューについて連絡を取ってくる筈なので即座に返事するように心掛けましょう。
 
-Maintaining entry-level tasks is good not only for The Rust Project
-itself but all projects. If your project has a consistent supply of
-entry-level tasks you might institute such a program
-yourself. ***Curating entry-level tasks is one of the most effective
-methods of bringing new programmers into the project***. If you want
-training on mentoring new contributors [read this
-guide][mentor-guide].
+入門向けのタスクのメンターをするのはRustプロジェクトだけでなく、全てのプロジェクトにとって価値があります。
+自身のプロジェクトで入門向けのタスクが安定して出てくるなら、そのようなプログラムを自ら始めるべきかもしれません。
+**入門向けのタスクを捜すことはプロジェクトに新たなプログラマを加えるための最も効果的な手段の一つです**。
+もし新たなコントリビュータを育成したいなら[このガイド][mentor-guide]を読んで下さい。
 
-Talk about what you are working on in the weekly "what's everyone
-working on this week" threads on [/r/rust] and [users.rust-lang.org],
-and indicate what you need help with. These are great starting points
-for collaboration.
+毎週[/r/rust]や[users.rust-lang.org]で"what's everyone working on this week"でその週何をしたかを話し、何で困っているかを示しましょう。
+協業するための良いきっかけです。
 
-Advocate Rust in your own local community. Rust [user groups] and [events]
-are a unique and exciting part of the Rust experience: there are so
-many, and they are everywhere! If you haven't been yet, go and enjoy
-new experiences. If there is nothing Rusty going on near you then
-consider organizing something. You can poll for interest and announce
-events on [/r/rust] or [users.rust-lang.org]. Contact the [community
-team] to put events on the calendar, and thus be announced on [This
-Week in Rust].
+地域のコミュニティでRustを布教しましょう。[ユーザグループ][user groups]と[イベント][events]はRustの体験の中でも特有で楽しいものです。
+たくさんありますし、どこにでもあります！もし行ったことがないなら、一度行って新たな体験をしてみましょう。
+もし近くにRust関連のイベントがないなら、自分でイベントを立てることも考えてみて下さい。
+[/r/rust]や[users.rust-lang.org]で興味のありそうな人を調べて告知することが出来ます。
+[コミュニティチーム][community team]にイベントをカレンダーに追加してもらえば[This Week in Rust]でアナウンスされます。
 
-Remember as you are advocating Rust though to be considerate of
-others' views &mdash; not everybody is going to be receptive to Rust, and
-that's just fine.
+Rustを布教するにあたって、他人の気持も考慮しましょう &mdash; 全員が全員Rustを受容する訳ではありませんし、それはそれで結構なことです。
 
-Meet other Rust community builders in [#rust-community].
+[#rust-community]でRustのコミュニティを形成している人に会いましょう。
 
 <!--
 Other ideas:
