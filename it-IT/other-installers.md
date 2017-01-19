@@ -14,7 +14,7 @@ title: Altri metodi di installazione &middot; Linguaggio di programmazione Rust
 <span id="which"></span>
 
 Rust funziona su molte piattaforme e ci sono molti modi per installare Rust.
-Se vuoi installare Rust nel modo piú semplice e consigliato, segui le istruzioni
+Se vuoi installare Rust nel modo più semplice e consigliato, segui le istruzioni
 della [pagina di installazione principale][installation page].
 
 Quella pagina descrive l'installazione tramite [`rustup`], uno strumento che
@@ -23,7 +23,7 @@ supportate da Rust.
 Perché quindi uno dovrebbe desiderare di _non_ utilizzarlo?
 - Installazione offline. `rustup` scarica componenti dalla rete su richiesta.
   se hai bisogno di installare Rust senza una connessione a internet, `rustup`
-  non é adatto.
+  non è adatto.
 - Preferenza per il gestore di pacchetti di sistema. Su Linux in particolare may
   anche su macOS con [Homebrew] e in Windows con [Chocolatey], gli sviluppatori
   a volte preferiscono installare Rust con il gestore di pacchetti del loro
@@ -32,15 +32,15 @@ Perché quindi uno dovrebbe desiderare di _non_ utilizzarlo?
   uno script scaricato da `curl`. Alcuni non si fidano di questa operazione
   e preferiscono scaricare e installare Rust in autonomia.
 - Verifica firme. Anche se `rustup` effettua download tramite HTTPS,
-  l'unico modo ad oggi possibile per verificare le firme digitali é 
+  l'unico modo ad oggi possibile per verificare le firme digitali è 
   l'installazione manuale.
 - Installazione da interfaccia grafica e integrazione con "Aggiungi/Rimuovi Programmi"
   su Windows. `rustup` funziona da riga di comando e non registra le sue installazioni
-  nel menu di Windows come gli altri programmi. Se preferisci un'installazione piú
+  nel menu di Windows come gli altri programmi. Se preferisci un'installazione più
   tipica su Windows sono disponibili gli installatori indipendenti `.msi`.
-  In futuro `rustup` includerá un'interfaccia grafica su Windows.
+  In futuro `rustup` includerà un'interfaccia grafica su Windows.
 
-Il supporto di Rust alle piattaforme é definito in [tre fasce][three tiers], che
+Il supporto di Rust alle piattaforme è definito in [tre fasce][three tiers], che
 corrispondono strettamente con il metodo di installazione disponibile: in generale,
 Rust fornisce eseguibili per tutte le piattaforme di prima e seconda fascia,
 rendendoli disponibili anche allo strumento `rustup`.
@@ -56,14 +56,14 @@ Il modo per installare `rustup` differisce tra le piattaforme:
 
 * Sugli Unix, esegui `curl https://sh.rustup.rs -sSf | sh` nella tua riga di comando.
   Questo scarica e esegue [`rustup-init.sh`], che a sua volta
-  scarica e esegue la versione di `rustup-init` piú 
+  scarica e esegue la versione di `rustup-init` più 
   adatta alla piattaforma corrente.
 * Su Windows, scarica e installa [`rustup-init.exe`].
 
-`rustup-init` puó essere configurato interattivamente, tutte le operazioni
+`rustup-init` può essere configurato interattivamente, tutte le operazioni
 possono inoltre essere comandate da degli argomenti da riga di comando da
 fornire allo script di installazione. Passando `--help` a `rustup-init`
-fará mostrare gli argomenti disponibili:
+farà mostrare gli argomenti disponibili:
 
 ```
 curl https://sh.rustup.rs -sSf | sh -s -- --help
@@ -98,13 +98,13 @@ permettono l'installazione in assenza di connessione a internet.
 Sono disponibili in tre forme: pacchetti compressi tar(estensione `.tar.gz`),
 funzionanti in ambienti Unix, installatori Windows(`.msi`) e pacchetti applicativi
 Mac (`.pkg`), questi installatori contengono `rustc`, `cargo`, `rustdoc`, la libreria
-standard e la documentazione standard ma non forniscono le possibilitá di compilazione
+standard e la documentazione standard ma non forniscono le possibilità di compilazione
 incrociata offerte da `rustup`.
 
-Le ragioni piú comuni per utilizzarli sono:
+Le ragioni più comuni per utilizzarli sono:
 
 - Installazione in assenza di rete
-- Preferenza per un installatore grafico, piú integrato con Windows
+- Preferenza per un installatore grafico, più integrato con Windows
 
 Ciascuno di questi eseguibili sono firmati digitalmente con la [firma digitale di Rust][Rust signing key]
 disponibile su [keybase.io], rilasciata dall'infrastruttura di rilascio di Rust,

@@ -6,8 +6,8 @@ title:  Documentazione di Rust &middot; Linguaggio di programmazione Rust
 # Documentazione di Rust
 
 Se non hai proprio mai visto Rust, la prima cosa che dovresti leggere
-é l'introduzione del [Libro di Rust][book].
-Ti dará una buona idea di com'é Rust, ti mostrerá come installarlo,
+è l'introduzione del [Libro di Rust][book].
+Ti darà una buona idea di com'è Rust, ti mostrerà come installarlo,
 illustrando anche la sua sintassi e i suoi concetti.
 Una volta letto sarai uno sviluppatore Rust discreto e avrai una
 buona idea dei concetti fondamentali di Rust.
@@ -15,7 +15,7 @@ buona idea dei concetti fondamentali di Rust.
 ## Imparare Rust
 
 [Il Libro di Rust][book]. Conosciuto anche come "Il libro",
-é la risorsa piú completa per tutti gli argomenti correlati a Rust e
+è la risorsa più completa per tutti gli argomenti correlati a Rust e
 rappresenta il documento primario ufficiale del linguaggio.
 
 [Rust per Esempi][rbe]. Una collezione di diversi problemi indipendenti
@@ -24,10 +24,10 @@ commentati e eseguibili dal browser.
 [Domande Frequenti][faq].
 
 [Il Rustonomicon][nomicon]. 
-Un intero libro dedicato a scrivere codice Rust insicuro.
+Un intero libro dedicato a scrivere codice Rust unsafe.
 Dedicato ai programmatori Rust esperti.
 
-[rust-learning]. Una risorsa fornita dalla comunitá di fonti dove imparare Rust.
+[rust-learning]. Una risorsa fornita dalla comunità con varie fonti dove imparare Rust.
 
 [book]: https://doc.rust-lang.org/book/
 [rbe]: http://rustbyexample.com
@@ -44,7 +44,7 @@ Dedicato ai programmatori Rust esperti.
 [Riferimento del linguaggio Rust][ref]. 
 Anche se Rust non ha una specifica, il riferimento
 prova a spiegare il suo funzionamento nel dettaglio.
-Spesso non é aggiornato.
+Spesso non è aggiornato.
 
 [Indice sintassi][syn]. 
 Questa appendice del Libro di Rust contiene esempi di tutte 
@@ -53,7 +53,7 @@ le sintassi menzionate nel libro, descrivendole.
 [La guida di Cargo][cargo]. La documentazione di Cargo,
 il gestore di pacchetti di Rust.
 
-[Indice errori compilatore][err]. Spiegazioni dettagliate agli
+[Indice errori compilatore][err]. Spiegazioni dettagliate degli
 errori emessi dal compilatore Rust.
 
 [Note di rilascio][release_notes]. Un archivio delle modifiche apportate in ciascuna versione.
@@ -69,16 +69,16 @@ errori emessi dal compilatore Rust.
 
 ## Politiche del progetto
 
-[Politica rilascio vulnerabilitá][security]. Le politiche del progetto
+[Politica rilascio vulnerabilità][security]. Le politiche del progetto
 per notificare, risolvere e rivelare problematiche di sicurezza.
 
 [Diritti sul nome e marchio di Rust][legal]. I diritti di Rust
 appartengono agli sviluppatori del Progetto Rust, i suoi marchi 
-sono proprietá di Mozilla. Nel collegamento si possono trovare le 
+sono proprietà di Mozilla. Nel link si possono trovare le 
 norme di utilizzo.
 
-[Codice di comportamento][coc]. Si applica all' organizzazione rust-lang
-su GitHub, i forum ufficiali, i canali IRC e in diversi angoli del mondo di Rust.
+[Codice di comportamento][coc]. Si applica all'organizzazione rust-lang
+su GitHub, i forum ufficiali, i canali IRC e nei diversi angoli del mondo di Rust.
 
 [security]: security.html
 [legal]: legal.html
@@ -86,14 +86,14 @@ su GitHub, i forum ufficiali, i canali IRC e in diversi angoli del mondo di Rust
 
 ## Documentazione versioni nightly e beta
 
-La maggior parte della documentazione ufficiale di Rust é disponibile
+La maggior parte della documentazione ufficiale di Rust è disponibile
 anche per le versioni [nightly] e [beta], in aggiunta alla documentazione
 menzionata sopra.
 
 [nightly]: https://doc.rust-lang.org/nightly/
 [beta]: https://doc.rust-lang.org/beta/
 
-## Risorse non inglesi
+## Risorse in altre lingue
 
 Per risorse non in lingua inglese
 [risorse in lingua su rust-learning][locale].
