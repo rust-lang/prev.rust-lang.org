@@ -1,35 +1,30 @@
 ---
 layout: ja-JP/default
-title:  Rust Documentation &middot; The Rust Programming Language
+title:  Rustのドキュメント &middot; プログラミング言語Rust
 ---
 
-# Rust Documentation
+# Rustのドキュメント
 
-If you haven't seen Rust at all yet, the first thing you should read
-is the introduction to the book, [The Rust Programming
-Language][book]. It will give you a good idea of what Rust is like,
-show you how to install it, and explain its syntax and concepts. Upon
-completing the book, you'll be an intermediate Rust developer, and
-will have a good grasp of the fundamental ideas behind Rust.
+Rustを今までに一度も見たことがないなら、まずは[プログラミング言語Rust][book]を読むべきです。
+これを読めばRustとは何か、インストール方法、構文と概念を理解出来ます。
+本を読み切る頃にはもうほとんどRust開発者になっていて、Rustの背後にある基本的な理念をざっと分かる筈です。
 
-## Learning Rust
+## Rustを学習する
 
-[The Rust Programming Language][book]. Also known as "The Book",
-The Rust Programming Language is the most comprehensive resource for
-all topics related to Rust, and is the primary official document of
-the language.
+[プログラミング言語Rust][book]。
+英語で「The Book」としても知られているプログラミング言語RustはRustに関連する話題の最も包括的な情報源であり言語の主たる公式ドキュメントです。
 
-[Rust by Example][rbe]. A collection of self-contained Rust
-examples on a variety of topics, executable in-browser.
+[Rust by Example][rbe]。
+様々なトピックに対して、ブラウザで実行可能なself-containedなRustのサンプルコード集です。
 
 [Frequently asked questions][faq].
 
-[The Rustonomicon][nomicon]. An entire book dedicated to
-explaining how to write unsafe Rust code. It is for advanced Rust
-programmers.
+[The Rustonomicon][nomicon]。
+本全体を通してRustでアンセーフなコードの書き方を説明しています。
+Rust上級者向けです。
 
-[rust-learning]. A community-maintained collection of resources
-for learning Rust.
+[rust-learning]。
+コミュニティの手によってメンテナンスされているRust学習向けのリソース集です。
 
 [book]: https://doc.rust-lang.org/book/
 [rbe]: http://rustbyexample.com
@@ -37,28 +32,29 @@ for learning Rust.
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning
 
-## References
+## リファレンス
 
-[Standard Library API Reference][api]. Documentation for the
-standard library.
+[標準ライブラリAPIリファレンス][api]。
+標準ライブラリのドキュメントです。。
 
-[docs.rs]. Documentation for all crates published to [crates.io].
+[docs.rs]。
+[crates.io]に登録されている全てのクレートのドキュメントです。
 
-[The Rust Reference][ref]. While Rust does not have a
-specification, the reference tries to describe its working in
-detail. It tends to be out of date.
+[Rustリファレンス][ref]。
+Rustのドキュメントには仕様はありませんが、リファレンスは現行のものを詳細に説明しようとしています。
+更新が遅れがちです。
 
-[Syntax Index][syn]. This appendix from The Book contains examples
-of all syntax in Rust cross-referenced with the section of The Book
-that describes it.
+[Syntax Index][syn]。
+The Bookにあるこの付録はRustの全ての文法の例を、本に出てくるセクションのクロスリファレンスと共に掲載しています。
 
-[The Cargo Guide][cargo]. The documentation for Cargo,
-Rust's package manager.
+[The Cargo Guide][cargo]。
+RustのパッケージマネージャCargoのドキュメントです。
 
-[Compiler Error Index][err]. Extended explanations of
-the errors produced by the Rust compiler.
+[コンパイラエラーの索引][err]。
+Rustのコンパイラによって生成されるエラーの補足説明です。
 
-[Release Notes][release_notes]. A recording of changes made during each release.
+[リリースノート][release_notes]。
+各リリース毎の変更点の記録です。
 
 [api]: https://doc.rust-lang.org/std/
 [syn]: https://doc.rust-lang.org/book/syntax-index.html
@@ -69,36 +65,31 @@ the errors produced by the Rust compiler.
 [docs.rs]: https://docs.rs
 [crates.io]: https://crates.io
 
-## Project policies
+## プロジェクトポリシー
 
-[Rust security policy][security]. The project's policies for
-reporting, fixing and disclosing security-related bugs.
+[Rust security policy][security]。
+セキュリティ関連のバグの報告、修正、公開に対するプロジェクトのポリシーです。
 
-[Rust copyright and trademark policies][legal]. The Rust
-copyrights are owned by The Rust Project Developers, and its
-trademarks are owned by Mozilla. Appropriate usage of Rust's
-trademarks are described here.
+[Rust著作権及び商標のポリシー][legal]。
+Rustの著作権はRustプロジェクトの開発者にあり、商標はMozillaにあります。
+Rustの商標の適切な使い方が記されています。
 
-[Code of Conduct][coc]. Applies to the rust-lang organization
-on GitHub, the official forums, IRC channels, and various
-other corners of the Rust world.
+[行動規範][coc]。
+GitHubのrust-langオーガニゼーション、公式フォーラム、IRCチャネル、そしてRustの世界の多種多様な方面に適用されます。
 
 [security]: security.html
 [legal]: legal.html
 [coc]: https://www.rust-lang.org/conduct.html
 
-## Nightly and beta documentation
+## Nightly及びベータのドキュメント
 
-Much of the official Rust documentation is also available for the
-[nightly] and [beta] releases in addition to the stable documentation
-linked above.
+上記にリンクのある安定版だけでなく、公式の[nightly]や[ベータ][beta]リリースのRustのドキュメントも利用可能です。
 
 [nightly]: https://doc.rust-lang.org/nightly/
 [beta]: https://doc.rust-lang.org/beta/
 
-## Non-english resources
+## 非英語リソース
 
-For resources in languages other than English, see the
-[locale-specific links in rust-learning][locale].
+英語以外の言語のリソースは[rust-learningの地域毎のリンク][locale]を参照して下さい
 
 [locale]: https://github.com/ctjhoa/rust-learning#locale-links
