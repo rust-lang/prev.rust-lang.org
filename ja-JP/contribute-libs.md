@@ -8,8 +8,6 @@ title: Rustへ貢献する &mdash; ライブラリ &middot; The Rust Programming
 Rustのコードをたくさん書いてRustに貢献したいと思うのなら、ライブラリが適任です。
 Rustは若い言語なので、まだ存在していない、あるいは不完全なライブラリというのが多種類存在しており、改善、競争が必要です。
 
-Deciding what to write that will have impact and be fun is a common
-difficulty. Here are some ideas:
 意味があって楽しい何を書くかを決めるのは一般に難しいものです。
 ここにいくつかアイディアがあります。
 
@@ -21,8 +19,6 @@ difficulty. Here are some ideas:
 * [rust-lang-nursery]から正式にrust-langに入れるよう導くのを手伝う。
   残念ながら必要とされてるほどのドキュメントがありません。
   [#rust-libs]で尋いてみて下さい。
-* Inspect the RFC issue tracker for a [requested community
-  library][requested] and build it.
 * RFCのイシュートラッカーで[コミュニティライブラリの要求][requested]を捜して、作る。
 * [Github Trending][trending]をウォッチして、今アクティブなRustプロジェクトを捜す。
 

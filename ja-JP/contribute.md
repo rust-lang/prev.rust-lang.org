@@ -18,11 +18,8 @@ Rustの成功へと貢献する方法はいくつもあります。
 
 * [問題を捜し、仕分け、修正する](contribute-bugs.html)。
   Rustのような巨大でアクティブなプロジェクトをメンテナンスするための基本的な作業について。
-* [Documentation](contribute-docs.html). Not just official
 * [ドキュメント](contribute-docs.html)。
   公式ドキュメントだけでなく、クレート、ブログエントリ、そして他の非公式情報源について。
-* [Community building](contribute-community.html). Helping your fellow
-  Rustacean, and expanding the reach of Rust.
 * [コミュニティの形成](contribute-community.html)。
   仲間のRustaceanを助け、Rustのリーチを広げることについて。
 * [ツール、IDE、インフラ](contribute-tools.html)。
@@ -35,10 +32,6 @@ Rustの成功へと貢献する方法はいくつもあります。
   私達のサイトを各言語へ翻訳することでRustへの愛を広めることを手伝って下さい。
 
 さらなるガイドが欲しければ[#rust-internals]あるいは[internals.rust-lang.org]で質問して下さい。
-
-We pride ourselves on maintaining civilized discourse, and to that end
-contributors are expected to follow our [Code of Conduct][coc]. If you
-have questions about this please inquire with the [community team].
 
 <!--
 TODO: Write a guide to rust processes and governance to link from here

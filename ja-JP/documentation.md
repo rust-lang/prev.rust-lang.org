@@ -17,9 +17,9 @@ Rustを今までに一度も見たことがないなら、まずは[プログラ
 [Rust by Example][rbe]。
 様々なトピックに対して、ブラウザで実行可能なself-containedなRustのサンプルコード集です。
 
-[Frequently asked questions][faq].
+[よくある質問][faq]。
 
-[The Rustonomicon][nomicon]。
+[Rustonomicon][nomicon]。
 本全体を通してRustでアンセーフなコードの書き方を説明しています。
 Rust上級者向けです。
 
@@ -44,10 +44,10 @@ Rust上級者向けです。
 Rustのドキュメントには仕様はありませんが、リファレンスは現行のものを詳細に説明しようとしています。
 更新が遅れがちです。
 
-[Syntax Index][syn]。
+[構文の索引][syn]。
 The Bookにあるこの付録はRustの全ての文法の例を、本に出てくるセクションのクロスリファレンスと共に掲載しています。
 
-[The Cargo Guide][cargo]。
+[Cargoのガイド][cargo]。
 RustのパッケージマネージャCargoのドキュメントです。
 
 [コンパイラエラーの索引][err]。
@@ -67,7 +67,7 @@ Rustのコンパイラによって生成されるエラーの補足説明です�
 
 ## プロジェクトポリシー
 
-[Rust security policy][security]。
+[Rustセキュリティポリシー][security]。
 セキュリティ関連のバグの報告、修正、公開に対するプロジェクトのポリシーです。
 
 [Rust著作権及び商標のポリシー][legal]。
