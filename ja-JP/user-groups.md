@@ -1,9 +1,9 @@
 ---
 layout: ja-JP/default
-title: Rust User Groups &middot; The Rust Programming Language
+title: Rustユーザグループ &middot; プログラミング言語Rust
 ---
 
-# Rust User Groups
+# Rustユーザグループ
 
 There are more than 50 Rust User Groups worldwide in over 20 countries
 with over 7,000 members. Rustaceans meet periodically in Rust User
@@ -15,6 +15,14 @@ this list, please contact the [Rust Community
 Team](./team.html#Community) or
 even better, open a pull request against
 [this website](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md).
+
+50以上の[Rustユーザグループ][user_group]が世界20カ国以上に存在し、7,000人のメンバーがいます。
+Rustaceanは定期的にユーザグループで会っています。
+ユーザグループはコミュニティに入るための最高の導入で、同じような興味を持った人を知り、交流するための最良の手段です。
+ミーティングは大抵毎月開催され、とても非オフィシャルです。
+ミーティングは全ての人に開放されています。
+あなたが開催するイベントを追加したいなら[コミュニティチーム][community_team]に連絡を取るか[このWebサイト](https://github.com/rust-lang/rust-www/blob/master/ja-JP/user-groups.md)に対してプルリクエストを送って下さい。
+
 
 ## Australia
 
