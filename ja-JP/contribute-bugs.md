@@ -1,9 +1,9 @@
 ---
 layout: ja-JP/default
-title: Rustへ貢献する &mdash; 問題を捜し、調べ、修正する &middot; プログラミング言語Rust
+title: Rustへ貢献する &mdash; 問題を捜し、仕分け、修正する &middot; プログラミング言語Rust
 ---
 
-# Rustへ貢献する &mdash; 問題を捜し、調べ、修正する
+# Rustへ貢献する &mdash; 問題を捜し、仕分け、修正する
 
 日々のプロジェクトのメンテナンスはRustの[イシュートラッカー][issue tracker]、[プルリクエスト][PR]行ったり来たりしていて、もっと助けが必要です。
 Rustへ貢献する最も基本的な方法は[E-easy]または[E-mentor]ラベルを見ることです。
