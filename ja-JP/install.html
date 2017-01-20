@@ -1,45 +1,44 @@
 ---
 layout: ja-JP/default
-title: Installation &middot; The Rust Programming Language
+title: インストール &middot; プログラミング言語Rust
 ---
-    <h1 class="rustup">Install Rust</h1>
+    <h1 class="rustup">Rustのインストール</h1>
 
     <div class="row rustup-row">
       <div class="col-md-8 instr-column">
         <div id="platform-instructions-unix" class="instructions" style="display: none;">
-          <p>To install Rust, run the following in your terminal, then follow the onscreen instructions.</p>
+          <p>Rustをインストールするにはターミナルで以下を実行して画面の指示に従って下さい。</p>
           <pre>curl https://sh.rustup.rs -sSf | sh</pre>
         </div>
 
         <div id="platform-instructions-win" class="instructions" style="display: none;">
           <p>
-            To install Rust, download and run
+            Rustをインストールするには
             <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
-            then follow the onscreen instructions.
+            をダウンロードして実行しし画面の指示に従って下さい。
           </p>
         </div>
 
         <div id="platform-instructions-android" class="instructions" style="display: none;"> 
-         <p>It looks like you are running Android.</p>
+         <p>Androidをお使いのようですね。</p>
           <p>
-            The Rust compiler does not run on Android directly (yet),
-            but it does make it easy to cross-compile <em>to</em> Android.
-            Install Rust on a supported host platform and
+            Rustのコンパイラは（まだ）Androidでは直接動きませんが、Android<em>へ</em>クロスコンパイルすることは簡単に出来ます。
+            Android向けのRustアプリケーションを作るにはRustをサポートされているプラットフォーム上でインストールして
             <a href="https://github.com/rust-lang-nursery/rustup.rs/#cross-compilation">
-              follow the cross-compilation instructions
+              クロスコンパイルのガイド
             </a>
-            to build Rust applications for Android.
+            に従って下さい。
           </p>
         </div>
 
         <div id="platform-instructions-unknown" class="instructions" style="display: none;">
-          <!-- unrecognized platform: ask for help -->
-          <p>I don't recognize your platform.</p>
-          <p>
-            Rust runs on Windows, Linux, Mac OS X, FreeBSD and NetBSD. If
-            you are on one of these platforms and are seeing this then please
-            <a href="https://github.com/rust-lang/rust-www/issues/new">report an issue</a>,
-            along with the following values:
+            <!-- unrecognized platform: ask for help -->
+            <p>お使いのプラットフォームを認識出来ませんでした。</p>
+            <p>
+                RustはWindows、Linux、Mac OS X、FreeBSD、NetBSD上で動きます。
+                これらのプラットフォームを使っているのにこのメッセージが出る場合は、
+                以下の情報と共に
+                <a href="https://github.com/rust-lang/rust-www/issues/new">問題を報告して下さい</a>
           </p>
 
           <div>
@@ -69,8 +68,8 @@ title: Installation &middot; The Rust Programming Language
 
         <div id="platform-instructions-default" class="instructions">
           <div>
-            <p>To install Rust, if you are running Unix,<br/>run the following
-            in your terminal, then follow the onscreen instructions.</p>
+            <p>Rustをインストールするには、Unixをお使いなら、<br/>
+            以下をターミナル上で実行して、画面の指示に従って下さい。</p>
             <pre>curl https://sh.rustup.rs -sSf | sh</pre>
           </div>
 
@@ -78,9 +77,9 @@ title: Installation &middot; The Rust Programming Language
 
           <div>
             <p>
-              If you are running Windows,<br/>download and run
+              Windowsをお使いなら、<br/>
               <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
-              then follow the onscreen instructions.
+              をダウンロードして実行し、画面の指示に従って下さい
             </p>
           </div>
         </div>
@@ -97,96 +96,88 @@ title: Installation &middot; The Rust Programming Language
           <br>
 
           <a id="platform-button" style="display: none;" href="#">
-            click or press "n" to cycle platforms
+            プラットフォームを送るにはクリックするか「n」を押して下さい
           </a>
         </div>
       </div>
 
     </div>
 
-    <h2>Notes about Rust installation</h2>
+    <h2>Rustのインストールに関する注意</h2>
 
     <div class="row">
       <div class="col-md-12">
 
-        <h3>Toolchain management with <code>rustup</code></h3>
+        <h3><code>rustup</code>を使ったツールチェーン管理</h3>
 
         <p>
-          Rust is installed and managed by the
+          Rustは
           <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>
-          tool. Rust has a 6-week
+          を使ってインストール及び管理されます。
+          Rustは6週間の
           <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
-            rapid release process
-          </a> and supports a
+            高速リリースプロセス
+          </a>を採用しており、
           <a href="https://forge.rust-lang.org/platform-support.html">
-             great number of platforms
-          </a>, so there are many builds of Rust available at any time.
-          <code>rustup</code> manages these builds in a consistent way on every
-          platform that Rust supports, enabling installation of Rust from the
-          beta and nightly release channels as well as support for additional
-          cross-compilation targets
+             多数のプラットフォームをサポートしています
+          </a>ので、いつでも複数種類のRustのビルドが利用可能です。
+          <code>rustup</code>は全てのRustがサポートするプラットフォーム上で全く同じようにこれらのビルドを管理し、
+          betaやnightlyのリリースチャネル、追加のクロスコンパイルターゲットからのインストールも可能にします。
         </p>
 
         <p>
-          For more information see the
+          さらなる情報は
           <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md"><code>rustup</code>
-          documentation</a>.
+          のドキュメントを参照して下さい</a>。
         </p>
 
-        <h3>Configuring the <code>PATH</code> environment variable</h3>
+        <h3><code>PATH</code>環境変数の設定</h3>
 
         <p>
-          In the Rust development environment, all tools are installed to the
+          Rustの開発では、全てのツールは
           <span class="platform-specific not-win" style="display: inline;">
             <code>~/.cargo/bin</code>
           </span>
           <span class="platform-specific win" style="display: none;">
             <code>%USERPROFILE%\.cargo\bin</code>
-          </span> directory,
-          and this is where you will find the Rust toolchain, including
-          <code>rustc</code>, <code>cargo</code>, and <code>rustup</code>.
+          </span> ディレクトリにインストールされるので、
+          <code>rustc</code>, <code>cargo</code>、そして<code>rustup</code>
+          などのツールがそこにある筈です。
         </p>
 
         <p>
-          Accordingly, it is customary for Rust developers to include this
-          directory in their
-          <a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code>
-          environment variable</a>.  During installation, <code>rustup</code>,
-          will attempt to configure
-          <code>PATH</code>, but because of differences between platforms,
-          command shells, and bugs in <code>rustup</code>, the modifications
-          to <code>PATH</code> may not take effect until the console is
-          restarted, or the user logged out, or may not succeed at all.
+          従って、Rustの開発者は慣用的にこのディレクトリを
+          <a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code>環境変数</a>
+          に含めます。
+          インストール時に、<code>rustup</code>が<code>PATH</code>を設定するように試みますが、 プラットフォーム、シェル、毎の差異、あるいは<code>rustup</code>のバグのために<code>PATH</code>への変更はコンソールを再起動するかユーザをログアウトするかしないと反映されない、あるいは成功しないこともあります。
         </p>
 
         <p>
-          If, after installation, running <code>rustc --version</code> in the
-          console fails, this is the most likely reason.
+          もしインストール後に<code>rustc --version</code>を実行してみて失敗するなら、恐らくこれが原因でしょう。
         </p>
 
         <div class="platform-specific win">
 
-          <h3>Windows considerations</h3>
+          <h3>Windowsでの留意事項</h3>
           <!-- This anchor is probably linked in the wild and should not be broken -->
           <a id="win-foot"></a>
 
 	  <p>
-            On Windows, Rust additionally requires the C++ build tools
-            for Visual Studio 2013 or later. The easiest way to acquire the build
-            tools is by installing
+            Windowsでは、Rustは追加でVisual Studio 2013以降のC++のビルドツールを要求します。
+            入手するにはVisual C++ビルドツールを同梱している
 	    <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
 	      Microsoft Visual C++ Build Tools 2015
             </a>
-            which provides just the Visual C++ build tools. Alternately, you
-	    can <a href="https://www.visualstudio.com/downloads/">install</a>
-	    Visual Studio 2015 or Visual Studio 2013 and during install select
-	    the "C++ tools".
+            をインストールします。
+            あるいは、Visual Studio 2015かVisual Studio 2013を
+            <a href="https://www.visualstudio.com/downloads/">インストール</a>
+            して、インストール時に「C++ tools」を選択します。
 	  </p>
 
           <p>
-            For further information about configuring Rust on Windows see the
-            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows-specific <code>rustup</code>
-            documentation</a>.
+            WindowsでのRustの設定方法についてのさらなる情報は
+            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows向け <code>rustup</code>
+            ドキュメント</a>を参照して下さい。
           </p>
 
         </div>
@@ -194,20 +185,16 @@ title: Installation &middot; The Rust Programming Language
       </div>
     </div>
 
-    <h2>Other installation methods</h3>
+    <h2>その他のインストール方法</h2>
 
     <div class="row">
       <div class="col-md-12">
         <p>
-          The installation described above, via
-          <code>rustup</code>, is the preferred way to install Rust for most developers,
-          but Rust can be
-          <a href="other-installers.html">installed via other methods</a>
-          as well.
+          上記の<code>rustup</code>を使った方法がほとんどの開発者に推奨されるRustのインストール方法ですが、
+          <a href="other-installers.html">他の方法でインストール</a>することも出来ます。
         </p>
       </div>
     </div>
-    
     <script type="text/javascript">
       {% include rustup.js %}
     </script>
