@@ -5,17 +5,6 @@ title: Rustユーザグループ &middot; プログラミング言語Rust
 
 # Rustユーザグループ
 
-There are more than 50 Rust User Groups worldwide in over 20 countries
-with over 7,000 members. Rustaceans meet periodically in Rust User
-Groups.  Its a great introduction to the community and a great way to
-learn and socialize with other people with a similar interest.
-Meetings are usually informal and open to
-everyone. If you have started a new user group and wish to add it to
-this list, please contact the [Rust Community
-Team](./team.html#Community) or
-even better, open a pull request against
-[this website](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md).
-
 50以上の[Rustユーザグループ][user_group]が世界20カ国以上に存在し、7,000人のメンバーがいます。
 Rustaceanは定期的にユーザグループで会っています。
 ユーザグループはコミュニティに入るための最高の導入で、同じような興味を持った人を知り、交流するための最良の手段です。
