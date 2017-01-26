@@ -78,6 +78,8 @@ even better, open a pull request against
 
 [Rust lang Milano](https://www.meetup.com/Rust-lang-Milano/), Milano.
 
+[Rust Rome](https://www.meetup.com/it-IT/Rust-Roma/), Rome.
+
 ## Japan
 
 [Tokyo Rust](https://www.meetup.com/Tokyo-Rust-Meetup/), Tokyo.
