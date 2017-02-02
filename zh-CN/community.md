@@ -209,8 +209,8 @@ help get you started.
 
 ## Rust 开发
 
-Rust has had over [1,200 different contributors][authors], a number that grows
-every single week. [We'd love for you to join that list][contribute]!
+Rust 已经有超过 [1,200 名不同的贡献者][authors]，这个数字每周仍然在持续的增长。
+[我们期待您的加入][contribute]！
 
 As mentioned above, the [Rust Internals Forum][internals_forum] is dedicated to
 discussing the design and implementation of Rust. A lot of discussion also
