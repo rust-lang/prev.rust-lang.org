@@ -283,6 +283,11 @@
   logo: trafficland.svg
   how: "Video transcoding, manipulation, and analysis."
 -
+  name: Wire
+  url: https://wire.com
+  logo: Wire.png
+  how: "Wire's Axolotl protocol implementation and other cryptographic and utility libraries are developed in Rust, then cross-compiled for iOS and Android."
+-
   name: Xero
   url: https://www.xero.com
   logo: xero.png

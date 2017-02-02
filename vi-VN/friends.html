@@ -18,7 +18,7 @@ title:  Friends of Rust &middot; The Rust Programming Language
 
     <div class="row">
       {% for user in site.data.users limit:3 offset:offset %}
-        <div class="col-md-4"
+        <div class="col-md-4 friend"
              id="user-logo-{{offset}}-{{forloop.index}}">
           <div class="user-container">
             <a href="{{user.url}}" rel="nofollow" alt="{{user.name}}">
@@ -69,3 +69,7 @@ title:  Friends of Rust &middot; The Rust Programming Language
   </p>
 
 </div>
+
+<script type="text/javascript">
+  {% include friends.js %}
+</script>
