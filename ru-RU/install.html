@@ -33,19 +33,38 @@ title: Установка &middot; The Rust Programming Language
         </div>
 
         <div id="platform-instructions-unknown" class="instructions" style="display: none;">
+          <!-- unrecognized platform: ask for help -->
           <p>Мы не распознали, на какой вы платформе.</p>
           <p>
             Rust работает на Windows, Linux, Mac OS X, FreeBSD и NetBSD. Если
             вы используете одну из этих платформ и видите это сообщение, пожалуйста
             <a href="https://github.com/rust-lang/rust-www/issues/new">сообщите о проблеме</a>,
             вместе с значениями этих переменных:
-            <div>
-              <div>navigator.platform:</div>
-              <div id="nav-plat"></div>
-              <div>navigator.appVersion:</div>
-              <div id="nav-app"></div>
-            </div>
           </p>
+          
+          <div>
+            <div>navigator.platform:</div>
+            <div id="nav-plat"></div>
+            <div>navigator.appVersion:</div>
+            <div id="nav-app"></div>
+          </div>
+
+          <!-- duplicate the default cross-platform instructions -->
+          <div>
+            <p>Чтобы установить Rust на Unix,<br/>запустите эту команду в терминале
+            и следуйте инструкциям на экране.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Если вы используете Windows,<br/>загрузите и запустите
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              и следуйте инструкциям на экране.
+            </p>
+          </div>
         </div>
 
         <div id="platform-instructions-default" class="instructions">

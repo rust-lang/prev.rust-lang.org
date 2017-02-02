@@ -33,19 +33,38 @@ title: Instalação &middot; A Linguagem de Programação Rust
         </div>
 
         <div id="platform-instructions-unknown" class="instructions" style="display: none;">
+          <!-- unrecognized platform: ask for help -->
           <p>Não reconheci sua plataforma.</p>
           <p>
             Rust roda em Windows, Linux, Mac OS X, FreeBSD e NetBSD. se
             você está em uma dessas plataformas e está vendo isso então por favor
             <a href="https://github.com/rust-lang/rust-www/issues/new">reporte um problema</a>,
             junto com os seguintes valores:
-            <div>
-              <div>navigator.platform:</div>
-              <div id="nav-plat"></div>
-              <div>navigator.appVersion:</div>
-              <div id="nav-app"></div>
-            </div>
           </p>
+          
+          <div>
+            <div>navigator.platform:</div>
+            <div id="nav-plat"></div>
+            <div>navigator.appVersion:</div>
+            <div id="nav-app"></div>
+          </div>
+
+          <!-- duplicate the default cross-platform instructions -->
+          <div>
+            <p>Para instalar Rust, se você está rodando Unix,<br/>então rode o seguinte no seu terminal
+            e então siga as instruções na tela.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Se você está rodando Windows,<br/>baixe e rode
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              e então siga as instruções na tela.
+            </p>
+          </div>
         </div>
 
         <div id="platform-instructions-default" class="instructions">

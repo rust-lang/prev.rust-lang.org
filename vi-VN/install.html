@@ -33,19 +33,38 @@ title: Cài đặt Rust &middot; Ngôn ngữ lập trình Rust
         </div>
 
         <div id="platform-instructions-unknown" class="instructions" style="display: none;">
+          <!-- unrecognized platform: ask for help -->
           <p>Tôi không biết nền tảng mình đang chạy là gì.</p>
           <p>
             Rust chạy trên Windows, Linux, Mac OS X, FreeBSD và NetBSD. Nếu
             bạn không thấy một trong những các nền tảng trên thì vui lòng
             <a href="https://github.com/rust-lang/rust-www/issues/new">report an issue</a>,
             theo mẫu sau:
-            <div>
-              <div>navigator.platform:</div>
-              <div id="nav-plat"></div>
-              <div>navigator.appVersion:</div>
-              <div id="nav-app"></div>
-            </div>
           </p>
+          
+          <div>
+            <div>navigator.platform:</div>
+            <div id="nav-plat"></div>
+            <div>navigator.appVersion:</div>
+            <div id="nav-app"></div>
+          </div>
+
+          <!-- duplicate the default cross-platform instructions -->
+          <div>
+            <p>Cài đặt Rust đối với nền tảng là Unix,<br/>chạy dòng lệnh dưới đây, kế
+            tiếp làm theo các bước hướng dẫn ở màn hình.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Nếu bạn dùng Windows,<br/>tải về và chạy file
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              kế tiếp làm theo các hướng dẫn trên màn hình.
+            </p>
+          </div>
         </div>
 
         <div id="platform-instructions-default" class="instructions">
