@@ -46,6 +46,10 @@ even better, open a pull request against
 
 [Rust Paris](https://www.meetup.com/Rust-Paris/), Paris.
 
+## Finland
+
+[Finland Rust Meetup](https://www.meetup.com/Finland-Rust-Meetup/), Helsinki.
+
 ## Germany
 
 [Rust Cologne/Bonn User Group](https://www.meetup.com/Rust-Cologne-Bonn/), Köln.
