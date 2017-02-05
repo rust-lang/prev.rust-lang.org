@@ -26,6 +26,10 @@ even better, open a pull request against
 
 [Klagenfurt Rust Programmers](https://www.meetup.com/Klagenfurt-Rust/), Klagenfurt.
 
+## Belgium
+
+[Belgium Rust User Group](http://www.rust-lang.be/)
+
 ## Bolivia
 
 [Rust Bolivia](http://www.mozillabolivia.org/rust/), Santa Cruz, Bolivia.
