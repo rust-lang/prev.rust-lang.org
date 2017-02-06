@@ -1,83 +1,94 @@
 ---
 layout: ja-JP/faq
-title: Frequently Asked Questions &middot; The Rust Programming Language
+title: よくある質問 &middot; プログラミング言語Rust
 ---
 
-# Frequently Asked Questions
+# よくある質問
 
 <p class="faq-intro">
-This page exists to answer common questions about the Rust programming language. It is not a complete guide to the language, nor is it a tool for teaching the language. It is a reference to answer oft-repeated questions people in the Rust community encounter, and to clarify the reasoning behind some of Rust's design decisions.
+このページはプログラミング言語Rustへのよくある質問に答えるために存在しています。
+完璧な言語へのガイドでも、言語を教えるためのツールでもありません。
+Rustコミュニティの人が出喰わすよく繰り返される質問への参考となる回答であり、Rustの設計上の判断の背後にある論拠を明らかにするためのものです。
 </p>
 
 <p class="faq-intro">
 If there is some common or important question you feel is wrongly left unanswered here, feel free to <a href="https://github.com/rust-lang/rust-www/blob/master/CONTRIBUTING.md">help us fix it</a>.
+もしよくある、あるいは重要な質問で、不当にここに掲載されていないと感じるものがあるなら気軽に<a href="https://github.com/rust-lang/rust-www/blob/master/CONTRIBUTING.md">修正して貢献して下さい</a>。
 </p>
 
 <div id="toc">
     <h2>Table of Contents</h2><a href="#toggle-toc"></a>
     <div class="contents">
         <ol id="toc-contents">
-            <li><a href="#project">The Rust Project</a></li>
-            <li><a href="#performance">Performance</a></li>
-            <li><a href="#syntax">Syntax</a></li>
-            <li><a href="#numerics">Numerics</a></li>
-            <li><a href="#strings">Strings</a></li>
-            <li><a href="#collections">Collections</a></li>
-            <li><a href="#ownership">Ownership</a></li>
-            <li><a href="#lifetimes">Lifetimes</a></li>
-            <li><a href="#generics">Generics</a></li>
-            <li><a href="#input-output">Input / Output</a></li>
-            <li><a href="#error-handling">Error Handling</a></li>
-            <li><a href="#concurrency">Concurrency</a></li>
-            <li><a href="#macros">Macros</a></li>
-            <li><a href="#debugging">Debugging and Tooling</a></li>
-            <li><a href="#low-level">Low-Level</a></li>
-            <li><a href="#cross-platform">Cross-Platform</a></li>
-            <li><a href="#modules-and-crates">Modules and Crates</a></li>
-            <li><a href="#libraries">Libraries</a></li>
-            <li><a href="#design-patterns">Design Patterns</a></li>
-            <li><a href="#other-languages">Other Languages</a></li>
-            <li><a href="#documentation">Documentation</a></li>
+            <li><a href="#project">Rustプロジェクト</a></li>
+            <li><a href="#performance">パフォーマンス</a></li>
+            <li><a href="#syntax">構文</a></li>
+            <li><a href="#numerics">数値など</a></li>
+            <li><a href="#strings">文字列</a></li>
+            <li><a href="#collections">コレクション</a></li>
+            <li><a href="#ownership">所有権</a></li>
+            <li><a href="#lifetimes">ライフタイム</a></li>
+            <li><a href="#generics">ジェネリクス</a></li>
+            <li><a href="#input-output">出入力</a></li>
+            <li><a href="#error-handling">エラーハンドリング</a></li>
+            <li><a href="#concurrency">並行性</a></li>
+            <li><a href="#macros">マクロ</a></li>
+            <li><a href="#debugging">デバッグとツール</a></li>
+            <li><a href="#low-level">低レベル</a></li>
+            <li><a href="#cross-platform">クロスプラットフォーム</a></li>
+            <li><a href="#modules-and-crates">モジュールとクレート</a></li>
+            <li><a href="#libraries">ライブラリ</a></li>
+            <li><a href="#design-patterns">デザインパターン</a></li>
+            <li><a href="#other-languages">他の言語</a></li>
+            <li><a href="#documentation">ドキュメント</a></li>
         </ol>
     </div>
 </div>
 
 
-<h2 id="project">The Rust Project</h2>
+<h2 id="project">Rustプロジェクト</h2>
 
 <h3><a href="#what-is-this-projects-goal" name="what-is-this-projects-goal">
-What is this project's goal?
+プロジェクトのゴールは何ですか？
 </a></h3>
 
-To design and implement a safe, concurrent, practical systems language.
+安全で、並行で、実用的なシステムプログラミング言語を設計し実装することです。
 
-Rust exists because other languages at this level of abstraction and efficiency are unsatisfactory. In particular:
+Rustは同程度の抽象レベルと効率性を兼ね備えた言語が満足に存在しないため存在しています。特に、以下の点が満足出来ません
 
-1. There is too little attention paid to safety.
-2. They have poor concurrency support.
-3. There is a lack of practical affordances.
-4. They offer limited control over resources.
+1. 安全性への考慮がほとんど払われていない
+2. 並行性のサポートが貧弱
+3. 実用性に乏しい
+4. リソースへの制御が限られている
 
-Rust exists as an alternative that provides both efficient code and a comfortable level of abstraction, while improving on all four of these points.
+Rustはこれらの4つの点を改善しつつ効率性と快適なレベルの抽象を提供するための新たな選択肢となるために存在しています。
 
 <h3><a href="#is-this-project-controlled-by-mozilla" name="is-this-project-controlled-by-mozilla">
-Is this project controlled by Mozilla?
+プロジェクトはMozillaにコントロールされていますか？
 </a></h3>
 
-No. Rust started as Graydon Hoare's part-time side project in 2006 and remained so for over 3 years. Mozilla got involved in 2009 once the language was mature enough to run basic tests and demonstrate its core concepts. Though it remains sponsored by Mozilla, Rust is developed by a diverse community of enthusiasts from many different places around the world. The [Rust Team](https://www.rust-lang.org/team.html) is composed of both Mozilla and non-Mozilla members, and `rust` on GitHub has had over [1,500 unique contributors](https://github.com/rust-lang/rust/) so far.
+いいえ。Rustは2006年にGraydon Hoareの趣味のプロジェクトとして始まり、3年間そのままでした。
+Mozillaは2009年に基本的なテストが通り、コアコンセプトをデモンストレーション出来るようになるくらい言語が成熟してから関わり始めました。
+今でもMozillaによる支援を受けていますが、Rustは世界中多種多様な場所からの熱烈なファンによる様々なコミュニティにより開発されています。
+[Rustチーム](https://www.rust-lang.org/team.html)にはMozillaの職員もいればMozillaと関わりのない人もおり、GitHubの `rust` には[1,500もの貢献者](https://github.com/rust-lang/rust/)がいます。
 
 As far as [project governance](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md) goes, Rust is managed by a core team that sets the vision and priorities for the project,
 guiding it from a global perspective. There are also subteams to guide and foster development of particular areas of interest, including the core language, the compiler, Rust libraries, Rust tools, and moderation of the official Rust communities. Designs in each these areas are advanced through an [RFC process](https://github.com/rust-lang/rfcs). For changes which do not require an RFC, decisions are made through pull requests on the [`rustc` repository](https://github.com/rust-lang/rust).
+[プロジェクト自治](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)が回っている限り、Rustはプロジェクトのヴィジョンと優先順位を定めグローバルな視点で舵を切る役割を持つコアチームによって管理されます。
+また、言語コア、コンパイラ、Rustのライブラリ、Rustのツール、公式のRustコミュニティのモデレーションなどの領域で開発を先導し育成するためのサブチームも存在します。
+それぞれの領域でのデザインは[RFCプロセス](https://github.com/rust-lang/rfcs)を通じて拡張されています。
+RFCを必要としない変更については[`rustc` レポジトリ](https://github.com/rust-lang/rust)のプルリクエストで決定がなされています。
 
 <h3><a href="#what-are-some-non-goals" name="what-are-some-non-goals">
-What are some non-goals of Rust?
+Rustで目指さないものは何ですか。
 </a></h3>
 
-1. We do not employ any particularly cutting-edge technologies. Old, established techniques are better.
-2. We do not prize expressiveness, minimalism or elegance above other goals. These are desirable but subordinate goals.
-3. We do not intend to cover the complete feature-set of C++, or any other language. Rust should provide majority-case features.
-4. We do not intend to be 100% static, 100% safe, 100% reflective, or too dogmatic in any other sense. Trade-offs exist.
+1. 著しく最先端の技術を採用したりはしません。古く、確率された技術の方を好みます。
+2. 表現力、ミニマリズム、エレガントさを他のゴールより重んじることはしません。あれば望ましいですが、下位のゴールです。
+3. C++や他の言語の全ての機能群をカバーすることは意図しません。Rustは多くの人が使う機能を提供します。
+4. 100%静的、100%安全、100%反映的、あるいは他のどんな性質についても金科玉条にするつもりはありません。トレードオフが存在します。
 5. We do not demand that Rust run on "every possible platform". It must eventually work without unnecessary compromises on widely-used hardware and software platforms.
+5. Rustが「あらゆるプラットフォーム」で走ることは要求しません。最終的には不必要な妥協なしに広く使われているハードウェア、ソフトウェアプラットフォームで動くべきです。
 
 <h3><a href="#how-does-mozilla-use-rust" name="how-does-mozilla-use-rust">
 In which projects is Mozilla using Rust?
