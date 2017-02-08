@@ -17,16 +17,16 @@ dedicati all'espansione della sintassi e [A-typesystem] per parlare dei tipi.
 Non esiste alcuna guida ben mantenuta all'architettura del compilatore 
 ma ne [esiste una piccola carrellata nel repository principale][rustc-guide].
 La [documentazione delle API che compongono il compilatore][internals-docs]
-possono aiutarti a navigare il codice, come puó farlo  anche il navigatore di codice
+possono aiutarti a navigare il codice, come può farlo  anche il navigatore di codice
 [Rust DXR]. La [guida per Rust e la sua piattaforma di controllo][testsuite]
-ti insegnerá come utilizzare al meglio il sistema di compilazione di Rust,
+ti insegnerà come utilizzare al meglio il sistema di compilazione di Rust,
 come farebbe anche il comando [`make tips`][tips] da riga di comando.
 
 Per il futuro prossimo, una delle maggiori spinte per il compilatore Rust 
-é convertire le sue componenti interne per lavorare direttamente dall'Albero
+è convertire le sue componenti interne per lavorare direttamente dall'Albero
 di Sintassi Astratto, per elaborare su una [rappresentazione intermedia chiamata MIR][mir].
-Questo lavoro si preannuncia come l'inizio di molte nuove possibilitá
-per semplificare il compilatore ed é richiesto dell'aiuto per esempio
+Questo lavoro si preannuncia come l'inizio di molte nuove possibilità
+per semplificare il compilatore ed è richiesto dell'aiuto per esempio
 creare una fase di traduzione basata su MIR, ottimizzare la MIR e implementare
 la compilazione incrementale.
 Non esiste una fonte unica per informazioni sul lavoro richiesto ma chiedi
@@ -37,36 +37,36 @@ su [internals.rust-lang.org] o su
 nefasto 'errore interno di compilazione' ('internal compiler error' ICE). 
 L'etichetta [I-ICE] tiene traccia di questi problemi e spesso sono molti.
 Questi sono usualmente degli ottimi problemi per iniziare a contribuire
-perché é facile comprendere quando vengono riparati e sono relativamente
+perchè é facile comprendere quando vengono riparati e sono relativamente
 isolati dal resto del codice.
 
-Le prestazioni di Rust é uno dei suoi piú grossi vantaggi; e quella
-del suo compilatore é uno dei suoi piú grossi problemi.
+Le prestazioni di Rust è uno dei suoi più grossi vantaggi; e quella
+del suo compilatore è uno dei suoi più grossi problemi.
 Ogni miglioramento della prestazione degli eseguibili or &mdash; specialmente &mdash;
 delle prestazioni del compilatore sono largamente celebrati.
 Le etichette [I-slow] e [A-optimization] si occupano delle prestazioni
 degli eseguibili e [I-compiletime] di quella del compilatore. Abbiamo un
 [sito che tiene traccia delle prestazioni del compilatore][rustc-perf] 
 durante alcuni carichi di lavoro.
-L'opzione da riga di comando `-Z time-passes` puó aiutare a ispezionare
-le prestazioni del compilatore e il codice di Rust puó essere profilato
+L'opzione da riga di comando `-Z time-passes` può aiutare a ispezionare
+le prestazioni del compilatore e il codice di Rust può essere profilato
 da tutti i profilatori standard come `perf` su Linux.
 
-Funzionalitá importanti passano attraverso il processo di [Request for Comments (RFC)][rfc]
-dal quale ci si accorda sul design. Anche se aperto a tutti é un'interazione tra
-sviluppatori che giá hanno un discreto quantitivo di esperienza in comune ed é 
+Funzionalità importanti passano attraverso il processo di [Request for Comments (RFC)][rfc]
+dal quale ci si accorda sul design. Anche se aperto a tutti è un'interazione tra
+sviluppatori che già hanno un discreto quantitivo di esperienza in comune ed è 
 consigliato prendere parte al processo lentamente &mdash;
 inviare una RFC ostica senza comprendere il contesto storico, tecnico o sociale
-é un modo facile per dare una cattiva impressione e andarsene delusi.
+è un modo facile per dare una cattiva impressione e andarsene delusi.
 Leggi il collegamento sopra per comprendere al meglio come tutto il sistema funziona.
-Molte idee sono giá state discusse durante il passato di Rust, alcune sono state
+Molte idee sono già state discusse durante il passato di Rust, alcune sono state
 rifiutate, altre rimandate al futuro e la [portale delle RFC][rfc-issues]
 elenca alcune idee desiderate che non sono ancora riuscite a entrare
 nel linguaggio.
 Poco prima che una RFC venga accettata per l'implementazione, entra in 
 una 'fase finale di commento' indicata dall'etichetta
 [final-comment-period sul repository rust-lang/rfcs][rfc-fcp].
-Similarmente, prima che una funzionalitá venga abilitata nel compilatore
+Similarmente, prima che una funzionalità venga abilitata nel compilatore
 stabile (procedura definita 'ungating') essa entra nella [final-comment-period sul repository rust-lang/rust][issue-fcp]. 
 Entrambe le fasi di commento finale sono momenti critici per essere coinvolti
 ed esprimere opinioni sulla direzione del linguaggio e sono indicate

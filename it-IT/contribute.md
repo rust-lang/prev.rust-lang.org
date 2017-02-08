@@ -6,11 +6,11 @@ title: Contribuire a Rust &middot; Linguaggio di programmazione Rust
 # Contribuire a Rust
 
 Una volta iniziato a imparare Rust. Lo amerai e vorrai divenire parte di esso.
-Se non sei sicuro su come essere coinvolto, questa pagina ti aiuterá.
+Se non sei sicuro su come essere coinvolto, questa pagina ti aiuterà.
 
 **Trovato un problema e vuoi notificarlo?** [segui la guida su come riportare i problemi][bugs]. Grazie in anticipo!
 
-Rust é un espanso sistema di progetti, in cui i piú prominenti di questions
+Rust è un espanso sistema di progetti, in cui i più prominenti di questions
 sono mantenuti dagli [sviluppatori del progetto Rust][devs] nella [organizzazione
 rust-lang su GitHub][rust-lang]. 
 I nuovi arrivati potrebbero essere interessati al file [CONTRIBUTING.md]
@@ -24,15 +24,15 @@ Questa guida indica alcune strade per i nuovi arrivati:
 * [Documentazione](contribute-docs.html). Non solo
   documentazione ufficiale ma anche per pacchetti, post sul blog
   e altre fonti non ufficiali.
-* [Creazione di comunitá](contribute-community.html). Aiutare gli altri
+* [Creazione di comunità](contribute-community.html). Aiutare gli altri
   Rustacchiani e espandendo le frontiere di Rust.
 * [Strumenti, ambienti di sviluppo e infrastrutture](contribute-tools.html). Gli
   importanti pezzi che rendono un linguaggio pratico e piacevole.
-* [Librerie](contribute-libs.html). L'idoneitá di Rust a un compito
-  é subordinata alla presenza di librerie di alta qualitá.
+* [Librerie](contribute-libs.html). L'idoneità di Rust a un compito
+  è subordinata alla presenza di librerie di alta qualità.
 * [Liguaggio, compilatore e la libreria
   standard](contribute-compiler.html). Design del linguaggio, implementazione
-  funzionalitá, ottimizzazioni.
+  funzionalità, ottimizzazioni.
 * [Internazionalizzazione](contribute-translations.html). Aiuta a spargere
   l'amore per Rust traducendo il nostro sito in altre lingue.
 
@@ -41,7 +41,7 @@ Se hai bisogno di ulteriore aiuto chiedi su [#rust-internals] o su
 
 Siamo orgogliosi di mantenere discussioni civili e con questo scopo
 i nostri sviluppatori sono tenuti a seguire il [codice di comportamento][coc].
-If hai delle domande a questo proposito per favore parlane con il [Team comunitá][community team].
+If hai delle domande a questo proposito per favore parlane con il [Team comunità][community team].
 
 <!--
 TODO: Write a guide to rust processes and governance to link from here

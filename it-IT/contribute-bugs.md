@@ -7,10 +7,10 @@ title: Contribuire a Rust &mdash; trovare, analizzare e risolvere problemi &midd
 
 La manutenzione giorno per giorno del progetto ruota attorno al 
 [controllo bug][issue tracker] e alle [richieste di unione][PR],
-una mano in piú é sempre richiesta.
-Il modo piú semplice per iniziare a contribuire a Rust é guardare
+una mano in più è sempre richiesta.
+Il modo più semplice per iniziare a contribuire a Rust è guardare
 i bug caratterizzati dalle etichette [E-easy] o [E-mentor].
-Questi bug sono stati raccolti con la finalitá di essere accessibili
+Questi bug sono stati raccolti con la finalità di essere accessibili
 anche per i programmatori di Rust alla loro prima contribuzione.
 
 Nelle problematiche identificate da `E-mentor` uno sviluppatore di Rust
@@ -27,26 +27,26 @@ facili, includendo il browser web [Servo], la libreria [hyper], il suggeritore
 di sintassi [rustfmt], la libreria di supporto a Unix[nix] e la collezione
 di aiuti automatici alla programmazione [clippy].
 
-Anche se Rust possiede una [comprensiva suite di prova][test] c'é 
-sempre di piú da controllare.
+Anche se Rust possiede una [comprensiva suite di prova][test] c'è 
+sempre di più da controllare.
 I problemi classificati come [E-needstest] indicano le problematiche
 che si pensano risolte ma non possiedono ancora delle verifiche automatiche.
-Scrivere queste verifiche é un ottimo modo per comprendere un nuovo progetto
+Scrivere queste verifiche è un ottimo modo per comprendere un nuovo progetto
 e per iniziare a contribuire ad esso.
 
-Rust é continuamente alla ricerca di persone che [analizzino][triage] problemi:
+Rust è continuamente alla ricerca di persone che [analizzino][triage] problemi:
 riprodurli, ridurre la suite di prove automatiche, applicare etichette, chiudere
 i problemi risolti.
-Nota che per applicare etichette é richiesta un'autorizzazione elevata su GitHub
+Nota che per applicare etichette è richiesta un'autorizzazione elevata su GitHub
 facilmente ottenibile per coloro che hanno un po' di esperienza con il progetto.
 Chiedi a un [membro del team][team].
 
 Una volta orientato nel progetto e create una serie di richieste di unione 
 in una particolare area, considera di iniziare a visionare le richieste altrui:
-la capacitá di saper valutare il codice altrui é un'abilitá rara e sempre
-apprezzata. Non é richiesta alcuna autorizzazione &mdash; inizia semplicemente
+la capacità di saper valutare il codice altrui è un'abilitá rara e sempre
+apprezzata. Non è richiesta alcuna autorizzazione &mdash; inizia semplicemente
 a commentare gentilmente e costruttivamente sulle richieste di unione che ti interessano.
-Se vuoi piú informazioni su come fare una buona valutazione del codice altrui
+Se vuoi più informazioni su come fare una buona valutazione del codice altrui
 segui [questa guida][reviews].
 
 <!--
