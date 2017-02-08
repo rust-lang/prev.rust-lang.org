@@ -2,3 +2,4 @@ _site
 serve/
 *~
 **/.DS_Store
+**/*.bak*
