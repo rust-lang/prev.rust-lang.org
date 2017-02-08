@@ -66,6 +66,8 @@ even better, open a pull request against
 
 [Rust Munich](https://www.meetup.com/rust-munich/), München.
 
+[Rust Rhein-Main](https://www.meetup.com/Rust-Rhein-Main/), Frankfurt / Darmstadt.
+
 ## India
 
 [Hyderabad Rust Meetup](https://www.meetup.com/Hyderabad-Rust-Meetup/), Hyderabad.
