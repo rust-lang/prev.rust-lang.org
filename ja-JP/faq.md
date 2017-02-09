@@ -88,25 +88,26 @@ Rustで目指さないものは何ですか。
 3. C++や他の言語の全ての機能群をカバーすることは意図しません。Rustは多くの人が使う機能を提供します。
 4. 100%静的、100%安全、100%反映的、あるいは他のどんな性質についても金科玉条にするつもりはありません。トレードオフが存在します。
 5. We do not demand that Rust run on "every possible platform". It must eventually work without unnecessary compromises on widely-used hardware and software platforms.
-5. Rustが「あらゆるプラットフォーム」で走ることは要求しません。最終的には不必要な妥協なしに広く使われているハードウェア、ソフトウェアプラットフォームで動くべきです。
+5. Rustが「ありとあらゆるプラットフォーム」で走ることは要求しません。最終的には不必要な妥協なしに広く使われているハードウェア、ソフトウェアプラットフォームで動くべきです。
 
 <h3><a href="#how-does-mozilla-use-rust" name="how-does-mozilla-use-rust">
-In which projects is Mozilla using Rust?
+MozillaはどのプロジェクトでRustを使っていますか？
 </a></h3>
 
-The main project is [Servo](https://github.com/servo/servo), an experimental browser engine Mozilla is working on. They are also working to [integrate Rust components](https://bugzilla.mozilla.org/show_bug.cgi?id=1135640) into Firefox.
+メインのプロジェクトは[Servo](https://github.com/servo/servo)で、Mozillaが開発中の実験的なブラウザエンジンです。[Rustのコンポーネントの統合](https://bugzilla.mozilla.org/show_bug.cgi?id=1135640)の作業もしています。
 
 <h3><a href="#what-examples-are-there-of-large-rust-projects" name="what-examples-are-there-of-large-rust-projects">
-What examples are there of large Rust projects?
+Rustの大きなプロジェクトの例は何がありますか？
 </a></h3>
 
-The two biggest open source Rust projects right now are [Servo](https://github.com/servo/servo) and the [Rust compiler](https://github.com/rust-lang/rust) itself.
+現在、2つの大きなオープンソースプロジェクトがあります。[Servo](https://github.com/servo/servo)と[Rustコンパイラ](https://github.com/rust-lang/rust)自身です。
 
 <h3><a href="#who-else-is-using-rust" name="who-else-is-using-rust">
-Who else is using Rust?
+他に誰がRustを使っていますか？
 </a></h3>
 
 [A growing number of organizations!](friends.html)
+[多くの団体が使っておりその数は増え続けています！](friends.html)
 
 <!--
 ### What projects are good examples of idiomatic Rust code?
@@ -115,63 +116,84 @@ TODO: Write this answer.
 -->
 
 <h3><a href="#how-can-i-try-rust-easily" name="how-can-i-try-rust-easily">
-How can I try Rust easily?
+どうやったら簡単にRustを試せますか。
 </a></h3>
 
-The easiest way to try Rust is through the [playpen](https://play.rust-lang.org/), an online app for writing and running Rust code. If you want to try Rust on your system, [install it](https://www.rust-lang.org/install.html) and go through the [Guessing Game](https://doc.rust-lang.org/stable/book/guessing-game.html) tutorial in the book.
+最も簡単にRustを試せるのは[playpen](https://play.rust-lang.org/)を使うことです。オンラインでRustを書いて実行出来ます。
+お使いのシステムで使いたければ[インストール](https://www.rust-lang.org/install.html)して「プログラミング言語Rust」の[数当てゲーム](https://doc.rust-lang.org/stable/book/guessing-game.html)のチュートリアルをやりましょう。
 
 <h3><a href="#how-do-i-get-help-with-rust-issues" name="how-do-i-get-help-with-rust-issues">
-How do I get help with Rust issues?
+Rustで問題に遭遇したときにどうやって助けを求められますか。
 </a></h3>
 
-There are several ways. You can:
+いくつか方法があります。
 
-- Post in [users.rust-lang.org](https://users.rust-lang.org/), the official Rust users forum
-- Ask in the official [Rust IRC channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) (#rust on irc.mozilla.org)
-- Ask on [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) with the "rust" tag
+- 公式のユーザフォーラムの[users.rust-lang.org](https://users.rust-lang.org/)に投稿する
+- 公式の[Rust IRC チャネル](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)(#rust on irc.mozilla.org)で質問する
+- 「rust」タグを付けて[Stack Overflow](https://stackoverflow.com/questions/tagged/rust)で質問する
 - Post in [/r/rust](https://www.reddit.com/r/rust), the unofficial Rust subreddit
+- 非公式のRustのサブredditの[/r/rust](https://www.reddit.com/r/rust)に投稿する
 
 <h3><a href="#why-has-rust-changed-so-much" name="why-has-rust-changed-so-much">
-Why has Rust changed so much over time?
+何故Rustはずっと変わり続けていたのですか？
 </a></h3>
 
-Rust started with a goal of creating a safe but usable systems programming language. In pursuit of this goal it explored a lot of ideas, some of which it kept (lifetimes, traits) while others were discarded (the typestate system, green threading). Also, in the run up to 1.0 a lot of the standard library was rewritten as early designs were updated to best use Rust's features and provide quality, consistent cross-platform APIs. Now that Rust has reached 1.0, the language is guaranteed to be "stable"; and while it may continue to evolve, code which works on current Rust should continue to work on future releases.
+Rustは安全でありながら使いやすいシステムプログラミング言語を目指して発足しました。
+このゴールを追求するために多くのアイディアを探求し、そのうちのいくつかは残り（ライフタイムやトレイト）ましたが、捨てられたもの（タイプステートシステム、グリーンスレッド）もあります。
+また、1.0への道中で標準ライブラリは初期の設計をRustの機能に合わせ、良質で一貫性のとれたクロスプラットフォームなAPIへ更新するために書き換えられました。
+今ではRustは1.0へ達したので「安定」したことが保証されています。そして進化しつづけながらも現在動いているRustのコードは将来のリリースでも動き続ける筈です。
 
 <h3><a href="#how-does-rust-language-versioning-work" name="how-does-rust-language-versioning-work">
-How does Rust language versioning work?
+Rustの言語バージョンの仕組みはどうなっていますか？
 </a></h3>
 
-Rust's language versioning follows [SemVer](http://semver.org/), with backwards incompatible changes of stable APIs only allowed in minor versions if those changes fix compiler bugs, patch safety holes, or change dispatch or type inference to require additional annotation. More detailed guidelines for minor version changes are available as approved RFCs for both the [language](https://github.com/rust-lang/rfcs/blob/master/text/1122-language-semver.md) and [standard library](https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md).
+Rustの言語バージョニングは[SemVer](http://semver.org/)に従っていて、マイーバージョンでのstableなAPIの後方互換性を保たない変更はコンパイラバグの修正、セーフティホールへのパッチ、ディスパッチあるいは型推論をアノテーションが必要なようにすることのみ許されています。
+マイナーバージョンの変更での詳細なガイドラインは承認済みRFCの[language](https://github.com/rust-lang/rfcs/blob/master/text/1122-language-semver.md)や[standard library](https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md)で確認出来ます。
 
-Rust maintains three "release channels": stable, beta, and nightly. Stable and beta are updated every six weeks, with the current nightly becoming the new beta, and the current beta becoming the new stable. Language and standard library features marked unstable or hidden behind feature gates may only be used on the nightly release channel. New features land as unstable, and are "ungated" once approved by the core team and relevant subteams. This approach allows for experimentation while providing strong backwards-compatibility guarantees for the stable channel.
+Rustは3つの「リリースチャネル」を維持しています。stable、beta、nightlyです。
+stableとbetaは6週間毎に更新されていて、そのときのnightlyがbetaに、betaがstableになります。
+言語や標準ライブラリのunstableとマークされた機能やフィーチャゲートで隠されたフィーチャはnightlyのリリースチャネルでのみ使えます。
+新しい機能はunstableとして導入され、コアチームと関係したサブチームに承認されたら「開放」されます。
+この方法でstableチャネルに強に後方互換性を保証しつつ実験することが出来ます。
 
-For additional details, read the Rust blog post ["Stability as a Deliverable."](http://blog.rust-lang.org/2014/10/30/Stability.html)
+さらなる詳細へはRustブログの投稿、["Stability as a Deliverable."](http://blog.rust-lang.org/2014/10/30/Stability.html)をお読み下さい。
 
 <h3><a href="#can-i-use-unstable-features-on-the-beta-or-stable-channel" name="can-i-use-unstable-features-on-the-beta-or-stable-channel">
-Can I use unstable features on the beta or stable channel?
+不安定な機能やフィーチャをbeta、あるいはstableチャネルで使うことは出来ますか？
 </a></h3>
 
-No, you cannot. Rust works hard to provide strong guarantees about the stability of the features provided on the beta and stable channels. When something is unstable, it means that we can't provide those guarantees for it yet, and don't want people relying on it staying the same. This gives us the opportunity to try changes in the wild on the nightly release channel, while still maintaining strong guarantees for people seeking stability.
+いいえ、出来ません。
+Rustはbetaとstableチャネルで提供される機能の安定性を強く保証するために多大な努力をしています。
+何かが不安定なら、このような保証が崩れてしまいますし、保証に頼っている人たちにも不安定さを提供したくはありません。
+このような理由から安定性を求める人へ強い保証を維持しつつ、nightlyのリリースチャネルで野良に変更を試すようになりました。
 
-Things stabilize all the time, and the beta and stable channels update every six weeks, with occasional fixes accepted into beta at other times. If you're waiting for a feature to be available without using the nightly release channel, you can locate its tracking issue by checking the [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable) tag on the issue tracker.
+物事は常に安定になり続けていて、betaとstableチャネルは、偶にbetaに修正が入りつつ6週間毎に更新されています。
+nightlyにある何かの機能やフィーチャを使いたくて待ち続けているのならイシュートラッカー上の[`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable)タグを確認するとトラッキングイシューを発見出来ます。
 
 <h3><a href="#what-are-feature-gates" name="what-are-feature-gates">
-What are "Feature Gates"?
+「フィーチャゲート」とは何ですか？
 </a></h3>
 
-"Feature gates" are the mechanism Rust uses to stabilize features of the compiler, language, and standard library. A feature that is "gated" is accessible only on the nightly release channel, and then only when it has been explicitly enabled through `#[feature]` attributes or the `-Z unstable-options` command line argument. When a feature is stabilized it becomes available on the stable release channel, and does not need to be explicitly enabled. At that point the features is considered "ungated". Feature gates allow developers to test experimental features while they are under development, before they are available in the stable language.
+「フィーチャゲート」はRustがコンパイラ、言語、標準ライブラリのフィーチャを安定化させるために使う仕組みです。
+「ゲート」されているフィーチャはnightlyリリースチャネルでのみアクセス可能で、`#[feature]` アトリビュートか `-Z unstable-options` コンパイラ引数で明示的に有効にしたときのみ使えます。
+フィーチャが安定化されたら、stableのリリースチャネルで使えるようになり、明示的に有効にする必要はなくなります。
+その時点でフィーチャは「開放」されたと考えられます。
+フィーチャゲートのおかげで開発中の実験的な機能をstableの言語で使えるようになる前にテスト出来ます。
 
 <h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
-Why a dual MIT/ASL2 License?
+何故MIT/ASL2のデュアルライセンスなのですか？
 </a></h3>
 
-The Apache license includes important protection against patent aggression, but it is not compatible with the GPL, version 2. To avoid problems using Rust with GPL2, it is alternately MIT licensed.
+Apacheライセンスは特許侵害についての重要な保護を含んでいます、しかしそれはGPLのバージョン2と非互換です。
+RustをGPL2と一緒に使うときの問題を回避するために代替としてMITでもライセンシングされています。
 
 <h3><a href="#why-a-permissive-license" name="why-a-permissive-license">
 Why a BSD-style permissive license rather than MPL or tri-license?
+何故MPL、あるいは三重ライセンスではなくBSDスタイルの許容的ライセンスなのですか？
 </a></h3>
 
-This is partly due to preference of the original developer (Graydon), and partly due to the fact that languages tend to have a wider audience and more diverse set of possible embeddings and end-uses than products such as web browsers. We'd like to appeal to as many of those potential contributors as possible.
+これは一部はオリジナルの開発者（Graydon）の好みで、一部は言語はWebブラウザなどの製品と比べて広いユーザ、多様な組み込みやエンドユーズがあることが多いからです。
+我々は可能な限り多くのこれらの潜在的なコントリビュータにアピールしていきたいと思っています。
 
 <h2 id="performance">Performance</h2>
 
