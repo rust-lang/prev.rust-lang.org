@@ -58,7 +58,7 @@ per inserire il tuo evento nel calendario che verrà annunciato anche su
 [Questa Settimana In Rust][This Week in Rust].
 
 Ricordati mentre pubblicizzi Rust di tenere in conto le idee altrui &mdash;
-non tutti saranno colpiti da Rust e va bene cosí.
+non tutti saranno colpiti da Rust e va bene così.
 
 Incontra alti creatori di comunità Rust su [#rust-community].
 

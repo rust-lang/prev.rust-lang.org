@@ -8,6 +8,7 @@ title: Contribuire a Rust &mdash; trovare, analizzare e risolvere problemi &midd
 La manutenzione giorno per giorno del progetto ruota attorno al 
 [controllo bug][issue tracker] e alle [richieste di unione][PR],
 una mano in più è sempre richiesta.
+
 Il modo più semplice per iniziare a contribuire a Rust è leggere le
 descrizioni dei bug con le etichette [E-easy] o [E-mentor].
 Questi bug sono stati raccolti con la finalità di essere accessibili

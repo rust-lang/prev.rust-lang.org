@@ -7,6 +7,7 @@ title:  Documentazione di Rust &middot; Linguaggio di programmazione Rust
 
 Se non hai proprio mai visto Rust, la prima cosa che dovresti leggere
 è l'introduzione del [Libro di Rust][book].
+
 Ti darà una buona idea di com'è Rust, ti mostrerà come installarlo,
 illustrando anche la sua sintassi e i suoi concetti.
 Una volta letto sarai uno sviluppatore Rust discreto e avrai una
@@ -73,8 +74,8 @@ errori emessi dal compilatore Rust.
 per notificare, risolvere e rivelare problematiche di sicurezza.
 
 [Diritti sul nome e marchio di Rust][legal]. I diritti di Rust
-appartengono agli sviluppatori del Progetto Rust, i suoi marchi 
-sono proprietà di Mozilla. Nel link si possono trovare le 
+appartengono agli sviluppatori del Progetto Rust, i suoi marchi
+sono proprietà di Mozilla. Nel link si possono trovare le
 norme di utilizzo.
 
 [Codice di comportamento][coc]. Si applica all'organizzazione rust-lang

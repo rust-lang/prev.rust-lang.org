@@ -74,7 +74,7 @@ localized-teams:
 
 # Il team di rust
 
-Il progetto Rust é
+Il progetto Rust è
 [amministrato](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)
 da un numero di team, ciascuno focalizzato in una specifica area di competenza.
 Sotto vi è una lista, in ordine alfabetico.

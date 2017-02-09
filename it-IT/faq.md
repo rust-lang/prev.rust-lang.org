@@ -53,7 +53,7 @@ Qual è lo scopo del progetto?
 
 Progettare e implementare un linguaggio sicuro, concorrente e pratico per la programmazione di sistemi.
 
-Rust nasce perché altri linguaggi a questo livello di astrazione e efficienza non sono soddisfacenti. In particolare:
+Rust nasce perchè altri linguaggi a questo livello di astrazione e efficienza non sono soddisfacenti. In particolare:
 
 1. Non viene posta la dovuta attenzione alla sicurezza.
 2. Supportano malamente la concorrenza.
@@ -64,6 +64,7 @@ Rust esiste come un'alternativa che fornisce sia codice efficiente che un livell
 <h3><a href="#is-this-project-controlled-by-mozilla" name="is-this-project-controlled-by-mozilla">
 Questo progetto è controllato da Mozilla?
 </a></h3>
+
 No. Rust ebbe inizio nel 2006 come un progetto hobbystico di Graydon Hoare ed è rimasto così per oltre 3 anni. Mozilla è entrata nel 2009, dopo che il linguaggio si è dimostrato abbastanza maturo per eseguire una serie di test di base automatizzati e dimostrare la valenza dei suoi principi base. Anche se sponsorizzato da Mozilla, Rust è un progetto sviluppato da
 una variegata comunità di appassionati da molti paesi del mondo. Il [Team di Rust](team.html) è composto sia da membri Mozilla che da esterni e `rust` su GitHub ha avuto oltre [1500 sviluppatori diversi](https://github.com/rust-lang/rust/) fino a oggi.
 
@@ -71,6 +72,7 @@ Finché concesso [dalla politica di gestione del progetto](https://github.com/ru
 la visione e le priorità del progetto, guidandolo globalmente.
 Esistono anche dei sottogruppi per guidare e incoraggiare lo sviluppo in alcune aree di interesse, inclusi il linguaggio, il compilatore, le librerie, gli strumenti, la moderazione delle comunità ufficiali.
 La progettazione è guidata da un processo [RFC](https://github.com/rust-lang/rfcs).
+
 Per cambiamenti che non richiedono una RFC, le decisioni sono fatte attraverso richieste di unione sul [repository `rustc`](https://github.com/rust-lang/rust).
 
 <h3><a href="#what-are-some-non-goals" name="what-are-some-non-goals">
@@ -173,14 +175,14 @@ A quel punto la funzione è considerata "libera".
 I "Feature gates" consentono agli sviluppatori di provare funzionalità sperimentali mentre sono in fase di implementazione, prima che giungano nel linguaggio stabile.
 
 <h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
-Perché la doppia licenza MIT/ASL2?
+Perchè la doppia licenza MIT/ASL2?
 </a></h3>
 
 La licenza Apache include importanti protezioni contro le aggressioni legali ma non è compatibile con la GPL versione 2.
 Per evitare problemi nell'utilizzo di Rust e GPL2 è stata aggiunta la licenza alternativa MIT.
 
 <h3><a href="#why-a-permissive-license" name="why-a-permissive-license">
-Perché una licenza simil-BSD aperta invece che la MPL o la tri-licenza?
+Perchè una licenza simil-BSD aperta invece che la MPL o la tri-licenza?
 </a></h3>
 
 Questo è parzialmente dovuto alla preferenza dello sviluppatore originario (Graydon) e parzialmente al fatto che i linguaggi tendono ad avere un pubblico più vasto e una serie più variegata di implementazioni e utilizzi di altri prodotti come i browser web. Noi vorremmo appellarci al maggior numero possibile di sviluppatori.
@@ -230,7 +232,7 @@ Se compili direttamente con `rustc`, usa il parametro `-O`.
 Ciascuno di questi abiliterà le ottimizzazioni.
 
 <h3><a href="#why-is-rustc-slow" name="why-is-rustc-slow">
-Rust compila lentamente. Perché?
+Rust compila lentamente. Perchè?
 </a></h3>
 
 Principalmente per la traduzione del codice e le ottimizzazioni.
@@ -267,7 +269,7 @@ Questo perché i programmatori Rust spesso incontrano problemi prestazionali con
 [FNV hasher](https://crates.io/crates/fnv) è spesso consigliato per queste casistiche, tenendo comunque in considerazione che non possiede le stesse caratteristiche di protezione dagli attacchi a collisione di SipHash.
 
 <h3><a href="#why-is-there-no-integrated-benchmarking" name="why-is-there-no-integrated-benchmarking">
-Perché non esiste una piattaforma integrata di misurazione delle prestazioni?
+Perchè non esiste una piattaforma integrata di misurazione delle prestazioni?
 </a></h3>
 
 Esiste ma è riservata al canale di rilascio "nightly".
@@ -296,7 +298,7 @@ Il codice di Rust può essere compilato anche senza la libreria standard, in que
 <h2 id="syntax">Sintassi</h2>
 
 <h3><a href="#why-curly-braces" name="why-curly-braces">
-Perché le parentesi graffe? La sintassi di Rust non poteva ispirarsi a Haskell o a Python?
+Perchè le parentesi graffe? La sintassi di Rust non poteva ispirarsi a Haskell o a Python?
 </a></h3>
 
 L'utilizzo delle graffe per indicare blocchi di codice è una scelta comune in una moltitudine di linguaggi di programmazione e l'adesione di Rust allo standard è utile per le persone già familiari con lo stile.
@@ -354,11 +356,11 @@ In ciascun esempio, l'ultima riga rappresenta il valore di ritorno della funzion
 Risulta importante specificare che se una funzione termina con un punto e virgola il suo tipo di ritorno sarà `()`, indicando nessun valore di ritorno.
 I ritorni impliciti funzionano quindi esclusivamente in assenza del punto e virgola.
 
-I ritorni espliciti sono utilizzati solo se un ritorno implicito risulta impossibile perché si desidera ritornare un valore prima della fine del corpo della funzione.
+I ritorni espliciti sono utilizzati solo se un ritorno implicito risulta impossibile perchè si desidera ritornare un valore prima della fine del corpo della funzione.
 Mentre ciascuna delle funzioni sopra avrebbe potuto includere un `return` e un punto e virgola, questa aggiunta sarebbe inutilmente prolissa e inconsistente con le convenzioni del codice Rust.
 
 <h3><a href="#why-arent-function-signatures-inferred" name="why-arent-function-signatures-inferred">
-Perché i tipi delle funzioni non sono dedotti automaticamente?
+Perchè i tipi delle funzioni non sono dedotti automaticamente?
 </a></h3>
 
 In Rust le dichiarazioni sono tendelzialmente accompagnate da un tipo esplicito, mentre nel codice i tipi vengono dedotti.
@@ -407,7 +409,7 @@ Come esempio, la grafica sfrutta tipicamente gli [`f32`][f32] perché richiede a
 Nel dubbio, scegli [`f64`][f64] per una maggiore precisione.
 
 <h3><a href="#why-cant-i-compare-floats" name="why-cant-i-compare-floats">
-Perché non posso comparare i numeri a virgola mobile o usarli come chiave per un <code>HashMap</code> o un <code>BTreeMap</code>?
+Perchè non posso comparare i numeri a virgola mobile o usarli come chiave per un <code>HashMap</code> o un <code>BTreeMap</code>?
 </a></h3>
 
 I numeri a virgola mobile si possono comparare con gli operatori `==`, `!=`, `<`, `<=`, `>`, e `>=` , e attraverso la funzione `partial_cmp()`.
@@ -432,9 +434,8 @@ che sono implementati per una serie di conversioni tra tipi numerici (e che anch
 I tratti [`Into`][Into] e [`From`][From] sono implementati esclusivamente per le conversioni prive di perdita, qundi ad esempio, `f64::from(0f32)` funziona mentre `f32::from(0f64)` no.
 D'altro canto, `as` convertirà tra qualsiasi coppia di tipi primitivi, effettuando i necessari troncamenti..
 
-
 <h3><a href="#why-doesnt-rust-have-increment-and-decrement-operators" name="why-doesnt-rust-have-increment-and-decrement-operators">
-Perché Rust non possiede operatori per il decremento e incremento?
+Perchè Rust non possiede operatori per il decremento e incremento?
 </a></h3>
 
 Gli operatori di preincremento e postincremento (e relativi opposti equivalenti), anche se convenienti presentano una discreta complessità;
@@ -499,7 +500,7 @@ Ad ogni modo, se conosci a quale byte si trova il punto di codice o gruppo di gr
 Le funzioni, incluse [`str::find()`][str__find] e le espressioni regolari ritornano indici dei byte, facilitando questo tipo di accesso.
 
 <h3><a href="#why-are-strings-utf-8" name="why-are-strings-utf-8">
-Perché le stringhe sono UTF-8?
+Perchè le stringhe sono UTF-8?
 </a></h3>
 
 Le [`str`][str] sono UTF-8 perché nel mondo questa codifica è frequente - specialmente in trasmissioni di rete, che ignorano l'ordine di bit della piattaforma - pensiamo quindi sia meglio che il trattamento standard dell'I/O non preveda la ricodifica in entrambe le direzioni.
@@ -626,7 +627,7 @@ Se si desidera un iteratore che muova/consumi i valori, basta scrivere lo stesso
 Se si necessita accesso diretto all'iteratore, vi si può usualmente accedere invocando il metodo `iter()`.
 
 <h3><a href="#why-do-i-need-to-type-the-array-size-in-the-array-declaration" name="why-do-i-need-to-type-the-array-size-in-the-array-declaration">
-Perché devo inserire la dimensione del vettore alla sua dichiarazione?
+Perchè devo inserire la dimensione del vettore alla sua dichiarazione?
 </a></h3>
 
 Non è necessario. Se dichiari direttamente un vettore, la dimensione è dedotta dal numero di elementi. Se invece dichiari una funzione che accetta un vettore di dimensione prefissata il compilatore deve avere modo di sapere quale sarà la dimensione di quel vettore.
@@ -684,7 +685,7 @@ In tutti i casi significa che il valore è stato trasferito a un nuovo proprieta
 Se un tipo implementa il tratto `Copy`, il valore del proprietario originale non viene invalidato e può essere utilizzato nuovamente.
 
 <h3><a href="#why-can-values-of-some-types-by-reused-while-others-are-consumed" name="why-can-values-of-some-types-by-reused-while-others-are-consumed">
-Perché alcuni valori di alcuni tipi possono essere utilizzati dopo il passaggio a una funzione mentre il riutilizzo di valori di altri tipi genera errori?
+Perchè alcuni valori di alcuni tipi possono essere utilizzati dopo il passaggio a una funzione mentre il riutilizzo di valori di altri tipi genera errori?
 </a></h3>
 
 Se un tipo implementa il tratto [`Copy`][Copy], esso verrà copiato durante il suo passaggio a una funzione.
@@ -787,7 +788,7 @@ I tipici deriferimenti forzati sono:
 <h2 id="lifetimes">Campi di esistenza</h2>
 
 <h3><a href="#why-lifetimes" name="why-lifetimes">
-Perché i campi di esistenza?
+Perchè i campi di esistenza?
 </a></h3>
 
 I campi di esistenza sono la soluzione di Rust al problema della sicurezza della memoria.
@@ -835,7 +836,7 @@ fn buon_compleanno(nome: &str, eta: i64) -> String {
 Questo approccio è più semplice ma spesso genera allocazioni in memoria non necessarie.
 
 <h3><a href="#when-are-lifetimes-required-to-be-explicit" name="when-are-lifetimes-required-to-be-explicit">
-Perché alcuni riferimenti hanno un campo di esistenza, come <code>&amp;'a T</code> e altri no, tipo <code>&amp;T</code>?
+Perchè alcuni riferimenti hanno un campo di esistenza, come <code>&amp;'a T</code> e altri no, tipo <code>&amp;T</code>?
 </a></h3>
 
 In realtà, *tutti* i riferimenti hanno un campo di esistenza ma nella maggior parte dei casi non
@@ -914,7 +915,7 @@ Un tipo a parametro singolo, come [`Vec<T>`][Vec] è invece `* -> *`, ovvero che
 Un tipo con tre parametri, come [`HashMap<K, V, S>`][HashMap] è di tipo `* -> * -> * -> *` perché accetta tre tipi completi (come [`i32`][i32], [`String`][String] e [`RandomState`][RandomState]) per generare un nuovo tipo completo `HashMap<i32, String, RandomState>`.
 
 In aggiunta a questi esempi, i costruttori di tipo possono accettare dei parametri sul *campo di esistenza*, che denoteremo con `Lt`.
-Ad esempio `slice::Iter` ha il tipo `Lt -> * -> *`, perché va istanziato ad esempio come `Iter<'a, u32>`.
+Ad esempio `slice::Iter` ha il tipo `Lt -> * -> *`, perchè va istanziato ad esempio come `Iter<'a, u32>`.
 
 La mancanza di supporto per i tipi di più alto livello rende difficile scrivere alcuni tipi di codice generico.
 Risulta particolarmente problematico astrarre su concetti come gli iteratori, dato che essi sono spesso parametrizzati nei confronti di uno specifico campo di esistenza.
@@ -936,7 +937,7 @@ Gli esempi in cui una limitazione di tal genere non è esprimibile con un costru
 I tipi associati esistono perché spesso i generici riguardano famiglie di tipi, dove un tipo determina tutti gli altri membri. Per esempio, un tratto per grafi potrebbe avere per `Self` il grafo stesso e avere dei tipi correlati per i suoi nodi e vertici. Ciascun tipo grafo identifica univocamente i tipi associato, rendendo molto più conciso lavorare con questi tipi di strutture e fornendo anche una migliore gestione sulla deduzione dei tipi in molti casi.
 
 <h3><a href="#how-do-i-overload-operators" name="how-do-i-overload-operators">
-Posso sovrascrivere gli operatore? Se sí, quali? Come faccio?
+Posso sovrascrivere gli operatore? Se sì, quali? Come faccio?
 </a></h3>
 
 Puoi personalizzare l'implementazione di una varietà di operatori utilizzando i loro tratti associati: [`Add`][Add] per il  `+`, [`Mul`][Mul] per il `*` e via dicendo. Si può fare così:
@@ -994,7 +995,7 @@ Ci sono alcuni tipi in Rust i cui valori sono solo parzialmente ordinati oppure 
 I tipi a virgola mobile ([`f32`][f32] e [`f64`][f64]) sono un buon esempio di questo. Ogni tipo in virgola mobile potrebbe avere il valore `NaN` (ovvero "non un numero"). `NaN` non è uguale a se stesso (`NaN == NaN` è falso) e nemmeno più grande o più piccolo di un qualsiasi valore.
 Di conseguenza sia [`f32`][f32] che [`f64`][f64] implementano [`PartialOrd`][PartialOrd] e [`PartialEq`][PartialEq] ma non [`Ord`][Ord] e nemmeno [`Eq`][Eq].
 
-Come spiegato nella [precedente domanda sui numeri in virgola mobile](#why-cant-i-compare-floats), queste distinzioni sono importanti perché alcune collezioni fanno affidamento sul totale ordinamento/uguaglianza per funzionare.
+Come spiegato nella [precedente domanda sui numeri in virgola mobile](#why-cant-i-compare-floats), queste distinzioni sono importanti perchè alcune collezioni fanno affidamento sul totale ordinamento/uguaglianza per funzionare.
 
 <h2 id="input-output">Input / Output</h2>
 
@@ -1052,7 +1053,7 @@ Se stai cercando qualcosa di più potente, ci sono [una serie di librerie dispon
 <h2 id="error-handling">Gestione degli errori</h2>
 
 <h3><a href="#why-doesnt-rust-have-exceptions" name="why-doesnt-rust-have-exceptions">
-Perché Rust non ha le eccezioni?
+Perchè Rust non ha le eccezioni?
 </a></h3>
 
 Le eccezioni complicano la comprensione del flusso del programma, esprimono validità o invalidità all'infuori del sistema dei tipi e funzionano male in ambienti multicore(un obiettivo primario per Rust).
@@ -1072,7 +1073,7 @@ Nel tuo codice, dovrebbe essere trattato come test per la non nullità di un val
 Viene utilizzato anche per provare velocemente quando non si vuole ancora gestire tutti i casi o negli articoli, quando la gestione degli errori potrebbe distrarre dal resto.
 
 <h3><a href="#why-do-i-get-errors-with-try" name="why-do-i-get-errors-with-try">
-Perché ottengo un errore quando provo a eseguire codice di esempio che utilizza la macro <code>try!</code>?
+Perchè ottengo un errore quando provo a eseguire codice di esempio che utilizza la macro <code>try!</code>?
 </a></h3>
 
 Quasi sicuramente è un problema con il tipo ritornato dalla funzione. La macro [`try!`][TryMacro] estrae un valore da [`Result`][Result] o ritorna con l'errore portato in [`Result`][Result].
@@ -1156,17 +1157,17 @@ Per copiare byte non in conflitto usa [`copy_nonoverlapping`][copy_nonoverlappin
 Entrambe le funzioni elencate sono `unsafe`, visto che possono eludere le garanzie di sicurezza. Sono quindi da utilizzare con attenzione.
 
 <h3><a href="#does-rust-work-without-the-standard-library" name="does-rust-work-without-the-standard-library">
-Puó Rust operare senza la sua libreria standard?
+Può Rust operare senza la sua libreria standard?
 </a></h3>
 
-Sí. I programmi Rust possono scegliere di non caricare la libreria standard utilizzando l'attributo `#![no_std]`.
+Si. I programmi Rust possono scegliere di non caricare la libreria standard utilizzando l'attributo `#![no_std]`.
 Una volta impostato, è ancora possibile utilizzare la libreria chiave di Rust, composta esclusivamente da primitivi indipendenti dalla piattaforma di esecuzione. Essa non include IO, concorrenza, allocazioni nella heap, ecc.
 
 <h3><a href="#can-i-write-an-operating-system-in-rust" name="can-i-write-an-operating-system-in-rust">
 Posso scrivere un sistema operativo in Rust?
 </a></h3>
 
-Sí! In realtà al momento [ci sono molti progetti che stanno facendo proprio questo](http://wiki.osdev.org/Rust).
+Si! In realtà al momento [ci sono molti progetti che stanno facendo proprio questo](http://wiki.osdev.org/Rust).
 
 <h3><a href="#how-can-i-write-endian-independent-values" name="how-can-i-write-endian-independent-values">
 Come faccio a scrivere o leggere tipi numerici come <code>i32</code> o <code>f64</code> in formato big-endian o little-endian in un file o un flusso di bit?
@@ -1219,7 +1220,7 @@ I comportamenti specifici alla piattaforma sono esprimibili utilizzando [attribu
 Posso programmare per Android/iOS in Rust?
 </a></h3>
 
-Sí! Ci sono già alcuni esempi utilizzanti Rust sia per [Android](https://github.com/tomaka/android-rs-glue) che per [iOS](https://www.bignerdranch.com/blog/building-an-ios-app-in-rust-part-1/).
+Si! Ci sono già alcuni esempi utilizzanti Rust sia per [Android](https://github.com/tomaka/android-rs-glue) che per [iOS](https://www.bignerdranch.com/blog/building-an-ios-app-in-rust-part-1/).
 Richiede un pochino di lavoro di preparazione ma Rust funziona correttamente su entrambe le piattaforme.
 
 <h3><a href="#can-i-run-my-rust-program-in-a-web-browser" name="can-i-run-my-rust-program-in-a-web-browser">
@@ -1249,7 +1250,7 @@ Come si correlano moduli e pacchetti?
 - Le definizioni ricorsive sono propagabili ai moduli ma non ai pacchetti.
 
 <h3><a href="#why-cant-the-rust-compiler-find-a-library-im-using" name="why-cant-the-rust-compiler-find-a-library-im-using">
-Perché il compilatore Rust non riesce a trovare questa libreria che sto importando con <code>use</code>?
+Perchè il compilatore Rust non riesce a trovare questa libreria che sto importando con <code>use</code>?
 </a></h3>
 
 Ci sono diverse possibilità ma un errore comune è non comprendere che le dichiarazioni `use` sono relative al livello base del pacchetto.
@@ -1260,7 +1261,7 @@ Ci sono anche `self` e `super`, che rendono i percorsi di `use` riferiti rispett
 Per ulteriori informazioni su come utilizzare  `use`, leggi il capitolo del libro di Rust ["Crates and Modules"](https://doc.rust-lang.org/stable/book/crates-and-modules.html).
 
 <h3><a href="#why-do-i-have-to-declare-modules-with-mod" name="why-do-i-have-to-declare-modules-with-mod">
-Perché devo dichiarare i file dei moduli con <code>mod</code> al posto di poterli invocare con <code>use</code> direttamente?
+Perchè devo dichiarare i file dei moduli con <code>mod</code> al posto di poterli invocare con <code>use</code> direttamente?
 </a></h3>
 
 Ci sono due modi per dichiarare i moduli in Rust, in linea o in un altro file. Ecco un esempio:
@@ -1347,7 +1348,7 @@ Come carico dinamicamente librerie in Rust?
 Puoi importare librerie dinamiche in Rust con [libloading](https://crates.io/crates/libloading), che fornisce un sistema multipiattaforma per il link dinamico.
 
 <h3><a href="#why-doesnt-crates-io-have-namespaces" name="why-doesnt-crates-io-have-namespaces">
-Perché crates.io non ha uno spazio dei nomi?
+Perchè crates.io non ha uno spazio dei nomi?
 </a></h3>
 
 Citando la [spiegazione ufficiale](https://internals.rust-lang.org/t/crates-io-package-policies/1041) sul design di [https://crates.io](https://crates.io):
@@ -1603,7 +1604,7 @@ fn start(_argc: isize, _argv: *const *const u8) -> isize {
 Che dovrebbe certamente eguagliare il C nell'utilizzo della memoria, incrementando peró la complessità e rimuovendo le garanzie fornite dal codice Rust (evitate utilizzando `unsafe`).
 
 <h3><a href="#why-no-stable-abi" name="why-no-stable-abi">
-Perché Rust non ha una ABI stabile come il C e perché devo annotare le cose con extern?
+Perchè Rust non ha una ABI stabile come il C e perché devo annotare le cose con extern?
 </a></h3>
 
 Dedicarsi a una ABI è una decisione importante che può limitare i cambiamenti vantaggiosi futuri. Dato che Rust ha raggiunto la versione 1.0 a Maggio 2015 è troppo presto per impegnarsi a costruire una ABI stabile. Ció peró non implica che non possa succedere nel futuro.
@@ -1612,16 +1613,16 @@ Dedicarsi a una ABI è una decisione importante che può limitare i cambiamenti 
 Il lemma `extern` permette di usare con Rust specifiche ABI, come quella ben definita del C, per interoperare con altri linguaggi.
 
 <h3><a href="#can-rust-code-call-c-code" name="can-rust-code-call-c-code">
-Puó il codice Rust chiamare il codice C?
+Può il codice Rust chiamare il codice C?
 </a></h3>
 
-Sí. Chiamare il C da Rust è progettato per avere la stessa efficienza delle chiamate di codice C dal C++.
+Si. Chiamare il C da Rust è progettato per avere la stessa efficienza delle chiamate di codice C dal C++.
 
 <h3><a href="#can-c-code-call-rust-code" name="can-c-code-call-rust-code">
-Puó il codice C chiamare il codice Rust?
+Può il codice C chiamare il codice Rust?
 </a></h3>
 
-Sí. Il codice Rust deve essere sposto mediante una dichiarazione `extern`, che lo rende compatibile con la ABI del C.
+Si. Il codice Rust deve essere sposto mediante una dichiarazione `extern`, che lo rende compatibile con la ABI del C.
 Tale funzione può essere passata al codice C come puntatore a una funzione o, se con l'attributo `#[no_mangle]` chiamata direttamente dal C.
 
 <h3><a href="#why-rust-vs-cxx" name="why-rust-vs-cxx">
@@ -1778,7 +1779,7 @@ Alcune differenze specifiche tra le typeclasses di Haskell e i tratti di Rust in
 <h2 id="documentation">Documentazione</h2>
 
 <h3><a href="#why-are-so-many-rust-answers-on-stackoverflow-wrong" name="why-are-so-many-rust-answers-on-stackoverflow-wrong">
-Perché su Stack Overflow molte delle risposte su Rust sono sbagliate?
+Perchè su Stack Overflow molte delle risposte su Rust sono sbagliate?
 </a></h3>
 
 Il linguaggio Rust è pubblico da diversi anni e ha raggiunto la versione 1.0 a Maggio del 2015.

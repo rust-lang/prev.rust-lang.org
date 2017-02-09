@@ -26,6 +26,10 @@ even better, open a pull request against
 
 [Klagenfurt Rust Programmers](https://www.meetup.com/Klagenfurt-Rust/), Klagenfurt.
 
+## Belgium
+
+[Belgium Rust User Group](http://www.rust-lang.be/)
+
 ## Bolivia
 
 [Rust Bolivia](http://www.mozillabolivia.org/rust/), Santa Cruz, Bolivia.
@@ -46,6 +50,10 @@ even better, open a pull request against
 
 [Rust Paris](https://www.meetup.com/Rust-Paris/), Paris.
 
+## Finland
+
+[Finland Rust Meetup](https://www.meetup.com/Finland-Rust-Meetup/), Helsinki.
+
 ## Germany
 
 [Rust Cologne/Bonn User Group](https://www.meetup.com/Rust-Cologne-Bonn/), Köln.
@@ -57,6 +65,8 @@ even better, open a pull request against
 [Rust - Modern Systems Programming Leipzig](https://www.meetup.com/de-DE/Rust-Modern-Systems-Programming-in-Leipzig/), Leipzig.
 
 [Rust Munich](https://www.meetup.com/rust-munich/), München.
+
+[Rust Rhein-Main](https://www.meetup.com/Rust-Rhein-Main/), Frankfurt / Darmstadt.
 
 ## India
 
@@ -77,6 +87,8 @@ even better, open a pull request against
 ## Italy
 
 [Rust lang Milano](https://www.meetup.com/Rust-lang-Milano/), Milano.
+
+[Rust Rome](https://www.meetup.com/it-IT/Rust-Roma/), Rome.
 
 ## Japan
 

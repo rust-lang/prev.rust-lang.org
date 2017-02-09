@@ -95,7 +95,7 @@ e sicurezza del prodotto che stanno usando.
 
 La regola base è che i marchi di Rust non possono essere utilizzati in modo
 che appaiano(a un osservatore medio) ufficiali, affiliati o sponsorizzati dal 
-progetto Rust o da Mozilla, almenoché non vi sia autorizzazione ufficiale da
+progetto Rust o da Mozilla, almenochè non vi sia autorizzazione ufficiale da
 parte del team di sviluppo.
 Questo è il modo fondamentale in cui proteggiamo utenti e sviluppatori dalla confusione.
 
@@ -160,14 +160,14 @@ libri e confezioni di prodotti, se in riferimento al linguaggio di programmazion
 * Distribuire una versione modificata del linguaggio di programmazione Rust, del 
 gestore di pacchetti Cargo e chiamarli Rust o Cargo richiede autorizzazione esplicita scritta da 
 parte del team di Rust.
-Generalmente consentiamo questi utilizzi finché le modifiche apportate sono
+Generalmente consentiamo questi utilizzi finchè le modifiche apportate sono
 (1) relativamente piccole e (2) molto ben comunicate agli utenti finali.
 
 * Vendere magliette, cappelli e/o altri manufatti o merchandising,
 richiede un esplicito permesso scritto da parte del team di Rust.
 Generalmente permettiamo questi utilizzi se (1) è indicato chiaramente
 che il merchandising non fa parte in alcun modo del progetto Rust e se (2)
-é chiaramente comunicato se i profitti possono essere a beneficio del 
+è chiaramente comunicato se i profitti possono essere a beneficio del 
 progetto Rust.
 
 * Utilizzare i marchi di Rust all'interno di un altro marchio registrato richiede 

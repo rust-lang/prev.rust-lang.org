@@ -15,6 +15,7 @@ La tua richiesta di modifica verrà calorosamente accolta.
 
 ***La documentazione più importante che tu possa scrivere è per [i pacchetti
 che fanno parte dell'ecosistema di Rust][crate_docs]***.
+
 Mentre la documentazione principale è relativamente esaustiva, ciò non è vero
 per [molti pacchetti e strumenti popolari][awesome-rust] con cui gli sviluppatori
 Rust interagiscono ogni giorno.
