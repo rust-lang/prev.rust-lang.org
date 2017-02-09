@@ -7,7 +7,8 @@ title:  Documentazione di Rust &middot; Linguaggio di programmazione Rust
 
 Se non hai proprio mai visto Rust, la prima cosa che dovresti leggere
 è l'introduzione del [Libro di Rust][book].
-Ti darà una buona idea di com'è Rust, ti mostrerá come installarlo,
+
+Ti darà una buona idea di com'è Rust, ti mostrerà come installarlo,
 illustrando anche la sua sintassi e i suoi concetti.
 Una volta letto sarai uno sviluppatore Rust discreto e avrai una
 buona idea dei concetti fondamentali di Rust.
@@ -24,10 +25,10 @@ commentati e eseguibili dal browser.
 [Domande Frequenti][faq].
 
 [Il Rustonomicon][nomicon]. 
-Un intero libro dedicato a scrivere codice Rust insicuro.
+Un intero libro dedicato a scrivere codice Rust unsafe.
 Dedicato ai programmatori Rust esperti.
 
-[rust-learning]. Una risorsa fornita dalla comunità di fonti dove imparare Rust.
+[rust-learning]. Una risorsa fornita dalla comunità con varie fonti dove imparare Rust.
 
 [book]: https://doc.rust-lang.org/book/
 [rbe]: http://rustbyexample.com
@@ -53,7 +54,7 @@ le sintassi menzionate nel libro, descrivendole.
 [La guida di Cargo][cargo]. La documentazione di Cargo,
 il gestore di pacchetti di Rust.
 
-[Indice errori compilatore][err]. Spiegazioni dettagliate agli
+[Indice errori compilatore][err]. Spiegazioni dettagliate degli
 errori emessi dal compilatore Rust.
 
 [Note di rilascio][release_notes]. Un archivio delle modifiche apportate in ciascuna versione.
@@ -73,12 +74,12 @@ errori emessi dal compilatore Rust.
 per notificare, risolvere e rivelare problematiche di sicurezza.
 
 [Diritti sul nome e marchio di Rust][legal]. I diritti di Rust
-appartengono agli sviluppatori del Progetto Rust, i suoi marchi 
-sono proprietà di Mozilla. Nel collegamento si possono trovare le 
+appartengono agli sviluppatori del Progetto Rust, i suoi marchi
+sono proprietà di Mozilla. Nel link si possono trovare le
 norme di utilizzo.
 
-[Codice di comportamento][coc]. Si applica all' organizzazione rust-lang
-su GitHub, i forum ufficiali, i canali IRC e in diversi angoli del mondo di Rust.
+[Codice di comportamento][coc]. Si applica all'organizzazione rust-lang
+su GitHub, i forum ufficiali, i canali IRC e nei diversi angoli del mondo di Rust.
 
 [security]: security.html
 [legal]: legal.html
@@ -93,7 +94,7 @@ menzionata sopra.
 [nightly]: https://doc.rust-lang.org/nightly/
 [beta]: https://doc.rust-lang.org/beta/
 
-## Risorse non inglesi
+## Risorse in altre lingue
 
 Per risorse non in lingua inglese
 [risorse in lingua su rust-learning][locale].

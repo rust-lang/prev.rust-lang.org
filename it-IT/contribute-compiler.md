@@ -33,11 +33,11 @@ Non esiste una fonte unica per informazioni sul lavoro richiesto ma chiedi
 su [internals.rust-lang.org] o su
 [#rust-internals] per ulteriori informazioni.
 
-[É imbarazzante se il nostro compilatore si blocca][ice] &mdash; il 
+[È imbarazzante se il nostro compilatore si blocca][ice] &mdash; il 
 nefasto 'errore interno di compilazione' ('internal compiler error' ICE). 
 L'etichetta [I-ICE] tiene traccia di questi problemi e spesso sono molti.
 Questi sono usualmente degli ottimi problemi per iniziare a contribuire
-perchè é facile comprendere quando vengono riparati e sono relativamente
+perché è facile comprendere quando vengono riparati e sono relativamente
 isolati dal resto del codice.
 
 Le prestazioni di Rust è uno dei suoi più grossi vantaggi; e quella

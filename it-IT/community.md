@@ -17,7 +17,7 @@ gli standard comportamentali in tutti i forum di Rust.
 
 Se sei stato o sei in questo momento vittima di attacchi
 o disturbato da un membro della comunità, per favore 
-[contatta][mod_team_email] qualcuno dal [team di moderazione di Rust]
+[contatta][mod_team_email] qualcuno del [team di moderazione di Rust]
 [mod_team] immediatamente. Che tu sia un regolare frequentatore o
 un nuovo arrivato, ci impegniamo per rendere la comunità uno spazio
 sicuro per te.
@@ -80,7 +80,7 @@ Gli sviluppatori di Rust si organizzano su [#rust-internals][internals_irc]. Ded
 
 ### Canali internazionali
 
-- [#rust-br][br_irc] é dedicado à discussão sobre Rust no Brasil
+- [#rust-br][br_irc] è dedicado à discussão sobre Rust no Brasil
 - [#rust-de][de_irc] ist für die allgemeine Diskussion über Rust auf Deutsch
 - [#rust-es][es_irc] es para una discusión general sobre Rust en español
 - [#rust-fr][fr_irc] est dédié à la programmation en Rust en français
@@ -149,7 +149,7 @@ tenute da membri della comunità Rust.
 ## Gruppi Utenti e Incontri
 
 Ci sono oltre 50 [Gruppi Utenti Rust][user_group] nel mondo fra oltre 20
-countries che contano oltre 7,000 membri. I Rustacchiani si incontrano periodicamente
+paesi che contano oltre 7000 membri. I Rustacchiani si incontrano periodicamente
 nei Gruppi Utenti Rust.
 Un ottimo modo per entrare nella comunità, per imparare e per socializzare
 con persone che hanno interessi simili. Gli incontri sono tenuti su base mensile
@@ -201,7 +201,7 @@ in cui non sia chiaro chi contattare in delle discussioni riguardanti Rust.
   una documentazione fantastica.
 
 Oltre ai diversi team ufficiali, molti team hanno dei revisori che possono
-verificare del codice. Se volessi entrare a far parte di uno di questi team
+verificare il codice. Se tu volessi entrare a far parte di uno di questi team
 sentiti libero di incontrare un capogruppo o un qualsiasi altro membro in modo
 che ti possa aiutare a partecipare.
 
@@ -226,8 +226,8 @@ GitHub:
 
 - Nel [repository principale][github] e nella [bacheca problemi][issue_tracking] 
   si svolge il lavoro principale di implementazione. I nostri revisori si impegnano
-  ad essere amichevoli e utili ai nuovi sviluppatori, quindi non esitare a mandare
-  una tua pull request!
+  a essere amichevoli e utili ai nuovi sviluppatori, quindi non esitare a mandare
+  un tuo pull request!
 
 - Il [repository per le RFC][rfcs] traccia il nostro processo di Request for Comment, 
   il modo principale in cui la comunità Rust e il team raggiungono il consenso
