@@ -6,11 +6,11 @@ title: Contribuire a Rust &mdash; librerie &middot; Linguaggio di programmazione
 # Contribuire a Rust &mdash; librerie
 
 Se vuoi contribuire a Rust scrivendo molto codice,
-le librerie sono il modo per farlo: visto che Rust é ancora
+le librerie sono il modo per farlo: visto che Rust è ancora
 un linguaggio giovane, ci sono ancora molti tipi di librerie che 
 o non esistono ancora o sono incompleti e necessitano di miglioramenti o competizione.
 
-Decidere cosa scrivere per avere un impatto ed essere divertenti sono due difficoltá comuni.
+Decidere cosa scrivere per avere un impatto ed essere divertenti sono due difficoltà comuni.
 Ecco alcune idee:
 * Leggi e partecipa ai "what's everyone working on this week" su [/r/rust]
   e [users.rust-lang.org]. Questi forum sono pieni di annunci emozionanti
@@ -23,14 +23,14 @@ Ecco alcune idee:
   come 'easy' specifiche per i nuovi sviluppatori.
 * Fatti coinvolgere in una delle organizzazioni Rust-centriche su GitHub
   tipo [PistonDevelopers], [servo], [redox-os],
-  [iron], [contain-rs], [hyperium]. Spesso é piú facile ricavarsi un posto
-  in queste comunitá, che hanno ancora piú bisogno di rust-lang stesso.
+  [iron], [contain-rs], [hyperium]. Spesso è più facile ricavarsi un posto
+  in queste comunità, che hanno ancora più bisogno di rust-lang stesso.
   Sono anche piene di sviluppatori Rust esperti che possono aiutarti.
 * Aiuta il passaggio delle librerie da [rust-lang-nursery] a rust-lang.
-  Sfortunatamente non vi é ancora molta documentazione su cosa sia necessario fare.
+  Sfortunatamente non vi è ancora molta documentazione su cosa sia necessario fare.
   Puoi comunque chiedere su [#rust-libs].
 * Ispeziona le RFC di una [libreria richiesta dalla community][requested] e creala.
-* Guarda [ció che é in voga su Github][trending] per vedere altri progetti Rust attivi.
+* Guarda [ciò che è in voga su Github][trending] per vedere altri progetti Rust attivi.
 
 Come autore di librerie potresti desiderare di essere a conoscenza dei
 [migliori consigli su come implementare una libreria Rust][lib-prac].
