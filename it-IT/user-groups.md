@@ -5,14 +5,14 @@ title: Gruppi Utenti Rust &middot; Linguaggio di programmazione Rust
 
 # Gruppi Utenti Rust 
 Ci sono oltre 50 [Gruppi Utenti Rust][user_group] nel mondo fra oltre 20
-countries che contano oltre 7,000 membri. 
+paesi che contano oltre 7000 membri. 
 I Rustacchiani si incontrano periodicamente
 nei Gruppi Utenti Rust.
-Un ottimo modo per entrare nella comunitá, per imparare e per socializzare
+Un ottimo modo per entrare nella comunità, per imparare e per socializzare
 con persone che hanno interessi simili. Gli incontri sono tenuti su base mensile
 e sono molto informali. Gli incontri sono aperti a tutti.
 
-Se hai fondato un nuovo gruppo utanti e vorresti aggiungerlo a questa lista per favore contatta il [Team comunitá Rust](./team.html#Community) o 
+Se hai fondato un nuovo gruppo utanti e vorresti aggiungerlo a questa lista per favore contatta il [Team comunità Rust](./team.html#Community) o 
 ancora meglio, apri una pull request a [questo sito](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md).
 
 ## Australia

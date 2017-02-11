@@ -1,4 +1,4 @@
-// Questo codice é modificabile e eseguibile!
+// Questo codice è modificabile e eseguibile!
 fn main() {
     // Una semplice calcolatrice per numeri interi:
     // `+` o `-` aggiunge o sottrae 1

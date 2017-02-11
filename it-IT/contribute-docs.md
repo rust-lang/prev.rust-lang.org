@@ -5,40 +5,41 @@ title: Contribuire a Rust &mdash; documentazione &middot; Linguaggio di programm
 
 # Contribuire a Rust &mdash; documentazione
 
-La documentazione non é mai abbastanza buona e non ce n'é mai troppa.
+La documentazione non è mai abbastanza buona e non ce ne mai troppa.
 Molti aspetti della documentazione di Rust non richiedono una profonda conoscenza
 per essere migliorati, scritti, corretti o modificati, inoltre modificare la documentazione
-é un ottimo modo per imparare Rust.
+è un ottimo modo per imparare Rust.
 Ulteriormente i miglioramenti sono semplici da identificare e potenzialmente infiniti:
-non ti piace come suona una frase? Hai scoperto qualcosa che nella documentazione non é presente?
-La tua richiesta di modifica verrá calorosamente accolta.
+non ti piace come suona una frase? Hai scoperto qualcosa che nella documentazione non è presente?
+La tua richiesta di modifica verrà calorosamente accolta.
 
-***La documentazione piú importante che tu possa scrivere é per [i pacchetti
+***La documentazione più importante che tu possa scrivere è per [i pacchetti
 che fanno parte dell'ecosistema di Rust][crate_docs]***.
-Mentre la documentazione principale é relativamente esaustiva, ció non é vero
+
+Mentre la documentazione principale è relativamente esaustiva, ciò non è vero
 per [molti pacchetti e strumenti popolari][awesome-rust] con cui gli sviluppatori
 Rust interagiscono ogni giorno.
-Contribuire alla documentazione delle API per un progetto popolare ti garantirá
-l'amore da parte dello sviluppatore del progetto.
+Contribuire alla documentazione delle API per un progetto popolare ti garantirà
+l'affetto da parte dello sviluppatore del progetto.
 
-[Il libro][The Book] é la documentazione base per Rust, 
+[Il libro][The Book] è la documentazione base per Rust, 
 scritto nel repository principale.
 Possiede anche la sua etichetta per le problematiche, [A-book] ed
-é continuamente in miglioramento.
+è continuamente in miglioramento.
 Ulteriore documentazione nel repository principale include [il riferimento di Rust][The Rust Reference], 
 la [documentazione della libreria standard][std], [Il Rustonomico][The Rustonomicon] (un guida su come usare `unsafe`
-correttamente). Le [guide di stile di Rust][Rust Style Guidelines] sono cosí incomplete che non vengono elencate spesso;
-uno sviluppatore ambizioso puó sicuramente fare molta strada contribuendo lí.
+correttamente). Le [guide di stile di Rust][Rust Style Guidelines] sono così incomplete che non vengono elencate spesso;
+uno sviluppatore ambizioso può sicuramente fare molta strada contribuendo lì.
 L'[indice degli errori][err] fornisce spiegazioni dettagliate agli errori del compilatore. 
 Quando vengono aggiunti nuovi errori, essi devono essere [inclusi nella documentazione][err-issue], quindi ci sono
-sempre errori non presenti ancora ma con la necessitá di essere aggiunti.
+sempre errori non presenti ancora ma con la necessità di essere aggiunti.
 La maggior parte della documentazione nel repository principale risiede nella cartella [src/doc].
 Tutti i problemi di documentazione sono sotto all'etichetta [A-docs] sul portale delle problematiche.
 Finalmente questo documento e altri correlati con il sito web sono mantenuti nel [repository Git del sito][Rust website Git repository].
 Per contribuire modificalo e manda una pull request.
 
-Una buona quantitá di documentazione importante per Rust non si trova
-nel repository principale o non é mantenuta dal progetto Rust ma é 
+Una buona quantità di documentazione importante per Rust non si trova
+nel repository principale o non è mantenuta dal progetto Rust ma è 
 comunque importantissima per il successo di Rust.
 Esempi di documentazione eccellente sotto attivo sviluppo con domanda
 per altri sviluppatori includono [Rust By Example], [Rust Design Patterns] e [rust-rosetta].
