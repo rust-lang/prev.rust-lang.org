@@ -1,13 +1,13 @@
 ---
 layout: zh-CN/default
-title: Installation &middot; The Rust Programming Language
+title: 安装 &middot; Rust 程序设计语言
 ---
     <h1 class="rustup">安装 Rust</h1>
 
     <div class="row rustup-row">
       <div class="col-md-8 instr-column">
         <div id="platform-instructions-unix" class="instructions" style="display: none;">
-          <p>To install Rust, run the following in your terminal, then follow the onscreen instructions.</p>
+          <p>要安装 Rust 时，请在终端中运行以下命令，然后按照屏幕上的提示进行操作。</p>
           <pre>curl https://sh.rustup.rs -sSf | sh</pre>
         </div>
 
@@ -22,30 +22,30 @@ title: Installation &middot; The Rust Programming Language
         <div id="platform-instructions-android" class="instructions" style="display: none;"> 
          <p>您似乎正在安卓(Android)操作系统上浏览本页面</p>
           <p>
-            The Rust compiler does not run on Android directly (yet),
-            but it does make it easy to cross-compile <em>to</em> Android.
-            Install Rust on a supported host platform and
+		    Rust 编译器(暂时)不能直接在安卓(Android)上运行，
+			但它确实使得它很容易交叉编译<em>到</em>安卓(Android)上。
+			请在支持的主机平台上安装 Rust ，
             <a href="https://github.com/rust-lang-nursery/rustup.rs/#cross-compilation">
-              follow the cross-compilation instructions
+            遵循交叉编译指令
             </a>
-            to build Rust applications for Android.
+            来构建安卓(Android)平台的 Rust 应用程序。
           </p>
         </div>
 
         <div id="platform-instructions-unknown" class="instructions" style="display: none;">
           <!-- unrecognized platform: ask for help -->
-          <p>I don't recognize your platform.</p>
+          <p>无法识别您的平台</p>
           <p>
-            Rust runs on Windows, Linux, Mac OS X, FreeBSD and NetBSD. If
-            you are on one of these platforms and are seeing this then please
-            <a href="https://github.com/rust-lang/rust-www/issues/new">report an issue</a>,
-            along with the following values:
+            可以运行在 Windows, Linux, Mac OS X, FreeBSD 和 NetBSD 上。 
+			如果您正在这些平台上，并且看到这句话，请您
+            <a href="https://github.com/rust-lang/rust-www/issues/new">报告问题(issue)</a>,
+            并且提供以下信息：
           </p>
           
           <div>
-            <div>navigator.platform:</div>
+            <div>navigator.platform:(浏览器.平台)</div>
             <div id="nav-plat"></div>
-            <div>navigator.appVersion:</div>
+            <div>navigator.appVersion:(浏览器.版本)</div>
             <div id="nav-app"></div>
           </div>
 
@@ -97,30 +97,30 @@ title: Installation &middot; The Rust Programming Language
           <br>
 
           <a id="platform-button" style="display: none;" href="#">
-            click or press "n" to cycle platforms
+            点击或按下 “n” 键更换平台
           </a>
         </div>
       </div>
 
     </div>
 
-    <h2>Notes about Rust installation</h2>
+    <h2>关于 Rust 安装的注意事项</h2>
 
     <div class="row">
       <div class="col-md-12">
 
-        <h3>Toolchain management with <code>rustup</code></h3>
+        <h3>使用 <code>rustup</code> 管理工具链</h3>
 
         <p>
-          Rust is installed and managed by the
+          Rust 由
           <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>
-          tool. Rust has a 6-week
+		  工具来安装和管理。 Rust有一个6周的
           <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
-            rapid release process
-          </a> and supports a
+            快速发布过程
+          </a> 并且支持
           <a href="https://forge.rust-lang.org/platform-support.html">
-             great number of platforms
-          </a>, so there are many builds of Rust available at any time.
+             大量的平台
+          </a>，所以任何时候都有很多Rust构建可用。
           <code>rustup</code> manages these builds in a consistent way on every
           platform that Rust supports, enabling installation of Rust from the
           beta and nightly release channels as well as support for additional
@@ -133,18 +133,18 @@ title: Installation &middot; The Rust Programming Language
           documentation</a>.
         </p>
 
-        <h3>Configuring the <code>PATH</code> environment variable</h3>
+        <h3>配置 <code>PATH</code> 环境变量</h3>
 
         <p>
-          In the Rust development environment, all tools are installed to the
+          在 Rust 开发环境中，所有工具都安装到
           <span class="platform-specific not-win" style="display: inline;">
             <code>~/.cargo/bin</code>
           </span>
           <span class="platform-specific win" style="display: none;">
             <code>%USERPROFILE%\.cargo\bin</code>
-          </span> directory,
-          and this is where you will find the Rust toolchain, including
-          <code>rustc</code>, <code>cargo</code>, and <code>rustup</code>.
+          </span> 目录，
+          并且您能够在这里找到 Rust 工具链，包括
+          <code>rustc</code>、<code>cargo</code>及<code>rustup</code>。
         </p>
 
         <p>
@@ -160,13 +160,12 @@ title: Installation &middot; The Rust Programming Language
         </p>
 
         <p>
-          If, after installation, running <code>rustc --version</code> in the
-          console fails, this is the most likely reason.
+          当安装完成之后，如果在控制台运行 <code>rustc --version</code> 失败，这是最可能的原因。
         </p>
 
         <div class="platform-specific win">
 
-          <h3>Windows considerations</h3>
+          <h3>Windows 注意事项</h3>
           <!-- This anchor is probably linked in the wild and should not be broken -->
           <a id="win-foot"></a>
 
@@ -194,16 +193,14 @@ title: Installation &middot; The Rust Programming Language
       </div>
     </div>
 
-    <h2>Other installation methods</h3>
+    <h2>其他安装方法</h3>
 
     <div class="row">
       <div class="col-md-12">
         <p>
-          The installation described above, via
-          <code>rustup</code>, is the preferred way to install Rust for most developers,
-          but Rust can be
-          <a href="other-installers.html">installed via other methods</a>
-          as well.
+         上述的通过 <code>rustup</code> 的安装方法是大多数开发者的首选。
+          但是 Rust 也可以
+          <a href="other-installers.html">通过其他方法安装</a>。
         </p>
       </div>
     </div>
