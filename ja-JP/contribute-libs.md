@@ -11,7 +11,7 @@ Rustは若い言語なので、まだ存在していない、あるいは不完�
 意味があって楽しい何を書くかを決めるのは一般に難しいものです。
 ここにいくつかアイディアがあります。
 
-* [/r/rust]や[users.rust-lang.org]の「今週みんなが何をやったか」スレッドを読んで参加する。他のRustプログラマが協力者を捜しているという告知もあります。
+* [/r/rust]や[users.rust-lang.org]の"what's everyone working on this week"スレッドを読んで参加する。他のRustプログラマが協力者を捜しているという告知もあります。
 * [awesome-rust]や[libs.rs]でRustのライブラリに親しむ
 * Webブラウザの[Servo]、HTTPライブラリの[hyper]、ソースコードフォーマッタの[rustfmt]、Unixライブラリのバインディングである[nix]、Lint集の[clippy]などの大きなプロジェクトは新しいコントリビュータのためにイシューに「easy」とラベルをつけています。
 * [PistonDevelopers]、[servo]、[redox-os]、[iron]、[contain-rs]、[hyperium]などのアクティブなRustのGitHubオーガニゼーションに関わる。

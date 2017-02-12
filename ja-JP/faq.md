@@ -12,7 +12,6 @@ Rustコミュニティの人が出喰わすよく繰り返される質問への�
 </p>
 
 <p class="faq-intro">
-If there is some common or important question you feel is wrongly left unanswered here, feel free to <a href="https://github.com/rust-lang/rust-www/blob/master/CONTRIBUTING.md">help us fix it</a>.
 もしよくある、あるいは重要な質問で、不当にここに掲載されていないと感じるものがあるなら気軽に<a href="https://github.com/rust-lang/rust-www/blob/master/CONTRIBUTING.md">修正して貢献して下さい</a>。
 </p>
 
@@ -72,8 +71,6 @@ Mozillaは2009年に基本的なテストが通り、コアコンセプトをデ
 今でもMozillaによる支援を受けていますが、Rustは世界中多種多様な場所からの熱烈なファンによる様々なコミュニティにより開発されています。
 [Rustチーム](https://www.rust-lang.org/team.html)にはMozillaの職員もいればMozillaと関わりのない人もおり、GitHubの `rust` には[1,500もの貢献者](https://github.com/rust-lang/rust/)がいます。
 
-As far as [project governance](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md) goes, Rust is managed by a core team that sets the vision and priorities for the project,
-guiding it from a global perspective. There are also subteams to guide and foster development of particular areas of interest, including the core language, the compiler, Rust libraries, Rust tools, and moderation of the official Rust communities. Designs in each these areas are advanced through an [RFC process](https://github.com/rust-lang/rfcs). For changes which do not require an RFC, decisions are made through pull requests on the [`rustc` repository](https://github.com/rust-lang/rust).
 [プロジェクト自治](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)が回っている限り、Rustはプロジェクトのヴィジョンと優先順位を定めグローバルな視点で舵を切る役割を持つコアチームによって管理されます。
 また、言語コア、コンパイラ、Rustのライブラリ、Rustのツール、公式のRustコミュニティのモデレーションなどの領域で開発を先導し育成するためのサブチームも存在します。
 それぞれの領域でのデザインは[RFCプロセス](https://github.com/rust-lang/rfcs)を通じて拡張されています。
@@ -83,18 +80,17 @@ RFCを必要としない変更については[`rustc` レポジトリ](https://g
 Rustで目指さないものは何ですか。
 </a></h3>
 
-1. 著しく最先端の技術を採用したりはしません。古く、確率された技術の方を好みます。
+1. 最先端すぎる技術を採用したりはしません。古く、確立された技術の方を好みます。
 2. 表現力、ミニマリズム、エレガントさを他のゴールより重んじることはしません。あれば望ましいですが、下位のゴールです。
-3. C++や他の言語の全ての機能群をカバーすることは意図しません。Rustは多くの人が使う機能を提供します。
+3. C++をはじめ、他の言語の全ての機能群をカバーすることは意図しません。Rustは多くの人が使う機能を提供します。
 4. 100%静的、100%安全、100%反映的、あるいは他のどんな性質についても金科玉条にするつもりはありません。トレードオフが存在します。
-5. We do not demand that Rust run on "every possible platform". It must eventually work without unnecessary compromises on widely-used hardware and software platforms.
 5. Rustが「ありとあらゆるプラットフォーム」で走ることは要求しません。最終的には不必要な妥協なしに広く使われているハードウェア、ソフトウェアプラットフォームで動くべきです。
 
 <h3><a href="#how-does-mozilla-use-rust" name="how-does-mozilla-use-rust">
 MozillaはどのプロジェクトでRustを使っていますか？
 </a></h3>
 
-メインのプロジェクトは[Servo](https://github.com/servo/servo)で、Mozillaが開発中の実験的なブラウザエンジンです。[Rustのコンポーネントの統合](https://bugzilla.mozilla.org/show_bug.cgi?id=1135640)の作業もしています。
+メインのプロジェクトは[Servo](https://github.com/servo/servo)で。Mozillaが開発中の実験的なブラウザエンジンです。[Rustのコンポーネントの統合](https://bugzilla.mozilla.org/show_bug.cgi?id=1135640)の作業もしています。
 
 <h3><a href="#what-examples-are-there-of-large-rust-projects" name="what-examples-are-there-of-large-rust-projects">
 Rustの大きなプロジェクトの例は何がありますか？
@@ -106,7 +102,6 @@ Rustの大きなプロジェクトの例は何がありますか？
 他に誰がRustを使っていますか？
 </a></h3>
 
-[A growing number of organizations!](friends.html)
 [多くの団体が使っておりその数は増え続けています！](friends.html)
 
 <!--
@@ -131,7 +126,6 @@ Rustで問題に遭遇したときにどうやって助けを求められます�
 - 公式のユーザフォーラムの[users.rust-lang.org](https://users.rust-lang.org/)に投稿する
 - 公式の[Rust IRC チャネル](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)(#rust on irc.mozilla.org)で質問する
 - 「rust」タグを付けて[Stack Overflow](https://stackoverflow.com/questions/tagged/rust)で質問する
-- Post in [/r/rust](https://www.reddit.com/r/rust), the unofficial Rust subreddit
 - 非公式のRustのサブredditの[/r/rust](https://www.reddit.com/r/rust)に投稿する
 
 <h3><a href="#why-has-rust-changed-so-much" name="why-has-rust-changed-so-much">
@@ -188,7 +182,6 @@ Apacheライセンスは特許侵害についての重要な保護を含んで�
 RustをGPL2と一緒に使うときの問題を回避するために代替としてMITでもライセンシングされています。
 
 <h3><a href="#why-a-permissive-license" name="why-a-permissive-license">
-Why a BSD-style permissive license rather than MPL or tri-license?
 何故MPL、あるいは三重ライセンスではなくBSDスタイルの許容的ライセンスなのですか？
 </a></h3>
 

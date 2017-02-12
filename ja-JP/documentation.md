@@ -5,7 +5,7 @@ title:  Rustのドキュメント &middot; プログラミング言語Rust
 
 # Rustのドキュメント
 
-Rustを今までに一度も見たことがないなら、まずは[プログラミング言語Rust][book]を読むべきです。
+Rustを今までに一度も見たことがないなら、まずは[プログラミング言語Rust][book]を読むべきです（訳注: [和訳](https://github.com/rust-lang-ja/the-rust-programming-language-ja)もあります）。
 これを読めばRustとは何か、インストール方法、構文と概念を理解出来ます。
 本を読み切る頃にはもうほとんどRust開発者になっていて、Rustの背後にある基本的な理念をざっと分かる筈です。
 

@@ -1,8 +1,8 @@
 // このコードは編集して実行出来ます！
 fn main() {
     // 簡単な整数電卓:
-    // `+` 、 `-` は１を足す、引く
-    // `*` 、 `/` は２で掛ける、割る
+    // `+` は1足す、、`-` は1引く
+    // `*` は2掛ける、`/` は2割る
 
     let program = "+ + * - /";
     let mut accumulator = 0;
@@ -18,5 +18,6 @@ fn main() {
     }
 
     println!("プログラム \"{}\" の計算結果は {}。",
-              program, accumulator);
+             program,
+             accumulator);
 }
