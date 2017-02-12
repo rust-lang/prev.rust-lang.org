@@ -79,6 +79,7 @@ Rust自体の開発についてリアルタイムで議論するための場で�
 - [#rust-bots][bots_irc] Rustについての通知をbotが流す
 - [#rust-docs][docs_irc] 非公式のドキュメントチームの場所
 - [#rust-crypto][crypto_irc] Rustでの暗号について議論する場所
+- [#rust-embedded][embedded_irc] Rustで組み込みソフトウェアをする人のために
 - [#rust-gamedev][gamedev_irc] Rustでゲームをする人のために
 - [#rust-networking][networking_irc] Rustでコンピュータネットワーキングと開発をする人のために
 - [#rust-offtopic][offtopic_irc] Rustで一般の世間話をするために
@@ -95,6 +96,7 @@ Rust自体の開発についてリアルタイムで議論するための場で�
 [crypto_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
 [de_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
 [es_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-es
+[embedded_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-embedded
 [fr_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-fr
 [gamedev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
 [internals_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals

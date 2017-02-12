@@ -1321,8 +1321,8 @@ Converting a C-style enum to an integer can be done with an `as` expression, lik
 
 Converting in the other direction can be done with a `match` statement, which maps different numeric values to different potential values for the enum.
 
-<h3><a href="#why-do-rust-programs-use-more-memory-than-c" name="why-do-rust-programs-use-more-memory-than-c">
-Why do Rust programs use more memory than C?
+<h3><a href="#why-do-rust-programs-have-larger-binary-sizes-than-C-programs" name="why-do-rust-programs-have-larger-binary-sizes-than-C-programs">
+Why do Rust programs have larger binary sizes than C programs?
 </a></h3>
 
 There are several factors that contribute to Rust programs having, by default, larger binary sizes than functionally-equivalent C programs. In general, Rust's preference is to optimize for the performance of real-world programs, not the size of small programs.
@@ -1546,7 +1546,8 @@ impl Foo {
 Does Rust have copy constructors?
 </a></h3>
 
-Not exactly. Types which implement `Copy` will do a standard C-like "shallow copy" with no extra work (similar to "plain old data" in C++). It is impossible to implement `Copy` types that require custom copy behavior. Instead, in Rust "copy constructors" are created by implementing the `Clone` trait, and explicitly calling the `clone` method. Making user-defined copy operators explicit surfaces the underlying complexity, making it easier for the developer to identify potentially expensive operations.
+Not exactly. Types which implement `Copy` will do a standard C-like "shallow copy" with no extra work (similar to trivially copyable types in C++). It is impossible to implement `Copy` types that require custom copy behavior. Instead, in Rust "copy constructors" are created by implementing the `Clone` trait, and explicitly calling the `clone` method. Making user-defined copy operators explicit surfaces the underlying complexity, making it easier for the developer to identify potentially expensive operations.
+
 
 <h3><a href="#does-rust-have-move-constructors" name="does-rust-have-move-constructors">
 Does Rust have move constructors?
