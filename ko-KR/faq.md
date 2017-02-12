@@ -422,7 +422,7 @@ match val.do_something() {
 </a></h3>
 
 두 가지 방법이 있는데, 하나는 `as` 예약어로 원시 타입 사이에서 간단한 변환을 하는 것이고, 다른 하나는 [`Into`][Into]와 [`From`][From] 트레이트를 써서 임의의 타입 변환을 하는 것입니다(트레이트를 직접 구현해서 변환을 추가할 수도 있습니다).
-[`Into`][Into]와 [`From`][From] 트레이트는 변환에서 손실이 일어나지 않을 때만 구현되어 있며, 이를테면 `f64::from(0f32)`는 컴파일이 되지만 `f32::from(0f64)`는 아닙니다.
+[`Into`][Into]와 [`From`][From] 트레이트는 변환에서 손실이 일어나지 않을 때만 구현되어 있으며, 이를테면 `f64::from(0f32)`는 컴파일이 되지만 `f32::from(0f64)`는 아닙니다.
 한편 `as`는 원시 타입들 사이에서는 모두 변환이 가능하며 필요하다면 값을 잘라냅니다.
 
 <h3><a href="#why-doesnt-rust-have-increment-and-decrement-operators" name="why-doesnt-rust-have-increment-and-decrement-operators">
@@ -1463,9 +1463,9 @@ Rust에서 전역 변수는 컴파일 시간에 계산된 전역 상수라면 `c
 </a></h3>
 
 Rust는 현재 컴파일 시간 상수를 제한적으로 지원합니다.
-원시 값을 `const` 선언으로 정의할 수 있고(`static`과 비슷하지만, 변경할 수 없고 메모리에서 지정된 위치를 가지지 않습니다), `const` 함수나 선천적인 메소드도 정의할 수 있습니다. 
+원시 값을 `const` 선언으로 정의할 수 있고(`static`과 비슷하지만, 변경할 수 없고 메모리에서 지정된 위치를 가지지 않습니다), `const` 함수나 선천적인 메소드도 정의할 수 있습니다.
 
-이 기작으로 선언할 수 없는 명령적인 상수를 선언하려면 [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) 크레이트를 사용하세요. 
+이 기작으로 선언할 수 없는 명령적인 상수를 선언하려면 [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) 크레이트를 사용하세요.
 이 크레이트는 컴파일 시간 평가를 상수가 처음 사용될 때 자동으로 평가하는 걸로 흉내냅니다.
 
 <h3><a href="#can-i-run-code-before-main" name="can-i-run-code-before-main">
