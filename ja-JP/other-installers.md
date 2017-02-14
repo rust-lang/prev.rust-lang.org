@@ -92,7 +92,7 @@ curl https://sh.rustup.rs -sSf | sh -s -- --help
 これらを使うよくある理由は
 
 - オフラインのインストール
-- Windowsでのプラットフォームに統合され、視覚的なインストーラ
+- Windowsプラットフォームに統合された、視覚的なインストーラの方が良い
 
 これらのバイナリは[Rustの署名鍵][Rust signing key]でRustのビルド基盤で[GPG]で署名されていてます。
 この鍵は[keybase.ioから入手可能][available on keybase.io]です。
