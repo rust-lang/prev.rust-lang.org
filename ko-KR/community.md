@@ -13,8 +13,7 @@ Rust 프로그래밍 언어에는 여러 특장점이 있지만, 그 가운데 �
 만약 커뮤니티 구성원에게 괴롭힘이나 불편함을 당했었거나 당하고 있다면, [Rust 중재 팀][mod_team] 누구에게나 즉시 [연락][mod_team_email]해 주십시오.
 당신이 자주 기여하는 사람이든 새로 오는 사람이든, 저희는 커뮤니티를 당신에게 안전한 장소로 만드는 데 주의를 기울일 것입니다.
 
-[coc]: https://www.rust-lang.org/conduct.html
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
+[coc]: conduct.html
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
 ## 시작하기
@@ -36,12 +35,14 @@ Rust 언어와 라이브러리에 대한 최신 소식과, 앞으로의 행사 �
 그리고 Rust에서 일어나는 거의 모든 일들은 비공식 서브레딧 [/r/rust][reddit]에서도 함께 의논됩니다.
 
 저희는 [트위터][twitter] 계정도 운영합니다.
+<!-- 영어를 읽을 수 없다면, 중국어 [웨이보][weibo] 계정을 팔로할 수도 있습니다. -->
 
 [twir]: https://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
 [reddit]: https://www.reddit.com/r/rust
 [reddit_coc]: https://www.reddit.com/r/rust/comments/2rvrzx/our_code_of_conduct_please_read/
 [twitter]: https://twitter.com/rustlang
+[weibo]: http://weibo.com/u/5616913483
 
 ## IRC 채널
 
@@ -79,6 +80,7 @@ Rust에 기여하는 데 대한 질문을 하는 데도 쓰입니다.
 - [#rust-bots][bots_irc]에서는 여러 봇들이 Rust에 대한 알림을 전달합니다.
 - [#rust-docs][docs_irc]는 비공식 문서 팀의 보금자리입니다.
 - [#rust-crypto][crypto_irc]는 Rust로 암호학을 하는 데 대해 다룹니다.
+- [#rust-embedded][embedded_irc]는 Rust로 임베디드 개발을 하는 사람들이 모입니다.
 - [#rust-gamedev][gamedev_irc]에는 Rust로 게임 개발을 하는 사람들이 모입니다.
 - [#rust-networking][networking_irc]에는 Rust로 컴퓨터 네트워킹을 하는 사람들이 모입니다.
 - [#rust-offtopic][offtopic_irc]는 Rust 커뮤니티가 온갖 잡담을 하는 장소입니다.
@@ -95,6 +97,7 @@ Rust에 기여하는 데 대한 질문을 하는 데도 쓰입니다.
 [crypto_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
 [de_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
 [es_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-es
+[embedded_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-embedded
 [fr_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-fr
 [gamedev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
 [internals_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
@@ -121,6 +124,13 @@ Rust에 기여하는 데 대한 질문을 하는 데도 쓰입니다.
 
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
+
+## 유튜브 채널
+
+Rust [유튜브 채널][youtube_channel]에는 Rust 프로그래밍을 다루는 비디오 자료가 올라옵니다.
+다양한 컨퍼런스에서 Rust 커뮤니티 사람들이 발표한 것을 녹화한 영상들이 많습니다.
+
+[youtube_channel]: https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA
 
 ## 사용자 그룹과 모임
 
@@ -164,15 +174,15 @@ Rust는 커뮤니티가 주도하는 개발 프로세스를 따르며,
 공식 팀 구성원과는 별개로, 대부분의 팀에는 해당 분야에 대해 잘 알고 코드를 확인할 수 있는 더 많은 리뷰어들이 있습니다.
 이들 중 한 팀에 참여하고 싶다면, 부담 없이 팀 리더나 다른 구성원에게 요청해서 시작할 수 있도록 도움을 받으세요.
 
-[teams]: https://www.rust-lang.org/team.html
-[core_team]: https://www.rust-lang.org/team.html#Core
-[language_team]: https://www.rust-lang.org/team.html#Language-design
-[library_team]: https://www.rust-lang.org/team.html#Library
-[compiler_team]: https://www.rust-lang.org/team.html#Compiler
-[tool_team]: https://www.rust-lang.org/team.html#Tooling-and-infrastructure
-[community_team]: https://www.rust-lang.org/team.html#Community
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
-[doc_team]: https://www.rust-lang.org/en-US/team.html#Documentation-team
+[teams]: team.html
+[core_team]: team.html#Core-team
+[language_team]: team.html#Language-design-team
+[library_team]: team.html#Library-team
+[compiler_team]: team.html#Compiler-team
+[tool_team]: team.html#Tooling-and-infrastructure-team
+[community_team]: team.html#Community-team
+[mod_team]: team.html#Moderation-team
+[doc_team]: team.html#Documentation-team
 
 ## Rust 개발
 

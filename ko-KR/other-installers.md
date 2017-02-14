@@ -1,75 +1,79 @@
 ---
 layout: ko-KR/default
-title: Other Installation Methods &middot; The Rust Programming Language
+title: 다른 설치 방법 &middot; Rust 프로그래밍 언어
+
+localized-channels:
+  stable: 안정
+  beta: 베타
+  nightly: 나이틀리
 ---
 
-# Other Rust Installation Methods
+# 다른 Rust 설치 방법
 
-- [Which installer should you use?](#which)
-- [Other ways to install `rustup`](#more-rustup)
-- [Standalone installers](#standalone)
-- [Source code](#source)
+- [무슨 인스톨러를 써야 합니까?](#which)
+- [`rustup`을 설치하는 다른 방법](#more-rustup)
+- [자기 완결 인스톨러](#standalone)
+- [소스 코드](#source)
 
-## Which installer should you use?
+## 무슨 인스톨러를 써야 합니까?
 <span id="which"></span>
 
-Rust runs on many platforms, and there are many ways to install Rust. If you
-want to install Rust in the most straightforward, recommended way, then follow
-the instructions on the main [installation page].
+Rust는 많은 플랫폼에서 동작하며, Rust를 설치하는 방법 또한 많이 있습니다.
+만약 Rust를 가장 쉽고 권장되는 방법으로 설치하려면
+기본 [설치 페이지][installation page]의 방법을 따라 주세요.
 
-That page describes installation via [`rustup`], a tool that manages multiple
-Rust toolchains in a consistent way across all platforms Rust supports. Why
-might one _not_ want to install using those instructions?
+이 페이지에서는 [`rustup`]으로 설치하는 방법을 설명하는데,
+이 도구는 Rust가 지원하는 모든 플랫폼에서 Rust 툴체인을 일관된 방법으로 다룰 수 있게 해 줍니다.
+이 방법대로 설치를 하지 _않아야_ 할 이유로는 뭐가 있을까요?
 
-- Offline installation. `rustup` downloads components from the internet on
-  demand. If you need to install Rust without access to the internet, `rustup`
-  is not suitable.
-- Preference for the system package manager. On Linux in particular, but also on
-  macOS with [Homebrew], and Windows with [Chocolatey], developers sometimes
-  prefer to install Rust with their platform's package manager.
-- Preference against `curl | sh`. On Unix, we usually install `rustup` by
-  running a shell script via `curl`. Some have concerns about the security of
-  this arrangement and would prefer to download and run the installer
-  themselves.
-- Validating signatures. Although `rustup` performs its downloads over HTTPS,
-  the only way to verify the signatures of Rust installers today is to do so
-  manually with the standalone installers.
-- GUI installation and integration with "Add/Remove Programs" on
-  Windows. `rustup` runs in the console and does not register its installation
-  like typical Windows programs. If you prefer a more typical GUI installation
-  on Windows there are standalone `.msi` installers. In the future
-  `rustup` will also have a GUI installer on Windows.
+- 오프라인 설치. `rustup`은 필요에 따라 인터넷에서 구성 요소를 내려 받습니다.
+  인터넷 접속이 없이 Rust를 설치해야 한다면 `rustup`은 적합하지 않습니다.
 
-Rust's platform support is defined in [three tiers], which correspond closely
-with the installation methods available: in general, the Rust project provides
-binary builds for all tier 1 and tier 2 platforms, and they are all installable
-via `rustup`. Some tier 2 platforms though have only the standard library
-available, not the compiler itself; that is, they are cross-compilation targets
-only; Rust code can run on those platforms, but they do not run the compiler
-itself. Such targets can be installed with the `rustup target add` command.
+- 시스템 패키지 관리자를 쓰고자 할 경우. 특히 리눅스에서 그렇습니다만,
+  macOS에서 [Homebrew]를 쓰는 경우나, 윈도에서 [Chocolatey]를 쓰는 경우에도 해당됩니다.
+  이런 경우 개발자들이 종종 해당 플랫폼의 패키지 관리자로 Rust를 설치하길 원할 수 있습니다.
 
-## Other ways to install `rustup`
+- `curl | sh`를 쓰지 않고자 할 경우. 유닉스에서 `rustup`은 보통 `curl`을 통해
+  셸 스크립트를 실행하여 설치합니다. 이 접근의 보안성에 문제를 제기하는 사람들은
+  인스톨러를 직접 내려 받아 실행하길 원할 수 있습니다.
+
+- 서명을 검증하고자 할 경우. `rustup`에서 내려받기는 HTTPS를 통해 이루어지지만,
+  현재로선 Rust 인스톨러의 서명을 검증하는 유일한 방법은
+  자기 완결 인스톨러를 받아서 수동으로 하는 수 밖에 없습니다.
+
+- 윈도에서 "프로그램 설치/삭제"와 연동하여 GUI 설치를 하고자 할 경우.
+  `rustup`은 콘솔에서 실행되며 일반적인 윈도 프로그램처럼 설치를 등록하지 않습니다.
+  윈도에서 좀 더 일반적인 GUI 설치를 원한다면 자기 완결 `.msi` 인스톨러도 제공됩니다.
+  미래에는 `rustup` 자체적으로 윈도에서 GUI 인스톨러를 제공할 수도 있습니다.
+
+Rust의 플랫폼 지원은 [세 단계][three tiers]로 구성되어 있는데
+이는 어떤 설치 방법을 쓸 수 있느냐와 밀접하게 연관되어 있습니다.
+일반적으로 Rust 프로젝트는 모든 1단계 및 2단계 플랫폼에서 바이너리 빌드를 제공하며,
+`rustup`으로 설치할 수 있습니다.
+단 일부 2단계 플랫폼에서는 컴파일러는 제공하지 않으며 표준 라이브러리만 제공하는데,
+이 경우 크로스플랫폼 타겟으로만 쓰일 수 있기 때문에
+Rust 코드를 실행할 수는 있지만 컴파일러를 실행할 수는 없게 됩니다.
+이러한 타겟은 `rustup target add` 명령으로 설치할 수 있습니다.
+
+## `rustup`을 설치하는 다른 방법
 <span id="rustup"></span>
 
-The way to install `rustup` differs by platform:
+`rustup`을 설치하는 방법은 플랫폼마다 다릅니다:
 
-* On Unix, run `curl https://sh.rustup.rs -sSf | sh` in your
-  shell. This downloads and runs [`rustup-init.sh`], which in turn
-  downloads and runs the correct version of the `rustup-init`
-  executable for your platform.
-* On Windows, download and run [`rustup-init.exe`].
+* 유닉스에서는 셸에서 `curl https://sh.rustup.rs -sSf | sh`을 입력합니다.
+  이렇게 하면 [`rustup-init.sh`]가 받아지고 실행되는데,
+  이 스크립트는 다시 현재 플랫폼에 알맞은 `rustup-init` 실행파일을 내려받아 실행합니다.
+* 윈도에서는 [`rustup-init.exe`]를 내려받아 실행합니다.
 
-`rustup-init` can be configured interactively, and all options can additionally
-be controlled by command-line arguments, which can be passed through the shell
-script. Pass `--help` to `rustup-init` as follows to display the arguments
-`rustup-init` accepts:
+`rustup-init`은 사용자 문답으로 설정할 수도 있으며,
+명령줄 인자를 통해 모든 인자를 제어할 수도 있는데 셸 스크립트를 통해서도 전달할 수 있습니다.
+`rustup-init`에 `--help`를 다음과 같이 전달하면 `rustup-init`이 받는 인자들을 볼 수 있습니다:
 
 ```
 curl https://sh.rustup.rs -sSf | sh -s -- --help
 ```
 
-If you prefer not to use the shell script, you may directly download
-`rustup-init` for the platform of your choice:
+셸 스크립트를 쓰지 않고자 한다면 원하는 플랫폼의 `rustup-init`을 직접 받을 수 있습니다:
 
 <div class="rustup-init-table">
   {% for column in site.data.platforms.rustup %}
@@ -89,31 +93,31 @@ If you prefer not to use the shell script, you may directly download
   {% endfor %}
 </div>
 
-## Standalone installers
+## 자기 완결 인스톨러
 <span id="standalone"></span>
 
-The official Rust standalone installers contain a single release of Rust, and
-are suitable for offline installation. They come in three forms: tarballs
-(extension `.tar.gz`), that work in any Unix-like environment, Windows
-installers (`.msi`), and Mac installers (`.pkg`). These installers come with
-`rustc`, `cargo`, `rustdoc`, the standard library, and the standard
-documentation, but do not provide access to additional cross-targets like
-`rustup` does.
+공식 Rust 자기 완결(스탠드얼론) 인스톨러는 Rust의 한 릴리스를 담고 있으며 오프라인 설치에 적합합니다.
+세 가지 형태가 있는데,
+타르볼(확장자 `.tar.gz`)은 아무 유닉스 계열 환경에서나 동작하며,
+윈도 인스톨러(`.msi`)와 맥 인스톨러(`.pkg`)도 있습니다.
+이 인스톨러들은 `rustc`, `cargo`, `rustdoc`, 표준 라이브러리와 표준 문서를 담고 있지만,
+`rustup` 같이 크로스플랫폼 타겟을 더 제공하진 않습니다.
 
-The most common reasons to use these are:
+이들을 써야 하는 흔한 이유로는:
 
-- Offline installation
-- Prefering a more platform-integrated, graphical installer on Windows
+- 오프라인 설치가 필요하거나,
+- 윈도에서 좀 더 플랫폼에 연동된 그래픽 인스톨러를 선호할 경우가 있습니다.
 
-Each of these binaries is signed with the [Rust signing key], which is
-[available on keybase.io], by the Rust build infrastructure, with
-[GPG]. In the tables below, the `.asc` files are the signatures.
+각 바이너리는 Rust 빌드 설비를 통해,
+[keybase.io][available on keybase.io]에도 있는
+[Rust 서명 키][Rust signing key]로, [GPG]를 통해 서명되어 있습니다.
+아래 표에서 `.asc` 파일들이 서명입니다.
 
-Past releases can be found in [the archives].
+이전 릴리스는 [보관소][the archives]에서 찾을 수 있습니다.
 
 {% for channel in site.channels %}
 
-### {{ channel.name | capitalize }} ({{ channel.vers }})
+### {{ page.localized-channels[channel.name] | capitalize }} ({{ channel.vers }})
 <span id="{{ channel.name }}"></span>
 
 <div class="installer-table {{ channel.name }}">
@@ -145,27 +149,27 @@ Past releases can be found in [the archives].
 
 {% endfor %}
 
-## Source code
+## 소스 코드
 <span id="source"></span>
 
 <div class="installer-table">
   <div>
     <div>
-      <span>Stable</span>
+      <span>안정</span>
       <a href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">.tar.gz</a>
       <a href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz.asc">.asc</a>
     </div>
   </div>
   <div>    
     <div>
-      <span>Beta</span>
+      <span>베타</span>
       <a href="https://static.rust-lang.org/dist/rustc-beta-src.tar.gz">.tar.gz</a>
       <a href="https://static.rust-lang.org/dist/rustc-beta-src.gz.asc">.asc</a>
     </div>
   </div>
   <div>    
     <div>
-      <span>Nightly</span>
+      <span>나이틀리</span>
       <a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz">.tar.gz</a>
       <a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz.asc">.asc</a>
     </div>
