@@ -5,7 +5,7 @@ title: Contribuire a Rust &mdash; documentazione &middot; Linguaggio di programm
 
 # Contribuire a Rust &mdash; documentazione
 
-La documentazione non è mai abbastanza buona e non ce n'é mai troppa.
+La documentazione non è mai abbastanza buona e non ce ne mai troppa.
 Molti aspetti della documentazione di Rust non richiedono una profonda conoscenza
 per essere migliorati, scritti, corretti o modificati, inoltre modificare la documentazione
 è un ottimo modo per imparare Rust.
@@ -15,11 +15,12 @@ La tua richiesta di modifica verrà calorosamente accolta.
 
 ***La documentazione più importante che tu possa scrivere è per [i pacchetti
 che fanno parte dell'ecosistema di Rust][crate_docs]***.
-Mentre la documentazione principale è relativamente esaustiva, ciò non é vero
+
+Mentre la documentazione principale è relativamente esaustiva, ciò non è vero
 per [molti pacchetti e strumenti popolari][awesome-rust] con cui gli sviluppatori
 Rust interagiscono ogni giorno.
 Contribuire alla documentazione delle API per un progetto popolare ti garantirà
-l'amore da parte dello sviluppatore del progetto.
+l'affetto da parte dello sviluppatore del progetto.
 
 [Il libro][The Book] è la documentazione base per Rust, 
 scritto nel repository principale.
@@ -38,7 +39,7 @@ Finalmente questo documento e altri correlati con il sito web sono mantenuti nel
 Per contribuire modificalo e manda una pull request.
 
 Una buona quantità di documentazione importante per Rust non si trova
-nel repository principale o non è mantenuta dal progetto Rust ma é 
+nel repository principale o non è mantenuta dal progetto Rust ma è 
 comunque importantissima per il successo di Rust.
 Esempi di documentazione eccellente sotto attivo sviluppo con domanda
 per altri sviluppatori includono [Rust By Example], [Rust Design Patterns] e [rust-rosetta].

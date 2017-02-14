@@ -123,7 +123,7 @@ Non possono essere utilizzati:
 
 Esistono una varietà di utilizzi che non richiedono esplicita autorizzazione. **Ad ogni modo, in tutti i casi sotto elencati, devi assicurarti che l'utilizzo dei marchi di Rust non appaia ufficiale, come illustrato sopra.**
 
-* É concesso indicare accuratamente che un programma è stato scritto nel linguaggio di programmazione Rust,
+* È concesso indicare accuratamente che un programma è stato scritto nel linguaggio di programmazione Rust,
 la sua compatibilità con il linguaggio Rust o che contiene Rust stesso.
 In questi casi, puoi utilizzare i marchi di Rust per indicare questo, senza
 autorizzazione pregressa. Questo si applica sia agli utilizzi non commerciali che
@@ -144,7 +144,7 @@ Se vuoi distribuire del merchandise con i loghi di Rust a eventi affiliati al li
 per favore contattaci per l'autorizzazione a [trademark@rust-lang.org](mailto:trademark@rust-lang.org).
 
 * Utilizzare i marchi di Rust(anche in forma modificata) per eventi sociali come
-incontri, tutorial e simili è concesso per eventi per cui é gratuita la partecipazione.
+incontri, tutorial e simili è concesso per eventi per cui è gratuita la partecipazione.
 Per eventi commerciali (inclusi quelli sponsorizzati), per favore controlla con [trademark@rust-lang.org](mailto:trademark@rust-lang.org). Ad ogni modo, le parole "RustCamp", "RustCon" o
 "RustConf" non possono essere utilizzate senza esplicita autorizzazione. 
 In combinazione con le restrizioni precedenti **l'evento non deve risultare come ufficialmente supportato o organizzato dal progetto Rust** in assenza di autorizzazione scritta.

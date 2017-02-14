@@ -13,7 +13,7 @@ Controlla il canale [#rust-beginners].
 Qui è dove dirigiamo i nuovi programmatori Rust per chiedere aiuto,
 è quindi vitale che quando succede, venga impartita una risposta
 rapida, accurata e gentile.
-Similarmente su [Stack Overflow], [users.rust-lang.org] e [/r/rust],
+Similmente su [Stack Overflow], [users.rust-lang.org] e [/r/rust],
 dove i programmatori generalmente richiedono assistenza.
 Se vuoi un aiuto su come rispondere a domande di programmazione
 [consulta questa guida][helpful].

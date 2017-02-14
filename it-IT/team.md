@@ -81,7 +81,7 @@ Sotto vi è una lista, in ordine alfabetico.
 
 Per contattare un team, invia la tua domanda o commenta nel [Forum Sviluppo](https://internals.rust-lang.org/)
 e tagga il tuo post con la categoria corrispondente al nome del team.
-Nota che le vulnerabilità sono soggette al [processo di annuncio vulnerabilitá](security.html). 
+Nota che le vulnerabilità sono soggette al [processo di annuncio vulnerabilità](security.html). 
 
 {% for team in site.data.team.teams %}
 <section id="{{ team.name | replace:' ','-' }}">
