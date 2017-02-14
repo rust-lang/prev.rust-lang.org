@@ -110,6 +110,7 @@
 -
   name: CodePicnic
   url: https://codepicnic.com
+  logo: codepicnic.png
   how: "We provide Rust <a href='https://codepicnic.com/posts/console-of-the-day-rust-f7664060cc52bc6f3d620bcedc94a4b6/?utm_source=twitter&utm_medium=blog&utm_term=codepicnic+rust&utm_campaign=codepicnic_features_201702'>sandboxes</a> people can play around with, as well as fork to expand examples and apps they want to."
 -
   name: Coursera
