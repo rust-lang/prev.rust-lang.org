@@ -263,6 +263,11 @@
   logo: stratum.png
   how: "Data exfiltration testing and Application Security."
 -
+  name: Telenor Digital
+  url: https://www.telenordigital.com/ 
+  logo: telenordigital.png
+  how: "Increasing performance and reliability of a concurrent webhook delivery service."
+-
   name: Tessel
   url: https://www.tessel.io
   logo: tessel.svg
