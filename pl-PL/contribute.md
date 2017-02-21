@@ -1,6 +1,6 @@
 ---
 layout: pl-PL/default
-title: Wspieranie Rusta &middot; Język Programowania Rust
+title: Wspieranie Rusta &middot; Język programowania Rust
 ---
 
 # Wspieranie Rusta

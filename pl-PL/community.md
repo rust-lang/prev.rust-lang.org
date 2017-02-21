@@ -1,6 +1,6 @@
 ---
 layout: pl-PL/default
-title: Społeczność Rusta &middot; Język Programowania Rust
+title: Społeczność Rusta &middot; Język programowania Rust
 ---
 
 # Społeczność Rusta
@@ -17,7 +17,7 @@ we wszystkich oficjalnych miejsc dyskusji o Rust.
 
 Jeśli czujesz się nękany czy też zachowanie członka społeczności
 powoduje, że czujesz się niekomfortowo, proszę
-[skontaktuj się][mod_team_email] z kimś z [Zespołu Moderacji Rusta][mod_team]
+[skontaktuj się][mod_team_email] z kimś z [Zespołu moderacji Rusta][mod_team]
 natychmiastowo. Niezależnie czy jest stałym członkiem społeczności czy
 początkującym, chcemy, aby nasza społeczność była dla Ciebie bezpiecznym miejscem.
 
@@ -128,10 +128,10 @@ Służy także do zadawania pytań o sposoby zaangażowania się w rozwój Rusta
 
 Mamy dwa fora dla dyskusji asynchronicznej:
 
-- [Forum Użytkowników][users_forum], służące do zadawania pytań, wklejania
+- [Forum użytkowników][users_forum], służące do zadawania pytań, wklejania
   fragmentów kodu, rozmowy o projektach Rust itd.
 
-- [Forum Wewnętrzne][internals_forum], służące do dyskusji o designie i
+- [Forum wewnętrzne][internals_forum], służące do dyskusji o designie i
   implementacji języka Rust (także o Cargo, bibliotece standardowej oraz innych
   fragmentach infrastruktury).
 
@@ -146,9 +146,9 @@ członków społeczności Rusta z różnych konferencji.
 
 [youtube_channel]: https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA
 
-## Spotkania oraz Grupy Użytkowników
+## Spotkania oraz grupy użytkowników
 
-Jest ponad 50 [Grup Użytkowników Rusta][user_group] na świecie z ponad 20 krajów
+Jest ponad 50 [Grup użytkowników Rusta][user_group] na świecie z ponad 20 krajów
 sumarycznie o ponad 7000 członkach. Użytkownicy języka Rust okresowo spotykają w
 Grupach Użytkowników Rusta. To świetnie wprowadzenie do społeczności oraz świetny sposób nauki
 oraz nawiązania stosunków społecznych z innymi ludźmi o podobnych
@@ -167,20 +167,20 @@ Rust ma proces rozwoju zarządzany przez społeczność, gdzie większość dec
 podejmowanych jest po otwartej dyskusji i dojściu do konsensusu, zarządzanej przez różne
 [zespoły][teams] Rusta:
 
-* [Główny Zespół][core_team] jest odpowiedzialny za zarządzanie procesem designu i rozwoju,
+* [Główny zespół][core_team] jest odpowiedzialny za zarządzanie procesem designu i rozwoju,
 nadzorując wprowadzanie nowych funkcjonalności oraz podejmując ostateczne
 decyzje, kiedy nie można dość do konsensusu (to zdarza się rzadko).
 
-* [Zespół Designu Języka][language_team] jest odpowiedzialny za design nowych
+* [Zespół designu języka][language_team] jest odpowiedzialny za design nowych
   funkcjonalność języka
 
-* [Zespół Bibliotek][library_team] jest odpowiedzialny za bibliotekę standardową,
+* [Zespół bibliotek][library_team] jest odpowiedzialny za bibliotekę standardową,
 pakiety rust-lang oraz konwencje.
 
-* [Zespół Kompilatora][compiler_team] jest odpowiedzialny za kompilator oraz
+* [Zespół kompilatora][compiler_team] jest odpowiedzialny za kompilator oraz
   optymalizacje.
 
-* [Zespół Narzędzi i Infrastruktury][tool_team] jest odpowiedzialny za oficjalne
+* [Zespół narzędzi i infrastruktury][tool_team] jest odpowiedzialny za oficjalne
 narzędzia takie jak [Cargo], [rustup] oraz [rustfmt], a także za infrastrukturę
 CI dla projektu.
 
@@ -188,15 +188,15 @@ CI dla projektu.
 [rustup]: https://www.rustup.rs
 [rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 
-* [Zespół Społeczności][community_team] jest odpowiedzialny za koordynowanie wydarzeń,
+* [Zespół społeczności][community_team] jest odpowiedzialny za koordynowanie wydarzeń,
 zwiększenie zasięgu, użytkowników komercjalnych, materiały do nauki oraz reklamę. Zajmują się także
 zapytaniami, kiedy nie wiadomo, kto powinien zająć się kontaktem z
 zainteresowanymi jakimiś aspektami języka Rust.
 
-* [Zespół Moderacji][mod_team] jest odpowiedzialny za pomoc w przestrzeganiu
+* [Zespół moderacji][mod_team] jest odpowiedzialny za pomoc w przestrzeganiu
 [code of conduct][coc].
 
-* [Zespół Dokumentacji][doc_team] jest odpowiedzialny za zapewnienie
+* [Zespół dokumentacji][doc_team] jest odpowiedzialny za zapewnienie
   wspaniałej dokumentacji języka Rust.
 
 Poza oficjalną listą zespołów, większość zespołów ma większy zbiór
@@ -220,7 +220,7 @@ współpracę.
 Rust ma ponad [1,200 różnych współautorów][authors], liczba ta rośnie
 każdego tygodnia. [Chcielibyśmy, abyś dołączył do tej listy][contribute]!
 
-Jak wspomniano powyżej, [Wewnętrzne Forum Rusta][internals_forum] jest dedykowane
+Jak wspomniano powyżej, [Wewnętrzne forum Rusta][internals_forum] jest dedykowane
 dyskusji designowi i implementacji języka Rust. Dużo dyskusji także
 dzieje się na GitHub:
 

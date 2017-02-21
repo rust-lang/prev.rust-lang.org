@@ -1,6 +1,6 @@
 ---
 layout: pl-PL/default
-title: Dokumentacja Rusta &middot; Język Programowania Rust
+title: Dokumentacja Rusta &middot; Język programowania Rust
 ---
 
 # Dokumentacja Rusta

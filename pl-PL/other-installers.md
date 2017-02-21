@@ -1,9 +1,9 @@
 ---
 layout: pl-PL/default
-title: Inne Metody Instalacji &middot; Język Programowania Rust
+title: Inne metody instalacji &middot; Język programowania Rust
 ---
 
-# Inne Metody Instalacji Rusta
+# Inne metody instalacji Rusta
 
 - [Którego instalatora powinieneś użyć?](#which)
 - [Inne sposoby instalacji `rustup`](#more-rustup)
