@@ -1,9 +1,9 @@
 ---
 layout: pl-PL/default
-title: Wspieranie Rusta &middot; Język programowania Rust
+title: Współtworzenie Rusta &middot; Język programowania Rust
 ---
 
-# Wspieranie Rusta
+# Współtworzenie Rusta
 
 Zacząłeś się uczyć Rusta. Kochasz go i chcesz być częścią jego
 społeczności. Jeżeli nie jesteś pewny jak się zaangażować to ta strona
