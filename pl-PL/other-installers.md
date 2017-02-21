@@ -17,9 +17,9 @@ Rust działa na wielu platformach oraz jest wiele sposobów instalacji Rusta. Je
 chcesz zainstalować Rusta w najprostszy, polecany sposób to kieruj się
 instrukcjami na głównej [stronie instalacji].
 
-Ta strona opisuje instalację za pomocą [`rustup`]: narzędzia, które zarządza
-wieloma zestawami narzędzi Rusta w konsekwentny sposób pomiędzy wszystkimi platformami,
-które Rust wspiera. Czemu ktoś może _nie_ chcieć zainstalować
+Tamta strona opisuje instalację za pomocą [`rustup`]: narzędzia, które zarządza
+wieloma zestawami narzędzi Rusta w konsekwentny sposób na wszystkich platformach
+wspieranych przez Rusta. Czemu ktoś może _nie_ chcieć zainstalować
 używając tych instrukcji?
 
 - Instalacja offline. `rustup` pobiera potrzebne zależności z internetu.
@@ -27,27 +27,27 @@ używając tych instrukcji?
   nie jest do tego odpowiednim narzędziem.
 - Preferencja dla systemowego menedżera pakietów. Na Linuksie w szczególności,
   ale także na macOS z [Homebrew] oraz na Windowsie z [Chocolatey], deweloperzy
-  czasami preferują zainstalować Rusta za pomocą systemowego menedżera pakietów.
-- Preferencja przeciw `curl | sh`. Na Uniksowych systemach, zazwyczaj
+  czasami wolą zainstalować Rusta za pomocą systemowego menedżera pakietów.
+- Preferencja przeciw `curl | sh`. Na Uniksowych systemach zazwyczaj
   instalujemy `rustup` za pomocą uruchomienia skryptu przez `curl`. Niektórzy
   mają wątpliwości dotyczące bezpieczeństwa takiego rozwiązania i wolą pobrać
   oraz uruchomić instalator sami.
-- Sprawdzenie sygnatur. Mimo, że `rustup` pobiera za pomocą HTTPS, jedynym
-  sposobem na weryfikację sygnatur instalatorów Rusta jest chwilowo ręczne
-  pobranie za pomocą samodzielnego instalatora.
-- Instalacja za pomocą instalatora z GUI oraz integracja z "Dodaj/Usuń Programy"
+- Sprawdzenie sygnatur. Mimo, że `rustup` pobiera za pomocą HTTPS, chwwilowo jedynym
+  sposobem na weryfikację sygnatur instalatorów Rusta jest zrobienie tego ręcznie
+  za pomocą samodzielnego instalatora.
+- Instalacja za pomocą instalatora z GUI oraz integracja z „Dodaj/Usuń Programy”
   na Windowsie. `rustup` działa w konsoli i nie rejestruje swojej instalacji jak
-  typowy program Windowsowy. Jeżeli wolisz typowy instalator z GUI na Windowsie
-  to są instalatory `.msi`. W przyszłości `rustup` będzie miał instalator z GUI
+  typowy program Windowsowy. Jeżeli wolisz typowy instalator z GUI na Windowsie,
+  dostępne są instalatory `.msi`. W przyszłości `rustup` będzie miał instalator z GUI
   na Windowsie.
 
 Platformy obsługiwane przez Rusta są podzielone na [trzy rodzaje], które
 mają dużo wspólnego z dostępnymi metodami instalacji: w ogólności, projekt Rust
 dostarcza wydań binarnych dla wszystkich platform rodzaju 1 oraz rodzaju 2 oraz
 są one możliwe do zainstalowania przy pomocy `rustup`. Niektóre platformy
-rodzaju 2 mają tylko standardową bibliotekę dostępną, bez kompilatora;
-a więc są one jedynie celami cross-kompilacji; kod w Ruście może być uruchomiony na
-tych platformach, ale nie kompilator. Takie cele mogą być zainstalowane
+rodzaju 2 mają dostępną tylko standardową bibliotekę, bez kompilatora;
+a więc są one jedynie celami kompilacji skrośnej; kod w Ruście może być uruchomiony na
+tych platformach, ale nie sam kompilator. Takie cele mogą być zainstalowane
 za pomocą komendy `rustup target add`.
 
 ## Inne sposoby instalacji `rustup`
@@ -60,9 +60,9 @@ Sposób instalacji `rustup` zależy od platformy:
   pobierze i uruchomi odpowiednią wersję `rustup-init` dla twojej platformy.
 * Na Windowsie, pobierz i uruchom [`rustup-init.exe`].
 
-`rustup-init` może być skonfigurowane interaktywnie, wszystkie opcje mogą być
-dodatkowo kontrolowane przez argumenty linii poleceń, które mogą być przekazane
-przez skrypt konsolowy. Dodaj `--help` do uruchomienia `rustup-init` jak poniżej,
+`rustup-init` może być skonfigurowane interaktywnie. Dodatkowo, wszystkie opcje mogą być
+kontrolowane przez argumenty linii poleceń, które mogą być przekazane
+przez skrypt konsolowy. Dodaj `--help` do uruchomienia `rustup-init`, jak poniżej,
 aby wyświetlić argumenty akceptowane przez `rustup-init`:
 
 ```
@@ -93,13 +93,12 @@ twojej platformy:
 ## Samodzielne instalatory
 <span id="standalone"></span>
 
-Oficjalne samodzielne instalatory Rusta zawierają pojedyncze wydanie Rusta, nadają
+Oficjalne samodzielne instalatory Rusta zawierają pojedyncze wydanie Rusta i nadają
 się do instalacji offline. Występują w trzech formatach: archiwa tar
-(rozszerzenie `.tar.gz`), działają one na systemach Uniksowych, instalatory
+(rozszerzenie `.tar.gz`), działające na systemach Uniksowych, instalatory
 Windowsowe (`.msi`), oraz instalatory Mac (`.pkg`). Te instalatory zawierają
 `rustc`, `cargo`, `rustdoc`, standardową bibliotekę oraz standardową
-dokumentację, ale nie dają dostępu do dodatkowych celów cross-kompilacji jak
-`rustup`.
+dokumentację, ale w przeciwieństwie do `rustup`, nie dają dostępu do dodatkowych celów kompilacji skrośnej.
 
 Najczęstsze powody, aby ich użyć to:
 
@@ -107,9 +106,9 @@ Najczęstsze powody, aby ich użyć to:
 - Preferowanie bardziej zintegrowanego z platformą, graficznego
   instalatora w Windows
 
-Każda z tych binarek jest podpisana za pomocą [klucza GPG Rusta][rust-gpg-key], który jest
-[dostępny na keybase.io], przez architekturę budowania Rusta, przy pomocy
-[GPG]. Tabelach poniżej, pliki `.asc` to sygnatury.
+Każda z tych binarek jest podpisana z użyciem [klucza GPG Rusta][rust-gpg-key]
+([dostępnego na keybase.io][keybase]) przez infrastrukturę budującą Rusta za pomocą
+[GPG]. Pliki `.asc` w tabelach poniżej to sygnatury.
 
 Poprzednie wydania można znaleźć w [archiwum].
 
@@ -184,5 +183,5 @@ Poprzednie wydania można znaleźć w [archiwum].
 [trzy rodzaje]: https://forge.rust-lang.org/platform-support.html
 [rust-gpg-key]: https://static.rust-lang.org/rust-key.gpg.ascii
 [GPG]: https://gnupg.org/
-[dostępny na keybase.io]: https://keybase.io/rust
+[keybase]: https://keybase.io/rust
 [archiwum]: https://static.rust-lang.org/dist/index.html

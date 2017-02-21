@@ -102,7 +102,7 @@ title: Instalacja &middot; Język programowania Rust
           <code>rustup</code> zarządza tymi wydaniami w konsekwentny sposób na
           każdej platformie, jaką wspiera Rust, umożliwiając instalację Rusta z
           kanałów beta oraz nightly, a także wsparcie dodatkowych
-          celów cross-kompilacji
+          celów kompilacji skrośnej
         </p>
 
         <p>
@@ -129,16 +129,16 @@ title: Instalacja &middot; Język programowania Rust
         <p>
           Zwyczajowym dla programisty Rusta jest dołączenie tego katalogu do
           <a href="https://pl.wikipedia.org/wiki/PATH_(zmienna)">zmiennej środowiskowej
-            <code>PATH</code></a>. Podczas instalacji, <code>rustup</code>,
+            <code>PATH</code></a>. Podczas instalacji <code>rustup</code>
           spróbuje skonfigurować tę zmienną, ale ze względu na różnice pomiędzy platformami,
           powłokami poleceń oraz błędami w <code>rustup</code>, modyfikacja
-          zmiennej <code>PATH</code> może nie przynieść efektu do restartu
-          konsoli, wylogowania użytkownika albo może w ogóle się nie udać.
+          zmiennej <code>PATH</code> może uaktywnić się dopiero przy restarcie
+          konsoli, ponownym zalogowaniu użytkownika albo może w ogóle się nie udać.
         </p>
 
         <p>
           Jeżeli po instalacji  uruchomienie <code>rustc --version</code>
-          w konsoli kończy się błędem jest to prawdopodobnie przyczyna złego
+          w konsoli kończy się błędem, jest to prawdopodobnie wina złego
           ustawienia zmiennej <code>PATH</code>.
         </p>
 
@@ -149,7 +149,7 @@ title: Instalacja &middot; Język programowania Rust
           <a id="win-foot"></a>
 
 	  <p>
-            Na Windowsie, Rust dodatkowo wymaga narzędzi budowania C++
+            Na Windowsie Rust dodatkowo wymaga narzędzi budowania C++
             dla Visual Studio 2013 lub nowszego. Najprostszy sposób na zdobycie
             narzędzi budowania to instalacja
 	    <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
@@ -178,7 +178,7 @@ title: Instalacja &middot; Język programowania Rust
     <div class="row">
       <div class="col-md-12">
         <p>
-          Instalacja opisana powyżej, za pomocą <code>rustup</code>
+          Instalacja opisana powyżej, za pomocą <code>rustup</code>,
           to preferowany sposób instalacji Rusta dla większości programistów,
           ale Rust może być także
           <a href="other-installers.html">zainstalowany innymi sposobami</a>.
