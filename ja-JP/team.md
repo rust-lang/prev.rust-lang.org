@@ -1,6 +1,6 @@
 ---
-layout: default
-title: The Rust Team &middot; The Rust Programming Language
+layout: ja-JP/default
+title: Rustチーム &middot; プログラミング言語Rust
 ---
 
 <style type="text/css">
@@ -40,28 +40,25 @@ title: The Rust Team &middot; The Rust Programming Language
 }
 </style>
 
-# The Rust Team
+# Rustチーム
 
-The Rust project is
-[governed](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)
-by a number of teams, each focused on a specific area of concern. Below are
-the rosters, in alphabetical order.
+Rustプロジェクトは複数のチームで[管理されています](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)。
+それぞれのチームは特定の領域に焦点を当てています。
+以下はアルファベット順のチームのメンバーリストです。
 
-To contact a team, post your question or comment to [the Internals
-forum](https://internals.rust-lang.org/) and tag your post with the category
-corresponding to the team name. Note that security disclosures should follow
-the [Rust security disclosure process](security.html). 
+チームに連絡を取るには質問またはコメントを[インターナルフォーラム](https://internals.rust-lang.org/)に投稿してチーム名に対応するタグを付けて下さい。
+セキュリティの開示は[Rustセキュリティ開示プロセス](security.html)に従うようにして下さい。
 
 {% for team in site.data.team.teams %}
 <section id="{{ team.name | replace:' ','-' }}">
 <h2> {{ page.localized-teams[team.name].name | default: team.name }} </h2>
 
-<strong>Responsibility</strong>: <em>{{ page.localized-teams[team.name].responsibility | default: team.responsibility }}</em>
+<strong>責務: <em>{{ page.localized-teams[team.name].responsibility | default: team.responsibility }}</em>
 
 <br />
 
 {% if team.email %}
-  <strong>Contact</strong>:
+  <strong>連絡</strong>:
   <a href="mailto:{{ team.email | uri_escape }}">{{ team.email }}</a>
 {% endif %}
 
@@ -80,7 +77,7 @@ the [Rust security disclosure process](security.html).
     <div class="details">
       <div>irc: {% if person.irc %}{{ person.irc }}{% else %}{{ nick }}{% endif %}</div>
       {% if person.ex-teams %}
-      <div>teams: {% for ex-team in person.ex-teams %}{% if forloop.first == false %}, {% endif %}{{ page.localized-ex-teams[ex-team] | default: ex-team }}{% endfor %}</div>
+      <div>チーム: {% for ex-team in person.ex-teams %}{% if forloop.first == false %}, {% endif %}{{ page.localized-ex-teams[ex-team] | default: ex-team }}{% endfor %}</div>
       {% endif %}
     </div>
     <img class="headshot" src="{{ website.avatar | replace:'%nick',nick }}" alt="{{ person.name }}">

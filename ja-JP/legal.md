@@ -1,31 +1,23 @@
 ---
-layout: default
-title: Rust Legal Policies &middot; The Rust Programming Language
+layout: ja-JP/default
+title: Rustの法的ポリシー &middot; プログラミング言語Rust
 ---
 
-# Copyright
+# 著作権
 
-## Code
+## コード
 
-Rust's [code](https://github.com/rust-lang/rust) is primarily distributed under
-the terms of both the MIT license and the Apache License (Version 2.0), with
-portions covered by various BSD-like licenses.
-See [LICENSE-APACHE](https://github.com/rust-lang/rust/blob/master/LICENSE-APACHE),
-[LICENSE-MIT](https://github.com/rust-lang/rust/blob/master/LICENSE-MIT),
-and [COPYRIGHT](https://github.com/rust-lang/rust/blob/master/COPYRIGHT) for details.
+Rustの[コード](https://github.com/rust-lang/rust)は主にMITライセンスとApacheライセンス（バージョン2.0）、部分的にBSLライクなライセンスの条項に従って配布されています。
+詳細は[LICENSE-APACHE](https://github.com/rust-lang/rust/blob/master/LICENSE-APACHE)、[LICENSE-MIT](https://github.com/rust-lang/rust/blob/master/LICENSE-MIT)、[COPYRIGHT](https://github.com/rust-lang/rust/blob/master/COPYRIGHT)を参照して下さい。
 
-## Art
+## アート
 
-The Rust and Cargo logos (bitmap and vector) are owned by Mozilla and
-distributed under the terms of the
-[Creative Commons Attribution license (CC-BY)](https://creativecommons.org/licenses/by/4.0/). This
-is the most permissive Creative Commons license, and allows reuse and
-modifications for any purpose. The restrictions are that distributors must "give
-appropriate credit, provide a link to the license, and indicate if changes were
-made". **Note that use of these logos, and the Rust and Cargo names, is also
-governed by trademark; our trademark policy is described below**.
+RustとCargoのロゴ（ビットマップとベクタ）はMozillaが所有しており[クリエティブコモンス表示ライセンス (CC-BY)](https://creativecommons.org/licenses/by/4.0/)の下配布されています。
+これは最も許容的なクリエイティブコモンズのライセンスで、何如なる目的での再利用及び修正を許します。
+唯一の制約は「適切なクレジットを表示し、ライセンスへのリンクを提供し、変更を加えたなら明示する」ことです。
+**これらのロゴの使用とRust、Cargの名前は商標でも管理されています。商標のポリシーは下記にあります。**
 
-Variants of the Rust logo can be found at:
+Rustのロゴの様々なバージョンがあります。
 
 * [rust-logo-128x128-blk.png](/logos/rust-logo-128x128-blk.png)
 * [rust-logo-128x128-blk-v2.png](/logos/rust-logo-128x128-blk-v2.png)
@@ -42,157 +34,110 @@ Variants of the Rust logo can be found at:
 * [rust-logo-64x64.png](/logos/rust-logo-64x64.png)
 * [rust-logo-blk.svg](/logos/rust-logo-blk.svg)
 
-# Trademark policy
+# 商標のポリシー
 
-The Rust and Cargo names and brands make it possible to say what is officially
-part of the Rust community, and what isn't. So we're careful about where we
-allow them to appear. But at the same time, we want to allow for as much
-creative use of these brands as we can. The policy laid out here explains how we
-strike a balance. If you want to use these names or brands, especially in a
-commercial way, please read this page or feel free to
-[reach out](mailto:trademark@rust-lang.org) and ask us about it!
+RustとCargoの名前とブランドは何が公式にRustコミュニティのもので、何がそうでないかを区別する方法を与えてくれます。
+しかし同時にクリエイティブなユーザに可能な限りこれらのブランドを使って欲しいとも考えています。
+もしこれらの名前やブランドを使いたいなら、特に商用の場合は、このページを読むか気軽に我々に[連絡](mailto:trademark@rust-lang.org)を取って質問して下さい。
 
-**TL;DR**: Most non-commercial uses of the Rust/Cargo names and logos are
-allowed and do not require permission; most commercial uses require
-permission. In either case, the most important rule is that uses of the
-trademarks cannot appear official or imply any endorsement by the Rust project.
+**TL;DR**: ほとんどのRust/Cargoの名前、ロゴの非商用の利用は許可され、許諾は必要ありません。そしてほとんどの商用の利用は許諾が必要です。
+どちらの場合でも最も重要なルールは商標が公式のもののように見えたり、Rustプロジェクトに支援されているように感じられてはいけないということです。
 
-## The Rust trademarks
+## Rustの商標
 
-The Rust programming language is an open source, community project governed by a
-core team. It is also sponsored by the Mozilla Foundation ("Mozilla"), which
-owns and protects the Rust and Cargo trademarks and logos (the "Rust
-Trademarks"). This document provides information about use of the Rust
-Trademarks specific to a programming language, as well as examples of common
-ways people might want to use these trademarks, with explanations as to whether
-those uses are OK or not or require permission. This document supplements the
-[official Mozilla trademark policy](https://www.mozilla.org/foundation/trademarks/policy/)
-which governs use of all Mozilla trademarks.
+プログラミング言語Rustはオープンソースでコアチームにより運営されているコミュニティプロジェクトです。
+また、Mozilla Foundation（以後「Mozilla」）から支援を受けています。
+MozillaはRustとCargoの商標とロゴ（以後「Rustの商標」）を所有し、保護しています。
+このドキュメントはRustの商標の使用に関する情報を特にプログラミング言語について提供する他、これらの商標を使いたいときの利用方法例をその利用方法が問題ないか否か、あるいは許諾を必要とするかを説明付きで示します。
+このドキュメントは全てのMozillaの商標を管理する[公式のMozilla 商標ポリシー](https://www.mozilla.org/foundation/trademarks/policy/)を補うものです。
 
-The Rust Trademarks include two word marks and two logos:
+Rustの商標は2つの単語と2つのロゴから成ります。
 
 * Rust
 * Cargo
 * <img src="https://www.rust-lang.org/logos/rust-logo-blk.svg">
 * <img src="https://www.rust-lang.org/logos/cargo.png">
 
-Trademarks are names and designs that tell the world the source of a good or
-service. Protecting trademarks for an open source project is particularly
-important. Anyone can change the source code and produce a product from that
-code, so it's important that only the original product, or variations that have
-been approved by the project, use the project's trademarks. By limiting use of
-the Rust Trademarks, Mozilla and the Rust project can help users and developers
-know they're getting the product produced by the Rust project and not someone
-else's modified version. The trademark assures users and developers of the
-quality and safety of the product they're using.
+商標は商品やサービスの出所を世界に知らせる名前、及びデザインです。
+オープンソースプロジェクトの商標を保護するのは特に重要です。
+誰でもソースコードやを改変しコードから製品を生み出せるので、オリジナルあるいはプロジェクトに承認されているバリエーションのみプロジェクトの商標を使えることが重要です。
+Rustの商標を制限することで、MozillaとRustプロジェクトはユーザ及び開発者が誰かが改変したバージョンではなくRustプロジェクトからのプロダクトを使っているという保証を持てることを手助けします。
 
-## Using the trademarks
 
-### Appearing official, affiliated, or endorsed
+## 商標を利用する
 
-The most basic rule is that the Rust trademarks cannot be used in ways that
-appear (to a casual observer) official, affiliated, or endorsed by the Rust
-project or Mozilla, unless you have written permission from the Rust core team.
-This is the fundamental way we protect users and developers from confusion.
+### 公式、支援、承認を受けているように見える
 
-Since this rule is about managing perception, it is subjective and somewhat
-difficult to nail down concretely. There are some obvious ways to avoid
-problems, like including the word "unofficial" in a very prominent way, but if
-you have any doubts, we would be more than happy to help; just send mail to
+最も基本的なルールはRustのトレードマークは（詳しくない人に）RustプロジェクトかMozillano公式、支援を受けている、承認を受けているようにみえるような方法で使用していはいけないということです。
+勿論、Rustコアチームから書面による許諾を受けている場合はその限りではありません。
+これはユーザ及び開発者を混乱させないための基本的な方法です。
+
 [trademark@rust-lang.org](mailto:trademark@rust-lang.org).
+このルールは感覚をベースにしているため、主観的で具体的に落とし込みにくいものです。
+「非公式」の文言を目立つように加えるなど確実に問題を避ける方法はありますが、懸念があるのなら[trademark@rust-lang.org](mailto:trademark@rust-lang.org)に連絡を頂ければ喜んで手助けします。
 
-### The basics: referring to Rust/Cargo
+### 基本: Rust/Cargoを参照する
 
-As with any trademark, the Rust and Cargo word marks can be used with minimal
-restriction to refer to the Rust programming language and the Cargo package
-manager and registry.
+何如なる商標と同じようにRustとCargoの標語は最小限の制限の下プログラミング言語Rustとパッケージマネージャ及びレジストリCargoを指す語として利用出来ます。
 
-They may not be used:
+以下の場合に限り使用不可能です。
 
-- to refer to any other programming language;
-- in a way that is misleading or may imply association of unrelated modules,
-  tools, documentation, or other resources with the Rust programming language;
-- in ways that confuse the community as to whether the Rust programming language
-  is open source and free to use.
+- 他のあらゆるプログラミング言語を指す場合
+- 無関係なRustのモジュール、ツール、ドキュメント、他のあらゆるリソースが関係があると誤誘導したり関係があるように思わせる場合
+- プログラミング言語Rustがオープンソースであり自由に利用出来ることをコミュニティに疑わせるような方法の場合
 
-### Uses that do not require explicit approval
+### 明示的な承認を必要としない利用方法
 
-There are a variety of uses that do not require explicit approval. **However, in all of the cases outlined below, you must ensure that use of the Rust trademarks does not appear official, as explained above.**
+明示的な承認を必要としない利用方法が多数あります。
+**しかしならがら下記のケース全てにおいて、上述のようにRustの商標が公式のものに見えないことを確認する必要があります。**
 
-* Stating accurately that software is written in the Rust programming language,
-that it is compatible with the Rust programming language, or that it contains
-the Rust programming language, is allowed. In those cases, you may use
-the Rust trademarks to indicate this, without prior approval. This is true both
-for non-commercial and commercial uses.
+* 正確に言って、ソフトウェアがプログラミング言語Rustで書かれている、プログラミング言語Rustと互換性がある、プログラミング言語Rustを包含している場合は許可されます。
+  このようなケースではこれらのことを示すために前述の許諾なしに非商用、商用問わずRustの商標を使うことが出来ます。
 
-* Using the Rust trademarks in the names of non-commercial products like
-RustPostgres or Rustymine, or in the name of code repositories in e.g. GitHub,
-is allowed when referring to use with or suitability for the Rust
-programming language. Such uses may also include the Rust logo, even in modified
-form. For commercial products (including crowdfunded or sponsored ones), please
-check in at [trademark@rust-lang.org](mailto:trademark@rust-lang.org) to ensure your
-use does not appear official.
+* Rustの商標を例えばRustPostgresやRustymineなどの非商用の製品名あるいはGitHubなどのコードレポジトリの名前に使うのはRustと使うことを想定している、あるいはRustと使うのに適している場合は許可されます。
+  このようなケースはロゴを、場合によって改変して、使うことも含みます。
+  商用製品（クラウドファウンドや支援を受けている場合も含む）の場合は[trademark@rust-lang.org](mailto:trademark@rust-lang.org)で利用が公式のように見えないことを確認して下さい。
 
-* Using the Rust trademarks on t-shirts, hats, and other artwork or merchandise,
-even in modified form, is allowed for your personal use or for use by a
-small group of community members, as long as they are not sold. If you want to
-distribute merchandise with Rust Trademarks at a Rust affiliated event, please
-contact us for permission at [trademark@rust-lang.org](mailto:trademark@rust-lang.org).
+* Rustの商標をT-シャツ、帽子、その他芸術作品や商品に使うのは改変した場合であっても個人的利用、あるいは少数のコミュニティメンバーのグループで使うなら販売されない限り許可されます。
+  Rustの商標を使った商品をRust関連のイベントで配布したいなら[trademark@rust-lang.org](mailto:trademark@rust-lang.org)に連絡して許諾を得て下さい。
 
-* Using the Rust trademarks (even in modified form) for social events like
-meetups, tutorials, and the like is allowed for events that are free to attend. For commercial events (including sponsored ones), please check in at [trademark@rust-lang.org](mailto:trademark@rust-lang.org). However, the words "RustCamp", "RustCon" or
-"RustConf" cannot be used without explicit permission. And, as with all of the
-above uses, the **event cannot appear to be officially endorsed or run by the Rust project** without written permission.
+* ミートアップやチュートリアルなどのソーシャルイベントでのRustの商標の使用は（改変している場合でも）参加が無料のイベントでは許可されます。
+  （支援を受けているものを含む）商用のイベントは[trademark@rust-lang.org](mailto:trademark@rust-lang.org)で確認して下さい。
+  ただし、「RustCamp」「RustCon」「RustConf」の名前は明示的な許諾なしに使うことは出来ません。
+  そして上記の全ての場合で書面による許諾がない場合 **イベントがRustプロジェクトに公式に承認されていたり運営されていたりするように見えてはいけません**。
 
-* Using the Rust trademarks in books or publications like "Rust Journal" or
-"Rust Cookbook" is allowed.
+* 「Rust Journal」や「Rust Cookbook」のように本や出版物にRustの商標を使うことは許可されます。
 
-* Using of the word "Rust" on websites, brochures, documentation, academic
-papers, books, and product packaging to refer to the Rust programming language
-or the Rust project is allowed.
+* Webサイト、パンフレット、ドキュメン、論文、本、製品のパッケージにプログラミング言語RustやRustプロジェクトのことを指すために「Rust」の語を使うことは許可されます。
 
-### Uses that require explicit approval
+### 明示的な承認を必要とする利用方法
 
-* Distributing a modified version of the Rust programming language or the Cargo
-package manager and calling it Rust or Cargo requires explicit, written
-permission from the Rust core team. We will usually allow these uses as long as
-the modifications are (1) relatively small and (2) very clearly communicated to
-end-users.
+* 改変を加えたプログラミング言語RustやパッケージマネージャCargoを配布し、それらをRustやCargoと呼ぶのにはRustコアチームからの明示的な書面による許諾が必要です。
+  改変が(1)比較的小さく(2)エンドユーザに分かりやすく関わるものである限り通常許可します。
 
-* Selling t-shirts, hats, and other artwork or merchandise requires explicit,
-written permission from the Rust core team. We will usually allow these uses as
-long as (1) it is clearly communicated that the merchandise is not in any way an
-official part of the Rust project and (2) it is clearly communicated whether
-profits benefit the Rust project.
+* T-シャツ、帽子、その他芸術作品や商品を得るのにはRustコアチームによる明示的な書面による許諾が必要です。
+  このような利用は (1)商品がどのようにもRustプロジェクトの公式のものでない旨が分かりやすく伝えられていて (2)利益がRustプロジェクトに恩恵を齎すかが分かりやすく伝えられている限り通常許可します。
 
-* Using the Rust trademarks within another trademark requires written permission
-from the Rust core team except as described above.
+* Rustの商標を別の商標のの中で使うには上記を除きRustコアチームからの書面による許諾が必要です。
 
-## Notes
+## ノート
 
-If you have any doubts about whether your intended use of a Rust Trademark
-requires permission, please contact us at
-[trademark@rust-lang.org](mailto:trademark@rust-lang.org).
+自分がRustの商標を使おうとしていて許諾が必要か分からないときは[trademark@rust-lang.org](mailto:trademark@rust-lang.org)から連絡を取って下さい。
 
-This document was derived in part from the
-[Python Software Foundation Trademark Usage Policy](https://www.python.org/psf/trademarks/).
+このドキュメントは一部[Python Software Foundation Trademark Usage Policy](https://www.python.org/psf/trademarks/)から派生しています。
 
-This document is not an official statement of Mozilla trademark policy, but
-serves to clarify Mozilla's trademark policy as it relates to Rust.
+このドキュメントは公式のMozillaの商標ポリシーの記述ではなく、MozillaのトレードマークポリシーがRustに関連するため、分かりやすくするためのものです。
 
-## Helping Out
+## 協力
 
-As a member of the Rust community, please keep an eye out for questionable uses
-of the Rust logo and "Rust" word mark. You can report potential misuse to
-[trademark@rust-lang.org](mailto:trademark@rust-lang.org). We will evaluate each case
-and take appropriate action.
+Rustコミュニティの一員としてRustのロゴや「Rust」の標語の怪しい利用を見張っておいて下さい。
+もし規約に反しているような利用を見掛けたら[trademark@rust-lang.org](mailto:trademark@rust-lang.org)から報告出来ます。
+それぞれの場合で判断を下し、適切な行動を取ります。
 
-Please do not approach users of the trademarks with a complaint. That should be
-left to Mozilla and its representatives.
+商標を利用している人に苦情を申し立てないで下さい。Mozillaとその代表の人に任せて下さい。
 
-Thanks!
+ありがとう！
 
-## License
+## ライセンス
 
-Interested parties may adapt this document freely under the
-[Creative Commons CC0 license](https://creativecommons.org/publicdomain/zero/1.0/).
+興味のある団体はこのドキュメントを[Creative Commons CC0 ライセンス](https://creativecommons.org/publicdomain/zero/1.0/)の下自由に採用出来ます。

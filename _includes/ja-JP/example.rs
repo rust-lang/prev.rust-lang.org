@@ -1,8 +1,8 @@
-// This code is editable and runnable!
+// このコードは編集して実行出来ます！
 fn main() {
-    // A simple integer calculator:
-    // `+` or `-` means add or subtract by 1
-    // `*` or `/` means multiply or divide by 2
+    // 簡単な整数電卓:
+    // `+` は1足す、、`-` は1引く
+    // `*` は2掛ける、`/` は2割る
 
     let program = "+ + * - /";
     let mut accumulator = 0;
@@ -13,10 +13,11 @@ fn main() {
             '-' => accumulator -= 1,
             '*' => accumulator *= 2,
             '/' => accumulator /= 2,
-            _ => { /* ignore everything else */ }
+            _ => { /* 他の全ては無視 */ }
         }
     }
 
-    println!("The program \"{}\" calculates the value {}",
-              program, accumulator);
+    println!("プログラム \"{}\" の計算結果は {}。",
+             program,
+             accumulator);
 }
