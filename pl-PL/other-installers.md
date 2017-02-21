@@ -3,7 +3,7 @@ layout: pl-PL/default
 title: Inne Metody Instalacji &middot; Język Programowania Rust
 ---
 
-# Inne Metody Instalacji Rust
+# Inne Metody Instalacji Rusta
 
 - [Którego instalatora powinieneś użyć?](#which)
 - [Inne sposoby instalacji `rustup`](#more-rustup)
@@ -13,12 +13,12 @@ title: Inne Metody Instalacji &middot; Język Programowania Rust
 ## Którego instalatora powinieneś użyć?
 <span id="which"></span>
 
-Rust działa na wielu platformach oraz jest wiele sposobów instalacji Rust. Jeżeli
-chcesz zainstalować Rust w najprostszy, polecany sposób to kieruj się
+Rust działa na wielu platformach oraz jest wiele sposobów instalacji Rusta. Jeżeli
+chcesz zainstalować Rusta w najprostszy, polecany sposób to kieruj się
 instrukcjami na głównej [stronie instalacji].
 
 Ta strona opisuje instalację za pomocą [`rustup`]: narzędzia, które zarządza
-wieloma zestawami narzędzi Rust w konsekwentny sposób pomiędzy wszystkimi platformami,
+wieloma zestawami narzędzi Rusta w konsekwentny sposób pomiędzy wszystkimi platformami,
 które Rust wspiera. Czemu ktoś może _nie_ chcieć zainstalować
 używając tych instrukcji?
 
@@ -27,13 +27,13 @@ używając tych instrukcji?
   nie jest do tego odpowiednim narzędziem.
 - Preferencja dla systemowego menedżera pakietów. Na Linuksie w szczególności,
   ale także na macOS z [Homebrew] oraz na Windowsie z [Chocolatey], deweloperzy
-  czasami preferują zainstalować Rust za pomocą systemowego menedżera pakietów.
+  czasami preferują zainstalować Rusta za pomocą systemowego menedżera pakietów.
 - Preferencja przeciw `curl | sh`. Na Uniksowych systemach, zazwyczaj
   instalujemy `rustup` za pomocą uruchomienia skryptu przez `curl`. Niektórzy
   mają wątpliwości dotyczące bezpieczeństwa takiego rozwiązania i wolą pobrać
   oraz uruchomić instalator sami.
 - Sprawdzenie sygnatur. Mimo, że `rustup` pobiera za pomocą HTTPS, jedynym
-  sposobem na weryfikację sygnatur instalatorów Rust jest chwilowo ręczne
+  sposobem na weryfikację sygnatur instalatorów Rusta jest chwilowo ręczne
   pobranie za pomocą samodzielnego instalatora.
 - Instalacja za pomocą instalatora z GUI oraz integracja z "Dodaj/Usuń Programy"
   na Windowsie. `rustup` działa w konsoli i nie rejestruje swojej instalacji jak
@@ -41,12 +41,12 @@ używając tych instrukcji?
   to są instalatory `.msi`. W przyszłości `rustup` będzie miał instalator z GUI
   na Windowsie.
 
-Platformy obsługiwane przez Rust są podzielone na [trzy rodzaje], które
+Platformy obsługiwane przez Rusta są podzielone na [trzy rodzaje], które
 mają dużo wspólnego z dostępnymi metodami instalacji: w ogólności, projekt Rust
 dostarcza wydań binarnych dla wszystkich platform rodzaju 1 oraz rodzaju 2 oraz
 są one możliwe do zainstalowania przy pomocy `rustup`. Niektóre platformy
 rodzaju 2 mają tylko standardową bibliotekę dostępną, bez kompilatora;
-a więc są one jedynie celami cross-kompilacji; kod Rust może być uruchomiony na
+a więc są one jedynie celami cross-kompilacji; kod w Ruście może być uruchomiony na
 tych platformach, ale nie kompilator. Takie cele mogą być zainstalowane
 za pomocą komendy `rustup target add`.
 
@@ -93,7 +93,7 @@ twojej platformy:
 ## Samodzielne instalatory
 <span id="standalone"></span>
 
-Oficjalne samodzielne instalatory Rust zawierają pojedyncze wydanie Rust, nadają
+Oficjalne samodzielne instalatory Rusta zawierają pojedyncze wydanie Rusta, nadają
 się do instalacji offline. Występują w trzech formatach: archiwa tar
 (rozszerzenie `.tar.gz`), działają one na systemach Uniksowych, instalatory
 Windowsowe (`.msi`), oraz instalatory Mac (`.pkg`). Te instalatory zawierają
@@ -107,8 +107,8 @@ Najczęstsze powody, aby ich użyć to:
 - Preferowanie bardziej zintegrowanego z platformą, graficznego
   instalatora w Windows
 
-Każda z tych binarek jest podpisana za pomocą [klucza GPG Rust], który jest
-[dostępny na keybase.io], przez architekturę budowania Rust, przy pomocy
+Każda z tych binarek jest podpisana za pomocą [klucza GPG Rusta][rust-gpg-key], który jest
+[dostępny na keybase.io], przez architekturę budowania Rusta, przy pomocy
 [GPG]. Tabelach poniżej, pliki `.asc` to sygnatury.
 
 Poprzednie wydania można znaleźć w [archiwum].
@@ -182,7 +182,7 @@ Poprzednie wydania można znaleźć w [archiwum].
 [Homebrew]: http://brew.sh/
 [Chocolatey]: http://chocolatey.org/
 [trzy rodzaje]: https://forge.rust-lang.org/platform-support.html
-[klucza GPG Rust]: https://static.rust-lang.org/rust-key.gpg.ascii
+[rust-gpg-key]: https://static.rust-lang.org/rust-key.gpg.ascii
 [GPG]: https://gnupg.org/
 [dostępny na keybase.io]: https://keybase.io/rust
 [archiwum]: https://static.rust-lang.org/dist/index.html

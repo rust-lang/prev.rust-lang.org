@@ -1,11 +1,11 @@
 ---
 layout: pl-PL/default
-title: Wspieranie Rust &middot; Język Programowania Rust
+title: Wspieranie Rusta &middot; Język Programowania Rust
 ---
 
-# Wspieranie Rust
+# Wspieranie Rusta
 
-Zacząłeś się uczyć Rust. Kochasz go i chcesz być częścią jego
+Zacząłeś się uczyć Rusta. Kochasz go i chcesz być częścią jego
 społeczności. Jeżeli nie jesteś pewny jak się zaangażować to ta strona
 powinna Ci pomóc.
 
@@ -26,15 +26,15 @@ Ten poradnik skupia się na kilku ścieżkach dla początkującego wspierające
   dokumentacja, ale także dla pakietów, postów na blogu, oraz innych
   nieoficjalnych źródeł.
 * [Rozbudowywanie społeczności](/en-US/contribute-community.html). Pomaganie innym użytkownikom
-  języka Rust oraz rozszerzanie zasięgu Rust.
+  języka Rust oraz rozszerzanie zasięgu Rusta.
 * [Narzędzia, IDE oraz infrastruktura](/en-US/contribute-tools.html). Ważne
   części, które pozwalają używać język bezboleśnie oraz praktycznie.
-* [Biblioteki](/en-US/contribute-libs.html). Zastosowalność Rust dla konkretnych
+* [Biblioteki](/en-US/contribute-libs.html). Zastosowalność Rusta dla konkretnych
   zadań jest głównie zależna od dostępności dobrych bibliotek.
 * [Język, kompilator oraz biblioteka standardowa](contribute-compiler.html). Design języka, implementacja
   funkcji, poprawienie wydajności.
 * [Internacjonalizacja](/en-US/contribute-translations.html). Pomóż
-  rozprzestrzeniać miłość Rust poprzez tłumaczenia naszej strony na każdy język.
+  rozprzestrzeniać miłość do Rusta poprzez tłumaczenia naszej strony na każdy język.
 
 Jeżeli potrzebujesz więcej pomocy spytaj na [#rust-internals] lub
 [internals.rust-lang.org].
