@@ -148,7 +148,7 @@ Things stabilize all the time, and the beta and stable channels update every six
 What are "Feature Gates"?
 </a></h3>
 
-"Feature gates" are the mechanism Rust uses to stabilize features of the compiler, language, and standard library. A feature that is "gated" is accessible only on the nightly release channel, and then only when it has been explicitly enabled through `#[feature]` attributes or the `-Z unstable-options` command line argument. When a feature is stabilized it becomes available on the stable release channel, and does not need to be explicitly enabled. At that point the features is considered "ungated". Feature gates allow developers to test experimental features while they are under development, before they are available in the stable language.
+"Feature gates" are the mechanism Rust uses to stabilize features of the compiler, language, and standard library. A feature that is "gated" is accessible only on the nightly release channel, and then only when it has been explicitly enabled through `#[feature]` attributes or the `-Z unstable-options` command line argument. When a feature is stabilized it becomes available on the stable release channel, and does not need to be explicitly enabled. At that point the feature is considered "ungated". Feature gates allow developers to test experimental features while they are under development, before they are available in the stable language.
 
 <h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
 Why a dual MIT/ASL2 License?
@@ -740,7 +740,7 @@ What is "monomorphisation"?
 Monomorphisation specializes each use of a generic function (or structure) with specific instance,
 based on the parameter types of calls to that function (or uses of the structure).
 
-During monomorphisisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
+During monomorphisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
 
 Functions that accept [trait objects](https://doc.rust-lang.org/book/trait-objects.html) instead of type parameters do not undergo monomorphisation. Instead, methods on the trait objects are dispatched dynamically at runtime.
 
