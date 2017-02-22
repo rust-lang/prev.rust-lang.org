@@ -1,24 +1,24 @@
 ---
 layout: pl-PL/default
-title: Społeczność Rust &middot; Język Programowania Rust
+title: Społeczność Rusta &middot; Język programowania Rust
 ---
 
-# Społeczność Rust
+# Społeczność Rusta
 
 Język programowania Rust ma wiele zalet, ale największą
-siłą Rusta jest społeczność która stara się razem uczynić pracę
+siłą Rusta jest społeczność, która wspólnymi siłami stara się uczynić pracę
 w języku Rust satysfakcjonującym doświadczeniem.
 
 Jesteśmy zobowiązani do zapewniania przyjaznego, bezpiecznego oraz
 zachęcającego środowiska dla wszystkich, niezależnie od płci, orientacji seksualnej,
 niepełnosprawności, rasy, religii czy też innych cech personalnych.
 Nasz [code of conduct][coc] ustanawia standardy zachowań
-we wszystkich oficjalnych miejsc dyskusji o Rust.
+we wszystkich oficjalnych miejscach dyskusji o Ruście.
 
-Jeśli czujesz się nękany czy też zachowanie członka społeczności
+Jeśli czujesz się nękany, czy też zachowanie członka społeczności
 powoduje, że czujesz się niekomfortowo, proszę
-[skontaktuj się][mod_team_email] z kimś z [Zespołu Moderacji Rust][mod_team]
-natychmiastowo. Niezależnie czy jest stałym członkiem społeczności czy
+[skontaktuj się][mod_team_email] z kimś z [Zespołu moderacji Rusta][mod_team]
+natychmiastowo. Niezależnie czy jesteś stałym członkiem społeczności czy
 początkującym, chcemy, aby nasza społeczność była dla Ciebie bezpiecznym miejscem.
 
 [coc]: /en-US/conduct.html
@@ -26,11 +26,11 @@ początkującym, chcemy, aby nasza społeczność była dla Ciebie bezpiecznym 
 
 ## Początek
 
-Najważniejsze materiały społeczności dla początkujących w Rust to:
+Najważniejsze zasoby społeczności dla początkujących w Ruście to:
 
 - [#rust-beginners][beginners_irc], kanał IRC, na którym
   odpowiada się na pytania, nawet te najbardziej podstawowe.
-- [Forum użytkowników][users_forum], dla dyskusji wszystkiego w Rust.
+- [Forum użytkowników][users_forum], dla dyskusji o wszystkim dotyczącym Rusta.
 
 Możesz także znaleźć odpowiedzi na Twoje pytanie na stronie Q&A, [Stack Overflow][stack_overflow].
 
@@ -38,14 +38,14 @@ Możesz także znaleźć odpowiedzi na Twoje pytanie na stronie Q&A, [Stack Over
 
 ## Nowości
 
-[This Week in Rust][twir] zawiera najnowsze wiadomości, nadchodzące wydarzenia
-oraz tydzień-po-tygodniu zmiany w języku Rust oraz bibliotekach.
-[The Rust Blog][rust_blog] to miejsce, gdzie zespół Rust ogłasza duże zmiany.
-Prawie wszystko, co się dzieje w języku Rust jest dyskutowane na
-nieoficjalnym podkanale na reddit, [/r/rust][reddit].
+[This Week in Rust][twir] to cotygodniowe podsumowanie najnowszych wiadomości,
+nadchodzących wydarzeń, a także zmian w języku Rust oraz bibliotekach.
+[The Rust Blog][rust_blog] to miejsce, gdzie zespół Rusta ogłasza duże zmiany.
+Ponadto prawie wszystko, co się dzieje w Ruście, jest dyskutowane na
+nieoficjalnym podkanale na reddicie, [/r/rust][reddit].
 
-Mamy także konto [Twitter][twitter].
-Jeżeli nie potrafisz czytać po angielsku, możesz nas śledzić na koncie [Weibo][weibo] (po chińsku).
+Mamy także [konto na Twitterze][twitter].
+Jeżeli znasz chiński, możesz nas śledzić na koncie [Weibo][weibo].
 
 [twir]: https://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
@@ -59,19 +59,19 @@ Jeżeli nie potrafisz czytać po angielsku, możesz nas śledzić na koncie [Wei
 Użytkownicy języka Rust zarządzają kilkoma przyjaznymi, popularnymi kanałami [IRC]
 w infrastrukturze IRC Mozilli, irc.mozilla.org.
 
-Kanał [#rust][rust_irc] służy do ogólnej dyskusji o Rust,
+Kanał [#rust][rust_irc] służy do ogólnej dyskusji o Ruście,
 jest dobrym miejscem, aby spytać o pomoc. Znajdziesz tam
-ludzi chcących odpowiedzieć na każde pytanie o Rust, a
+ludzi chcących odpowiedzieć na każde pytanie o Ruście, a
 odpowiedzi są zazwyczaj szybkie.
 
-Deweloperzy Rust powinni się kierować na [#rust-internals][internals_irc]. Służy on do dyskusji o rozwoju języka Rust.
-Służy także do zadawania pytań o sposoby zaangażowania się w rozwój Rust.
+Deweloperzy Rusta powinni się kierować na [#rust-internals][internals_irc]. Służy on dyskusjom o rozwoju języka Rust.
+Służy także do zadawania pytań o sposoby zaangażowania się w rozwój Rusta.
 
 ### Główne kanały
 
-- [#rust][rust_irc] dla wszystkich tematów dotyczących Rust
-- [#rust-beginners][beginners_irc] to miejsce dla początkujących Rust, mniejszy ruch niż na #rust
-- [#rust-internals][internals_irc] służy do dyskusji tematów związanych z implementacją Rust
+- [#rust][rust_irc] dla wszystkich tematów dotyczących Rusta
+- [#rust-beginners][beginners_irc] to miejsce dla początkujących w Ruście, mniejszy ruch niż na #rust
+- [#rust-internals][internals_irc] służy do dyskusji na tematy związane z implementacją Rusta
 - [#rustc][rustc_irc] to kanał dla [zespołu kompilatora][compiler_team]
 - [#rust-libs][libs_irc] to kanał dla [zespołu bibliotek][library_team]
 - [#rust-tools][tools_irc] to kanał dla [zespołu narzędzi i infrastruktury][tool_team]
@@ -88,16 +88,16 @@ Służy także do zadawania pytań o sposoby zaangażowania się w rozwój Rust.
 
 ### Kanały tematyczne
 
-- [#cargo][cargo_irc] służy do dyskusji o Cargo, menadżerze pakietów Rust
-- [#rust-bots][bots_irc] notyfikacje o Rust pochodzące z wielu botów
+- [#cargo][cargo_irc] służy do dyskusji o Cargo, menadżerze pakietów Rusta
+- [#rust-bots][bots_irc] powiadomienia o Ruście pochodzące z wielu botów
 - [#rust-docs][docs_irc] to nieoficjalny kanał zespołu dokumentacji
-- [#rust-crypto][crypto_irc] służy do dyskusji o kryptografii w Rust
-- [#rust-gamedev][gamedev_irc] jest dla ludzi zajmujących się tworzeniem gier w Rust
-- [#rust-networking][networking_irc] jest dla ludzi zajmujący się sieciami komputerowymi w Rust
-- [#rust-offtopic][offtopic_irc] służy do pogaduszek dla użytkowników Rust
-- [#rust-osdev][osdev_irc] jest dla programistów systemowych piszących w Rust
-- [#rust-webdev][webdev_irc] jest dla osób zajmujący się tworzeniem stron internetowych w Rust
-- [#servo][servo_irc] jest dla dyskusji o Servo, silniku przeglądarki napisanym w Rust
+- [#rust-crypto][crypto_irc] służy do dyskusji o kryptografii w Ruście
+- [#rust-gamedev][gamedev_irc] jest dla ludzi zajmujących się tworzeniem gier w Ruście
+- [#rust-networking][networking_irc] jest dla ludzi zajmujący się sieciami komputerowymi w Ruście
+- [#rust-offtopic][offtopic_irc] służy do pogaduszek dla użytkowników Rusta
+- [#rust-osdev][osdev_irc] jest dla programistów systemowych piszących w Ruście
+- [#rust-webdev][webdev_irc] jest dla osób zajmujący się tworzeniem stron internetowych w Ruście
+- [#servo][servo_irc] jest dla dyskusji o Servo, silniku przeglądarki napisanym w Ruście
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
 [beginners_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
@@ -126,14 +126,14 @@ Służy także do zadawania pytań o sposoby zaangażowania się w rozwój Rust.
 
 ## Fora Dyskusyjne
 
-Mamy dwa fora dla dyskusji asynchronicznej:
+Mamy dwa fora do dyskusji asynchronicznej:
 
-- [Forum Użytkowników][users_forum], służące do zadawania pytań, wklejania
-  fragmentów kodu, rozmowy o projektach Rust itd.
+- [Forum użytkowników][users_forum], służące do zadawania pytań, wklejania
+  fragmentów kodu, rozmów o rustowych projektach, itd.
 
-- [Forum Wewnętrzne][internals_forum], służące do dyskusji o designie i
+- [Forum wewnętrzne][internals_forum], służące do dyskusji o designie i
   implementacji języka Rust (także o Cargo, bibliotece standardowej oraz innych
-  fragmentach infrastruktury).
+  częściach infrastruktury).
 
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
@@ -142,67 +142,68 @@ Mamy dwa fora dla dyskusji asynchronicznej:
 
 Rust posiada [kanał YouTube][youtube_channel], gdzie zamieszczone są materiały
 wideo o języku programowania Rust. Możesz się spodziewać nagranych prezentacji
-członków społeczności Rust z różnych konferencji.
+członków społeczności Rusta z różnych konferencji.
 
 [youtube_channel]: https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA
 
-## Spotkania oraz Grupy Użytkowników
+## Spotkania oraz grupy użytkowników
 
-Jest ponad 50 [Grup Użytkowników Rust][user_group] na świecie z ponad 20 krajów
-sumarycznie o ponad 7000 członkach. Użytkownicy języka Rust okresowo spotykają w
-Grupach Użytkowników Rust. To świetnie wprowadzenie do społeczności oraz świetny sposób nauki
-oraz nawiązania stosunków społecznych z innymi ludźmi o podobnych
-zainteresowaniach. Spotkania są zazwyczaj co miesiąc oraz bardzo nieformalne.
+Na świecie jest ponad 50 [Grup użytkowników Rusta][user_group] w ponad 20 krajach,
+zrzeszających w sumie ponad 7000 członków.
+Użytkownicy języka Rust okresowo spotykają się w
+Grupach użytkowników Rusta. Grupy te to świetnie wprowadzenie do społeczności i świetny sposób na naukę
+oraz nawiązanie znajomości z innymi ludźmi o podobnych
+zainteresowaniach. Spotkania odbywają się na ogół co miesiąc i mają nieformalny charakter.
 Na spotkania może przyjść każdy.
 
-Jest globalny [kalendarz][calendar] do nadążania za wydarzaniami Rust.
+Istnieje globalny [kalendarz][calendar] do nadążania za wydarzeniami dotyczącymi Rusta.
 Skontaktuj się z [zespołem społeczności][community_team], aby dodać swoje wydarzenie.
 
 [user_group]: /en-US/user-groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
 
-## Zespół Rust
+## Zespół Rusta
 
-Rust ma proces rozwoju zarządzany przez społeczność, gdzie większość decyzji
-podejmowanych jest po otwartej dyskusji i dojściu do konsensusu, zarządzanej przez różne
-[zespoły][teams] Rust:
+Proces rozwoju Rusta jest zarządzany przez społeczność. Większość decyzji
+podejmowanych jest po otwartej dyskusji i dojściu do konsensusu. Proces jest koordynowany przez różne
+[zespoły][teams] Rusta:
 
-* [Główny Zespół][core_team] jest odpowiedzialny za zarządzanie procesem designu i rozwoju,
+* [Główny zespół][core_team] jest odpowiedzialny za zarządzanie procesem designu i rozwoju,
 nadzorując wprowadzanie nowych funkcjonalności oraz podejmując ostateczne
-decyzje, kiedy nie można dość do konsensusu (to zdarza się rzadko).
+decyzje, kiedy nie można dość do konsensusu (co zdarza się rzadko).
 
-* [Zespół Designu Języka][language_team] jest odpowiedzialny za design nowych
-  funkcjonalność języka
+* [Zespół designu języka][language_team] jest odpowiedzialny za projektowanie nowych
+  funkcjonalności języka.
 
-* [Zespół Bibliotek][library_team] jest odpowiedzialny za bibliotekę standardową,
+* [Zespół bibliotek][library_team] jest odpowiedzialny za bibliotekę standardową,
 pakiety rust-lang oraz konwencje.
 
-* [Zespół Kompilatora][compiler_team] jest odpowiedzialny za kompilator oraz
+* [Zespół kompilatora][compiler_team] jest odpowiedzialny za kompilator oraz
   optymalizacje.
 
-* [Zespół Narzędzi i Infrastruktury][tool_team] jest odpowiedzialny za oficjalne
+* [Zespół narzędzi i infrastruktury][tool_team] jest odpowiedzialny za oficjalne
 narzędzia takie jak [Cargo], [rustup] oraz [rustfmt], a także za infrastrukturę
-CI dla projektu.
+CI projektu.
 
 [Cargo]: https://crates.io
 [rustup]: https://www.rustup.rs
 [rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 
-* [Zespół Społeczności][community_team] jest odpowiedzialny za koordynowanie wydarzeń,
-zwiększenie zasięgu, użytkowników komercjalnych, materiały do nauki oraz reklamę. Zajmują się także
-zapytaniami, kiedy nie wiadomo, kto powinien zająć się kontaktem z
-zainteresowanymi jakimiś aspektami języka Rust.
+* [Zespół społeczności][community_team] jest odpowiedzialny za koordynowanie wydarzeń,
+zwiększanie zasięgu, użytkowników komercyjnych, materiały do nauki oraz reklamę.
+Ponadto, gdy jest jakaś sprawa, w której nie do końca wiadomo, do kogo się zwrócić,
+zespół społeczności zajmie się takim zapytaniem i przekaże do odpowiednich osób.
 
-* [Zespół Moderacji][mod_team] jest odpowiedzialny za pomoc w przestrzeganiu
+* [Zespół moderacji][mod_team] jest odpowiedzialny za pomoc w przestrzeganiu
 [code of conduct][coc].
 
-* [Zespół Dokumentacji][doc_team] jest odpowiedzialny za zapewnienie
+* [Zespół dokumentacji][doc_team] jest odpowiedzialny za zapewnienie
   wspaniałej dokumentacji języka Rust.
 
-Poza oficjalną listą zespołów, większość zespołów ma większy zbiór
+Poza oficjalną listą członków, większość zespołów ma większy zbiór
 recenzentów, którzy są zapoznani z danym obszarem zainteresowań i mogą ocenić kod.
 Jeżeli jesteś zainteresowany zaangażowaniem się w jednym z tych zespołów,
-odezwij się do kapitana zespół lub innego członka, który może pomóc Ci rozpocząć
+odezwij się do kapitana zespołu lub innego członka, który może pomóc Ci rozpocząć
 współpracę.
 
 [teams]: /en-US/team.html
@@ -215,26 +216,26 @@ współpracę.
 [mod_team]: /en-US/team.html#Moderation-team
 [doc_team]: /en-US/team.html#Documentation-team
 
-## Rozwój Rust 
+## Rozwój Rusta
 
 Rust ma ponad [1,200 różnych współautorów][authors], liczba ta rośnie
 każdego tygodnia. [Chcielibyśmy, abyś dołączył do tej listy][contribute]!
 
-Jak wspomniano powyżej, [Wewnętrzne Forum Rust][internals_forum] jest dedykowane
-dyskusji designowi i implementacji języka Rust. Dużo dyskusji także
-dzieje się na GitHub:
+Jak wspomniano powyżej, [Wewnętrzne forum Rusta][internals_forum] jest dedykowane
+dyskusji o designie i implementacji języka Rust. Sporo dyskusji odbywa się także
+GitHubie:
 
 - [Główne repozytorium][github] oraz [issue tracker][issue_tracking] to główne
-  narzędzia do implementacji. Nasi recenzenci starają się być przyjaźni
+  miejsca, gdzie należy kierować się przy pracach nad implementacją. Nasi recenzenci starają się być przyjaźni
   oraz pomóc początkującym, więc nie lękaj się otworzyć pull request!
 
-- [Repozytorium RFC][rfcs] śledzi proces Request for Comment, główna droga,
-  dzięki której społeczność i zespół Rust osiągają konsensus dotyczący
-  proponowanych funkcjonalności języka oraz oficjalnych bibliotek i narzędzi.
+- [Repozytorium RFC][rfcs] śledzi proces Request for Comment. Jest to główna droga,
+  dzięki której społeczność i zespół Rusta osiągają konsensus dotyczący
+  proponowanych funkcjonalności języka, oficjalnych bibliotek i narzędzi.
 
-Co około tydzień, zespół Rust tworzy [raport][team_reports] zawierający
-tematy, którymi zajmowała się zespół, takie jak: postęp propozycji RFC oraz
-proces implementacji.
+Co około tydzień, zespoły Rusta tworzą [raporty][team_reports] zawierające
+tematy, którymi się zajmowały, takie jak postęp propozycji (poprzez RFC) oraz
+progres implementacji.
 
 [authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
 [contribute]: contribute.html

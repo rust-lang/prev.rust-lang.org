@@ -1,34 +1,34 @@
 ---
 layout: pl-PL/default
-title:  Dokumentacja Rust &middot; Język Programowania Rust
+title: Dokumentacja Rusta &middot; Język programowania Rust
 ---
 
-# Dokumentacja Rust
+# Dokumentacja Rusta
 
-Jeżeli jeszcze nie miałeś do czynienia z Rust, powinieneś przeczytać 
+Jeżeli jeszcze nie miałeś do czynienia z Rustem, powinieneś przeczytać 
 wprowadzenie do książki, [The Rust Programming
-Language][book]. Przedstawia ona podstawowe zasady Rust,
-pokazuje jak go zainstalować oraz wyjaśnia składnię i pojęcia. Po
-ukończeniu książki, będziesz średnio-zaawansowanym programistą Rust oraz
-będziesz miał dobre pojęcie o głównych ideach stojących za Rust.
+Language][book]. Przedstawia ono podstawowe zasady Rusta,
+pokazuje jak go zainstalować oraz wyjaśnia składnię i ważne pojęcia. Po
+ukończeniu książki, będziesz średnio zaawansowanym programistą Rusta i
+będziesz miał dobre pojęcie o głównych ideach stojących za Rustem.
 
-## Nauka Rust
+## Nauka Rusta
 
-[The Rust Programming Language][book]. Także znana jako "The Book",
+[The Rust Programming Language][book]. Także znana jako „The Book”,
 The Rust Programming Language to najbardziej wszechstronne wyjaśnienie
-tematów związanych z Rust oraz jest główną dokumentacja języka.
+tematów związanych z Rustem. Stanowi też główną dokumentację języka.
 
-[Rust by Example][rbe]. Kolekcja przykładów Rust na wiele różnych
+[Rust by Example][rbe]. Kolekcja przykładów w Ruście na wiele różnych
 tematów. Można je uruchomić w przeglądarce.
 
 [Frequently asked questions][faq].
 
-[The Rustonomicon][nomicon]. Cała książka poświęcona wyjaśnieniu jak
-pisać niebezpieczny kod w Rust. Jest przeznaczona dla zaawansowanych
-programistów Rust.
+[The Rustonomicon][nomicon]. Cała książka poświęcona wyjaśnieniu, jak
+prawidłowo pisać kod korzystający z konstrukcji `unsafe`.
+Jest przeznaczona dla zaawansowanych programistów Rusta.
 
 [rust-learning]. Zarządzana przez społeczność kolekcja materiałów
-przydatnych do nauki Rust.
+przydatnych do nauki Rusta.
 
 [book]: https://doc.rust-lang.org/book/
 [rbe]: http://rustbyexample.com
@@ -40,23 +40,23 @@ przydatnych do nauki Rust.
 
 [Standard Library API Reference][api]. Dokumentacja biblioteki standardowej.
 
-[docs.rs]. Dokumentacja dla wszystkich pakietów opublikowanych na [crates.io].
+[docs.rs]. Dokumentacja wszystkich pakietów opublikowanych na [crates.io].
 
-[The Rust Reference][ref]. Skoro Rust nie ma specyfikacji,
-reference stara się szczegółowo opisać jego zasady działania.
+[The Rust Reference][ref]. Chociaż Rust nie ma specyfikacji,
+Reference stara się szczegółowo opisać jego funkcjonowanie.
 Często bywa nieaktualny.
 
-[Syntax Index][syn]. Ten dodatek z The Book zawiera przykłady
-wszystkich konstrukcji składniowych Rust z odnośnikami do rozdziałów The Book,
+[Syntax Index][syn]. Ten dodatek pochodzący z The Book zawiera przykłady
+wszystkich konstrukcji składniowych Rusta wraz z odnośnikami do rozdziałów The Book,
 które je opisują.
 
 [The Cargo Guide][cargo]. Dokumentacja Cargo,
-menedżer pakietów Rust.
+menedżera pakietów Rusta.
 
 [Compiler Error Index][err]. Rozszerzone wyjaśnienie błędów,
-które generuje kompilator Rust.
+które generuje kompilator Rusta.
 
-[Release Notes][release_notes]. Zapis zmian pomiędzy kolejnymi wydaniami.
+[Release Notes][release_notes]. Opis zmian pomiędzy kolejnymi wydaniami.
 
 [api]: https://doc.rust-lang.org/std/
 [syn]: https://doc.rust-lang.org/book/syntax-index.html
@@ -72,14 +72,14 @@ które generuje kompilator Rust.
 [Rust security policy][security]. Zasady projektu dotyczące
 raportowania, naprawiania oraz ujawniania błędów związanych z bezpieczeństwem.
 
-[Rust copyright and trademark policies][legal]. Prawa autorskie do Rust
+[Rust copyright and trademark policies][legal]. Prawa autorskie do Rusta
 należą do The Rust Project Developers, jego marka
 należy do Fundacji Mozilla. Prawidłowe użycie znaków
-towarowych Rust jest tam opisane.
+towarowych Rusta jest tam opisane.
 
 [Code of Conduct][coc]. Dotyczy organizacji rust-lang
 na GitHub, oficjalnego forum, kanałów IRC oraz różnych
-innych zakątków świata Rust.
+innych zakątków świata Rusta.
 
 [security]: /en-US/security.html
 [legal]: /en-US/legal.html
@@ -87,7 +87,7 @@ innych zakątków świata Rust.
 
 ## Dokumentacja wersji nightly oraz beta
 
-Większość oficjalnej dokumentacji Rust jest także dostępna dla wydań
+Większość oficjalnej dokumentacji Rusta jest także dostępna dla wydań
 [nightly] oraz [beta] jako dodatek względem dokumentacji wydania
 stabilnego zalinkowanego powyżej.
 
