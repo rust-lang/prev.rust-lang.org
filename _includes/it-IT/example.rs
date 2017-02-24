@@ -1,22 +1,34 @@
 // Questo codice è modificabile e eseguibile!
 fn main() {
     // Una semplice calcolatrice per numeri interi:
-    // `+` o `-` aggiunge o sottrae 1
-    // `*` o `/` moltiplica o divide per 2
-
-    let programma = "+ + * - /";
-    let mut accumulatore = 0;
-
-    for simbolo in programma.chars() {
-        match simbolo {
-            '+' => accumulatore += 1,
-            '-' => accumulatore -= 1,
-            '*' => accumulatore *= 2,
-            '/' => accumulatore /= 2,
-            _ => { /* ignora gli altri caratteri */ }
+    let program = "4+ 3* 2- 1/";
+    let mut accumulator = 0;
+    let mut figure = 0;
+    for token in program.chars() {
+        match token {
+            '+' => {
+                accumulator += figure;
+                figure = 0;
+            }
+            '-' => {
+                accumulator -= figure;
+                figure = 0;
+            }
+            '*' => {
+                accumulator *= figure;
+                figure = 0;
+            }
+            '/' => {
+                accumulator /= figure;
+                figure = 0;
+            }
+            '0'...'9' => {
+                figure *= 10;
+                figure += token as i8 - '0' as i8;
+            }
+            _ => { /* ignore everything else */ }
         }
     }
-
-    println!("Il programma \"{}\" calcola il valore {}",
-              programma, accumulatore);
+    println!("The program \"{}\" calculates the value {}",
+             program, accumulator);
 }

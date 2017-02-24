@@ -1,21 +1,34 @@
 // Esse código é editável e executável!
 fn main() {
     // Uma calculadora simples de inteiros:
-    // `+` ou `-` significa somar ou subtrair 1
-    // `*` ou `/` significa multiplicar ou dividir por 2
-
-    let programa = "+ + * - /";
-    let mut acumulador = 0;
-
-    for simbolo in programa.chars() {
-        match simbolo {
-            '+' => acumulador += 1,
-            '-' => acumulador -= 1,
-            '*' => acumulador *= 2,
-            '/' => acumulador /= 2,
-            _ => { /* ignore todo o resto */ }
+    let program = "4+ 3* 2- 1/";
+    let mut accumulator = 0;
+    let mut figure = 0;
+    for token in program.chars() {
+        match token {
+            '+' => {
+                accumulator += figure;
+                figure = 0;
+            }
+            '-' => {
+                accumulator -= figure;
+                figure = 0;
+            }
+            '*' => {
+                accumulator *= figure;
+                figure = 0;
+            }
+            '/' => {
+                accumulator /= figure;
+                figure = 0;
+            }
+            '0'...'9' => {
+                figure *= 10;
+                figure += token as i8 - '0' as i8;
+            }
+            _ => { /* ignore everything else */ }
         }
     }
-
-    println!("O programa \"{}\" calcula o valor {}", programa, acumulador);
+    println!("The program \"{}\" calculates the value {}",
+             program, accumulator);
 }

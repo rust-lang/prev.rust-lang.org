@@ -1,22 +1,34 @@
 // 这个代码是可以编辑并且能够运行的
 fn main() {
     // 一个简易计算器
-    // `+` 或 `-` 意味着加减1
-    // `*` 或 `/` 意味着乘除2
-
-    let program = "+ + * - /";
+    let program = "4+ 3* 2- 1/";
     let mut accumulator = 0;
-
+    let mut figure = 0;
     for token in program.chars() {
         match token {
-            '+' => accumulator += 1,
-            '-' => accumulator -= 1,
-            '*' => accumulator *= 2,
-            '/' => accumulator /= 2,
-            _ => { /* 忽略其他 */ }
+            '+' => {
+                accumulator += figure;
+                figure = 0;
+            }
+            '-' => {
+                accumulator -= figure;
+                figure = 0;
+            }
+            '*' => {
+                accumulator *= figure;
+                figure = 0;
+            }
+            '/' => {
+                accumulator /= figure;
+                figure = 0;
+            }
+            '0'...'9' => {
+                figure *= 10;
+                figure += token as i8 - '0' as i8;
+            }
+            _ => { /* ignore everything else */ }
         }
     }
-
-    println!("程序 \"{}\" 的结果是 {}",
-              program, accumulator);
+    println!("The program \"{}\" calculates the value {}",
+             program, accumulator);
 }

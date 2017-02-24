@@ -1,22 +1,34 @@
 // This code is editable and runnable!
 fn main() {
     // A simple integer calculator:
-    // `+` or `-` means add or subtract by 1
-    // `*` or `/` means multiply or divide by 2
-
-    let program = "+ + * - /";
+    let program = "4+ 3* 2- 1/";
     let mut accumulator = 0;
-
+    let mut figure = 0;
     for token in program.chars() {
         match token {
-            '+' => accumulator += 1,
-            '-' => accumulator -= 1,
-            '*' => accumulator *= 2,
-            '/' => accumulator /= 2,
+            '+' => {
+                accumulator += figure;
+                figure = 0;
+            }
+            '-' => {
+                accumulator -= figure;
+                figure = 0;
+            }
+            '*' => {
+                accumulator *= figure;
+                figure = 0;
+            }
+            '/' => {
+                accumulator /= figure;
+                figure = 0;
+            }
+            '0'...'9' => {
+                figure *= 10;
+                figure += token as i8 - '0' as i8;
+            }
             _ => { /* ignore everything else */ }
         }
     }
-
     println!("The program \"{}\" calculates the value {}",
-              program, accumulator);
+             program, accumulator);
 }
