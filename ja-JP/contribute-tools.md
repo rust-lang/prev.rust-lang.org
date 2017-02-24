@@ -1,35 +1,28 @@
 ---
-layout: default
-title: Contributing to Rust &mdash; tooling, IDEs and infrastructure &middot; The Rust Programming Language
+layout: ja-JP/default
+title: Rustへ貢献する &mdash; ツール、IDE、インフラ &middot; プログラミング言語Rust
 ---
 
-# Contributing to Rust &mdash; tooling, IDEs and infrastructure
+# Rustへ貢献する &mdash; ツール、IDE、インフラ
 
-Tools play a huge part in the success of a language, and there is a
-great deal left to implement. ***A major focus of Rust development now
-is [improving the IDE experience][ides]***. This involves work
-throughout the Rust stack, from the compiler itself through your
-favorite IDE. Follow the link for more information.
+ツールは言語の成功に大きな役割を果しますが、実装すべきことは沢山残されています。
+***今のRustの開発の主な焦点は [IDEのユーザ体験を改善することにあります][ides]***。
+この作業はコンパイラ自身からあなたの愛用しているIDEまでRustスタックの上から下まで関わります。
+さらなる情報へはリンク先へ飛んで下さい。
 
-Both Cargo, the Rust package manager, and rustdoc,
-the Rust documentation generator, while full-featured and functional,
-suffer from a lack of developers. Rustdoc has many open issues, under
-the main repository's [A-rustdoc] label. They are mostly bugs and
-contributing is a matter of fixing the bug and submitting a pull
-request. Cargo has [its own repository and issues][Cargo], and those
-interested in contributing might want to introduce themselves in
-[#cargo].
+パッケージマネージャのCargoとドキュメントジェネレータのrustdocは一通り機能を実装していますしちゃんと使えますが開発者不足に苦しんでいます。
+Rustdocにはメインレポジトリに[A-rustdoc]ラベルのついたイシューがいくつもあります。
+そのほとんどがバグで、貢献するにはバグを直してプルリクエストを送るくらいです。
+Cargoは[自身のレポジトリとイシューを持っており][Cargo]、貢献したいと思っている人は[#cargo]に入ると良いでしょう。
 
-Although Rust can be run under both the gdb and lldb debuggers with
-limited success, there are still many cases where debugging does not
-work as expected.  The [A-debuginfo] issue tracks these.
+Rustはgdbとlldbの両方のデバッガの下である程度動きますが、期待通りに動かないケースは沢山あります。
+[A-debuginfo]でこれらの問題を追跡しています。
 
-For ideas for more tooling projects to contribute to see
-[awesome-rust].
+さらに貢献するツールを探したいなら[awesome-rust]を参照して下さい。
 
-There are often other tooling projects of interest just waiting for
-the right people to come along and implement them. Discuss with other
-Rust tooling enthusiasts in [#rust-tools].
+大抵、適切な人がきて実装するのを待っているだけの面白い他のプロジェクトがあります。
+他のツール好きの人と[#rust-tools]で議論しましょう。
+
 
 [#cargo]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
 [#rust-tools]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools

@@ -1,50 +1,37 @@
 ---
-layout: default
-title: Contributing to Rust &middot; The Rust Programming Language
+layout: ja-JP/default
+title: Rustへ貢献する &middot; プログラミング言語Rust
 ---
 
-# Contributing to Rust
+# Rustへ貢献する
 
-You've started learning Rust. You love it, and you want to be a part
-of it. If you're not sure how to get involved, then this page
-will help.
+あなたはRustを学び始めました。そしてRustを大いに気に入り、コミュニティに参加したいと思ったとしましょう。
+もし、どう関わればいいか分からないなら、このページが参考になるでしょう。
 
-**Found a bug and need to report it?** [Follow the bug reporting
-guide][bugs]. Thanks in advance!
+**バグを見付けたので報告したいですか？** [バグ報告のガイドに従って下さい][bugs]。ご協力ありがとうございます。
 
-Rust is an expansive system of projects, the most prominent of which
-are maintained by [The Rust Project Developers][devs] in [the
-rust-lang organization on GitHub][rust-lang]. Newcomers may be
-interested in the project's [CONTRIBUTING.md] file, which explains the
-mechanics of contributing to [rust-lang/rust].
+Rustは広大なプロジェクト群から成り、最も突出したもので言えば[GitHubのrust-langオーガニゼーション][rust-lang]で[Rustqプロジェクトの開発陣][devs]の手でメンテナンスされています。
+新たに貢献したいと思う人は[CONTRIBUTING.md]から[rust-lang/rust]で貢献への仕組みを知ることが出来ます。
 
-There are many ways to contribute to the success of Rust.
-This guide focuses on a few avenues for the new contributor:
+Rustの成功へと貢献する方法はいくつもあります。
+ここでは新たにコントリビュータへとなる道のいくつかに焦点を当てます。
 
-* [Finding, triaging and fixing issues](contribute-bugs.html). The
-  basic work of maintaining a large and active project like Rust.
-* [Documentation](contribute-docs.html). Not just official
-  documentation, but also for crates, blog posts, and other unofficial
-  sources.
-* [Community building](contribute-community.html). Helping your fellow
-  Rustacean, and expanding the reach of Rust.
-* [Tooling, IDEs and infrastructure](contribute-tools.html). The
-  important pieces that make using a language practical and painless.
-* [Libraries](contribute-libs.html). Rust's suitability for any
-  particular task is mostly dependent on availability of quality
-  libraries.
-* [Language, compiler and the standard
-  library](contribute-compiler.html). Language design, feature
-  implementation, performance improvement.
-* [Internationalization](contribute-translations.html). Help spread the
-  Rust love by translating our site to every language.
+* [問題を捜し、仕分け、修正する](contribute-bugs.html)。
+  Rustのような巨大でアクティブなプロジェクトをメンテナンスするための基本的な作業について。
+* [ドキュメント](contribute-docs.html)。
+  公式ドキュメントだけでなく、クレート、ブログエントリ、そして他の非公式情報源について。
+* [コミュニティの形成](contribute-community.html)。
+  仲間のRustaceanを助け、Rustのリーチを広げることについて。
+* [ツール、IDE、インフラ](contribute-tools.html)。
+  言語の使用感を実用的でストレスフリーにするための重要なピースです。
+* [ライブラリ](contribute-libs.html)。
+  どんなタスクについても、それにRustが向いているかは主に品質の高いライブラリが利用できるかに掛かっています。
+* [言語、コンパイラ、標準ライブラリ](contribute-compiler.html)。
+  言語設計、機能、実装、パフォーマンス改善について。
+* [国際化](contribute-translations.html)。
+  私達のサイトを各言語へ翻訳することでRustへの愛を広めることを手伝って下さい。
 
-If you need additional guidance ask on [#rust-internals] or
-[internals.rust-lang.org].
-
-We pride ourselves on maintaining civilized discourse, and to that end
-contributors are expected to follow our [Code of Conduct][coc]. If you
-have questions about this please inquire with the [community team].
+さらなるガイドが欲しければ[#rust-internals]あるいは[internals.rust-lang.org]で質問して下さい。
 
 <!--
 TODO: Write a guide to rust processes and governance to link from here

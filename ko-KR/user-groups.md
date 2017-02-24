@@ -21,6 +21,10 @@ Rust 사용자들은 주기적으로 Rust 사용자 그룹에 모입니다.
 
 [Klagenfurt Rust Programmers](https://www.meetup.com/Klagenfurt-Rust/), Klagenfurt.
 
+## 벨기에
+
+[Belgium Rust User Group](http://www.rust-lang.be/)
+
 ## 볼리비아
 
 [Rust Bolivia](http://www.mozillabolivia.org/rust/), Santa Cruz, Bolivia.
@@ -41,6 +45,10 @@ Rust 사용자들은 주기적으로 Rust 사용자 그룹에 모입니다.
 
 [Rust Paris](https://www.meetup.com/Rust-Paris/), Paris.
 
+## 핀란드
+
+[Finland Rust Meetup](https://www.meetup.com/Finland-Rust-Meetup/), Helsinki.
+
 ## 독일
 
 [Rust Cologne/Bonn User Group](https://www.meetup.com/Rust-Cologne-Bonn/), Köln.
@@ -53,11 +61,15 @@ Rust 사용자들은 주기적으로 Rust 사용자 그룹에 모입니다.
 
 [Rust Munich](https://www.meetup.com/rust-munich/), München.
 
+[Rust Rhein-Main](https://www.meetup.com/Rust-Rhein-Main/), Frankfurt / Darmstadt.
+
 ## 인도
 
 [Hyderabad Rust Meetup](https://www.meetup.com/Hyderabad-Rust-Meetup/), Hyderabad.
 
 [Rust Group Bangalore](https://www.facebook.com/groups/RustBLR/1579069959026339/), Bangalore.
+
+[Rust Group Coimbatore](https://github.com/dvigneshwer/Rust_Group_Coimbatore), Coimbatore.
 
 ## 인도네시아
 
@@ -70,6 +82,8 @@ Rust 사용자들은 주기적으로 Rust 사용자 그룹에 모입니다.
 ## 이탈리아
 
 [Rust lang Milano](https://www.meetup.com/Rust-lang-Milano/), Milano.
+
+[Rust Rome](https://www.meetup.com/it-IT/Rust-Roma/), Rome.
 
 ## 일본
 
@@ -170,6 +184,12 @@ Rust 사용자들은 주기적으로 Rust 사용자 그룹에 모입니다.
 ### 콜로라도
 
 [Rust Boulder/Denver](https://www.meetup.com/Rust-Boulder-Denver/), Boulder, CO.
+
+### 플로리다
+
+[Rust Tampa](https://www.meetup.com/Rust-Tampa/), Tampa, FL.
+
+[South Florida Rust](https://www.meetup.com/South-Florida-Rust-Meetup/), Fort Lauderdale, FL.
 
 ### 일리노이
 

@@ -1,45 +1,30 @@
 ---
-layout: default
-title: Contributing to Rust &mdash; libraries &middot; The Rust Programming Language
+layout: ja-JP/default
+title: Rustへ貢献する &mdash; ライブラリ &middot; The Rust Programming Language
 ---
 
-# Contributing to Rust &mdash; libraries
+# Rustへ貢献する &mdash; ライブラリ
 
-If you want to contribute to Rust by writing volumes of Rust code,
-then libraries are where it's at: since Rust is a young language,
-there are many types of libraries that either do not exist yet
-or are incomplete and in need of improvement or competition.
+Rustのコードをたくさん書いてRustに貢献したいと思うのなら、ライブラリが適任です。
+Rustは若い言語なので、まだ存在していない、あるいは不完全なライブラリというのが多種類存在しており、改善、競争が必要です。
 
-Deciding what to write that will have impact and be fun is a common
-difficulty. Here are some ideas:
+意味があって楽しい何を書くかを決めるのは一般に難しいものです。
+ここにいくつかアイディアがあります。
 
-* Read and participate in the weekly "what's everyone working on
-  this week" threads on [/r/rust] and [users.rust-lang.org]. These are
-  packed with exciting announcements from other Rust programmers in
-  need of collaborators.
-* Familiarize yourself with the best Rust libraries through
-  [awesome-rust] and [libs.rs].
-* Some larger projects, including the web browser [Servo], the HTTP
-  library [hyper], the source-formatter [rustfmt], the Unix library bindings
-  [nix], and the lint collection [clippy], tag issues with 'easy' labels for new
-  contributors.
-* Get involved with one of the active Rust-oriented GitHub
-  organizations, such as [PistonDevelopers], [servo], [redox-os],
-  [iron], [contain-rs], [hyperium]. It's often easier to find a place
-  to fit in with these subcommunities, they are in greater need of
-  help than rust-lang itself, and they are filled with experienced
-  Rust developers to guide you.
-* Help guide libraries from [rust-lang-nursery] into rust-lang proper.
-  Unfortunately there is not much documentation on what needs to be
-  done here; ask on [#rust-libs].
-* Inspect the RFC issue tracker for a [requested community
-  library][requested] and build it.
-* Watch [Github Trending][trending] for currently active Rust projects.
+* [/r/rust]や[users.rust-lang.org]の"what's everyone working on this week"スレッドを読んで参加する。他のRustプログラマが協力者を捜しているという告知もあります。
+* [awesome-rust]や[libs.rs]でRustのライブラリに親しむ
+* Webブラウザの[Servo]、HTTPライブラリの[hyper]、ソースコードフォーマッタの[rustfmt]、Unixライブラリのバインディングである[nix]、Lint集の[clippy]などの大きなプロジェクトは新しいコントリビュータのためにイシューに「easy」とラベルをつけています。
+* [PistonDevelopers]、[servo]、[redox-os]、[iron]、[contain-rs]、[hyperium]などのアクティブなRustのGitHubオーガニゼーションに関わる。
+  これらのサブコミュニティはrust-langオーガニゼーションよりも人手を必要としていて、手引きしてくれる経験豊富なRust開発者で満ちているの簡単に居場所を見付けられることが多いです。
+* [rust-lang-nursery]から正式にrust-langに入れるよう導くのを手伝う。
+  残念ながら必要とされてるほどのドキュメントがありません。
+  [#rust-libs]で尋いてみて下さい。
+* RFCのイシュートラッカーで[コミュニティライブラリの要求][requested]を捜して、作る。
+* [Github Trending][trending]をウォッチして、今アクティブなRustプロジェクトを捜す。
 
-As a library author you will want to be aware of the [best practices
-for Rust libraries][lib-prac].
+ライブラリ作者として[Rustライブラリのベストプラクティス][lib-prac]を読むと良いでしょう。
 
-Meet other Rust library designers in [#rust-libs].
+[#rust-libs]でRustライブラリの設計者に会いましょう。
 
 <!--
 TODO: Not sure #rust-libs is the place to direct people

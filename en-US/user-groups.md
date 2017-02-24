@@ -44,6 +44,10 @@ even better, open a pull request against
 
 [Rust Toronto](https://www.meetup.com/Rust-Toronto/), Toronto.
 
+## Denmark
+
+[Copenhangen Rust Group](http://cph.rs), Copenhagen.
+
 ## France
 
 [Lille Rust Meetup](https://www.meetup.com/rust-lille/), Lille.

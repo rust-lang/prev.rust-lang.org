@@ -1,45 +1,43 @@
 ---
 layout: ko-KR/default
-title: Installation &middot; The Rust Programming Language
+title: 설치 &middot; Rust 프로그래밍 언어
 ---
-    <h1 class="rustup">Install Rust</h1>
+    <h1 class="rustup">Rust 설치</h1>
 
     <div class="row rustup-row">
       <div class="col-md-8 instr-column">
         <div id="platform-instructions-unix" class="instructions" style="display: none;">
-          <p>To install Rust, run the following in your terminal, then follow the onscreen instructions.</p>
+          <p>Rust를 설치하려면 다음을 터미널에 입력한 뒤 화면에 나오는 설명(영문)을 따르세요.</p>
           <pre>curl https://sh.rustup.rs -sSf | sh</pre>
         </div>
 
         <div id="platform-instructions-win" class="instructions" style="display: none;">
           <p>
-            To install Rust, download and run
-            <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
-            then follow the onscreen instructions.
+            Rust를 설치하려면
+            <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>을
+            받아 설치한 뒤 화면에 나오는 설명(영문)을 따르세요.
           </p>
         </div>
 
         <div id="platform-instructions-android" class="instructions" style="display: none;"> 
-         <p>It looks like you are running Android.</p>
+         <p>안드로이드를 사용하시는 듯 하네요.</p>
           <p>
-            The Rust compiler does not run on Android directly (yet),
-            but it does make it easy to cross-compile <em>to</em> Android.
-            Install Rust on a supported host platform and
+            Rust 컴파일러는 (아직) 안드로이드에서 직접 동작하진 않지만,
+            안드로이드<em>로</em> 크로스컴파일하는 것은 쉽게 할 수 있습니다.
+            안드로이드용 Rust 애플리케이션을 빌드하려면
+            지원되는 호스트 플랫폼에서 Rust를 설치한 뒤
             <a href="https://github.com/rust-lang-nursery/rustup.rs/#cross-compilation">
-              follow the cross-compilation instructions
-            </a>
-            to build Rust applications for Android.
+              크로스컴파일 방법을 따르십시오</a>.
           </p>
         </div>
 
         <div id="platform-instructions-unknown" class="instructions" style="display: none;">
           <!-- unrecognized platform: ask for help -->
-          <p>I don't recognize your platform.</p>
+          <p>무슨 플랫폼을 사용하시는지 알아내지 못 했습니다.</p>
           <p>
-            Rust runs on Windows, Linux, Mac OS X, FreeBSD and NetBSD. If
-            you are on one of these platforms and are seeing this then please
-            <a href="https://github.com/rust-lang/rust-www/issues/new">report an issue</a>,
-            along with the following values:
+            Rust는 윈도, 리눅스, Mac OS X, FreeBSD 및 NetBSD에서 동작합니다.
+            만약 이들 플랫폼을 쓰는데도 이 화면을 보신다면
+            <a href="https://github.com/rust-lang/rust-www/issues/new">이슈 트래커에 다음 값들을 보고해 주세요</a>:
           </p>
 
           <div>
@@ -51,8 +49,8 @@ title: Installation &middot; The Rust Programming Language
 
           <!-- duplicate the default cross-platform instructions -->
           <div>
-            <p>To install Rust, if you are running Unix,<br/>run the following
-            in your terminal, then follow the onscreen instructions.</p>
+            <p>Rust를 설치하려면, 유닉스를 사용하고 있을 경우,<br/>
+            다음을 터미널에 입력한 뒤 화면에 나오는 설명(영문)을 따르세요.</p>
             <pre>curl https://sh.rustup.rs -sSf | sh</pre>
           </div>
 
@@ -60,17 +58,17 @@ title: Installation &middot; The Rust Programming Language
 
           <div>
             <p>
-              If you are running Windows,<br/>download and run
-              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
-              then follow the onscreen instructions.
+              윈도를 사용하고 있을 경우,<br/>
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>를
+              받아 설치한 뒤 화면에 나오는 설명(영문)을 따르세요.
             </p>
           </div>
         </div>
 
         <div id="platform-instructions-default" class="instructions">
           <div>
-            <p>To install Rust, if you are running Unix,<br/>run the following
-            in your terminal, then follow the onscreen instructions.</p>
+            <p>Rust를 설치하려면, 유닉스를 사용하고 있을 경우,<br/>
+            다음을 터미널에 입력한 뒤 화면에 나오는 설명(영문)을 따르세요.</p>
             <pre>curl https://sh.rustup.rs -sSf | sh</pre>
           </div>
 
@@ -78,9 +76,9 @@ title: Installation &middot; The Rust Programming Language
 
           <div>
             <p>
-              If you are running Windows,<br/>download and run
-              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
-              then follow the onscreen instructions.
+              윈도를 사용하고 있을 경우,<br/>
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>를
+              받아 설치한 뒤 화면에 나오는 설명(영문)을 따르세요.
             </p>
           </div>
         </div>
@@ -97,96 +95,90 @@ title: Installation &middot; The Rust Programming Language
           <br>
 
           <a id="platform-button" style="display: none;" href="#">
-            click or press "n" to cycle platforms
+            여길 누르거나 "n"을 눌러서 플랫폼을 바꿉니다
           </a>
         </div>
       </div>
 
     </div>
 
-    <h2>Notes about Rust installation</h2>
+    <h2>Rust 설치에 대한 참고 사항</h2>
 
     <div class="row">
       <div class="col-md-12">
 
-        <h3>Toolchain management with <code>rustup</code></h3>
+        <h3><code>rustup</code>으로 툴체인 관리하기</h3>
 
         <p>
-          Rust is installed and managed by the
+          Rust는
           <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>
-          tool. Rust has a 6-week
+          툴로 설치되고 관리됩니다. Rust는 6주 간격의
           <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
-            rapid release process
-          </a> and supports a
+            빠른 릴리스 프로세스</a>를 가지고 있으며
           <a href="https://forge.rust-lang.org/platform-support.html">
-             great number of platforms
-          </a>, so there are many builds of Rust available at any time.
-          <code>rustup</code> manages these builds in a consistent way on every
-          platform that Rust supports, enabling installation of Rust from the
-          beta and nightly release channels as well as support for additional
-          cross-compilation targets
+             많은 수의 플랫폼</a>을 지원하기 때문에,
+          언제나 수많은 Rust 빌드가 존재합니다.
+          <code>rustup</code>은 Rust가 지원하는 모든 플랫폼에서 이 빌드들을 일관되게 다루며,
+          베타 및 나이틀리 릴리스 채널에서 Rust를 설치하는 걸 가능케 하고,
+          추가적인 크로스컴파일 타겟 또한 지원합니다.
         </p>
 
         <p>
-          For more information see the
+          더 자세한 정보는
           <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md"><code>rustup</code>
-          documentation</a>.
+          문서</a>를 참고하세요.
         </p>
 
-        <h3>Configuring the <code>PATH</code> environment variable</h3>
+        <h3><code>PATH</code> 환경 변수 설정하기</h3>
 
         <p>
-          In the Rust development environment, all tools are installed to the
+          Rust 개발 환경에서 모든 도구는
           <span class="platform-specific not-win" style="display: inline;">
             <code>~/.cargo/bin</code>
           </span>
           <span class="platform-specific win" style="display: none;">
             <code>%USERPROFILE%\.cargo\bin</code>
-          </span> directory,
-          and this is where you will find the Rust toolchain, including
-          <code>rustc</code>, <code>cargo</code>, and <code>rustup</code>.
+          </span> 디렉토리에 설치되며,
+          <code>rustc</code>, <code>cargo</code>, 그리고 <code>rustup</code>을 포함한
+          Rust 툴체인은 여기에서 찾을 수 있습니다.
         </p>
 
         <p>
-          Accordingly, it is customary for Rust developers to include this
-          directory in their
+          따라서 Rust 개발자는 이 디렉토리를
           <a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code>
-          environment variable</a>.  During installation, <code>rustup</code>,
-          will attempt to configure
-          <code>PATH</code>, but because of differences between platforms,
-          command shells, and bugs in <code>rustup</code>, the modifications
-          to <code>PATH</code> may not take effect until the console is
-          restarted, or the user logged out, or may not succeed at all.
+          환경 변수</a>에 추가하는 게 일반적입니다.
+          설치 과정에서 <code>rustup</code>은 <code>PATH</code>를 설정하려 시도하나,
+          플랫폼의 차이, 명령줄 셸의 차이 및 <code>rustup</code>의 버그 때문에
+          <code>PATH</code>가 콘솔이 재시작될 때까지, 또는 사용자가 로그아웃할 때까지,
+          또는 아예 변경되지 않을 수도 있습니다.
         </p>
 
         <p>
-          If, after installation, running <code>rustc --version</code> in the
-          console fails, this is the most likely reason.
+          만약 설치 후에 콘솔에서 <code>rustc --version</code>를 실행했을 때 실패한다면
+          이게 가장 가능성이 높은 이유입니다.
         </p>
 
         <div class="platform-specific win">
 
-          <h3>Windows considerations</h3>
+          <h3>윈도 한정</h3>
           <!-- This anchor is probably linked in the wild and should not be broken -->
           <a id="win-foot"></a>
 
 	  <p>
-            On Windows, Rust additionally requires the C++ build tools
-            for Visual Studio 2013 or later. The easiest way to acquire the build
-            tools is by installing
+            윈도에서 Rust는 추가적으로 Visual Studio 2013 또는 이후를 위한 C++ 빌드 도구를
+            필요로 합니다. 빌드 도구를 받는 가장 쉬운 방법은
 	    <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
-	      Microsoft Visual C++ Build Tools 2015
-            </a>
-            which provides just the Visual C++ build tools. Alternately, you
-	    can <a href="https://www.visualstudio.com/downloads/">install</a>
-	    Visual Studio 2015 or Visual Studio 2013 and during install select
-	    the "C++ tools".
+	      Microsoft Visual C++ Build Tools 2015</a>를
+            설치하여 Visual C++ 빌드 도구만을 설치하는 것입니다.
+            아니면 Visual Studio 2015나 Visual Studio 2013을
+	    <a href="https://www.visualstudio.com/downloads/">설치</a>한 뒤
+            설치 과정에서 "C++ 도구"를 선택해도 됩니다.
 	  </p>
 
           <p>
-            For further information about configuring Rust on Windows see the
-            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows-specific <code>rustup</code>
-            documentation</a>.
+            윈도에서 Rust를 설정하는 데 더 자세한 정보는
+            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">윈도용 <code>rustup</code>
+            문서</a>를 참고하십시오.
           </p>
 
         </div>
@@ -194,16 +186,14 @@ title: Installation &middot; The Rust Programming Language
       </div>
     </div>
 
-    <h2>Other installation methods</h3>
+    <h2>다른 설치 방법</h3>
 
     <div class="row">
       <div class="col-md-12">
         <p>
-          The installation described above, via
-          <code>rustup</code>, is the preferred way to install Rust for most developers,
-          but Rust can be
-          <a href="other-installers.html">installed via other methods</a>
-          as well.
+          위에서 설명한 <code>rustup</code>를 사용한 설치는
+          대부분의 개발자들에게 권장되는 Rust 설치 방법이지만,
+          <a href="other-installers.html">다른 방법</a>으로도 설치할 수 있습니다.
         </p>
       </div>
     </div>

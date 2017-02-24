@@ -67,7 +67,7 @@ Rust는 효율적인 코드와 편안한 수준의 추상화를 제공하며, �
 아니오. Rust는 2006년에 그레이던 호어(Graydon Hoare)가 시간을 쪼개서 하던 사이드 프로젝트로 시작하여 3년간 개발되었습니다.
 2009년에 언어가 기본 테스트를 실행하고 핵심 개념들을 시연할 수 있을 정도로 성숙하자 Mozilla가 관여하기 시작했습니다.
 Mozilla는 여전히 Rust를 지원하고 있습니다만, Rust는 전 세계의 많은 장소에 퍼져 있는 열정적인 사람들로 이루어진 커뮤니티가 개발하고 있습니다.
-[Rust 팀](https://www.rust-lang.org/team.html)은 Mozilla 직원들과 아닌 사람들 둘 다를 포함하고, `rustc`(Rust의 컴파일러)에는 [1,000명 이상의 서로 다른 기여자](https://github.com/rust-lang/rust/)가 참여해 왔습니다.
+[Rust 팀](https://www.rust-lang.org/team.html)은 Mozilla 직원들과 아닌 사람들 둘 다를 포함하고, GitHub의 `rust` 단체에는 [1,500명 이상의 서로 다른 기여자](https://github.com/rust-lang/rust/)가 참여해 왔습니다.
 
 [프로젝트 거버넌스](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)를 따라, Rust는 프로젝트의 비전과 우선 순위를 설정하는 코어 팀에 의해 관리되며 이 코어 팀이 전체적인 관점에서 프로젝트를 인도합니다.
 또한 개별 관심 분야의 개발을 인도하고 장려하기 위한 서브팀들이 있으며, 핵심 언어, 컴파일러, Rust 라이브러리, Rust 도구, 그리고 공식 Rust 커뮤니티의 중재 등이 여기에 포함됩니다.
@@ -1523,8 +1523,8 @@ C 스타일의 열거형은 (`e`가 열거형일 때) `e as i64` 같은 식으�
 
 반대로 바꾸려면 `match` 문장을 써서, 서로 다른 숫자 값들을 열거형의 서로 다른 가능한 값들로 대응시킬 수 있습니다.
 
-<h3><a href="#why-do-rust-programs-use-more-memory-than-c" name="why-do-rust-programs-use-more-memory-than-c">
-왜 Rust 프로그램이 C보다 많은 메모리를 사용하는 거죠?
+<h3><a href="#why-do-rust-programs-have-larger-binary-sizes-than-C-programs" name="why-do-rust-programs-have-larger-binary-sizes-than-C-programs">
+왜 Rust 프로그램의 바이너리 크기가 C 프로그램보다 큰 거죠?
 </a></h3>
 
 Rust 프로그램이 동작이 같은 C 프로그램보다 기본값으로 더 큰 바이너리 크기를 가지는 데 영향을 미치는 여러 요소가 있습니다.
@@ -1768,7 +1768,7 @@ Rust에는 복사 생성자가 있나요?
 </a></h3>
 
 정확히는 아닙니다.
-`Copy`를 구현하는 타입은 C랑 비슷하게, 추가 작업 없이 표준적인 "얕은(shallow) 복사"를 하게 됩니다(이는 C++에서 "오래된 평범한 데이터(plain old data)"와 비슷합니다).
+`Copy`를 구현하는 타입은 C랑 비슷하게, 추가 작업 없이 표준적인 "얕은(shallow) 복사"를 하게 됩니다(이는 C++에서 자명하게 복사할 수 있는 타입들과 비슷합니다).
 사용자 정의된 복사 동작이 필요한 `Copy` 타입을 구현하는 건 불가능합니다.
 대신 Rust에서 "복사 생성자"는 `Clone` 트레이트를 구현하여 명시적으로 `clone` 메소드를 호출하는 걸로 만들어집니다.
 사용자 정의된 복사 연산자를 명시적으로 만드는 건 그 아래의 복잡도를 보여 주며, 개발자가 잠재적으로 비싼 연산을 파악하기 더 쉽게 만듭니다.

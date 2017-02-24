@@ -1,8 +1,8 @@
 <pre class='rust'>
 <span class='kw'>fn</span> main() {
 <span class='comment'>// A simple integer calculator:
-// `+` or `-` means add or subtract by 1
-// `*` or `/` means multiply or divide by 2</span>
+// `+` は1足す、、`-` は1引く
+// `*` は2掛ける、`/` は2割る</span>
 
 <span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
 <span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0</span>;
@@ -13,11 +13,11 @@
     <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
     <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
     <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
-    _ => { <span class='comment'>/* ignore everything else */</span> }
+    _ => { <span class='comment'>/* 他の全ては無視 */</span> }
 }
 }
 
-<span class='prelude-val'>println!</span>(<span class='string'>"The program \"{}\" calculates the value {}"</span>,
+<span class='prelude-val'>println!</span>(<span class='string'>"プログラム \"{}\" の計算結果は {}。"</span>,
    program, accumulator);
 }
 </pre>

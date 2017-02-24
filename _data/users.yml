@@ -108,6 +108,11 @@
   logo: clever-cloud.svg
   how: "We <a href='https://www.clever-cloud.com/doc/rust/rust/'>host Rust web applications</a>, and a part of our infrastructure is developed in Rust."
 -
+  name: CodePicnic
+  url: https://codepicnic.com
+  logo: codepicnic.png
+  how: "We provide Rust <a href='https://codepicnic.com/posts/console-of-the-day-rust-f7664060cc52bc6f3d620bcedc94a4b6/?utm_source=twitter&utm_medium=blog&utm_term=codepicnic+rust&utm_campaign=codepicnic_features_201702'>sandboxes</a> people can play around with, as well as fork to expand examples and apps they want to."
+-
   name: Coursera
   url: https://www.coursera.org
   logo: coursera.png
@@ -258,6 +263,11 @@
   logo: stratum.png
   how: "Data exfiltration testing and Application Security."
 -
+  name: Telenor Digital
+  url: https://www.telenordigital.com/ 
+  logo: telenordigital.png
+  how: "Increasing performance and reliability of a concurrent webhook delivery service."
+-
   name: Tessel
   url: https://www.tessel.io
   logo: tessel.svg
@@ -285,8 +295,8 @@
 -
   name: Wire
   url: https://wire.com
-  logo: Wire.png
-  how: "Wire's Axolotl protocol implementation and other cryptographic and utility libraries are developed in Rust, then cross-compiled for iOS and Android."
+  logo: wire.svg
+  how: "<a href='https://github.com/wireapp/proteus'>Wire's Axolotl protocol implementation and other cryptographic and utility libraries</a> are developed in Rust, then cross-compiled for iOS and Android."
 -
   name: Xero
   url: https://www.xero.com
