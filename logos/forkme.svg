@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="298px" height="298px" viewbox="0 0 298 298">
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%" gradientTransform="rotate(-135)" >
+            <stop offset="0%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <polygon points="0,0 298,298 298,201 97,0" style="fill:url(#grad);stroke:#696969;stroke-width:1"/>
+    <text x="25" y="125" style="fill:#FFFFFF;font-size:32px" transform="rotate(45 149,149)">Fork me on GitHub</text>
+    <path stroke-dasharray="5,5" d="M90 0 L298 208" style="stroke:#FFFFFF;stroke-width:1"/>
+    <path stroke-dasharray="5,5" d="M7 0 L298 291" style="stroke:#FFFFFF;stroke-width:1"/>
+</svg>
