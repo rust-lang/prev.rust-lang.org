@@ -1236,7 +1236,7 @@ Come faccio a usare la compilazione incrociata in Rust?
 La compilazione incrociata è possibile in Rust ma richiede [alcune accortezze](https://github.com/japaric/rust-cross/blob/master/README.md) per essere impostata.
 Ogni compilatore Rust permette anche la compilazione incrociata ma le librerie necessitano di essere ricompilate per ogni piattaforma obiettivo.
 
-Rust distribuisce [copie della libreria standard](https://static.rust-lang.org/dist/) per ciascuna delle piattaforme supportate, ritrovabili nei file `rust-std-*` presenti nella pagina citata ma ad oggi non esistono metodi automatizzati per installarle.
+Rust distribuisce [copie della libreria standard](https://static.rust-lang.org/dist/index.html) per ciascuna delle piattaforme supportate, ritrovabili nei file `rust-std-*` presenti nella pagina citata ma ad oggi non esistono metodi automatizzati per installarle.
 
 <h2 id="modules-and-crates">Moduli e pacchetti</h2>
 
