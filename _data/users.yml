@@ -143,6 +143,11 @@
   logo: dropbox.svg
   how: "<a href='http://www.wired.com/2016/03/epic-story-dropboxs-exodus-amazon-cloud-empire/'>Optimizing cloud file-storage</a>."
 -
+  name: ETCDEV Team
+  url: https://www.etcdevteam.com/
+  logo: etcface.png
+  how: "ETCDEV Team is a group of professional software engineers working full time on Ethereum Classic core projects."
+-
   name: Ethcore
   url: https://ethcore.io
   logo: ethcore.png
