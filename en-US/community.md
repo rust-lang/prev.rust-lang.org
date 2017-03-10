@@ -149,9 +149,9 @@ held by members of the Rust community from various conferences.
 
 ## User Groups and Meetups
 
-There are more than 50 [Rust User Groups][user_group] worldwide in over 20
-countries totaling over 7,000 members. Rustaceans meet periodically in Rust User
-Groups. Its a great introduction to the community and a great way to learn and
+There are more than 90 [Rust User Groups][user_group] worldwide in
+over 35 countries. Rustaceans meet periodically in Rust User Groups.
+Its a great introduction to the community and a great way to learn and
 socialize with other people with a similar interest. Meetings are
 usually held monthly and very informal. Meetings are open to everyone.
 
