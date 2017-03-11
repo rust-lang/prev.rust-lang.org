@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: es-ES/default
 title: Contributing to Rust &mdash; finding, triaging and fixing issues &middot; The Rust Programming Language
 ---
 
