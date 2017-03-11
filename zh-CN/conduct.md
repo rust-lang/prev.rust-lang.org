@@ -1,6 +1,6 @@
 ---
 layout: zh-CN/default
-title: The Rust Code of Conduct &middot; The Rust Programming Language
+title: The Rust Code of Conduct &middot; Rust 程序设计语言
 ---
 
 # The Rust Code of Conduct
