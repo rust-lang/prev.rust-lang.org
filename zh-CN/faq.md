@@ -1,6 +1,6 @@
 ---
 layout: zh-CN/faq
-title: Frequently Asked Questions &middot; The Rust Programming Language
+title: Frequently Asked Questions &middot; Rust 程序设计语言
 ---
 
 # Frequently Asked Questions
