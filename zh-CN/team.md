@@ -5,7 +5,7 @@ title: Rust 团队 &middot; Rust 程序设计语言
 localized-teams:
   Core team:
     name: 核心团队
-    responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
+    responsibility: "把握项目的总体方向、领导子团队、横向关注"
   Language design team:
     name: 语言设计团队
     responsibility: "为语言设计新特性"
@@ -25,7 +25,7 @@ localized-teams:
     name: 文档团队
     responsibility: "确保 Rust 拥有极好的文档"
   Moderation team:
-    name: Moderation team
+    name: 审核团队
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
   Rust team alumni:
     name: Rust 团队旧友
@@ -71,9 +71,9 @@ localized-teams:
 
 # Rust 团队
 
-Rust 的项目是由若干个小组分别
+Rust 的项目是由若干个团队分别
 [管辖](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)，
-每个小组只关注特定的内容，以下是小组人名单（姓氏字母排序）。
+的每个团队只关注特定的内容，以下是团队人名单（姓氏字母排序）。
 
 To contact a team, post your question or comment to [the Internals
 forum](https://internals.rust-lang.org/) and tag your post with the category
@@ -108,7 +108,7 @@ the [Rust security disclosure process](security.html).
     <div class="details">
       <div>irc: {% if person.irc %}{{ person.irc }}{% else %}{{ nick }}{% endif %}</div>
       {% if person.ex-teams %}
-      <div>teams: {% for ex-team in person.ex-teams %}{% if forloop.first == false %}, {% endif %}{{ page.localized-ex-teams[ex-team] | default: ex-team }}{% endfor %}</div>
+      <div>团队: {% for ex-team in person.ex-teams %}{% if forloop.first == false %}, {% endif %}{{ page.localized-ex-teams[ex-team] | default: ex-team }}{% endfor %}</div>
       {% endif %}
     </div>
     <img class="headshot" src="{{ website.avatar | replace:'%nick',nick }}" alt="{{ person.name }}">

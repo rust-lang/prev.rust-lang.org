@@ -1,6 +1,6 @@
 ---
 layout: zh-CN/default
-title: Rust Legal Policies &middot; The Rust Programming Language
+title: Rust Legal Policies &middot; Rust 程序设计语言
 ---
 
 # Copyright
