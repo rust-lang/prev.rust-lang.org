@@ -1247,7 +1247,7 @@ Rust에서 크로스 컴파일은 어떻게 하나요?
 Rust에서는 크로스 컴파일을 할 수 있지만 설치 과정이 [좀 필요합니다](https://github.com/japaric/rust-cross/blob/master/README.md).
 모든 Rust 컴파일러는 크로스 컴파일러지만 라이브러리는 해당 플랫폼 용으로 크로스 컴파일될 필요가 있습니다.
 
-Rust는 지원되는 플랫폼에 대해서 [표준 라이브러리의 사본](https://static.rust-lang.org/dist/)을 배포하고 있으며, 배포판 페이지의 각 빌드 디렉토리에 있는 `rust-std-*` 파일들로 들어 있습니다만, 아직 이걸 자동으로 설치하는 방법은 없습니다.
+Rust는 지원되는 플랫폼에 대해서 [표준 라이브러리의 사본](https://static.rust-lang.org/dist/index.html)을 배포하고 있으며, 배포판 페이지의 각 빌드 디렉토리에 있는 `rust-std-*` 파일들로 들어 있습니다만, 아직 이걸 자동으로 설치하는 방법은 없습니다.
 
 <h2 id="modules-and-crates">모듈 및 크레이트</h2>
 

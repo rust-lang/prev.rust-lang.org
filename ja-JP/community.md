@@ -64,7 +64,6 @@ Rust自体の開発についてリアルタイムで議論するための場で�
 - [#rust-lang][lang_irc] は[言語チーム][language_team]の場所
 - [#rust-community][community_irc] は[コミュニティチーム][community_team]の場所
 
-### International channels
 ### 国際チャネル
 
 - [#rust-br][br_irc] é dedicado à discussão sobre Rust no Brasil
