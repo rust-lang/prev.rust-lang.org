@@ -1,6 +1,6 @@
 ---
 layout: zh-CN/default
-title: Contributing to Rust &mdash; libraries &middot; The Rust Programming Language
+title: Contributing to Rust &mdash; libraries &middot; Rust 程序设计语言
 ---
 
 # Contributing to Rust &mdash; libraries

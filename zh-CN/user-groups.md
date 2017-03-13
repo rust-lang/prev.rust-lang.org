@@ -1,6 +1,6 @@
 ---
 layout: zh-CN/default
-title: Rust User Groups &middot; The Rust Programming Language
+title: Rust User Groups &middot; Rust 程序设计语言
 ---
 
 # Rust User Groups
