@@ -39,7 +39,7 @@ website](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md)
 
 [Rust Floripa](https://www.meetup.com/Rust-Floripa/), Florianópolis.
 
-[Rust in POA](https://www.meetup.com/Rust-in-POA/), Porto Alegre. 
+[Rust in POA](https://www.meetup.com/Rust-in-POA/), Porto Alegre.
 
 [Rust Rio](https://www.meetup.com/Rust-Rio/), Rio de Janeiro.
 
@@ -106,6 +106,8 @@ website](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md)
 [Rust Group Coimbatore](https://github.com/dvigneshwer/Rust_Group_Coimbatore), Coimbatore.
 
 ## Indonesia
+
+[Rust Indonesia](https://github.com/rustid/meetup), Yogyakarta.
 
 [Lambda Jakarta](https://www.meetup.com/Lambda-Jakarta/), Jakarta.
 
@@ -364,6 +366,8 @@ even better, open a pull request against
 [Rust Group Bangalore](https://www.facebook.com/groups/RustBLR/1579069959026339/), Bangalore.
 
 ## Indonesia
+
+[Rust Indonesia](https://github.com/rustid/meetup), Yogyakarta.
 
 [Lambda Jakarta](https://www.meetup.com/Lambda-Jakarta/), Jakarta.
 

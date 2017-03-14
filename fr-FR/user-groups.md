@@ -37,7 +37,7 @@ mieux, de créer une Pull Request sur cette [forge GitHub](https://github.com/ru
 
 [Rust Floripa](https://www.meetup.com/Rust-Floripa/), Florianópolis.
 
-[Rust in POA](https://www.meetup.com/Rust-in-POA/), Porto Alegre. 
+[Rust in POA](https://www.meetup.com/Rust-in-POA/), Porto Alegre.
 
 [Rust Rio](https://www.meetup.com/Rust-Rio/), Rio de Janeiro.
 
@@ -102,6 +102,8 @@ mieux, de créer une Pull Request sur cette [forge GitHub](https://github.com/ru
 [Rust Group Coimbatore](https://github.com/dvigneshwer/Rust_Group_Coimbatore), Coimbatore.
 
 ## Indonésie
+
+[Rust Indonésie](https://github.com/rustid/meetup), Yogyakarta.
 
 [Lambda Jakarta](https://www.meetup.com/Lambda-Jakarta/), Jakarta.
 
