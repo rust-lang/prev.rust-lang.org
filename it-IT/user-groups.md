@@ -3,16 +3,16 @@ layout: it-IT/default
 title: Gruppi Utenti Rust &middot; Linguaggio di programmazione Rust
 ---
 
-# Gruppi Utenti Rust 
+# Gruppi Utenti Rust
 Ci sono oltre 50 [Gruppi Utenti Rust][user_group] nel mondo fra oltre 20
-paesi che contano oltre 7000 membri. 
+paesi che contano oltre 7000 membri.
 I Rustacchiani si incontrano periodicamente
 nei Gruppi Utenti Rust.
 Un ottimo modo per entrare nella comunità, per imparare e per socializzare
 con persone che hanno interessi simili. Gli incontri sono tenuti su base mensile
 e sono molto informali. Gli incontri sono aperti a tutti.
 
-Se hai fondato un nuovo gruppo utanti e vorresti aggiungerlo a questa lista per favore contatta il [Team comunità Rust](./team.html#Community) o 
+Se hai fondato un nuovo gruppo utanti e vorresti aggiungerlo a questa lista per favore contatta il [Team comunità Rust](./team.html#Community) o
 ancora meglio, apri una pull request a [questo sito](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md).
 
 ## Australia
@@ -39,7 +39,7 @@ ancora meglio, apri una pull request a [questo sito](https://github.com/rust-lan
 
 [Rust Floripa](https://www.meetup.com/Rust-Floripa/), Florianópolis.
 
-[Rust in POA](https://www.meetup.com/Rust-in-POA/), Porto Alegre. 
+[Rust in POA](https://www.meetup.com/Rust-in-POA/), Porto Alegre.
 
 [Rust Rio](https://www.meetup.com/Rust-Rio/), Rio de Janeiro.
 
@@ -107,6 +107,8 @@ Budapest.
 [Rust Group Coimbatore](https://github.com/dvigneshwer/Rust_Group_Coimbatore), Coimbatore.
 
 ## Indonesia
+
+[Rust Indonesia](https://github.com/rustid/meetup), Yogyakarta.
 
 [Lambda Jakarta](https://www.meetup.com/Lambda-Jakarta/), Jakarta.
 

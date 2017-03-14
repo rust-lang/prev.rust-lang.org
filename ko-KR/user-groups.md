@@ -35,7 +35,7 @@ Rust 사용자들은 주기적으로 Rust 사용자 그룹에 모입니다.
 
 [Rust Floripa](https://www.meetup.com/Rust-Floripa/), Florianópolis.
 
-[Rust in POA](https://www.meetup.com/Rust-in-POA/), Porto Alegre. 
+[Rust in POA](https://www.meetup.com/Rust-in-POA/), Porto Alegre.
 
 [Rust Rio](https://www.meetup.com/Rust-Rio/), Rio de Janeiro.
 
@@ -102,6 +102,8 @@ Rust 사용자들은 주기적으로 Rust 사용자 그룹에 모입니다.
 [Rust Group Coimbatore](https://github.com/dvigneshwer/Rust_Group_Coimbatore), Coimbatore.
 
 ## 인도네시아
+
+[Rust Indonesia](https://github.com/rustid/meetup), Yogyakarta.
 
 [Lambda Jakarta](https://www.meetup.com/Lambda-Jakarta/), Jakarta.
 
