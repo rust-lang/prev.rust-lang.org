@@ -307,3 +307,8 @@
   url: https://www.xero.com
   logo: xero.png
   how: "Infrastructure for beautiful accounting software."
+-
+  name: AdHawk
+  url: https://www.tryadhawk.com
+  logo: adhawk.png
+  how: "We use Rust to parse all of our User-Agent headers."
