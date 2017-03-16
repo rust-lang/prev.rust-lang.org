@@ -5,10 +5,10 @@ title: Rustユーザグループ &middot; プログラミング言語Rust
 
 # Rustユーザグループ
 
-90以上の[Rustユーザグループ][user_group]が世界35カ国以上に存在します。
+90以上のRustユーザグループが世界35カ国以上に存在します。
 Rustaceanは定期的にユーザグループで会っています。
 ユーザグループはコミュニティに入るための最高の導入で、同じような興味を持った人を知り、交流するための最良の手段です。
-ミーティングは堅苦しいものではなく、誰でも参加できます.
+ミーティングは堅苦しいものではなく、誰でも参加できます。
 あなたが開催するイベントを追加したいなら[コミュニティチーム](./team.html#Community)に連絡を取るか[このWebサイト](https://github.com/rust-lang/rust-www/blob/master/ja-JP/user-groups.md)に対してプルリクエストを送って下さい。
 
 ## Australia
@@ -35,7 +35,7 @@ Rustaceanは定期的にユーザグループで会っています。
 
 [Rust Floripa](https://www.meetup.com/Rust-Floripa/), Florianópolis.
 
-[Rust in POA](https://www.meetup.com/Rust-in-POA/), Porto Alegre. 
+[Rust in POA](https://www.meetup.com/Rust-in-POA/), Porto Alegre.
 
 [Rust Rio](https://www.meetup.com/Rust-Rio/), Rio de Janeiro.
 
@@ -103,6 +103,8 @@ Budapest.
 [Rust Group Coimbatore](https://github.com/dvigneshwer/Rust_Group_Coimbatore), Coimbatore.
 
 ## Indonesia
+
+[Rust Indonesia](https://github.com/rustid/meetup), Yogyakarta.
 
 [Lambda Jakarta](https://www.meetup.com/Lambda-Jakarta/), Jakarta.
 
