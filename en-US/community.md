@@ -141,9 +141,9 @@ We have two forums for asynchronous discussion:
 
 ## YouTube Channel
 
-Rust has an [YouTube channel][youtube_channel] where video material about the
-language programming is uploaded. What you can expect are recorded presentations
-held by members of the Rust community from various conferences.
+Rust has a [YouTube channel][youtube_channel] where presentations
+given at user groups and conferences by members of the Rust community
+are uploaded.
 
 [youtube_channel]: https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA
 
