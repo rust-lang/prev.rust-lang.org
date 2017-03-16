@@ -59,6 +59,10 @@ website](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md)
 
 [Lambda Zagreb](https://www.meetup.com/lambdazagreb/), Zagreb.
 
+## Colombia
+
+[Rust Colombia](https://www.meetup.com/rust-colombia/), Bogotá.
+
 ## Czech Republic
 
 [Rust Prague](https://www.meetup.com/rust-prague/), Prague.
