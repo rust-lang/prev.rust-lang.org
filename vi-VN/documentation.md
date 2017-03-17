@@ -5,25 +5,27 @@ title: Tài liệu Rust &middot; Ngôn ngữ lập trình Rust
 
 # Cơ bản
 
-Nếu bạn chưa từng làm quen với Rust lần nào, thì bạn nên tham khảo
-cuốn sách này [The Rust Programming Language][book]. Cuốn sách này
-sẽ giới thiệu về cách cài đặt, cú pháp, khái niệm, và nhiều hơn thế nữa.
-Sau khi kết thúc quá trình làm quen với Rust qua cuốn sách trên thì bạn có thể
-tìm hiểu sâu hơn về Rust.
+Nếu bạn chưa từng làm quen với Rust lần nào, trước hết thì bạn nên tham khảo
+ebook [The Rust Programming Language][book]. Ebook sẽ giới thiệu về cách cài đặt,
+cú pháp, khái niệm, và nhiều hơn thế nữa. Sau khi kết thúc quá trình làm quen 
+với Rust qua cuốn sách trên thì chúc mừng bạn đã trở thành Rust developer, và có
+một sự hiểu biết cơ bản về những ý tưởng của Rust.
 
 ## Những tài liệu hay để tìm hiểu về Rust
 
-[The Rust Programming Language][book]. là điểm khởi đầu khi tìm hiểu về Rust, những bài viết ở đây đầy đủ và chi tiết về các chủ đề và tính năng của Rust.
+[The Rust Programming Language][book]. Được biết đến như quyển sách cơ bản về
+Rust. The Rust Programming Language là một tài liệu toàn diện nhất về các chủ đề
+liên quan đến Rust, và là tài liệu chính thức về Rust.
 
-[Rust by Example][rbe]. Nếu bạn muốn nhanh chóng hiểu Rust mà không muốn phải cài đặt bất cứ thứ gì, thì đây là nơi tốt nhất để bạn bắt đầu, những ví dụ ở đây
-được chạy trực tiếp trên trình duyệt. Thay đổi code ? Vâng bạn hoàn toàn thay đổi được code như bạn mong muốn.
+[Rust by Example][rbe]. Tổng hợp các ví dụ về Rust, run trực tiếp trên browser.
 
 [Những câu hỏi không biết hỏi ai][faq].
 
-[The Rustonomicon][nomicon]. Một quyển sách dành tặng cho những người muốn thích vọc phá Rust, hiểu về cách viết Rust ở mức unsafe. Khuyễn cáo: không dành cho
-người mới tìm hiểu về Rust .
+[The Rustonomicon][nomicon]. Khác với The Rust Programming Language thì The
+Rustonomicon là ebook dành riêng cho những ai muốn tìm hiểu sâu hơn về Rust như
+memory model, data races, ...
 
-[rust-learning]. Một repo tập hợp các bài viết hay và chi tiết về Rust. Nếu bạn tìm được một bài hay hoặc là bạn viết bài thì đừng quên để lại link ở đây nhé.
+[rust-learning]. Tổng hợp tài liệu về Rust do cộng đồng đóng góp.
 
 [book]: https://doc.rust-lang.org/book/
 [rbe]: http://rustbyexample.com
@@ -33,19 +35,22 @@ người mới tìm hiểu về Rust .
 
 ## Thư viện
 
-[Standard Library API Reference][api]. Tài liệu về những thư viện chuẩn.
+[Standard Library API Reference][api]. Tài liệu về std (standard library).
 
-[docs.rs]. Tài liệu những packages được public ở [crates.io].
+[docs.rs]. Tài liệu những crates được public ở [crates.io].
 
-[The Rust Reference][ref]. Những mô tả về hàm khai báo thế nào, cú pháp dùng làm sao, biến thì có mấy loại, và nhiều thuộc tính khác.
+[The Rust Reference][ref]. Trong khi Rust không có một specs cụ thể nào thì
+reference cố gắng mô tả một cách chi tiết nhất về những gì bạn thấy ở Rust. Chú
+ý: reference này đang bị out of date.
 
 [Syntax Index][syn]. Phục lục về những cú pháp được dùng trong Rust.
 
-[The Cargo Guide][cargo]. Tài về Cargo - công cụ để quản lý các packages của Rust.
+[The Cargo Guide][cargo]. Cargo guide - ecosystem của Rust.
 
-[Compiler Error Index][err]. Tập hợp các lỗi xảy ra trong quá trình compiler.
+[Compiler Error Index][err]. Chú thích các lỗi trong quá trình compile của Rust.
 
-[Release Notes][release_notes]. Bản ghi chép những thay đổi khi public phiên bản mới.
+[Release Notes][release_notes]. Ghi lại những thay đổi khi có một phiên bản được
+release.
 
 [api]: https://doc.rust-lang.org/std/
 [syn]: https://doc.rust-lang.org/book/syntax-index.html
@@ -56,20 +61,22 @@ người mới tìm hiểu về Rust .
 [docs.rs]: https://docs.rs
 [crates.io]: https://crates.io
 
-## Các quy định của project
+## Project policies 
 
-[Quy định về bảo mật][security]. Những quy định về việc báo cáo, sửa chữa và công bố các lỗi bảo mật liên quan.
+[Bảo mật][security]. Những quy định về báo cáo, fixing và thông báo các lỗi
+security liên quan.  
 
-[Quy định về bản quyền và thương hiệu][legal]. Bản quyền thuộc về tập hợp những nhà phát triển Rust, thương hiệu thuộc về Mozilla.
-Các quy định về việc dùng thương hiệu được mô tả ở đây.
+[Bản quyền và thương hiệu][legal]. Rust copyrights thuộc về The Rust Project
+Developers, và thương hiệu thuộc về Mozilla. Việc sử dụng Rust trademarks được
+mô tả tại đây. 
 
-[Quy tắc hành xư][coc]. Áp dùng cho tổ chức ở Github, diễn đàn, IRC, và các cộng đồng Rust trên thế giới.
+[Code of Conduct][coc]. Áp dùng cho rust-lang org ở Github, forums, IRC, và các cộng đồng Rust trên thế giới.
 
 [security]: security.html
 [legal]: legal.html
 [coc]: https://www.rust-lang.org/conduct.html
 
-## Tài liệu phiên bản Nightly and beta
+## Tài liệu phiên bản Nightly và beta
 
 Tài liệu chính thức cho 2 phiên bản [nightly] và [beta].
 
