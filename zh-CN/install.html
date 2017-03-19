@@ -22,9 +22,9 @@ title: 安装 &middot; Rust 程序设计语言
         <div id="platform-instructions-android" class="instructions" style="display: none;"> 
          <p>您似乎正在安卓(Android)操作系统上浏览本页面</p>
           <p>
-		    Rust 编译器(暂时)不能直接在安卓(Android)上运行，
-			但它确实使得它很容易交叉编译<em>到</em>安卓(Android)上。
-			请在支持的主机平台上安装 Rust ，
+            Rust 编译器(暂时)不能直接在安卓(Android)上运行，
+            但它确实使得它很容易交叉编译<em>到</em>安卓(Android)上。
+            请在支持的主机平台上安装 Rust ，
             <a href="https://github.com/rust-lang-nursery/rustup.rs/#cross-compilation">
             遵循交叉编译指令
             </a>
@@ -37,7 +37,7 @@ title: 安装 &middot; Rust 程序设计语言
           <p>无法识别您的平台</p>
           <p>
             可以运行在 Windows, Linux, Mac OS X, FreeBSD 和 NetBSD 上。 
-			如果您正在这些平台上，并且看到这句话，请您
+            如果您正在这些平台上，并且看到这句话，请您
             <a href="https://github.com/rust-lang/rust-www/issues/new">报告问题(issue)</a>,
             并且提供以下信息：
           </p>
@@ -114,13 +114,13 @@ title: 安装 &middot; Rust 程序设计语言
         <p>
           Rust 由
           <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>
-		  工具来安装和管理。 Rust有一个6周的
+          工具来安装和管理。 Rust 有一个6周的
           <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
             快速发布过程
           </a> 并且支持
           <a href="https://forge.rust-lang.org/platform-support.html">
              大量的平台
-          </a>，所以任何时候都有很多Rust构建可用。
+          </a>，所以任何时候都有很多 Rust 构建可用。
           <code>rustup</code> manages these builds in a consistent way on every
           platform that Rust supports, enabling installation of Rust from the
           beta and nightly release channels as well as support for additional
@@ -169,23 +169,20 @@ title: 安装 &middot; Rust 程序设计语言
           <!-- This anchor is probably linked in the wild and should not be broken -->
           <a id="win-foot"></a>
 
-	  <p>
-            On Windows, Rust additionally requires the C++ build tools
-            for Visual Studio 2013 or later. The easiest way to acquire the build
-            tools is by installing
-	    <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
-	      Microsoft Visual C++ Build Tools 2015
+          <p>
+            在 Windows 上， Rust 需要 Visual C++ 生成工具 2013 或更新版本的支持。获取 Visual C++ 生成工具最方便的方法是安装
+            <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
+              Microsoft Visual C++ Build Tools 2015
             </a>
-            which provides just the Visual C++ build tools. Alternately, you
-	    can <a href="https://www.visualstudio.com/downloads/">install</a>
-	    Visual Studio 2015 or Visual Studio 2013 and during install select
-	    the "C++ tools".
-	  </p>
+            。或者，你可以
+            <a href="https://www.visualstudio.com/downloads/">安装</a>
+            Visual Studio 2015 或 Visual Studio 2013 并在安装过程中选择安装 “C++ 工具”。
+          </p>
 
           <p>
-            For further information about configuring Rust on Windows see the
+            关于在 Windows 上配置 Rust 的更多信息请查看
             <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows-specific <code>rustup</code>
-            documentation</a>.
+            文档</a>。
           </p>
 
         </div>
@@ -198,7 +195,7 @@ title: 安装 &middot; Rust 程序设计语言
     <div class="row">
       <div class="col-md-12">
         <p>
-         上述的通过 <code>rustup</code> 的安装方法是大多数开发者的首选。
+         上述通过 <code>rustup</code> 的安装方法是大多数开发者的首选。
           但是 Rust 也可以
           <a href="other-installers.html">通过其他方法安装</a>。
         </p>
@@ -208,4 +205,3 @@ title: 安装 &middot; Rust 程序设计语言
     <script type="text/javascript">
       {% include rustup.js %}
     </script>
-
