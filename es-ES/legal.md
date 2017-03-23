@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: es-ES/default
 title: Rust Legal Policies &middot; The Rust Programming Language
 ---
 

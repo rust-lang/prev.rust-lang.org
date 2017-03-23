@@ -6,25 +6,22 @@ title: Rustへ貢献する &mdash; ライブラリ &middot; The Rust Programming
 # Rustへ貢献する &mdash; ライブラリ
 
 Rustのコードをたくさん書いてRustに貢献したいと思うのなら、ライブラリが適任です。
-Rustは若い言語なので、まだ存在していない、あるいは不完全なライブラリというのが多種類存在しており、改善、競争が必要です。
+Rustは若い言語なので、いまだ存在しない、あるいは不完全なライブラリというものが多数存在していて、改善や生存競争を必要としています。
 
-意味があって楽しい何を書くかを決めるのは一般に難しいものです。
-ここにいくつかアイディアがあります。
+何を書けばインパクトが合って楽しいか、それを決めるのは一般に難しいものですので、ここにいくつかアイデアを挙げます。
 
-* [/r/rust]や[users.rust-lang.org]の"what's everyone working on this week"スレッドを読んで参加する。他のRustプログラマが協力者を捜しているという告知もあります。
-* [awesome-rust]や[libs.rs]でRustのライブラリに親しむ
+* [/r/rust]や[users.rust-lang.org]の"what's everyone working on this week"スレッドを読んで参加してください。他のRustプログラマが協力者を捜しているという告知もあります。
+* [awesome-rust]や[libs.rs]でRustのライブラリに親しんでみてください。
 * Webブラウザの[Servo]、HTTPライブラリの[hyper]、ソースコードフォーマッタの[rustfmt]、Unixライブラリのバインディングである[nix]、Lint集の[clippy]などの大きなプロジェクトは新しいコントリビュータのためにイシューに「easy」とラベルをつけています。
-* [PistonDevelopers]、[servo]、[redox-os]、[iron]、[contain-rs]、[hyperium]などのアクティブなRustのGitHubオーガニゼーションに関わる。
-  これらのサブコミュニティはrust-langオーガニゼーションよりも人手を必要としていて、手引きしてくれる経験豊富なRust開発者で満ちているので簡単に居場所を見付けられることが多いです。
-* [rust-lang-nursery]から正式にrust-langに入れるよう導くのを手伝う。
-  残念ながら必要とされてるほどのドキュメントがありません。
-  [#rust-libs]で尋いてみて下さい。
-* RFCのイシュートラッカーで[コミュニティライブラリの要求][requested]を捜して、作る。
-* [Github Trending][trending]をウォッチして、今アクティブなRustプロジェクトを捜す。
+* [PistonDevelopers]、[servo]、[redox-os]、[iron]、[contain-rs]、[hyperium]などのアクティブなRustのGitHubオーガニゼーションに関わってみてください。
+  これらのサブコミュニティはrust-langオーガニゼーションよりも人手を必要としていて、案内してくれる経験豊富なRust開発者であふれているので簡単に居場所を見付けられることが多いです。
+* [rust-lang-nursery]のライブラリがそこからから正式にrust-langに組み入れられるよう手引きするのを手伝ってみてください。ただ、残念ながらそれを実現するのに必要とされるドキュメントがあまり揃っていません。[#rust-libs]で尋ねてみて下さい。
+* RFCのイシュートラッカーで[コミュニティライブラリの要求][requested]を捜して、作ってみてください。
+* [Github Trending][trending]をウォッチして、現在アクティブなRustプロジェクトを捜してみてください。
 
 ライブラリ作者として[Rustライブラリのベストプラクティス][lib-prac]を読むと良いでしょう。
 
-[#rust-libs]でRustライブラリの設計者に会いましょう。
+Rustライブラリの設計者に[#rust-libs]で会いましょう。
 
 <!--
 TODO: Not sure #rust-libs is the place to direct people

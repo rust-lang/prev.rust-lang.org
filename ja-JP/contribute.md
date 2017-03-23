@@ -40,6 +40,9 @@ TODO: Write guide to advertising Rust projects to link from
 libs / community building
 -->
 
+We pride ourselves on maintaining civilized discourse, and to that end contributors are expected to follow our [Code of Conduct][coc].
+If you have questions about this please inquire with the [community team][community team].
+
 [#rust-internals]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
 [CONTRIBUTING.md]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md
 [bugs]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#bug-reports

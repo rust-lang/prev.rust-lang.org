@@ -1,6 +1,6 @@
 ---
 layout: zh-CN/default
-title: Other Installation Methods &middot; The Rust Programming Language
+title: Other Installation Methods &middot; Rust 程序设计语言
 ---
 
 # Other Rust Installation Methods
