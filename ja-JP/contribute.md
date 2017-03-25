@@ -33,15 +33,8 @@ Rustの成功へと貢献する方法はいくつもあります。
 
 さらなるガイドが欲しければ[#rust-internals]あるいは[internals.rust-lang.org]で質問して下さい。
 
-<!--
-TODO: Write a guide to rust processes and governance to link from here
-TODO: List of active initiatives
-TODO: Write guide to advertising Rust projects to link from
-libs / community building
--->
-
-We pride ourselves on maintaining civilized discourse, and to that end contributors are expected to follow our [Code of Conduct][coc].
-If you have questions about this please inquire with the [community team][community team].
+私たちは良識ある論議を維持していることにプライドを持っており、そのためにコントリビュータには[行動規範][coc]に従うことを期待しています。
+これについて質問があれば、[コミュニティチーム][community team]に問い合わせてみてください。
 
 [#rust-internals]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
 [CONTRIBUTING.md]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md
