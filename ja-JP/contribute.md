@@ -33,7 +33,7 @@ Rustの成功へと貢献する方法はいくつもあります。
 
 さらなるガイドが欲しければ[#rust-internals]あるいは[internals.rust-lang.org]で質問して下さい。
 
-私たちは良識ある論議を維持していることにプライドを持っており、そのためにコントリビュータには[行動規範][coc]に従うことを期待しています。
+私たちは良識ある論議を維持していることにプライドを持っており、そのためにコントリビュータが[行動規範][coc]に従うことを期待しています。
 これについて質問があれば、[コミュニティチーム][community team]に問い合わせてみてください。
 
 [#rust-internals]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
