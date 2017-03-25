@@ -146,14 +146,14 @@ title: インストール &middot; プログラミング言語Rust
         </p>
 
         <p>
-          従って、Rustの開発者は慣用的にこのディレクトリを
+          従って、Rustの開発者は慣例的にこのディレクトリを
           <a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code>環境変数</a>
           に含めます。
-          インストール時に、<code>rustup</code>が<code>PATH</code>を設定するように試みますが、 プラットフォーム、シェル、毎の差異、あるいは<code>rustup</code>のバグのために<code>PATH</code>への変更はコンソールを再起動するかユーザをログアウトするかしないと反映されない、あるいは成功しないこともあります。
+          インストール時に、<code>rustup</code>が<code>PATH</code>を設定しようとしますが、 プラットフォームごと、シェルごとの差異、あるいは<code>rustup</code>のバグのために<code>PATH</code>への変更が反映されない場合があります。その場合はコンソールを再起動するか再ログインしてください。それでも反映されない場合は失敗しています。
         </p>
 
         <p>
-          もしインストール後に<code>rustc --version</code>を実行してみて失敗するなら、恐らくこれが原因でしょう。
+          もしインストール後に<code>rustc --version</code>を実行してみて失敗するなら、恐らくPATHの設定に失敗しているのが原因でしょう。
         </p>
 
         <div class="platform-specific win">
@@ -190,7 +190,7 @@ title: インストール &middot; プログラミング言語Rust
     <div class="row">
       <div class="col-md-12">
         <p>
-          上記の<code>rustup</code>を使った方法がほとんどの開発者に推奨されるRustのインストール方法ですが、
+          上記の<code>rustup</code>を使った方法がほとんどの開発者に推奨されるRustのインストール方法ですが、必要に応じて
           <a href="other-installers.html">他の方法でインストール</a>することも出来ます。
         </p>
       </div>
