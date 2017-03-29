@@ -1,22 +1,34 @@
 // Ten kod można edytować oraz uruchomić!
 fn main() {
     // Prosty kalkulator dla liczb całkowitych:
-    // `+` lub `-` oznacza dodanie lub odjęcie 1
-    // `*` lub `/` oznacza pomnożenie lub podzielenie przez 2
-
-    let program = "+ + * - /";
+    let program = "4+ 3* 2- 1/";
     let mut accumulator = 0;
-
+    let mut figure = 0;
     for token in program.chars() {
         match token {
-            '+' => accumulator += 1,
-            '-' => accumulator -= 1,
-            '*' => accumulator *= 2,
-            '/' => accumulator /= 2,
-            _ => { /* ignoruj wszystkie pozostałe znaki */ }
+            '+' => {
+                accumulator += figure;
+                figure = 0;
+            }
+            '-' => {
+                accumulator -= figure;
+                figure = 0;
+            }
+            '*' => {
+                accumulator *= figure;
+                figure = 0;
+            }
+            '/' => {
+                accumulator /= figure;
+                figure = 0;
+            }
+            '0'...'9' => {
+                figure *= 10;
+                figure += token as i8 - '0' as i8;
+            }
+            _ => { /* ignore everything else */ }
         }
     }
-
-    println!("Program \"{}\" wylicza wartość {}",
-              program, accumulator);
+    println!("The program \"{}\" calculates the value {}",
+             program, accumulator);
 }

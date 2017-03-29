@@ -1,22 +1,34 @@
 // Ce code est modifiable et exécutable !
 fn main() {
     // Une calculatrice simple avec des entiers :
-    // `+` ou `-` signifie ajouter ou soustraire 1
-    // `*` ou `/` signifie multiplier ou diviser par 2
-
-    let programme = "+ + * - /";
-    let mut accumulateur = 0;
-
-    for symbole in programme.chars() {
-        match symbole {
-            '+' => accumulateur += 1,
-            '-' => accumulateur -= 1,
-            '*' => accumulateur *= 2,
-            '/' => accumulateur /= 2,
-            _ => { /* on ne tient pas compte des autres symboles */ }
+    let program = "4+ 3* 2- 1/";
+    let mut accumulator = 0;
+    let mut figure = 0;
+    for token in program.chars() {
+        match token {
+            '+' => {
+                accumulator += figure;
+                figure = 0;
+            }
+            '-' => {
+                accumulator -= figure;
+                figure = 0;
+            }
+            '*' => {
+                accumulator *= figure;
+                figure = 0;
+            }
+            '/' => {
+                accumulator /= figure;
+                figure = 0;
+            }
+            '0'...'9' => {
+                figure *= 10;
+                figure += token as i8 - '0' as i8;
+            }
+            _ => { /* ignore everything else */ }
         }
     }
-
-    println!("Le programme \"{}\" a calculé la valeur {}",
-              programme, accumulateur);
+    println!("The program \"{}\" calculates the value {}",
+             program, accumulator);
 }

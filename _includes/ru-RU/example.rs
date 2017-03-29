@@ -1,22 +1,34 @@
 // Этот код можно отредактировать и запустить!
 fn main() {
     // Простой целочисленный калькулятор:
-    // `+` или `-` означает прибавление или вычитание единицы
-    // `*` или `/` означает умножение или деление на 2
-
-    let program = "+ + * - /";
+    let program = "4+ 3* 2- 1/";
     let mut accumulator = 0;
-
+    let mut figure = 0;
     for token in program.chars() {
         match token {
-            '+' => accumulator += 1,
-            '-' => accumulator -= 1,
-            '*' => accumulator *= 2,
-            '/' => accumulator /= 2,
-            _ => { /* игнорируем всё остальное */ }
+            '+' => {
+                accumulator += figure;
+                figure = 0;
+            }
+            '-' => {
+                accumulator -= figure;
+                figure = 0;
+            }
+            '*' => {
+                accumulator *= figure;
+                figure = 0;
+            }
+            '/' => {
+                accumulator /= figure;
+                figure = 0;
+            }
+            '0'...'9' => {
+                figure *= 10;
+                figure += token as i8 - '0' as i8;
+            }
+            _ => { /* ignore everything else */ }
         }
     }
-
-    println!("Программа \"{}\" производит значение {}",
-              program, accumulator);
+    println!("The program \"{}\" calculates the value {}",
+             program, accumulator);
 }
