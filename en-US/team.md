@@ -1,44 +1,9 @@
 ---
 layout: default
 title: The Rust Team &middot; The Rust Programming Language
+extra_css:
+  - team.css
 ---
-
-<style type="text/css">
-.headshot {
-  border: 1px solid #888;
-  width: 140px;
-}
-
-.person {
-  display: inline-block;
-  position: relative;
-  margin-bottom: 20px;
-}
-.lead { font-weight: bold; }
-.lead .name::after { content: " (lead)"; }
-.details {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-weight: normal;
-}
-.person:hover .details {
-   display: block;
-}
-
-.headshots {
-  text-align: center;
-  margin: 0px auto;
-  padding: 0;
-  width: 700px;
-  max-width: 100%;
-  list-style: none;
-}
-</style>
 
 # The Rust Team
 
