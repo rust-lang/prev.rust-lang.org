@@ -3,7 +3,7 @@
     <span class='kw'>let</span> greetings = [<span class='string'>"Hello"</span>, <span class='string'>"Hola"<span>, <span class='string'>"Bonjour"</span>,
                      <span class='string'>"こんにちは"</span>, <span class='string'>"您好"</span>];
 
-    <span class='kw'>for</span> (num,greeting) in greetings.iter().enumerate() {
+    <span class='kw'>for</span> (num, greeting) in greetings.iter().enumerate() {
         <span class='prelude-val'>println!</span>(<span class='string'>"{}"</span>, greeting);
         <span class='kw'>match</span> num {
             0 =>  <span class='prelude-val'>println!</span>(<span class='string'>"This code is editable and runnable!"</span>),
