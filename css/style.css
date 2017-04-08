@@ -246,13 +246,14 @@ ul.laundry-list {
   padding: none;
   margin: none;
   width: 100%;
-  min-height: 340px;
+  min-height: 300px;
   font-size: 13px;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   white-space: pre-wrap;
 }
 
 #active-code {
+  margin-top: 1rem;
   position: relative;
   display: none;
   padding: 10px;
