@@ -1,8 +1,8 @@
 fn main() { 
     let greetings = ["Hello", "Hola", "Bonjour",
-                     "こんにちは", "您好"]; 
-                     
-    for (num,greeting) in greetings.iter().enumerate() { 
+                     "こんにちは", "您好"];
+
+    for (num,greeting) in greetings.iter().enumerate() {
         println!("{}", greeting);
         match num {
             0 =>  println!("This code is editable and runnable!"),
