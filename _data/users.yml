@@ -188,6 +188,11 @@
   logo: line.png
   how: "For a configuration agent."
 -
+  name: Linkerd
+  url: https://linkerd.io/
+  logo: linkerd.svg
+  how: "<a href='https://blog.buoyant.io/2017/03/29/introducing-linkerd-tcp/'>We're using Rust to extend the Linkerd Service Mesh with a lightweight TCP/TLS load balancer, linkerd-tcp.</a>"
+-
   name: Linki Tools
   url: http://linki.tools/
   logo: linkitools.png
