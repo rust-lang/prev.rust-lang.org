@@ -163,6 +163,11 @@
   logo: faraday.svg
   how: "<a href='https://github.com/faradayio/credentials_to_env'>Securely transferring credentials.</a>"
 -
+  name: GiGa infosystems GmbH
+  url: https://www.giga-infosystems.com
+  logo: giga.svg
+  how: "Rust serves us as our primary tool for rewriting our database for 3d geological models."
+-
   name: Gremlin Inc
   url: https://www.gremlininc.com
   logo: gremlininc.svg
