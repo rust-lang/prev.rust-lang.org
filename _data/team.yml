@@ -131,7 +131,7 @@ people:
 teams:
   - name: Core team
     responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
-    members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, pcwalton, erickt]
+    members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, erickt, carols10cents, nrc]
   - name: Language design team
     responsibility: "designing new language features"
     members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon, withoutboats]
@@ -167,7 +167,7 @@ teams:
     email: style-team@rust-lang.org
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
-    members: [Gankro, huonw]
+    members: [Gankro, huonw, pcwalton]
 
 # Information on sites to get profile information from
 sites:
