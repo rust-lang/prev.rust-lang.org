@@ -4,6 +4,7 @@ title: Groupe d'utilisateurs Rust &middot; Rust, le langage de programmation
 ---
 
 # Rust User Groups
+
 Dans le monde entier, il existe plus 50 groupes d'utilisateurs Rust représentant
 quelques 7000 membres répartis dans plus de 20 pays. Les Rustacéens se retrouvant
 périodiquement dans ces groupes d'utilisateur. C'est une bonne introduction pour se
@@ -64,6 +65,7 @@ mieux, de créer une Pull Request sur cette [forge GitHub](https://github.com/ru
 ## Danemark
 
 [Copenhangen Rust Group](http://cph.rs), Copenhagen.
+
 ## France
 
 [Lille Rust Meetup](https://www.meetup.com/rust-lille/), Lille.
@@ -77,6 +79,7 @@ mieux, de créer une Pull Request sur cette [forge GitHub](https://github.com/ru
 [Finland Rust-lang Group](https://www.meetup.com/Finland-Rust-Meetup/), Helsinki.
 
 ## Allemagne
+
 [Rust Cologne/Bonn User Group](https://www.meetup.com/Rust-Cologne-Bonn/), Köln.
 
 [Rust Berlin](https://www.meetup.com/Rust-Berlin/), Berlin.
