@@ -1,22 +1,16 @@
-// This code is editable and runnable!
-fn main() {
-    // A simple integer calculator:
-    // `+` or `-` means add or subtract by 1
-    // `*` or `/` means multiply or divide by 2
+fn main() { 
+    let greetings = ["Hello", "Hola", "Bonjour",
+                     "こんにちは", "您好"];
 
-    let program = "+ + * - /";
-    let mut accumulator = 0;
-
-    for token in program.chars() {
-        match token {
-            '+' => accumulator += 1,
-            '-' => accumulator -= 1,
-            '*' => accumulator *= 2,
-            '/' => accumulator /= 2,
-            _ => { /* ignore everything else */ }
+    for (num, greeting) in greetings.iter().enumerate() {
+        println!("{}", greeting);
+        match num {
+            0 =>  println!("This code is editable and runnable!"),
+            1 =>  println!("Este código es editable y ejecutable!"),
+            2 =>  println!("Ce code est modifiable et exécutable!"),
+            3 =>  println!("このコードは編集して実行出来ます！"),
+            4 =>  println!("这段代码是可以编辑并且能够运行的！"),
+            _ =>  {},
         }
     }
-
-    println!("The program \"{}\" calculates the value {}",
-              program, accumulator);
 }

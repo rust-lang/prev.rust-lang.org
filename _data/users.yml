@@ -163,6 +163,11 @@
   logo: faraday.svg
   how: "<a href='https://github.com/faradayio/credentials_to_env'>Securely transferring credentials.</a>"
 -
+  name: GiGa infosystems GmbH
+  url: https://www.giga-infosystems.com
+  logo: giga.svg
+  how: "Rust serves us as our primary tool for rewriting our database for 3d geological models."
+-
   name: Gremlin Inc
   url: https://www.gremlininc.com
   logo: gremlininc.svg
@@ -182,6 +187,11 @@
   url: https://line.me/
   logo: line.png
   how: "For a configuration agent."
+-
+  name: Linkerd
+  url: https://linkerd.io/
+  logo: linkerd.svg
+  how: "<a href='https://blog.buoyant.io/2017/03/29/introducing-linkerd-tcp/'>We're using Rust to extend the Linkerd Service Mesh with a lightweight TCP/TLS load balancer, linkerd-tcp.</a>"
 -
   name: Linki Tools
   url: http://linki.tools/
