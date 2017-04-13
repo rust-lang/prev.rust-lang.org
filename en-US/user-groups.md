@@ -166,6 +166,10 @@ Budapest.
 
 [Rust Oslo](https://www.meetup.com/Rust-Oslo/), Oslo.
 
+## Peru
+
+[Rust PE supported by Mozilla Peru](https://www.meetup.com/es-ES/mozillaperu/), Lima.
+
 ## Phillipines
 
 [Rust Philippines](http://www.rustph.tech), Manila.
