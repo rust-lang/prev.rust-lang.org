@@ -32,10 +32,12 @@ The most important community resources for those new to Rust are:
   loves answering questions at any depth.
 - The [Users Forum][users_forum], for discussion of all
   things Rust.
+- The [Gitter Chat][gitter_chat], a Gitter chat that is great for questions from beginners and seasoned pros alike
 
 You may also find help on the question and answer site, [Stack Overflow][stack_overflow].
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
+[gitter_chat]: https://gitter.im/rust-lang/rust
 
 ## News
 
