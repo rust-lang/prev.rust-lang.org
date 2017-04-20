@@ -279,7 +279,7 @@
   how: "Data exfiltration testing and Application Security."
 -
   name: Telenor Digital
-  url: https://www.telenordigital.com/ 
+  url: https://www.telenordigital.com/
   logo: telenordigital.png
   how: "Increasing performance and reliability of a concurrent webhook delivery service."
 -
@@ -322,3 +322,8 @@
   url: https://www.tryadhawk.com
   logo: adhawk.png
   how: "We use Rust to parse all of our User-Agent headers."
+-
+  name: TreeScale
+  url: https://www.treescale.com
+  logo: treescale.png
+  how: "At TreeScale we are implemented distributed PubSub system using Rust and MIO, which gave us 8x performance on for processing and distributing Container Images"
