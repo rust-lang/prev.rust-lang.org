@@ -118,6 +118,11 @@
   logo: coursera.png
   how: "<a href='https://building.coursera.org/blog/2016/07/07/rust-docker-in-production-coursera/'>Programming Assignments</a> in <a href='http://betacs.pro/blog/2016/07/07/docker-and-rust/'>secured Docker containers</a>."
 -
+  name: Coredump Hackerspace
+  url: https://www.coredump.ch/
+  logo: coredump.png
+  how: "We develop <a href='https://github.com/coredump-ch/'>CLI tools, games and our backend infrastructure</a> and <a href='https://www.coredump.ch/tag/rust/'>organize events</a>"
+-
   name: Coturnix
   url: http://www.coturnix.fr/
   logo: coturnix.png
