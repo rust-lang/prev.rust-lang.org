@@ -110,6 +110,8 @@ Budapest.
 
 [Rust Group Coimbatore](https://github.com/dvigneshwer/Rust_Group_Coimbatore), Coimbatore.
 
+[Rust Bangalore](https://twitter.com/rustox), Bangalore.
+
 ## Indonesia
 
 [Rust Indonesia](https://github.com/rustid/meetup), Yogyakarta.
