@@ -332,3 +332,8 @@
   url: https://www.treescale.com
   logo: treescale.png
   how: "At TreeScale we are implemented distributed PubSub system using Rust and MIO, which gave us 8x performance on for processing and distributing Container Images"
+-
+  name: EVO.company
+  url: https://evo.company
+  logo: evo.company.svg
+  how: "We have <a href='https://vagga.readthedocs.org'>development tools</a>, containerization, monitoring and orchestration systems in rust."
