@@ -23,7 +23,7 @@ temas, ejecutables en el navegador web.
 
 [Preguntas frecuentes][faq].
 
-[El Rustonomicon][nomicon]. Es un libroe entero dedicado a explicar como
+[El Rustonomicon][nomicon]. Es un libro entero dedicado a explicar como
 escribir código Rust inseguro. Esto es para programadores de Rust avanzados.
 
 [rust-learning]. Una colección de recursos de aprendizaje mantenida por la
