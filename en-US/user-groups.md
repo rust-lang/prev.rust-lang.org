@@ -232,6 +232,8 @@ Budapest.
 
 [Rust North](https://www.meetup.com/Rust-North/), Manchester.
 
+[Cambridge Rust](https://www.meetup.com/Cambridge-Rust-Meetup/), Cambridge.
+
 ## Uruguay
 
 [Rust Meetup Uruguay](https://www.meetup.com/Rust-Uruguay/), Montevideo.
