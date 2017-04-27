@@ -25,7 +25,7 @@ title: 安装 &middot; Rust 程序设计语言
           <p>
             可以运行在 Windows, Linux, Mac OS X, FreeBSD 和 NetBSD 上。
             如果您正在这些平台上，并且看到这句话，请您
-            <a href="https://github.com/rust-lang/rust-www/issues/new">报告问题(issue)</a>,
+            <a href="https://github.com/rust-lang/rust-www/issues/new">报告问题(issue)</a>，
             并且提供以下信息：
           </p>
 
@@ -38,8 +38,8 @@ title: 安装 &middot; Rust 程序设计语言
 
           <!-- duplicate the default cross-platform instructions -->
           <div>
-            <p>To install Rust, if you are running Unix,<br/>run the following
-            in your terminal, then follow the onscreen instructions.</p>
+            <p>要安装 Rust 时，如果您正在使用 Unix，<br/>请在终端中运行以下命令，
+            然后按照屏幕上的提示进行操作。</p>
             <pre>curl https://sh.rustup.rs -sSf | sh</pre>
           </div>
 
@@ -47,7 +47,7 @@ title: 安装 &middot; Rust 程序设计语言
 
           <div>
             <p>
-              您正在使用的是 Windows 操作系统<br/>下载并运行
+              如果您正在使用 Windows 操作系统，<br/>下载并运行
               <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
               然后按照屏幕上的说明进行操作。
             </p>
@@ -56,8 +56,8 @@ title: 安装 &middot; Rust 程序设计语言
 
         <div id="platform-instructions-default" class="instructions">
           <div>
-            <p>To install Rust, if you are running Unix,<br/>run the following
-            in your terminal, then follow the onscreen instructions.</p>
+            <p>要安装 Rust 时，如果您正在使用 Unix，<br/>请在终端中运行以下命令，
+            然后按照屏幕上的提示进行操作。</p>
             <pre>curl https://sh.rustup.rs -sSf | sh</pre>
           </div>
 
@@ -65,7 +65,7 @@ title: 安装 &middot; Rust 程序设计语言
 
           <div>
             <p>
-              您正在使用的是 Windows 操作系统<br/>下载并运行
+              如果您正在使用 Windows 操作系统，<br/>下载并运行
               <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
               然后按照屏幕上的说明进行操作。
             </p>
@@ -78,7 +78,7 @@ title: 安装 &middot; Rust 程序设计语言
         <div>
           <div class="release-version">Rust <span>{{ site.stable }}</span></div>
           <a href="{{ site.stable_blog }}">
-            <div class="release-date">{{ site.stable_date | date: "%Y 年 %-m 月 %-d日" }}</div>
+            <div class="release-date">{{ site.stable_date | date: "%Y 年 %-m 月 %-d 日" }}</div>
           </a>
 
           <br>
@@ -101,23 +101,21 @@ title: 安装 &middot; Rust 程序设计语言
         <p>
           Rust 由
           <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>
-          工具来安装和管理。 Rust 有一个6周的
+          工具来安装和管理。 Rust 有一个 6 周的
           <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
             快速发布过程
           </a> 并且支持
           <a href="https://forge.rust-lang.org/platform-support.html">
              大量的平台
           </a>，所以任何时候都有很多 Rust 构建可用。
-          <code>rustup</code> manages these builds in a consistent way on every
-          platform that Rust supports, enabling installation of Rust from the
-          beta and nightly release channels as well as support for additional
-          cross-compilation targets
+          <code>rustup</code> 在 Rust 支持的每一个平台上以一致的方式管理这些构建，
+          并可以从 beta 和 nightly 发布渠道安装 Rust，且支持额外的交叉编译目标平台。
         </p>
 
         <p>
-          For more information see the
+          更多信息请查看
           <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md"><code>rustup</code>
-          documentation</a>.
+          documentation</a>。
         </p>
 
         <h3>配置 <code>PATH</code> 环境变量</h3>
@@ -131,19 +129,15 @@ title: 安装 &middot; Rust 程序设计语言
             <code>%USERPROFILE%\.cargo\bin</code>
           </span> 目录，
           并且您能够在这里找到 Rust 工具链，包括
-          <code>rustc</code>、<code>cargo</code>及<code>rustup</code>。
+          <code>rustc</code>、<code>cargo</code> 及 <code>rustup</code>。
         </p>
 
         <p>
-          Accordingly, it is customary for Rust developers to include this
-          directory in their
+          因此，Rust 开发者们通常会将此目录放入
           <a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code>
-          environment variable</a>.  During installation, <code>rustup</code>,
-          will attempt to configure
-          <code>PATH</code>, but because of differences between platforms,
-          command shells, and bugs in <code>rustup</code>, the modifications
-          to <code>PATH</code> may not take effect until the console is
-          restarted, or the user logged out, or may not succeed at all.
+          环境变量</a>。在安装时，<code>rustup</code> 会尝试配置 <code>PATH</code>，
+          但是因为不同平台、命令行之间的差异，以及 <code>rustup</code> 的 bug，对于
+          <code>PATH</code> 的修改将会在重启终端、用户登出之后生效，或者有可能完全不会生效。
         </p>
 
         <p>
