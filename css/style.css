@@ -422,6 +422,15 @@ ul.laundry-list {
 	color:  #777;
 }
 
+.friends-front-page {
+    margin: 3em 0;
+}
+
+h2.friends-more {
+    text-align: center;
+    margin-top: 1em;
+}
+
 @media screen and (min-width: 820px) {
     .faq {
         /*padding-right: 6em;*/

@@ -1,0 +1,59 @@
+
+<div id="users" class="row"></div>
+<h2 class="friends-more">See more <a href="/friends.html">uses of Rust in production</a>.</h2>
+
+<script type="text/javascript">
+
+(function() {
+'use strict';
+
+var users = [
+{% for user in site.data.users %}["{{user.url}}", "{{user.logo}}", "{{user.name}}"],
+{% endfor %}];
+
+function getRandomThree() {
+  var len = users.length;
+
+  // pick 3, decrement scope after each pick
+  var a = (Math.random() * len--) | 0;
+  var b = (Math.random() * len--) | 0;
+  var c = (Math.random() * len)   | 0;
+
+  // avoid duplicates and account for indexes taken
+  if (b >= a) b++;
+  if (c >= Math.min(a, b)) c++;
+  if (c >= Math.max(a, b)) c++;
+
+  return [users[a], users[b], users[c]];
+}
+
+function renderUser(user) {
+  var el = document.createElement('div');
+
+  var url = user[0], logo = user[1], name = user[2];
+
+  el.innerHTML = '\
+    <div class="user-container">\
+      <a href="' + url + '" rel="nofollow" alt="' + name + '">\
+        <img src="../user-logos/' + logo + '">\
+      </a>\
+    </div>\
+  ';
+
+  el.className = 'col-md-4';
+
+  return el;
+}
+
+var frag = document.createDocumentFragment();
+
+getRandomThree().map(renderUser).forEach(function(el) { frag.appendChild(el); });
+
+document.getElementById('users').appendChild(frag);
+
+
+})();
+
+
+</script>
+
