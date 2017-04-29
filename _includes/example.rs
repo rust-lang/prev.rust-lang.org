@@ -1,15 +1,23 @@
 fn main() { 
     let greetings = ["Hello", "Hola", "Bonjour",
-                     "こんにちは", "您好"];
+                     "Ciao", "こんにちは", "안녕하세요",
+                     "Cześć", "Olá", "Здравствуйте",
+                     "chào bạn", "您好"];
 
     for (num, greeting) in greetings.iter().enumerate() {
-        println!("{}", greeting);
+        print!("{} : ", greeting);
         match num {
             0 =>  println!("This code is editable and runnable!"),
             1 =>  println!("Este código es editable y ejecutable!"),
             2 =>  println!("Ce code est modifiable et exécutable!"),
-            3 =>  println!("このコードは編集して実行出来ます！"),
-            4 =>  println!("这段代码是可以编辑并且能够运行的！"),
+            3 =>  println!("Questo codice è modificabile e eseguibile!"),
+            4 =>  println!("このコードは編集して実行出来ます！"),
+            5 =>  println!("여기에서 코드를 수정하고 실행할 수 있습니다!"),
+            6 =>  println!("Ten kod można edytować oraz uruchomić!"),
+            7 =>  println!("Esse código é editável e executável!"),
+            8 =>  println!("Этот код можно отредактировать и запустить!"),
+            9 =>  println!("Bạn có thể edit và run code trực tiếp!"),
+            10 =>  println!("这段代码是可以编辑并且能够运行的！"),
             _ =>  {},
         }
     }
