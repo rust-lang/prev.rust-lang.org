@@ -1,16 +1,16 @@
 ---
 layout: zh-CN/default
-title: Other Installation Methods &middot; Rust 程序设计语言
+title: 其他安装方法 &middot; Rust 程序设计语言
 ---
 
-# Other Rust Installation Methods
+# 其他安装 Rust 的方法
 
-- [Which installer should you use?](#which)
-- [Other ways to install `rustup`](#more-rustup)
-- [Standalone installers](#standalone)
-- [Source code](#source)
+- [您应该使用哪个安装程序？](#which)
+- [安装 `rustup` 的其他方法](#more-rustup)
+- [独立安装程序](#standalone)
+- [源代码](#source)
 
-## Which installer should you use?
+## 您应该使用哪个安装程序？
 <span id="which"></span>
 
 Rust runs on many platforms, and there are many ways to install Rust. If you
@@ -48,16 +48,15 @@ available, not the compiler itself; that is, they are cross-compilation targets
 only; Rust code can run on those platforms, but they do not run the compiler
 itself. Such targets can be installed with the `rustup target add` command.
 
-## Other ways to install `rustup`
+## 安装 `rustup` 的其他方法
 <span id="rustup"></span>
 
-The way to install `rustup` differs by platform:
+安装 `rustup` 的方式因平台而异：
 
-* On Unix, run `curl https://sh.rustup.rs -sSf | sh` in your
-  shell. This downloads and runs [`rustup-init.sh`], which in turn
-  downloads and runs the correct version of the `rustup-init`
-  executable for your platform.
-* On Windows, download and run [`rustup-init.exe`].
+* 在 Unix 上，在您的终端运行 `curl https://sh.rustup.rs -sSf | sh` 。
+  它将会下载并运行 [`rustup-init.sh`]，它为您的平台下载并运行
+  `rustup-init` 可执行文件的正确版本。
+* 在 Windows 上，下载并运行 [`rustup-init.exe`].
 
 `rustup-init` can be configured interactively, and all options can additionally
 be controlled by command-line arguments, which can be passed through the shell
@@ -89,7 +88,7 @@ If you prefer not to use the shell script, you may directly download
   {% endfor %}
 </div>
 
-## Standalone installers
+## 独立安装程序
 <span id="standalone"></span>
 
 The official Rust standalone installers contain a single release of Rust, and
@@ -100,10 +99,10 @@ installers (`.msi`), and Mac installers (`.pkg`). These installers come with
 documentation, but do not provide access to additional cross-targets like
 `rustup` does.
 
-The most common reasons to use these are:
+使用独立安装程序的最常见原因是：
 
-- Offline installation
-- Prefering a more platform-integrated, graphical installer on Windows
+- 离线安装
+- 热衷在 Windows 上使用更多平台集成的图形安装程序
 
 Each of these binaries is signed with the [Rust signing key], which is
 [available on keybase.io], by the Rust build infrastructure, with
@@ -145,27 +144,27 @@ Past releases can be found in [the archives].
 
 {% endfor %}
 
-## Source code
+## 源代码
 <span id="source"></span>
 
 <div class="installer-table">
   <div>
     <div>
-      <span>Stable</span>
+      <span>稳定版（Stable）</span>
       <a href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz">.tar.gz</a>
       <a href="https://static.rust-lang.org/dist/rustc-{{ site.stable }}-src.tar.gz.asc">.asc</a>
     </div>
   </div>
   <div>    
     <div>
-      <span>Beta</span>
+      <span>测试版（Beta）</span>
       <a href="https://static.rust-lang.org/dist/rustc-beta-src.tar.gz">.tar.gz</a>
       <a href="https://static.rust-lang.org/dist/rustc-beta-src.gz.asc">.asc</a>
     </div>
   </div>
   <div>    
     <div>
-      <span>Nightly</span>
+      <span>开发版（Nightly）</span>
       <a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz">.tar.gz</a>
       <a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz.asc">.asc</a>
     </div>
