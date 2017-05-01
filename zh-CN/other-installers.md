@@ -13,9 +13,9 @@ title: 其他安装方法 &middot; Rust 程序设计语言
 ## 您应该使用哪个安装程序？
 <span id="which"></span>
 
-Rust runs on many platforms, and there are many ways to install Rust. If you
-want to install Rust in the most straightforward, recommended way, then follow
-the instructions on the main [installation page].
+Rust 在许多平台上运行，并且有很多方法来安装 Rust 。
+如果您想要安装 Rust 最简单，推荐的方法，
+然后参照主要的[安装页面][installation page]上的说明。
 
 That page describes installation via [`rustup`], a tool that manages multiple
 Rust toolchains in a consistent way across all platforms Rust supports. Why
