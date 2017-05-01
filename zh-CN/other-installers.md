@@ -67,8 +67,7 @@ script. Pass `--help` to `rustup-init` as follows to display the arguments
 curl https://sh.rustup.rs -sSf | sh -s -- --help
 ```
 
-If you prefer not to use the shell script, you may directly download
-`rustup-init` for the platform of your choice:
+如果您不想使用 shell 脚本，可以选择合适您使用平台的 `rustup-init` 直接下载：
 
 <div class="rustup-init-table">
   {% for column in site.data.platforms.rustup %}
