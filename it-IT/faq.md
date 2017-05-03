@@ -1214,7 +1214,7 @@ TODO: Write this answer.
 Qual'è il modo consigliato per indicare comportamenti specifici a una piattaforma in Rust?
 </a></h3>
 
-I comportamenti specifici alla piattaforma sono esprimibili utilizzando [attributi di compilazione condizionale](https://doc.rust-lang.org/reference.html#conditional-compilation) come ad esempio `target_os`, `target_family`, `target_endian`, ecc.
+I comportamenti specifici alla piattaforma sono esprimibili utilizzando [attributi di compilazione condizionale](https://doc.rust-lang.org/reference/attributes.html#conditional-compilation) come ad esempio `target_os`, `target_family`, `target_endian`, ecc.
 
 <h3><a href="#can-rust-be-used-for-android-ios-programs" name="can-rust-be-used-for-android-ios-programs">
 Posso programmare per Android/iOS in Rust?

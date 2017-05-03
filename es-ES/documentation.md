@@ -59,7 +59,7 @@ cada lanzamiento.
 
 [api]: https://doc.rust-lang.org/std/
 [syn]: https://doc.rust-lang.org/book/syntax-index.html
-[ref]: https://doc.rust-lang.org/reference.html
+[ref]: https://doc.rust-lang.org/reference
 [cargo]: http://doc.crates.io/guide.html
 [err]: https://doc.rust-lang.org/error-index.html
 [release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md
