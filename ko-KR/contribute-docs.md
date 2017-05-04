@@ -55,7 +55,7 @@ TODO: blogging, translation
 [Rust Design Patterns]: https://github.com/nrc/patterns
 [Rust Style Guidelines]: https://doc.rust-lang.org/style/index.html
 [The Book]: https://doc.rust-lang.org/book/index.html
-[The Rust Reference]: https://doc.rust-lang.org/reference.html
+[The Rust Reference]: https://doc.rust-lang.org/reference
 [The Rustonomicon]: https://doc.rust-lang.org/nomicon/index.html
 [awesome-rust]: https://github.com/kud1ing/awesome-rust
 [crate_docs]: https://users.rust-lang.org/t/lets-talk-about-ecosystem-documentation/2791

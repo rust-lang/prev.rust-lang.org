@@ -1224,7 +1224,7 @@ TODO: Write this answer.
 Rust에서 플랫폼 의존적인 동작을 표현하는 일반적인 방법은 무엇인가요?
 </a></h3>
 
-플랫폼 의존적인 동작은 `target_os`나 `target_family`, `target_endian` 같은 [조건부 컴파일 속성](https://doc.rust-lang.org/reference.html#conditional-compilation)으로 표현할 수 있습니다.
+플랫폼 의존적인 동작은 `target_os`나 `target_family`, `target_endian` 같은 [조건부 컴파일 속성](https://doc.rust-lang.org/reference/attributes.html#conditional-compilation)으로 표현할 수 있습니다.
 
 <h3><a href="#can-rust-be-used-for-android-ios-programs" name="can-rust-be-used-for-android-ios-programs">
 Rust를 안드로이드 및 iOS 프로그래밍에 쓸 수 있나요?
