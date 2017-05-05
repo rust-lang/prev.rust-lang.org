@@ -46,6 +46,8 @@ people:
   dotdash:
     name: Björn Steinbrink
     irc: doener
+  dtolnay:
+    name: David Tolnay
   eddyb:
     name: Eduard Burtescu
   edunham:
@@ -137,8 +139,8 @@ teams:
     members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon, withoutboats]
     lead: nikomatsakis
   - name: Library team
-    responsibility: "the Rust standard library, rust-lang crates, conventions"
-    members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, aturon]
+    responsibility: "the Rust standard library, rust-lang crates, conventions, and ecosystem support"
+    members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, dtolnay, aturon]
     lead: aturon
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
