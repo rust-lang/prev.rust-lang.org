@@ -288,6 +288,11 @@
   logo: stratum.png
   how: "Data exfiltration testing and Application Security."
 -
+  name: superscale networks
+  url: https://www.superscale.io/
+  logo: superscale.svg
+  how: "We run rust-mips on tens of thousands of linux routers with 4-16Mb RAM. Rust is the only modern language that has low enough runtime constrains to make this possible."
+-
   name: Telenor Digital
   url: https://www.telenordigital.com/
   logo: telenordigital.png
