@@ -188,6 +188,11 @@
   logo: honeypot.svg
   how: "We <a href='http://blog.honeypot.io/open-sourcing-searchspot/'>built and use Searchspot</a>, a kind of search engine based on Elasticsearch. Recruiters use it to search for the developers they're looking for."
 -
+  name: krypt.co
+  url: https://krypt.co
+  logo: krypt.co.png
+  how: "Shared code between iOS and Android for <a href='https://github.com/kryptco/ssh-wire'>SSH host signature verification</a> as well as a <a href='https://github.com/KryptCo/kr/tree/master/pkcs11shim'>PKCS11 shared library</a>."
+-
   name: LINE
   url: https://line.me/
   logo: line.png
@@ -282,6 +287,11 @@
   url: https://stratumsecurity.com/
   logo: stratum.png
   how: "Data exfiltration testing and Application Security."
+-
+  name: superscale networks
+  url: https://www.superscale.io/
+  logo: superscale.svg
+  how: "We run rust-mips on tens of thousands of linux routers with 4-16Mb RAM. Rust is the only modern language that has low enough runtime constrains to make this possible."
 -
   name: Telenor Digital
   url: https://www.telenordigital.com/
