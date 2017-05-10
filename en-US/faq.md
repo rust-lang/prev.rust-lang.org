@@ -1183,7 +1183,10 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 How can I make an HTTP request?
 </a></h3>
 
-The standard library does not include an implementation of HTTP, so you will want to use an external crate. [Hyper](https://github.com/hyperium/hyper) is the most popular, but there are [a number of others as well](https://crates.io/keywords/http).
+The standard library does not include an implementation of HTTP, so you will want to use an external crate.
+[reqwest](http://docs.rs/reqwest) is the simplest.
+It is built on [hyper](https://github.com/hyperium/hyper), and written in Rust, but there are [a number of others as well](https://crates.io/keywords/http).
+The [curl](https://docs.rs/curl) crate is widely used and provides bindings to the curl library.
 
 <h3><a href="#how-can-i-write-a-gui-application" name="how-can-i-write-a-gui-application">
 How can I write a GUI application in Rust?
