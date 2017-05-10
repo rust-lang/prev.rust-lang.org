@@ -1042,7 +1042,11 @@ Yes it can! There are already examples of using Rust for both [Android](https://
 Can I run my Rust program in a web browser?
 </a></h3>
 
-Not yet, but there are efforts underway to make Rust compile to the web with [Emscripten](https://kripken.github.io/emscripten-site/).
+Possibly. Rust has [experimental support][wasm] for both [asm.js] and [WebAssembly].
+
+[wasm]: https://davidmcneil.gitbooks.io/the-rusty-web/
+[asm.js]: http://asmjs.org/
+[WebAssembly]: http://webassembly.org/
 
 <h3><a href="#how-do-i-cross-compile-rust" name="how-do-i-cross-compile-rust">
 How do I cross-compile in Rust?
