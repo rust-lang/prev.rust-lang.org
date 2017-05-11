@@ -21,6 +21,8 @@
 people:
   aatch:
     name: James Miller
+  aidanhs:
+    name: Aidan Hobson Sayers
   arielb1:
     name: Ariel Ben-Yehuda
   alexcrichton:
@@ -83,6 +85,9 @@ people:
   Kimundi:
     name: Marvin Löbel
     irc: kimundi
+  Mark-Sumulacrum:
+    name: Mark Simulacrum
+    irc: simulacrum
   manishearth:
     name: Manish Goregaokar
     irc: Manishearth
@@ -108,6 +113,9 @@ people:
     name: Felix Klock
   sfackler:
     name: Steven Fackler
+  shepmaster:
+    name: Jake Goulding
+    irc: shep
   skade:
     name: Florian Gilcher
   solson:
@@ -115,6 +123,8 @@ people:
     irc: scott
   steveklabnik:
     name: Steve Klabnik
+  TimNN:
+    Tim Neumann
   vadimcn:
     name: Vadim Chugunov
   ubsan:
@@ -146,10 +156,14 @@ teams:
     responsibility: "compiler internals, optimizations"
     members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister, jseyfried]
     lead: nikomatsakis
-  - name: Tooling and infrastructure
-    responsibility: "tool support (e.g. Cargo, rustup), CI infrastructure, etc."
+  - name: Tools team
+    responsibility: "Rust tools (e.g. Cargo, rustup)"
     members: [japaric, brson, nrc, alexcrichton, vadimcn, wycats, carols10cents, michaelwoerister]
     lead: alexcrichton
+  - name: Infrastructure team
+    responsibility: "Tools supporting the Rust project itself: CI, releases, bots, metrics"
+    members: [TimNN, aidanhs, Mark-Simulacrum, frewsxcv, alexcrichton, erickt, brson, shepmaster, carols10cents, aturon]
+    lead: aturon
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt

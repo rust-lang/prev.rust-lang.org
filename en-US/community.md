@@ -180,9 +180,11 @@ library, rust-lang crates, and conventions.
 * The [Compiler Team][compiler_team] is responsible for compiler internals and
 optimizations.
 
-* The [Tooling and Infrastructure Team][tool_team] is responsible for official
-tools like [Cargo], [rustup], and [rustfmt], as well as the CI Infrastructure for the
-project.
+* The [Tools Team][tool_team] is responsible for official tools like [Cargo],
+[rustup], and [rustfmt].
+
+* The [Infrastructure Team][infra_team] is responsible for tools that support
+  the project itself: CI, release generation, bots, and metrics.
 
 [Cargo]: https://crates.io
 [rustup]: https://www.rustup.rs
@@ -210,10 +212,11 @@ help get you started.
 [language_team]: team.html#Language-design-team
 [library_team]: team.html#Library-team
 [compiler_team]: team.html#Compiler-team
-[tool_team]: team.html#Tooling-and-infrastructure
+[tool_team]: team.html#Tools-team
 [community_team]: team.html#Community-team
 [mod_team]: team.html#Moderation-team
 [doc_team]: team.html#Documentation-team
+[infra_team]: team.html#Infrastructure-team
 
 ## Rust Development
 
