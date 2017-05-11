@@ -156,11 +156,11 @@ teams:
     responsibility: "compiler internals, optimizations"
     members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister, jseyfried]
     lead: nikomatsakis
-  - name: Tooling
+  - name: Tools team
     responsibility: "Rust tools (e.g. Cargo, rustup)"
     members: [japaric, brson, nrc, alexcrichton, vadimcn, wycats, carols10cents, michaelwoerister]
     lead: alexcrichton
-  - name: Infrastructure
+  - name: Infrastructure team
     responsibility: "Tools supporting the Rust project itself: CI, releases, bots, metrics"
     members: [TimNN, aidanhs, Mark-Simulacrum, frewsxcv, alexcrichton, erickt, brson, shepmaster, carols10cents, aturon]
     lead: aturon
