@@ -1,9 +1,9 @@
 ---
 layout: zh-CN/default
-title: Contributing to Rust &mdash; language, compiler, and the standard library &middot; Rust 程序设计语言
+title: 为 Rust 出力 &mdash; 语言、编译器和标准库 &middot; Rust 程序设计语言
 ---
 
-# Contributing to Rust &mdash; language, compiler, and the standard library
+# 为 Rust 出力 &mdash; 语言、编译器和标准库
 
 
 The source code to the compiler and standard library are in the main
@@ -33,7 +33,7 @@ incremental compilation. There is yet no single source for information
 on work needed here, but ask on [internals.rust-lang.org] or
 [#rust-internals] for guidance.
 
-[It's embarrasing when our compiler crashes][ice] &mdash; the
+[当我们的编译器崩溃时，这很尴尬][ice] &mdash; the
 dreaded 'internal compiler error' (ICE). The [I-ICE] label
 tracks these, and they are often plentiful. These are usually
 good bugs to start with because it's easy to know when you've fixed
@@ -43,11 +43,10 @@ The performance of Rust code is one of its great advantages; and the
 performance of the Rust compiler one of its great weaknesses. Any
 improvements to either runtime or &mdash; especially &mdash; compiletime performance
 are widely celebrated. The [I-slow] and [A-optimization] labels deal
-with runtime performance, and [I-compiletime] with compiletime. We have
-a [site that tracks compiletime performance][rustc-perf] on a number
-of workloads. The `-Z time-passes` compiler flag can help debug
-compiler performance, and Rust code can be profiled with standard
-profilers like `perf` on Linux.
+with runtime performance, and [I-compiletime] with compiletime.
+我们有一个在一些工作流上[跟踪编译性能的网站][rustc-perf]。
+`-Z time-passes` 编译器标志可以帮助调试编译器性能，
+Rust 代码在 Linux 上也能用 `perf` 之类的标准分析器分析。
 
 Major new features go through a [Request for Comments (RFC)][rfc]
 process, by which the design is agreed upon. Though it is open to all,
@@ -69,8 +68,7 @@ repository][issue-fcp]. Both FCPs are critical moments to get involved
 and express opinions on the direction of the language, and are
 advertised in the weekly subteam reports on [internals.rust-lang.org].
 
-Meet other Rust compiler engineers in [#rustc], language
-designers in [#rust-lang], and library designers in [#rust-libs].
+在 [#rustc] 中能遇到其他 Rust 编译器工程师，语言设计师在 [#rust-lang]，库设计员在 [#rust-libs]。
 
 <!--
 TODO: guide to compile-time benchmarking

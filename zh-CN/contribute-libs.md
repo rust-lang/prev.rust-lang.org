@@ -1,24 +1,20 @@
 ---
 layout: zh-CN/default
-title: Contributing to Rust &mdash; libraries &middot; Rust 程序设计语言
+title: 为 Rust 出力 &mdash; 库 &middot; Rust 程序设计语言
 ---
 
-# Contributing to Rust &mdash; libraries
+# 为 Rust 出力 &mdash; 库
 
-If you want to contribute to Rust by writing volumes of Rust code,
-then libraries are where it's at: since Rust is a young language,
-there are many types of libraries that either do not exist yet
-or are incomplete and in need of improvement or competition.
+如果你想通过编写 Rust 代码来为 Rust 处理，
+那么库很不错：因为 Rust 是一种年轻的语言，
+很多种类的库还尚不存在或并不完整，它们需要改进或竞争者。
 
-Deciding what to write that will have impact and be fun is a common
-difficulty. Here are some ideas:
+决定写些什么更有乐趣和影响力是一个常见的问题。这里有些想法供你参考：
 
-* Read and participate in the weekly "what's everyone working on
-  this week" threads on [/r/rust] and [users.rust-lang.org]. These are
-  packed with exciting announcements from other Rust programmers in
-  need of collaborators.
-* Familiarize yourself with the best Rust libraries through
-  [awesome-rust] and [libs.rs].
+* 阅读和参与 [/r/rust] 和 [users.rust-lang.org] 上
+  每周的“本周每个人都在做什么”（"what's everyone working on
+  this week"）主题。那些包含来自其他需要合作者的 Rust 程序员的激动人心的通知。
+* 通过 [awesome-rust] 和 [libs.rs] 亲自熟悉最好的 Rust 库。
 * Some larger projects, including the web browser [Servo], the HTTP
   library [hyper], the source-formatter [rustfmt], the Unix library bindings
   [nix], and the lint collection [clippy], tag issues with 'easy' labels for new
@@ -32,14 +28,12 @@ difficulty. Here are some ideas:
 * Help guide libraries from [rust-lang-nursery] into rust-lang proper.
   Unfortunately there is not much documentation on what needs to be
   done here; ask on [#rust-libs].
-* Inspect the RFC issue tracker for a [requested community
-  library][requested] and build it.
-* Watch [Github Trending][trending] for currently active Rust projects.
+* 查阅 RFC 问题跟踪器中的[社区已请求的库][requested]并建立它。
+* 关注 [Github 趋势][trending]了解目前活跃的 Rust 项目。
 
-As a library author you will want to be aware of the [best practices
-for Rust libraries][lib-prac].
+作为库的设计者，您有必要了解 [Rust 库的最佳实践][lib-prac]。
 
-Meet other Rust library designers in [#rust-libs].
+在 [#rust-libs] 中能遇到其他 Rust 库的设计者。
 
 <!--
 TODO: Not sure #rust-libs is the place to direct people

@@ -5,48 +5,33 @@ title: Rust 社区 &middot; Rust 程序设计语言
 
 # Rust 社区
 
-The Rust programming language has many qualities, but Rust's greatest
-strength is the community of people who come together to make working
-in Rust a rewarding experience.
+Rust 编程语言有很多特质，但 Rust 最伟大的力量是，我们的社区团结一心，为更好的 Rust 体验在努力。
 
-We are committed to providing a friendly, safe and welcoming
-environment for all, regardless of gender, sexual orientation,
-disability, ethnicity, religion, or similar personal
-characteristic. Our [code of conduct][coc] sets the standards for
-behavior in all official Rust forums.
+我们致力于提供友好、安全和欢迎所有人的环境，无论性别，性取向，残疾，种族，宗教或类似的个人特征。我们的[行为守则][coc]为所有官方 Rust 论坛中的行为设定了标准。
 
-If you feel you have been or are
-being harassed or made uncomfortable by a community member, please
-[contact][mod_team_email] any of the [Rust Moderation Team][mod_team]
-immediately. Whether you are a regular contributor or a newcomer, we
-care about making the community a safe space for you.
+如果您感觉到不适或者正被社区成员骚扰，请立即[联系][mod_team_email] [Rust 管理团队][mod_team]中的任何人。无论您是常规贡献者还是新来者，我们都十分关切您在社区的感受。
 
 [coc]: https://www.rust-lang.org/conduct.html
 [mod_team]: https://www.rust-lang.org/team.html#Moderation
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
-## Getting Started
+## 入门
 
-The most important community resources for those new to Rust are:
+对 Rust 来说，最重要的社区资源是：
 
-- [#rust-beginners][beginners_irc], an IRC channel that
-  loves answering questions at any depth.
-- The [Users Forum][users_forum], for discussion of all
-  things Rust.
+- [#rust-beginners][beginners_irc]，欢迎任何程度提问的 IRC 频道。
+- [用户论坛][users_forum]，讨论一切有关 Rust 的内容。
 
-You may also find help on the question and answer site, [Stack Overflow][stack_overflow].
+您也可以在问答网站上得到帮助，例如 [Stack Overflow][stack_overflow]。
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
 ## 新闻
 
-[This Week in Rust][twir] collects the latest news, upcoming events
-and a week-by-week account of changes in the Rust language and
-libraries. [The Rust Blog][rust_blog] is where the Rust team makes
-announcements about major developments. And nearly everything happening in
-Rust is discussed on the unofficial subreddit, [/r/rust][reddit].
+[本周 Rust][twir] 收集最新的消息、即将举办的活动，以及每周一次的有关 Rust 语言及库的变动记事。[Rust 博客][rust_blog] 是 Rust 团队公告主要发展的地方。
+最后，几乎所有发生在 Rust 的变化都在非官方的 subreddit、[/r/rust][reddit] 上讨论。
 
-您也可以关注我们的[推特][twitter]账号或者是[新浪微博][weibo]。
+您还可以关注我们的 [Twitter][twitter]账号或[新浪微博][weibo]。
 
 [twir]: https://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
@@ -68,14 +53,14 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 
 ### 主要频道
 
-- [#rust][rust_irc] 关于 Rust 的所有内容
-- [#rust-beginners][beginners_irc] Rust 语言的初学者频道, lower traffic than #rust
-- [#rust-internals][internals_irc] is for discussion of other Rust implementation topics
-- [#rustc][rustc_irc] is the home of the [compiler team][compiler_team]
-- [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
-- [#rust-tools][tools_irc] is the home of the [tools and infrastructure team][tool_team]
-- [#rust-lang][lang_irc] is the home of the [language team][language_team]
-- [#rust-community][community_irc] is the home of the [community team][community_team]
+- [#rust][rust_irc] 谈论有关 Rust 的所有内容
+- [#rust-beginners][beginners_irc] 是 Rust 语言初学者的频道，流量比 #rust 少一些
+- [#rust-internals][internals_irc] 讨论其他 Rust 实现的主题
+- [#rustc][rustc_irc]是[编译器团队][compiler_team]的家
+- [#rust-libs][libs_irc]是[库团队][library_team]的家
+- [#rust-tools][tools_irc]是[工具和基础设施][tool_team]的家
+- [#rust-lang][lang_irc]是[语言团队][language_team]的家
+- [#rust-community][community_irc]是[社区团队][community_team]的家
 
 ### 国际频道
 
@@ -92,6 +77,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#rust-bots][bots_irc] notifications about Rust from a selection of bots
 - [#rust-docs][docs_irc] is the home of the unoffical documentation team
 - [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
+- [#rust-embedded][embedded_irc] is for people doing embedded software in Rust
 - [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
 - [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
 - [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
@@ -109,6 +95,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [crypto_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
 [de_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
 [es_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-es
+[embedded_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-embedded
 [fr_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-fr
 [gamedev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
 [internals_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
@@ -127,23 +114,20 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 
 ## 论坛
 
-We have two forums for asynchronous discussion:
+我们有两个异步讨论论坛：
 
-- The [Users Forum][users_forum], a space for asking questions, posting code
-  snippets, talking about Rust projects, and so on.
+- [用户论坛][users_forum]，提出疑问、张贴代码片段、谈论 Rust 项目的空间。
 
-- The [Internals Forum][internals_forum], a space dedicated to design and
-  implementation discussion about Rust itself (which includes Cargo, the
-  standard library, and other core bits of infrastructure).
+- [内部论坛][internals_forum]，专用于 Rust 本身的设计和实现的讨论，这包括 Cargo、标准库和其他基础架构的核心。
 
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
 
-## User Groups and Meetups
+## 用户群组和会议
 
-There are more than 50 [Rust User Groups][user_group] worldwide in over 20
-countries totaling over 7,000 members. Rustaceans meet periodically in Rust User
-Groups. Its a great introduction to the community and a great way to learn and
+There are more than 90 [Rust User Groups][user_group] worldwide in
+over 35 countries. Rustaceans meet periodically in Rust User Groups.
+Its a great introduction to the community and a great way to learn and
 socialize with other people with a similar interest. Meetings are
 usually held monthly and very informal. Meetings are open to everyone.
 
@@ -155,41 +139,31 @@ Contact the [community team][community_team] to add your own.
 
 ## Rust 团队
 
-Rust has a community-driven development process where most decisions are made
-through open discussion and consensus, under the stewardship of various
-[teams][teams]:
+Rust 有一个社区驱动的开发过程，大多数决策都是通过公开的讨论和共识，在各方面[团队][teams]的指导下做出：
 
-* The [Core Team][core_team] is responsible for steering the design and
+* [核心团队][core_team] is responsible for steering the design and
 development process, overseeing the introduction of new features, and ultimately
 making decisions for which there is no consensus (this happens rarely).
 
-* The [Language Design Team][language_team] is responsible for the
-  design of new language features.
+* [语言设计团队][language_team]负责设计新的语言特性。
 
-* The [Library Team][library_team] is responsible for the Rust standard
-library, rust-lang crates, and conventions.
+* [库团队][library_team]负责 Rust 标准库、rust-lang 包装箱，及公约。
 
-* The [Compiler Team][compiler_team] is responsible for compiler internals and
-optimizations.
+* [编译器团队][compiler_team]负责编译器内部和优化。
 
-* The [Tooling and Infrastructure Team][tool_team] is responsible for official
-tools like [Cargo], [rustup], and [rustfmt], as well as the CI Infrastructure for the
-project.
+* [工具团队][tool_team]负责官方工具，例如 [Cargo]、[rustup] 和 [rustfmt]。
+
+* [基础设施团队][infra_team]负责支持项目本身的工具：CI、发布生成、机器人、指标。
 
 [Cargo]: https://crates.io
 [rustup]: https://www.rustup.rs
 [rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 
-* The [Community Team][community_team] is responsible for coordinating events,
-outreach, commercial users, teaching materials, and exposure. They can also
-direct inquiries to the correct parties when its not clear who to contact
-about something Rusty.
+* [社区团队][community_team]负责协调活动、推广、商业用户、教材和曝光。他们也可以就联络 Rust 当事人进行协调。
 
-* The [Moderation Team][mod_team] is responsible for helping to uphold the
-[code of conduct][coc].
+* [管理团队][mod_team]负责维护[行为守则][coc]。
 
-* The [Documentation Team][doc_team] is responsible for ensuring Rust has
-  fantastic documentation.
+* [文档团队][doc_team]负责确保 Rust 有出色的文档。
 
 In addition to the official team rosters, most teams also have a larger set
 of reviewers who are knowledgeable about the area and can sign off on
@@ -197,36 +171,28 @@ code. If you're interested in getting involved in one of these teams,
 feel free to reach out to the team leader or any other member, who can
 help get you started.
 
-[teams]: https://www.rust-lang.org/team.html
-[core_team]: https://www.rust-lang.org/team.html#Core
-[language_team]: https://www.rust-lang.org/team.html#Language-design
-[library_team]: https://www.rust-lang.org/team.html#Library
-[compiler_team]: https://www.rust-lang.org/team.html#Compiler
-[tool_team]: https://www.rust-lang.org/team.html#Tooling-and-infrastructure
-[community_team]: https://www.rust-lang.org/team.html#Community
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
-[doc_team]: https://www.rust-lang.org/en-US/team.html#Documentation-team
+[teams]: team.html
+[core_team]: team.html#Core-team
+[language_team]: team.html#Language-design-team
+[library_team]: team.html#Library-team
+[compiler_team]: team.html#Compiler-team
+[tool_team]: team.html#Tools-team
+[community_team]: team.html#Community-team
+[mod_team]: team.html#Moderation-team
+[doc_team]: team.html#Documentation-team
+[infra_team]: team.html#Infrastructure-team
 
 ## Rust 开发
 
-Rust has had over [1,200 different contributors][authors], a number that grows
-every single week. [We'd love for you to join that list][contribute]!
+Rust 有超过[1,200名独立贡献者][authors]，这个数字每周还都在增长。[我们欢迎你加入到此行列中][contribute]！
 
-As mentioned above, the [Rust Internals Forum][internals_forum] is dedicated to
-discussing the design and implementation of Rust. A lot of discussion also
-happens on GitHub:
+如上所述，[Rust 内部论坛][internals_forum]致力于讨论 Rust 的设计和实现。还有很多讨论发生在 GitHub 上：
 
-- The [main repository][github] and [issue tracker][issue_tracking] are the
-  front lines of the implementation work. Our reviewers strive to be friendly
-  and to help mentor newcomers, so don't hesitate to open a pull request!
+- [主代码库][github]和[问题跟踪器][issue_tracking]是最前沿的工作阵地。我们的审阅者力求友善引导并帮助新手，所以无需犹豫，打开拉取请求！
 
-- The [RFC repo][rfcs] tracks our Request for Comment process, the main pathway
-  through which the Rust community and the teams reach consensus on new
-  features proposed for the language and official libraries and tools.
+- [RFC 代码库][rfcs]跟踪我们的请求评论流程，Rust 社区和团队主要通过它就为语言、官方库和工具提出的新功能特性达成共识。
 
-Roughly weekly, the Rust teams produce [team reports][team_reports] tracking
-team business, including the progression of proposals through the RFC and
-implementation process.
+大约每周，Rust 团队会制作一份[团队报告][team_reports]跟踪团队事务，包括 RFC 实现流程的提案进展。
 
 [authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
 [contribute]: contribute.html

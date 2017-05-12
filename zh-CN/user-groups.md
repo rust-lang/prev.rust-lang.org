@@ -1,9 +1,9 @@
 ---
 layout: zh-CN/default
-title: Rust User Groups &middot; Rust 程序设计语言
+title: Rust 用户群组 &middot; Rust 程序设计语言
 ---
 
-# Rust User Groups
+# Rust 用户群组
 
 There are more than 90 Rust User Groups worldwide in over 35
 countries. Rustaceans meet periodically in Rust User Groups. Its a
@@ -15,7 +15,7 @@ Community Team](./team.html#Community) or
 even better, open a pull request against [this
 website](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md).
 
-## Australia
+## 澳大利亚
 
 [Rust Brisbane](https://www.meetup.com/Rust-Brisbane/), Brisbane.
 
@@ -23,19 +23,19 @@ website](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md)
 
 [Rust Sydney](https://www.meetup.com/Rust-Sydney/), Sydney.
 
-## Belarus
+## 白俄罗斯
 
 [Rust in Minsk](https://www.meetup.com/Rust-%D0%B2-%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%D0%B5/), Minsk.
 
-## Belgium
+## 比利时
 
 [Belgium Rust User Group](https://www.meetup.com/Belgium-Rust-user-group/), Brussels.
 
-## Bolivia
+## 玻利维亚
 
 [Rust Bolivia](http://www.mozillabolivia.org/rust/), Santa Cruz, Bolivia.
 
-## Brazil
+## 巴西
 
 [Rust Floripa](https://www.meetup.com/Rust-Floripa/), Florianópolis.
 
@@ -45,7 +45,7 @@ website](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md)
 
 [Rust São Paulo](https://www.meetup.com/Rust-Sao-Paulo-Meetup/), São Paulo.
 
-## Canada
+## 加拿大
 
 [Montréal Rust Language Meetup](https://www.meetup.com/Montreal-Rust-Language-Meetup/), Montréal, QC.
 
@@ -55,19 +55,19 @@ website](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md)
 
 [Vancouver Rust](https://www.meetup.com/Vancouver-Rust/), Vancouver, BC.
 
-## Croatia
+## 克罗地亚
 
 [Lambda Zagreb](https://www.meetup.com/lambdazagreb/), Zagreb.
 
-## Czech Republic
+## 捷克
 
 [Rust Prague](https://www.meetup.com/rust-prague/), Prague.
 
-## Denmark
+## 丹麦
 
 [Copenhangen Rust Group](http://cph.rs), Copenhagen.
 
-## France
+## 法国
 
 [Lille Rust Meetup](https://www.meetup.com/rust-lille/), Lille.
 
@@ -75,11 +75,11 @@ website](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md)
 
 [Rust Paris](https://www.meetup.com/Rust-Paris/), Paris.
 
-## Finland
+## 芬兰
 
 [Finland Rust-lang Group](https://www.meetup.com/Finland-Rust-Meetup/), Helsinki.
 
-## Germany
+## 德国
 
 [Rust Cologne/Bonn User Group](https://www.meetup.com/Rust-Cologne-Bonn/), Köln.
 
@@ -95,11 +95,11 @@ website](https://github.com/rust-lang/rust-www/blob/master/en-US/user-groups.md)
 
 [Rust Rhein-Main](https://www.meetup.com/Rust-Rhein-Main/), Frankfurt / Darmstadt.
 
-## Hungary
+## 匈牙利
 
 [Rust Hungary Meetup](https://www.meetup.com/Rust-Hungary-Meetup/), Budapest.
 
-## India
+## 印度
 
 [Hyderabad Rust Meetup](https://www.meetup.com/Hyderabad-Rust-Meetup/), Hyderabad.
 

@@ -1,20 +1,15 @@
 ---
 layout: zh-CN/default
-title: Contributing to Rust &mdash; community building &middot; Rust 程序设计语言
+title: 为 Rust 出力 &mdash; 社区建设 &middot; Rust 程序设计语言
 ---
 
-# Contributing to Rust &mdash; community building
+# 为 Rust 出力 &mdash; 社区建设
 
-Help newbies, spread the word, meet interesting people. Make Rust the
-shining example of open source development that we all want it to be.
+帮助新手、传播它、结识有趣的人。使用 Rust 的
+我们都希望它成为开源开发的一个光辉榜样。
 
-Keep an eye on the [#rust-beginners] channel. This is where we direct
-new Rust programmers to ask for help, and it is vital when they do
-that they receive prompt, accurate, and courteous responses. Likewise,
-[Stack Overflow], [users.rust-lang.org], and [/r/rust], are all forums
-where Rust programers commonly look for assistance. If you want
-training on answering programmers' questions [read this
-guide][helpful].
+请您留意 [#rust-beginners] 频道，这是我们为新 Rust 程序员的询问提供帮助的地方，给他们提供迅速、准确和礼貌的回应很重要。与此类似，[Stack Overflow]、[users.rust-lang.org] 和 [/r/rust] 都是 Rust 程序员常来寻求帮助的地方。
+如果您想了解怎样更好地回答程序员的提问，[阅读这份指南吧][helpful]。
 
 If you are already experienced in some area of the project, please
 look out for potential [E-easy] bugs. When you see an
@@ -26,7 +21,7 @@ thus also helpful to triage E-easy bugs for poor descrptions and
 improve them.
 
 Experienced developers who are patient and communicate clearly should
-consider [mentoring new contributors][mentor]. Tag easy issues with
+consider [指导新贡献者][mentor]. Tag easy issues with
 [E-mentor] and mention in a comment that you will mentor. Expect people
 to contact you about the issue, and attempt to respond promptly.
 
@@ -56,7 +51,7 @@ Remember as you are advocating Rust though to be considerate of
 others' views &mdash; not everybody is going to be receptive to Rust, and
 that's just fine.
 
-Meet other Rust community builders in [#rust-community].
+在 [#rust-community] 中能遇到其他 Rust 社区建设者。
 
 <!--
 Other ideas:
