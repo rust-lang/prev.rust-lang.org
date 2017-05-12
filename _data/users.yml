@@ -78,6 +78,11 @@
   logo: beget.png
   how: "As part of backup, resource management systems and <a href='https://github.com/LTD-Beget/syncookied'>DDOS mitigation</a>"
 -
+  name: Braintree
+  url: https://www.braintreepayments.com/
+  logo: braintree.png
+  how: "Speeding up batch processing and for small command-line utilities."
+-
   name: Calyptech
   url: http://calyptech.com
   logo: calyptech.png
