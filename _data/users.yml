@@ -352,3 +352,8 @@
   url: https://evo.company
   logo: evo.company.svg
   how: "We have <a href='https://vagga.readthedocs.org'>development tools</a>, containerization, monitoring and orchestration systems in rust."
+-
+  name: PolySync
+  url: https://polysync.io/
+  logo: polysync.png
+  how: "Building safety-critical runtime environments & infrastructure for autonomous vehicles."
