@@ -357,3 +357,8 @@
   url: https://polysync.io/
   logo: polysync.png
   how: "Building safety-critical runtime environments & infrastructure for autonomous vehicles."
+-
+  name: Cryptape
+  url: http://cryptape.com/
+  logo: cryptape.png
+  how: "Rust makes our permissioned blockchain, CITA, faster and stronger."
