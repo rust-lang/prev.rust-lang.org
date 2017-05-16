@@ -362,3 +362,8 @@
   url: http://cryptape.com/
   logo: cryptape.png
   how: "Rust makes our permissioned blockchain, CITA, faster and stronger."
+-
+  name: CoreOS, Inc.
+  url: https://coreos.com/
+  logo: coreos.svg
+  how: "Internal tooling including documentation transformation and validation."
