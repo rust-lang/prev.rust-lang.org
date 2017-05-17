@@ -367,3 +367,8 @@
   url: https://coreos.com/
   logo: coreos.svg
   how: "Internal tooling including documentation transformation and validation."
+-
+  name: 3D Hubs
+  url: https://www.3dhubs.com/
+  logo: 3dhubs.png
+  how: "We use Rust to do performance critical heavy lifting in our 3D model processing backend."
