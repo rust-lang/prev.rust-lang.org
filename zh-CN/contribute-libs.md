@@ -5,7 +5,7 @@ title: 为 Rust 出力 &mdash; 库 &middot; Rust 程序设计语言
 
 # 为 Rust 出力 &mdash; 库
 
-如果你想通过编写 Rust 代码来为 Rust 处理，
+如果你想通过编写 Rust 代码来为 Rust 出力，
 那么库很不错：因为 Rust 是一种年轻的语言，
 很多种类的库还尚不存在或并不完整，它们需要改进或竞争者。
 
