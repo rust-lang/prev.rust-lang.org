@@ -111,6 +111,9 @@ people:
     irc: peschkaj
   pnkfelix:
     name: Felix Klock
+  QuietMisdreavus:
+    name: QuietMisdreavus
+    irc: misdreavus
   sfackler:
     name: Steven Fackler
   shepmaster:
@@ -171,7 +174,7 @@ teams:
     email: community-team@rust-lang.org
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
-    members: [frewsxcv, GuillaumeGomez, steveklabnik, peschkaj, jonathandturner]
+    members: [steveklabnik, GuillaumeGomez, frewsxcv, QuietMisdreavus]
   - name: Moderation team
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
@@ -183,8 +186,7 @@ teams:
     email: style-team@rust-lang.org
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
-    members: [Gankro, pcwalton, huonw]
-
+    members: [Gankro, pcwalton, huonw, peschkaj]
 # Information on sites to get profile information from
 sites:
   github:
