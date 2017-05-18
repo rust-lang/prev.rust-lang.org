@@ -78,6 +78,11 @@
   logo: beget.png
   how: "As part of backup, resource management systems and <a href='https://github.com/LTD-Beget/syncookied'>DDOS mitigation</a>"
 -
+  name: BePark
+  url: https://www.bepark.eu
+  logo: bepark.png
+  how: "It help us remotly open parking gates in severals ways. Rust make us really confident for that job!"
+-
   name: Calyptech
   url: http://calyptech.com
   logo: calyptech.png
