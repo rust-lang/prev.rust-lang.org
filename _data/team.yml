@@ -85,7 +85,7 @@ people:
   Kimundi:
     name: Marvin Löbel
     irc: kimundi
-  Mark-Sumulacrum:
+  Mark-Simulacrum:
     name: Mark Simulacrum
     irc: simulacrum
   manishearth:
@@ -124,7 +124,7 @@ people:
   steveklabnik:
     name: Steve Klabnik
   TimNN:
-    Tim Neumann
+    name: Tim Neumann
   vadimcn:
     name: Vadim Chugunov
   ubsan:
@@ -143,10 +143,10 @@ people:
 teams:
   - name: Core team
     responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
-    members: [brson, alexcrichton, wycats, steveklabnik, nikomatsakis, aturon, erickt, carols10cents, nrc]
+    members: [brson, nrc, alexcrichton, wycats, steveklabnik, nikomatsakis, carols10cents, aturon, erickt]
   - name: Language design team
     responsibility: "designing new language features"
-    members: [eddyb, nrc, pnkfelix, nikomatsakis, aturon, withoutboats]
+    members: [withoutboats, eddyb, nrc, pnkfelix, nikomatsakis, aturon]
     lead: nikomatsakis
   - name: Library team
     responsibility: "the Rust standard library, rust-lang crates, conventions, and ecosystem support"
@@ -154,7 +154,7 @@ teams:
     lead: aturon
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
-    members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, dotdash, michaelwoerister, jseyfried]
+    members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, jseyfried, dotdash, michaelwoerister]
     lead: nikomatsakis
   - name: Tools team
     responsibility: "Rust tools (e.g. Cargo, rustup)"
@@ -162,28 +162,28 @@ teams:
     lead: alexcrichton
   - name: Infrastructure team
     responsibility: "Tools supporting the Rust project itself: CI, releases, bots, metrics"
-    members: [TimNN, aidanhs, Mark-Simulacrum, frewsxcv, alexcrichton, erickt, brson, shepmaster, carols10cents, aturon]
+    members: [brson, alexcrichton, frewsxcv, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, aturon]
     lead: aturon
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt
-    members: [brson, skade, manishearth, johannhof, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, edunham]
+    members: [brson, edunham, skade, manishearth, johannhof, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner]
     email: community-team@rust-lang.org
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
-    members: [steveklabnik, GuillaumeGomez, jonathandturner, peschkaj, frewsxcv]
+    members: [frewsxcv, GuillaumeGomez, steveklabnik, peschkaj, jonathandturner]
   - name: Moderation team
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
     email: rust-mods@rust-lang.org
   - name: Style team
-    members: [brson, japaric, joshtriplett, nrc, solson, steveklabnik, ubsan]
+    members: [brson, japaric, nrc, steveklabnik, ubsan, solson, joshtriplett]
     lead: nrc
     responsibility: "temporary 'strike team' charged with deciding on code style guidelines and configuring Rustfmt (process specified in <a href='https://github.com/rust-lang/rfcs/blob/master/text/1607-style-rfcs.md'>RFC 1607</a>)"
     email: style-team@rust-lang.org
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
-    members: [Gankro, huonw, pcwalton]
+    members: [Gankro, pcwalton, huonw]
 
 # Information on sites to get profile information from
 sites:
