@@ -67,7 +67,7 @@ Rust는 효율적인 코드와 편안한 수준의 추상화를 제공하며, �
 아니오. Rust는 2006년에 그레이던 호어(Graydon Hoare)가 시간을 쪼개서 하던 사이드 프로젝트로 시작하여 3년간 개발되었습니다.
 2009년에 언어가 기본 테스트를 실행하고 핵심 개념들을 시연할 수 있을 정도로 성숙하자 Mozilla가 관여하기 시작했습니다.
 Mozilla는 여전히 Rust를 지원하고 있습니다만, Rust는 전 세계의 많은 장소에 퍼져 있는 열정적인 사람들로 이루어진 커뮤니티가 개발하고 있습니다.
-[Rust 팀](https://www.rust-lang.org/team.html)은 Mozilla 직원들과 아닌 사람들 둘 다를 포함하고, `rustc`(Rust의 컴파일러)에는 [1,000명 이상의 서로 다른 기여자](https://github.com/rust-lang/rust/)가 참여해 왔습니다.
+[Rust 팀](https://www.rust-lang.org/team.html)은 Mozilla 직원들과 아닌 사람들 둘 다를 포함하고, GitHub의 `rust` 단체에는 [1,500명 이상의 서로 다른 기여자](https://github.com/rust-lang/rust/)가 참여해 왔습니다.
 
 [프로젝트 거버넌스](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)를 따라, Rust는 프로젝트의 비전과 우선 순위를 설정하는 코어 팀에 의해 관리되며 이 코어 팀이 전체적인 관점에서 프로젝트를 인도합니다.
 또한 개별 관심 분야의 개발을 인도하고 장려하기 위한 서브팀들이 있으며, 핵심 언어, 컴파일러, Rust 라이브러리, Rust 도구, 그리고 공식 Rust 커뮤니티의 중재 등이 여기에 포함됩니다.
@@ -422,7 +422,7 @@ match val.do_something() {
 </a></h3>
 
 두 가지 방법이 있는데, 하나는 `as` 예약어로 원시 타입 사이에서 간단한 변환을 하는 것이고, 다른 하나는 [`Into`][Into]와 [`From`][From] 트레이트를 써서 임의의 타입 변환을 하는 것입니다(트레이트를 직접 구현해서 변환을 추가할 수도 있습니다).
-[`Into`][Into]와 [`From`][From] 트레이트는 변환에서 손실이 일어나지 않을 때만 구현되어 있며, 이를테면 `f64::from(0f32)`는 컴파일이 되지만 `f32::from(0f64)`는 아닙니다.
+[`Into`][Into]와 [`From`][From] 트레이트는 변환에서 손실이 일어나지 않을 때만 구현되어 있으며, 이를테면 `f64::from(0f32)`는 컴파일이 되지만 `f32::from(0f64)`는 아닙니다.
 한편 `as`는 원시 타입들 사이에서는 모두 변환이 가능하며 필요하다면 값을 잘라냅니다.
 
 <h3><a href="#why-doesnt-rust-have-increment-and-decrement-operators" name="why-doesnt-rust-have-increment-and-decrement-operators">
@@ -1224,7 +1224,7 @@ TODO: Write this answer.
 Rust에서 플랫폼 의존적인 동작을 표현하는 일반적인 방법은 무엇인가요?
 </a></h3>
 
-플랫폼 의존적인 동작은 `target_os`나 `target_family`, `target_endian` 같은 [조건부 컴파일 속성](https://doc.rust-lang.org/reference.html#conditional-compilation)으로 표현할 수 있습니다.
+플랫폼 의존적인 동작은 `target_os`나 `target_family`, `target_endian` 같은 [조건부 컴파일 속성](https://doc.rust-lang.org/reference/attributes.html#conditional-compilation)으로 표현할 수 있습니다.
 
 <h3><a href="#can-rust-be-used-for-android-ios-programs" name="can-rust-be-used-for-android-ios-programs">
 Rust를 안드로이드 및 iOS 프로그래밍에 쓸 수 있나요?
@@ -1247,7 +1247,7 @@ Rust에서 크로스 컴파일은 어떻게 하나요?
 Rust에서는 크로스 컴파일을 할 수 있지만 설치 과정이 [좀 필요합니다](https://github.com/japaric/rust-cross/blob/master/README.md).
 모든 Rust 컴파일러는 크로스 컴파일러지만 라이브러리는 해당 플랫폼 용으로 크로스 컴파일될 필요가 있습니다.
 
-Rust는 지원되는 플랫폼에 대해서 [표준 라이브러리의 사본](https://static.rust-lang.org/dist/)을 배포하고 있으며, 배포판 페이지의 각 빌드 디렉토리에 있는 `rust-std-*` 파일들로 들어 있습니다만, 아직 이걸 자동으로 설치하는 방법은 없습니다.
+Rust는 지원되는 플랫폼에 대해서 [표준 라이브러리의 사본](https://static.rust-lang.org/dist/index.html)을 배포하고 있으며, 배포판 페이지의 각 빌드 디렉토리에 있는 `rust-std-*` 파일들로 들어 있습니다만, 아직 이걸 자동으로 설치하는 방법은 없습니다.
 
 <h2 id="modules-and-crates">모듈 및 크레이트</h2>
 
@@ -1463,9 +1463,9 @@ Rust에서 전역 변수는 컴파일 시간에 계산된 전역 상수라면 `c
 </a></h3>
 
 Rust는 현재 컴파일 시간 상수를 제한적으로 지원합니다.
-원시 값을 `const` 선언으로 정의할 수 있고(`static`과 비슷하지만, 변경할 수 없고 메모리에서 지정된 위치를 가지지 않습니다), `const` 함수나 선천적인 메소드도 정의할 수 있습니다. 
+원시 값을 `const` 선언으로 정의할 수 있고(`static`과 비슷하지만, 변경할 수 없고 메모리에서 지정된 위치를 가지지 않습니다), `const` 함수나 선천적인 메소드도 정의할 수 있습니다.
 
-이 기작으로 선언할 수 없는 명령적인 상수를 선언하려면 [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) 크레이트를 사용하세요. 
+이 기작으로 선언할 수 없는 명령적인 상수를 선언하려면 [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) 크레이트를 사용하세요.
 이 크레이트는 컴파일 시간 평가를 상수가 처음 사용될 때 자동으로 평가하는 걸로 흉내냅니다.
 
 <h3><a href="#can-i-run-code-before-main" name="can-i-run-code-before-main">
@@ -1523,8 +1523,8 @@ C 스타일의 열거형은 (`e`가 열거형일 때) `e as i64` 같은 식으�
 
 반대로 바꾸려면 `match` 문장을 써서, 서로 다른 숫자 값들을 열거형의 서로 다른 가능한 값들로 대응시킬 수 있습니다.
 
-<h3><a href="#why-do-rust-programs-use-more-memory-than-c" name="why-do-rust-programs-use-more-memory-than-c">
-왜 Rust 프로그램이 C보다 많은 메모리를 사용하는 거죠?
+<h3><a href="#why-do-rust-programs-have-larger-binary-sizes-than-C-programs" name="why-do-rust-programs-have-larger-binary-sizes-than-C-programs">
+왜 Rust 프로그램의 바이너리 크기가 C 프로그램보다 큰 거죠?
 </a></h3>
 
 Rust 프로그램이 동작이 같은 C 프로그램보다 기본값으로 더 큰 바이너리 크기를 가지는 데 영향을 미치는 여러 요소가 있습니다.
@@ -1768,7 +1768,7 @@ Rust에는 복사 생성자가 있나요?
 </a></h3>
 
 정확히는 아닙니다.
-`Copy`를 구현하는 타입은 C랑 비슷하게, 추가 작업 없이 표준적인 "얕은(shallow) 복사"를 하게 됩니다(이는 C++에서 "오래된 평범한 데이터(plain old data)"와 비슷합니다).
+`Copy`를 구현하는 타입은 C랑 비슷하게, 추가 작업 없이 표준적인 "얕은(shallow) 복사"를 하게 됩니다(이는 C++에서 자명하게 복사할 수 있는 타입들과 비슷합니다).
 사용자 정의된 복사 동작이 필요한 `Copy` 타입을 구현하는 건 불가능합니다.
 대신 Rust에서 "복사 생성자"는 `Clone` 트레이트를 구현하여 명시적으로 `clone` 메소드를 호출하는 걸로 만들어집니다.
 사용자 정의된 복사 연산자를 명시적으로 만드는 건 그 아래의 복잡도를 보여 주며, 개발자가 잠재적으로 비싼 연산을 파악하기 더 쉽게 만듭니다.

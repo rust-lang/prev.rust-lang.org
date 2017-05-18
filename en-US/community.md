@@ -141,17 +141,17 @@ We have two forums for asynchronous discussion:
 
 ## YouTube Channel
 
-Rust has an [YouTube channel][youtube_channel] where video material about the
-language programming is uploaded. What you can expect are recorded presentations
-held by members of the Rust community from various conferences.
+Rust has a [YouTube channel][youtube_channel] where presentations
+given at user groups and conferences by members of the Rust community
+are uploaded.
 
 [youtube_channel]: https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA
 
 ## User Groups and Meetups
 
-There are more than 50 [Rust User Groups][user_group] worldwide in over 20
-countries totaling over 7,000 members. Rustaceans meet periodically in Rust User
-Groups. Its a great introduction to the community and a great way to learn and
+There are more than 90 [Rust User Groups][user_group] worldwide in
+over 35 countries. Rustaceans meet periodically in Rust User Groups.
+Its a great introduction to the community and a great way to learn and
 socialize with other people with a similar interest. Meetings are
 usually held monthly and very informal. Meetings are open to everyone.
 
@@ -180,9 +180,11 @@ library, rust-lang crates, and conventions.
 * The [Compiler Team][compiler_team] is responsible for compiler internals and
 optimizations.
 
-* The [Tooling and Infrastructure Team][tool_team] is responsible for official
-tools like [Cargo], [rustup], and [rustfmt], as well as the CI Infrastructure for the
-project.
+* The [Tools Team][tool_team] is responsible for official tools like [Cargo],
+[rustup], and [rustfmt].
+
+* The [Infrastructure Team][infra_team] is responsible for tools that support
+  the project itself: CI, release generation, bots, and metrics.
 
 [Cargo]: https://crates.io
 [rustup]: https://www.rustup.rs
@@ -210,10 +212,11 @@ help get you started.
 [language_team]: team.html#Language-design-team
 [library_team]: team.html#Library-team
 [compiler_team]: team.html#Compiler-team
-[tool_team]: team.html#Tooling-and-infrastructure
+[tool_team]: team.html#Tools-team
 [community_team]: team.html#Community-team
 [mod_team]: team.html#Moderation-team
 [doc_team]: team.html#Documentation-team
+[infra_team]: team.html#Infrastructure-team
 
 ## Rust Development
 

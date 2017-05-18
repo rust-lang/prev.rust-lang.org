@@ -11,7 +11,7 @@ e rimangono ancora molte cose da implementare.
 sul [migliorare l'esperienza con gli ambienti di sviluppo][ides]***.
 Questo richiede impegno da parte di tutto l'ecosistema Rust, dal compilatore
 stesso fino al tuo ambiente di sviluppo preferito.
-Segui il link per saperne di piú.
+Segui il link per saperne di più.
 
 Sia Cargo, il gestore di pacchetti di Rust e rustdoc
 il generatore di documentazione per Rust, sebbene
@@ -20,7 +20,7 @@ validamente funzionanti, soffrono di una carenza di sviluppatori.
 Rustdoc ha molte problematiche aperte sotto l'etichetta
 [A-rustdoc] del repository principale.
 Queste problematiche sono principalmente composte da
-errori e contribuire é semplicmente una questione di 
+errori e contribuire è semplicmente una questione di 
 risolverli e inviare una richiesta di unione.
 Cargo, possiede [il suo personale repository con relativi problemi][Cargo],
 coloro fossero interessati a contribuire possono anche presentarsi

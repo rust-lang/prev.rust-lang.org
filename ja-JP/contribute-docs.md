@@ -1,49 +1,36 @@
 ---
-layout: default
-title: Contributing to Rust &mdash; documentation &middot; The Rust Programming Language
+layout: ja-JP/default
+title: Rustへ貢献する &mdash; ドキュメント &middot; プログラミング言語Rust
 ---
 
-# Contributing to Rust &mdash; documentation
+# Rustへ貢献する &mdash; ドキュメント
 
-Documentation is never good enough and there's never enough of it.
-Many aspects of Rust's documentation don't require deep knowledge to
-improve, and writing, reviewing, and editing documentation are great
-ways to learn Rust. Furthermore, improvements to documentation are
-easy to identify and limitless. Don't like the way something reads?
-Discover some information that wasn't documented?  Your pull request
-will be gleefully embraced.
+ドキュメントの質も量もこれで十分ということは決してありません。
+Rustのドキュメントを様々な側面から改善するのに深い知識は必要としません。
+逆にドキュメントを執筆したりレビューしたり編集したりするのはRustを学ぶ良い手段です。
+さらにドキュメントの改善点はすぐに見付かりますし、いくらでもあります。
+何か書いてあることに不満がありますか？ドキュメントに書いていない情報を見付けましたか？あなたのプルリクエストをお待ちしています。
 
-***The most impactful documentation you can write is [for the crates
-that make up the Rust ecosystem][crate_docs]***. While the in-tree
-documentation is relatively complete, the same is not yet true for
-[many of the popular crates and tools][awesome-rust] that Rust
-programmers interact with every day. Contributing API documentation to
-a popular Rust project will earn you the enduring love of its maintainer.
+***あなたの書ける最も価値のあるドキュメントは [Rustのエコシステムを形成するクレートのドキュメント][crate_docs]です。***
+ソースツリー内にあるドキュメントは比較的カバー率は高いですが日々Rustプログラマが使っている[多数の有名なクレートやツール][awesome-rust]のドキュメントはそうでもありません。
+人気のRustプロジェクトへAPIドキュメントを書いてあげるとメンテナから親愛の情を得られるでしょう。
 
-[The Book] is the primary documentation for Rust, maintained in the
-main repository. It has its own issue label, [A-book] and
-is continually being refined. Other documentation in the main
-repository include [The Rust Reference], the [standard library API
-documentation][std], [The Rustonomicon] (a guide to using `unsafe`
-correctly). The [Rust Style Guidelines] are so incomplete they are not
-linked prominently; an ambitious contributor can make much headway
-there. The [error index][err] provides extended explanations of the
-errors produced by the compiler. As new errors are added this
-documentation [must be maintained][err-issue], so there always are
-errors not reflected in the index to be added. Most in-tree
-documentation lives in the [src/doc] directory. These are all covered by
-the [A-docs] label on that issue tracker. Finally, this document
-and other website materials are maintained in the [Rust website Git repository].
-To contribute simply edit it and submit a pull request.
+[プログラミング言語Rust][The Book]はRustの主要なドキュメントでRustのメインレポジトリでメンテナンスされています。
+独自の[A-book]ラベルを持っていて、継続的に改善されています。
+メインレポジトリにある他のドキュメントには[Rustリファレンス][The Rust Reference]、[標準ライブラリAPIドキュメント][std]、[Rustonomicon][The Rustonomicon]（`unsafe`を正しく使うためのガイド）があります。
+[Rustスタイルガイドライン][Rust Style Guidelines]はまだ未完成で、表立ってはリンクが張られていません。
+意欲的なコントリビュータはここを狙うとよい成果が得られるでしょう。
+[エラーインデックス][err]はコンパイラによって生成されたエラーの詳解を提供します。
+新たなエラーが追加されたらこのドキュメントも[メンテナンスされないといけません][err-issue]し、インデックスに反映されていないエラーが常に追加されていきます。
+ほとんどのソースツリー内のドキュメントは[src/doc]ディレクトリにあります。イシュートラッカー上では全て[A-docs]ラベルで管理されています。
+最後に、このドキュメントと他のWebのページは[RustのWebサイトのGitレポジトリ][Rust website Git repository]で管理されています。
+コントリビュートするには編集してプルリクエストを投げさえすれば大丈夫です。
 
-A great deal of important Rust documentation does not live in the main
-repository, or is not maintained by the project, but is still
-critically important to Rust's success. Examples of excellent Rust
-documentation that is actively developed and in need of contributors
-include [Rust By Example], [Rust Design Patterns], and [rust-rosetta].
-For other existing documentation projects to contribute to see [rust-learning].
+Rustの重要なドキュメントのうち、かなりの量がメインレポジトリになかったり、Rustプロジェクトによって管理されていなかったりしますが、それでもこれらはRustの成功にとって非常に重要です。
+アクティブに開発されていてコントリビュータを必要としているRustの素晴しいドキュメントの例として、[Rust By Example]、[Rust Design Patterns]そして[rust-rosetta]などがあります。
+貢献すべき他の既存のドキュメントプロジェクトについては[rust-learning]を参照して下さい。
 
-Meet other Rust documentarians in [#rust-docs].
+他のRustのドキュメンターに[#rust-docs]で会いましょう。
 
 <!--
 TODO: blogging, translation
@@ -56,7 +43,7 @@ TODO: blogging, translation
 [Rust Design Patterns]: https://github.com/nrc/patterns
 [Rust Style Guidelines]: https://doc.rust-lang.org/style/index.html
 [The Book]: https://doc.rust-lang.org/book/index.html
-[The Rust Reference]: https://doc.rust-lang.org/reference.html
+[The Rust Reference]: https://doc.rust-lang.org/reference
 [The Rustonomicon]: https://doc.rust-lang.org/nomicon/index.html
 [awesome-rust]: https://github.com/kud1ing/awesome-rust
 [crate_docs]: https://users.rust-lang.org/t/lets-talk-about-ecosystem-documentation/2791

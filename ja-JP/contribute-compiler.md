@@ -1,76 +1,45 @@
 ---
-layout: default
-title: Contributing to Rust &mdash; language, compiler, and the standard library &middot; The Rust Programming Language
+layout: ja-JP/default
+title:  Rustへ貢献する &mdash; 言語、コンパイラ、標準ライブラリ &middot; The Rust Programming Language
 ---
 
-# Contributing to Rust &mdash; language, compiler, and the standard library
+# Rustへ貢献する &mdash; 言語、コンパイラ、標準ライブラリ
 
 
-The source code to the compiler and standard library are in the main
-repository, and as their maintenance is the primary objective of that
-repository, many labels on the issue tracker relate to it. Some of
-the more fruitful labels include [A-codegen], for translation of
-Rust to LLVM IR; [A-debuginfo], generation of metadata used by debuggers;
-[A-diagnostics], the feedback the compiler provides on errors; [A-libs],
-issues with the standard library; [A-macros] and [A-syntaxext], both
-related to syntax extensions; and [A-typesystem], on the topic of types.
+コンパイラと標準ライブラリのソースコードはメインレポジトリにあります。
+メインレポジトリは主にそれらのメンテナンスのために存在しているので、イシュートラッカー上にあるラベルの多くはこれに関連したものです。
+RustからLLVM IRへの変換についての[A-codegen]、デバッガで使うためのメタデータ生成についての[A-debuginfo]、エラー時にコンパイラーが提供するフィードバックについての[A-diagnostics]、標準ライブラリの問題についての[A-libs]、構文拡張に関連する[A-macros]と [A-syntaxext]、型についての[A-typesystem]などが有益なラベルです。
 
-There is no well-maintained guide to the architecture of the compiler,
-but [there is a small overview in-tree][rustc-guide]. The [API
-documentation for the crates that make up the
-compiler][internals-docs] can help with navigating the code, as can
-the source code browser [Rust DXR]. The [guide to the Rust test
-suite][testsuite] will teach you how to exercise the Rust build system
-effectively, as will running [`make tips`][tips] at the command line.
+コンパイラのアーキテクチャについてきちんとメンテナンスされているガイドはありませんが[ソースツリーに多少の概要はあります][rustc-guide]。
+[コンパイラを構成するクレートのAPIドキュメント][internals-docs]もコードを読むときの指針となるでしょうし、同じくソースコードブラウザの[Rust DXR]も参考になるはずです。
+[Rustのテストスィートのガイド][testsuite]はRustのビルドシステムに馴染む方法を教えてくれますし、同様に[make tips][tips]をコマンドラインから走らせても得られるものはあるでしょう。
 
-For the foreseable future, one of the major thrusts of Rust compiler
-development is converting its internals from operating directly off
-the AST to working with an [intermediate representation called
-MIR][mir]. This work is expected to open up many new possibilities by
-simplifying the compiler and help is needed to e.g. create a MIR-based
-translation pass, add MIR-based optimizations, and implement
-incremental compilation. There is yet no single source for information
-on work needed here, but ask on [internals.rust-lang.org] or
-[#rust-internals] for guidance.
 
-[It's embarrasing when our compiler crashes][ice] &mdash; the
-dreaded 'internal compiler error' (ICE). The [I-ICE] label
-tracks these, and they are often plentiful. These are usually
-good bugs to start with because it's easy to know when you've fixed
-them, and they're often relatively self-contained.
+近々入る予定のコンパイラの大きな変更に、内部でASTを直接操作することから[MIRと呼ばれる中間表現][mir]を使うようにするものがあります。（訳注: 翻訳時点で既に入っています）。
+この作業でコンパイラが単純化されるため様々な新たな可能性を開くことが期待されます。
+例えばMIRベースの変換パスやMIRベースの最適化、インクリメンタルコンパイルなどです。
+このため手助けが必要になります。
+この作業に必要なまとまった情報源はありませんが[internals.rust-lang.org]や[#rust-internals]で案内してもらいましょう。
 
-The performance of Rust code is one of its great advantages; and the
-performance of the Rust compiler one of its great weaknesses. Any
-improvements to either runtime or &mdash; especially &mdash; compiletime performance
-are widely celebrated. The [I-slow] and [A-optimization] labels deal
-with runtime performance, and [I-compiletime] with compiletime. We have
-a [site that tracks compiletime performance][rustc-perf] on a number
-of workloads. The `-Z time-passes` compiler flag can help debug
-compiler performance, and Rust code can be profiled with standard
-profilers like `perf` on Linux.
+[コンパイラがクラッシュしたらばつが悪いですね][ice] &mdash; とても恐しい「コンパイラ内部のエラー(internal compiler error)」 (ICE)。
+[I-ICE]ラベルはこれらをトラックしており、大抵ありあまるほどあります。
+これらは通常、とっかかりとしては良いバグです、何故なら直ったかどうかは簡単に分かりますし、比較的それ自身で完結することが多いからです。
 
-Major new features go through a [Request for Comments (RFC)][rfc]
-process, by which the design is agreed upon. Though it is open to all,
-it is a social process between developers who already have various
-amounts of experience working together, and it is recommended to get
-involved slowly &mdash; submitting a hasty RFC without understanding
-the historical, technical, or social context is an easy way
-to make a poor impression and come away disappointed. Read the
-aforelinked readme file to understand best how it all works. Many
-ideas have been debated in Rust's history, some rejected, some
-postponed until the future, and the RFC [issue tracker][rfc-issues]
-catalogs some wishlist ideas that have yet to make headway into the
-language. Shortly before an RFC is accepted for implementation it
-enters 'final comment period', indicated by the [final-comment-period
-label on the rust-lang/rfcs repository][rfc-fcp]. Likewise, before a
-feature is enabled in the stable compiler (called 'ungating') it
-enters [final-comment-period in the rust-lang/rust
-repository][issue-fcp]. Both FCPs are critical moments to get involved
-and express opinions on the direction of the language, and are
-advertised in the weekly subteam reports on [internals.rust-lang.org].
+RustのコードのパフォーマンスはRustの大きな長所の1つです。そしてRustコンパイラのパフォーマンスはRustの大きな短所の一つです。
+実行時、あるいは &mdash; 特に &mdash; コンパイル時のパフォーマンスの改善はどんなものであっても歓迎されます。
+[I-slow]や[A-optimization]は実行時のパフォーマンスを、[I-compiletime]はコンパイル時のパフォーマンスを扱います。
+多数の負荷に対する[コンパイル時間のパフォーマンスをトラックするサイト][rustc-perf]もあります。
+コンパイラフラグの `-Z time-passes` はコンパイラパフォーマンスのデバッグに役立つでしょうし、RustのコードはLinuxの `perf` などの標準的なプロファイラでプロファイルが取れます。
 
-Meet other Rust compiler engineers in [#rustc], language
-designers in [#rust-lang], and library designers in [#rust-libs].
+大きな新機能は[Request for Comments (RFC)][rfc]プロセスを通して採用されます。RFCでは設計への合意を取ります。
+RFCは全員に開かれていますが、既に何度も協業をしている人と関わり合うプロセスなので徐々に関わることをお勧めします &mdash; 思い付きのRFCを歴史的、技術的、人的背景を理解せずに提出すると簡単に印象が悪くなり、人望を失うでしょう。
+先程のREADMEファイルを読んでどういう仕組みかをしっかりと理解しましょう。
+Rustの歴史の中で多数のアイディアが議論されてきており、拒絶されたものもあれば将来へ保留になったものありますし、RFCの[イシュートラッカー][rfc-issues]上に言語に導入されようとしているアイディアの一覧があります。
+RFCが受理され実装されることになる直前に「最後のコメント期間(final comment period)」と呼ばれるものに入ります。[rust-lang/rfcsのfinal-comment-periodラベル][rfc-fcp]がついているものがそれです。
+同じように、安定版コンパイラで機能が有効にされる（「ungating」と呼ばれています）前に[rust-lang/rustでfinal-comment-period][issue-fcp]に入ります。
+どちらのFCPも言語の方針へ関わったり意見を言ったりするための重要な期間であり、[internals.rust-lang.org]のサブチームの週報で広報されます。
+
+Rustのコンパイラエンジニアには[#rustc]で、言語設計者には[#rust-lang]で、ライブラリの設計者には[#rust-libs]で会いましょう。
 
 <!--
 TODO: guide to compile-time benchmarking

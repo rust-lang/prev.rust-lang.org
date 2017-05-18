@@ -83,6 +83,11 @@
   logo: bepark.png
   how: "It help us remotly open parking gates in severals ways. Rust make us really confident for that job!"
 -
+  name: Braintree
+  url: https://www.braintreepayments.com/
+  logo: braintree.png
+  how: "Speeding up batch processing and for small command-line utilities."
+-
   name: Calyptech
   url: http://calyptech.com
   logo: calyptech.png
@@ -113,10 +118,20 @@
   logo: clever-cloud.svg
   how: "We <a href='https://www.clever-cloud.com/doc/rust/rust/'>host Rust web applications</a>, and a part of our infrastructure is developed in Rust."
 -
+  name: CodePicnic
+  url: https://codepicnic.com
+  logo: codepicnic.png
+  how: "We provide Rust <a href='https://codepicnic.com/posts/console-of-the-day-rust-f7664060cc52bc6f3d620bcedc94a4b6/?utm_source=twitter&utm_medium=blog&utm_term=codepicnic+rust&utm_campaign=codepicnic_features_201702'>sandboxes</a> people can play around with, as well as fork to expand examples and apps they want to."
+-
   name: Coursera
   url: https://www.coursera.org
   logo: coursera.png
   how: "<a href='https://building.coursera.org/blog/2016/07/07/rust-docker-in-production-coursera/'>Programming Assignments</a> in <a href='http://betacs.pro/blog/2016/07/07/docker-and-rust/'>secured Docker containers</a>."
+-
+  name: Coredump Hackerspace
+  url: https://www.coredump.ch/
+  logo: coredump.png
+  how: "We develop <a href='https://github.com/coredump-ch/'>CLI tools, games and our backend infrastructure</a> and <a href='https://www.coredump.ch/tag/rust/'>organize events</a>"
 -
   name: Coturnix
   url: http://www.coturnix.fr/
@@ -143,6 +158,11 @@
   logo: dropbox.svg
   how: "<a href='http://www.wired.com/2016/03/epic-story-dropboxs-exodus-amazon-cloud-empire/'>Optimizing cloud file-storage</a>."
 -
+  name: ETCDEV Team
+  url: https://www.etcdevteam.com/
+  logo: etcface.png
+  how: "ETCDEV Team is a group of professional software engineers working full time on Ethereum Classic core projects."
+-
   name: Ethcore
   url: https://ethcore.io
   logo: ethcore.png
@@ -157,6 +177,11 @@
   url: http://faraday.io
   logo: faraday.svg
   how: "<a href='https://github.com/faradayio/credentials_to_env'>Securely transferring credentials.</a>"
+-
+  name: GiGa infosystems GmbH
+  url: https://www.giga-infosystems.com
+  logo: giga.svg
+  how: "Rust serves us as our primary tool for rewriting our database for 3d geological models."
 -
   name: Gremlin Inc
   url: https://www.gremlininc.com
@@ -173,10 +198,20 @@
   logo: honeypot.svg
   how: "We <a href='http://blog.honeypot.io/open-sourcing-searchspot/'>built and use Searchspot</a>, a kind of search engine based on Elasticsearch. Recruiters use it to search for the developers they're looking for."
 -
+  name: krypt.co
+  url: https://krypt.co
+  logo: krypt.co.png
+  how: "Shared code between iOS and Android for <a href='https://github.com/kryptco/ssh-wire'>SSH host signature verification</a> as well as a <a href='https://github.com/KryptCo/kr/tree/master/pkcs11shim'>PKCS11 shared library</a>."
+-
   name: LINE
   url: https://line.me/
   logo: line.png
   how: "For a configuration agent."
+-
+  name: Linkerd
+  url: https://linkerd.io/
+  logo: linkerd.svg
+  how: "<a href='https://blog.buoyant.io/2017/03/29/introducing-linkerd-tcp/'>We're using Rust to extend the Linkerd Service Mesh with a lightweight TCP/TLS load balancer, linkerd-tcp.</a>"
 -
   name: Linki Tools
   url: http://linki.tools/
@@ -263,6 +298,16 @@
   logo: stratum.png
   how: "Data exfiltration testing and Application Security."
 -
+  name: superscale networks
+  url: https://www.superscale.io/
+  logo: superscale.svg
+  how: "We run rust-mips on tens of thousands of linux routers with 4-16Mb RAM. Rust is the only modern language that has low enough runtime constrains to make this possible."
+-
+  name: Telenor Digital
+  url: https://www.telenordigital.com/
+  logo: telenordigital.png
+  how: "Increasing performance and reliability of a concurrent webhook delivery service."
+-
   name: Tessel
   url: https://www.tessel.io
   logo: tessel.svg
@@ -290,10 +335,50 @@
 -
   name: Wire
   url: https://wire.com
-  logo: Wire.png
-  how: "Wire's Axolotl protocol implementation and other cryptographic and utility libraries are developed in Rust, then cross-compiled for iOS and Android."
+  logo: wire.svg
+  how: "<a href='https://github.com/wireapp/proteus'>Wire's Axolotl protocol implementation and other cryptographic and utility libraries</a> are developed in Rust, then cross-compiled for iOS and Android."
 -
   name: Xero
   url: https://www.xero.com
   logo: xero.png
   how: "Infrastructure for beautiful accounting software."
+-
+  name: AdHawk
+  url: https://www.tryadhawk.com
+  logo: adhawk.png
+  how: "We use Rust to parse all of our User-Agent headers."
+-
+  name: TreeScale
+  url: https://www.treescale.com
+  logo: treescale.png
+  how: "At TreeScale we are implemented distributed PubSub system using Rust and MIO, which gave us 8x performance on for processing and distributing Container Images"
+-
+  name: EVO.company
+  url: https://evo.company
+  logo: evo.company.svg
+  how: "We have <a href='https://vagga.readthedocs.org'>development tools</a>, containerization, monitoring and orchestration systems in rust."
+-
+  name: PolySync
+  url: https://polysync.io/
+  logo: polysync.png
+  how: "Building safety-critical runtime environments & infrastructure for autonomous vehicles."
+-
+  name: Cryptape
+  url: http://cryptape.com/
+  logo: cryptape.png
+  how: "Rust makes our permissioned blockchain, CITA, faster and stronger."
+-
+  name: CoreOS, Inc.
+  url: https://coreos.com/
+  logo: coreos.svg
+  how: "Internal tooling including documentation transformation and validation."
+-
+  name: 3D Hubs
+  url: https://www.3dhubs.com/
+  logo: 3dhubs.png
+  how: "We use Rust to do performance critical heavy lifting in our 3D model processing backend."
+-
+  name: VersionEye
+  url: https://www.versioneye.com/
+  logo: versioneye.png
+  how: "We are using Rust to implement <a href='https://blog.versioneye.com/2017/04/27/shazam-for-software-libraries/'>a command line tool which can identify software dependencies by their SHA values</a>."

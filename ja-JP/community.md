@@ -1,52 +1,39 @@
 ---
-layout: default
-title: The Rust Community &middot; The Rust Programming Language
+layout: ja-JP/default
+title: Rustのコミュニティ &middot; プログラミング言語 Rust
 ---
 
-# The Rust Community
+# Rustのコミュニティ
 
-The Rust programming language has many qualities, but Rust's greatest
-strength is the community of people who come together to make working
-in Rust a rewarding experience.
+Rust言語にはさまざまな長所がありますが、一番の強みはRustコミュニティです。ここにはRustの世界に入ることを価値のある経験にするために人々が集まっています。
 
-We are committed to providing a friendly, safe and welcoming
-environment for all, regardless of gender, sexual orientation,
-disability, ethnicity, religion, or similar personal
-characteristic. Our [code of conduct][coc] sets the standards for
-behavior in all official Rust forums.
+私たちは性別、性的嗜好、身体障害、民族、宗教その他あらゆる個人の特徴に関係なく全ての人に優しく安全で温かな環境を提供することに尽力しています。
+[行動規範][coc]で全てのRust公式フォーラムでの振舞いを規定しています。
 
-If you feel you have been or are
-being harassed or made uncomfortable by a community member, please
-[contact][mod_team_email] any of the [Rust Moderation Team][mod_team]
-immediately. Whether you are a regular contributor or a newcomer, we
-care about making the community a safe space for you.
+コミュニティメンバーに何か嫌がらせを受けたり不快な思いをした、あるいはしている場合は即座に[連絡先][mod_team_email]から[Rustモデレーションチーム][mod_team]へと連絡を取って下さい。
+常連であろうと新人であろうと、私たちはコミュニティがあなたにとって安全な場所となるようにお手伝いします。
 
 [coc]: conduct.html
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
-## Getting Started
+## はじめる
 
-The most important community resources for those new to Rust are:
+Rustにはじめて触れる人にとって最も重要なコミュニティリソースは下記のとおりです
 
-- [#rust-beginners][beginners_irc], an IRC channel that
-  loves answering questions at any depth.
-- The [Users Forum][users_forum], for discussion of all
-  things Rust.
+- [#rust-beginners][beginners_irc] どんな内容であっても質問に答えてくれるIRCチャネルです。
+- [Users Forum][users_forum] Rustについてのあらゆることを議論します。
 
-You may also find help on the question and answer site, [Stack Overflow][stack_overflow].
+質問投稿サイトの[Stack Overflow][stack_overflow]でも助けを求められるでしょう。
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
-## News
+## ニュース
 
-[This Week in Rust][twir] collects the latest news, upcoming events
-and a week-by-week account of changes in the Rust language and
-libraries. [The Rust Blog][rust_blog] is where the Rust team makes
-announcements about major developments. And nearly everything happening in
-Rust is discussed on the unofficial subreddit, [/r/rust][reddit].
+[This Week in Rust][twir]は最新のニュースや直近のイベント、週次のRustの言語やライブラリのアップデートなどを集めています。
+[The Rust Blog][rust_blog]ではRustチームが主な変更点をアナウンスしています。
+そしてRustで起こっているほとんど全てのことは非公認のsubredditの[/r/rust][reddit]で議論されています。
 
-We also have a [Twitter][twitter] account.
-If you can't read English, You can also follow our [Weibo][weibo] for Chinese.
+[Twitter][twitter]アカウントもあります。英語が読めないなら、中国向けに[Weibo][weibo]アカウントもあります。
 
 [twir]: https://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
@@ -55,29 +42,29 @@ If you can't read English, You can also follow our [Weibo][weibo] for Chinese.
 [twitter]: https://twitter.com/rustlang
 [weibo]: http://weibo.com/u/5616913483
 
-## IRC Channels
+## IRCチャネル
 
-Rustaceans maintain a number of friendly, high-traffic [IRC] channels on Mozilla's IRC network, irc.mozilla.org.
+RustaceanはMozillaのIRCネットワークirc.mozilla.orgで友好的で流量の多い [IRC] チャネルを多数運営しています。
 
-The [#rust][rust_irc] channel is a venue for general
-discussion about Rust, and a good place to ask for help. You'll find
-people willing to answer any questions about Rust, and
-responses are typically fast.
+[#rust][rust_irc]チャネルは一般のRustに関する議論をする場所で、助けを求めるには良い場所です。
+どんな質問にも進んで答えてくれる人がいますし、大抵即座に返事が返ってきます。
 
-Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real-time discussion about hacking on Rust itself. It is also the channel to ask questions about contributing to Rust.
+Rustの開発チームは[#rust-internals][internals_irc]に居ます。
+Rust自体の開発についてリアルタイムで議論するための場です。
+また、Rustへの貢献について質問するチャネルでもあります。
 
-### Main channels
+### 主なチャネル
 
-- [#rust][rust_irc] is for all things Rust
-- [#rust-beginners][beginners_irc] is a space for those new to Rust, lower traffic than #rust
-- [#rust-internals][internals_irc] is for discussion of other Rust implementation topics
-- [#rustc][rustc_irc] is the home of the [compiler team][compiler_team]
-- [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
-- [#rust-tools][tools_irc] is the home of the [tools and infrastructure team][tool_team]
-- [#rust-lang][lang_irc] is the home of the [language team][language_team]
-- [#rust-community][community_irc] is the home of the [community team][community_team]
+- [#rust][rust_irc] はRustのあらゆるものについて
+- [#rust-beginners][beginners_irc] はRustに初めての人のためのチャネル。#rustよりも流量は少ない
+- [#rust-internals][internals_irc] は他のRustの実装の話題について議論する場所
+- [#rustc][rustc_irc] は[コンパイラチーム][compiler_team]の場所
+- [#rust-libs][libs_irc] は[ライブラリチーム][library_team]の場所
+- [#rust-tools][tools_irc] は[ツール及び基盤チーム][tool_team]の場所
+- [#rust-lang][lang_irc] は[言語チーム][language_team]の場所
+- [#rust-community][community_irc] は[コミュニティチーム][community_team]の場所
 
-### International channels
+### 国際チャネル
 
 - [#rust-br][br_irc] é dedicado à discussão sobre Rust no Brasil
 - [#rust-de][de_irc] ist für die allgemeine Diskussion über Rust auf Deutsch
@@ -85,18 +72,19 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#rust-fr][fr_irc] est dédié à la programmation en Rust en français
 - [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
 
-### Topical channels
+### トピック別チャネル
 
-- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
-- [#rust-bots][bots_irc] notifications about Rust from a selection of bots
-- [#rust-docs][docs_irc] is the home of the unoffical documentation team
-- [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
-- [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
-- [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
-- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
-- [#rust-osdev][osdev_irc] is for people doing OS development in Rust
-- [#rust-webdev][webdev_irc] is for people doing web development in Rust
-- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
+- [#cargo][cargo_irc] RustのパッケージマネージャCargoについての議論用。
+- [#rust-bots][bots_irc] Rustについての通知をbotが流す
+- [#rust-docs][docs_irc] 非公式のドキュメントチームの場所
+- [#rust-crypto][crypto_irc] Rustでの暗号について議論する場所
+- [#rust-embedded][embedded_irc] Rustで組み込みソフトウェアをする人のために
+- [#rust-gamedev][gamedev_irc] Rustでゲームをする人のために
+- [#rust-networking][networking_irc] Rustでコンピュータネットワーキングと開発をする人のために
+- [#rust-offtopic][offtopic_irc] Rustで一般の世間話をするために
+- [#rust-osdev][osdev_irc] RustでOSを開発する人のために
+- [#rust-webdev][webdev_irc] RustでWeb開発をする人のために
+- [#servo][servo_irc] Rustで書かれたブラウザエンジンServoの議論をするために
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
 [beginners_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
@@ -107,6 +95,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [crypto_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
 [de_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
 [es_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-es
+[embedded_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-embedded
 [fr_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-fr
 [gamedev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
 [internals_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
@@ -123,85 +112,65 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [webdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
 [docs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-docs
 
-## Discussion Forums
+## ディスカッションフォーラム
 
-We have two forums for asynchronous discussion:
+非同期にディスカッションするための2つのフォーラムがあります:
 
-- The [Users Forum][users_forum], a space for asking questions, posting code
-  snippets, talking about Rust projects, and so on.
+- [Users Forum][users_forum]は質問をしたり、コードを投稿したりRustのプロジェクトについて話したりする場所です。
 
-- The [Internals Forum][internals_forum], a space dedicated to design and
-  implementation discussion about Rust itself (which includes Cargo, the
-  standard library, and other core bits of infrastructure).
+- [Internals Forum][internals_forum]はRust自身についての設計や実装について議論する場所です。これにはCargoや標準ライブラリ、その他Rustの中心にある基盤を含みます。
 
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
 
-## YouTube Channel
+## YouTubeチャネル
 
-Rust has an [YouTube channel][youtube_channel] where video material about the
-language programming is uploaded. What you can expect are recorded presentations
-held by members of the Rust community from various conferences.
+Rustには[YouTube channel][youtube_channel]があり、言語プログラミングについてのビデオがアップロードされます。
+Rustのコミュニティメンバーによる様々なカンファレンスで発表されたプレゼンテーションの動画が見られるでしょう。
 
 [youtube_channel]: https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA
 
-## User Groups and Meetups
+## ユーザグループとミートアップ
 
-There are more than 50 [Rust User Groups][user_group] worldwide in over 20
-countries totaling over 7,000 members. Rustaceans meet periodically in Rust User
-Groups. Its a great introduction to the community and a great way to learn and
-socialize with other people with a similar interest. Meetings are
-usually held monthly and very informal. Meetings are open to everyone.
+90以上の[Rustユーザグループ][user_group]が世界35カ国以上に存在します。
+Rustaceanは定期的にユーザグループで会っています。
+ユーザグループはコミュニティに入るための最高の導入で、同じような興味を持った人を知り、交流するための最良の手段です。
+ミーティングは通常毎月開催され、堅苦しいものではなく、誰でも参加できます。
+ミーティングは全ての人に開かれています。
 
-There is a global [calendar][calendar] for keeping up with Rust events.
-Contact the [community team][community_team] to add your own.
+Rustのイベントを追って載せ続けているグローバルな[カレンダー][calendar]もあります。
+あなたが開催するイベントを追加したいなら[コミュニティチーム][community_team]に連絡を取って下さい。
 
 [user_group]: ./user-groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
 
-## The Rust Team
+## Rustチーム
 
-Rust has a community-driven development process where most decisions are made
-through open discussion and consensus, under the stewardship of various
-[teams][teams]:
+Rustはコミュニティドリブンな開発プロセスを採用しており、ほとんどの意思決定はさまざまな[チーム][teams]の管理下でオープンな議論と合意の下に行われます:
 
-* The [Core Team][core_team] is responsible for steering the design and
-development process, overseeing the introduction of new features, and ultimately
-making decisions for which there is no consensus (this happens rarely).
+* [コアチーム][core_team] は設計と開発のプロセスの舵取りの責任を担っており、新機能の追加を統括し、合意がなされないものに対する最終決定を下します（このようなことは稀です）。
 
-* The [Language Design Team][language_team] is responsible for the
-  design of new language features.
+* [言語設計チーム][language_team]は言語の新機能の設計についての責任を担います。
 
-* The [Library Team][library_team] is responsible for the Rust standard
-library, rust-lang crates, and conventions.
+* [ライブラリチーム][library_team]はRustの標準ライブラリ、rust-langクレート、規則についての責任を担います。
 
-* The [Compiler Team][compiler_team] is responsible for compiler internals and
-optimizations.
+* [コンパイラチーム][compiler_team]はコンパイラ内部や最適化についての責任を担います。
 
-* The [Tooling and Infrastructure Team][tool_team] is responsible for official
-tools like [Cargo], [rustup], and [rustfmt], as well as the CI Infrastructure for the
-project.
+* [ツール及び基盤チーム][tool_team]は[Cargo]、[rustup]、[rustfmt]などオフィシャルなツール、及びそのCI基盤についての責任を担います。
 
 [Cargo]: https://crates.io
 [rustup]: https://www.rustup.rs
 [rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 
-* The [Community Team][community_team] is responsible for coordinating events,
-outreach, commercial users, teaching materials, and exposure. They can also
-direct inquiries to the correct parties when its not clear who to contact
-about something Rusty.
+* [コミュニティチーム][community_team]はイベントの調整、広報、商用ユーザ、技術教材、展示会についての責任を担います。また、問い合わせ先が不明な問い合わせの案内役もします。
 
-* The [Moderation Team][mod_team] is responsible for helping to uphold the
-[code of conduct][coc].
+* [モデレーションチーム][mod_team] は[行動規範][coc]を守るための援助についての責任を担います。
 
-* The [Documentation Team][doc_team] is responsible for ensuring Rust has
-  fantastic documentation.
+* [ドキュメントチーム][doc_team]はRustに素晴しいドキュメントがあることを保障するための責任を担います。
 
-In addition to the official team rosters, most teams also have a larger set
-of reviewers who are knowledgeable about the area and can sign off on
-code. If you're interested in getting involved in one of these teams,
-feel free to reach out to the team leader or any other member, who can
-help get you started.
+公式のチームメンバーリストに加えて、ほとんどのチームにもっと多く、その領域の知識が豊富でコードに責任を負えるレビュワーがいます。
+どれかのチームに関わってみたいと思うなら、気軽にチームリーダか他のメンバーに連絡を取ってみてください。最初の一歩を案内してくれます。
+
 
 [teams]: team.html
 [core_team]: team.html#Core-team
@@ -213,26 +182,21 @@ help get you started.
 [mod_team]: team.html#Moderation-team
 [doc_team]: team.html#Documentation-team
 
-## Rust Development
+## Rustの開発
 
-Rust has had over [1,200 different contributors][authors], a number that grows
-every single week. [We'd love for you to join that list][contribute]!
+Rustには[1,200以上のコントリビュータ][authors]がいて、毎週増え続けています。
+[あなたも是非このリストに入って下さい][contribute]！
 
-As mentioned above, the [Rust Internals Forum][internals_forum] is dedicated to
-discussing the design and implementation of Rust. A lot of discussion also
-happens on GitHub:
+上で言及したように[Rust Internals Forum][internals_forum]でRustの設計と開発について議論します。
+GitHub上でも多くの議論が交わされています。
 
-- The [main repository][github] and [issue tracker][issue_tracking] are the
-  front lines of the implementation work. Our reviewers strive to be friendly
-  and to help mentor newcomers, so don't hesitate to open a pull request!
+- [メインレポジトリ][github]と[イシュートラッカ][issue_tracking]は実装作業の前線です。
+  レビュワーは友好的で新人に教育的であろうと努力しています。気兼ねなくプルリクエストをオープンして下さい！
 
-- The [RFC repo][rfcs] tracks our Request for Comment process, the main pathway
-  through which the Rust community and the teams reach consensus on new
-  features proposed for the language and official libraries and tools.
+- [RFCレポジトリ][rfcs]では「意見募集(Request for Comment)」のプロセスをトラックしています。
+  RFCはRustのコミュニティとチームが言語や公式ライブラリ、ツールへの新しい機能の提案について合意に達するための主な経路です。
 
-Roughly weekly, the Rust teams produce [team reports][team_reports] tracking
-team business, including the progression of proposals through the RFC and
-implementation process.
+だいたい週次でRustのチームは[チームレポート][team_reports]を出していて、RFC経由での提案と実装のプロセスの進捗などの内容のチームの仕事についての報告が上がります。
 
 [authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
 [contribute]: contribute.html

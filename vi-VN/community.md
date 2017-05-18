@@ -9,7 +9,8 @@ Sức mạnh lớn nhất của Rust là cộng đồng, mọi người cùng đ
 với nhau để tạo nên một Rust tốt nhất.
 
 Không phân biệt bạn là ai, bạn là người như thế nào, bạn đến từ quốc gia nào,
-hay bạn theo tôn giáo nào, bất kể bạn là nam hay nữ miễn là bạn yêu thích Rust bạn luôn được chào đón.
+hay bạn theo tôn giáo nào, bất kể bạn là nam hay nữ chỉ cần bạn yêu thích Rust 
+là bạn được chào đón.
 
 Nếu bạn có bất kỳ điều gì không hiểu thì bạn có thể [liên lạc][mod_team_email] với mọi người trong
 [Ban quản trị Rust][mod_team]. Chúng luôn quan tâm đến việc tạo ra một cộng đồng an toàn để bạn
@@ -185,7 +186,7 @@ Việc tuyển chọn sẽ dựa trên kiến thức và sự hiểu biết củ
 ## Rust Development
 
 
-Rust có hơn [1,200 người đóng góp][1.200 tác giả], con số ấy vẫn tăng lên hàng tuần.
+Rust có hơn [1,200 người đóng góp][authors], con số ấy vẫn tăng lên hàng tuần.
 [Chúng tôi luôn chào đón bạn][contribute]!
 
 [Rust Internals Forum][internals_forum] là nơi để thảo luận về thiết kế và thực hiện các ý tưởng đó. 

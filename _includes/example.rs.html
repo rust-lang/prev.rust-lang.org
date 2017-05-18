@@ -1,23 +1,18 @@
 <pre class='rust'>
 <span class='kw'>fn</span> main() {
-<span class='comment'>// A simple integer calculator:
-// `+` or `-` means add or subtract by 1
-// `*` or `/` means multiply or divide by 2</span>
+    <span class='kw'>let</span> greetings = [<span class='string'>"Hello"</span>, <span class='string'>"Hola"<span>, <span class='string'>"Bonjour"</span>,
+                     <span class='string'>"こんにちは"</span>, <span class='string'>"您好"</span>];
 
-<span class='kw'>let</span> program = <span class='string'>"+ + * - /"</span>;
-<span class='kw'>let</span> <span class='kw'>mut</span> accumulator = <span class='number'>0</span>;
-
-<span class='kw'>for</span> token in program.chars() {
-<span class='kw'>match</span> token {
-    <span class='string'>'+'</span> => accumulator <span class='op'>+=</span> <span class='number'>1</span>,
-    <span class='string'>'-'</span> => accumulator <span class='op'>-=</span> <span class='number'>1</span>,
-    <span class='string'>'*'</span> => accumulator <span class='op'>*=</span> <span class='number'>2</span>,
-    <span class='string'>'/'</span> => accumulator <span class='op'>/=</span> <span class='number'>2</span>,
-    _ => { <span class='comment'>/* ignore everything else */</span> }
-}
-}
-
-<span class='prelude-val'>println!</span>(<span class='string'>"The program \"{}\" calculates the value {}"</span>,
-   program, accumulator);
+    <span class='kw'>for</span> (num, greeting) in greetings.iter().enumerate() {
+        <span class='prelude-val'>println!</span>(<span class='string'>"{}"</span>, greeting);
+        <span class='kw'>match</span> num {
+            0 =>  <span class='prelude-val'>println!</span>(<span class='string'>"This code is editable and runnable!"</span>),
+            1 =>  <span class='prelude-val'>println!</span>(<span class='string'>"Este código es editable y ejecutable!"</span>),
+            2 =>  <span class='prelude-val'>println!</span>(<span class='string'>"Ce code est modifiable et exécutable!"</span>),
+            3 =>  <span class='prelude-val'>println!</span>(<span class='string'>"このコードは編集して実行出来ます！"</span>),
+            4 =>  <span class='prelude-val'>println!</span>(<span class='string'>"这段代码是可以编辑并且能够运行的！"</span>),
+            _ =>  {},
+        }
+    }
 }
 </pre>

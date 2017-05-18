@@ -1,46 +1,34 @@
 ---
-layout: default
-title: Contributing to Rust &mdash; finding, triaging and fixing issues &middot; The Rust Programming Language
+layout: ja-JP/default
+title: Rustへ貢献する &mdash; 問題を捜し、仕分け、修正する &middot; プログラミング言語Rust
 ---
 
-# Contributing to Rust &mdash; finding, triaging and fixing issues
+# Rustへ貢献する &mdash; 問題を捜し、仕分け、修正する
 
-The day-to-day maintenance of the project revolves around Rust's
-[issue tracker] and [pull requests][PR], and more help is always
-needed. The most basic way to get started contributing to Rust is to
-look for the [E-easy] or [E-mentor] labels. These are meant to be
-approachable for new Rust programmers.
+日々のプロジェクトのメンテナンスはRustの[イシュートラッカー][issue tracker]や[プルリクエスト][PR]を中心に行われていて、常により多くの助けを必要としています。
+Rustへ貢献する最も基本的な方法は[E-easy]または[E-mentor]ラベルを探すことです。
+これらは新しいRustプログラマでも手が出しやすいことを意図しています。
 
-On `E-mentor` issues an experienced Rust developer has volunteered in
-the comments to mentor you through solving the issue and [submitting
-the fix via GitHub pull request][pull]. Contact them about the issue,
-on the issue tracker by [@mentioning] their name in a comment, on IRC,
-or through email. Note that Rust developers get a lot of notifications
-and it is easy to miss some; don't hesitate to hunt them down by
-whatever means necessary!
+`E-mentor`では、あなたがイシューを解決し[GitHubにプルリクエストを送る][pull]まで経験豊富なRust開発者からアドバイスをもらえます。
+イシューについて何か質問があればイシュートラッカー上でメンターの名前に[@メンション][@mentioning]するか、あるいはIRC、E-Mailで連絡を取って下さい。
+Rust開発者は多数の通知を受けるため、見逃す可能性があることを覚えておいて下さい。
+彼らを捜すために必要ならどんな手段を取ろうとも遠慮は不要です。
 
-Other projects in Rust maintain similar entry-level tasks, including
-the web browser [Servo], the HTTP library [hyper], the
-source-formatter [rustfmt], the Unix library bindings [nix],
-and the lint collection [clippy].
+他のRustプロジェクトも同様の入門向けのタスクがあります。
+例えばWebブラウザの[Servo]やHTTPライブラリの[hyper]、ソースフォーマッタの[rustfmt]、Unixライブラリバインディングの[nix]、lint集の[clippy]など。
 
-While Rust has an [extensive test suite][test] there is always more to
-test. The [E-needstest] label indicates issues that are thought to be
-fixed but don't have tests. Writing test cases is a great way to
-understand a new project and get started contributing.
+Rustには[広範囲に渡るテストスイート][test]がありますが、大抵の場合さらにテストする必要があります。
+[E-needstest]ラベルは修正はされたと思われるがテストが必要なイシューを示します。
+テストケースを書くのは新たなプロジェクトを理解して貢献を始める良いきっかけです。
 
-Rust is always in need of people to [triage] issues: reproduce bugs,
-minimize test cases, apply labels, close resolved issues. Note that
-you'll need elevated GitHub permissions to apply labels, but this is
-easy to obtain for somebody with a bit of experience in the
-project. Ask a [team member][team].
+Rustは常にイシューの[仕分け][triage]をしてくれる人を必要としています。バグの再現、テストケースの最小化、ラベル付け、解決済みのイシューの終了などのタスクです。
+ラベルを付けるにはGitHubのパーミッションが必要になると思いますが、プロジェクトである程度の経験のある人なら権限を得ることはそこまで難しくはありません。
+[チームメンバー][team]に尋ねてみて下さい。
 
-Once you've found your way around the project and have created a few
-pull requests in a particular area, consider reviewing others' pull
-requests: good reviewership is a rare skill and always appreciated. No
-prior permission is needed &mdash; just start constructively and politely
-commenting on pull requests that interest you. If you want training
-on conducting good code reviews [read this guide][reviews].
+プロジェクトに関わるようになってある領域で何度かプルリクエストを作ったら、他の人のプルリクエストをレビューすることを検討してみましょう。
+レビュー出来る人というのはそう多くないので常に歓迎されます。
+特に権限は必要ありません &mdash; 興味のあるプルリクエストに対して建設的で礼儀正しいコメントをつけるだけです。
+コードレビューの作法を身につけたいなら[このガイドを読むとよいでしょう][reviews]。
 
 <!--
 TODO: weekly triage email?

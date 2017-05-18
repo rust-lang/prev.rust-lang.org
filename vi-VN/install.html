@@ -19,19 +19,6 @@ title: Cài đặt Rust &middot; Ngôn ngữ lập trình Rust
           </p>
         </div>
 
-        <div id="platform-instructions-android" class="instructions" style="display: none;"> 
-         <p>Bạn đang sử dựng Android phải không ?.</p>
-          <p>
-            Trình biên dịch Rust không chạy trực tiếp trên Android,
-            nhưng bạn có thể compile để chạy trên Android.
-            Cài đặt các bộ platform Rust đã hỗ trợ và
-            <a href="https://github.com/rust-lang-nursery/rustup.rs/#cross-compilation">
-              làm theo các hướng dẫn đối với việc compile nhiều nền tảng
-            </a>
-            để xây dựng ứng dụng cho Android.
-          </p>
-        </div>
-
         <div id="platform-instructions-unknown" class="instructions" style="display: none;">
           <!-- unrecognized platform: ask for help -->
           <p>Tôi không biết nền tảng mình đang chạy là gì.</p>
@@ -41,7 +28,7 @@ title: Cài đặt Rust &middot; Ngôn ngữ lập trình Rust
             <a href="https://github.com/rust-lang/rust-www/issues/new">report an issue</a>,
             theo mẫu sau:
           </p>
-          
+
           <div>
             <div>navigator.platform:</div>
             <div id="nav-plat"></div>
@@ -104,12 +91,12 @@ title: Cài đặt Rust &middot; Ngôn ngữ lập trình Rust
 
     </div>
 
-    <h2>Ghi chú trong quá trình cài đặt Rust</h2>
+    <h2>Một vài điểm chú ý khi cài Rust</h2>
 
     <div class="row">
       <div class="col-md-12">
 
-        <h3>Quản lý các phiên bản của Rust với <code>rustup</code></h3>
+        <h3>Toolchain management với<code>rustup</code></h3>
 
         <p>
           Rust được cài đặt và quản lý bằng công cụ
@@ -152,12 +139,12 @@ title: Cài đặt Rust &middot; Ngôn ngữ lập trình Rust
           sẽ cấu hình biến môi trường
           <code>PATH</code>, nhưng với sự khác nhau giữ các nền tảng,
           command shells, và lỗi của <code>rustup</code>, những thay đổi
-          với <code>PATH</code> sẽ không bị ảnh hưởng cho đến khi console được khởi động lại, 
+          với <code>PATH</code> sẽ không bị ảnh hưởng cho đến khi console được khởi động lại,
           hoặc user đã logged out, hoặc có thể không thành công ở tất cả.
         </p>
 
         <p>
-          Nếu sau khi cài đặt, bạn chạy lệnh <code>rustc --version</code> ở console thất bại, 
+          Nếu sau khi cài đặt, bạn chạy lệnh <code>rustc --version</code> ở console thất bại,
           đây là lý do có khả năng nhất.
         </p>
 
@@ -191,7 +178,7 @@ title: Cài đặt Rust &middot; Ngôn ngữ lập trình Rust
       </div>
     </div>
 
-    <h2>Cách cài đặt khác</h3>
+    <h2>Cách cài đặt khác</h2>
 
     <div class="row">
       <div class="col-md-12">
@@ -203,7 +190,7 @@ title: Cài đặt Rust &middot; Ngôn ngữ lập trình Rust
         </p>
       </div>
     </div>
-    
+
     <script type="text/javascript">
       {% include rustup.js %}
     </script>

@@ -6,7 +6,8 @@ title: Rust 程序设计语言
     <div class="row pitch-row">
       <div class="col-md-8">
         <p class="pitch">
-          <b>Rust</b> 是一种注重高效、安全、并行的系统程序语言。
+          <b>Rust</b> 是一种系统编程语言。
+		  它具有惊人的运行速度，能够防止程序错误，并保证了线程安全。
           <br/>
           <b><a href="friends.html">看看谁在使用 Rust</a></b>
         </p>
@@ -27,7 +28,7 @@ title: Rust 程序设计语言
         <li>转移语义</li>
         <li>保证内存安全</li>
         <li>没有数据竞争的线程</li>
-        <li>trait泛型</li>
+        <li>trait 泛型</li>
         <li>模式匹配</li>
         <li>类型推断</li>
         <li>极小运行时</li>
@@ -37,14 +38,13 @@ title: Rust 程序设计语言
       <div class="col-md-8">
         <div id="active-code">
           <button type="button" class="btn btn-primary btn-sm" id="run-code">运行</button>
-          <div id="editor">{% include zh-CN/example.rs %}</div>
+          <div id="editor">{% include example.rs %}</div>
           <div id="result" data-msg-running="运行中...">
             <a id="playlink"><i class="icon-link-ext"></i></a>
           </div>
         </div>
-        <div id="static-code">{% include zh-CN/example.rs.html %}</div>
+        <div id="static-code">{% include example.rs.html %}</div>
         <div class="more-examples">
-		  <a href="https://play.rust-lang.org/?gist=a22cc6240ff70436cb3ff29c8c1a36df&version=nightly&backtrace=2">使用母语编程</a>
           <a href="http://rustbyexample.com/">更多例子</a>
         </div>
       </div>

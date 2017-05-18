@@ -55,7 +55,7 @@ title: Документация Rust &middot; Язык Программиров�
 
 [api]: https://doc.rust-lang.org/std/
 [syn]: http://rurust.github.io/rust_book_ru/src/syntax-index.html
-[ref]: https://doc.rust-lang.org/reference.html
+[ref]: https://doc.rust-lang.org/reference
 [cargo]: https://rurust.github.io/cargo-docs-ru/
 [err]: https://doc.rust-lang.org/error-index.html
 [release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md

@@ -16,10 +16,10 @@ localized-teams:
     name: Team del compilatore
     responsibility: "si occupano del compilatore e della sua ottimizzazione"
   Tooling and infrastructure:
-    name: Utilitá e infrastrutture
+    name: Utilità e infrastrutture
     responsibility: "lavorano agli strumenti (rustup, Cargo), alla piattaforma di controllo automatico, etc..."
   Community team:
-    name: Team della comunitá
+    name: Team della comunità
     responsibility: "coordinano gli eventi, la riuscita, i rapporti con gli utenti commerciali e il materiale didattico"
   Documentation team:
     name: Team della documentazione
@@ -74,20 +74,20 @@ localized-teams:
 
 # Il team di rust
 
-Il progetto Rust é
+Il progetto Rust è
 [amministrato](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)
 da un numero di team, ciascuno focalizzato in una specifica area di competenza.
-Sotto vi é una lista, in ordine alfabetico.
+Sotto vi è una lista, in ordine alfabetico.
 
 Per contattare un team, invia la tua domanda o commenta nel [Forum Sviluppo](https://internals.rust-lang.org/)
 e tagga il tuo post con la categoria corrispondente al nome del team.
-Nota che le vulnerabilitá sono soggette al [processo di annuncio vulnerabilitá](security.html). 
+Nota che le vulnerabilità sono soggette al [processo di annuncio vulnerabilità](security.html). 
 
 {% for team in site.data.team.teams %}
 <section id="{{ team.name | replace:' ','-' }}">
 <h2> {{ page.localized-teams[team.name].name | default: team.name }} </h2>
 
-<strong>Responsabilitá</strong>: <em>{{ page.localized-teams[team.name].responsibility | default: team.responsibility }}</em>
+<strong>Responsabilità</strong>: <em>{{ page.localized-teams[team.name].responsibility | default: team.responsibility }}</em>
 
 <br />
 
