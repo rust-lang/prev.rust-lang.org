@@ -84,6 +84,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#rust-es][es_irc] es para una discusión general sobre Rust en español
 - [#rust-fr][fr_irc] est dédié à la programmation en Rust en français
 - [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
+- [Rust中文][cn_org] Rust 语言中文 Chat 社区(非IRC频道)
 
 ### Topical channels
 
@@ -104,6 +105,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [bots_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
 [br_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-br
 [cargo_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23cargo
+[cn_org]: https://chat.rust-china.org/
 [community_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
 [crypto_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
 [de_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
