@@ -78,6 +78,11 @@
   logo: beget.png
   how: "As part of backup, resource management systems and <a href='https://github.com/LTD-Beget/syncookied'>DDOS mitigation</a>"
 -
+  name: BePark
+  url: https://www.bepark.eu
+  logo: bepark.png
+  how: "It help us remotly open parking gates in severals ways. Rust make us really confident for that job!"
+-
   name: Braintree
   url: https://www.braintreepayments.com/
   logo: braintree.png
@@ -352,3 +357,28 @@
   url: https://evo.company
   logo: evo.company.svg
   how: "We have <a href='https://vagga.readthedocs.org'>development tools</a>, containerization, monitoring and orchestration systems in rust."
+-
+  name: PolySync
+  url: https://polysync.io/
+  logo: polysync.png
+  how: "Building safety-critical runtime environments & infrastructure for autonomous vehicles."
+-
+  name: Cryptape
+  url: http://cryptape.com/
+  logo: cryptape.png
+  how: "Rust makes our permissioned blockchain, CITA, faster and stronger."
+-
+  name: CoreOS, Inc.
+  url: https://coreos.com/
+  logo: coreos.svg
+  how: "Internal tooling including documentation transformation and validation."
+-
+  name: 3D Hubs
+  url: https://www.3dhubs.com/
+  logo: 3dhubs.png
+  how: "We use Rust to do performance critical heavy lifting in our 3D model processing backend."
+-
+  name: VersionEye
+  url: https://www.versioneye.com/
+  logo: versioneye.png
+  how: "We are using Rust to implement <a href='https://blog.versioneye.com/2017/04/27/shazam-for-software-libraries/'>a command line tool which can identify software dependencies by their SHA values</a>."
