@@ -186,7 +186,7 @@ teams:
     lead: nrc
   - name: Dev tools peers
     responsibility: "oversight of specific Rust tools, and coordination with dev tools team"
-    members: [alexcrichton, emilio, fitzgen, manishearth, llogiq, oli-obk, matklad, jwilm, imperio, misdreavous, steveklabnik]
+    members: [alexcrichton, emilio, fitzgen, manishearth, llogiq, oli-obk, matklad, jwilm, GuillaumeGomez, QuietMisdreavus, steveklabnik]
     lead: nrc
   - name: Cargo team
     responsibility: "design and implementation of Cargo"
