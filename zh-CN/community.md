@@ -31,7 +31,7 @@ Rust 编程语言有很多特质，但 Rust 最伟大的力量是，我们的社
 [本周 Rust][twir] 收集最新的消息、即将举办的活动，以及每周一次的有关 Rust 语言及库的变动记事。[Rust 博客][rust_blog] 是 Rust 团队公告主要发展的地方。
 最后，几乎所有发生在 Rust 的变化都在非官方的 subreddit、[/r/rust][reddit] 上讨论。
 
-您还可以关注我们的 [Twitter][twitter]账号或[新浪微博][weibo]。
+您还可以关注我们的 [Twitter][twitter] 账号或[新浪微博][weibo]。
 
 [twir]: https://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
@@ -42,14 +42,11 @@ Rust 编程语言有很多特质，但 Rust 最伟大的力量是，我们的社
 
 ## IRC 频道
 
-Rustaceans maintain a number of friendly, high-traffic [IRC] channels on Mozilla's IRC network, irc.mozilla.org.
+Rustaceans 在 Mozilla 的 IRC 网络 irc.mozilla.org 上维护了一些友好、高流量的 [IRC] 频道。
 
-The [#rust][rust_irc] channel is a venue for general
-discussion about Rust, and a good place to ask for help. You'll find
-people willing to answer any questions about Rust, and
-responses are typically fast.
+[#rust][rust_irc] 频道是讨论 Rust 的一般场所，并且是寻求帮助的好地方。你能找到愿意回答 Rust 有关的任何问题的人，响应通常很快。
 
-Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real-time discussion about hacking on Rust itself. It is also the channel to ask questions about contributing to Rust.
+Rust 开发者的协调位于 [#rust-internals][internals_irc]。此频道中的实时讨论有关调整 Rust 本身，包括提出 Rust 本身的问题。
 
 ### 主要频道
 
@@ -73,17 +70,17 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 
 ### 专题频道
 
-- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
-- [#rust-bots][bots_irc] notifications about Rust from a selection of bots
-- [#rust-docs][docs_irc] is the home of the unoffical documentation team
-- [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
-- [#rust-embedded][embedded_irc] is for people doing embedded software in Rust
-- [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
-- [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
-- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
-- [#rust-osdev][osdev_irc] is for people doing OS development in Rust
-- [#rust-webdev][webdev_irc] is for people doing web development in Rust
-- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
+- [#cargo][cargo_irc] 讨论 Rust 的包管理器 —— Cargo
+- [#rust-bots][bots_irc] 是一系列机器人通知 Rust 的相关事情的地方
+- [#rust-docs][docs_irc] 是非官方的文档团队的家
+- [#rust-crypto][crypto_irc] 讨论 Rust 中的密码学部分
+- [#rust-embedded][embedded_irc] 有关使用 Rust 制作嵌入式软件
+- [#rust-gamedev][gamedev_irc] 有关使用 Rust 开发游戏
+- [#rust-networking][networking_irc] 有关使用 Rust 进行计算机网络相关开发
+- [#rust-offtopic][offtopic_irc] 是供人们在 Rustaceans 上天南海北地闲聊
+- [#rust-osdev][osdev_irc] 有关使用 Rust 开发操作系统
+- [#rust-webdev][webdev_irc] 有关使用 Rust 做 Web 开发
+- [#servo][servo_irc] 用于讨论 Servo，它是使用 Rust 编写的一个浏览器引擎
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
 [beginners_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
@@ -125,14 +122,12 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 
 ## 用户群组和会议
 
-There are more than 90 [Rust User Groups][user_group] worldwide in
-over 35 countries. Rustaceans meet periodically in Rust User Groups.
-Its a great introduction to the community and a great way to learn and
-socialize with other people with a similar interest. Meetings are
-usually held monthly and very informal. Meetings are open to everyone.
+这里有超过 35 个国家或地区的 90 个 [Rust 用户群组][user_group]。Rustaceans 不时在 Rust 用户群组中碰面。
+这是极好的参与社区的方式，并也是一个不错的学习方式，与兴趣相似的其他人交流。
+会议通常每月举行，不是那么正式、严肃。会议面向所有人开放。
 
-There is a global [calendar][calendar] for keeping up with Rust events.
-Contact the [community team][community_team] to add your own.
+有一个全局[日历][calendar]可以持续关注 Rust 的事件与活动。
+联系[社区团队][community_team]添加你的内容。
 
 [user_group]: ./user-groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
@@ -141,9 +136,7 @@ Contact the [community team][community_team] to add your own.
 
 Rust 有一个社区驱动的开发过程，大多数决策都是通过公开的讨论和共识，在各方面[团队][teams]的指导下做出：
 
-* [核心团队][core_team] is responsible for steering the design and
-development process, overseeing the introduction of new features, and ultimately
-making decisions for which there is no consensus (this happens rarely).
+* [核心团队][core_team]是负责指导设计和发展流程，监督新特性的引入，以及最终做出无法达成共识的决定（这很少发生）。
 
 * [语言设计团队][language_team]负责设计新的语言特性。
 
@@ -165,11 +158,8 @@ making decisions for which there is no consensus (this happens rarely).
 
 * [文档团队][doc_team]负责确保 Rust 有出色的文档。
 
-In addition to the official team rosters, most teams also have a larger set
-of reviewers who are knowledgeable about the area and can sign off on
-code. If you're interested in getting involved in one of these teams,
-feel free to reach out to the team leader or any other member, who can
-help get you started.
+除了上述官方团队名册，大多数团队也都有更大的一套了解该领域知识并且可以签发代码的审稿人。
+如果您有兴趣参与上述团队，随时与团队领导或其中的其他成员联系，他可以帮助你入门。
 
 [teams]: team.html
 [core_team]: team.html#Core-team

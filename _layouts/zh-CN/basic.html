@@ -6,16 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
-    <meta name="keywords" content="Rust, Rust程序语言, rustlang, rust-lang, Mozilla Rust">
+    <meta name="keywords" content="Rust, Rust 编程语言, rustlang, rust-lang, Mozilla Rust">
     <meta name="description" content="一种注重高效、安全、并行的系统程序语言。">
 
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
+    {% for css_name in page.extra_css %}
+    <link rel="stylesheet" href="/css/{{ css_name }}">
+    {% endfor %}
   </head>
 
   <body class="container">
     <a href="https://github.com/rust-lang/rust">
-      <img class="ribbon" style="display: none" src="/logos/forkme_zh_cn.svg" alt="从GitHub上拷贝源码" width="298" height="298">
+      <img class="ribbon" style="display: none" src="/logos/forkme_zh_cn.svg" alt="Fork 在 GitHub 上的代码" width="298" height="298">
     </a>
 
     <header>
@@ -37,7 +40,7 @@
     {{ content }}
 
     <footer>
-      <p>本土化页面：
+      <p>其他语言页面：
 	    {% include footer.html %}
       </p>
     </footer>

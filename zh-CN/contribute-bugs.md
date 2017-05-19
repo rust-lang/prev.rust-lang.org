@@ -24,12 +24,7 @@ Rust 始终需要人们来[分流][triage]问题：重现 bug，
 请注意，您需要被提升的 GitHub 权限才能应用标签，
 不过卓有经验的人很容易得到它，相关事宜请联系[团队成员][team]。
 
-Once you've found your way around the project and have created a few
-pull requests in a particular area, consider reviewing others' pull
-requests: good reviewership is a rare skill and always appreciated. No
-prior permission is needed &mdash; just start constructively and politely
-commenting on pull requests that interest you. If you want training
-on conducting good code reviews [read this guide][reviews].
+在您找到自己的方式为项目出力并创建一些拉取请求后，可以考虑审阅其他人的拉取请求：良好的审阅是一个不可多得的技能。无需事先批准 &mdash; 只需开始礼貌并有建设性地在您感兴趣的拉取请求中评论。如果您想在代码审核的基础上有效分流，[阅读这份指南][reviews]。
 
 <!--
 TODO: weekly triage email?
