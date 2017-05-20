@@ -1,20 +1,20 @@
 ---
 layout: zh-CN/default
-title: Rust Legal Policies &middot; Rust 程序设计语言
+title: Rust 法律政策 &middot; Rust 程序设计语言
 ---
 
-# Copyright
+# 版权
 
-## Code
+## 代码
 
-Rust's [code](https://github.com/rust-lang/rust) is primarily distributed under
-the terms of both the MIT license and the Apache License (Version 2.0), with
-portions covered by various BSD-like licenses.
-See [LICENSE-APACHE](https://github.com/rust-lang/rust/blob/master/LICENSE-APACHE),
-[LICENSE-MIT](https://github.com/rust-lang/rust/blob/master/LICENSE-MIT),
-and [COPYRIGHT](https://github.com/rust-lang/rust/blob/master/COPYRIGHT) for details.
+Rust 的[代码](https://github.com/rust-lang/rust)主要以
+ MIT 许可证和 Apache 许可证（版本 2.0）的条款分发，
+部分也受各种类 BSD 许可证覆盖。
+参阅 [LICENSE-APACHE](https://github.com/rust-lang/rust/blob/master/LICENSE-APACHE)、
+[LICENSE-MIT](https://github.com/rust-lang/rust/blob/master/LICENSE-MIT) 和 
+[COPYRIGHT](https://github.com/rust-lang/rust/blob/master/COPYRIGHT) 了解详细信息。
 
-## Art
+## 艺术
 
 The Rust and Cargo logos (bitmap and vector) are owned by Mozilla and
 distributed under the terms of the
@@ -42,7 +42,7 @@ Variants of the Rust logo can be found at:
 * [rust-logo-64x64.png](/logos/rust-logo-64x64.png)
 * [rust-logo-blk.svg](/logos/rust-logo-blk.svg)
 
-# Trademark policy
+# 商标政策
 
 The Rust and Cargo names and brands make it possible to say what is officially
 part of the Rust community, and what isn't. So we're careful about where we
@@ -57,7 +57,7 @@ allowed and do not require permission; most commercial uses require
 permission. In either case, the most important rule is that uses of the
 trademarks cannot appear official or imply any endorsement by the Rust project.
 
-## The Rust trademarks
+## Rust 商标
 
 The Rust programming language is an open source, community project governed by a
 core team. It is also sponsored by the Mozilla Foundation ("Mozilla"), which
@@ -86,7 +86,7 @@ know they're getting the product produced by the Rust project and not someone
 else's modified version. The trademark assures users and developers of the
 quality and safety of the product they're using.
 
-## Using the trademarks
+## 使用商标
 
 ### Appearing official, affiliated, or endorsed
 
@@ -115,7 +115,7 @@ They may not be used:
 - in ways that confuse the community as to whether the Rust programming language
   is open source and free to use.
 
-### Uses that do not require explicit approval
+### 不需要明确批准的用途
 
 There are a variety of uses that do not require explicit approval. **However, in all of the cases outlined below, you must ensure that use of the Rust trademarks does not appear official, as explained above.**
 
@@ -151,7 +151,7 @@ above uses, the **event cannot appear to be officially endorsed or run by the Ru
 papers, books, and product packaging to refer to the Rust programming language
 or the Rust project is allowed.
 
-### Uses that require explicit approval
+### 需要明确批准的用途
 
 * Distributing a modified version of the Rust programming language or the Cargo
 package manager and calling it Rust or Cargo requires explicit, written
@@ -165,34 +165,29 @@ long as (1) it is clearly communicated that the merchandise is not in any way an
 official part of the Rust project and (2) it is clearly communicated whether
 profits benefit the Rust project.
 
-* Using the Rust trademarks within another trademark requires written permission
-from the Rust core team except as described above.
+* 除上述事例外，在其他商标中使用 Rust 商标需要 Rust 核心团队的书面许可。
 
-## Notes
+## 备注
 
-If you have any doubts about whether your intended use of a Rust Trademark
-requires permission, please contact us at
+如果您就 Rust 商标的使用许可存有任何疑问，请与我们联系：
 [trademark@rust-lang.org](mailto:trademark@rust-lang.org).
 
-This document was derived in part from the
-[Python Software Foundation Trademark Usage Policy](https://www.python.org/psf/trademarks/).
+本文档部分取自
+[Python 软件基金会商标使用政策](https://www.python.org/psf/trademarks/)。
 
-This document is not an official statement of Mozilla trademark policy, but
-serves to clarify Mozilla's trademark policy as it relates to Rust.
+本文件不是 Mozilla 商标政策的官方声明，而是用于澄清 Mozilla 就 Rust 相关的商标政策。
 
-## Helping Out
+## 帮助我们
 
-As a member of the Rust community, please keep an eye out for questionable uses
-of the Rust logo and "Rust" word mark. You can report potential misuse to
-[trademark@rust-lang.org](mailto:trademark@rust-lang.org). We will evaluate each case
-and take appropriate action.
+作为 Rust 社区的成员，请留意用途成疑的 
+Rust 标志和“Rust”字样。您可以将潜在的滥用报告到
+[trademark@rust-lang.org](mailto:trademark@rust-lang.org)。我们将评估每个事例并采取适当的行动。
 
-Please do not approach users of the trademarks with a complaint. That should be
-left to Mozilla and its representatives.
+请不要接触被投诉的商标使用人。这应该留给 Mozilla 及其代表处理。
 
-Thanks!
+诚挚感谢！
 
-## License
+## 许可证
 
-Interested parties may adapt this document freely under the
-[Creative Commons CC0 license](https://creativecommons.org/publicdomain/zero/1.0/).
+有意者可以
+[创作共用 CC0 许可证](https://creativecommons.org/publicdomain/zero/1.0/) 自由调整本文档。

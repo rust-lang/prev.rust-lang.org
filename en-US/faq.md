@@ -879,7 +879,7 @@ For buffered reads, use the [`BufReader`][BufReader] struct, which helps to redu
 How do I do asynchronous input / output in Rust?
 </a></h3>
 
-There are several libraries providing asynchronous input / output in Rust, including [mioco](https://github.com/dpc/mioco), [coio-rs](https://github.com/zonyitoo/coio-rs), and [rotor](https://github.com/tailhook/rotor).
+There are several libraries providing asynchronous input / output in Rust, including [mio](https://github.com/carllerche/mio), [tokio](https://github.com/tokio-rs/tokio-core), [mioco](https://github.com/dpc/mioco), [coio-rs](https://github.com/zonyitoo/coio-rs), and [rotor](https://github.com/tailhook/rotor).
 
 <h3><a href="#how-do-i-get-command-line-arguments" name="how-do-i-get-command-line-arguments">
 How do I get command line arguments in Rust?
@@ -1042,7 +1042,11 @@ Yes it can! There are already examples of using Rust for both [Android](https://
 Can I run my Rust program in a web browser?
 </a></h3>
 
-Not yet, but there are efforts underway to make Rust compile to the web with [Emscripten](https://kripken.github.io/emscripten-site/).
+Possibly. Rust has [experimental support][wasm] for both [asm.js] and [WebAssembly].
+
+[wasm]: https://davidmcneil.gitbooks.io/the-rusty-web/
+[asm.js]: http://asmjs.org/
+[WebAssembly]: http://webassembly.org/
 
 <h3><a href="#how-do-i-cross-compile-rust" name="how-do-i-cross-compile-rust">
 How do I cross-compile in Rust?
@@ -1179,7 +1183,10 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 How can I make an HTTP request?
 </a></h3>
 
-The standard library does not include an implementation of HTTP, so you will want to use an external crate. [Hyper](https://github.com/hyperium/hyper) is the most popular, but there are [a number of others as well](https://crates.io/keywords/http).
+The standard library does not include an implementation of HTTP, so you will want to use an external crate.
+[reqwest](http://docs.rs/reqwest) is the simplest.
+It is built on [hyper](https://github.com/hyperium/hyper), and written in Rust, but there are [a number of others as well](https://crates.io/keywords/http).
+The [curl](https://docs.rs/curl) crate is widely used and provides bindings to the curl library.
 
 <h3><a href="#how-can-i-write-a-gui-application" name="how-can-i-write-a-gui-application">
 How can I write a GUI application in Rust?

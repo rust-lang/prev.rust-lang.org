@@ -84,6 +84,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#rust-es][es_irc] es para una discusión general sobre Rust en español
 - [#rust-fr][fr_irc] est dédié à la programmation en Rust en français
 - [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
+- [Rust中文][cn_org] Rust 语言中文 Chat 社区(非IRC频道)
 
 ### Topical channels
 
@@ -104,6 +105,7 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [bots_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
 [br_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-br
 [cargo_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23cargo
+[cn_org]: https://chat.rust-china.org/
 [community_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
 [crypto_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
 [de_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
@@ -171,7 +173,7 @@ through open discussion and consensus, under the stewardship of various
 development process, overseeing the introduction of new features, and ultimately
 making decisions for which there is no consensus (this happens rarely).
 
-* The [Language Design Team][language_team] is responsible for the
+* The [Language Team][language_team] is responsible for the
   design of new language features.
 
 * The [Library Team][library_team] is responsible for the Rust standard
@@ -180,15 +182,13 @@ library, rust-lang crates, and conventions.
 * The [Compiler Team][compiler_team] is responsible for compiler internals and
 optimizations.
 
-* The [Tools Team][tool_team] is responsible for official tools like [Cargo],
-[rustup], and [rustfmt].
+* The [Dev tools team][dev_tools_team] is responsible for setting the overall
+  direction of tools for working with Rust code.
 
-* The [Infrastructure Team][infra_team] is responsible for tools that support
+* The [Cargo team][cargo_team] is responsible for the design and implementation of Cargo.
+
+* The [Infrastructure Team][infra_team] is responsible for infrastructure that supports
   the project itself: CI, release generation, bots, and metrics.
-
-[Cargo]: https://crates.io
-[rustup]: https://www.rustup.rs
-[rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 
 * The [Community Team][community_team] is responsible for coordinating events,
 outreach, commercial users, teaching materials, and exposure. They can also
@@ -212,7 +212,8 @@ help get you started.
 [language_team]: team.html#Language-design-team
 [library_team]: team.html#Library-team
 [compiler_team]: team.html#Compiler-team
-[tool_team]: team.html#Tools-team
+[dev_tools_team]: team.html#Dev-tools-team
+[cargo_team]: team.html#Cargo-team
 [community_team]: team.html#Community-team
 [mod_team]: team.html#Moderation-team
 [doc_team]: team.html#Documentation-team

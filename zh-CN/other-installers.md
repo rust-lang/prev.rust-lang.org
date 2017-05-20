@@ -13,40 +13,31 @@ title: 其他安装方法 &middot; Rust 程序设计语言
 ## 您应该使用哪个安装程序？
 <span id="which"></span>
 
-Rust 在许多平台上运行，并且有很多方法来安装 Rust 。
-如果您想要安装 Rust 最简单，推荐的方法，
-然后参照主要的[安装页面][installation page]上的说明。
+Rust 能在许多平台上运行，并且有多种方法来安装 Rust。
+如果您想要安装 Rust 最简单、最推荐的方法，
+请参照主要[安装页面][installation page]上的操作说明。
 
-That page describes installation via [`rustup`], a tool that manages multiple
-Rust toolchains in a consistent way across all platforms Rust supports. Why
-might one _not_ want to install using those instructions?
+本页面会介绍通过 [`rustup`] 安装，它是一个管理多个
+Rust 工具链的工具，从而为多个平台提供一致的 Rust 支持。
+您还想试试其他的安装方式？见下文。
 
-- Offline installation. `rustup` downloads components from the internet on
-  demand. If you need to install Rust without access to the internet, `rustup`
-  is not suitable.
-- Preference for the system package manager. On Linux in particular, but also on
-  macOS with [Homebrew], and Windows with [Chocolatey], developers sometimes
-  prefer to install Rust with their platform's package manager.
-- Preference against `curl | sh`. On Unix, we usually install `rustup` by
-  running a shell script via `curl`. Some have concerns about the security of
-  this arrangement and would prefer to download and run the installer
-  themselves.
-- Validating signatures. Although `rustup` performs its downloads over HTTPS,
-  the only way to verify the signatures of Rust installers today is to do so
-  manually with the standalone installers.
-- GUI installation and integration with "Add/Remove Programs" on
-  Windows. `rustup` runs in the console and does not register its installation
-  like typical Windows programs. If you prefer a more typical GUI installation
-  on Windows there are standalone `.msi` installers. In the future
-  `rustup` will also have a GUI installer on Windows.
+- 官方安装程序。`rustup` 按需从互联网下载组件。如果您需要离线安装 Rust，那么 `rustup`
+  并不合适。
+- 系统的软件包管理器。在 Linux 上尤为如此，不过
+  macOS 上也有 [Homebrew]，Windows 也有 [Chocolatey]，
+  开发者有时喜欢用他们平台的软件包管理器来安装 Rust。
+- `curl | sh`。在 Unix 上，我们通常通过 `curl` 运行一个 shell 脚本来安装 `rustup`。有些人可能担心这样做的安全性，而更愿意手动下载和运行安装程序。
+- 验证签名。尽管 `rustup` 通过 HTTPS 完成下载，但目前验证 Rust 安装程序的签名的唯一方式是手动验证独立安装包。
+- Windows 上的图形化“添加/删除程序”。`rustup` 在控制台中运行，并且不像典型的 Windows 程序那样注册其安装。如果您偏好典型的 GUI 安装，我们有独立的 `.msi` 安装包。在未来，
+  `rustup` 也将有 Windows 上的 GUI 安装程序。
 
-Rust's platform support is defined in [three tiers], which correspond closely
-with the installation methods available: in general, the Rust project provides
-binary builds for all tier 1 and tier 2 platforms, and they are all installable
-via `rustup`. Some tier 2 platforms though have only the standard library
-available, not the compiler itself; that is, they are cross-compilation targets
-only; Rust code can run on those platforms, but they do not run the compiler
-itself. Such targets can be installed with the `rustup target add` command.
+Rust 的平台支持定义共有[三层]，这与可用的安装方法密切相关：
+通常来说，Rust 项目
+为所有一级和二级平台提供二进制版本，并且它们可
+通过 `rustup` 安装。部分二级平台只有标准库可用，
+而没有编译器，即它们只是交叉编译的目标；
+Rust 代码可以在这些平台上运行，但并不在这些平台上运行编译器。
+此类目标可以用 `rustup target add` 命令来安装。
 
 ## 安装 `rustup` 的其他方法
 <span id="rustup"></span>
@@ -92,24 +83,18 @@ curl https://sh.rustup.rs -sSf | sh -s -- --help
 ## 独立安装程序
 <span id="standalone"></span>
 
-The official Rust standalone installers contain a single release of Rust, and
-are suitable for offline installation. They come in three forms: tarballs
-(extension `.tar.gz`), that work in any Unix-like environment, Windows
-installers (`.msi`), and Mac installers (`.pkg`). These installers come with
-`rustc`, `cargo`, `rustdoc`, the standard library, and the standard
-documentation, but do not provide access to additional cross-targets like
-`rustup` does.
+官方的 Rust 独立安装程序其中包含一个 Rust 发布版本，它适合离线安装。它们也有三种形式：适用于任何类 Unix 环境的 tarballs（扩展名 `.tar.gz`）， Windows 安装包（`.msi`），以及 Mac 安装包（`.pkg`）。这些安装程序附有 
+`rustc`、`cargo`、`rustdoc`、标准库，以及标准文档，但不提供 `rustup` 那样的其他跨目标访问。
 
 使用独立安装程序的最常见原因是：
 
 - 离线安装
 - 热衷在 Windows 上使用更多平台集成的图形安装程序
 
-Each of these binaries is signed with the [Rust signing key], which is
-[available on keybase.io], by the Rust build infrastructure, with
-[GPG]. In the tables below, the `.asc` files are the signatures.
+这些二进制文件每个均使用了 [Rust signing key]来签名（由 Rust 构建基础设施使用 [GPG]），该密钥也在 
+[keybase.io] 上提供。在下面的表格中，`.asc` 文件即该签名。
 
-Past releases can be found in [the archives].
+过去发布的版本可在[此处存档]中找到。
 
 {% for channel in site.channels %}
 

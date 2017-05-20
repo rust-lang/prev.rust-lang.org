@@ -34,6 +34,7 @@ people:
     name: Jan-Erik Rediger
   bkoropoff:
     name: Brian Koropoff
+    ex-teams: ["compiler"]
   booyaa:
     name: Mark Sta Ana
   brson:
@@ -48,14 +49,19 @@ people:
   dotdash:
     name: Björn Steinbrink
     irc: doener
+    ex-teams: ["compiler"]
   dtolnay:
     name: David Tolnay
   eddyb:
     name: Eduard Burtescu
   edunham:
     name: E. Dunham
+  emilio:
+    name: Emilio Cobos Álvarez
   erickt:
     name: Erick Tryzelaar
+  fitzgen:
+    name: Nick Fitzgerald
   frewsxcv:
     name: Corey Farwell
     irc: frewsxcv
@@ -82,15 +88,23 @@ people:
   jseyfried:
     name: Jeffrey Seyfried
     irc: jseyfried
+  jwilm:
+    name: Joe Wilm
+  killercup:
+    name: Pascal Hertleif
   Kimundi:
     name: Marvin Löbel
     irc: kimundi
+  llogiq:
+    name: llogiq
   Mark-Simulacrum:
     name: Mark Simulacrum
     irc: simulacrum
   manishearth:
     name: Manish Goregaokar
     irc: Manishearth
+  matklad:
+    name: Aleksey Kladov
   mbrubeck:
     name: Matt Brubeck
   michaelwoerister:
@@ -104,6 +118,8 @@ people:
     irc: nmatsakis
   nrc:
     name: Nick Cameron
+  oli-obk:
+    name: Oliver Schneider
   pcwalton:
     name: Patrick Walton
   peschkaj:
@@ -132,6 +148,8 @@ people:
     name: Vadim Chugunov
   ubsan:
     name: Nicole Mazzuca
+  whitequark:
+    name: whitequark
   withoutboats:
     name: Without Boats
   wycats:
@@ -147,24 +165,35 @@ teams:
   - name: Core team
     responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
     members: [brson, nrc, alexcrichton, wycats, steveklabnik, nikomatsakis, carols10cents, aturon, erickt]
-  - name: Language design team
+  - name: Language team
     responsibility: "designing new language features"
     members: [withoutboats, eddyb, nrc, pnkfelix, nikomatsakis, aturon]
     lead: nikomatsakis
+  - name: Language team shepherds
+    responsibility: "helping guide language RFCs to completion, assisting the language team with its work"
+    members: [solson, joshtriplett, whitequark]
   - name: Library team
     responsibility: "the Rust standard library, rust-lang crates, conventions, and ecosystem support"
     members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, dtolnay, aturon]
     lead: aturon
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
-    members: [arielb1, eddyb, nrc, pnkfelix, bkoropoff, nikomatsakis, aatch, jseyfried, dotdash, michaelwoerister]
+    members: [arielb1, eddyb, nrc, pnkfelix, nikomatsakis, aatch, jseyfried, michaelwoerister]
     lead: nikomatsakis
-  - name: Tools team
-    responsibility: "Rust tools (e.g. Cargo, rustup)"
-    members: [japaric, brson, nrc, alexcrichton, vadimcn, wycats, carols10cents, michaelwoerister]
-    lead: alexcrichton
+  - name: Dev tools team
+    responsibility: "overall direction for tools for working with Rust code"
+    members: [japaric, brson, nrc, michaelwoerister, killercup, jonathandturner]
+    lead: nrc
+  - name: Dev tools peers
+    responsibility: "oversight of specific Rust tools, and coordination with dev tools team"
+    members: [alexcrichton, emilio, fitzgen, manishearth, llogiq, oli-obk, matklad, jwilm, GuillaumeGomez, QuietMisdreavus, steveklabnik]
+    lead: nrc
+  - name: Cargo team
+    responsibility: "design and implementation of Cargo"
+    members: [alexcrichton, carols10cents, withoutboats, matklad, wycats, aturon]
+    lead: aturon
   - name: Infrastructure team
-    responsibility: "Tools supporting the Rust project itself: CI, releases, bots, metrics"
+    responsibility: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
     members: [brson, alexcrichton, frewsxcv, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, aturon]
     lead: aturon
   - name: Community team
@@ -186,7 +215,7 @@ teams:
     email: style-team@rust-lang.org
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
-    members: [Gankro, pcwalton, huonw, peschkaj]
+    members: [Gankro, pcwalton, huonw, peschkaj, dotdash, bkoropoff]
 # Information on sites to get profile information from
 sites:
   github:

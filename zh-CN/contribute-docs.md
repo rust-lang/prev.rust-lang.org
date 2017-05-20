@@ -1,9 +1,9 @@
 ---
 layout: zh-CN/default
-title: Contributing to Rust &mdash; documentation &middot; Rust 程序设计语言
+title: 为 Rust 出力 &mdash; 文档 &middot; Rust 程序设计语言
 ---
 
-# Contributing to Rust &mdash; documentation
+# 为 Rust 出力 &mdash; 文档
 
 Documentation is never good enough and there's never enough of it.
 Many aspects of Rust's documentation don't require deep knowledge to
@@ -43,7 +43,7 @@ documentation that is actively developed and in need of contributors
 include [Rust By Example], [Rust Design Patterns], and [rust-rosetta].
 For other existing documentation projects to contribute to see [rust-learning].
 
-Meet other Rust documentarians in [#rust-docs].
+在 [#rust-docs] 中能遇到其他 Rust 文档编写者。
 
 <!--
 TODO: blogging, translation

@@ -1,9 +1,9 @@
 ---
 layout: zh-CN/default
-title: Contributing to Rust &mdash; tooling, IDEs and infrastructure &middot; Rust 程序设计语言
+title: 为 Rust 出力 &mdash; 工具、IDE 及基础设施 &middot; Rust 程序设计语言
 ---
 
-# Contributing to Rust &mdash; tooling, IDEs and infrastructure
+# 为 Rust 出力 &mdash; 工具、IDE 及基础设施
 
 Tools play a huge part in the success of a language, and there is a
 great deal left to implement. ***A major focus of Rust development now
