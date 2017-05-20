@@ -79,12 +79,12 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 
 ### 国际频道
 
-- [#rust-br][br_irc] 葡语频道
-- [#rust-cn][cn_org] 中文频道(非IRC频道)
-- [#rust-de][de_irc] 德语频道
-- [#rust-es][es_irc] 西语频道(西班牙语)
-- [#rust-fr][fr_irc] 法语频道
-- [#rust-ru][ru_irc] 俄语频道
+- [#rust-br][br_irc] é dedicado à discussão sobre Rust no Brasil
+- [#rust-de][de_irc] ist für die allgemeine Diskussion über Rust auf Deutsch
+- [#rust-es][es_irc] es para una discusión general sobre Rust en español
+- [#rust-fr][fr_irc] est dédié à la programmation en Rust en français
+- [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
+- [Rust中文][cn_org] Rust 语言中文 Chat 社区(非IRC频道)
 
 ### 专题频道
 
