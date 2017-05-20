@@ -1,46 +1,30 @@
 ---
 layout: zh-CN/default
-title: Contributing to Rust &mdash; finding, triaging and fixing issues &middot; Rust 程序设计语言
+title: 为 Rust 出力 &mdash; 找出、分类和修复问题 &middot; Rust 程序设计语言
 ---
 
-# Contributing to Rust &mdash; finding, triaging and fixing issues
+# 为 Rust 出力 &mdash; 找出、分类和修复问题
 
-The day-to-day maintenance of the project revolves around Rust's
-[issue tracker] and [pull requests][PR], and more help is always
-needed. The most basic way to get started contributing to Rust is to
-look for the [E-easy] or [E-mentor] labels. These are meant to be
-approachable for new Rust programmers.
+Rust 项目的的日常维护工作是围绕着[问题跟踪器][issue tracker]和[拉取请求][PR]，并且始终需要更多的贡献。
+开始为 Rust 出力的最简单方式是寻找标有 [E-easy] 或 [E-mentor] 标签的问题。
+它们最适合新手 Rust 程序员。
 
-On `E-mentor` issues an experienced Rust developer has volunteered in
-the comments to mentor you through solving the issue and [submitting
-the fix via GitHub pull request][pull]. Contact them about the issue,
-on the issue tracker by [@mentioning] their name in a comment, on IRC,
-or through email. Note that Rust developers get a lot of notifications
-and it is easy to miss some; don't hesitate to hunt them down by
-whatever means necessary!
+在标有 `E-mentor` 的问题上会有一名经验丰富的 Rust 开发人员来自愿帮助你解决该问题和[提交 GitHub 拉取请求][pull]来修复它。
+在评论、IRC 中用 [@mentioning] 来联系他们（也可通过电子邮件）。
+温馨提醒，Rust 开发人员经常收到大量的通知，所以有时可能错过某些；
+不要犹豫！如果你认为他没有注意到你。
 
-Other projects in Rust maintain similar entry-level tasks, including
-the web browser [Servo], the HTTP library [hyper], the
-source-formatter [rustfmt], the Unix library bindings [nix],
-and the lint collection [clippy].
+Rust 的其他项目也有其他类似的入门级任务，包括网页浏览器 [Servo]，HTTP 库 [hyper]，源代码格式化器 [rustfmt]，Unix 库绑定 [nix]，以及 lint 集 [clippy]。
 
-While Rust has an [extensive test suite][test] there is always more to
-test. The [E-needstest] label indicates issues that are thought to be
-fixed but don't have tests. Writing test cases is a great way to
-understand a new project and get started contributing.
+虽然 Rust 有一个[广泛的测试套件][test]，但测试总是不嫌多的嘛。
+[E-needstest] 标签指出了被认为已修复但尚未测试的问题。编写测试用例也是很好的一个了解新项目并开始贡献的方法。
 
-Rust is always in need of people to [triage] issues: reproduce bugs,
-minimize test cases, apply labels, close resolved issues. Note that
-you'll need elevated GitHub permissions to apply labels, but this is
-easy to obtain for somebody with a bit of experience in the
-project. Ask a [team member][team].
+Rust 始终需要人们来[分流][triage]问题：重现 bug，
+最小化的测试用例，应用标签，关闭已解决的问题。
+请注意，您需要被提升的 GitHub 权限才能应用标签，
+不过卓有经验的人很容易得到它，相关事宜请联系[团队成员][team]。
 
-Once you've found your way around the project and have created a few
-pull requests in a particular area, consider reviewing others' pull
-requests: good reviewership is a rare skill and always appreciated. No
-prior permission is needed &mdash; just start constructively and politely
-commenting on pull requests that interest you. If you want training
-on conducting good code reviews [read this guide][reviews].
+在您找到自己的方式为项目出力并创建一些拉取请求后，可以考虑审阅其他人的拉取请求：良好的审阅是一个不可多得的技能。无需事先批准 &mdash; 只需开始礼貌并有建设性地在您感兴趣的拉取请求中评论。如果您想在代码审核的基础上有效分流，[阅读这份指南][reviews]。
 
 <!--
 TODO: weekly triage email?

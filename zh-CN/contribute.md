@@ -8,7 +8,7 @@ title: 为 Rust 语言做贡献 &middot; Rust 程序设计语言
 您已经开始学习 Rust 语言。依恋它，想要与它相拥。
 如果您不确定如何参与到贡献当中，这样页面可以帮助您。
 
-**发现了一个大漏洞 (bug)，如何报告？** [漏洞报告指南][bugs]。在此提前致谢！
+**发现了一个大漏洞 (bug)，如何报告？**[漏洞报告指南][bugs]。在此提前致谢！
 
 Rust 有一个庞大的项目系统，其中最突出的是由 [Rust 开发者][devs]在的GitHub上维护的 [rust-lang 组织][rust-lang]。
 如果您刚刚开始贡献之旅，您可能对项目的 [CONTRIBUTING.md] 文件感兴趣，
@@ -21,7 +21,7 @@ Rust 有一个庞大的项目系统，其中最突出的是由 [Rust 开发者][
   维持一个像 Rust 这样的庞大而活跃的项目基础工作。
 * [文档](contribute-docs.html)：
   不只限于官方文档——库、博客及其他非官方的消息来源。
-* [社区建设](contribute-community.html)
+* [社区建设](contribute-community.html)：
   帮助你在 Rust 中的手足同胞，以及壮大 Rust。
 * [工具、集成开发环境以及基础设施](contribute-tools.html)：
   语言的实用与人性化是一门好的语言的关键所在。
