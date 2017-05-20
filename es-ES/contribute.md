@@ -1,50 +1,50 @@
 ---
 layout: es-ES/default
-title: Contributing to Rust &middot; The Rust Programming Language
+title: Contribuyendo a Rust &middot; El Lenguaje de Programación Rust
 ---
 
-# Contributing to Rust
+# Contribuyendo a Rust
 
-You've started learning Rust. You love it, and you want to be a part
-of it. If you're not sure how to get involved, then this page
-will help.
+Has empezado a aprender Rust. Te encanta, y te gustaría ser parte del
+movimiento. Si no estás seguro como involucrarte, entonces esta pagina te
+ayudará.
 
-**Found a bug and need to report it?** [Follow the bug reporting
-guide][bugs]. Thanks in advance!
+**Encontraste un error y quieres reportarlo?** [Sigue la guia de reporte de
+errores][bugs]. Gracias de antemano!
 
-Rust is an expansive system of projects, the most prominent of which
-are maintained by [The Rust Project Developers][devs] in [the
-rust-lang organization on GitHub][rust-lang]. Newcomers may be
-interested in the project's [CONTRIBUTING.md] file, which explains the
-mechanics of contributing to [rust-lang/rust].
+Rust es expansivo sistema de proyectos, los más prominentes los mantienen lo
+[Desarrolladores del proyecto Rust][devs] en la [Organización rust-lang en
+GitHub][rust-lang]. Los recién llegados pueden estar interesados en el fichero
+[CONTRIBUTING.md], que explica las mecánicas a seguir para contribuir a
+[rust-lang/rust].
 
-There are many ways to contribute to the success of Rust.
-This guide focuses on a few avenues for the new contributor:
+Hay varias formas de contribuir al éxito de Rust.
+Esta guia se enfoca en algunas pocas para los nuevos contribuidores:
 
-* [Finding, triaging and fixing issues](contribute-bugs.html). The
-  basic work of maintaining a large and active project like Rust.
-* [Documentation](contribute-docs.html). Not just official
-  documentation, but also for crates, blog posts, and other unofficial
-  sources.
-* [Community building](contribute-community.html). Helping your fellow
-  Rustacean, and expanding the reach of Rust.
-* [Tooling, IDEs and infrastructure](contribute-tools.html). The
-  important pieces that make using a language practical and painless.
-* [Libraries](contribute-libs.html). Rust's suitability for any
-  particular task is mostly dependent on availability of quality
-  libraries.
-* [Language, compiler and the standard
-  library](contribute-compiler.html). Language design, feature
-  implementation, performance improvement.
-* [Internationalization](contribute-translations.html). Help spread the
-  Rust love by translating our site to every language.
+* [Encontrando, reportando y arreglando errores](contribute-bugs.html). El
+    trabajo básico para mantener un proyecto grande y activo como Rust.
+* [Documentación](contribute-docs.html). No solo documentación oficial, sino
+    también documentación para crates, artículos de blog y otras fuentes no
+    oficiales.
+* [Construcción de Comunidad](contribute-community.html). Ayudar a tus
+    compañeros rutáceos, y expandir el alcance de Rust.
+* [Herramientas, IDEs e infraestructura](contribute-tools.html). Las piezas
+    importantes que hacen que usar un lenguaje sea práctico y sin dolor.
+* [Librerías](contribute-libs.html). La idoneidad de Rust para cualquier tarea
+    en particular depende en gran medida de la disponibilidad de librerías de
+    calidad.
+* [Lenguaje, compilador y la librería estándar](contribute-compiler.html).
+    Diseño del lenguaje, implementación de características, mejoras de
+    rendimiento.
+* [Internacionalización](contribute-translations.html). Ayuda a divulgar el amor
+    de Rust, traduciendo nuestro sitio a todos los idiomas.
 
-If you need additional guidance ask on [#rust-internals] or
+Si necesitas guia adicional, pregunta en [#rust-internals] o
 [internals.rust-lang.org].
 
-We pride ourselves on maintaining civilized discourse, and to that end
-contributors are expected to follow our [Code of Conduct][coc]. If you
-have questions about this please inquire with the [community team].
+Nos enorgullecemos de mantener charlas civilizadas, y para ello esperamos que
+los contribuidores sigan nuestro [Código de Conducta][coc]. Si tienes preguntas
+sobre este lugar, puedes preguntar al [equipo de comunidad].
 
 <!--
 TODO: Write a guide to rust processes and governance to link from here
