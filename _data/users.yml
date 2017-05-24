@@ -382,3 +382,8 @@
   url: https://www.versioneye.com/
   logo: versioneye.png
   how: "We are using Rust to implement <a href='https://blog.versioneye.com/2017/04/27/shazam-for-software-libraries/'>a command line tool which can identify software dependencies by their SHA values</a>."
+-
+  name: Angelcam
+  url: https://www.angelcam.com
+  logo: angelcam.png
+  how: "We developed an open lightweight client that finds compatible IP cameras on a local network and connects them to the cloud via encrypted tunnel."
