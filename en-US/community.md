@@ -64,7 +64,9 @@ discussion about Rust, and a good place to ask for help. You'll find
 people willing to answer any questions about Rust, and
 responses are typically fast.
 
-Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real-time discussion about hacking on Rust itself. It is also the channel to ask questions about contributing to Rust.
+Rust's developers coordinate in [#rust-internals][internals_irc]. It is for
+real-time discussion about hacking on Rust itself. It is also the channel
+to ask questions about contributing to Rust.
 
 ### Main channels
 
