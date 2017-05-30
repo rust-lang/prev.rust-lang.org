@@ -3,7 +3,7 @@ layout: zh-CN/default
 title: Rust 用户群组 &middot; Rust 程序设计语言
 ---
 
-# Rust 用户群组
+# Rust 用户组
 
 There are more than 90 Rust User Groups worldwide in over 35
 countries. Rustaceans meet periodically in Rust User Groups. Its a
