@@ -248,6 +248,11 @@
   logo: ovh.png
   how: "We used Rust to build a high performance, highly available <a href='https://www.runabove.com/paas-logs.xml'>log management system</a>."
 -
+  name: Postlight
+  url: https://postlight.com/
+  logo: postlight.svg
+  how: "We use Rust to generate logos from favicons in the <a href='https://mercury.postlight.com/amp-converter'>Mercury AMP Converter</a>."
+-
   name: Postmates
   url: https://postmates.com/
   logo: postmates.png
