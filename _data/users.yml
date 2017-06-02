@@ -163,10 +163,10 @@
   logo: etcface.png
   how: "ETCDEV Team is a group of professional software engineers working full time on Ethereum Classic core projects."
 -
-  name: Ethcore
-  url: https://ethcore.io
-  logo: ethcore.png
-  how: "<a href='https://ethcore.io/parity.html'>Powering the Ethereum revolution.</a>"
+  name: Parity Technologies
+  url: https://parity.io/
+  logo: parity.png
+  how: "<a href='https://parity.io/parity.html'>Powering the Ethereum revolution.</a>"
 -
   name: Everlane
   url: http://www.everlane.com/
