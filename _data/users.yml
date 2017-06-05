@@ -392,3 +392,8 @@
   url: https://www.angelcam.com
   logo: angelcam.png
   how: "We developed an open lightweight client that finds compatible IP cameras on a local network and connects them to the cloud via encrypted tunnel."
+-
+  name: tCell
+  url: https://www.tcell.io
+  logo: tcell.png
+  how: "<a href='https://www.tcell.io/2017/06/agents-rust/'>tCell's agent is built using Rust</a> and runs in the app server as a means to collect data and block attacks."
