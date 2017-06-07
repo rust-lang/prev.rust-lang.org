@@ -1490,7 +1490,7 @@ their new owners).
 如何让 Rust 与 C++ 互操作，反之亦然？
 </a></h3>
 
-Rust 与 C++ 可以通过 C 互操作。Rust 和 C++ 都提供一个适用于 C 的[外部函数接口](https://doc.rust-lang.org/book/ffi.html)，我们可以用它来相互沟通。如果编写 C 语言的绑定太麻烦，您随时可以用 [rust-bindgen](https://github.com/crabtw/rust-bindgen) 来帮忙自动生成可执行的 C 绑定。
+Rust 与 C++ 可以通过 C 互操作。Rust 和 C++ 都提供一个适用于 C 的[外部函数接口](https://doc.rust-lang.org/book/ffi.html)，我们可以用它来相互沟通。如果编写 C 语言的绑定太麻烦，您随时可以用 [rust-bindgen](https://github.com/servo/rust-bindgen) 来帮忙自动生成可执行的 C 绑定。
 
 <h3><a href="#does-rust-have-cxx-style-constructors" name="does-rust-have-cxx-style-constructors">
 Rust 有 C++ 风格的构造函数吗？
