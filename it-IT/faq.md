@@ -1708,7 +1708,7 @@ Come posso interoperare il C++ da Rust, o il Rust da C++?
 </a></h3>
 
 Il Rust è il C++ possono interoperare tramite il C. Sia il Rust che il C++ forniscono una [foreign function interface](https://doc.rust-lang.org/book/ffi.html) per il C, che può essere utilizzata per comunicare tra di loro.
-Se scrivere dei collegamenti in C è troppo complicato, puoi sempre utilizzare [rust-bindgen](https://github.com/crabtw/rust-bindgen) per generare automaticamente dei collegamenti C++ funzionanti.
+Se scrivere dei collegamenti in C è troppo complicato, puoi sempre utilizzare [rust-bindgen](https://github.com/servo/rust-bindgen) per generare automaticamente dei collegamenti C++ funzionanti.
 
 <h3><a href="#does-rust-have-cxx-style-constructors" name="does-rust-have-cxx-style-constructors">
 Rust possiede dei costruttori in stile C++?

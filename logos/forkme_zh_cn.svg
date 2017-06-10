@@ -6,7 +6,7 @@
         </linearGradient>
     </defs>
     <polygon points="0,0 298,298 298,201 97,0" style="fill:url(#grad);stroke:#696969;stroke-width:1"/>
-    <text x="8" y="125" style="fill:#FFFFFF;font-size:32px" transform="rotate(45 149,149)">Fork 在 GitHub 上的代码</text>
+    <text x="8" y="125" style="fill:#FFFFFF;font-size:32px" transform="rotate(45 149,149)">从GitHub上拷贝源码</text>
     <path stroke-dasharray="5,5" d="M90 0 L298 208" style="stroke:#FFFFFF;stroke-width:1"/>
     <path stroke-dasharray="5,5" d="M7 0 L298 291" style="stroke:#FFFFFF;stroke-width:1"/>
 </svg>

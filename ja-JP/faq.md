@@ -188,91 +188,84 @@ RustをGPL2と一緒に使うときの問題を回避するために代替とし
 これは一部はオリジナルの開発者（Graydon）の好みで、一部は言語はWebブラウザなどの製品と比べて広いユーザ、多様な組み込みやエンドユーズがあることが多いからです。
 我々は可能な限り多くのこれらの潜在的なコントリビュータにアピールしていきたいと思っています。
 
-<h2 id="performance">Performance</h2>
+<h2 id="performance">パフォーマンス</h2>
 
 <h3><a href="#how-fast-is-rust" name="how-fast-is-rust">
-How fast is Rust?
+Rustはどのくらい速いですか？
 </a></h3>
 
-Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks (like the [Benchmarks Game](https://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp) and [others](https://github.com/kostya/benchmarks)).
+速いです！Rustの性能はすでに、多数のベンチマークについて、自然に書かれたC/C++に匹敵しています（[Benchmarks Game](https://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp)や[他](https://github.com/kostya/benchmarks)など）。
 
-Like C++, Rust takes [zero-cost abstractions](http://blog.rust-lang.org/2015/05/11/traits.html) as one of its core principles: none of Rust's abstractions impose a global performance penalty, nor is there overhead from any runtime system.
+RustはC++と同じように、基本原則の1つとして[ゼロコスト抽象化](http://blog.rust-lang.org/2015/05/11/traits.html)を掲げています。つまり、Rustの抽象には、全体的な性能にペナルティを課すようなものはなく、ランタイムシステムのオーバーヘッドもないということです。
 
-Given that Rust is built on LLVM and strives to resemble Clang from LLVM's perspective, any LLVM performance improvements also help Rust. In the long run, the richer information in Rust's type system should also enable optimizations that are difficult or impossible for C/C++ code.
+RustはLLVMの上に構築されており、LLVMから見てClangっぽく見えるように頑張っているので、LLVMの性能が向上したらRustの性能向上にもつながります。長い目でみれば、Rustの型システムはより豊富な情報をもつので、C/C++のコードでは困難か不可能な最適化も可能になるはずです。
 
 <h3><a href="#is-rust-garbage-collected" name="is-rust-garbage-collected">
-Is Rust garbage collected?
+Rustにガベージコレクションはありますか？
 </a></h3>
 
-No. One of Rust's key innovations is guaranteeing memory safety (no segfaults) *without* requiring garbage collection.
+ありません。ガベージコレクション*なし*でメモリ安全性（セグメンテーションフォールトが起きないこと）を保証する、というのがRustの重要なイノベーションの1つです。
 
-By avoiding GC, Rust can offer numerous benefits: predictable cleanup of resources, lower overhead for memory management, and essentially no runtime system. All of these traits make Rust lean and easy to embed into arbitrary contexts, and make it much easier to [integrate Rust code with languages that have a GC](http://calculist.org/blog/2015/12/23/neon-node-rust/).
+GCを避けることにより、Rustは数多くの利点を提供できます。リソースのクリーンアップが予測可能になり、メモリ管理のオーバーヘッドを減らすことができ、さらにランタイムシステムが実質的に不要になります。これらの特性によって、Rustは無駄が少なく、任意の文脈に埋め込むのが簡単になります。また、[RustのコードとGCのある言語を連携させる](http://calculist.org/blog/2015/12/23/neon-node-rust/)のも非常に簡単になります。
 
-Rust avoids the need for GC through its system of ownership and borrowing, but that same system helps with a host of other problems, including
-[resource management in general](http://blog.skylight.io/rust-means-never-having-to-close-a-socket/) and [concurrency](http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html).
+Rustは所有権と借用の仕組みを通してGCを不要にしていますが、この仕組みは、[一般的なリソース管理](http://blog.skylight.io/rust-means-never-having-to-close-a-socket/)や[並行性](http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html)などの、ほかの多くの問題にも役立ちます。
 
-For when single ownership does not suffice, Rust programs rely on the standard reference-counting smart pointer type, [`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html), and its thread-safe counterpart, [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html), instead of GC.
+単一の所有権では不十分な場合には、RustプログラムはGCの代わりに、標準的なリファレンスカウントのスマートポインタ型である[`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html)や、スレッド安全版の[`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html)を利用します。
 
-We are however investigating *optional* garbage collection as a future
-extension. The goal is to enable smooth integration with
-garbage-collected runtimes, such as those offered by the
-[Spidermonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
-and [V8](https://developers.google.com/v8/?hl=en) JavaScript engines.
-Finally, some people have investigated implementing
-[pure Rust garbage collectors](https://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/)
-without compiler support.
+しかし、我々は将来的な拡張として、*オプショナル*なガベージコレクションを研究しています。この目的は、[Spidermonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)や[V8](https://developers.google.com/v8/?hl=en) JavaScriptエンジンなどのようにガベージコレクションを持つランタイムと、スムーズな連携を可能にすることです。
+最終的には、コンパイラサポートなしで[pure Rustでのガベージコレクタ](https://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/)を実装することを研究している人もいます。
 
 <h3><a href="#why-is-my-program-slow" name="why-is-my-program-slow">
-Why is my program slow?
+私のプログラムが遅いのはなぜですか？
 </a></h3>
 
-The Rust compiler doesn't compile with optimizations unless asked to, [as optimizations slow down compilation and are usually undesirable during development](https://users.rust-lang.org/t/why-does-cargo-build-not-optimise-by-default/4150/3).
+Rustコンパイラは、言われない限り最適化を行いません。[最適化を行うとコンパイルが遅くなり、開発時には通常望ましくないためです](https://users.rust-lang.org/t/why-does-cargo-build-not-optimise-by-default/4150/3)。
 
-If you compile with `cargo`, use the `--release` flag. If you compile with `rustc` directly, use the `-O` flag. Either of these will turn on optimizations.
+`cargo`でコンパイルを行う場合は、`--release`フラグを使ってください。`rustc`で直接コンパイルする場合は、`-O`フラグを使ってください。いずれも最適化を有効にします。
 
 <h3><a href="#why-is-rustc-slow" name="why-is-rustc-slow">
-Rust compilation seems slow. Why is that?
+Rustのコンパイルが遅いようです。なぜですか？
 </a></h3>
 
-Code translation and optimizations. Rust provides high level abstractions that compile down into efficient machine code, and those translations take time to run, especially when optimizing.
+コードの翻訳と最適化のためです。Rustは高レベルの抽象化を提供し、それをコンパイルによって効率的な機械コードに落とします。この翻訳には時間がかかります。最適化を行う場合は特に。
 
-But Rust's compilation time is not as bad as it may seem, and there is reason to believe it will improve. When comparing projects of similar size between C++ and Rust, compilation time of the entire project is generally believed to be comparable. The common perception that Rust compilation is slow is in large part due to the differences in the *compilation model* between C++ and Rust: C++'s compilation unit is the file, while Rust's is the crate, composed of many files. Thus, during development, modifying a single C++ file can result in much less recompilation than in Rust. There is a major effort underway to refactor the compiler to introduce [incremental compilation](https://github.com/rust-lang/rfcs/blob/master/text/1298-incremental-compilation.md), which will provide Rust the compile time benefits of C++'s model.
+しかしRustのコンパイル時間はそれほど悪くありませんし、今後改善していくと信じるに足る理由があります。C++とRustで同程度の規模のプロジェクトをコンパイルする場合、プロジェクト全体でのコンパイル時間は同程度であると考えられています。Rustのコンパイルが遅いと感じるのは、大部分が、C++とRustの*コンパイルモデル*の違いに起因します。C++のコンパイル単位はファイルですが、Rustのコンパイル単位は多くのファイルからなるクレートです。よって開発時にC++ファイルを1つ変更したときの再コンパイルは、Rustと比べると非常に少なくすみます。Rustコンパイラに[段階的コンパイル](https://github.com/rust-lang/rfcs/blob/master/text/1298-incremental-compilation.md)を導入するためのリファクタリングに多くの努力が現在進行中です。これにより、RustはC++のコンパイルモデルと同等のコンパイル時間になるでしょう。
 
-Aside from the compilation model, there are several other aspects of Rust's language design and compiler implementation that affect compile-time performance.
+コンパイルモデルの他にも、コンパイルの性能に影響及ぼすような問題が、Rustの言語設計やコンパイラ実装に複数存在します。
 
-First, Rust has a moderately-complex type system, and must spend a non-negligible amount of compile time enforcing the constraints that make Rust safe at runtime.
+第一に、Rustは少々複雑な型システムを持つので、Rustを実行時安全にするための制約を強制するのに無視できないコンパイル時間を費やしています。
 
-Secondly, the Rust compiler suffers from long-standing technical debt, and notably generates poor-quality LLVM IR which LLVM must spend time "fixing". There is hope that future [MIR-based](https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md) optimization and translation passes will ease the burden the Rust compiler places on LLVM.
+第二に、Rustコンパイラは長年の技術的負債に悩まされています。特に、低品質なLLVM IRを出力するので、LLVMがこれを「修正」するのに時間を使います。未来の[MIRベース](https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md)の最適化と翻訳パスが、RustコンパイラがLLVMに課す負担を軽減するという希望があります。
 
-Thirdly, Rust's use of LLVM for code generation is a double-edged sword: while it enables Rust to have world-class runtime performance, LLVM is a large framework that is not focused on compile-time performance, particularly when working with poor-quality inputs.
+第三に、Rustがコード生成にLLVMを使うことは諸刃の剣であるということです。LLVMのおかげでRustは天下一品の実行時性能を享受できる一方で、LLVMという大きなフレームワークはコンパイル時性能を重視していません。とりわけ、低品質な入力を処理するときの性能は考慮されていません。
 
-Finally, while Rust's preferred strategy of monomorphising generics (ala C++) produces fast code, it demands that significantly more code be generated than other translation strategies. Rust programmers can use trait objects to trade away this code bloat by using dynamic dispatch instead.
+最後に、Rustが好む（C++流の）単相的ジェネリクスは高速なコードを生成しますが、これは他の翻訳戦略と比べると非常に多くのコードを生成することに依っています。Rustプログラマはトレイトオブジェクトを使って、代わりに動的ディスパッチを用いることでコード爆発を避けることができます。
 
 <h3><a href="#why-are-rusts-hashmaps-slow" name="why-are-rusts-hashmaps-slow">
-Why are Rust's <code>HashMap</code>s slow?
+Rustの<code>HashMap</code>が遅いのはなぜですか？
 </a></h3>
 
-By default, Rust's [`HashMap`][HashMap] uses the [SipHash](https://131002.net/siphash/) hashing algorithm, which is designed to prevent [hash table collision attacks](http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited) while providing [reasonable performance on a variety of workloads](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6).
+Rustの[`HashMap`][HashMap]はデフォルトで[SipHash](https://131002.net/siphash/)アルゴリズムを用います。これは[ハッシュテーブル衝突攻撃](http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited)を防ぐように設計されており、また、[さまざまな入力に対してそれなりの性能](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6)を提供するようになっています。
 
-While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges/blah/hash-rs/) in many cases, one case where it is notably slower than other hashing algorithms is with short keys, such as integers. This is why Rust programmers often observe slow performance with [`HashMap`][HashMap]. The [FNV hasher](https://crates.io/crates/fnv) is frequently recommended for these cases, but be aware that it does not have the same collision-resistance properties as SipHash.
+SipHashは多くの場合、他のアルゴリズムに[引けを取らない性能を見せます](http://cglab.ca/%7Eabeinges/blah/hash-rs/)が、整数のような短いキーに対しては著しく遅くなります。そういうわけで、Rustプログラマはしばしば[`HashMap`][HashMap]を使っているときに性能の低さが目につくこととなります。そのような場合にはよく[FNVハッシャー](https://crates.io/crates/fnv)が推奨されますが、SipHashのような衝突耐性はないことに注意してください。
 
 <h3><a href="#why-is-there-no-integrated-benchmarking" name="why-is-there-no-integrated-benchmarking">
-Why is there no integrated benchmarking infrastructure?
+統合されたベンチマーク基盤がないのはなぜですか？
 </a></h3>
 
-There is, but it's only available on the nightly release channel. We ultimately plan to build a pluggable system for integrated benchmarks, but in the meantime, the current system is [considered unstable](https://github.com/rust-lang/rust/issues/29553).
+あります。ただし、nightly release channelでのみ利用可能です。最終的には統合されたベンチマークのための機能拡張システムを構築することを計画していますが、いまのところ、現時点のシステムは[unstableと考えられています](https://github.com/rust-lang/rust/issues/29553)。
 
 <h3><a href="#does-rust-do-tail-call-optimization" name="does-rust-do-tail-call-optimization">
-Does Rust do tail-call optimization?
+Rustは末尾呼び出し最適化を行いますか？
 </a></h3>
 
-Not generally, no. Tail-call optimization may be done in [limited circumstances](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization), but is [not guaranteed](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html). As the feature has always been desired, Rust has a keyword (`become`) reserved, though it is not clear yet whether it is technically possible, nor whether it will be implemented. There was a [proposed extension](https://github.com/rust-lang/rfcs/pull/81) that would allow tail-call elimination in certain contexts, but it is currently postponed.
+一般的には、いいえ。末尾呼び出し最適化は[限られた状況](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization)では行われますが、[保証はされていません](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html)。この機能は常に渇望されているので、Rustはキーワード（`become`）を予約していますが、技術的に可能かどうかも、実装されるかどうかも、はっきりしていません。ある文脈では末尾呼び出し除去を可能にする[拡張が提案](https://github.com/rust-lang/rfcs/pull/81)されていますが、現在のところ保留になっています。
 
 <h3><a href="#does-rust-have-a-runtime" name="does-rust-have-a-runtime">
-Does Rust have a runtime?
+Rustはランタイムを持ちますか？
 </a></h3>
 
-Not in the typical sense used by languages such as Java, but parts of the Rust standard library can be considered a "runtime", providing a heap, backtraces, unwinding, and stack guards. There is a [small amount of initialization code](https://github.com/rust-lang/rust/blob/33916307780495fe311fe9c080b330d266f35bfb/src/libstd/rt.rs#L43) that runs before the user's `main` function. The Rust standard library additionally links to the C standard library, which does similar [runtime initialization](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html). Rust code can be compiled without the standard library, in which case the runtime is roughly equivalent to C's.
+Javaのような言語で使われる典型的な意味のランタイムは、持ちません。しかし、Rustの標準ライブラリの一部は、ヒープ、バックトレース、巻き戻し、スタックガードなどを提供する「ランタイム」であると考えられます。ユーザの`main`関数を呼ぶ前に[少しの初期化コード](https://github.com/rust-lang/rust/blob/33916307780495fe311fe9c080b330d266f35bfb/src/libstd/rt.rs#L43)が実行されます。Rustの標準ライブラリはさらにCの標準ライブラリとリンクしますが、これは[ランタイムの初期化](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html)のようなことを行います。Rustコードは標準ライブラリなしでコンパイルできるので、この場合はランタイムはおおよそCのランタイムと等価です。
 
 <h2 id="syntax">Syntax</h2>
 
@@ -1516,7 +1509,7 @@ their new owners).
 How can I interoperate with C++ from Rust, or with Rust from C++?
 </a></h3>
 
-Rust and C++ can interoperate through C. Both Rust and C++ provide a [foreign function interface](https://doc.rust-lang.org/book/ffi.html) for C, and can use that to communicate between each other. If writing C bindings is too tedious, you can always use [rust-bindgen](https://github.com/crabtw/rust-bindgen) to help automatically generate workable C bindings.
+Rust and C++ can interoperate through C. Both Rust and C++ provide a [foreign function interface](https://doc.rust-lang.org/book/ffi.html) for C, and can use that to communicate between each other. If writing C bindings is too tedious, you can always use [rust-bindgen](https://github.com/servo/rust-bindgen) to help automatically generate workable C bindings.
 
 <h3><a href="#does-rust-have-cxx-style-constructors" name="does-rust-have-cxx-style-constructors">
 Does Rust have C++-style constructors?

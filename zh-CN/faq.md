@@ -133,7 +133,7 @@ Rust 语言的版本控制是怎样的？
 
 Rust 的语言版本遵循 [SemVer](http://semver.org/)，如果更改修复了编译器错误、补丁安全漏洞，或更改调度或类型推断需要附加注明，则稳定 API 的向后不兼容更改允许在次要版本中出现。次要版本更改的更详细指南可以在[语言](https://github.com/rust-lang/rfcs/blob/master/text/1122-language-semver.md)和[标准库](https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md)的已批准 RFC 中找到。
 
-Rust 维护三个“发行频道”：稳定版（stable）、测试版（beta）和每夜版（nightly）。稳定版和测试版每六周更新一次，而在那时的每夜版会变为新的测试版，测试版变为新的稳定版。语言和标准库特性 marked unstable or hidden behind feature gates may only be used on the nightly release channel. New features land as unstable, and are "ungated" once approved by the core team and relevant subteams. 这种方法允许实验性变更，并同时为稳定频道提供强有力的向后兼容保证。
+Rust 维护三个“发行频道”：稳定版（stable）、测试版（beta）和每夜版（nightly）。稳定版和测试版每六周更新一次，而在那时的每夜版会变为新的测试版，测试版变为新的稳定版。标记为不稳定或者隐藏在特性门控后的语言和标准库特性只能在每夜版上使用，新特性定位为不稳定，一旦被核心团队和相关的子团队批准的话是“无门控的”，这种方法允许实验性变更，并同时为稳定频道提供强有力的向后兼容保证。
 
 就相关的其他详细信息，请阅读 Rust 博客["Stability as a Deliverable."](http://blog.rust-lang.org/2014/10/30/Stability.html)
 
@@ -141,9 +141,10 @@ Rust 维护三个“发行频道”：稳定版（stable）、测试版（beta�
 我可以在 Beta 或稳定频道上使用不稳定的功能吗？
 </a></h3>
 
-并不能。Rust works hard to provide strong guarantees about the stability of the features provided on the beta and stable channels. When something is unstable, it means that we can't provide those guarantees for it yet, and don't want people relying on it staying the same. This gives us the opportunity to try changes in the wild on the nightly release channel, while still maintaining strong guarantees for people seeking stability.
+并不能。Rust努力保证测试版和每夜版的特性稳定性。当某些特性不稳定时，意味着我们还不能提供这种保证，不希望开发者依赖它。这给了我们在每夜版上适时尝试改变的机会，但是继续维护开发者寻求的稳定性。
 
-Things stabilize all the time, and the beta and stable channels update every six weeks, with occasional fixes accepted into beta at other times. If you're waiting for a feature to be available without using the nightly release channel, you can locate its tracking issue by checking the [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable) tag on the issue tracker.
+测试和稳定版每六周更新一次是固定的，偶然有测试版的修正被及时接受，你不想使用每夜版而等待希望的某个特性的话，你可以通过检查 [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable)标记跟踪尚存的问题。
+
 
 <h3><a href="#what-are-feature-gates" name="what-are-feature-gates">
 什么是“特性门控”（Feature Gates）？
@@ -1490,7 +1491,7 @@ their new owners).
 如何让 Rust 与 C++ 互操作，反之亦然？
 </a></h3>
 
-Rust 与 C++ 可以通过 C 互操作。Rust 和 C++ 都提供一个适用于 C 的[外部函数接口](https://doc.rust-lang.org/book/ffi.html)，我们可以用它来相互沟通。如果编写 C 语言的绑定太麻烦，您随时可以用 [rust-bindgen](https://github.com/crabtw/rust-bindgen) 来帮忙自动生成可执行的 C 绑定。
+Rust 与 C++ 可以通过 C 互操作。Rust 和 C++ 都提供一个适用于 C 的[外部函数接口](https://doc.rust-lang.org/book/ffi.html)，我们可以用它来相互沟通。如果编写 C 语言的绑定太麻烦，您随时可以用 [rust-bindgen](https://github.com/servo/rust-bindgen) 来帮忙自动生成可执行的 C 绑定。
 
 <h3><a href="#does-rust-have-cxx-style-constructors" name="does-rust-have-cxx-style-constructors">
 Rust 有 C++ 风格的构造函数吗？

@@ -163,10 +163,10 @@
   logo: etcface.png
   how: "ETCDEV Team is a group of professional software engineers working full time on Ethereum Classic core projects."
 -
-  name: Ethcore
-  url: https://ethcore.io
-  logo: ethcore.png
-  how: "<a href='https://ethcore.io/parity.html'>Powering the Ethereum revolution.</a>"
+  name: Parity Technologies
+  url: https://parity.io/
+  logo: parity.png
+  how: "<a href='https://parity.io/parity.html'>Powering the Ethereum revolution.</a>"
 -
   name: Everlane
   url: http://www.everlane.com/
@@ -248,6 +248,11 @@
   logo: ovh.png
   how: "We used Rust to build a high performance, highly available <a href='https://www.runabove.com/paas-logs.xml'>log management system</a>."
 -
+  name: Postlight
+  url: https://postlight.com/
+  logo: postlight.svg
+  how: "We use Rust to generate logos from favicons in the <a href='https://mercury.postlight.com/amp-converter'>Mercury AMP Converter</a>."
+-
   name: Postmates
   url: https://postmates.com/
   logo: postmates.png
@@ -267,6 +272,11 @@
   url: https://sandstorm.io
   logo: sandstorm-logo-rust.svg
   how: "The backend of <a href='https://sandstorm.io/news/2016-08-09-collections-app'>our Collections app</a> is written in Rust."
+-
+  name: Scality
+  url: https://scality.com
+  logo: scality.svg
+  how: "Software-defined storage georeplication daemon"
 -
   name: Sentry
   url: https://www.getsentry.com/
@@ -387,3 +397,13 @@
   url: https://www.angelcam.com
   logo: angelcam.png
   how: "We developed an open lightweight client that finds compatible IP cameras on a local network and connects them to the cloud via encrypted tunnel."
+-
+  name: tCell
+  url: https://www.tcell.io
+  logo: tcell.png
+  how: "<a href='https://www.tcell.io/2017/06/agents-rust/'>tCell's agent is built using Rust</a> and runs in the app server as a means to collect data and block attacks."
+-
+  name: Structure Systems
+  url: https://www.structure.systems
+  logo: structuresystems.svg
+  how: "We develop software in Rust that helps organizations comply with information privacy/data protection rules."

@@ -156,6 +156,10 @@ people:
     name: Yehuda Katz
   japaric:
     name: Jorge Aparicio
+  scottmcm:
+    name: Scott McMurray
+  cramertj:
+    name: Taylor Cramer
 
 # Information about each team. Omit `lead` for teams without leaders.
 #
@@ -171,7 +175,7 @@ teams:
     lead: nikomatsakis
   - name: Language team shepherds
     responsibility: "helping guide language RFCs to completion, assisting the language team with its work"
-    members: [solson, joshtriplett, whitequark]
+    members: [solson, joshtriplett, whitequark, cramertj, scottmcm]
   - name: Library team
     responsibility: "the Rust standard library, rust-lang crates, conventions, and ecosystem support"
     members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, dtolnay, aturon]

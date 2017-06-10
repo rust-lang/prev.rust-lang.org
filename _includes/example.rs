@@ -1,4 +1,4 @@
-fn main() { 
+fn main() {
     let greetings = ["Hello", "Hola", "Bonjour",
                      "Ciao", "こんにちは", "안녕하세요",
                      "Cześć", "Olá", "Здравствуйте",
@@ -10,7 +10,7 @@ fn main() {
             0 =>  println!("This code is editable and runnable!"),
             1 =>  println!("Este código es editable y ejecutable!"),
             2 =>  println!("Ce code est modifiable et exécutable!"),
-            3 =>  println!("Questo codice è modificabile e eseguibile!"),
+            3 =>  println!("Questo codice è modificabile ed eseguibile!"),
             4 =>  println!("このコードは編集して実行出来ます！"),
             5 =>  println!("여기에서 코드를 수정하고 실행할 수 있습니다!"),
             6 =>  println!("Ten kod można edytować oraz uruchomić!"),

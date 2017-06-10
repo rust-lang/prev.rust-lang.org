@@ -1734,7 +1734,7 @@ C++에서 Rust와 상호작용하거나, Rust에서 C++와 상호작용하려면
 
 Rust와 C++ 둘 다 C와 상호작용할 수 있습니다.
 Rust와 C++ 모두 C와 [외부 함수 인터페이스](https://doc.rust-lang.org/book/ffi.html)를 제공하며, 이를 각자와 소통하기 위해 쓸 수 있습니다.
-C 바인딩을 만드는 게 너무 지루하다면, 언제나 [rust-bindgen](https://github.com/crabtw/rust-bindgen)을 써서 자동으로 동작하는 C 바인딩을 만드는 데 도움을 받을 수 있습니다.
+C 바인딩을 만드는 게 너무 지루하다면, 언제나 [rust-bindgen](https://github.com/servo/rust-bindgen)을 써서 자동으로 동작하는 C 바인딩을 만드는 데 도움을 받을 수 있습니다.
 
 <h3><a href="#does-rust-have-cxx-style-constructors" name="does-rust-have-cxx-style-constructors">
 Rust에는 C++ 같은 생성자가 있나요?
