@@ -7,6 +7,10 @@ rustup:
     - i686-pc-windows-gnu
     - i686-pc-windows-msvc
     - i686-unknown-linux-gnu
+    - mips-unknown-linux-gnu
+    - mipsel-unknown-linux-gnu
+    - mips64-unknown-linux-gnuabi64
+    - mips64el-unknown-linux-gnuabi64
   -
     - powerpc-unknown-linux-gnu
     - powerpc64-unknown-linux-gnu
@@ -30,6 +34,7 @@ stable:
     - mips-unknown-linux-gnu
     - mipsel-unknown-linux-gnu
     - mips64-unknown-linux-gnuabi64
+    - mips64el-unknown-linux-gnuabi64
   -
     - powerpc-unknown-linux-gnu
     - powerpc64-unknown-linux-gnu
@@ -78,6 +83,7 @@ nightly:
     - mips-unknown-linux-gnu
     - mipsel-unknown-linux-gnu
     - mips64-unknown-linux-gnuabi64
+    - mips64el-unknown-linux-gnuabi64
   -
     - powerpc-unknown-linux-gnu
     - powerpc64-unknown-linux-gnu
