@@ -1,9 +1,9 @@
 ---
 layout: zh-CN/faq
-title: 常被问到的问题 &middot; Rust 程序设计语言
+title: 常见问题解答 &middot; Rust 程序设计语言
 ---
 
-# 常被问到的问题
+# 常见问题解答
 
 <p class="faq-intro">
 此页面回答了有关 Rust 编程语言的常见问题。它不是这个语言的完整指南，也不是教学该语言的工具。这是 Rust 社区常遇到的人们重复提问的回答，及澄清了 Rust 某些设计决策幕后的理由。
@@ -78,7 +78,7 @@ Rust 由一个从全局角度出发，为项目设定愿景和优先事项的核
 2. 我们不会夸奖其他目标的表现力、极简主义或优雅。这些是可取的，但不是主要目标。
 3. 我们不打算覆盖 C++ 或任何其他语言的完整功能集。Rust 应提供较常使用功能。
 4. 我们不打算一切都是100%静态，100%安全，100%反思或任何其他意义上的太教条。存在权衡。
-5. 我们不打算使 Rust 能在“每个可能的平台”上运行。它必须没有不必要的妥协，最终适用于广泛使用的硬件和软件平台。
+5. 我们不打算使 Rust 能在「每个可能的平台」上运行。它必须没有不必要的妥协，最终适用于广泛使用的硬件和软件平台。
 
 <h3><a href="#how-does-mozilla-use-rust" name="how-does-mozilla-use-rust">
 Mozilla 的哪些项目使用 Rust？
@@ -125,7 +125,7 @@ TODO: Write this answer.
 为什么 Rust 随时间推移在大幅变化？
 </a></h3>
 
-Rust 起步的目标是创建一个安全且合用的系统编程语言。为了追求这个目标，它探索了很多想法，其中一些（生命周期、traits）被保留，而其他则被丢弃（类型体系系统、绿色线程）。 Also, in the run up to 1.0 a lot of the standard library was rewritten as early designs were updated to best use Rust's features and provide quality, consistent cross-platform APIs. 现在的 Rust 已达到了 1.0，语言保证为“稳定”（stable）；虽然它可能继续演变，但对于目前的 Rust 来说，代码在未来的发行版本上能继续工作。
+Rust 起步的目标是创建一个安全且合用的系统编程语言。为了追求这个目标，它探索了很多想法，其中一些（生命周期、traits）被保留，而其他则被丢弃（类型体系系统、绿色线程）。 Also, in the run up to 1.0 a lot of the standard library was rewritten as early designs were updated to best use Rust's features and provide quality, consistent cross-platform APIs. 现在的 Rust 已达到了 1.0，语言保证为「稳定」（stable）；虽然它可能继续演变，但对于目前的 Rust 来说，代码在未来的发行版本上能继续工作。
 
 <h3><a href="#how-does-rust-language-versioning-work" name="how-does-rust-language-versioning-work">
 Rust 语言的版本控制是怎样的？
@@ -133,9 +133,9 @@ Rust 语言的版本控制是怎样的？
 
 Rust 的语言版本遵循 [SemVer](http://semver.org/)，如果更改修复了编译器错误、补丁安全漏洞，或更改调度或类型推断需要附加注明，则稳定 API 的向后不兼容更改允许在次要版本中出现。次要版本更改的更详细指南可以在[语言](https://github.com/rust-lang/rfcs/blob/master/text/1122-language-semver.md)和[标准库](https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md)的已批准 RFC 中找到。
 
-Rust 维护三个“发行频道”：稳定版（stable）、测试版（beta）和每夜版（nightly）。稳定版和测试版每六周更新一次，而在那时的每夜版会变为新的测试版，测试版变为新的稳定版。标记为不稳定或者隐藏在特性门控后的语言和标准库特性只能在每夜版上使用，新特性定位为不稳定，一旦被核心团队和相关的子团队批准的话是“无门控的”，这种方法允许实验性变更，并同时为稳定频道提供强有力的向后兼容保证。
+Rust 维护三个「发行频道」：稳定版（stable）、测试版（beta）和每夜版（nightly）。稳定版和测试版每六周更新一次，而在那时的每夜版会变为新的测试版，测试版变为新的稳定版。标记为不稳定或者隐藏在特性门控后的语言和标准库特性只能在每夜版上使用，新特性定位为不稳定，一旦被核心团队和相关的子团队批准的话是「无门控的」，这种方法允许实验性变更，并同时为稳定频道提供强有力的向后兼容保证。
 
-就相关的其他详细信息，请阅读 Rust 博客["Stability as a Deliverable."](http://blog.rust-lang.org/2014/10/30/Stability.html)
+就相关的其他详细信息，请阅读 Rust 博客 ["Stability as a Deliverable."](http://blog.rust-lang.org/2014/10/30/Stability.html)
 
 <h3><a href="#can-i-use-unstable-features-on-the-beta-or-stable-channel" name="can-i-use-unstable-features-on-the-beta-or-stable-channel">
 我可以在 Beta 或稳定频道上使用不稳定的功能吗？
@@ -147,10 +147,10 @@ Rust 维护三个“发行频道”：稳定版（stable）、测试版（beta�
 
 
 <h3><a href="#what-are-feature-gates" name="what-are-feature-gates">
-什么是“特性门控”（Feature Gates）？
+什么是「特性门控」（Feature Gates）？
 </a></h3>
 
-“特性门控”（Feature Gates）是 Rust 用来稳定编译器、语言和标准库特性的机制。 A feature that is "gated" is accessible only on the nightly release channel, and then only when it has been explicitly enabled through `#[feature]` attributes or the `-Z unstable-options` command line argument. When a feature is stabilized it becomes available on the stable release channel, and does not need to be explicitly enabled. At that point the feature is considered "ungated". Feature gates allow developers to test experimental features while they are under development, before they are available in the stable language.
+「特性门控」（Feature Gates）是 Rust 用来稳定编译器、语言和标准库特性的机制。 A feature that is "gated" is accessible only on the nightly release channel, and then only when it has been explicitly enabled through `#[feature]` attributes or the `-Z unstable-options` command line argument. When a feature is stabilized it becomes available on the stable release channel, and does not need to be explicitly enabled. At that point the feature is considered "ungated". Feature gates allow developers to test experimental features while they are under development, before they are available in the stable language.
 
 <h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
 为什么采用 MIT/ASL2 双许可证？
@@ -218,7 +218,7 @@ Rust 编译似乎很慢。这是为什么？
 
 首先，Rust 有中等复杂类型的系统，并且必须花费不可忽略的编译时间来强制在运行时使 Rust 安全的约束。
 
-其次，Rust 编译器遭受着长期的技术债务，特别是生成质量差的LLVM IR，而LLVM必须花时间“修复”。这有希望在未来[基于MIR](https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md)优化和转换传递来减轻 Rust 编译器在 LLVM 上的负担。
+其次，Rust 编译器遭受着长期的技术债务，特别是生成质量差的LLVM IR，而LLVM必须花时间「修复」。这有希望在未来[基于MIR](https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md)优化和转换传递来减轻 Rust 编译器在 LLVM 上的负担。
 
 第三，Rust 使用的 LLVM 代码生成是一把双刃剑：虽然它能够使 Rust 具有世界一流的运行时性能，但 LLVM 是一个不重视编译时性能的大型框架，特别是在使用较差输入质量时。
 
@@ -578,7 +578,7 @@ These are different terms for the same thing. In all cases, it means the value h
 如果一个类型实现了 [`Copy`][Copy] 特征，则它将在传递到一个函数时被复制。Rust 中的所有数字类型都实现了 [`Copy`][Copy]，但结构类型默认并未实现 [`Copy`][Copy]，因此它们是被移动。这意味着结构体不能在其他地方重用，除非它是通过 return 从函数中移出。
 
 <h3><a href="#how-do-you-deal-with-a-use-of-moved-value-error" name="how-do-you-deal-with-a-use-of-moved-value-error">
-如何处理“use of moved value”错误？
+如何处理「use of moved value」错误？
 </a></h3>
 
 This error means that the value you're trying to use has been moved to a new owner. The first thing to check is whether the move in question was necessary: if it moved into a function, it may be possible to rewrite the function to use a reference, rather than moving. Otherwise if the type being moved implements [`Clone`][Clone], then calling `clone()` on it before moving will move a copy of it, leaving the original still available for further use. Note though that cloning a value should typically be the last resort since cloning can be expensive, causing further allocations.
@@ -721,7 +721,7 @@ it explicitly. The rules are as follows:
 If these rules result in compilation errors, the Rust compiler will provide an error message indicating the error caused, and suggesting a potential solution based on which step of the inference process caused the error.
 
 <h3><a href="#how-can-rust-guarantee-no-null-pointers" name="how-can-rust-guarantee-no-null-pointers">
-Rust 如何保证“无空指针”和“无悬挂指针”？
+Rust 如何保证「无空指针」和「无悬挂指针」？
 </a></h3>
 
 The only way to construct a value of type `&Foo` or `&mut Foo` is to specify an existing value of type `Foo` that the reference points to. The reference "borrows" the original value for a given region of code (the lifetime of the reference), and the value being borrowed from cannot be moved or destroyed for the duration of the borrow.
@@ -735,7 +735,7 @@ You can do that with the [`Option`][Option] type, which can either be `Some(T)` 
 <h2 id="generics">泛型</h2>
 
 <h3><a href="#what-is-monomorphisation" name="what-is-monomorphisation">
-什么是“单态化”？
+什么是「单态化」？
 </a></h3>
 
 Monomorphisation specializes each use of a generic function (or structure) with specific instance,
@@ -1115,7 +1115,7 @@ pub fn f() {
 如何配置 Cargo 使用代理服务器？
 </a></h3>
 
-正如 Cargo 的[配置文档](http://doc.crates.io/config.html)所说，您可以设置配置文件中 `[http]` 下的“proxy”变量使 Cargo 使用一个代理服务器。
+正如 Cargo 的[配置文档](http://doc.crates.io/config.html)所说，您可以设置配置文件中 `[http]` 下的「proxy」变量使 Cargo 使用一个代理服务器。
 
 <h3><a href="#why-cant-the-compile-find-method-implementations" name="why-cant-the-compile-find-method-implementations">
 为什么编译器找不到方法实现，即使我已经 <code>use</code> 包装箱？
@@ -1250,7 +1250,7 @@ To define procedural constants that can't be defined via these mechanisms, use t
 我可以在 main 发生前运行初始化代码吗？
 </a></h3>
 
-Rust 没有“`main` 之前”的概念。你想找到的最接近的可能是 [`lazy-static`](https://github.com/Kimundi/lazy-static.rs) 包装箱，它在初次使用时通过懒惰初始化静态变量做到类似“在main之前”。
+Rust 没有「`main` 之前」的概念。你想找到的最接近的可能是 [`lazy-static`](https://github.com/Kimundi/lazy-static.rs) 包装箱，它在初次使用时通过懒惰初始化静态变量做到类似「在main之前」。
 
 <!--
 
@@ -1335,7 +1335,7 @@ __标准库__
 
 The Rust standard library includes libbacktrace and libunwind, which may be undesirable in some programs. Using `#![no_std]` can thus result in smaller binaries, but will also usually result in substantial changes to the sort of Rust code you're writing. Note that using Rust without the standard library is often functionally closer to the equivalent C code.
 
-作为一个例子，下列 C 程序读入一个名称，并向该名称的人说“Hello”。
+作为一个例子，下列 C 程序读入一个名称，并向该名称的人说「Hello」。
 
 ```c
 #include <stdio.h>
