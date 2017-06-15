@@ -178,6 +178,11 @@
   logo: faraday.svg
   how: "<a href='https://github.com/faradayio/credentials_to_env'>Securely transferring credentials.</a>"
 -
+  name: Fortanix
+  url: https://fortanix.com
+  logo: fortanix.svg
+  how: "Moving security out of infrastructure and into applications with Runtime Encryption using Intel SGX."
+-
   name: GiGa infosystems GmbH
   url: https://www.giga-infosystems.com
   logo: giga.svg
