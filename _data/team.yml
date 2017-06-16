@@ -200,6 +200,7 @@ teams:
     responsibility: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
     members: [brson, alexcrichton, frewsxcv, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, aturon]
     lead: aturon
+    email: infra-team@rust-lang.org
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt
