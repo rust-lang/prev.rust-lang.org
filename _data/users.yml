@@ -253,6 +253,11 @@
   logo: ovh.png
   how: "We used Rust to build a high performance, highly available <a href='https://www.runabove.com/paas-logs.xml'>log management system</a>."
 -
+  name: Pants Build
+  url: http://www.pantsbuild.org/
+  logo: pantsbuild.png
+  how: "As of the 1.3.0 stable release, the <a href='https://docs.google.com/document/d/1C64MreDeVoZAl3HrqtWUVE-qnj3MyWW0NQ52xejjaWw/edit?usp=sharing'>core scheduling algorithms</a> of Pants are implemented in Rust. We hope to incrementally port more of Pant's Python code to Rust over time."
+-
   name: Postlight
   url: https://postlight.com/
   logo: postlight.svg
