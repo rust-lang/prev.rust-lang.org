@@ -2,7 +2,7 @@ fn main() {
     let greetings = ["Hello", "Hola", "Bonjour",
                      "Ciao", "こんにちは", "안녕하세요",
                      "Cześć", "Olá", "Здравствуйте",
-                     "chào bạn", "您好"];
+                     "Chào bạn", "您好"];
 
     for (num, greeting) in greetings.iter().enumerate() {
         print!("{} : ", greeting);
