@@ -140,7 +140,7 @@ Rust 有一个社区驱动的开发过程，大多数决策都是通过公开的
 
 * [语言设计团队][language_team]负责设计新的语言特性。
 
-* [库团队][library_team]负责 Rust 标准库、rust-lang 包装箱，及公约。
+* [库团队][library_team]负责 Rust 标准库、rust-lang 包，及公约。
 
 * [编译器团队][compiler_team]负责编译器内部和优化。
 

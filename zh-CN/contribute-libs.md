@@ -12,7 +12,7 @@ title: 为 Rust 出力 &mdash; 库 &middot; Rust 程序设计语言
 决定写些什么更有乐趣和影响力是一个常见的问题。这里有些想法供你参考：
 
 * 阅读和参与 [/r/rust] 和 [users.rust-lang.org] 上
-  每周的“本周每个人都在做什么”（"what's everyone working on
+  每周的「本周每个人都在做什么」（"what's everyone working on
   this week"）主题。那些包含来自其他需要合作者的 Rust 程序员的激动人心的通知。
 * 通过 [awesome-rust] 和 [libs.rs] 亲自熟悉最好的 Rust 库。
 * Some larger projects, including the web browser [Servo], the HTTP
