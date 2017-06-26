@@ -64,7 +64,7 @@ Rust 作为一种备选方案，可以提供高效的代码和舒适的抽象级
 这个项目由 Mozilla 控制？
 </a></h3>
 
-不是。Rust 始于 2006 年 Graydon Hoare 的兼职项目，并持续了三年。Mozilla 在语言成熟到足以运行基本测试并展示其核心概念时于 2009 年开始参与。虽然它由 Mozilla 资助，但 Rust 是由来自世界各地的多样化的发烧友开发的。[Rust 团队](https://www.rust-lang.org/team.html) 由 Mozilla 和非 Mozilla 成员组成，`rustc`（Rust 的编译器）至今也有超过[一千名独立贡献者](https://github.com/rust-lang/rust/)。
+不是。Rust 始于 2006 年 Graydon Hoare 的兼职项目，并持续了三年。Mozilla 在语言成熟到足以运行基本测试并展示其核心概念时于 2009 年开始参与。虽然它由 Mozilla 资助，但 Rust 是由来自世界各地的多样化的发烧友开发的。[Rust 团队](https://www.rust-lang.org/team.html)由 Mozilla 和非 Mozilla 成员组成，`rustc`（Rust 的编译器）至今也有超过[一千名独立贡献者](https://github.com/rust-lang/rust/)。
 
 就[项目治理](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)而言，
 Rust 由一个从全局角度出发，为项目设定愿景和优先事项的核心团队管理。
@@ -84,13 +84,13 @@ Rust 由一个从全局角度出发，为项目设定愿景和优先事项的核
 Mozilla 的哪些项目使用 Rust？
 </a></h3>
 
-主要项目是 [Servo](https://github.com/servo/servo)，它是 Mozilla 正在雕琢的一个实验性的浏览器引擎。Mozilla 还在努力[整合 Rust 组件](https://bugzilla.mozilla.org/show_bug.cgi?id=1135640) 到 Firefox。
+主要项目是 [Servo](https://github.com/servo/servo)，它是 Mozilla 正在雕琢的一个实验性的浏览器引擎。Mozilla 还在努力[整合 Rust 组件](https://bugzilla.mozilla.org/show_bug.cgi?id=1135640)到 Firefox。
 
 <h3><a href="#what-examples-are-there-of-large-rust-projects" name="what-examples-are-there-of-large-rust-projects">
 有哪些大型的 Rust 项目？
 </a></h3>
 
-目前两个最大的 Rust 开源项目是 [Servo](https://github.com/servo/servo) 和 [Rust 编译器](https://github.com/rust-lang/rust) 本身。
+目前两个最大的 Rust 开源项目是 [Servo](https://github.com/servo/servo) 和 [Rust 编译器](https://github.com/rust-lang/rust)本身。
 
 <h3><a href="#who-else-is-using-rust" name="who-else-is-using-rust">
 还有谁在使用 Rust？
@@ -108,17 +108,17 @@ TODO: Write this answer.
 怎样轻松地尝试 Rust？
 </a></h3>
 
-[playpen](https://play.rust-lang.org/) 是尝试 Rust 的最简单方法，它是一个可编写和运行 Rust 代码的在线应用。如果您想在您的系统上尝试 Rust，[安装](https://www.rust-lang.org/install.html)并尝试[猜谜游戏](https://doc.rust-lang.org/stable/book/guessing-game.html)教程。
+[playpen](https://play.rust-lang.org/) 是尝试 Rust 的最简单方法，它是一个可编写和运行 Rust 代码的在线应用。如果想在你的系统上尝试 Rust，[安装](https://www.rust-lang.org/install.html)并尝试[猜谜游戏](https://doc.rust-lang.org/stable/book/guessing-game.html)教程。
 
 <h3><a href="#how-do-i-get-help-with-rust-issues" name="how-do-i-get-help-with-rust-issues">
 如何就 Rust 问题取得帮助？
 </a></h3>
 
-那有很多种方式。您可以尝试：
+那有很多种方式。你可以尝试：
 
 - 在 [users.rust-lang.org](https://users.rust-lang.org/) 发帖，这是官方的 Rust 用户论坛
-- 在官方的 [Rust IRC 频道](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) 询问 (irc.mozilla.org 上的 #rust)
-- 在 [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) 询问，加上 "rust" 标签
+- 在官方的 [Rust IRC 频道](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)提问（irc.mozilla.org 上的 #rust）
+- 在 [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) 提问，加上「rust」tag
 - 在 [/r/rust](https://www.reddit.com/r/rust) 发帖，这是非官方的 Rust 板块
 
 <h3><a href="#why-has-rust-changed-so-much" name="why-has-rust-changed-so-much">
@@ -133,7 +133,7 @@ Rust 语言的版本控制是怎样的？
 
 Rust 的语言版本遵循 [SemVer](http://semver.org/)，如果更改修复了编译器错误、补丁安全漏洞，或更改调度或类型推断需要附加注明，则稳定 API 的向后不兼容更改允许在次要版本中出现。次要版本更改的更详细指南可以在[语言](https://github.com/rust-lang/rfcs/blob/master/text/1122-language-semver.md)和[标准库](https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md)的已批准 RFC 中找到。
 
-Rust 维护三个「发行频道」：稳定版（stable）、测试版（beta）和开发版（nightly）。稳定版和测试版每六周更新一次，而在那时的开发版会变为新的测试版，测试版变为新的稳定版。标记为不稳定或者隐藏在特性门控后的语言和标准库特性只能在开发版上使用，新特性定位为不稳定，一旦被核心团队和相关的子团队批准的话是「无门控的」，这种方法允许实验性变更，并同时为稳定频道提供强有力的向后兼容保证。
+Rust 维护三个「发行频道」：稳定版（stable）、测试版（beta）和开发版（nightly）。稳定版和测试版每六周更新一次，而在那时的开发版会变为新的测试版，测试版变为新的稳定版。标记为不稳定或者隐藏在特性门控后的语言和标准库特性只能在开发版上使用，新特性最初会被标记为不稳定，一旦被核心团队和相关的子团队批准的话就变成「通过门控的（ungated）」，这种方法允许实验性变更，并同时为稳定频道提供强有力的向后兼容保证。
 
 就相关的其他详细信息，请阅读 Rust 博客 [「Stability as a Deliverable」](http://blog.rust-lang.org/2014/10/30/Stability.html)。
 
@@ -150,7 +150,7 @@ Rust 维护三个「发行频道」：稳定版（stable）、测试版（beta�
 什么是「特性门控」（Feature Gates）？
 </a></h3>
 
-「特性门控」（Feature Gates）是 Rust 用来稳定编译器、语言和标准库特性的机制。一个「门控」的特性只能在 nightly 发布渠道才能使用，而且必须显式指定了 `#[feature]` 属性或者命令行参数 `-Z unstable-options`。当一个特性稳定了，它才能在稳定版上可用，不需要显式启用。此时，这个特性被认为是通过门控的（ungated）。特性门控允许开发者在稳定版提供之前，在开发中测试试验性的功能。
+「特性门控」（Feature Gates）是 Rust 用来稳定编译器、语言和标准库特性的机制。一个受「门控」的特性只能在 nightly 发布渠道才能使用，且必须显式指定 `#[feature]` 属性或者命令行参数 `-Z unstable-options`。当一个特性稳定了，它才能在稳定版上可用，不需要显式启用。此时，这个特性被认为是通过门控的（ungated）。特性门控允许开发者在稳定版提供之前，在开发中测试试验性的功能。
 
 <h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
 为什么采用 MIT/ASL2 双许可证？
@@ -180,22 +180,19 @@ Rust 有多快？
 Rust 会垃圾收集吗？
 </a></h3>
 
-不会。Rust 的重要创新之一就是保证内存安全（无 segfaults），*无需*垃圾收集。
+不会。Rust 的重要创新之一就是保证内存安全（无段错误 segfaults），*无需*垃圾收集。
 
 通过避免垃圾收集（GC），Rust 可以提供许多益处：可预测的资源清理，降低内存管理开销，基本上没有运行时系统。这些特征使 Rust 很容易嵌入到任意上下文，并使其更容易[集成 Rust 代码到有 GC 的语言](http://calculist.org/blog/2015/12/23/neon-node-rust/)。
 
-Rust 通过其所有权和借用（borrowing）系统避免了垃圾收集的需求，而同一系统也有助于解决许多其他问题，包括
-[一般的资源管理](http://blog.skylight.io/rust-means-never-having-to-close-a-socket/)和[并发](http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html)。
+Rust 通过其所有权和借用（borrowing）系统避免了垃圾收集的需求，而同一系统也有助于解决许多其他问题，包括[一般的资源管理](http://blog.skylight.io/rust-means-never-having-to-close-a-socket/)和[并发](http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html)。
 
-如果单一的所有权不够，Rust 程序依赖标准的引用计数智能指针类型，[`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html)，及其线程安全版的[`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html)，而不是 GC。
+如果单一的所有权不够，Rust 程序依赖标准的引用计数智能指针类型，[`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html)，及其线程安全版的 [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html)，而不是 GC。
 
 不过，我们也在调查*可选*的垃圾收集作为一项未来扩展。
 其目标旨在顺利与有垃圾收集的运行时整合，
 例如由
 [Spidermonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
-和 [V8](https://developers.google.com/v8/?hl=en) JavaScript 引擎所提供的那些。
-最后，有人已调研了无编译器支持实现的
-[纯 Rust 垃圾收集器](https://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/)
+和 [V8](https://developers.google.com/v8/?hl=en) JavaScript 引擎所提供的那些。 最后，有人已调研了无编译器支持实现的[纯 Rust 垃圾收集器](https://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/)
 。
 
 <h3><a href="#why-is-my-program-slow" name="why-is-my-program-slow">
@@ -204,7 +201,7 @@ Rust 通过其所有权和借用（borrowing）系统避免了垃圾收集的需
 
 如非要求，Rust 编译器不会优化编译，[因为优化会编译速度，且在开发过程中通常是不合需要](https://users.rust-lang.org/t/why-does-cargo-build-not-optimise-by-default/4150/3)。
 
-如果您使用 `cargo` 编译，请使用 `--release` 标志。如果您直接使用 `rustc`，使用 `-O` 标志。两者都将优化编译。
+如果你使用 `cargo` 编译，请使用 `--release` 标志。如果你直接使用 `rustc`，使用 `-O` 标志。两者都将优化编译。
 
 <h3><a href="#why-is-rustc-slow" name="why-is-rustc-slow">
 Rust 编译似乎很慢。这是为什么？
@@ -312,7 +309,7 @@ fn is_odd(x: i64) -> bool {
 为什么 <code>match</code> 必须是穷举的？
 </a></h3>
 
-有助于重构和清晰。
+有助于重构和明确性。
 
 首先，如果 `match` 涵盖了所有的可能性，将来在 `enum` 中添加变量将导致编译失败，而不是运行时错误。这种类型的编译器辅助使得在 Rust 中大胆地重构成为可能。
 
@@ -335,7 +332,7 @@ match val.do_something() {
 
 对于这两者的选择取决于程序的目的。
 
-如果你对浮点数的最大精度感兴趣，那么更倾向于选择 [`f64`][f64]。如果你更注重于保持数值占用更小的空间，或者更高的效率，而不关心每个数值具有较少的位而失去一些精确性，则选择 [`f32`][f32] 会更好。在 [`f32`][f32] 上的操作通常更快，即使在 64 位的硬件上也是如此。作为一个常见的例子，图形编程通常使用 [`f32`][f32] 因为它需要更高的性能，而且 32 位浮点数足以表示屏幕上的像素。
+如果你对浮点数的最大精度感兴趣，那么更倾向于选择 [`f64`][f64]。如果你更注重于保持数值占用更小的空间，或者更高的效率，而不关心由于每个数值具有较少的位而失去一些精确性，则选择 [`f32`][f32] 会更好。在 [`f32`][f32] 上的操作通常更快，即使在 64 位的硬件上也是如此。作为一个常见的例子，图形编程通常使用 [`f32`][f32] 因为它需要更高的性能，而且 32 位浮点数足以表示屏幕上的像素。
 
 如果有疑问，请选择 [`f64`][f64] 以获得更高的精度。
 
@@ -349,7 +346,7 @@ match val.do_something() {
 
 浮点数不是全序或等价的，因为浮点值 [`NaN`](https://en.wikipedia.org/wiki/NaN) 既不小于，也不大于，或者等于其它任何浮点数或者自身。
 
-因为浮点数没有实现 [`Eq`][Eq] 或 [`Ord`][Ord]，它们不能用于 trait 约束要求是这些 trait 的地方，例如 [`BTreeMap`][BTreeMap] 或 [`HashMap`][HashMap]。这很重要，因为这些类型*假设*它们的键提供一个全序或完全等价的关系，否则将失败。
+因为浮点数没有实现 [`Eq`][Eq] 或 [`Ord`][Ord]，它们不能用于 trait 约束要求是这两种 trait 的地方，例如 [`BTreeMap`][BTreeMap] 或 [`HashMap`][HashMap]。这很重要，因为这些类型*假设*它们的键提供一个全序或完全等价的关系，否则将失败。
 
 有一个[包](https://crates.io/crates/ordered-float)提供了对 [`f32`][f32] 和 [`f64`][f64] 的 [`Ord`][Ord] 和 [`Eq`][Eq] 的实现的封装，可能在某些情况下会有用。
 
@@ -363,14 +360,14 @@ match val.do_something() {
 为什么 Rust 没有递增或递减操作符？
 </a></h3>
 
-先增和后增（以及相对就的减法）虽然方便，但也相当复杂。它们都要求要对运算顺序的了解，而且经常导致 C 和 C++ 中的细节错误和未定义的行为。 `x = x + 1` 或 `x += 1` 只是略长一点，但更加明确。
+先增和后增（以及相对应的减法）虽然方便，但也相当复杂。它们都需要求值顺序的知识，而且经常导致 C 和 C++ 中的细节错误和未定义的行为。 `x = x + 1` 或 `x += 1` 只是略长一点，但更加明确。
 <h2 id="strings">字符串</h2>
 
 <h3><a href="#how-to-convert-string-or-vec-to-slice" name="how-to-convert-string-or-vec-to-slice">
-如果将 <code>String</code> 或 <code>Vec&lt;T&gt;</code> 转换成切片（<code>&amp;str</code> 和 <code>&amp;[T]</code>）？
+如何将 <code>String</code> 或 <code>Vec&lt;T&gt;</code> 转换成切片（<code>&amp;str</code> 和 <code>&amp;[T]</code>）？
 </a></h3>
 
-通常，你可以在需要切片的地方转入 `String` 或 `Vec<T>`。使用[强制解引（Deref）](https://doc.rust-lang.org/stable/book/deref-coercions.html)，在用 `&` 或 `&mut` 传递引用时，[`String`][String] 和 [`Vec`][Vec] 会自动强制转换为对应的切片。
+通常，你可以在需要切片的地方传入 `String` 或 `Vec<T>`。使用[强制解引（Deref）](https://doc.rust-lang.org/stable/book/deref-coercions.html)，在用 `&` 或 `&mut` 传递引用时，[`String`][String] 和 [`Vec`][Vec] 会自动强制转换为对应的切片。
 
 在 `&str` 和 `&[T]` 上实现的方法可以直接在 `String` 和 `Vec<T>` 上访问。例如，即使 `char_at` 是 `&str` 上的方法，而 `some_string` 是一个 `String`，`some_string.char_at(0)` 也可以运行。
 
@@ -407,7 +404,7 @@ fn say_hello(name: &str) {
 
 做不到。至少在缺少对你所说的「字符（character）」充分的理解，并且缺少用于查找所需字符的索引而对字符串的预处理的情况下，无法做到。
 
-Rust 字符串是用 UTF-8 编码的。UTF-8 中的单个可见字符不一定单个字节，除非它是用 ASCII 编码的字符串。每个字节被称为「码元（code unit）」（在 UTF-16 中，码元是 2 字节，在 UTF-32 中码元是 4 字节）。「码位（code point）」由一个或多个码元组成，并由此结合成「grapheme cluster」，这是最接近字符的概念了。
+Rust 字符串是用 UTF-8 编码的。UTF-8 中的单个可见字符不一定是单个字节，除非它是用 ASCII 编码的字符串。每个字节被称为「码元（code unit）」（在 UTF-16 中，码元是 2 字节，在 UTF-32 中码元是 4 字节）。「码位（code point）」由一个或多个码元组成，并由此结合成「grapheme cluster」，这是最接近字符的概念了。
 
 因此，即使你可以在 UTF-8 字符串中索引字节，你也不能在常数时间里访问第 `i` 个码元或 grapheme cluster。但是，如果你知道所需的 code point 或 grapheme cluster 开始的字节的位置，那么你 _可以_ 在常数时间时访问它。包括 [`str::find()`][str__find] 和正则匹配函数都返回字节索引，以便于此类的访问。
 
@@ -510,7 +507,7 @@ for item in &v {
 println!("\nLength: {}", v.len());
 ```
 
-Rust 的 `for` 循环对于任何迭代都调用 `into_iter()`（在[`IntoIterator`][IntoIterator] trait 中定义）。任何实现了 [`IntoIterator`][IntoIterator] trait 的类型都可以用在 `for` 循环中。 [`IntoIterator`][IntoIterator] 是对针 [`&Vec`][Vec] 和 [`&mut Vec`][Vec] 实现的，所以 `into_iter()` 返回的迭代器只是借用集合的内容，而不是移动/消费它们。其它标准集合也是如此。
+Rust 的 `for` 循环对于任何迭代都调用 `into_iter()`（在 [`IntoIterator`][IntoIterator] trait 中定义）。任何实现了 [`IntoIterator`][IntoIterator] trait 的类型都可以用在 `for` 循环中。 [`IntoIterator`][IntoIterator] 是对针 [`&Vec`][Vec] 和 [`&mut Vec`][Vec] 实现的，所以 `into_iter()` 返回的迭代器只是借用集合的内容，而不是移动/消费它们。其它标准集合也是如此。
 
 如果需要移动/消费迭代器，在迭代中用没有 `&` 或 `&mut` 的 `for`。
 
@@ -610,7 +607,7 @@ fn main() {
 
 理解借用检查器是重要的环节是实践。Rust 的强静态分析保证与许多程序员以往接触过的有天壤之别。需要花些时间来适应这些。
 
-如果你发现你在借用检查器中遇到困难，或者失去耐心，可以随时联系 [Rust 社区](community.thml) 寻求帮助。
+如果你发现你在借用检查器中遇到困难，或者失去耐心，可以随时联系 [Rust 社区](community.thml)寻求帮助。
 
 <h3><a href="#when-is-rc-useful" name="when-is-rc-useful">
 <code>Rc</code> 在什么时候有用？
@@ -656,7 +653,7 @@ Rust 的非原子引用计数指针类型，在官方文档中涵盖了 [`Rc`][R
 为什么有生命周期？
 </a></h3>
 
-生命周期是 Rust 以于内存安全问题的解答。它允许 Rust 确保内存安全，而无需付出垃圾收集的性能代价。这是基于多种学术成果的，这些参考文献可以从 [Rust 之书](https://doc.rust-lang.org/stable/book/bibliography.html#type-system) 中找到。
+生命周期是 Rust 以于内存安全问题的解答。它允许 Rust 确保内存安全，而无需付出垃圾收集的性能代价。这是基于多种学术成果的，这些参考文献可以从 [Rust 之书](https://doc.rust-lang.org/stable/book/bibliography.html#type-system)中找到。
 
 <h3><a href="#why-is-the-lifetime-syntax-the-way-it-is" name="why-is-the-lifetime-syntax-the-way-it-is">
 为什么生命周期语法是这样的？
@@ -884,7 +881,7 @@ Rust 中如何进行异步输入 / 输出？
 
 异常使对于控制流的理解复杂化，它们表示了类型系统之外的有效性/无效性，而且它们与多线程代码（Rust 的主要关注点）交互并不佳。
 
-Rust 更倾向于使用基于类型的错误处理方式，在 [这本书中有详细的介绍](https://doc.rust-lang.org/stable/book/error-handling.html)。这会更适合 Rust 的控制流，并发和其它所有的特性。
+Rust 更倾向于使用基于类型的错误处理方式，在[这本书中有详细的介绍](https://doc.rust-lang.org/stable/book/error-handling.html)。这会更适合 Rust 的控制流，并发和其它所有的特性。
 
 <h3><a href="#whats-the-deal-with-unwrap" name="whats-the-deal-with-unwrap">
 到处都有 <code>unwrap()</code> 是怎么回事？
@@ -918,7 +915,7 @@ Rust 更倾向于使用基于类型的错误处理方式，在 [这本书中有�
 
 在同步的情况下，修改是安全的。修改一个静态的 [`Mutex`][Mutex] （通过 [lazy-static](https://crates.io/crates/lazy_static/) 包进行延迟初始化）不需要用 `unsafe` 块，修改一个静态的 [`AtomicUsize`][AtomicUsize] （可以不用 lazy_staic 初始化）也是一样。
 
-更一般来说，如果一个类型实现了 [`Sync`][Sync] 而且不实现 [`Drop`][Drop]，它就 [可以被用作 `static`](https://doc.rust-lang.org/book/const-and-static.html#static)
+更一般来说，如果一个类型实现了 [`Sync`][Sync] 而且不实现 [`Drop`][Drop]，它就[可以被用作 `static`](https://doc.rust-lang.org/book/const-and-static.html#static)
 
 <h2 id="macros">宏</h2>
 
@@ -957,18 +954,18 @@ Rust 有许多开发环境可供选择，详见官方的 [IDE 支持页面](http
 <h2 id="low-level">底层</h2>
 
 <h3><a href="#how-do-i-memcpy-bytes" name="how-do-i-memcpy-bytes">
-如何 <code>memcpy</code> 字节？
+如何用 <code>memcpy</code> 在内存中拷贝字节？
 </a></h3>
 
-如果您想安全地克隆现有切片，可以使用 [`clone_from_slice`][clone_from_slice]。
+如果你想安全地克隆一个现有切片，可以使用 [`clone_from_slice`][clone_from_slice]。
 
-要复制可能重叠的字节，使用 [`copy`][copy]. 要复制非重叠字节，使用 [`copy_nonoverlapping`][copy_nonoverlapping]。两个特性都是 `unsafe`，因此两者都可以颠覆本语言的安全保障，使用时请小心。
+用 [`copy`][copy] 拷贝可能重叠（overlapping）的字节。用 [`copy_nonoverlapping`][copy_nonoverlapping] 拷贝非重叠字节。两个特性都是 `unsafe` 的，因此两者都会破坏本语言的安全保障，使用时请小心。
 
 <h3><a href="#does-rust-work-without-the-standard-library" name="does-rust-work-without-the-standard-library">
-没有标准库的 Rust 还有适当的功能吗？
+没有标准库的 Rust 还能正确运行吗？
 </a></h3>
 
-绝对可以。Rust 程序可以使用 `#![no_std]` 属性设置为不加载标准库。使用此属性集后，您可以继续使用 Rust 核心库，那些是与平台无关的原函数。也因此，它不包括 IO、并发、堆分配等。
+绝对可以。Rust 程序可以使用 `#![no_std]` 属性设置为不加载标准库。使用此属性集后，你可以继续使用 Rust 核心库，那些是与平台无关的原函数。也因此，它不包括 IO、并发、堆分配等。
 
 <h3><a href="#can-i-write-an-operating-system-in-rust" name="can-i-write-an-operating-system-in-rust">
 我可以用 Rust 写一个操作系统吗？
@@ -977,10 +974,10 @@ Rust 有许多开发环境可供选择，详见官方的 [IDE 支持页面](http
 行的！事实上，[有多个项目正在进行中](http://wiki.osdev.org/Rust)。
 
 <h3><a href="#how-can-i-write-endian-independent-values" name="how-can-i-write-endian-independent-values">
-如何以大端或小端格式读取与写入一个文件或其他字节流中的是 <code>i32</code> 或 <code>f64</code> 这样的数字类型？
+如何以大端或小端格式读取或写入像 <code>i32</code> 或 <code>f64</code> 这样的数字类型到一个文件或其他字节流中？
 </a></h3>
 
-您应该检出 [byteorder 包](http://burntsushi.net/rustdoc/byteorder/)，它提供了这种实用程序。
+你应该检出 [byteorder 包](http://burntsushi.net/rustdoc/byteorder/)，它正是为这种情况提供了各种工具。
 
 <h3><a href="#does-rust-guarantee-data-layout" name="does-rust-guarantee-data-layout">
 Rust 是否保证特定的数据布局？
@@ -1029,7 +1026,11 @@ Rust 可以用于 Android/iOS 编程吗？
 我可以在网页浏览器中运行我的 Rust 程序吗？
 </a></h3>
 
-目前还不行，但也正在努力使 Rust 能用 [Emscripten](https://kripken.github.io/emscripten-site/) 编译为 Web 版。
+有可能。Rust 已经拥有了对于 [asm.js] 和 [WebAssembly] 的[实验性支持][wasm]。
+
+[wasm]: https://davidmcneil.gitbooks.io/the-rusty-web/
+[asm.js]: http://asmjs.org/
+[WebAssembly]: http://webassembly.org/
 
 <h3><a href="#how-do-i-cross-compile-rust" name="how-do-i-cross-compile-rust">
 如何在 Rust 中交叉编译？
@@ -1101,7 +1102,7 @@ pub fn f() {
 如何配置 Cargo 使用代理服务器？
 </a></h3>
 
-正如 Cargo 的[配置文档](http://doc.crates.io/config.html)所说，您可以设置配置文件中 `[http]` 下的「proxy」变量使 Cargo 使用一个代理服务器。
+正如 Cargo 的[配置文档](http://doc.crates.io/config.html)所说，你可以设置配置文件中 `[http]` 下的「proxy」变量使 Cargo 使用一个代理服务器。
 
 <h3><a href="#why-cant-the-compile-find-method-implementations" name="why-cant-the-compile-find-method-implementations">
 为什么编译器找不到方法实现，即使我已经 <code>use</code> 了相应的包？
@@ -1166,7 +1167,7 @@ TODO: Write this answer.
 我该怎样发出一个 HTTP 请求？
 </a></h3>
 
-标准库不包含 HTTP 的实现，因此您需要用外部的包。 [Hyper](https://github.com/hyperium/hyper) 是最流行的选择，但[也有众多其他可选](https://crates.io/keywords/http)。
+标准库不包含 HTTP 的实现，因此你需要用外部的包。 [Hyper](https://github.com/hyperium/hyper) 是最流行的选择，但[也有众多其他可选](https://crates.io/keywords/http)。
 
 <h3><a href="#how-can-i-write-a-gui-application" name="how-can-i-write-a-gui-application">
 如何用 Rust 编写 GUI 应用程序？
@@ -1228,7 +1229,7 @@ Rust 中可以用 `const` 声明在编译时计算的全局常量，而 `static`
 如何设置程序定义的编译时的常量？
 </a></h3>
 
-Rust 目前对编译时常量的支持有限。您可以使用 `const` 声明（类似 `static`，但它不可变，并且在内存中没有特定位置）定义原生类型，以及定义 `const` 函数和固有方法。
+Rust 目前对编译时常量的支持有限。你可以使用 `const` 声明（类似 `static`，但它不可变，并且在内存中没有特定位置）定义原生类型，以及定义 `const` 函数和固有方法。
 
 要定义那些无法通过这种机制定义的过程常量，使用 [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) crate，它通过第一次使用的时候自动求值来模拟编译时求值。
 
@@ -1264,7 +1265,7 @@ Rust 是否允许全局的非常量表达式值？
 
 参考 [C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) 中关于「static initialization order fiasco」的问题，以及 [Eric Lippert's blog](https://ericlippert.com/2013/02/06/static-constructors-part-one/) 中针对 C# 中此功能的挑战。
 
-您可以以 [lazy-static](https://crates.io/crates/lazy_static/) 包使用近似的非常量表达式全局对象。
+你可以以 [lazy-static](https://crates.io/crates/lazy_static/) 包使用近似的非常量表达式全局对象。
 
 <h2 id="other-languages">其他语言</h2>
 
@@ -1272,7 +1273,7 @@ Rust 是否允许全局的非常量表达式值？
 如何在 Rust 中实现类似 C 的 <code>struct X { static int X; };</code>？
 </a></h3>
 
-如上所说，Rust 没有 `static` 字段。不过，您可以在指定的模块中声明一个 `static` 变量，这样它将为该模块私有。
+如上所说，Rust 没有 `static` 字段。不过，你可以在指定的模块中声明一个 `static` 变量，这样它将为该模块私有。
 
 <h3><a href="#how-can-i-convert-a-c-style-enum-to-an-integer" name="how-can-i-convert-a-c-style-enum-to-an-integer">
 如何将 C 风格的枚举转换为整数，反之亦然？
@@ -1467,7 +1468,7 @@ C++ 编译器没有义务跟踪移动。例如，上面的代码在编译时没�
 如何让 Rust 与 C++ 互操作，反之亦然？
 </a></h3>
 
-Rust 与 C++ 可以通过 C 互操作。Rust 和 C++ 都提供一个适用于 C 的[外部函数接口](https://doc.rust-lang.org/book/ffi.html)，我们可以用它来相互沟通。如果编写 C 语言的绑定太麻烦，您随时可以用 [rust-bindgen](https://github.com/servo/rust-bindgen) 来帮忙自动生成可执行的 C 绑定。
+Rust 与 C++ 可以通过 C 互操作。Rust 和 C++ 都提供一个适用于 C 的[外部函数接口](https://doc.rust-lang.org/book/ffi.html)，我们可以用它来相互沟通。如果编写 C 语言的绑定太麻烦，你随时可以用 [rust-bindgen](https://github.com/servo/rust-bindgen) 来帮忙自动生成可执行的 C 绑定。
 
 <h3><a href="#does-rust-have-cxx-style-constructors" name="does-rust-have-cxx-style-constructors">
 Rust 有 C++ 风格的构造器吗？
@@ -1544,7 +1545,7 @@ Rust 语言已存在多年，而它在 2015 年 5 月才达成 1.0 版本。在�
 我该在哪报告 Rust 文档的问题？
 </a></h3>
 
-您可以在 Rust 编译器的[问题跟踪器](https://github.com/rust-lang/rust/issues)中报告 Rust 文档的问题。在报告前，请先阅读[贡献指南](https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#writing-documentation)。
+你可以在 Rust 编译器的[问题跟踪器](https://github.com/rust-lang/rust/issues)中报告 Rust 文档的问题。在报告前，请先阅读[贡献指南](https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#writing-documentation)。
 
 <h3><a href="#how-do-i-view-rustdoc-documentation-for-a-library-my-project-depends-on" name="how-do-i-view-rustdoc-documentation-for-a-library-my-project-depends-on">
 如何查看我的项目所依赖的库的 rustdoc 文档？
