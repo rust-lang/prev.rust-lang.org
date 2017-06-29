@@ -95,7 +95,6 @@ adecuado para preguntas sobre como contribuir con Rust.
 - [#rust-crypto][crypto_irc] es para la discusión de criptografía con Rust
 - [#rust-gamedev][gamedev_irc] es para personas haciendo desarrollo de juegos en Rust
 - [#rust-networking][networking_irc] es para personas haciendo desarrollo de redes de computadoras en Rust
-- [#rust-offtopic][offtopic_irc] es para charla abierta entre Rutáceos
 - [#rust-osdev][osdev_irc] es para personas desarrollando sistemas operativos en Rust
 - [#rust-webdev][webdev_irc] es para personas haciendo desarrollo web en Rust
 - [#servo][servo_irc] es para discutir sobre Servo, el motor de navegador web escrito en Rust
@@ -115,7 +114,6 @@ adecuado para preguntas sobre como contribuir con Rust.
 [lang_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
 [libs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
 [networking_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[offtopic_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
 [osdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
 [ru_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
 [rust_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust

@@ -81,7 +81,6 @@ Rust自体の開発についてリアルタイムで議論するための場で�
 - [#rust-embedded][embedded_irc] Rustで組み込みソフトウェアをする人のために
 - [#rust-gamedev][gamedev_irc] Rustでゲームをする人のために
 - [#rust-networking][networking_irc] Rustでコンピュータネットワーキングと開発をする人のために
-- [#rust-offtopic][offtopic_irc] Rustで一般の世間話をするために
 - [#rust-osdev][osdev_irc] RustでOSを開発する人のために
 - [#rust-webdev][webdev_irc] RustでWeb開発をする人のために
 - [#servo][servo_irc] Rustで書かれたブラウザエンジンServoの議論をするために
@@ -102,7 +101,6 @@ Rust自体の開発についてリアルタイムで議論するための場で�
 [lang_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
 [libs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
 [networking_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[offtopic_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
 [osdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
 [ru_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
 [rust_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust

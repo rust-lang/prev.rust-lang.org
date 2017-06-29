@@ -94,7 +94,6 @@ Służy także do zadawania pytań o sposoby zaangażowania się w rozwój Rusta
 - [#rust-crypto][crypto_irc] służy do dyskusji o kryptografii w Ruście
 - [#rust-gamedev][gamedev_irc] jest dla ludzi zajmujących się tworzeniem gier w Ruście
 - [#rust-networking][networking_irc] jest dla ludzi zajmujący się sieciami komputerowymi w Ruście
-- [#rust-offtopic][offtopic_irc] służy do pogaduszek dla użytkowników Rusta
 - [#rust-osdev][osdev_irc] jest dla programistów systemowych piszących w Ruście
 - [#rust-webdev][webdev_irc] jest dla osób zajmujący się tworzeniem stron internetowych w Ruście
 - [#servo][servo_irc] jest dla dyskusji o Servo, silniku przeglądarki napisanym w Ruście
@@ -114,7 +113,6 @@ Służy także do zadawania pytań o sposoby zaangażowania się w rozwój Rusta
 [lang_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
 [libs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
 [networking_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[offtopic_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
 [osdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
 [ru_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
 [rust_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust

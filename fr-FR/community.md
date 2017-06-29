@@ -74,7 +74,6 @@ Les développeurs de Rust échangent sur [#rust-internals][internals_irc]. Ce ca
 - [#rust-crypto][crypto_irc] où l'on discute de cryptographie et de Rust
 - [#rust-gamedev][gamedev_irc] où l'on discute de développement de jeux vidéo utilisant Rust
 - [#rust-networking][networking_irc] pour les personnes qui développent des outils réseaux avec Rust
-- [#rust-offtopic][offtopic_irc] pour bavarder entre Rustacéens
 - [#rust-osdev][osdev_irc] où l'on discute du développement de systèmes d'exploitation avec Rust
 - [#rust-webdev][webdev_irc] pour les personnes qui font du développement web avec Rust
 - [#servo][servo_irc] pour les discussions sur Servo, le moteur de rendu écrit en Rust
@@ -94,7 +93,6 @@ Les développeurs de Rust échangent sur [#rust-internals][internals_irc]. Ce ca
 [lang_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
 [libs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
 [networking_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[offtopic_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
 [osdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
 [ru_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
 [rust_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
