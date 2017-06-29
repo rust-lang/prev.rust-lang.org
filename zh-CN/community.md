@@ -77,7 +77,6 @@ Rust 开发者的协调位于 [#rust-internals][internals_irc]。此频道中的
 - [#rust-embedded][embedded_irc] 有关使用 Rust 制作嵌入式软件
 - [#rust-gamedev][gamedev_irc] 有关使用 Rust 开发游戏
 - [#rust-networking][networking_irc] 有关使用 Rust 进行计算机网络相关开发
-- [#rust-offtopic][offtopic_irc] 是供人们在 Rustaceans 上天南海北地闲聊
 - [#rust-osdev][osdev_irc] 有关使用 Rust 开发操作系统
 - [#rust-webdev][webdev_irc] 有关使用 Rust 做 Web 开发
 - [#servo][servo_irc] 用于讨论 Servo，它是使用 Rust 编写的一个浏览器引擎
@@ -99,7 +98,6 @@ Rust 开发者的协调位于 [#rust-internals][internals_irc]。此频道中的
 [lang_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
 [libs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
 [networking_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[offtopic_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
 [osdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
 [ru_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
 [rust_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust

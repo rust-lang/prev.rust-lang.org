@@ -94,7 +94,6 @@ Gli sviluppatori di Rust si organizzano su [#rust-internals][internals_irc]. Ded
 - [#rust-crypto][crypto_irc] per discutere della crittografia in Rust
 - [#rust-gamedev][gamedev_irc] per coloro che sviluppano videogiochi in Rust
 - [#rust-networking][networking_irc] per coloro che sviluppano reti di computer con Rust
-- [#rust-offtopic][offtopic_irc] per parlare di cose non correlate a Rust tra Rustacchiani
 - [#rust-osdev][osdev_irc] per lo sviluppo di sistemi operativi in Rust
 - [#rust-webdev][webdev_irc] per coloro che sviluppano applicazioni e server web in Rust
 - [#servo][servo_irc] il canale di Servo, il motore di navigazione scritto in Rust
@@ -114,7 +113,6 @@ Gli sviluppatori di Rust si organizzano su [#rust-internals][internals_irc]. Ded
 [lang_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
 [libs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
 [networking_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[offtopic_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
 [osdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
 [ru_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
 [rust_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust

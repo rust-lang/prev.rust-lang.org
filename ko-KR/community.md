@@ -83,7 +83,6 @@ Rust에 기여하는 데 대한 질문을 하는 데도 쓰입니다.
 - [#rust-embedded][embedded_irc]는 Rust로 임베디드 개발을 하는 사람들이 모입니다.
 - [#rust-gamedev][gamedev_irc]에는 Rust로 게임 개발을 하는 사람들이 모입니다.
 - [#rust-networking][networking_irc]에는 Rust로 컴퓨터 네트워킹을 하는 사람들이 모입니다.
-- [#rust-offtopic][offtopic_irc]는 Rust 커뮤니티가 온갖 잡담을 하는 장소입니다.
 - [#rust-osdev][osdev_irc]에는 Rust로 운영체제 개발을 하는 사람들이 모입니다.
 - [#rust-webdev][webdev_irc]에는 Rust로 웹 개발을 하는 사람들이 모입니다.
 - [#servo][servo_irc]는 Rust로 작성된 브라우저 엔진인 Servo에 대해 다룹니다.
@@ -104,7 +103,6 @@ Rust에 기여하는 데 대한 질문을 하는 데도 쓰입니다.
 [lang_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
 [libs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
 [networking_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[offtopic_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
 [osdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
 [ru_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
 [rust_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust

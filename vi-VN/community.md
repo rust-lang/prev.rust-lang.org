@@ -86,7 +86,6 @@ nếu bạn đủ tự tin gia nhập core team và muốn vượt lên chính m
 - [#rust-crypto][crypto_irc] nơi thảo luận về mã hoá ở Rust
 - [#rust-gamedev][gamedev_irc] ai yêu thích game thì vào đây
 - [#rust-networking][networking_irc] lĩnh vực mạng mẽo vào đây
-- [#rust-offtopic][offtopic_irc] chuyện trò linh tinh
 - [#rust-osdev][osdev_irc] phát triển OS trên bằng Rust
 - [#rust-webdev][webdev_irc] Phát triển web với Rust
 - [#servo][servo_irc] thảo luận về Servo -  trình duyệt được viết bằng Rust
@@ -106,7 +105,6 @@ nếu bạn đủ tự tin gia nhập core team và muốn vượt lên chính m
 [lang_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
 [libs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
 [networking_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[offtopic_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
 [osdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
 [ru_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
 [rust_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
