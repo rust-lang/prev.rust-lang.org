@@ -150,7 +150,9 @@ Budapest.
 
 [Rust Lang Comunidad Mexico](https://www.meetup.com/rustlangmx/), Guadalajara.
 
-[Rust MX](https://www.meetup.com/Rust-MX/), Mexico city.
+[Rust MX](https://www.meetup.com/Rust-MX/), Mexico City.
+
+[Xalapa Rust](https://xalaparust.github.io/), Xalapa.
 
 ## Netherlands
 
