@@ -79,13 +79,6 @@
       city: Zagreb
       url: https://www.meetup.com/lambdazagreb/
 
-- country: Colombia
-  meetups:
-
-    - name: Rust Colombia
-      city: Bogotá
-      url: https://www.meetup.com/rust-colombia/
-
 - country: Czech Republic
   meetups:
 
@@ -355,10 +348,6 @@
 
 - country: Sweden
   meetups:
-
-    - name: Rust Skåne
-      city: Lund
-      url: https://www.meetup.com/rust-skane/
 
     - name: Rust Sthlm
       city: Stockholm
