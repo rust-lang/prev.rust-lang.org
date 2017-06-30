@@ -1,0 +1,23 @@
+{% for item in site.data.usergroups %}
+{% assign offset = forloop.index | minus:1 %}
+<h2 id="{{item.country | slugify }}">{{item.country}}</h2>
+
+{% if item.states %}
+  {% for hash in item.states %}
+  {% assign state = hash | first | first %}
+  {% assign statecode = hash | first | last %}
+  <h3>{{state}}</h3>
+
+  {% for ug in item.meetups %}
+  {% if ug.state != statecode %}
+  {% continue %}
+  {% endif %}
+  <p><a href="{{ug.url}}">{{ug.name}}</a>, {{ug.city}}, {{statecode}}.</p>
+  {% endfor %}
+  {% endfor %}
+{% else %}
+  {% for ug in item.meetups %}
+  <p><a href="{{ug.url}}">{{ug.name}}</a>, {{ug.city}}.</p>
+  {% endfor %}
+{% endif %}
+{% endfor %}
