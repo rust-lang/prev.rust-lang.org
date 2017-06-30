@@ -248,6 +248,10 @@
       city: Mexico city
       url: https://www.meetup.com/Rust-MX/
 
+    - name: Xalapa Rust
+      city: Xalapa
+      url: https://xalaparust.github.io/
+
 - country: Netherlands
   meetups:
 
