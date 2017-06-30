@@ -492,7 +492,7 @@
     - name: Rust Boston
       city: Boston
       state: MA
-      url: https://www.meetup.com/Boston-Rust-Meetup-25317522aNpHwZdw/
+      url: https://www.meetup.com/BostonRust/
 
     - name: Rust Detroit
       city: Detroit
