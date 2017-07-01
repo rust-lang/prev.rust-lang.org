@@ -90,7 +90,6 @@ title: Сообщество Rust &middot; Язык Программирован�
 - [#rust-crypto][crypto_irc] обсуждение криптографии в Rust
 - [#rust-gamedev][gamedev_irc] для людей, занимающихся разработкой игр на Rust
 - [#rust-networking][networking_irc] для тех, кто занимается сетевой разработкой на Rust
-- [#rust-offtopic][offtopic_irc] общая беседа для пользователей Rust
 - [#rust-osdev][osdev_irc] для людей, занимающихся разработкой ОС на Rust
 - [#rust-webdev][webdev_irc] для людей, занимающихся веб-разработкой на Rust
 - [#servo][servo_irc] обсуждение Servo, браузерного движка, написанного на Rust
@@ -110,7 +109,6 @@ title: Сообщество Rust &middot; Язык Программирован�
 [lang_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
 [libs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
 [networking_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[offtopic_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
 [osdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
 [ru_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
 [rust_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust

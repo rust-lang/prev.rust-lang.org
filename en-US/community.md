@@ -95,7 +95,6 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#rust-embedded][embedded_irc] is for people doing embedded software in Rust
 - [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
 - [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
-- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
 - [#rust-osdev][osdev_irc] is for people doing OS development in Rust
 - [#rust-webdev][webdev_irc] is for people doing web development in Rust
 - [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
@@ -117,7 +116,6 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [lang_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
 [libs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
 [networking_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[offtopic_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
 [osdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
 [ru_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
 [rust_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust

@@ -180,7 +180,7 @@ profits benefit the Rust project.
 ## 帮助我们
 
 作为 Rust 社区的成员，请留意用途成疑的 
-Rust 标志和“Rust”字样。您可以将潜在的滥用报告到
+Rust 标志和「Rust」字样。您可以将潜在的滥用报告到
 [trademark@rust-lang.org](mailto:trademark@rust-lang.org)。我们将评估每个事例并采取适当的行动。
 
 请不要接触被投诉的商标使用人。这应该留给 Mozilla 及其代表处理。

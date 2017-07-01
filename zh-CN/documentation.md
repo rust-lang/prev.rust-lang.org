@@ -19,7 +19,7 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 
 [学习 Rust][rust-learning]：由社区维护、收集的学习 Rust 资料合集。
 
-[常见问题][faq]
+[常见问题解答][faq]
 
 [book]: https://kaisery.gitbooks.io/rust-book-chinese/content/
 [rbe]: https://rustwiki.org/rust-by-example/

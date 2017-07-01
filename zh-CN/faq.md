@@ -1,9 +1,9 @@
 ---
 layout: zh-CN/faq
-title: 常被问到的问题 &middot; Rust 程序设计语言
+title: 常见问题解答 &middot; Rust 程序设计语言
 ---
 
-# 常被问到的问题
+# 常见问题解答
 
 <p class="faq-intro">
 此页面回答了有关 Rust 编程语言的常见问题。它不是这个语言的完整指南，也不是教学该语言的工具。这是 Rust 社区常遇到的人们重复提问的回答，及澄清了 Rust 某些设计决策幕后的理由。
@@ -33,7 +33,7 @@ title: 常被问到的问题 &middot; Rust 程序设计语言
             <li><a href="#debugging">调试和工具</a></li>
             <li><a href="#low-level">底层</a></li>
             <li><a href="#cross-platform">跨平台</a></li>
-            <li><a href="#modules-and-crates">模块和包装箱</a></li>
+            <li><a href="#modules-and-crates">模块和包</a></li>
             <li><a href="#libraries">库</a></li>
             <li><a href="#design-patterns">设计模式</a></li>
             <li><a href="#other-languages">其他语言</a></li>
@@ -64,11 +64,11 @@ Rust 作为一种备选方案，可以提供高效的代码和舒适的抽象级
 这个项目由 Mozilla 控制？
 </a></h3>
 
-不是。Rust 始于 2006 年 Graydon Hoare 的兼职项目，并持续了三年。Mozilla 在语言成熟到足以运行基本测试并展示其核心概念时于 2009 年开始参与。虽然它由 Mozilla 资助，但 Rust 是由来自世界各地的多样化的发烧友开发的。[Rust 团队](https://www.rust-lang.org/team.html) 由 Mozilla 和非 Mozilla 成员组成，`rustc`（Rust 的编译器）至今也有超过[一千名独立贡献者](https://github.com/rust-lang/rust/)。
+不是。Rust 始于 2006 年 Graydon Hoare 的兼职项目，并持续了三年。Mozilla 在语言成熟到足以运行基本测试并展示其核心概念时于 2009 年开始参与。虽然它由 Mozilla 资助，但 Rust 是由来自世界各地的多样化的发烧友开发的。[Rust 团队](https://www.rust-lang.org/team.html)由 Mozilla 和非 Mozilla 成员组成，`rustc`（Rust 的编译器）至今也有超过[一千名独立贡献者](https://github.com/rust-lang/rust/)。
 
 就[项目治理](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)而言，
 Rust 由一个从全局角度出发，为项目设定愿景和优先事项的核心团队管理。
-我们还有小组指导和促进特定兴趣领域的发展，包括核心语言、编译器、Rust 库、Rust 工具和官方 Rust 社区的管理。这些领域中的设计都先进地经过一个[RFC 流程](https://github.com/rust-lang/rfcs)。对于不需要RFC的更改，决定是通过 [`rustc` 代码库](https://github.com/rust-lang/rust)上的拉取请求决定。
+我们还有小组指导和促进特定兴趣领域的发展，包括核心语言、编译器、Rust 库、Rust 工具和官方 Rust 社区的管理。这些领域中的设计都先进地经过一个 [RFC 流程](https://github.com/rust-lang/rfcs)。对于不需要 RFC 的更改，决定是通过 [`rustc` 代码库](https://github.com/rust-lang/rust)上的拉取请求决定。
 
 <h3><a href="#what-are-some-non-goals" name="what-are-some-non-goals">
 哪些不是 Rust 的目标？
@@ -77,20 +77,20 @@ Rust 由一个从全局角度出发，为项目设定愿景和优先事项的核
 1. 我们不使用任何特别尖端的技术。旧的、成熟的技术更好。
 2. 我们不会夸奖其他目标的表现力、极简主义或优雅。这些是可取的，但不是主要目标。
 3. 我们不打算覆盖 C++ 或任何其他语言的完整功能集。Rust 应提供较常使用功能。
-4. 我们不打算一切都是100%静态，100%安全，100%反思或任何其他意义上的太教条。存在权衡。
-5. 我们不打算使 Rust 能在“每个可能的平台”上运行。它必须没有不必要的妥协，最终适用于广泛使用的硬件和软件平台。
+4. 我们不打算做到 100% 静态， 100% 安全， 100% 反射或任何其他意义上的教条主义。存在权衡。
+5. 我们不打算使 Rust 能在「每个可能的平台」上运行。它必须没有不必要的妥协，最终适用于广泛使用的硬件和软件平台。
 
 <h3><a href="#how-does-mozilla-use-rust" name="how-does-mozilla-use-rust">
 Mozilla 的哪些项目使用 Rust？
 </a></h3>
 
-主要项目是 [Servo](https://github.com/servo/servo)，它是 Mozilla 正在雕琢的一个实验性的浏览器引擎。Mozilla 还在努力[整合 Rust 组件](https://bugzilla.mozilla.org/show_bug.cgi?id=1135640) 到 Firefox。
+主要项目是 [Servo](https://github.com/servo/servo)，它是 Mozilla 正在雕琢的一个实验性的浏览器引擎。Mozilla 还在努力[整合 Rust 组件](https://bugzilla.mozilla.org/show_bug.cgi?id=1135640)到 Firefox。
 
 <h3><a href="#what-examples-are-there-of-large-rust-projects" name="what-examples-are-there-of-large-rust-projects">
 有哪些大型的 Rust 项目？
 </a></h3>
 
-目前两个最大的 Rust 开源项目是 [Servo](https://github.com/servo/servo) 和 [Rust 编译器](https://github.com/rust-lang/rust) 本身。
+目前两个最大的 Rust 开源项目是 [Servo](https://github.com/servo/servo) 和 [Rust 编译器](https://github.com/rust-lang/rust)本身。
 
 <h3><a href="#who-else-is-using-rust" name="who-else-is-using-rust">
 还有谁在使用 Rust？
@@ -108,24 +108,24 @@ TODO: Write this answer.
 怎样轻松地尝试 Rust？
 </a></h3>
 
-[playpen](https://play.rust-lang.org/) 是尝试 Rust 的最简单方法，它是一个可编写和运行 Rust 代码的在线应用。如果您想在您的系统上尝试 Rust，[安装](https://www.rust-lang.org/install.html)并尝试[猜谜游戏](https://doc.rust-lang.org/stable/book/guessing-game.html)教程。
+[playpen](https://play.rust-lang.org/) 是尝试 Rust 的最简单方法，它是一个可编写和运行 Rust 代码的在线应用。如果想在你的系统上尝试 Rust，[安装](https://www.rust-lang.org/install.html)并尝试[猜谜游戏](https://doc.rust-lang.org/stable/book/guessing-game.html)教程。
 
 <h3><a href="#how-do-i-get-help-with-rust-issues" name="how-do-i-get-help-with-rust-issues">
 如何就 Rust 问题取得帮助？
 </a></h3>
 
-那有很多种方式。您可以尝试：
+那有很多种方式。你可以尝试：
 
 - 在 [users.rust-lang.org](https://users.rust-lang.org/) 发帖，这是官方的 Rust 用户论坛
-- 在官方的 [Rust IRC 频道](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) 询问 (irc.mozilla.org 上的 #rust)
-- 在 [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) 询问，加上 "rust" 标签
+- 在官方的 [Rust IRC 频道](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)提问（irc.mozilla.org 上的 #rust）
+- 在 [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) 提问，加上「rust」tag
 - 在 [/r/rust](https://www.reddit.com/r/rust) 发帖，这是非官方的 Rust 板块
 
 <h3><a href="#why-has-rust-changed-so-much" name="why-has-rust-changed-so-much">
 为什么 Rust 随时间推移在大幅变化？
 </a></h3>
 
-Rust 起步的目标是创建一个安全且合用的系统编程语言。为了追求这个目标，它探索了很多想法，其中一些（生命周期、traits）被保留，而其他则被丢弃（类型体系系统、绿色线程）。 Also, in the run up to 1.0 a lot of the standard library was rewritten as early designs were updated to best use Rust's features and provide quality, consistent cross-platform APIs. 现在的 Rust 已达到了 1.0，语言保证为“稳定”（stable）；虽然它可能继续演变，但对于目前的 Rust 来说，代码在未来的发行版本上能继续工作。
+Rust 起步的目标是创建一个安全且合用的系统编程语言。为了追求这个目标，它探索了很多想法，其中一些（生命周期、trait）被保留，而其他则被丢弃（类型体系系统、绿色线程）。此外，由于早期的设计被升级以最好地使用 Rust 的特性，并提供高质量，一致的跨平台 API，在 2.0 之前，许多标准库被重写。现在的 Rust 已达到了 1.0，语言保证为「稳定」（stable）；虽然它可能继续演变，但运行于目前 Rust 上的代码，在未来的发行版本上应该能继续工作。
 
 <h3><a href="#how-does-rust-language-versioning-work" name="how-does-rust-language-versioning-work">
 Rust 语言的版本控制是怎样的？
@@ -133,24 +133,24 @@ Rust 语言的版本控制是怎样的？
 
 Rust 的语言版本遵循 [SemVer](http://semver.org/)，如果更改修复了编译器错误、补丁安全漏洞，或更改调度或类型推断需要附加注明，则稳定 API 的向后不兼容更改允许在次要版本中出现。次要版本更改的更详细指南可以在[语言](https://github.com/rust-lang/rfcs/blob/master/text/1122-language-semver.md)和[标准库](https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md)的已批准 RFC 中找到。
 
-Rust 维护三个“发行频道”：稳定版（stable）、测试版（beta）和每夜版（nightly）。稳定版和测试版每六周更新一次，而在那时的每夜版会变为新的测试版，测试版变为新的稳定版。标记为不稳定或者隐藏在特性门控后的语言和标准库特性只能在每夜版上使用，新特性定位为不稳定，一旦被核心团队和相关的子团队批准的话是“无门控的”，这种方法允许实验性变更，并同时为稳定频道提供强有力的向后兼容保证。
+Rust 维护三个「发行频道」：稳定版（stable）、测试版（beta）和开发版（nightly）。稳定版和测试版每六周更新一次，而在那时的开发版会变为新的测试版，测试版变为新的稳定版。标记为不稳定或者隐藏在特性门控后的语言和标准库特性只能在开发版上使用，新特性最初会被标记为不稳定，一旦被核心团队和相关的子团队批准的话就变成「通过门控的（ungated）」，这种方法允许实验性变更，并同时为稳定频道提供强有力的向后兼容保证。
 
-就相关的其他详细信息，请阅读 Rust 博客["Stability as a Deliverable."](http://blog.rust-lang.org/2014/10/30/Stability.html)
+就相关的其他详细信息，请阅读 Rust 博客 [「Stability as a Deliverable」](http://blog.rust-lang.org/2014/10/30/Stability.html)。
 
 <h3><a href="#can-i-use-unstable-features-on-the-beta-or-stable-channel" name="can-i-use-unstable-features-on-the-beta-or-stable-channel">
-我可以在 Beta 或稳定频道上使用不稳定的功能吗？
+我可以在 beta 或 stable 频道上使用不稳定的功能吗？
 </a></h3>
 
-并不能。Rust努力保证测试版和每夜版的特性稳定性。当某些特性不稳定时，意味着我们还不能提供这种保证，不希望开发者依赖它。这给了我们在每夜版上适时尝试改变的机会，但是继续维护开发者寻求的稳定性。
+并不能。Rust 努力保证测试版和稳定版的特性稳定性。当某些特性不稳定时，意味着我们还不能提供这种保证，不希望开发者依赖它。这给了我们在开发版上适时尝试改变的机会，同时继续维护开发者寻求的稳定性。
 
-测试和稳定版每六周更新一次是固定的，偶然有测试版的修正被及时接受，你不想使用每夜版而等待希望的某个特性的话，你可以通过检查 [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable)标记跟踪尚存的问题。
+测试和稳定版每六周更新一次是固定的，偶然有测试版的修正被及时接受，你不想使用开发版而等待希望的某个特性的话，你可以通过在 issue tracker 上查看 [`B-unstable`](https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable) tag 跟踪尚存的问题。
 
 
 <h3><a href="#what-are-feature-gates" name="what-are-feature-gates">
-什么是“特性门控”（Feature Gates）？
+什么是「特性门控」（Feature Gates）？
 </a></h3>
 
-“特性门控”（Feature Gates）是 Rust 用来稳定编译器、语言和标准库特性的机制。 A feature that is "gated" is accessible only on the nightly release channel, and then only when it has been explicitly enabled through `#[feature]` attributes or the `-Z unstable-options` command line argument. When a feature is stabilized it becomes available on the stable release channel, and does not need to be explicitly enabled. At that point the feature is considered "ungated". Feature gates allow developers to test experimental features while they are under development, before they are available in the stable language.
+「特性门控」（Feature Gates）是 Rust 用来稳定编译器、语言和标准库特性的机制。一个受「门控」的特性只能在 nightly 发布渠道才能使用，且必须显式指定 `#[feature]` 属性或者命令行参数 `-Z unstable-options`。当一个特性稳定了，它才能在稳定版上可用，不需要显式启用。此时，这个特性被认为是通过门控的（ungated）。特性门控允许开发者在稳定版提供之前，在开发中测试试验性的功能。
 
 <h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
 为什么采用 MIT/ASL2 双许可证？
@@ -162,7 +162,7 @@ Apache 许可证包含对专利侵权的重要保护，但它与 GPL 第二版�
 为什么是 BSD 风格的许可证，而不是 MPL 或三个许可证？
 </a></h3>
 
-这一部分是由于原始开发者（Graydon）的偏好，另一部分原因在于，语言倾向于拥有更广泛的受众群体，以及将其更多样的嵌入和提供到终端，例如网页浏览器。。我们希望呼吁尽可能多地潜在贡献者。
+这一部分是由于原始开发者（Graydon）的偏好，另一部分原因在于，语言倾向于拥有更广泛的受众群体，以及将其更多样的嵌入和提供到终端，例如网页浏览器。我们希望呼吁尽可能多地潜在贡献者。
 
 <h2 id="performance">性能</h2>
 
@@ -180,22 +180,19 @@ Rust 有多快？
 Rust 会垃圾收集吗？
 </a></h3>
 
-不。Rust 的重要创新之一就是保证内存安全（无 segfaults），*无需*垃圾收集。
+不会。Rust 的重要创新之一就是保证内存安全（无段错误 segfaults），*无需*垃圾收集。
 
 通过避免垃圾收集（GC），Rust 可以提供许多益处：可预测的资源清理，降低内存管理开销，基本上没有运行时系统。这些特征使 Rust 很容易嵌入到任意上下文，并使其更容易[集成 Rust 代码到有 GC 的语言](http://calculist.org/blog/2015/12/23/neon-node-rust/)。
 
-Rust 通过其所有权和借用（borrowing）系统避免了垃圾收集的需求，而同一系统也有助于解决许多其他问题，包括
-[一般的资源管理](http://blog.skylight.io/rust-means-never-having-to-close-a-socket/)和[并发](http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html)。
+Rust 通过其所有权和借用（borrowing）系统避免了垃圾收集的需求，而同一系统也有助于解决许多其他问题，包括[一般的资源管理](http://blog.skylight.io/rust-means-never-having-to-close-a-socket/)和[并发](http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html)。
 
-如果单一的所有权不够，Rust 程序依赖标准的引用计数智能指针类型，[`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html)，及其线程安全版的[`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html)，而不是 GC。
+如果单一的所有权不够，Rust 程序依赖标准的引用计数智能指针类型，[`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html)，及其线程安全版的 [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html)，而不是 GC。
 
 不过，我们也在调查*可选*的垃圾收集作为一项未来扩展。
 其目标旨在顺利与有垃圾收集的运行时整合，
-例如由 
+例如由
 [Spidermonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
-和 [V8](https://developers.google.com/v8/?hl=en) JavaScript 引擎所提供的那些。
-最后，有人已调研了无编译器支持实现的
-[纯 Rust 垃圾收集器](https://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/)
+和 [V8](https://developers.google.com/v8/?hl=en) JavaScript 引擎所提供的那些。 最后，有人已调研了无编译器支持实现的[纯 Rust 垃圾收集器](https://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/)
 。
 
 <h3><a href="#why-is-my-program-slow" name="why-is-my-program-slow">
@@ -204,81 +201,81 @@ Rust 通过其所有权和借用（borrowing）系统避免了垃圾收集的需
 
 如非要求，Rust 编译器不会优化编译，[因为优化会编译速度，且在开发过程中通常是不合需要](https://users.rust-lang.org/t/why-does-cargo-build-not-optimise-by-default/4150/3)。
 
-如果您使用 `cargo` 编译，请使用 `--release` 标志。如果您直接使用 `rustc`，使用 `-O` 标志。两者都将优化编译。
+如果你使用 `cargo` 编译，请使用 `--release` 标志。如果你直接使用 `rustc`，使用 `-O` 标志。两者都将优化编译。
 
 <h3><a href="#why-is-rustc-slow" name="why-is-rustc-slow">
 Rust 编译似乎很慢。这是为什么？
 </a></h3>
 
-代码转换和优化。Rust提供了高级抽象，它可以编译成高效的机器代码，而这些翻译需要时间来运行，特别是优化。
+代码转换和优化。Rust 提供了高级抽象，它可以编译成高效的机器代码，而这些翻译需要时间来运行，特别是优化。
 
-但 Rust 的编译时间并不像看起来那么糟糕，并有理由相信会有所改善。当比较 C++ 与 Rust 的类似大小的项目时，整个项目的编译时间一般被认为是可比的。Rust 编译缓慢的一般认识很大程度上是由于 C++ 与 Rust 的*编译模型*的差异：C++ 的编译单元是文件，而 Rust 则是包装箱，它由很多文件组成。因此，在开发过程中，修改单个 C++ 文件导致的重新编译比 Rust 更少。正在进行的重大工作将重构编译器来引入[增量编译](https://github.com/rust-lang/rfcs/blob/master/text/1298-incremental-compilation.md)，这将使 Rust 的编译时间变得比 C++ 的模型更有优势。
+但 Rust 的编译时间并不像看起来那么糟糕，并有理由相信会有所改善。当比较 C++ 与 Rust 的类似大小的项目时，整个项目的编译时间一般被认为是可比的。Rust 编译缓慢的一般认识很大程度上是由于 C++ 与 Rust 的*编译模型*的差异：C++ 的编译单元是文件，而 Rust 则是包（crate），它由很多文件组成。因此，在开发过程中，修改单个 C++ 文件导致的重新编译比 Rust 更少。正在进行的重大工作将重构编译器来引入[增量编译](https://github.com/rust-lang/rfcs/blob/master/text/1298-incremental-compilation.md)，这将使 Rust 的编译时间变得比 C++ 的模型更有优势。
 
 除了编译模型外，Rust 的语言设计和编译器实现的其他几个方面也影响了编译时性能。
 
 首先，Rust 有中等复杂类型的系统，并且必须花费不可忽略的编译时间来强制在运行时使 Rust 安全的约束。
 
-其次，Rust 编译器遭受着长期的技术债务，特别是生成质量差的LLVM IR，而LLVM必须花时间“修复”。这有希望在未来[基于MIR](https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md)优化和转换传递来减轻 Rust 编译器在 LLVM 上的负担。
+其次，Rust 编译器遭受着长期的技术债务，特别是生成质量差的 LLVM IR，而 LLVM 必须花时间「修复」。这有希望在未来[基于 MIR](https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md) 优化和转换传递来减轻 Rust 编译器在 LLVM 上的负担。
 
 第三，Rust 使用的 LLVM 代码生成是一把双刃剑：虽然它能够使 Rust 具有世界一流的运行时性能，但 LLVM 是一个不重视编译时性能的大型框架，特别是在使用较差输入质量时。
 
-最后，虽然 Rust 的单性泛型（ala C ++）的首选策略产生快速代码，但它需要比其他翻译策略产生更多的代码。Rust 程序员可以使用 trait 对象通过动态调度来抵消这个代码膨胀。
+最后，虽然 Rust 的单态（monomorphising）泛型（C ++  风格                                                          ）的首选策略产生快速代码，但它需要比其他翻译策略产生更多的代码。Rust 程序员可以使用 trait 对象通过动态调度来抵消这个代码膨胀。
 
 <h3><a href="#why-are-rusts-hashmaps-slow" name="why-are-rusts-hashmaps-slow">
 为什么 Rust 的 <code>HashMap</code> 很慢？
 </a></h3>
 
-默认情况下，Rust 的 [`HashMap`][HashMap] 使用 [SipHash](https://131002.net/siphash/) 哈希算法，which is designed to prevent [hash table collision attacks](http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited) while providing [reasonable performance on a variety of workloads](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6).
+默认情况下，Rust 的 [`HashMap`][HashMap] 使用 [SipHash](https://131002.net/siphash/) 哈希算法，其旨在防止[哈希表碰撞攻击](http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited)，同时[在各种工作负载上提供合理的性能](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6)。
 
-While SipHash [demonstrates competitive performance](http://cglab.ca/%7Eabeinges/blah/hash-rs/) in many cases, one case where it is notably slower than other hashing algorithms is with short keys, such as integers. This is why Rust programmers often observe slow performance with [`HashMap`][HashMap]. The [FNV hasher](https://crates.io/crates/fnv) is frequently recommended for these cases, but be aware that it does not have the same collision-resistance properties as SipHash.
+虽然 SipHash 在许多情况下[表现出竞争优势](http://cglab.ca/%7Eabeinges/blah/hash-rs/)，但其中一个比其它哈希算法要慢的情况是使用短键，例如整数。这就是为什么 Rust 程序员经常观察到 [`HashMap`][HashMap] 表现不佳的原因。在这些情况下，经常推荐 [FNV 哈希](https://crates.io/crates/fnv)，但请注意，它不具备与 SipHash 相同的防碰撞性。
 
 <h3><a href="#why-is-there-no-integrated-benchmarking" name="why-is-there-no-integrated-benchmarking">
 为什么没有集成的基准测试基础设施？
 </a></h3>
 
-有，但它只在夜间发行频道上可用。我们最终计划为集成的基准建立一个可插拔系统，但同时，目前的系统[被认为是不稳定的](https://github.com/rust-lang/rust/issues/29553)。
+有，但它只在 nightly 发行频道上可用。我们最终计划为集成的基准建立一个可插拔系统，但同时，目前的系统[被认为是不稳定的](https://github.com/rust-lang/rust/issues/29553)。
 
 <h3><a href="#does-rust-do-tail-call-optimization" name="does-rust-do-tail-call-optimization">
-Rust 是否做尾呼优化？
+Rust 是否有做尾部调用优化？
 </a></h3>
 
-Not generally, no. Tail-call optimization may be done in [limited circumstances](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization), but is [not guaranteed](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html). As the feature has always been desired, Rust has a keyword (`become`) reserved, though it is not clear yet whether it is technically possible, nor whether it will be implemented. There was a [proposed extension](https://github.com/rust-lang/rfcs/pull/81) that would allow tail-call elimination in certain contexts, but it is currently postponed.
+一般来说，没有。尾部调用优化可能在[有限的情况](http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization)下进行，但是[不能保证](https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html)。由于该功能总归是需要的， Rust 保留了一个关键字（`become`），尽管目前还不清楚它在技术上是否可行，以及它是否会被实现。有一个[提议的扩展](https://github.com/rust-lang/rfcs/pull/81)，将允许在某些情况下消除尾部调用，但目前被推迟了。
 
 <h3><a href="#does-rust-have-a-runtime" name="does-rust-have-a-runtime">
 Rust 有运行时吗？
 </a></h3>
 
-Not in the typical sense used by languages such as Java, but parts of the Rust standard library can be considered a "runtime", providing a heap, backtraces, unwinding, and stack guards. There is a [small amount of initialization code](https://github.com/rust-lang/rust/blob/33916307780495fe311fe9c080b330d266f35bfb/src/libstd/rt.rs#L43) that runs before the user's `main` function. The Rust standard library additionally links to the C standard library, which does similar [runtime initialization](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html). Rust code can be compiled without the standard library, in which case the runtime is roughly equivalent to C's.
+没有像 Java 语言这样典型意义上的运行时。但 Rust 标准库的一部分可以被认为是一个「运行时」，它提供了堆（heap），回溯（backtraces），展开（unwinding）和栈保护（stack guards）。在用户的 `main` 函数之前只运行[很少的初始化代码](https://github.com/rust-lang/rust/blob/33916307780495fe311fe9c080b330d266f35bfb/src/libstd/rt.rs#L43)。Rust 标准库还链接到 C 标准库，执行类似的[运行时初始化](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html)。 Rsut 代码可以在没有标准库的情况下编译，在这种情况下，运行时大概相当于 C。
 
 <h2 id="syntax">语法</h2>
 
 <h3><a href="#why-curly-braces" name="why-curly-braces">
-Why curly braces? Why can't Rust's syntax be like Haskell's or Python's?
+为什么用花括号？为什么 Rust 的语法不能像 Haskell 或者 Python 那样？
 </a></h3>
 
-Use of curly braces to denote blocks is a common design choice in a variety of programming languages, and Rust's consistency is useful for people already familiar with the style.
+使用花括号表示块是各种编程语言中常见的设计选择，Rust 与此一致，对于那些已经熟悉这种风格的人员来说很有用。
 
-Curly braces also allow for more flexible syntax for the programmer and a simpler parser in the compiler.
+对程序员和编译器中的更简单的解析器来说，花括号允许更加灵活的语法。
 
 <h3><a href="#why-brackets-around-blocks" name="why-brackets-around-blocks">
-I can leave out parentheses on <code>if</code> conditions, so why do I have to put brackets around single line blocks? Why is the C style not allowed?
+我可以在 <code>if</code> 条件中省略括号，那为什么我还必须在单行块上面加括号？为什么不允许 C 的风格？
 </a></h3>
 
-Whereas C requires mandatory parentheses for `if`-statement conditionals but leaves brackets optional, Rust makes the opposite choice for its `if`-expressions. This keeps the conditional clearly separate from the body and avoids the hazard of optional brackets, which can lead to easy-to-miss errors during refactoring, like Apple's [goto fail](https://gotofail.com/) bug.
+鉴于 C 强制要求 `if` 条件语句加括号，但花括号可选。 Rust 在 `if` 表达式中作出了相反的选择。这使得条件明确地与主体分离，并避免了可选花括号可能导致的在重构时易漏的错误，就像 Apple 的 [goto 故障](https://gotofail.com/) bug。
 
 <h3><a href="#why-no-literal-syntax-for-dictionaries" name="why-no-literal-syntax-for-dictionaries">
-Why is there no literal syntax for dictionaries?
+为什么字典类型没有字面语法？
 </a></h3>
 
-Rust's overall design preference is for limiting the size of the *language* while enabling powerful *libraries*. While Rust does provide initialization syntax for arrays and string literals, these are the only collection types built into the language. Other library-defined types, including the ubiquitous [`Vec`][Vec] collection type, use macros for initialization like the [`vec!`][VecMacro] macro.
+Rust 的整体设计偏好是限制*语言*的大小，同时支持强大的*库*。Rust 确实为数组和字符串字面值提供了初始化语法，这些是该语言中仅有的内建集合类型。其它由库定义的类型，包括无处不在的 [`Vec`][Vec] 集合类型，使用像 [`vec!`][VecMacro] 这样的宏来进行初始化。
 
-This design choice of using Rust's macro facilities to initialize collections will likely be extended generically to other collections in the future, enabling simple initialization of not only [`HashMap`][HashMap] and [`Vec`][Vec], but also other collection types such as [`BTreeMap`][BTreeMap]. In the meantime, if you want a more convenient syntax for initializing collections, you can [create your own macro](https://stackoverflow.com/questions/27582739/how-do-i-create-a-hashmap-literal) to provide it.
+这种使用 Rust 宏机制来初始化集合的设计选择，在将来很可能会被普遍地扩展到其它集合类型，不仅可以简化 [`HashMap`][HashMap] 和 [`Vec`][Vec] 的初始化，还可以用于其它类型如 [`BTreeMap`][BTreeMap]。同时，如果你想要一个更加方便的语法来初始化集合，你可以通过[创建你自己的宏](https://stackoverflow.com/questions/27582739/how-do-i-create-a-hashmap-literal)来提供。
 
 <h3><a href="#when-should-i-use-an-implicit-return" name="when-should-i-use-an-implicit-return">
-我什么时候应该使用隐式 return？
+我什么时候应该使用隐式返回？
 </a></h3>
 
-Rust is a very expression-oriented language, and "implicit returns" are part of that design. Constructs like `if`s, `match`es, and normal blocks are all expressions in Rust. For example, the following code checks if an [`i64`][i64] is odd, returning the result by simply yielding it as a value:
+Rust 是一个非常面向表达式的语言，「隐式返回」是设计的一部分。 像 `if`，`match` 的结构和正常的块，在 Rust 中都是表达式。例如，以下代码检查一个 [`i64`][i64] 是否是奇数，通过简单地将将其作为值来返回结果：
 
 ```rust
 fn is_odd(x: i64) -> bool {
@@ -286,7 +283,7 @@ fn is_odd(x: i64) -> bool {
 }
 ```
 
-Although it can be simplified even further like so:
+然而，它还可以更进一步简化为：
 
 ```rust
 fn is_odd(x: i64) -> bool {
@@ -294,31 +291,31 @@ fn is_odd(x: i64) -> bool {
 }
 ```
 
-In each example, the last line of the function is the return value of that function. It is important to note that if a function ends in a semicolon, its return type will be `()`, indicating no returned value. Implicit returns must omit the semicolon to work.
+在每个示例中，函数的最后一行是该函数的返回值。重要的是要注意，如果一个函数以分号结尾，它的返回类型将是 `()` ，表示没有返回值。隐式返回必须省略分号才能起作用。
 
-Explicit returns are only used if an implicit return is impossible because you are returning before the end of the function's body. While each of the above functions could have been written with a `return` keyword and semicolon, doing so would be unnecessarily verbose, and inconsistent with the conventions of Rust code.
+只有在隐式返回不可用的时候才使用显式返回，因为你在函数体结尾之前返回。虽然上述每个函数都可以写成 `return` 关键字加上分号，但这样做是不必要的冗余，而且与 Rust 的惯例不一致。
 
 <h3><a href="#why-arent-function-signatures-inferred" name="why-arent-function-signatures-inferred">
-为什么不推断函数签名？
+为什么函数签名不作推导？
 </a></h3>
 
-在 Rust 中，声明倾向于使用显式类型，而实际代码则推断其类型。这种设计有几个原因：
+在 Rust 中，声明倾向于使用显式类型，而实际代码则用类型推导。这种设计有几个原因：
 
-- Mandatory declaration signatures help enforce interface stability at both the module and crate level.
-- Signatures improve code comprehension for the programmer, eliminating the need for an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
-- Mechanically, it simplifies the inference algorithm, as inference only requires looking at one function at a time.
+- 强制性声明有助于在模块和包（crate）级别上实现接口的稳定性。
+- 签名便于提高程序员对代码的理解，消除 IDE 在整个包上运行类型推导算法来猜测一个函数参数类型的必要；它总是明确和就近的。
+- 实现上，它简化了类型推导算法，因为推导只需要一次查看一个函数。
 
 <h3><a href="#why-does-match-have-to-be-exhaustive" name="why-does-match-have-to-be-exhaustive">
-Why does <code>match</code> have to be exhaustive?
+为什么 <code>match</code> 必须是穷举的？
 </a></h3>
 
-To aid in refactoring and clarity.
+有助于重构和明确性。
 
-First, if every possibility is covered by the `match`, adding variants to the `enum` in the future will cause a compilation failure, rather than an error at runtime. This type of compiler assistance makes fearless refactoring possible in Rust.
+首先，如果 `match` 涵盖了所有的可能性，将来在 `enum` 中添加变量将导致编译失败，而不是运行时错误。这种类型的编译器辅助使得在 Rust 中大胆地重构成为可能。
 
-Second, exhaustive checking makes the semantics of the default case explicit: in general, the only safe way to have a non-exhaustive `match` would be to panic the thread if nothing is matched. Early versions of Rust did not require `match` cases to be exhaustive and it was found to be a great source of bugs.
+其次，穷举检查使得默认情况下的语义很明确：通常，在一个非穷举的 `match` 中如果没有匹配到任何项，唯一安全的做法是 panic 当前的线程。早期版本的 Rust 并不要求 `match` 项需要穷举，发现这是一个很大的 bug 的来源。
 
-It is easy to ignore all unspecified cases by using the `_` wildcard:
+使用通配符 `_` 可以很容易地忽略所有未指定的情况：
 
 ```rust
 match val.do_something() {
@@ -330,60 +327,57 @@ match val.do_something() {
 <h2 id="numerics">数字</h2>
 
 <h3><a href="#which-type-of-float-should-i-use" name="which-type-of-float-should-i-use">
-Which of <code>f32</code> and <code>f64</code> should I prefer for floating-point math?
+在浮点运算中我该用 <code>f32</code> 还是 <code>f64</code>？
 </a></h3>
 
-The choice of which to use is dependent on the purpose of the program.
+对于这两者的选择取决于程序的目的。
 
-If you are interested in the greatest degree of precision with your floating point numbers, then prefer [`f64`][f64]. If you are more interested in keeping the size of the value small or being maximally efficient, and are not concerned about the associated inaccuracy of having fewer bits per value, then [`f32`][f32] is better. Operations on [`f32`][f32] are usually faster, even on 64-bit hardware. As a common example, graphics programming typically uses [`f32`][f32] because it requires high performance, and 32-bit floats are sufficient for representing pixels on the screen.
+如果你对浮点数的最大精度感兴趣，那么更倾向于选择 [`f64`][f64]。如果你更注重于保持数值占用更小的空间，或者更高的效率，而不关心由于每个数值具有较少的位而失去一些精确性，则选择 [`f32`][f32] 会更好。在 [`f32`][f32] 上的操作通常更快，即使在 64 位的硬件上也是如此。作为一个常见的例子，图形编程通常使用 [`f32`][f32] 因为它需要更高的性能，而且 32 位浮点数足以表示屏幕上的像素。
 
-If in doubt, choose [`f64`][f64] for the greater precision.
+如果有疑问，请选择 [`f64`][f64] 以获得更高的精度。
 
 <h3><a href="#why-cant-i-compare-floats" name="why-cant-i-compare-floats">
-Why can't I compare floats or use them as <code>HashMap</code> or <code>BTreeMap</code> keys?
+为什么我不能比较浮点数，或者把它们作为 <code>HashMap</code> 或 <code>BTreeMap</code> 的键？
 </a></h3>
 
-Floats can be compared with the `==`, `!=`, `<`, `<=`, `>`, and `>=` operators, and with the `partial_cmp()` function. `==` and `!=` are part of the [`PartialEq`][PartialEq] trait, while `<`, `<=`, `>`, `>=`, and `partial_cmp()` are part of the [`PartialOrd`][PartialOrd] trait.
+浮点数可以用操作符 `==`，`!=`，`<`，`<=`，`>`，`>=`，以及函数 `partial_cmp()` 进行比较。`==` 和 `!=` 是 [`PartialEq`][PartialEq] trait 的一部分，而 `<`，`<=`，`>`，`>=`，以及 `partial_cmp()` 是 [`PartialOrd`][PartialOrd] trait 的一部分。
 
-Floats cannot be compared with the `cmp()` function, which is part of the [`Ord`][Ord] trait, as there is no total ordering for floats. Furthermore, there is no total equality relation for floats, and so they also do not implement the [`Eq`][Eq] trait.
+浮点数不能用 `cmp()` 函数进行比较，它是 [`Ord`][Ord] trait 的一部分，因为浮点数不是全序的。此外，浮点数也不是完全等价的，所以它们没有实现 [`Eq`][Eq] trait。
 
-There is no total ordering or equality on floats because the floating-point value [`NaN`](https://en.wikipedia.org/wiki/NaN) is not less than, greater than, or equal to any other floating-point value or itself.
+浮点数不是全序或等价的，因为浮点值 [`NaN`](https://en.wikipedia.org/wiki/NaN) 既不小于，也不大于，或者等于其它任何浮点数或者自身。
 
-Because floats do not implement [`Eq`][Eq] or [`Ord`][Ord], they may not be used in types whose trait bounds require those traits, such as [`BTreeMap`][BTreeMap] or [`HashMap`][HashMap]. This is important because these types *assume* their keys provide a total ordering or total equality relation, and will malfunction otherwise.
+因为浮点数没有实现 [`Eq`][Eq] 或 [`Ord`][Ord]，它们不能用于 trait 约束要求是这两种 trait 的地方，例如 [`BTreeMap`][BTreeMap] 或 [`HashMap`][HashMap]。这很重要，因为这些类型*假设*它们的键提供一个全序或完全等价的关系，否则将失败。
 
-There [is a crate](https://crates.io/crates/ordered-float) that wraps [`f32`][f32] and [`f64`][f64] to provide [`Ord`][Ord] and [`Eq`][Eq] implementations, which may be useful in certain cases.
+有一个[包](https://crates.io/crates/ordered-float)提供了对 [`f32`][f32] 和 [`f64`][f64] 的 [`Ord`][Ord] 和 [`Eq`][Eq] 的实现的封装，可能在某些情况下会有用。
 
 <h3><a href="#how-can-i-convert-between-numeric-types" name="how-can-i-convert-between-numeric-types">
 如何在数字类型间进行转换？
 </a></h3>
 
-There are two ways: the `as` keyword, which does simple casting for primitive types, and the [`Into`][Into] and [`From`][From] traits, which are implemented for a number of type conversions (and which you can implement for your own types). The [`Into`][Into] and [`From`][From] traits are only implemented in cases where conversions are lossless, so for example, `f64::from(0f32)` will compile while `f32::from(0f64)` will not. On the other hand, `as` will convert between any two primitive types, truncating values as necessary.
-
+有两种方法：一种是 `as` 关键字，它用于原生类型的简单转换，另一种是 [`Into`][Into] 和 [`From`][From] trait，用于实现多种类型的转换（也可以用于你自己定义的类型）。[`Into`][Into] 和 [`From`][From] trait 仅用于无损转换的情况，所以例如 `f64::from(0f32)` 可以成功编译而 `f32::from(0f64)` 则不行。另一方面，`as` 可以用于任意两种原生类型的转换，并根据需要进行截断。
 
 <h3><a href="#why-doesnt-rust-have-increment-and-decrement-operators" name="why-doesnt-rust-have-increment-and-decrement-operators">
-Why doesn't Rust have increment and decrement operators?
+为什么 Rust 没有递增或递减操作符？
 </a></h3>
 
-Preincrement and postincrement (and the decrement equivalents), while convenient, are also fairly complex. They require knowledge of evaluation order, and often lead to subtle bugs and undefined behavior in C and C++. `x = x + 1` or `x += 1` is only slightly longer, but unambiguous.
-
+先增和后增（以及相对应的减法）虽然方便，但也相当复杂。它们都需要求值顺序的知识，而且经常导致 C 和 C++ 中的细节错误和未定义的行为。 `x = x + 1` 或 `x += 1` 只是略长一点，但更加明确。
 <h2 id="strings">字符串</h2>
 
 <h3><a href="#how-to-convert-string-or-vec-to-slice" name="how-to-convert-string-or-vec-to-slice">
-How can I convert a <code>String</code> or <code>Vec&lt;T&gt;</code> to a slice (<code>&amp;str</code> and <code>&amp;[T]</code>)?
+如何将 <code>String</code> 或 <code>Vec&lt;T&gt;</code> 转换成切片（<code>&amp;str</code> 和 <code>&amp;[T]</code>）？
 </a></h3>
 
-Usually, you can pass a reference to a `String` or `Vec<T>` wherever a slice is expected.
-Using [Deref coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html), [`String`s][String] and [`Vec`s][Vec] will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
+通常，你可以在需要切片的地方传入 `String` 或 `Vec<T>`。使用[强制解引（Deref）](https://doc.rust-lang.org/stable/book/deref-coercions.html)，在用 `&` 或 `&mut` 传递引用时，[`String`][String] 和 [`Vec`][Vec] 会自动强制转换为对应的切片。
 
-Methods implemented on `&str` and `&[T]` can be accessed directly on `String` and `Vec<T>`. For example, `some_string.char_at(0)` will work even though `char_at` is a method on `&str` and `some_string` is a `String`.
+在 `&str` 和 `&[T]` 上实现的方法可以直接在 `String` 和 `Vec<T>` 上访问。例如，即使 `char_at` 是 `&str` 上的方法，而 `some_string` 是一个 `String`，`some_string.char_at(0)` 也可以运行。
 
-In some cases, such as generic code, it's necessary to convert manually. Manual conversions can be achieved using the slicing operator, like so: `&my_vec[..]`.
+在某些情况下，例如泛型代码，需要手动转换。可以用切片操作符实现手动转换，如：`&my_vec[..]`。
 
 <h3><a href="#how-to-convert-between-str-and-string" name="how-to-convert-between-str-and-string">
-How can I convert from <code>&amp;str</code> to <code>String</code> or the other way around?
+如何将 <code>&amp;str</code> 转换为 <code>String</code>，或者反向转换？
 </a></h3>
 
-The [`to_string()`][to_string] method converts from a [`&str`][str] into a [`String`][String], and [`String`s][String] are automatically converted into [`&str`][str] when you borrow a reference to them. Both are demonstrated in the following example:
+[`to_string()`][to_string] 方法将 [`&str`][str] 转换为 [`String`][String]，当你借用一个 [`String`][String] 的引用时，它会自动转换成 [`&str`][str]。两者都在以下示例中演示：
 
 ```rust
 fn main() {
@@ -400,50 +394,50 @@ fn say_hello(name: &str) {
 两种不同的字符串类型有什么区别？
 </a></h3>
 
-[`String`][String] is an owned buffer of UTF-8 bytes allocated on the heap. Mutable [`String`s][String] can be modified, growing their capacity as needed. [`&str`][str] is a fixed-capacity "view" into a [`String`][String] allocated elsewhere, commonly on the heap, in the case of slices dereferenced from [`String`s][String], or in static memory, in the case of string literals.
+[`String`][String] 是一个被拥有（owned）的在堆上分配的 UTF-8 的字节缓冲区。可变 [`String`][String] 可以被修改，根据需要增加其容量。[`&str`][str] 是一个指向分配在某处的 [`String`][String] 的一个固定容量的「视图」。如果切片是在从 [`String`][String] 解引而来的，则通常是指向在堆上，如果是字符串字面值，则指向静态内存。
 
-[`&str`][str] is a primitive type implemented by the Rust language, while [`String`][String] is implemented in the standard library.
+[`&str`][str] 是一个由 Rust 语言实现的原生类型，而 [`String`][String] 则是由标准库实现的。
 
 <h3><a href="#how-do-i-do-o1-character-access-in-a-string" name="how-do-i-do-o1-character-access-in-a-string">
 如何以 O(1) 复杂度访问一个 <code>String</code> 中的字符？
 </a></h3>
 
-并不能这样做。At least not without a firm understanding of what you mean by "character", and preprocessing the string to find the index of the desired character.
+做不到。至少在缺少对你所说的「字符（character）」充分的理解，并且缺少用于查找所需字符的索引而对字符串的预处理的情况下，无法做到。
 
-Rust strings are UTF-8 encoded. A single visual character in UTF-8 is not necessarily a single byte as it would be in an ASCII-encoded string. Each byte is called a "code unit" (in UTF-16, code units are 2 bytes; in UTF-32 they are 4 bytes). "Code points" are composed of one or more code units, and combine in "grapheme clusters" which most closely approximate characters.
+Rust 字符串是用 UTF-8 编码的。UTF-8 中的单个可见字符不一定是单个字节，除非它是用 ASCII 编码的字符串。每个字节被称为「码元（code unit）」（在 UTF-16 中，码元是 2 字节，在 UTF-32 中码元是 4 字节）。「码位（code point）」由一个或多个码元组成，并由此结合成「grapheme cluster」，这是最接近字符的概念了。
 
-Thus, even though you may index on bytes in a UTF-8 string, you can't access the `i`th code point or grapheme cluster in constant time. However, if you know at which byte that desired code point or grapheme cluster begins, then you _can_ access it in constant time. Functions including [`str::find()`][str__find] and regex matches return byte indices, facilitating this sort of access.
+因此，即使你可以在 UTF-8 字符串中索引字节，你也不能在常数时间里访问第 `i` 个码元或 grapheme cluster。但是，如果你知道所需的 code point 或 grapheme cluster 开始的字节的位置，那么你 _可以_ 在常数时间时访问它。包括 [`str::find()`][str__find] 和正则匹配函数都返回字节索引，以便于此类的访问。
 
 <h3><a href="#why-are-strings-utf-8" name="why-are-strings-utf-8">
 为什么字符串默认为 UTF-8？
 </a></h3>
 
-The [`str`][str] type is UTF-8 because we observe more text in the wild in this encoding – particularly in network transmissions, which are endian-agnostic – and we think it's best that the default treatment of I/O not involve having to recode codepoints in each direction.
+[`str`][str] 类型之所以是 UTF-8，是因为我们观察了许多实现中这种编码的文本 —— 尤其是在与字节顺序无关的网络传输中 —— 我们认为 I/O 的默认处理无需牵涉到对码位的双向重编码是最好的选择。
 
-This does mean that locating a particular Unicode codepoint inside a string is an O(n) operation, although if the starting byte index is already known then they can be accessed in O(1) as expected. On the one hand, this is clearly undesirable; on the other hand, this problem is full of trade-offs and we'd like to point out a few important qualifications:
+这意味着在一个字符串中的定位一个特定的 Unicode 码位是一个 O(n) 的操作，但是如果已经知道起始字节的索引，则可以按预期以 O(1) 访问。一方面，这显然是不可取的；另一方面，这个问题充满了权衡，我们要指出一些重要的限定：
 
-Scanning a [`str`][str] for ASCII-range codepoints can still be done safely byte-at-a-time. If you use [`.as_bytes()`][str__as_bytes], pulling out a [`u8`][u8] costs only `O(1)` and produces a value that can be cast and compared to an ASCII-range [`char`][char]. So if you're (say) line-breaking on `'\n'`, byte-based treatment still works. UTF-8 was well-designed this way.
+扫描一个 ASCII 范围的 [`str`][str] 仍然可以安全地依字节进行。如果你使用 [`.as_bytes()`][str__as_bytes]，取出一个 [`u8`][u8] 只需要消耗 `O(1)`，并生产一个可以与 ASCII 范围内的 [`char`][char] 相互转换和比较的值。所以如果你要在 `'\n'` 处换行，基于字节的处理依然可以运行。UTF-8 是用这种方式精心设计的。
 
-Most "character oriented" operations on text only work under very restricted language assumptions such as "ASCII-range codepoints only". Outside ASCII-range, you tend to have to use a complex (non-constant-time) algorithm for determining linguistic-unit (glyph, word, paragraph) boundaries anyway. We recommend using an "honest" linguistically-aware, Unicode-approved algorithm.
+大多数在文本上「面向字符」的操作只能在非常受限的语言假设前提下工作，例如「ASCII 范围内的码位」。在 ASCII 范围之外，你往往必须使用复杂的（非常数时间）算法来确定语言单位（字形，单词，段落）的边界。我们建议使用一个「可靠的」有语言感知的，经 Unicode 验证过的算法。
 
-The [`char`][char] type is UTF-32. If you are sure you need to do a codepoint-at-a-time algorithm, it's trivial to write a `type wstr = [char]`, and unpack a [`str`][str] into it in a single pass, then work with the `wstr`. In other words: the fact that the language is not "decoding to UTF32 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
+[`char`][char] 类型是 UTF-32 的。如果你确定需要一个依码位的算法，写一个 `type wstr = [char]`，将一个 [`str`][str] 放入其中，然后使用 `wstr`，这是很简单的。换句话说：实际上如果你需要用到该编码，编程语言不会「默认解码为 UTF32」的事实不应该阻止你解码（或用其它任何方式重新编码）。
 
-For a more in-depth explanation of why UTF-8 is usually preferable over UTF-16 or UTF-32, read the [UTF-8 Everywhere manifesto](http://utf8everywhere.org/).
+要更深入了解为什么 UTF-8 通常比 UTF-16 或 UTF-32 更好的解释，请阅读 [UTF-8 遍地开花宣言](http://utf8everywhere.org/)。
 
 <h3><a href="#what-string-type-should-i-use" name="what-string-type-should-i-use">
 我应该使用哪种字符串类型？
 </a></h3>
 
-Rust has four pairs of string types, [each serving a distinct purpose](http://www.suspectsemantics.com/blog/2016/03/27/string-types-in-rust/). In each pair, there is an "owned" string type, and a "slice" string type. The organization looks like this:
+Rust 拥有四种字符串类型，[每种都用于不同的目的](http://www.suspectsemantics.com/blog/2016/03/27/string-types-in-rust/)。在每一对中，都有一个「Owned」的字符串类型，和一个「切片」的字符串类型。组织起来像这样：
 
-|               | "Slice" 类型 | "Owned" 类型 |
-|:--------------|:-------------|:-------------|
-| UTF-8         | `str`        | `String`     |
-| OS 兼容        | `OsStr`      | `OsString`   |
-| C 兼容         | `CStr`       | `CString`    |
-| 系统路径       | `Path`       | `PathBuf`    |
+|               | 「Slice」类型 | 「Owned」类型 |
+|:--------------|:--------------|:--------------|
+| UTF-8         | `str`         | `String`      |
+| OS 兼容       | `OsStr`       | `OsString`    |
+| C 兼容        | `CStr`        | `CString`     |
+| 系统路径      | `Path`        | `PathBuf`     |
 
-Rust 的不同字符串类型适用于不同的目的。`String` 和 `str` 为 UTF-8 编码的通用目的字符串。`OsString` 和 `OsStr` 的编码取决于当前平台，在与操作系统交互时 使用。`CString` 和 `CStr` 是 Rust 中与 C 字符串相当的存在，用于 FFI 代码。`PathBuf` 和 `Path` 是 `OsString` 和 `OsStr` 的方便包装，提供特定路径操作的方法。
+Rust 的不同字符串类型适用于不同的目的。`String` 和 `str` 为 UTF-8 编码的通用目的字符串。`OsString` 和 `OsStr` 的编码取决于当前平台，在与操作系统交互时使用。`CString` 和 `CStr` 是 Rust 中与 C 字符串相当的存在，用于 FFI 代码。`PathBuf` 和 `Path` 是 `OsString` 和 `OsStr` 的方便封装，提供路径操作的特定方法。
 
 <h3><a href="#why-are-there-multiple-types-of-strings" name="why-are-there-multiple-types-of-strings">
 怎样写一个同时接受 <code>&str</code> 与 <code>String</code> 的函数？
@@ -451,13 +445,13 @@ Rust 的不同字符串类型适用于不同的目的。`String` 和 `str` 为 U
 
 有几种方法，具体取决于该函数的需求：
 
-- If the function needs an owned string, but wants to accept any type of string, use an `Into<String>` bound.
-- If the function needs a string slice, but wants to accept any type of string, use an `AsRef<str>` bound.
-- If the function does not care about the string type, and wants to handle the two possibilities uniformly, use `Cow<str>` as the input type.
+- 如果函数需要拥有一个字符串，又希望接受任何类型的字符串，请使用 `Into<String>` 约束。
+- 如果函数需要一个字符串切片，又希望接受任何类型的字符串，请使用 `AsRef<str>` 约束。
+- 如果函数不关心字符串类型，希望用统一的方式处理两种可能性，请使用 `Cow<str>` 作为输入类型。
 
 __使用 `Into<String>`__
 
-在此例中，the function will accept both owned strings and string slices, either doing nothing or converting the input into an owned string within the function body. Note that the conversion needs to be done explicitly, and will not happen otherwise.
+在此例中，该函数可以接受 owned 字符串和字符串切片作为参数，它要么不作任何处理，要么将输入转换为函数体内部拥有的字符串。请注意，转换需要显式调用，否则不会生效。
 
 ```rust
 fn accepts_both<S: Into<String>>(s: S) {
@@ -468,7 +462,7 @@ fn accepts_both<S: Into<String>>(s: S) {
 
 __使用 `AsRef<str>`__
 
-在此例中，the function will accept both owned strings and string slices, either doing nothing or converting the input into a string slice. This can be done automatically by taking the input by reference, like so:
+在此例中，该函数可以接受 owned 字符串和字符串切片作为参数，它要么不做任何处理，要么将输入转换为一个字符串切片。这里可以通过引用输入参数来自动完成，如下所示：
 
 ```rust
 fn accepts_both<S: AsRef<str>>(s: &S) {
@@ -478,7 +472,7 @@ fn accepts_both<S: AsRef<str>>(s: &S) {
 
 __使用 `Cow<str>`__
 
-在此例中，该函数采用一个 `Cow<str>`，它不是通用类型，而是一个容器，包含所需的字符串或字符串切片。
+在此例中，该函数接受一个 `Cow<str>`，它不是泛型类型，而是一个容器，包含一个 owned 字符串或字符串切片。
 
 ```rust
 fn accepts_cow(s: Cow<str>) {
@@ -490,20 +484,20 @@ fn accepts_cow(s: Cow<str>) {
 <h2 id="collections">集合</h2>
 
 <h3><a href="#can-i-implement-linked-lists-in-rust" name="can-i-implement-linked-lists-in-rust">
-可以在 Rust 中有效地实现向量和链表的数据结构吗？
+可以在 Rust 中高效地实现向量和链表的数据结构吗？
 </a></h3>
 
-If your reason for implementing these data structures is to use them for other programs, there's no need, as efficient implementations of these data structures are provided by the standard library.
+如果实现这些数据结构的原因是要将它们用于其它程序，则不需要，因为标准库已经提供了这些数据结构的高效实现。
 
-If, however, [your reason is simply to learn](http://cglab.ca/~abeinges/blah/too-many-lists/book/), then you will likely need to dip into unsafe code. While these data structures _can_ be implemented entirely in safe Rust, the performance is likely to be worse than it would be with the use of unsafe code. The simple reason for this is that data structures like vectors and linked lists rely on pointer and memory operations that are disallowed in safe Rust.
+但是，如果[你的目的只是为了学习](http://cglab.ca/~abeinges/blah/too-many-lists/book/)，那么你可能需要深入学习 unsafe 代码。虽然这些数据结构可以完全在安全的 Rust 中实现，但性能可能会比使用 unsafe 代码更差。简单来说原因是如向量和链表这样的数据结构依赖于指针和内存操作，而这些在安全的 Rust 中是不允许的。
 
-例如，a doubly-linked list requires that there be two mutable references to each node, but this violates Rust's mutable reference aliasing rules. You can solve this using [`Weak<T>`][Weak], but the performance will be poorer than you likely want. With unsafe code you can bypass the mutable reference aliasing rule restriction, but must manually verify that your code introduces no memory safety violations.
+例如，双向链表需要每个节点有两个可变引用，但这违反了 Rust 的可变引用规则。你可以用 [`Weak<T>`][Weak] 解决这个问题，但性能会比你想的要差。使用 unsafe 代码，你可以绕过可变引用规则的限制，但必须自行验证你引入的代码不会违反内存安全。
 
 <h3><a href="#how-can-i-iterate-over-a-collection-without-consuming-it" name="how-can-i-iterate-over-a-collection-without-consuming-it">
 如何在不移动/消费的情况下迭代集合？
 </a></h3>
 
-The easiest way is by using the collection's [`IntoIterator`][IntoIterator] implementation. Here is an example for [`&Vec`][Vec]:
+最简单的方法是使用集合的 [`IntoIterator`][IntoIterator] 实现。这里有一个 [`&Vec`][Vec] 的例子：
 
 ```rust
 let v = vec![1,2,3,4,5];
@@ -513,33 +507,32 @@ for item in &v {
 println!("\nLength: {}", v.len());
 ```
 
-Rust `for` 循环调用 `into_iter()` (defined on the [`IntoIterator`][IntoIterator] trait) for whatever they're iterating over. Anything implementing the [`IntoIterator`][IntoIterator] trait may be looped over with a `for` loop. [`IntoIterator`][IntoIterator] is implemented for [`&Vec`][Vec] and [`&mut Vec`][Vec], causing the iterator from `into_iter()` to borrow the contents of the collection, rather than moving/consuming them. The same is true for other standard collections as well.
+Rust 的 `for` 循环对于任何迭代都调用 `into_iter()`（在 [`IntoIterator`][IntoIterator] trait 中定义）。任何实现了 [`IntoIterator`][IntoIterator] trait 的类型都可以用在 `for` 循环中。 [`IntoIterator`][IntoIterator] 是对针 [`&Vec`][Vec] 和 [`&mut Vec`][Vec] 实现的，所以 `into_iter()` 返回的迭代器只是借用集合的内容，而不是移动/消费它们。其它标准集合也是如此。
 
-如果需要移动/消费迭代器，在迭代中撰写没有 `&` 或 `&mut` 的 `for`。
+如果需要移动/消费迭代器，在迭代中用没有 `&` 或 `&mut` 的 `for`。
 
-如果您需要直接访问一个借用的迭代器，您通常可以调用 `iter()` 方法来获取它。
+如果你需要直接访问一个借用的迭代器，你通常可以调用 `iter()` 方法来获取它。
 
 <h3><a href="#why-do-i-need-to-type-the-array-size-in-the-array-declaration" name="why-do-i-need-to-type-the-array-size-in-the-array-declaration">
-为什么需要在数组声明中键入数组大小？
+为什么需要在数组声明中输入数组大小？
 </a></h3>
 
-You don't necessarily have to. If you're declaring an array directly, the size is inferred based on the number of elements. But if you're declaring a function that takes a fixed-size array, the compiler has to know how big that array will be.
+不一定要。如果你直接声明数组，数组大小会根据元素的数量来推断。但是如果你声明一个固定大小的数组，那么编译器就需要知道该数组的大小。
 
-One thing to note is that currently Rust doesn't offer generics over arrays of different size. If you'd like to accept a contiguous container of a variable number of values, use a [`Vec`][Vec] or slice (depending on whether you need ownership).
+需要注意的是，目前 Rust 并没有提供针对不同大小数组的泛型。如果你想接受可变数值的连续容器，请使用 [`Vec`][Vec] 或切片（视是否需要所有权而定）。
 
-<h2 id="ownership">Ownership</h2>
+<h2 id="ownership">所有权</h2>
 
 <h3><a href="#how-can-i-implement-a-data-structure-that-contains-cycles" name="how-can-i-implement-a-data-structure-that-contains-cycles">
 如何实现包含循环的图或其他数据结构？
 </a></h3>
 
-There are at least four options (discussed at length in [Too Many Linked Lists](http://cglab.ca/~abeinges/blah/too-many-lists/book/)):
+至少有四种选择（在 [Too Many Linked Lists](http://cglab.ca/~abeinges/blah/too-many-lists/book/) 里有详细的讨论）：
 
-- 您可以使用 [`Rc`][Rc] 和 [`Weak`][Weak] 来允许节点共享所有权以实现它。虽然这种方法要支付内存管理的成本。
-- You can implement it using `unsafe` code using raw pointers. This will be
-more efficient, but bypasses Rust's safety guarantees.
-- Using vectors and indices into those vectors. There are [several](http://smallcultfollowing.com/babysteps/blog/2015/04/06/modeling-graphs-in-rust-using-vector-indices/) [available](https://featherweightmusings.blogspot.com/2015/04/graphs-in-rust.html) examples and explanations of this approach.
-- Using borrowed references with [`UnsafeCell`][UnsafeCell]. There are [explanations and code](https://github.com/nrc/r4cppp/blob/master/graphs/README.md#node-and-unsafecell) available for this approach.
+- 你可以使用 [`Rc`][Rc] 和 [`Weak`][Weak] 来实现，以允许节点共享所有权以实现它。然而这种方法要付出内存管理的成本。
+- 你可以通过使用包含裸指针的 `unsafe` 代码来实现。这会更高效，但绕过了 Rust 的安全保障机制。
+- 在这些向量中使用向量和索引。有[几种](http://smallcultfollowing.com/babysteps/blog/2015/04/06/modeling-graphs-in-rust-using-vector-indices/)[可用](https://featherweightmusings.blogspot.com/2015/04/graphs-in-rust.html)的例子和这种方法的解释。
+- 使用借用的引用和 [`UnsafeCell`][UnsafeCell]。这种方法有[解释和代码](https://github.com/nrc/r4cppp/blob/master/graphs/README.md#node-and-unsafecell)。
 
 <h3><a href="#how-can-i-define-a-struct-that-contains-a-reference-to-one-of-its-own-fields" name="how-can-i-define-a-struct-that-contains-a-reference-to-one-of-its-own-fields">
 我该如何定义一个包含对其自身字段之一引用的结构体？
@@ -569,88 +562,90 @@ fn main() {
 按值传递，消费，移动和转让所有权之间有什么区别？
 </a></h3>
 
-These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it. If a type implements the `Copy` trait, the original owner's value won't be invalidated, and can still be used.
+它们是同一个东西的不同术语。所有的情况下，这意味着该值已经从原始所有者移动到另一个所有者，原始所有者不能再使用它。如果一个类型实现了 `Copy` trait，原始所有者的值不会无效，仍然可以使用。
 
 <h3><a href="#why-can-values-of-some-types-by-reused-while-others-are-consumed" name="why-can-values-of-some-types-by-reused-while-others-are-consumed">
 为什么某些类型的值在传递到一个函数后可以使用，而另一些类型的值传递后使用会导致错误？
 </a></h3>
 
-如果一个类型实现了 [`Copy`][Copy] 特征，则它将在传递到一个函数时被复制。Rust 中的所有数字类型都实现了 [`Copy`][Copy]，但结构类型默认并未实现 [`Copy`][Copy]，因此它们是被移动。这意味着结构体不能在其他地方重用，除非它是通过 return 从函数中移出。
+如果一个类型实现了 [`Copy`][Copy] trait，则它将在传递到一个函数时被复制。Rust 中的所有数字类型都实现了 [`Copy`][Copy]，但结构类型默认并未实现 [`Copy`][Copy]，因此它们是被移动。这意味着结构体不能在其他地方重用，除非它是通过 return 从函数中移出。
 
 <h3><a href="#how-do-you-deal-with-a-use-of-moved-value-error" name="how-do-you-deal-with-a-use-of-moved-value-error">
-如何处理“use of moved value”错误？
+如何处理「use of moved value」错误？
 </a></h3>
 
-This error means that the value you're trying to use has been moved to a new owner. The first thing to check is whether the move in question was necessary: if it moved into a function, it may be possible to rewrite the function to use a reference, rather than moving. Otherwise if the type being moved implements [`Clone`][Clone], then calling `clone()` on it before moving will move a copy of it, leaving the original still available for further use. Note though that cloning a value should typically be the last resort since cloning can be expensive, causing further allocations.
+此错误表示你尝试使用的值已经被移动给新的拥有者。首先要检查的是这个移动是否有必要：如果移动到一个函数中，可能可以尝试重写函数，改为使用引用而不是移动。另外如果如果被移动的类型实现了 [`Clone`][Clone]，那么在移动之前调用它的 `clone()` 方法，将移动它的一个拷贝，原始的值可以在之后继续使用。注意，然后克隆一个值通常应该是最后考虑的手段，因为克隆可能会是昂贵的，会导致更多的内存分配。
 
-If the moved value is of your own custom type, consider implementing [`Copy`][Copy] (for implicit copying, rather than moving) or [`Clone`][Clone] (explicit copying). [`Copy`][Copy] is most commonly implemented with `#[derive(Copy, Clone)]` ([`Copy`][Copy] requires [`Clone`][Clone]), and [`Clone`][Clone] with `#[derive(Clone)]`.
+如果移动的值是你自定义的类型，请考虑实现 [`Copy`][Copy]（用于隐式拷贝而不是移动）或者 [`Clone`][Clone]（用于显式拷贝）。[`Copy`][Copy] 经常是用 `#[derive(Copy, Clone)]` 来实现的（[`Copy`][Copy] 的实现要求要实现 [`Clone`][Clone]，[`Clone`][Clone] 也是用 `#[derive(Clone)]` 来实现的。
 
-If none of these are possible, you may want to modify the function that acquired ownership to return ownership of the value when the function exits.
+如果这些方式都不行，你可能需要修改这个要求获取所有权的函数，改为在函数退出的时候返回这个值的所有权。
 
 <h3><a href="#what-are-the-rules-for-different-self-types-in-methods" name="what-are-the-rules-for-different-self-types-in-methods">
 在方法声明中使用 <code>self</code>、<code>&amp;self</code> 与 <code>&amp;mut self</code> 的规则是什么？
 </a></h3>
 
-- 使用 `self`，当一个函数需要消费该值
-- 使用 `&self`，当一个函数只需要该值的只读引用
-- 使用 `&mut self`，当一个函数不需消费而要变更该值
+- 如果一个函数需要消费该值，用 `self`
+- 如果一个函数只需要该值的只读引用，用 `&self`
+- 如果一个函数不需消费而要变更该值，用 `&mut self`
 
 <h3><a href="#how-can-i-understand-the-borrow-checker" name="how-can-i-understand-the-borrow-checker">
 我该怎么能理解借用检查器？
 </a></h3>
 
-借用检查器只使用几条规则，而这可以在 Rust 之书的[借用部分](https://doc.rust-lang.org/stable/book/references-and-borrowing.html#the-rules)找到，当评估（Eval） Rust 代码时。这些规则为：
+借用检查器在对 Rust 代码进行求值的时候只使用几条规则，可以在 Rust 之书的[借用章节](https://doc.rust-lang.org/stable/book/references-and-borrowing.html#the-rules)找到。这些规则为：
 
-> First, any borrow must last for a scope no greater than that of the owner. Second, you may have one or the other of these two kinds of borrows, but not both at the same time:
+> 首先，任何借用所持续的作用范围不得超过它的拥有者。其次，你可以使用以下两种借用形式的其中任何一种，但不能同时使用：
 >
-> - one or more references (&T) to a resource.
-> - exactly one mutable reference (&mut T)
+> - 某个资源的一个或者多个引用（&T）。
+> - 该资源的一个可变引用（&mut T）。
 
-While the rules themselves are simple, following them consistently is not, particularly for those unaccustomed to reasoning about lifetimes and ownership.
+虽然规则本身很简单，但是要遵循它们却并不容易，尤其是对于那些不习惯于推导生命周期和所有权的人。
 
-The first step in understanding the borrow checker is reading the errors it produces. A lot of work has been put into making sure the borrow checker provides quality assistance in resolving the issues it identifies. When you encounter a borrow checker problem, the first step is to slowly and carefully read the error reported, and to only approach the code after you understand the error being described.
+理解借用检查器的第一步是阅读它产生的错误信息。为了确保借用检查器能够产生高质量的帮助信息来解决发现的问题，已经投入了大量的工作。当你遇到一个借用检查器的问题，首先要做的是慢慢扡仔细地阅读错误报告，只有在理解了所描述的错误之后才着手处理相关的代码。
 
-The second step is to become familiar with the ownership and mutability-related container types provided by the Rust standard library, including [`Cell`][Cell], [`RefCell`][RefCell], and [`Cow`][Cow]. These are useful and necessary tools for expressing certain ownership and mutability situations, and have been written to be of minimal performance cost.
+第二步是熟悉 Rust 标准库所提供的与所有权和可变性相关的容器类型，包括 [`Cell`][Cell]，[`RefCell`][RefCell]，以及 [`Cow`][Cow]。这些都是用于表达某些涉及所有权和可变性的情况时，非常有用有且必需的工具，而且是具有最低的性能损耗的实现。
 
-The single most important part of understanding the borrow checker is practice. Rust's strong static analyses guarantees are strict and quite different from what many programmers have worked with before. It will take some time to become completely comfortable with everything.
+理解借用检查器是重要的环节是实践。Rust 的强静态分析保证与许多程序员以往接触过的有天壤之别。需要花些时间来适应这些。
 
-If you find yourself struggling with the borrow checker, or running out of patience, always feel free to reach out to the [Rust community](community.html) for help.
+如果你发现你在借用检查器中遇到困难，或者失去耐心，可以随时联系 [Rust 社区](community.thml)寻求帮助。
 
 <h3><a href="#when-is-rc-useful" name="when-is-rc-useful">
 <code>Rc</code> 在什么时候有用？
 </a></h3>
 
-This is covered in the official documentation for [`Rc`][Rc], Rust's non-atomically reference-counted pointer type. In short, [`Rc`][Rc] and its thread-safe cousin [`Arc`][Arc] are useful to express shared ownership, and have the system automatically deallocate the associated memory when no one has access to it.
+Rust 的非原子引用计数指针类型，在官方文档中涵盖了 [`Rc`][Rc] 的描述。简而言之，[`Rc`][Rc] 和它的线程安全版本 [`Arc`][Arc] 在表示共享所有权的时候是有用的，当没有人拥有它的访问权限的时候，系统会自动释放相应的内存。
 
 <h3><a href="#how-do-i-return-a-closure-from-a-function" name="how-do-i-return-a-closure-from-a-function">
 如何从函数返回一个闭包？
 </a></h3>
 
-To return a closure from a function, it must be a "move closure", meaning that the closure is declared with the `move` keyword. As [explained in the Rust book](https://doc.rust-lang.org/book/closures.html#move-closures), this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a [`Box`][Box], so that it is allocated on the heap. Read more about this [in the book](https://doc.rust-lang.org/book/closures.html#returning-closures).
+要从一个函数中返回闭包，这个闭包必须是一个「move 闭包」，意思是这个闭包是使用关键字 `move` 来定义的。正如
+[Rust 之书中的解释](https://doc.rust-lang.org/book/closures.html#move-closures)，这让这个闭包拥有了它所在环境里的变量的拷贝，独立于它的父级栈帧。另外，返回一个闭包会是不安全的，因为它会被允许访问那些失效的变量；换句话说，它会允许访问潜在的无效内存。返回的闭包也必须用 [`Box`][Box] 包装，这样它才会在堆上分配空间。[在这本书](https://doc.rust-lang.org/book/closures.html#returning-closures)里阅读更多相关的信息。
 
 <h3><a href="#what-are-deref-coercions" name="what-are-deref-coercions">
-什么是强制退还，它是如何工作？
+什么是强制解引（deref coercion），它是如何工作的？
 </a></h3>
 
-A [deref coercion](https://doc.rust-lang.org/book/deref-coercions.html) is a handy coercion
-that automatically converts references to pointers (e.g., `&Rc<T>` or `&Box<T>`) into references
-to their contents (e.g., `&T`). Deref coercions exist to make using Rust more ergonomic, and are implemented via the [`Deref`][Deref] trait.
+[强制解引](https://doc.rust-lang.org/book/deref-coercions.html)是自动将指向指针的引用（例如
+`&Rc<T>` 或者 `&Box<T>`）转换为指向内容的引用（例如 `&T`）这种强制转换的一种便捷方式。
+强制解引的存在使得 Rust 更加符合人体工程学，它是通过 [`Deref`][Deref] trait 来实现的。
 
-A Deref implementation indicates that the implementing type may be converted into a target by a call to the `deref` method, which takes an immutable reference to the calling type and returns a reference (of the same lifetime) to the target type. The `*` prefix operator is shorthand for the `deref` method.
+一个 Deref 的实现表示该实现类型可以通过调用 `deref` 方法来转换成一个目标类型，该方法接受该调用类型的一个不可变引用，并返回一个指向目标的引用（相同的生命周期）。前缀操作符 `*` 是 `deref` 方法的缩写方式。
 
-They're called "coercions" because of the following rule, quoted here [from the Rust book](https://doc.rust-lang.org/stable/book/deref-coercions.html):
+之所以被称为「强制 coercions」是因为以下的规则，这里引用自 [Rust 之书](https://doc.rust-lang.org/stable/book/deref-coercions.html)：
 
-> If you have a type `U`, and it implements `Deref<Target=T>`, values of `&U` will automatically coerce to a `&T`.
+> 假设你有一个类型 `U`，并且它实现了 `Deref<Target=T>`，那么 `&U` 将会自动强制转换为 `&T`。
 
-For example, if you have a `&Rc<String>`, it will coerce via this rule into a `&String`, which then coerces to a `&str` in the same way. So if a function takes a `&str` parameter, you can pass in a `&Rc<String>` directly, with all coercions handled automatically via the `Deref` trait.
+例如，假设你有一个 `&Rc<String>`，它会被此规则强制转换为 `&String`，然后再被用同样的方式强制转换为 `&str`。
+那么对于一个接收 `&str` 参数的函数，你可以直接传入一个 `&Rc<String>`，所有的强制转换都通过 `Deref` trait 自动处理。
 
-The most common sorts of deref coercions are:
+以下是最常见的一些强制解引：
 
-- `&Rc<T>` to `&T`
-- `&Box<T>` to `&T`
-- `&Arc<T>` to `&T`
-- `&Vec<T>` to `&[T]`
-- `&String` to `&str`
+- `&Rc<T>` 到 `&T`
+- `&Box<T>` 到 `&T`
+- `&Arc<T>` 到 `&T`
+- `&Vec<T>` 到 `&[T]`
+- `&String` 到 `&str`
 
 <h2 id="lifetimes">生命周期</h2>
 
@@ -658,26 +653,25 @@ The most common sorts of deref coercions are:
 为什么有生命周期？
 </a></h3>
 
-Lifetimes are Rust's answer to the question of memory safety. They allow Rust to ensure memory safety without the performance costs of garbage collection. They are based on a variety of academic work, which can be found in the [Rust book](https://doc.rust-lang.org/stable/book/bibliography.html#type-system).
+生命周期是 Rust 以于内存安全问题的解答。它允许 Rust 确保内存安全，而无需付出垃圾收集的性能代价。这是基于多种学术成果的，这些参考文献可以从 [Rust 之书](https://doc.rust-lang.org/stable/book/bibliography.html#type-system)中找到。
 
 <h3><a href="#why-is-the-lifetime-syntax-the-way-it-is" name="why-is-the-lifetime-syntax-the-way-it-is">
 为什么生命周期语法是这样的？
 </a></h3>
 
-The `'a` syntax comes from the ML family of programming languages, where `'a` is used to indicate a generic type parameter. For Rust, the syntax had to be something that was unambiguous, noticeable, and fit nicely in a type declaration right alongside traits and references. Alternative syntaxes have been discussed, but no alternative syntax has been demonstrated to be clearly better.
+`'a` 用于表示一个通用类型参数，这种语法来自于 ML 系列编程语言。对于 Rust 来说，这种语法必须是无歧义的，显而易见的，并且在类型声明中适合于与 trait 和引用放在一起。一些替代语法也被讨论过，但没有一种替代语法会表现得更好。
 
 <h3><a href="#how-do-i-return-a-borrow-to-something-i-created-from-a-function" name="how-do-i-return-a-borrow-to-something-i-created-from-a-function">
-如何将一个函数中创建的东西返回为借用？
+我该如何从一个函数中返回我创建的某个东西的借用？
 </a></h3>
 
-You need to ensure that the borrowed item will outlive the function. This can be done by binding the output lifetime to some input lifetime like so:
+你必须确保这个借用项的生命周期要比这个函数更长。将输出的生命周期和某些输入的生命周期绑定在一起，这样就可以做到，如下所示：
 
 ```rust
 type Pool = TypedArena<Thing>;
 
-// (the lifetime below is only written explicitly for
-// expository purposes; it can be omitted via the
-// elision rules described in a later FAQ entry)
+// （以下的生命周期只是为了说明而显式写出来；
+//  可以通过稍后 FAQ 条目中所描述的省略规则来省略它）
 fn create_borrowed<'a>(pool: &'a Pool,
                        x: i32,
                        y: i32) -> &'a Thing {
@@ -685,7 +679,7 @@ fn create_borrowed<'a>(pool: &'a Pool,
 }
 ```
 
-An alternative is to eliminate the references entirely by returning an owning type like [`String`][String]:
+另一个替代的方式是通过返回一个拥有的类型（owning type）来彻底消除引用，如 [`String`][String]：
 
 ```rust
 fn happy_birthday(name: &str, age: i64) -> String {
@@ -696,96 +690,85 @@ fn happy_birthday(name: &str, age: i64) -> String {
 这种方法更简单，但往往导致不必要的分配。
 
 <h3><a href="#when-are-lifetimes-required-to-be-explicit" name="when-are-lifetimes-required-to-be-explicit">
-为什么某些引用有生命周期，比如 <code>&amp;'a T</code>，而某些没有，比如 <code>&amp;T</code>？
+为什么有些引用有生命周期，如 <code>&amp;'a T</code>，而有些没有，如 <code>&amp;T</code>？
 </a></h3>
 
-In fact, *all* reference types have a lifetime, but most of the time you do not have to write
-it explicitly. The rules are as follows:
+实际上，*所有的*引用类型都有一个生命周期，但在大多数时候你无需将它显式写出来。规定如下：
 
-1. Within a function body, you never have to write a lifetime explicitly; the correct value
-   should always be inferred.
-2. Within a function *signature* (for example, in the types of its
-   arguments, or its return type), you *may* have to write a lifetime
-   explicitly. Lifetimes there use a simple defaulting scheme called
-   ["lifetime elision"](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision),
-   which consists of the following three rules:
-  - Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
-  - If there is exactly one input lifetime, elided or not, that
-    lifetime is assigned to all elided lifetimes in the return values
-    of that function.
-  - If there are multiple input lifetimes, but one of them is &self
-    or &mut self, the lifetime of self is assigned to all elided
-    output lifetimes.
-3. Finally, in a `struct` or `enum` definition, all lifetimes must be explicitly declared.
+1. 在函数体内，你无需显式写出生命周期；正确的值总会被推导出来。
+2. 在函数*签名*中（例如，其参数类型或其返回值类型），你*可能*要显式写出生命周期。生命周期有一个简单的默认机制，称作[「生命周期省略（lifetime elision）」](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision)，其中包含了以下有三条规则：
+  - 函数的参数中，每个省略的生命周期都变成独立的生命周期参数。
+  - 如果只有一个输入的生命周期，无论省略与否，此生命周期将被赋给函数返回值中所有省略的生命周期。
+  - 如果有多个输入的生命周期，但其中一个是 &self 或者 &mut self，那这个 self 的生命周期将被赋给输出中所有省略的生命周期。
+3. 最后，在 `struct` 或者 `enum` 定义中，所有的生命周期都必须明确声明。
 
-If these rules result in compilation errors, the Rust compiler will provide an error message indicating the error caused, and suggesting a potential solution based on which step of the inference process caused the error.
+如果这些规则导致编译错误， Rust 编译器会给出一个错误信息，指出错误的原因，并根据推导过程中出错的步骤给出潜在的解决方案。
 
 <h3><a href="#how-can-rust-guarantee-no-null-pointers" name="how-can-rust-guarantee-no-null-pointers">
-Rust 如何保证“无空指针”和“无悬挂指针”？
+Rust 如何保证「无空指针」和「无悬挂指针」？
 </a></h3>
 
-The only way to construct a value of type `&Foo` or `&mut Foo` is to specify an existing value of type `Foo` that the reference points to. The reference "borrows" the original value for a given region of code (the lifetime of the reference), and the value being borrowed from cannot be moved or destroyed for the duration of the borrow.
+构造一个类型为 `&Foo` 或者 `&mut Foo` 的值的唯一方式是指定该引用指向的类型 `Foo` 的一个已存在的值。该引用在给定的代码区域中（该引用的生命周期）「借用」了原始值，而被借用的值在借用期间无法被移动或者被销毁。
 
 <h3><a href="#how-do-i-express-the-absense-of-a-value-without-null" name="how-do-i-express-the-absense-of-a-value-without-null">
 如果没有 <code>null</code>，我该怎么表达缺失值？
 </a></h3>
 
-You can do that with the [`Option`][Option] type, which can either be `Some(T)` or `None`. `Some(T)` indicates that a value of type `T` is contained within, while `None` indicates the absence of a value.
+你可以使用 [`Option`][Option] 类型，可以是 `Some(T)` 或者是 `None`。`Some(T)` 表示其包含类型为 `T` 的值，而 `None` 则表示没有值。
 
 <h2 id="generics">泛型</h2>
 
 <h3><a href="#what-is-monomorphisation" name="what-is-monomorphisation">
-什么是“单态化”？
+什么是「单态化（monomorphisation）」？
 </a></h3>
 
-Monomorphisation specializes each use of a generic function (or structure) with specific instance,
-based on the parameter types of calls to that function (or uses of the structure).
+单态化是基于函数调用（或结构的使用）的参数类型，对每个泛型函数（或结构）的特化。
 
-During monomorphisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
+在单态化期间，该泛型函数实例化的每个单独的类型集被翻译成一个新的拷贝。这和 C++ 使用的策略相同。它产生专门针对每次调用和静态调度的快速代码，比起使用其它翻译策略所产生的二进制文件，这种函数被多个不同的类型实例化的权衡可能会导致「代码膨胀」，其中多个函数实例导致了更大的二进制文件。
 
-Functions that accept [trait objects](https://doc.rust-lang.org/book/trait-objects.html) instead of type parameters do not undergo monomorphisation. Instead, methods on the trait objects are dispatched dynamically at runtime.
+相比接收不同类型的参数，接受 [trait 对象](https://doc.rust-lang.org/book/trait-objects.html)的函数不会发生单态化。相反，trait 对象的方法在运行时是动态调度的。
 
 <h3><a href="#whats-the-difference-between-a-function-and-a-closure-that-doesnt-capture" name="whats-the-difference-between-a-function-and-a-closure-that-doesnt-capture">
 一个函数和一个没有捕获任何变量的闭包有什么区别？
 </a></h3>
 
-Functions and closures are operationally equivalent, but have different runtime representations due to their differing implementations.
+函数和闭包在操作上是等效的，但是由于它们的不同实现而具有不同的运行时表现。
 
-Functions are a built-in primitive of the language, while closures are essentially syntactic sugar for one of three traits: [`Fn`][Fn], [`FnMut`][FnMut], and [`FnOnce`][FnOnce]. When you make a closure, the Rust compiler automatically creates a struct implementing the appropriate trait of those three and containing the captured environment variables as members, and makes it so the struct can be called as a function. Bare functions can not capture an environment.
+函数是语言内置的原生类型，而闭包基本上是三种 trait 之一的语法糖：[`Fn`][Fn]，[`FnMut`][FnMut]，和 [`FnOnce`][FnOnce]。当你创建一个闭包时，Rust 编译器会自动创建一个实现了这三种 trait 之中相应的 trait 的结构，并将捕获到的环境变量作为成员，并使此结构能够作为函数一样调用。裸函数无法捕获它的环境。
 
-The big difference between these traits is how they take the `self` parameter. [`Fn`][Fn] takes `&self`, [`FnMut`][FnMut] takes `&mut self`, and [`FnOnce`][FnOnce] takes `self`.
+这些 trait 之间的差异是它们如何使用 `self` 参数。[`Fn`][Fn] 使用 `&self`，[`FnMut`][FnMut] 使用 `&mut self`，而 [`FnOnce`][FnOnce] 则使用 `self`。
 
-Even if a closure does not capture any environment variables, it is represented at runtime as two pointers, the same as any other closure.
+即使闭包没有捕获任何环境变量，它在运行时也表现为两个指针，与其它任何闭包相同。
 
 <h3><a href="#what-are-higher-kinded-types" name="what-are-higher-kinded-types">
 什么是更高级的类型，为什么我想要它们，为什么 Rust 没有它们？
 </a></h3>
 
-Higher-kinded types are types with unfilled parameters. Type constructors, like [`Vec`][Vec], [`Result`][Result], and [`HashMap`][HashMap] are all examples of higher-kinded types: each requires some additional type parameters in order to actually denote a specific type, like `Vec<u32>`. Support for higher-kinded types means these "incomplete" types may be used anywhere "complete" types can be used, including as generics for functions.
+高级类型具有未知参数。类型构造器，如 [`Vec`][Vec]，[`Result`][Result]，以及 [`HashMap`][HashMap] 都是高级类型的范例：每个都需要一些额外的类型参数，以便于实际显示一个特定的类型，如 `Vec<u32>`。对高级类型的支持意味着这些「不完全」的类型可以用于任何「完全」类型可以使用的地方，包括函数的泛型。
 
-Any complete type, like [`i32`][i32], [`bool`][bool], or [`char`][char] is of kind `*` (this notation comes from the field of type theory). A type with one parameter, like [`Vec<T>`][Vec] is of kind `* -> *`, meaning that [`Vec<T>`][Vec] takes in a complete type like [`i32`][i32] and returns a complete type `Vec<i32>`. A type with three parameters, like [`HashMap<K, V, S>`][HashMap] is of kind `* -> * -> * -> *`, and takes in three complete types (like [`i32`][i32], [`String`][String], and [`RandomState`][RandomState]) to produce a new complete type `HashMap<i32, String, RandomState>`.
+任意的完全类型，如 [`i32`][i32]，[`bool`][bool]，或 [`char`][char] 都是一种 `*` 类型（这种符号来自类型理论领域）。具有一个参数的类型，如 [`Vec<T>`][Vec] 是一种 `* -> *`，意思是 [`Vec<T>`][Vec] 接受一个如 [`i32`][i32] 的完全类型，并返回一个完全类型 `Vec<i32>`。一个具有三个参数的类型，如 [`HashMap<K, V, S>`][HashMap] 是 `* -> * -> * -> *` 类型，它接受三个完全类型（如 [`i32`][i32]，[`String`][String]，以及 [`RandomState`][RandomState]），产生一个新的完全类型 `HashMap<i32, String, RandomState>`。
 
-In addition to these examples, type constructors can take *lifetime* arguments, which we'll denote as `Lt`. For example, `slice::Iter` has kind `Lt -> * -> *`, because it must be instantiated like `Iter<'a, u32>`.
+除了这些例子，类型构造器还可以接受 *生命周期（lifetime）* 参数，我们将其表示为 `Lt`。例如，`slice::Iter` 具有 `Lt -> * -> *` 类型，因为它必须像 `Iter<'a, u32>` 这样实例化。
 
-The lack of support for higher-kinded types makes it difficult to write certain kinds of generic code. It's particularly problematic for abstracting over concepts like iterators, since iterators are often parameterized over a lifetime at least. That in turn has prevented the creation of traits abstracting over Rust's collections.
+缺少对高级类型的支持，使得很验证编写某些类型的泛型代码。尤其是对于像迭代器这样的概念进行抽象会有问题，因为迭代器通常为至少需要用一个生命周期才能进行参数化。这反过来又阻止了对 Rust 的集合类型上的 trait 抽象。
 
-Another common example is concepts like functors or monads, both of which are type constructors, rather than single types.
+另一个常见的例子是像 function 或 monad 这样的概念，它们都是类型构造器，而不是单一的类型。
 
-Rust doesn't currently have support for higher-kinded types because it hasn't been a priority compared to other improvements we want to make. Since the design is a major, cross-cutting change, we also want to approach it carefully. But there's no inherent reason for the current lack of support.
+Rust 目前不支持更高级的类型，因为与我们想要进行的其它改进相比，这不是一个高优先的事项。由于这种设计涉及了主要和交叉的改动，我们也想仔细考虑。但目前缺乏支持并没有固有的内在原因。
 
 <h3><a href="#what-do-named-type-parameters-in-generic-types-mean" name="what-do-named-type-parameters-in-generic-types-mean">
-通用类型中 <code>&lt;T=Foo&gt;</code> 这样的命名类型参数是什么意思？
+泛型类型中 <code>&lt;T=Foo&gt;</code> 这样的命名类型参数是什么意思？
 </a></h3>
 
-These are called [associated types](https://doc.rust-lang.org/stable/book/associated-types.html), and they allow for the expression of trait bounds that can't be expressed with a `where` clause. For example, a generic bound `X: Bar<T=Foo>` means "`X` must implement the trait `Bar`, and in that implementation of `Bar`, `X` must choose `Foo` for `Bar`'s associated type, `T`." Examples of where such a constraint cannot be expressed via a `where` clause include trait objects like `Box<Bar<T=Foo>>`.
+这些被称为[关联类型](https://doc.rust-lang.org/stable/book/associated-types.html)，允许表达不能用 `where` 子句表达的 trait 约束。例如，一个泛型约束 `X: Bar<T=Foo>` 的意思是「`X` 必须实现 `Bar` 这个 trait，而且在 `Bar` 的实现中，`X` 必须将 `Foo` 作为 `Bar` 的关联类型 `T`」。例子中这样的约束不能通过一个 `where` 子句表示，也不能用像 `Box<Bar<T=Foo>>` 这样的 trait 对象表示。
 
-Associated types exist because generics often involve families of types, where one type determines all of the others in a family. For example, a trait for graphs might have as its `Self` type the graph itself, and have associated types for nodes and for edges. Each graph type uniquely determines the associated types. Using associated types makes it much more concise to work with these families of types, and also provides better type inference in many cases.
+关联类型的存在，是由于泛型通常牵涉类型家族，其中某个类型决定了家族中的所有其它类型。例如，一个用于图形的 trait 可能具有图形自己的 `Self` 类型，而且具有节点和边缘的关联类型。每个图形类型唯一确定其关联类型。使用关联类型可以使这些类型的家族更加简洁，并且在许多情况下还能提供更好的类型推断。
 
 <h3><a href="#how-do-i-overload-operators" name="how-do-i-overload-operators">
 我可以重载运算符吗？哪些可以，怎么做？
 </a></h3>
 
-You can provide custom implementations for a variety of operators using their associated traits: [`Add`][Add] for `+`, [`Mul`][Mul] for `*`, and so on. It looks like this:
+你可以通过实现相应的 trait 来为多种操作符提供自定义的实现：[`Add`][Add] 对应于 `+`，[`Mul`][Mul] 对应于 `*`，等等。类似这样：
 
 ```rust
 use std::ops::Add;
@@ -801,7 +784,7 @@ impl Add for Foo {
 }
 ```
 
-The following operators can be overloaded:
+以下的操作符可以被重载：
 
 | Operation            | Trait                          |
 |:---------------------|:-------------------------------|
@@ -832,14 +815,14 @@ The following operators can be overloaded:
 | `mut []`             | [`IndexMut`][IndexMut]         |
 
 <h3><a href="#why-the-split-between-eq-partialeq-and-ord-partialord" name="why-the-split-between-eq-partialeq-and-ord-partialord">
-Why the split between <code>Eq</code>/<code>PartialEq</code> and <code>Ord</code>/<code>PartialOrd</code>?
+为什么要把 <code>Eq</code>/<code>PartialEq</code> 及 <code>Ord</code>/<code>PartialOrd</code> 分开？
 </a></h3>
 
-There are some types in Rust whose values are only partially ordered, or have only partial equality. Partial ordering means that there may be values of the given type that are neither less than nor greater than each other. Partial equality means that there may be values of the given type that are not equal to themselves.
+Rust 中有一些类型的值只是部分有序（偏序），或者只有部分等价。部分有序的意思对于给定的类型，可能存在既不小于也不大于彼此的值。部分等价的意思是对于给定的类型，可能存在与自身不相等的值。
 
-Floating point types ([`f32`][f32] and [`f64`][f64]) are good examples of each. Any floating point type may have the value `NaN` (meaning "not a number"). `NaN` is not equal to itself (`NaN == NaN` is false), and not less than or greater than any other floating point value. As such, both [`f32`][f32] and [`f64`][f64] implement [`PartialOrd`][PartialOrd] and [`PartialEq`][PartialEq] but not [`Ord`][Ord] and not [`Eq`][Eq].
+浮点类型（[`f32`][f32] 和 [`f64`][f64]）对于这两种类型是个好例子。任何浮点类型可能具有值 `NaN`（意思是「非数字」）。`NaN` 不等于自身（`NaN == NaN` 为假），也不小于或者大于任何其它浮点值。这样，[`f32`][f32] 和 [`f64`][f64] 都实现了 [`PartialOrd`][PartialOrd] 和 [`PartialEq`][PartialEq]， 而非 [`Ord`][Ord] 也非 [`Eq`][Eq]。
 
-As explained in [the earlier question on floats](#why-cant-i-compare-floats), these distinctions are important because some collections rely on total orderings/equality in order to give correct results.
+正如[先前关于浮点类型问题](#why-cant-i-compare-floats)的解答，这些区别很重要，因为一些集合依赖于全序/完全等价以得出正确的结果。
 
 <h2 id="input-output">输入 / 输出</h2>
 
@@ -847,7 +830,7 @@ As explained in [the earlier question on floats](#why-cant-i-compare-floats), th
 如何将文件读入一个 <code>String</code>？
 </a></h3>
 
-Using the [`read_to_string()`][read__read_to_string] method, which is defined on the [`Read`][Read] trait in [`std::io`][std-io].
+使用 [`read_to_string()`][read__read_to_string] 方法，它定义在 [`std::io`][std-io] 的 [`Read`][Read] trait 中。
 
 ```rust
 use std::io::Read;
@@ -872,23 +855,23 @@ fn main() {
 如何有效地读取文件输入？
 </a></h3>
 
-The [`File`][File] type implements the [`Read`][Read] trait, which has a variety of functions for reading and writing data, including [`read()`][read__read], [`read_to_end()`][read__read_to_end], [`bytes()`][read__bytes], [`chars()`][read__chars], and [`take()`][read__take]. Each of these functions reads a certain amount of input from a given file. [`read()`][read__read] reads as much input as the underlying system will provide in a single call. [`read_to_end()`][read__read_to_end] reads the entire buffer into a vector, allocating as much space as is needed. [`bytes()`][read__bytes] and [`chars()`][read__chars] allow you to iterate over the bytes and characters of the file, respectively. Finally, [`take()`][read__take] allows you to read up to an arbitrary number of bytes from the file. Collectively, these should allow you to efficiently read in any data you need.
+[`File`][File] 类型实现了 [`Read`][Read] trait，它具有读写数据的各种函数，包括[`read()`][read__read]，[`read_to_end()`][read__read_to_end]，[`bytes()`][read__bytes]，[`chars()`][read__chars]，和 [`take()`][read__take]。这些函数中每个都从给定的文件中读取一定量的输入。[`read()`][read__read] 在单次调用中读取与底层系统一样多的输入。[`bytes_to_end()`][read__read_to_end] 将整个缓冲区读进一个向量，分配所需的空间。[`bytes()`][read__bytes] 和 [`chars()`][read__chars] 可以分别对文件的字节和字符进行迭代。最后，[`take()`][read__take] 允许你从文件中读取任意数量的字节。总而言之，这些都允许你有效地读取所需的任何数据。
 
-For buffered reads, use the [`BufReader`][BufReader] struct, which helps to reduce the number of system calls when reading.
+对于缓冲区的读取，使用 [`BufReader`][BufReader] 结构体，有助于读取时减少系统调用的次数。
 
 <h3><a href="#how-do-i-do-asynchronous-input-output-in-rust" name="how-do-i-do-asynchronous-input-output-in-rust">
-Rust 中如何进行异步输入/输出？
+Rust 中如何进行异步输入 / 输出？
 </a></h3>
 
-There are several libraries providing asynchronous input / output in Rust, including [mioco](https://github.com/dpc/mioco), [coio-rs](https://github.com/zonyitoo/coio-rs), and [rotor](https://github.com/tailhook/rotor).
+有几个 Rust 的库提供了异步输入 / 输出，包括 [mio](https://github.com/carllerche/mio)，[tokio](https://github.com/tokio-rs/tokio-core)，[mioco](https://github.com/dpc/mioco)，[coio-rs](https://github.com/zonyitoo/coio-rs) 和 [rotor](https://github.com/tailhook/rotor)。
 
 <h3><a href="#how-do-i-get-command-line-arguments" name="how-do-i-get-command-line-arguments">
 如何在 Rust 中获取命令行参数？
 </a></h3>
 
-The easiest way is to use [`Args`][Args], which provides an iterator over the input arguments.
+最简单的方法是使用 [`Args`][Args]，它为输入参数提供了迭代器。
 
-If you're looking for something more powerful, there are a [number of options on crates.io](https://crates.io/keywords/argument).
+如果你正在寻找一些更强大的工具，那么[在 crate.io 上有很多选择](https://crates.io/keywords/argument)。
 
 <h2 id="error-handling">错误处理</h2>
 
@@ -896,51 +879,51 @@ If you're looking for something more powerful, there are a [number of options on
 为什么 Rust 没有异常？
 </a></h3>
 
-Exceptions complicate understanding of control-flow, they express validity/invalidity outside of the type system, and they interoperate poorly with multithreaded code (a major focus of Rust).
+异常使对于控制流的理解复杂化，它们表示了类型系统之外的有效性/无效性，而且它们与多线程代码（Rust 的主要关注点）交互并不佳。
 
-Rust prefers a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/stable/book/error-handling.html). This fits more nicely with Rust's control flow, concurrency, and everything else.
+Rust 更倾向于使用基于类型的错误处理方式，在[这本书中有详细的介绍](https://doc.rust-lang.org/stable/book/error-handling.html)。这会更适合 Rust 的控制流，并发和其它所有的特性。
 
 <h3><a href="#whats-the-deal-with-unwrap" name="whats-the-deal-with-unwrap">
-What's the deal with <code>unwrap()</code> everywhere?
+到处都有 <code>unwrap()</code> 是怎么回事？
 </a></h3>
 
-`unwrap()` is a function that extracts the value inside an [`Option`][Option] or [`Result`][Result] and panics if no value is present.
+`unwrap()` 是一个函数，它提取一个 [`Option`][Option] 或 [`Result`][Result] 中的值，如果值不存在，则引发 panic。
 
-`unwrap()` shouldn't be your default way to handle errors you expect to arise, such as incorrect user input. In production code, it should be treated like an assertion that the value is non-empty, which will crash the program if violated.
+`unwrap()` 不应该是你处理预料会出现的错误的默认方式，例如用户的错误输入。在生产环境的代码中，它被视为一个断言，断言该值非空，否则会导致程序崩溃。
 
-It's also useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point.
+它也适用于快速原型中，你暂时不想处理错误，或者博客文章中，错误处理会喧宾夺主。
 
 <h3><a href="#why-do-i-get-errors-with-try" name="why-do-i-get-errors-with-try">
-为什么我尝试运行使用 <code>try!</code> 宏的示例代码时收到错误？
+为什么我尝试运行使用 <code>try!</code> 宏的示例代码时会得到错误？
 </a></h3>
 
-It's probably an issue with the function's return type. The [`try!`][TryMacro] macro either extracts the value from a [`Result`][Result], or returns early with the error [`Result`][Result] is carrying. This means that [`try`][TryMacro] only works for functions that return [`Result`][Result] themselves, where the `Err`-constructed type implements `From::from(err)`. In particular, this means that the [`try!`][TryMacro] macro cannot work inside the `main` function.
+这可能是函数返回类型的一个问题。[`try!`][TryMacro] 宏从 [`Result`][Result] 中提取值，或者捕获 [`Result`][Result] 中的错误并提早返回此错误。这意味着 [`try!`][TryMacro] 只适用于返回 [`Result`][Result] 的函数，其中的 `Err` 构造类型实现了 `From::from(err)`。在实践中，这意味着 [`try!`][TryMacro] 宏不能在 main 函数中执行。
 
 <h3><a href="#error-handling-without-result" name="error-handling-without-result">
-Is there an easier way to do error handling than having <code>Result</code>s everywhere?
+比起无处不在的 <code>Result</code>，有没有一种更简单的错误处理方式？
 </a></h3>
 
-If you're looking for a way to avoid handling [`Result`s][Result] in other people's code, there's always [`unwrap()`][unwrap], but it's probably not what you want. [`Result`][Result] is an indicator that some computation may or may not complete successfully. Requiring you to handle these failures explicitly is one of the ways that Rust encourages robustness. Rust provides tools like the [`try!` macro][TryMacro] to make handling failures ergonomic.
+如果你在寻找一种方法，避免处理从别人代码中返回的 [`Result`][Result] ，总是可以使用 [`unwrap()`][unwrap]，但它可能不是你想要的。 [`Result`][Result] 是一种用于指示某些运算可能成功或者失败的指示器。要求你显式处理这些失败，是 Rust 鼓励的鲁棒性的方法之一。 Rust 提供了像 [`try!`][TryMacro] 这样的宏，使得处理失败更便捷。
 
-If you really don't want to handle an error, use [`unwrap()`][unwrap], but know that doing so means that the code panics on failure, which usually results in a shutting down the process.
+如果你真的不想处理错误，可以用 [`unwrap()`][unwrap]，但请注意，这么做意味着在失败的时候代码会 panic，这通常会导致进程关闭。
 
 <h2 id="concurrency">并发</h2>
 
 <h3><a href="#can-i-use-static-values-across-threads-without-an-unsafe-block" name="can-i-use-static-values-across-threads-without-an-unsafe-block">
-Can I use static values across threads without an <code>unsafe</code> block?
+我可以不用 <code>unsafe</code> 块而跨线程使用静态（static）值吗？
 </a></h3>
 
-Mutation is safe if it's synchronized. Mutating a static [`Mutex`][Mutex] (lazily initialized via the [lazy-static](https://crates.io/crates/lazy_static/) crate) does not require an `unsafe` block, nor does mutating a static [`AtomicUsize`][AtomicUsize] (which can be initialized without lazy_static).
+在同步的情况下，修改是安全的。修改一个静态的 [`Mutex`][Mutex] （通过 [lazy-static](https://crates.io/crates/lazy_static/) 包进行延迟初始化）不需要用 `unsafe` 块，修改一个静态的 [`AtomicUsize`][AtomicUsize] （可以不用 lazy_staic 初始化）也是一样。
 
-More generally, if a type implements [`Sync`][Sync] and does not implement [`Drop`][Drop], it [can be used in a `static`](https://doc.rust-lang.org/book/const-and-static.html#static).
+更一般来说，如果一个类型实现了 [`Sync`][Sync] 而且不实现 [`Drop`][Drop]，它就[可以被用作 `static`](https://doc.rust-lang.org/book/const-and-static.html#static)
 
 <h2 id="macros">宏</h2>
 
 <h3><a href="#can-i-write-a-macro-to-generate-identifiers" name="can-i-write-a-macro-to-generate-identifiers">
-Can I write a macro to generate identifiers?
+我可以编写一个宏来生成标识符吗？
 </a></h3>
 
-Not currently. Rust macros are ["hygienic macros"](https://en.wikipedia.org/wiki/Hygienic_macro), which intentionally avoid capturing or creating identifiers that may cause unexpected collisions with other identifiers. Their capabilities are significantly different than the style of macros commonly associated with the C preprocessor. Macro invocations can only appear in places where they are explicitly supported: items, method declarations, statements, expressions, and patterns. Here, "method declarations" means a blank space where a method can be put. They can't be used to complete a partial method declaration. By the same logic, they can't be used to complete a partial variable declaration.
+目前还不行。 Rust 宏是 [「卫生宏（hygienic macros）」](https://en.wikipedia.org/wiki/Hygienic_macro)，它有意避免捕获或者创建可能导致与其它标识符产生意外冲突的标识符。它们的功能与 C 预处理器相关的宏的风格有着显著的不同。宏调用只能在显式支持的地方出现：项（item），方法声明，表达式，以及模式。这里，「方法声明」是指可以放置方法的位置。它们不能用于完成部分方法声明。由于相同的逻辑，它们也不能用于完成部分变量声明。
 
 <h2 id="debugging">调试和工具</h2>
 
@@ -948,13 +931,13 @@ Not currently. Rust macros are ["hygienic macros"](https://en.wikipedia.org/wiki
 如何调试 Rust 程序？
 </a></h3>
 
-Rust programs can be debugged using [gdb](https://sourceware.org/gdb/current/onlinedocs/gdb/) or [lldb](http://lldb.llvm.org/tutorial.html), the same as C and C++. In fact, every Rust installation comes with one or both of rust-gdb and rust-lldb (depending on platform support). These are wrappers over gdb and lldb with Rust pretty-printing enabled.
+与 C 和 C++ 相同，Rust 程序可以用 [gdb](https://sourceware.org/gdb/current/onlinedocs/gdb/) 或 [lldb](http://lldb.llvm.org/tutorial.html) 进行调试。实际上，每个 Rust 安装都带了 rust-gdb 和 rust-lldb 两者或其中一个（取决于平台支持）。这些是对 gdb 和 lldb 的封装，增加了对 Rust 的显示优化。
 
 <h3><a href="#how-do-i-locate-a-panic" name="how-do-i-locate-a-panic">
-<code>rustc</code> said a panic occurred in standard library code. How do I locate the mistake in my code?
+<code>rustc</code> 说标准库代码中发生了一个 panic。我如何才能在我的代码中定位错误？
 </a></h3>
 
-This error is usually caused by [`unwrap()`ing][unwrap] a `None` or `Err` in client code. Enabling backtraces by setting the environment variable `RUST_BACKTRACE=1` helps with getting more information. Compiling in debug mode (the default for `cargo build`) is also helpful. Using a debugger like the provided `rust-gdb` or `rust-lldb` is also helpful.
+这个错误通常是由于用户代码中对一个 `None` 或者 `Err` 值执行 [`unwrap()`][unwrap] 操作引起的。设置环境变量 `RUST_BACKTRACE=1` 启用回溯或能，在助于获取更多的信息。在调试模式下编译（`cargo build` 的默认模式）也是有帮助的。使用 rust 提供的 `rust-gdb` 或 `rust-lldb` 这样的调试器也是有帮助的。
 
 <h3><a href="#what-ide-should-i-use" name="what-ide-should-i-use">
 我该使用什么 IDE？
@@ -963,26 +946,26 @@ This error is usually caused by [`unwrap()`ing][unwrap] a `None` or `Err` in cli
 Rust 有许多开发环境可供选择，详见官方的 [IDE 支持页面](https://forge.rust-lang.org/ides.html)。
 
 <h3><a href="#wheres-rustfmt" name="wheres-rustfmt">
-<code>gofmt</code> is great. Where's <code>rustfmt</code>?
+<code>gofmt</code> 很棒。<code>rustfmt</code>在哪？
 </a></h3>
 
-`rustfmt` is [right here](https://github.com/rust-lang-nursery/rustfmt), and is being actively developed to make reading Rust code as easy and predictable as possible.
+`rustfmt` [就在这里](https://github.com/rust-lang-nursery/rustfmt)，正在活跃地开发中，以使得阅读 Rust 代码尽可能更容易和可预测。
 
 <h2 id="low-level">底层</h2>
 
 <h3><a href="#how-do-i-memcpy-bytes" name="how-do-i-memcpy-bytes">
-如何 <code>memcpy</code> 字节？
+如何用 <code>memcpy</code> 在内存中拷贝字节？
 </a></h3>
 
-如果您想安全地克隆现有切片，可以使用 [`clone_from_slice`][clone_from_slice]。
+如果你想安全地克隆一个现有切片，可以使用 [`clone_from_slice`][clone_from_slice]。
 
-要复制可能重叠的字节，使用 [`copy`][copy]. 要复制非重叠字节，使用 [`copy_nonoverlapping`][copy_nonoverlapping]。两个特性都是 `unsafe`，因此两者都可以颠覆本语言的安全保障，使用时请小心。
+用 [`copy`][copy] 拷贝可能重叠（overlapping）的字节。用 [`copy_nonoverlapping`][copy_nonoverlapping] 拷贝非重叠字节。两个特性都是 `unsafe` 的，因此两者都会破坏本语言的安全保障，使用时请小心。
 
 <h3><a href="#does-rust-work-without-the-standard-library" name="does-rust-work-without-the-standard-library">
-没有标准库的 Rust 还有适当的功能吗？
+没有标准库的 Rust 还能正确运行吗？
 </a></h3>
 
-绝对可以。Rust 程序可以使用 `#![no_std]` 属性设置为不加载标准库。使用此属性集后，您可以继续使用 Rust 核心库，那些是与平台无关的原函数。也因此，它不包括 IO、并发、堆分配等。
+绝对可以。Rust 程序可以使用 `#![no_std]` 属性设置为不加载标准库。使用此属性集后，你可以继续使用 Rust 核心库，那些是与平台无关的原函数。也因此，它不包括 IO、并发、堆分配等。
 
 <h3><a href="#can-i-write-an-operating-system-in-rust" name="can-i-write-an-operating-system-in-rust">
 我可以用 Rust 写一个操作系统吗？
@@ -991,16 +974,16 @@ Rust 有许多开发环境可供选择，详见官方的 [IDE 支持页面](http
 行的！事实上，[有多个项目正在进行中](http://wiki.osdev.org/Rust)。
 
 <h3><a href="#how-can-i-write-endian-independent-values" name="how-can-i-write-endian-independent-values">
-如何以大端或小端格式读取与写入一个文件或其他字节流中的是 <code>i32</code> 或 <code>f64</code> 这样的数字类型？
+如何以大端或小端格式读取或写入像 <code>i32</code> 或 <code>f64</code> 这样的数字类型到一个文件或其他字节流中？
 </a></h3>
 
-您应该检出 [byteorder 包装箱](http://burntsushi.net/rustdoc/byteorder/)，它提供了这种实用程序。
+你应该检出 [byteorder 包](http://burntsushi.net/rustdoc/byteorder/)，它正是为这种情况提供了各种工具。
 
 <h3><a href="#does-rust-guarantee-data-layout" name="does-rust-guarantee-data-layout">
 Rust 是否保证特定的数据布局？
 </a></h3>
 
-默认不会。在一般情况下，`enum` 和 `struct` 布局是未定义的。这允许编译器进行潜在优化，例如重新使用 padding for the discriminant, compacting variants of nested `enum`s, reordering fields to remove padding, etc. `enums` which carry no data ("C-like") are eligible to have a defined representation. Such `enums` are easily distinguished in that they are simply a list of names that carry no data:
+默认不会。在一般情况下，`enum` 和 `struct` 布局是未定义的。这允许编译器进行潜在优化，如根据差别式重新对齐，压缩嵌套的 `enum`，重排字段以消除填充，等。不带数据的 `enum` （类 C）符合按定义表示的条件。这样的 `enum` 很容易区分，因为它们只是一个不包含数据的名字列表：
 
 ```rust
 enum CLike {
@@ -1011,7 +994,7 @@ enum CLike {
 }
 ```
 
-`#[repr(C)]` 属性可以应用到诸如 `enums` 以提供等同 C 语言中的表示。This allows using Rust `enum`s in FFI code where C `enum`s are also used, for most use cases. The attribute can also be applied to `struct`s to get the same layout as a C `struct` would.
+`#[repr(C)]` 属性可以应用到诸如 `enums` 以提供等同 C 语言中的表示。对于大多数情况来说，这允许在 FFI 代码中使用 Rust 的 `enum` 和 C 的 `enum`。这个属性也可以应用到 `strut` 上，来获得与 C `struct` 相同的布局。
 
 <h2 id="cross-platform">跨平台</h2>
 
@@ -1043,7 +1026,11 @@ Rust 可以用于 Android/iOS 编程吗？
 我可以在网页浏览器中运行我的 Rust 程序吗？
 </a></h3>
 
-目前还不行，但也正在努力使 Rust 能用 [Emscripten](https://kripken.github.io/emscripten-site/) 编译为 Web 版。
+有可能。Rust 已经拥有了对于 [asm.js] 和 [WebAssembly] 的[实验性支持][wasm]。
+
+[wasm]: https://davidmcneil.gitbooks.io/the-rusty-web/
+[asm.js]: http://asmjs.org/
+[WebAssembly]: http://webassembly.org/
 
 <h3><a href="#how-do-i-cross-compile-rust" name="how-do-i-cross-compile-rust">
 如何在 Rust 中交叉编译？
@@ -1053,29 +1040,29 @@ Rust 的交叉编译是可能的，它但需要[一些流程](https://github.com
 
 Rust 确实为每个受支持平台方法[标准库副本](https://static.rust-lang.org/dist/index.html)，在分发目录上可以找到各构建目录，其中包含的 `rust-std-*` 文件就是它们，但尚没有自动安装它们的方法。
 
-<h2 id="modules-and-crates">模块和包装箱</h2>
+<h2 id="modules-and-crates">模块（module）和包（crate）</h2>
 
 <h3><a href="#what-is-the-relationship-between-a-module-and-a-crate" name="what-is-the-relationship-between-a-module-and-a-crate">
-模块与包装箱之间的关系是什么？
+模块与包之间的关系是什么？
 </a></h3>
 
-- 一个包装箱是一个编译单元，它是 Rust 编译器可操作的最小代码量。
-- 一个模块是一个（可能是嵌套的）放在一个包装箱内的代码单元。
-- 一个包装箱包含一个隐含的、未命名的顶层模块。
-- 递归定义可以跨越模块，但不能跨包装箱。
+- 一个包是一个编译单元，它是 Rust 编译器可操作的最小代码量。
+- 一个模块是一个（可能是嵌套的）放在一个包内的代码单元。
+- 一个包包含一个隐含的、未命名的顶层模块。
+- 递归定义可以跨越模块，但不能跨包。
 
 <h3><a href="#why-cant-the-rust-compiler-find-a-library-im-using" name="why-cant-the-rust-compiler-find-a-library-im-using">
 为什么 Rust 编译器找不到我 <code>use</code> 的库？
 </a></h3>
 
-There are a number of possible answers, but a common mistake is not realizing that `use` declarations are relative to the crate root. Try rewriting your declarations to use the paths they would use if defined in the root file of your project and see if that fixes the problem.
+可能有多种原因，但一个常见的错误是没有意识到 `use` 声明是相对于包的根层级。如果在项目的根文件中定义，请尝试重写声明以使用它们要使用的路径，并查看是否可以解决问题。
 
-There are also `self` and `super`, which disambiguate `use` paths as being relative to the current module or parent module, respectively.
+还有 `self` 和 `super`，它们分别使用相对于当前模块或者父模块的路径。
 
-For complete information on `use`ing libraries, read the Rust book's chapter ["Crates and Modules"](https://doc.rust-lang.org/stable/book/crates-and-modules.html).
+有关 `use` 库的完整信息，请阅读 Rust 之书的[「包和模块」](https://doc.rust-lang.org/stable/book/crates-and-modules.html) 一章。
 
 <h3><a href="#why-do-i-have-to-declare-modules-with-mod" name="why-do-i-have-to-declare-modules-with-mod">
-为什么我必须在包装箱顶层用 <code>mod</code> 声明模块文件，而不能直接 <code>use</code> 它们？
+为什么我必须在包顶层用 <code>mod</code> 声明模块文件，而不能直接 <code>use</code> 它们？
 </a></h3>
 
 有两种方法在 Rust 中声明模块：内链或者另一个文件。下面是两个例子：
@@ -1115,36 +1102,36 @@ pub fn f() {
 如何配置 Cargo 使用代理服务器？
 </a></h3>
 
-正如 Cargo 的[配置文档](http://doc.crates.io/config.html)所说，您可以设置配置文件中 `[http]` 下的“proxy”变量使 Cargo 使用一个代理服务器。
+正如 Cargo 的[配置文档](http://doc.crates.io/config.html)所说，你可以设置配置文件中 `[http]` 下的「proxy」变量使 Cargo 使用一个代理服务器。
 
 <h3><a href="#why-cant-the-compile-find-method-implementations" name="why-cant-the-compile-find-method-implementations">
-为什么编译器找不到方法实现，即使我已经 <code>use</code> 包装箱？
+为什么编译器找不到方法实现，即使我已经 <code>use</code> 了相应的包？
 </a></h3>
 
-For methods defined on a trait, you have to explicitly import the trait declaration. This means it's not enough to import a module where a struct implements the trait, you must also import the trait itself.
+对于在 trait 上定义的方法，必须显式导入 trait 的声明。这意味着导入一个实现了 trait 的 struct 模块是不够的，还必须导入这个 trait 本身。
 
 <h3><a href="#why-cant-the-compiler-infer-use-statements" name="why-cant-the-compiler-infer-use-statements">
 为什么编译器不能为我推断 <code>use</code> 声明？
 </a></h3>
 
-It probably could, but you also don't want it to. While in many cases it is likely that the compiler could determine the correct module to import by simply looking for where a given identifier is defined, this may not be the case in general. Any decision rule in `rustc` for choosing between competing options would likely cause surprise and confusion in some cases, and Rust prefers to be explicit about where names are coming from.
+它可以做到，但你也许也不希望它这么做。尽管在许多情况下，编译器可以通过简单地查找给定的标识符定义的位置来确定要导入的正确模块，但这可能不是一般的情况。在某些情况下， `rustc` 中任何用于在竞争项之间进行选择的规则都有可能引起意外和混淆，而 Rust 更倾向于显式标明名字来源于哪里。
 
-For example, the compiler could say that in the case of competing identifier definitions the definition from the earliest imported module is chosen. So if both module `foo` and module `bar` define the identifier `baz`, but `foo` is the first registered module, the compiler would insert `use foo::baz;`.
+例如，编译器可以说在竞争标识符定义的情况下，选择最早导入的模块。那么如果两个模块 `foo` 和模块 `bar` 都定义了标识符 `baz`，但是 `foo` 是首先注册的模块，编译器会插入 `use foo::baz;`。
 
 ```rust
 mod foo;
 mod bar;
 
-// use foo::baz  // to be inserted by the compiler.
+// use foo::baz  // 会由编译器插入。
 
 fn main() {
   baz();
 }
 ```
 
-If you know this is going to happen, perhaps it saves a small number of keystrokes, but it also greatly increases the possibility for surprising error messages when you actually meant for `baz()` to be `bar::baz()`, and it decreases the readability of the code by making the meaning of a function call dependent on module declaration. These are not tradeoffs we are willing to make.
+假如你知道这将会发生，或许这样可以节省少量的按键次数，但当你实际需要用到 `bar::baz()` 中的 `baz()` 时，会大大增加意外的错误信息的可能性，而且通过模块声明来决定一个函数调用的含义，也降低了代码的可读性。这些不是我们愿意做的折衷。
 
-但在未来，IDE 可以帮助管理声明，这会在两方面带来更好的结果：机器人帮忙拉取名称，并明确声明这些名称来自何处。
+然而，在将来，IDE 可以帮助管理声明，这会在两方面带来更好的结果：机器帮助引入名字，但显式声明这些名字来自何处。
 
 <!--
 ### How do I package and archive crates from [https://crates.io](https://crates.io)?
@@ -1159,20 +1146,20 @@ TODO: Write this answer.
 在 Rust 中使用 [libloading](https://crates.io/crates/libloading) 导入动态库，它提供了一个用于动态链接的跨平台系统。
 
 <h3><a href="#why-doesnt-crates-io-have-namespaces" name="why-doesnt-crates-io-have-namespaces">
-为什么 crates.io 没有名字空间？
+为什么 crates.io 没有命名空间？
 </a></h3>
 
-Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-package-policies/1041) of [https://crates.io](https://crates.io)'s design:
+引用 [https://crates.io](https://crates.io) 设计的[官方解释](https://internals.rust-lang.org/t/crates-io-package-policies/1041)：
 
-> In the first month with crates.io, a number of people have asked us about the possibility of introducing [namespaced packages](https://github.com/rust-lang/crates.io/issues/58).<br><br>
+> 在 crates.io 的第一个月里，有一些人就问我们关于引入[基于命名空间的包](https://github.com/rust-lang/crates.io/issues/58)的可能性。<br><br>
 >
-> While namespaced packages allow multiple authors to use a single, generic name, they add complexity to how packages are referenced in Rust code and in human communication about packages. At first glance, they allow multiple authors to claim names like `http`, but that simply means that people will need to refer to those packages as `wycats' http` or `reem's http`, offering little benefit over package names like `wycats-http` or `reem-http`.<br><br>
+> 尽管基于命名空间的包允许多个作者使用一个单一的，通用的名字，但这也增加了 Rust 代码中和人际沟通中如何引用包的复杂度。乍看之下，这允许多个作者占有像 `http` 这样的名字，但这只意味着人们必须用 `wycats' http` 或者 `reem's http` 来指定所引用的包，相对于像 `wycats-http` 或者 `reem-http` 这样的名字，前者几乎没什么好处。<br><br>
 >
-> When we looked at package ecosystems without namespacing, we found that people tended to go with more creative names (like `nokogiri` instead of "tenderlove's libxml2"). These creative names tend to be short and memorable, in part because of the lack of any hierarchy. They make it easier to communicate concisely and unambiguously about packages. They create exciting brands. And we've seen the success of several 10,000+ package ecosystems like NPM and RubyGems whose communities are prospering within a single namespace.<br><br>
+> 当我们在没有命名空间的情况下观察包生态系统时，发现人们更倾向于使用更多的富有创意的名字（如 `nologiri` 而不是 `tenderlove's libxml2`）。这些创意名字往往是简短且易于记忆的，部分原因在于减少了层级。这使得关于包的信息更容易被简洁明确地交流。它能创造令人兴奋的品牌。而且，我们已经看到了多个拥有超过 10,000+ 个包的生态系统的成功，如 NPM 和 RubyGems，其社区在单一的命名空间中蓬勃发展。<br><br>
 >
-> In short, we don't think the Cargo ecosystem would be better off if Piston chose a name like `bvssvni/game-engine` (allowing other users to choose `wycats/game-engine`) instead of simply `piston`.<br><br>
+> 简而言之，假如 Piston 选择一个如 `bvssvni/game-engine` （允许其它用户选择 `wycats/game-engine`）的名字而不是简单的 `piston`，我们不认为这样对 Cargo 生态系统会更好。<br><br>
 >
-> Because namespaces are strictly more complicated in a number of ways, and because they can be added compatibly in the future should they become necessary, we're going to stick with a single shared namespace.
+> 因为命名空间在许多方面有更严格的复杂度，而且因为在将来如果有必要可以添加兼容性，我们坚持使用一个共享的命名空间。
 
 <h2 id="libraries">库</h2>
 
@@ -1180,13 +1167,13 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 我该怎样发出一个 HTTP 请求？
 </a></h3>
 
-标准库不包含 HTTP 的实现，因此您需要用外部的包装箱。 [Hyper](https://github.com/hyperium/hyper) 是最流行的选择，但[也有众多其他可选](https://crates.io/keywords/http)。
+标准库不包含 HTTP 的实现，因此你需要用外部的包。 [Hyper](https://github.com/hyperium/hyper) 是最流行的选择，但[也有众多其他可选](https://crates.io/keywords/http)。
 
 <h3><a href="#how-can-i-write-a-gui-application" name="how-can-i-write-a-gui-application">
 如何用 Rust 编写 GUI 应用程序？
 </a></h3>
 
-有多种方法在 Rust 中编写 GUI 应用程序。查阅我们的[GUI 框架列表](https://github.com/kud1ing/awesome-rust#gui)吧。
+有多种方法在 Rust 中编写 GUI 应用程序。查阅我们的 [GUI 框架列表](https://github.com/kud1ing/awesome-rust#gui)吧。
 
 <h3><a href="#how-can-i-parse-json-xml" name="how-can-i-parse-json-xml">
 如何解析 JSON/XML？
@@ -1195,7 +1182,7 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 [Serde](https://github.com/serde-rs/serde) 是推荐的将 Rust 数据序列化与反序列化为多种格式的库。
 
 <h3><a href="#is-there-a-standard-2d-vector-crate" name="is-there-a-standard-2d-vector-crate">
-有标准的 2D+ 矢量和形状包装箱吗？
+有标准的 2D+ 矢量和形状包吗？
 </a></h3>
 
 还没有呢！你能写一个吗？
@@ -1204,7 +1191,7 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 如何用 Rust 编写 OpenGL 应用程序？
 </a></h3>
 
-[Glium](https://github.com/tomaka/glium) is the major library for OpenGL programming in Rust. [GLFW](https://github.com/bjz/glfw-rs) is also a solid option.
+[Glium](https://github.com/tomaka/glium) 是 Rust 中 OpenGL 编程的主要的库。[GLFW](https://github.com/bjz/glfw-rs) 也是一个可靠的选择。
 
 <h3><a href="#can-i-write-a-video-game-in-rust" name="can-i-write-a-video-game-in-rust">
 我能用 Rust 编写一个电子游戏吗？
@@ -1224,33 +1211,33 @@ Rust 是面向对象吗？
 如何将面向对象的概念映射到 Rust？
 </a></h3>
 
-That depends. There _are_ ways of translating object-oriented concepts like [multiple inheritance](https://www.reddit.com/r/rust/comments/2sryuw/ideaquestion_about_multiple_inheritence/) to Rust, but as Rust is not object-oriented the result of the translation may look substantially different from its appearance in an OO language.
+看情况。将面向对象的概念转化到 Rust 有许多种 _方式_，例如[多继承](https://www.reddit.com/r/rust/comments/2sryuw/ideaquestion_about_multiple_inheritence/)，但由于 Rust 不是面向对象的，所以转化的结果可能与 OO 语言看起来有很大的不同。
 
 <h3><a href="#how-do-i-configure-a-struct-with-optional-parameters" name="how-do-i-configure-a-struct-with-optional-parameters">
 如何处理有可选参数的结构体的配置？
 </a></h3>
 
-The easiest way is to use the [`Option`][Option] type in whatever function you're using to construct instances of the struct (usually `new()`). Another way is to use the [builder pattern](https://aturon.github.io/ownership/builders.html), where only certain functions instantiating member variables must be called before the construction of the built type.
+最简单的方法是在你用来构造结构体实现的任何函数（ 通常是 `new`）中使用 [`Option`][Option] 类型。另一种方法是使用 [构造器模式](https://aturon.github.io/ownership/builders.html)，在构造类型之前，一些明确实例化成员变量的函数必须被调用。
 
 <h3><a href="#how-do-i-do-global-variables" name="how-do-i-do-global-variables">
 如何在 Rust 中做全局对象？
 </a></h3>
 
-Rust 中可以用 `const` 声明在编译时计算的全局常量，而 `static` 可用于可变的全局变量。请注意，修改一个 `static mut` 变量需要使用 `unsafe`，因为它允许数据竞争（races）， one of the things guaranteed not to happen in safe Rust. `const` 与 `static` 值的一项重要区别是，你可以引用 `static` 值，但不能引用 `const` 值，因为它没有一个特定的内存位置。有关 `const` 与 `static` 的更多信息，请阅读 [Rust 之书](https://doc.rust-lang.org/book/const-and-static.html)。
+Rust 中可以用 `const` 声明在编译时计算的全局常量，而 `static` 可用于可变的全局变量。请注意，修改一个 `static mut` 变量需要使用 `unsafe`，因为它允许数据竞争（races），这在安全的 Rust 中保证不会发生的事之一。`const` 与 `static` 值的一项重要区别是，你可以引用 `static` 值，但不能引用 `const` 值，因为它没有一个特定的内存位置。有关 `const` 与 `static` 的更多信息，请阅读 [Rust 之书](https://doc.rust-lang.org/book/const-and-static.html)。
 
 <h3><a href="#how-can-i-set-compile-time-constants-that-are-defined-procedurally" name="how-can-i-set-compile-time-constants-that-are-defined-procedurally">
 如何设置程序定义的编译时的常量？
 </a></h3>
 
-Rust 目前对编译时常量的支持有限。您可以使用 `const` 声明（类似 `static`，但它不可变，并且在内存中没有特定位置）定义原函数，以及定义 `const` 函数和固有方法。
+Rust 目前对编译时常量的支持有限。你可以使用 `const` 声明（类似 `static`，但它不可变，并且在内存中没有特定位置）定义原生类型，以及定义 `const` 函数和固有方法。
 
-To define procedural constants that can't be defined via these mechanisms, use the [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) crate, which emulates compile-time evaluation by automatically evaluating the constant at first use.
+要定义那些无法通过这种机制定义的过程常量，使用 [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) crate，它通过第一次使用的时候自动求值来模拟编译时求值。
 
 <h3><a href="#can-i-run-code-before-main" name="can-i-run-code-before-main">
 我可以在 main 发生前运行初始化代码吗？
 </a></h3>
 
-Rust 没有“`main` 之前”的概念。你想找到的最接近的可能是 [`lazy-static`](https://github.com/Kimundi/lazy-static.rs) 包装箱，它在初次使用时通过懒惰初始化静态变量做到类似“在main之前”。
+Rust 没有「`main` 之前」的概念。你想找到的最接近的可能是 [`lazy-static`](https://github.com/Kimundi/lazy-static.rs) 包，它在初次使用时通过懒惰初始化静态变量做到类似「在main之前」。
 
 <!--
 
@@ -1274,11 +1261,11 @@ Rust has consistently worked to avoid having features with overlapping purposes,
 Rust 是否允许全局的非常量表达式值？
 </a></h3>
 
-No. Globals cannot have a non-constant-expression constructor and cannot have a destructor at all. Static constructors are undesirable because portably ensuring a static initialization order is difficult. Life before main is often considered a misfeature, so Rust does not allow it.
+不允许。全局不能有一个非常量表达式的构造器和解构器。静态构造器也不允许，因为确保一个静态初始化顺序很难。main 之前的生命周期经常被认为是不当的功能，所以 Rust 不允许。
 
-See the [C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) about the "static initialization order fiasco", and [Eric Lippert's blog](https://ericlippert.com/2013/02/06/static-constructors-part-one/) for the challenges in C#, which also has this feature.
+参考 [C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) 中关于「static initialization order fiasco」的问题，以及 [Eric Lippert's blog](https://ericlippert.com/2013/02/06/static-constructors-part-one/) 中针对 C# 中此功能的挑战。
 
-您可以以 [lazy-static](https://crates.io/crates/lazy_static/) 包装箱使用近似的非常量表达式全局对象。
+你可以以 [lazy-static](https://crates.io/crates/lazy_static/) 包使用近似的非常量表达式全局对象。
 
 <h2 id="other-languages">其他语言</h2>
 
@@ -1286,25 +1273,25 @@ See the [C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) about the "stat
 如何在 Rust 中实现类似 C 的 <code>struct X { static int X; };</code>？
 </a></h3>
 
-如上所说，Rust 没有 `static` 字段。不过，您可以在指定的模块中声明一个 `static` 变量，这样它将为该模块私有。
+如上所说，Rust 没有 `static` 字段。不过，你可以在指定的模块中声明一个 `static` 变量，这样它将为该模块私有。
 
 <h3><a href="#how-can-i-convert-a-c-style-enum-to-an-integer" name="how-can-i-convert-a-c-style-enum-to-an-integer">
 如何将 C 风格的枚举转换为整数，反之亦然？
 </a></h3>
 
-Converting a C-style enum to an integer can be done with an `as` expression, like `e as i64` (where `e` is some enum).
+把 C 风格的枚举转换成一个整型，可以通过 `as` 表达式，如 `e as i64`（这里 `e` 是某个枚举）。
 
-Converting in the other direction can be done with a `match` statement, which maps different numeric values to different potential values for the enum.
+反方向转换，可以通过 `match` 语句，将不同的数值映射到枚举的不同潜在值。
 
 <h3><a href="#why-do-rust-programs-use-more-memory-than-c" name="why-do-rust-programs-use-more-memory-than-c">
-为什么 Rust 程序使用比 C 更多的内存？
+为什么 Rust 程序的二进制文件比 C 程序要大？
 </a></h3>
 
-There are several factors that contribute to Rust programs having, by default, larger binary sizes than functionally-equivalent C programs. In general, Rust's preference is to optimize for the performance of real-world programs, not the size of small programs.
+在默认情况下，Rust 程序比功能相当的 C 程序有更大的二进制大小，有几个因素。一般来说， Rust 倾向于为实现世界的性能做优化，而不是程序的大小。
 
-__Monomorphization__
+__单态化（Monomorphization）__
 
-Rust monomorphizes generics, meaning that a new version of a generic function or type is generated for each concrete type it's used with in the program. This is similar to how templates work in C++. For example, in the following program:
+Rust 的单态化泛型，意味着为程序中使用的每个具体类型生成一个泛型函数或者类型的新版本。这与 C++ 中模板的工作方式类似。例如，在以下程序中：
 
 ```rust
 fn foo<T>(t: T) {
@@ -1317,25 +1304,25 @@ fn main() {
 }
 ```
 
-Two distinct versions of `foo` will be in the final binary, one specialized to an `i32` input, one specialized to a `&str` input. This enables efficient static dispatch of the generic function, but at the cost of a larger binary.
+在最终的二进制文件中会有两个不同版本的 `foo`，一个专门用于接收 `i32` 的输入，一个专门用于接收 `&str` 的输入。这样实现了通用函数的高效静态调度（dispatch），但代价是会产生较大的二进制文件。
 
 __调试符号__
 
-Rust programs compile with some debug symbols retained, even when compiling in release mode. These are used for providing backtraces on panics, and can be removed with `strip`, or another debug symbol removal tool. It is also useful to note that compiling in release mode with Cargo is equivalent to setting optimization level 3 with rustc. An alternative optimization level (called `s` or `z`) [has recently landed](https://github.com/rust-lang/rust/pull/32386) and tells the compiler to optimize for size rather than performance.
+Rust 程序在编译的时候保留了一些调试符号，即使在 release 模式下编译也是如此。这是用于在 panic 的时候提供回溯（backtrace）的功能，可以用 `strip` 或者其它调试符号删除工具进行删除。还有一点值得注意的是，在 Cargo 的 release 模式下进行编译等同于用 rustc 设置优化级别为 3。一个替代的优化级别（称为 `s` 或 `z`）[最近被引入](https://github.com/rust-lang/rust/pull/32386)，用于告诉编译器针对大小而不是性能进行优化。
 
 __Jemalloc__
 
-Rust uses jemalloc as the default allocator, which adds some size to compiled Rust binaries. Jemalloc is chosen because it is a consistent, quality allocator that has preferable performance characteristics compared to a number of common system-provided allocators. There is work being done to [make it easier to use custom allocators](https://github.com/rust-lang/rust/issues/32838), but that work is not yet finished.
+Rust 使用 jemalloc 作为默认内存分配器，这会增加一些编译后的二进制文件的大小。选择 jemalloc 是因为它是一个一致的，优质的内存分配器，与许多常见的系统提供的分配器相比具有优越的性能特征。[为了更容易地使用自定义的分配器](https://github.com/rust-lang/rust/issues/32838)，有一项工作正在进行，但尚未完成。
 
-__链接时优化__
+__链接时（link-time）优化__
 
-Rust does not do link-time optimization by default, but can be instructed to do so. This increases the amount of optimization that the Rust compiler can potentially do, and can have a small effect on binary size. This effect is likely larger in combination with the previously mentioned size optimizing mode.
+Rust 在默认情况下不提供链接时优化，但可以指定这么做。这增加了 Rust 编译器可能会执行的优化量，对二进制文件产生很小的影响。与之前提到的文件大小优化模式相结合，效果会更好。
 
 __标准库__
 
-The Rust standard library includes libbacktrace and libunwind, which may be undesirable in some programs. Using `#![no_std]` can thus result in smaller binaries, but will also usually result in substantial changes to the sort of Rust code you're writing. Note that using Rust without the standard library is often functionally closer to the equivalent C code.
+Rust 标准库包括 libbacktrace 和 libunwind，这在某些程序中可能用不到。因此，使用 `#![no_std]` 可以产生更小的二进制文件，但通常也会导致你编写的代码需要大量的修改。请注意，使用不带标准库的 Rust 通常在功能上更接近等效的 C 代码。
 
-作为一个例子，下列 C 程序读入一个名称，并向该名称的人说“Hello”。
+例如，以下 C 程序读入一个名字，然后输出向该名字的人的问好 「hello」。
 
 ```c
 #include <stdio.h>
@@ -1349,7 +1336,7 @@ int main(void) {
 }
 ```
 
-将这用 Rust 重写，您可能得到这样的内容：
+用 Rust 重写，你可能得到如下的内容：
 
 ```rust
 use std::io;
@@ -1362,7 +1349,7 @@ fn main() {
 }
 ```
 
-This program, when compiled and compared against the C program, will have a larger binary and use more memory. But this program is not exactly equivalent to the above C code. The equivalent Rust code would instead look something like this:
+该程序编译之后与 C 程序相比，具有更大的二进制文件且使用更多的内存。但是该程序并不完全等同于上面的 C 代码。相反，等效的 Rust 代码看起来像这样：
 
 ```rust
 #![feature(lang_items)]
@@ -1394,15 +1381,15 @@ fn start(_argc: isize, _argv: *const *const u8) -> isize {
 #[lang="stack_exhausted"] extern fn stack_exhausted() {}
 ```
 
-Which should indeed roughly match C in memory usage, at the expense of more programmer complexity, and a lack of static guarantees usually provided by Rust (avoided here with the use of `unsafe`).
+这样在内存的使用上就应该大致与 C 相当了，但代价是需要程序员更多的编程技巧，而且缺少了 Rust 通常提供的静态保证（由于这里 `unsafe` 的使用）。
 
 <h3><a href="#why-no-stable-abi" name="why-no-stable-abi">
 为什么 Rust 没有像 C 一样稳定的 ABI，以及为什么必须用 extern 来标注？
 </a></h3>
 
-Committing to an ABI is a big decision that can limit potentially advantageous language changes in the future. Given that Rust only hit 1.0 in May of 2015, it is still too early to make a commitment as big as a stable ABI. This does not mean that one won't happen in the future, though. (Though C++ has managed to go for many years without specifying a stable ABI.)
+承诺一个 ABI 是一个很重大的决定，这会限制语言在将来潜在的有利改进。鉴于 Rust 在 2015 年 5 朋才达到 1.0，拟作出一个像稳定 ABI 这样的大承诺还为时过早。但这并不意味着将来不会有。（虽然 C++ 已经设法发展了很多年，但并没有指定一个稳定的 ABI。）
 
-The `extern` keyword allows Rust to use specific ABI's, such as the well-defined C ABI, for interop with other languages.
+`extern` 关键字允许 Rust 使用一些特定的 ABI，例如明确定义的 C ABI，来与其它语言交互。
 
 <h3><a href="#can-rust-code-call-c-code" name="can-rust-code-call-c-code">
 Rust 代码能调用 C 代码吗？
@@ -1414,34 +1401,32 @@ Rust 代码能调用 C 代码吗？
 C 代码能调用 Rust 代码吗？
 </a></h3>
 
-可以。The Rust code has to be exposed via an `extern` declaration, which makes it C-ABI compatible. Such a function can be passed to C code as a function pointer or, if given the `#[no_mangle]` attribute to disable symbol mangling, can be called directly from C code.
+可以。 Rust 代码必须通过一个 `extern` 声明来导出，这和 C-ABI 兼容。这样的函数可以作为函数指针传递给 C 代码，或者通过标识 `#[no_mangle]` 来禁用符号调整（symbol mangling），可以直接从 C 代码中调用。
 
 <h3><a href="#why-rust-vs-cxx" name="why-rust-vs-cxx">
 我已经写了完美的 C++。 Rust 能给我什么？
 </a></h3>
 
-Modern C++ includes many features that make writing safe and correct code less error-prone, but it's not perfect, and it's still easy to introduce unsafety. This is something the C++ core developers are working to overcome, but C++ is limited by a long history that predates a lot of the ideas they are now trying to implement.
+现代 C++ 包含了许多功能，使得写出安全且正确的代码更不容易出错，但并不完美，仍然很容易引入不安全。这是 C++ 核心开发人员正在努力解决的问题，但他们现在正想尝试实现的许多想法被 C++ 被之前悠久的历史包袱限制住了。
 
-Rust was designed from day one to be a safe systems programming language, which means it's not limited by historic design decisions that make getting safety right in C++ so complicated. In C++, safety is achieved by careful personal discipline, and is very easy to get wrong. In Rust, safety is the default. It gives you the ability to work in a team that includes people less perfect than you are, without having to spend your time double-checking their code for safety bugs.
+Rust 是从第一天开始就被设计成一种安全的系统编程语言，这意味着它不受限于那些让 C++ 变得如此复杂的历史设计决策。在 C++ 中，安全是通过谨慎的个人纪律来达到的，很容易出错。在 Rust 中，安全是默认的。即使你的团队中包含了不如你完美的人，你仍然能够工作，而无需花费时间仔细检查其代码的安全性漏洞。
 
 <h3><a href="#how-to-get-cxx-style-template-specialization" name="how-to-get-cxx-style-template-specialization">
-如何在 Rust 中做到 C++ 模板专业化 那样？
+如何在 Rust 中做到相当于 C++ 模板特化？
 </a></h3>
 
-Rust 目前还没有完全等同的模板专业化，这[正在研究](https://github.com/rust-lang/rfcs/pull/1210)并有希望尽快加入。不过，可以用[关联类型](https://doc.rust-lang.org/stable/book/associated-types.html)达成类似的效果。
+Rust 目前还没有完全等同的模板特化，这[正在研究](https://github.com/rust-lang/rfcs/pull/1210)并有希望尽快加入。不过，可以用[关联类型](https://doc.rust-lang.org/stable/book/associated-types.html)达成类似的效果。
 
 <h3><a href="#how-does-ownership-relate-to-cxx-move-semantics" name="how-does-ownership-relate-to-cxx-move-semantics">
-Rust 的所有权系统如何与 C++ 中的语义相关联？
+Rust 的所有权系统如何与 C++ 中的 move 语义相关联？
 </a></h3>
 
-The underlying concepts are similar, but the two systems work very
-differently in practice. In both systems, "moving" a value is a way to
-transfer ownership of its underlying resources. For example, moving a
-string would transfer the string's buffer rather than copying it.
+基本概念是相似的，但两个系统在实践中的工作方式非常不同。在这两个系统中，
+「移动」一个值是转移其底层资源所有权的一种方式。例如，移动一个字符串，
+将传递这个字符串的缓冲区，而不是复制它。
 
-In Rust, ownership transfer is the default behavior. For example, if I
-write a function that takes a `String` as argument, this function will
-take ownership of the `String` value supplied by its caller:
+在Rust 中，所有权转移是默认的行为。例如，假设我写一个接收 `String`
+作为参数的函数，该函数将获得其调用者提供的这个 `String` 的所有权：
 
 ```rust
 fn process(s: String) { }
@@ -1453,21 +1438,16 @@ fn caller() {
 }
 ```
 
-As you can see in the snippet above, in the function `caller`, the
-first call to `process` transfers ownership of the variable `s`. The
-compiler tracks ownership, so the second call to `process` results in
-an error, because it is illegal to give away ownership of the same
-value twice. Rust will also prevent you from moving a value if there
-is an outstanding reference into that value.
+从上面的代码片断可以看出，在 `caller` 函数中，第一次调用 `process`
+转移了变量 `s` 的所有权。编译器跟踪所有权，所以第二次调用 `process`
+会导致错误，因为同一个值所有权被放弃两次是非法的。如果这个值被借出未归还，
+Rust 也会阻止你移动它。
 
-C++ takes a different approach. In C++, the default is to copy a value
-(to invoke the copy constructor, more specifically). However, callees
-can declare their arguments using an "rvalue reference", like
-`string&&`, to indicate that they will take ownership of some of the
-resources owned by that argument (in this case, the string's internal
-buffer). The caller then must either pass a temporary expression or
-make an explicit move using `std::move`. The rough equivalent to the
-function `process` above, then, would be:
+C++ 采用不同的方式。在 C++ 中，默认是复制一个值（更具体的是，调用拷贝
+构造器）。然而调用者可以使用一个 「rvalue 引用」来定义他们的参数，如
+`string&&`，表示它们将获得这些参数拥有的某些资源的所有权（在本例中为字符串的内部缓冲区）。
+然后调用者必须要么传递一个临时表达式或者使用 `std::move` 来显式移动。
+那么与上面的 `process` 函数大致相当的代码：
 
 ```
 void process(string&& s) { }
@@ -1479,25 +1459,22 @@ void caller() {
 }
 ```
 
-C++ 编译器 are not obligated to track moves. For example, the code
-above compiles without a warning or error, at least using the default
-settings on clang. Moreover, in C++ ownership of the string `s` itself
-(if not its internal buffer) remains with `caller`, and so the
-destructor for `s` will run when `caller` returns, even though it has
-been moved (in Rust, in contrast, moved values are dropped only by
-their new owners).
+C++ 编译器没有义务跟踪移动。例如，上面的代码在编译时没有警告或错误，
+至少在 clang 上使用默认设置的时候如此。此外，在 C++ 中字符串 `s`
+本身的所有权（假设不是它内部的缓冲区）还是在 `caller`，因此当 `caller`
+返回时解构器会运行，即使它被移动了（在 Rust 中则相反，被移动的值只会被它的新所有者丢弃）。
 
 <h3><a href="#how-to-interoperate-with-cxx" name="how-to-interoperate-with-cxx">
 如何让 Rust 与 C++ 互操作，反之亦然？
 </a></h3>
 
-Rust 与 C++ 可以通过 C 互操作。Rust 和 C++ 都提供一个适用于 C 的[外部函数接口](https://doc.rust-lang.org/book/ffi.html)，我们可以用它来相互沟通。如果编写 C 语言的绑定太麻烦，您随时可以用 [rust-bindgen](https://github.com/servo/rust-bindgen) 来帮忙自动生成可执行的 C 绑定。
+Rust 与 C++ 可以通过 C 互操作。Rust 和 C++ 都提供一个适用于 C 的[外部函数接口](https://doc.rust-lang.org/book/ffi.html)，我们可以用它来相互沟通。如果编写 C 语言的绑定太麻烦，你随时可以用 [rust-bindgen](https://github.com/servo/rust-bindgen) 来帮忙自动生成可执行的 C 绑定。
 
 <h3><a href="#does-rust-have-cxx-style-constructors" name="does-rust-have-cxx-style-constructors">
-Rust 有 C++ 风格的构造函数吗？
+Rust 有 C++ 风格的构造器吗？
 </a></h3>
 
-没有。Functions serve the same purpose as constructors without adding language complexity. The usual name for the constructor-equivalent function in Rust is `new()`, although this is just a convention rather than a language rule. The `new()` function in fact is just like any other function. An example of it looks like so:
+没有。函数与构造器的目的相同，但不增加语言的复杂度。 Rust 中与构造器等效的函数名字通常是 `new()`，但这只是一个约定而不是一个语言规则。实际上 `new()` 函数与其它任何函数一样。如下例子所示：
 
 ```rust
 struct Foo {
@@ -1518,16 +1495,16 @@ impl Foo {
 ```
 
 <h3><a href="#does-rust-have-copy-constructors" name="does-rust-have-copy-constructors">
-Rust 有复制构造函数吗？
+Rust 有复制构造器吗？
 </a></h3>
 
-不太完全。Types which implement `Copy` will do a standard C-like "shallow copy" with no extra work (similar to "plain old data" in C++). It is impossible to implement `Copy` types that require custom copy behavior. Instead, in Rust "copy constructors" are created by implementing the `Clone` trait, and explicitly calling the `clone` method. Making user-defined copy operators explicit surfaces the underlying complexity, making it easier for the developer to identify potentially expensive operations.
+不太完全。实现了 `Copy` 的类型会执行标准的类 C 「浅拷贝」，无需额外的工作（类似于 C++ 中的 trivially copyable 类型）。要实现自定义复制行为的 `Copy` 类型是不可能的。作为替代的是，在 Rust 中，「复制构造器」是通过实现 `Clone` trait 并显式调用 `clone` 方法来创建的。使用户定义的复制操作清晰地表达了底层的复杂性，使开发人员更加容易识别潜在的大开销操作。
 
 <h3><a href="#does-rust-have-move-constructors" name="does-rust-have-move-constructors">
-Rust 有移动构造函数吗？
+Rust 有移动构造器吗？
 </a></h3>
 
-没有。Values of all types are moved via `memcpy`. This makes writing generic unsafe code much simpler since assignment, passing and returning are known to never have a side effect like unwinding.
+没有。所有类型的值都通过 `memcpy` 来移动。这使得编写通用的 unsafe 代码更加简单，因为分配，传递和返回都是已知的，不像展开（unwinding）那样具有副作用。
 
 <h3><a href="#compare-go-and-rust" name="compare-go-and-rust">
 Go 与 Rust 有何相似，及它们有什么不同？
@@ -1535,24 +1512,24 @@ Go 与 Rust 有何相似，及它们有什么不同？
 
 Rust 与 Go 有着完全不同的设计目标。下列差异不是全部的差异（它们太多而无法列出），而是较重要的一些：
 
-- Rust is lower level than Go. For example, Rust does not require a garbage collector, whereas Go does. In general, Rust affords a level of control that is comparable to C or C++.
-- Rust's focus is on ensuring safety and efficiency while also providing high-level affordances, while Go's is on being a small, simple language which compiles quickly and can work nicely with a variety of tools.
-- Rust has strong support for generics, which Go does not.
-- Rust has strong influences from the world of functional programming, including a type system which draws from Haskell's typeclasses. Go has a simpler type system, using interfaces for basic generic programming.
+- Rust 比 Go 处理更低的级别。例如 Rust 不需要垃圾收集，而 Go 需要。一般来说，Rust 提供了与 C 或 C++ 相当的控制级别。
+- Rust 专注于确保安全和高效，同时也提供了高级别的可用性，而 Go 则至力于成为一种简单易用的语言，可以快速编译，并可以使用各种工具进行良好的工作。
+- Rust 受到来自函数编译世界的强烈影响，包括从 Haskell 类型类中抽取出来的类型系统。Go 有一个简单的类型系统，使用接口进行基本的通用编译。
 
 <h3><a href="#how-do-rust-traits-compare-to-haskell-typeclasses" name="how-do-rust-traits-compare-to-haskell-typeclasses">
-Rust 特征与 Haskell 类型类相较如何？
+Rust 的 trait 与 Haskell 类型类（typeclasses）相较如何？
 </a></h3>
 
-Rust traits are similar to Haskell typeclasses, but are currently not as powerful, as Rust cannot express higher-kinded types. Rust's associated types are equivalent to Haskell type families.
+Rust 的 trait 与 Haskell 的类型类相似，但目前并没有那么强大，因为 Rust 不能表示更高级的类型。
+Rust 的关联类型相当于 Haskell 的类型族（type families）。
 
-Some specific difference between Haskell typeclasses and Rust traits include:
+Haskell 的类型类和 Rust 的 trait 之前的一些具体区别包括：
 
-- Rust traits have an implicit first parameter called `Self`. `trait Bar` in Rust corresponds to `class Bar self` in Haskell, and `trait Bar<Foo>` in Rust corresponds to `class Bar foo self` in Haskell.
-- "Supertraits" or "superclass constraints" in Rust are written `trait Sub: Super`, compared to `class Super self => Sub self` in Haskell.
-- Rust forbids orphan instances, resulting in different coherence rules in Rust compared to Haskell.
-- Rust's `impl` resolution considers the relevant `where` clauses and trait bounds when deciding whether two `impl`s overlap, or choosing between potential `impl`s. Haskell only considers the constraints in the `instance` declaration, disregarding any constraints provided elsewhere.
-- A subset of Rust's traits (the ["object safe"](https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md) ones) can be used for dynamic dispatch via trait objects. The same feature is available in Haskell via GHC's `ExistentialQuantification`.
+- Rust 的 trait 有一个隐含的第一个参数 `Self`。Rust 中的 `trait Bar` 相当于 Haskell 中的 `class Bar self`，Rust 中的 `trait Bar<Foo>` 相当于 Haskell 中的 `class Bar foo self`。
+- Rust 中的「父 trait」或者「父类约束」写作 `trait Sub: Super`，与 Haskell 中的 `class Super self => Sub self` 区别。
+- Rust 禁止孤儿实例，导致与 Rust 与 Haskell 相比有不同的相关性规则。
+- Rust 的 `impl` 解决方案在决定两个 `impl` 是否重叠或者在潜在的 `impl` 之间进行选择时，会考虑相关的 `where` 子句和 trait 绑定。Haskell 仅考虑 `instance` 声明中的约束，则不考虑其它地方提供的约束。
+- Rust 中的 trait（[「对象安全」](https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md)）的一个子集可以通过 trait 对象用于动态调度。 Haskell 中则是通过 GHC 的`ExistentialQuantification` 来获得相同的功能。
 
 <h2 id="documentation">文档</h2>
 
@@ -1568,13 +1545,13 @@ Rust 语言已存在多年，而它在 2015 年 5 月才达成 1.0 版本。在�
 我该在哪报告 Rust 文档的问题？
 </a></h3>
 
-您可以在 Rust 编译器的[问题跟踪器](https://github.com/rust-lang/rust/issues)中报告 Rust 文档的问题。在报告前，请先阅读[贡献指南](https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#writing-documentation)。
+你可以在 Rust 编译器的[问题跟踪器](https://github.com/rust-lang/rust/issues)中报告 Rust 文档的问题。在报告前，请先阅读[贡献指南](https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#writing-documentation)。
 
 <h3><a href="#how-do-i-view-rustdoc-documentation-for-a-library-my-project-depends-on" name="how-do-i-view-rustdoc-documentation-for-a-library-my-project-depends-on">
 如何查看我的项目所依赖的库的 rustdoc 文档？
 </a></h3>
 
-When you use `cargo doc` to generate documentation for your own project, it also generates docs for the active dependency versions. These are put into the `target/doc` directory of your project. Use `cargo doc --open` to open the docs after building them, or just open up `target/doc/index.html` yourself.
+当你用 `cargo doc` 来为你的项目生成文档的时候，它也会生成当前依赖的库的版本的文档。这些文档被放在项目的 `target/doc` 目录中。在构建完之后，使用 `cargo doc --open` 来打开文档，或者你可以自己打开 `target/doc/index.html` 文件。
 
 [Vec]: https://doc.rust-lang.org/stable/std/vec/struct.Vec.html
 [HashMap]: https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html

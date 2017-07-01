@@ -242,6 +242,11 @@
   url: http://www.npmjs.com
   logo: npm.svg
   how: "Replacing C and rewriting performance-critical bottlenecks in the registry service architecture."
+- 
+  name: Omnijar Studio
+  url: https://omnijar.studio
+  logo: omnijar-studio.svg
+  how: "Performant and efficient code across a lot of cloud services and core products, from ML to data services."
 -
   name: OneSignal
   url: https://onesignal.com
