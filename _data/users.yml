@@ -408,6 +408,11 @@
   logo: versioneye.png
   how: "We are using Rust to implement <a href='https://blog.versioneye.com/2017/04/27/shazam-for-software-libraries/'>a command line tool which can identify software dependencies by their SHA values</a>."
 -
+  name: VOYAGE GROUP
+  url: https://voyagegroup.com/
+  logo: voyagegroup.png
+  how: "Log aggregation daemon for advertising"
+-
   name: Angelcam
   url: https://www.angelcam.com
   logo: angelcam.png
