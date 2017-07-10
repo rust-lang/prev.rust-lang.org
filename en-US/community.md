@@ -98,6 +98,8 @@ to ask questions about contributing to Rust.
 
 ### Topical channels
 
+These channels are of the wider Rust community, and are not moderated by the [moderation team][mod_team].
+
 - [#rust-bots][bots_irc] notifications about Rust from a selection of bots
 - [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
 - [#rust-embedded][embedded_irc] is for people doing embedded software in Rust
@@ -105,7 +107,6 @@ to ask questions about contributing to Rust.
 - [#rust-geo][rustgeo_irc] is for discussion on GeoRust, geospatial tools written in Rust
 - [#rust-machine-learning][machine_learning_irc] is for people doing machine learning in Rust
 - [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
-- [#rust-offtopic][offtopic_irc] is for general chit-chat amongst Rustaceans
 - [#rust-osdev][osdev_irc] is for people doing OS development in Rust
 - [#rust-webdev][webdev_irc] is for people doing web development in Rust
 - [#hyper][hyper_irc] is for discussion on Hyper, a popular Rust http library
@@ -134,7 +135,6 @@ to ask questions about contributing to Rust.
 [lang_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
 [libs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
 [networking_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[offtopic_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-offtopic
 [osdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
 [ru_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
 [rust_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
