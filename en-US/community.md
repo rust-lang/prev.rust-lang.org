@@ -152,7 +152,7 @@ These channels are of the wider Rust community, and are not moderated by the [mo
 [iron_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23iron
 [redox_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23redox
 [nom_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23nom
-[infra_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23infra
+[infra_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-infra
 [rustgeo_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-geo
 [rocket_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rocket
 [serde_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23serde
