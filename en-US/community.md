@@ -108,6 +108,7 @@ These channels are of the wider Rust community, and are not moderated by the [mo
 - [#rust-machine-learning][machine_learning_irc] is for people doing machine learning in Rust
 - [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
 - [#rust-osdev][osdev_irc] is for people doing OS development in Rust
+- [#rust-sci][sci_irc] is for people doing scientific computing in Rust
 - [#rust-webdev][webdev_irc] is for people doing web development in Rust
 - [#hyper][hyper_irc] is for discussion on Hyper, a popular Rust http library
 - [#iron][iron_irc] is for discussion on Iron, the extensible Rust web framework
@@ -156,6 +157,7 @@ These channels are of the wider Rust community, and are not moderated by the [mo
 [rustgeo_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-geo
 [rocket_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rocket
 [serde_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23serde
+[sci_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-sci
 
 ## Discussion Forums
 
