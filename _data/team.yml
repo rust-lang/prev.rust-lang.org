@@ -28,6 +28,9 @@ people:
   alexcrichton:
     name: Alex Crichton
     irc: acrichto
+  ashleygwilliams:
+    name: Ashley Williams
+    irc: agdubs
   aturon:
     name: Aaron Turon
   badboy:
@@ -130,6 +133,8 @@ people:
   QuietMisdreavus:
     name: QuietMisdreavus
     irc: misdreavus
+  sebasmagri:
+    name: Sebastián Magrí
   sfackler:
     name: Steven Fackler
   shepmaster:
@@ -204,7 +209,7 @@ teams:
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt
-    members: [brson, edunham, skade, manishearth, johannhof, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner]
+    members: [brson, edunham, skade, manishearth, johannhof, sebasmagri, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, ashleygwilliams]
     email: community-team@rust-lang.org
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
