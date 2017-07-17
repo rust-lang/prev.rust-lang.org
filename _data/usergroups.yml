@@ -1,0 +1,529 @@
+- country: Australia
+  meetups:
+
+    - name: Rust Brisbane
+      city: Brisbane
+      url: https://www.meetup.com/Rust-Brisbane/
+
+    - name: Rust Melbourne
+      city: Melbourne
+      url: https://www.meetup.com/Rust-Melbourne/
+
+    - name: Rust Sydney
+      city: Sydney
+      url: https://www.meetup.com/Rust-Sydney/
+
+- country: Belarus
+  meetups:
+
+    - name: Rust in Minsk
+      city: Minsk
+      url: https://www.meetup.com/Rust-%D0%B2-%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%D0%B5/
+
+- country: Belgium
+  meetups:
+
+    - name: Belgium Rust User Group
+      city: Brussels
+      url: https://www.meetup.com/Belgium-Rust-user-group/
+
+- country: Bolivia
+  meetups:
+
+    - name: Rust Bolivia
+      city: Santa Cruz, Bolivia
+      url: http://www.mozillabolivia.org/rust/
+
+- country: Brazil
+  meetups:
+
+    - name: Rust Floripa
+      city: Florianópolis
+      url: https://www.meetup.com/Rust-Floripa/
+
+    - name: Rust in POA
+      city: Porto Alegre
+      url: https://www.meetup.com/Rust-in-POA/
+
+    - name: Rust Rio
+      city: Rio de Janeiro
+      url: https://www.meetup.com/Rust-Rio/
+
+    - name: Rust São Paulo
+      city: São Paulo
+      url: https://www.meetup.com/Rust-Sao-Paulo-Meetup/
+
+- country: Canada
+  meetups:
+
+    - name: Montréal Rust Language Meetup
+      city: Montréal, QC
+      url: https://www.meetup.com/Montreal-Rust-Language-Meetup/
+
+    - name: Ottawa Rust Language Meetup
+      city: Ottawa, ON
+      url: https://www.meetup.com/Ottawa-Rust-Language-Meetup/
+
+    - name: Rust Toronto
+      city: Toronto, ON
+      url: https://www.meetup.com/Rust-Toronto/
+
+    - name: Vancouver Rust
+      city: Vancouver, BC
+      url: https://www.meetup.com/Vancouver-Rust/
+
+- country: Croatia
+  meetups:
+
+    - name: Lambda Zagreb
+      city: Zagreb
+      url: https://www.meetup.com/lambdazagreb/
+
+- country: Czech Republic
+  meetups:
+
+    - name: Rust Prague
+      city: Prague
+      url: https://www.meetup.com/rust-prague/
+
+- country: Denmark
+  meetups:
+
+    - name: Copenhangen Rust Group
+      city: Copenhagen
+      url: http://cph.rs
+
+- country: France
+  meetups:
+
+    - name: Lille Rust Meetup
+      city: Lille
+      url: https://www.meetup.com/rust-lille/
+
+    - name: Meetup Rust Lyon
+      city: Lyon
+      url: https://www.meetup.com/Meetup-Rust-Lyon/
+
+    - name: Rust Paris
+      city: Paris
+      url: https://www.meetup.com/Rust-Paris/
+
+- country: Finland
+  meetups:
+
+    - name: Finland Rust-lang Group
+      city: Helsinki
+      url: https://www.meetup.com/Finland-Rust-Meetup/
+
+- country: Germany
+  meetups:
+
+    - name: Rust Cologne/Bonn User Group
+      city: Köln
+      url: https://www.meetup.com/RustCologne/
+
+    - name: Rust Berlin
+      city: Berlin
+      url: https://www.meetup.com/Rust-Berlin/
+
+    - name: Rust Hack and Learn Karlsruhe
+      city: Karlsruhe
+      url: https://www.meetup.com/Rust-Hack-Learn-Karlsruhe/
+
+    - name: Rust Meetup Hamburg
+      city: Hamburg
+      url: https://www.meetup.com/Rust-Meetup-Hamburg/
+
+    - name: Rust - Modern Systems Programming Leipzig
+      city: Leipzig
+      url: https://www.meetup.com/de-DE/Rust-Modern-Systems-Programming-in-Leipzig/
+
+    - name: Rust Munich
+      city: München
+      url: https://www.meetup.com/rust-munich/
+
+    - name: Rust Rhein-Main
+      city: Frankfurt / Darmstadt
+      url: https://www.meetup.com/Rust-Rhein-Main/
+
+- country: Hungary
+  meetups:
+
+    - name: Rust Hungary Meetup
+      city: Budapest
+      url: https://www.meetup.com/Rust-Hungary-Meetup/
+
+- country: India
+  meetups:
+
+    - name: Hyderabad Rust Meetup
+      city: Hyderabad
+      url: https://www.meetup.com/Hyderabad-Rust-Meetup/
+
+    - name: Rust Group Coimbatore
+      city: Coimbatore
+      url: https://github.com/dvigneshwer/Rust_Group_Coimbatore
+
+    - name: Rust Bangalore
+      city: Bangalore
+      url: https://www.meetup.com/rustox/
+
+- country: Indonesia
+  meetups:
+
+    - name: Rust Indonesia
+      city: Yogyakarta
+      url: https://github.com/rustid/meetup
+
+    - name: Lambda Jakarta
+      city: Jakarta
+      url: https://www.meetup.com/Lambda-Jakarta/
+
+- country: Ireland
+  meetups:
+
+    - name: Rust Dublin
+      city: Dublin
+      url: https://www.meetup.com/Rust-Dublin/
+
+- country: Italy
+  meetups:
+
+    - name: Rust lang Milano
+      city: Milano
+      url: https://www.meetup.com/Rust-lang-Milano/
+
+    - name: Rust Roma
+      city: Rome
+      url: https://www.meetup.com/it-IT/Rust-Roma/
+
+- country: Japan
+  meetups:
+
+    - name: Tokyo Rust
+      city: Tokyo
+      url: https://www.meetup.com/Tokyo-Rust-Meetup/
+
+    - name: Rust Of Us
+      city: Akihabara, Tokyo
+      url: https://rust-of-us.doorkeeper.jp/
+
+    - name: Rust Mokumoku Kai
+      city: Roppongi, Tokyo
+      url: https://rust.doorkeeper.jp/
+
+    - name: Akasaka Rust
+      city: Akasaka, Tokyo
+      url: https://akasaka-rust.doorkeeper.jp/
+
+- country: Lithuania
+  meetups:
+
+    - name: Rust Vilnius
+      city: Vilnius
+      url: https://www.meetup.com/Rust-in-Vilnius/
+
+- country: Luxembourg
+  meetups:
+
+    - name: Rust Luxembourg
+      city: Luxembourg
+      url: https://www.meetup.com/Rust-luxembourg/
+
+- country: Mexico
+  meetups:
+
+    - name: Rust Lang Comunidad Mexico
+      city: Guadalajara
+      url: https://www.meetup.com/rustlangmx/
+
+    - name: Rust MX
+      city: Mexico city
+      url: https://www.meetup.com/Rust-MX/
+
+    - name: Xalapa Rust
+      city: Xalapa
+      url: https://xalaparust.github.io/
+
+- country: Netherlands
+  meetups:
+
+    - name: Rust Amsterdam
+      city: Amsterdam
+      url: https://www.meetup.com/Rust-Amsterdam/
+
+    - name: Rust School Rotterdam
+      city: Rotterdam
+      url: https://www.meetup.com/RustSchool-Rotterdam/
+
+    - name: Rust Utrecht
+      city: Utrecht
+      url: https://www.meetup.com/Rust-Utrecht/
+
+- country: New Zealand
+  meetups:
+
+    - name: Wellington Rust Meetup
+      city: Wellington
+      url: https://www.meetup.com/Wellington-Rust-Meetup/
+
+- country: Norway
+  meetups:
+
+    - name: Rust Oslo
+      city: Oslo
+      url: https://www.meetup.com/Rust-Oslo/
+
+- country: Peru
+  meetups:
+
+    - name: Rust PE supported by Mozilla Peru
+      city: Lima
+      url: https://www.meetup.com/es-ES/mozillaperu/
+
+- country: Phillipines
+  meetups:
+
+    - name: Rust Philippines
+      city: Manila
+      url: http://www.rustph.tech
+
+    - name: Cebu Rust Camp
+      city: Cebu
+      url: https://www.meetup.com/Cebu-Rust-Camp/
+
+- country: Poland
+  meetups:
+
+    - name: Rust Warsaw
+      city: Warsaw
+      url: https://www.meetup.com/Rust-Warsaw/
+
+- country: Russia
+  meetups:
+
+    - name: Rust in Moscow
+      city: Moscow
+      url: https://www.meetup.com/Rust-%D0%B2-%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B5/
+
+    - name: Rust in St. Petersburg
+      city: St. Petersburg
+      url: https://www.meetup.com/Rust-%D0%B2-%D0%9F%D0%B8%D1%82%D0%B5%D1%80%D0%B5/
+
+- country: Serbia
+  meetups:
+
+    - name: Babel Fish Meetup
+      city: Belgrade
+      url: https://www.meetup.com/Babel-Fish-meetup/
+
+- country: Singapore
+  meetups:
+
+    - name: Singapore Rust Meetup
+      city: Singapore
+      url: https://www.meetup.com/Singapore-Rust-Meetup/
+
+    - name: RUST.SG
+      city: Singapore
+      url: https://www.meetup.com/RUST-SG/
+
+- country: Spain
+  meetups:
+
+    - name: Rust Madrid
+      city: Madrid
+      url: https://github.com/rustmadrid
+
+    - name: Rust Barcelona
+      city: Barcelona
+      url: https://www.meetup.com/Rust-Barcelona/
+
+- country: South Korea
+  meetups:
+
+    - name: Rust Seoul
+      city: Seoul
+      url: https://www.meetup.com/Rust-Seoul/
+
+- country: Sweden
+  meetups:
+
+    - name: Rust Sthlm
+      city: Stockholm
+      url: https://www.meetup.com/ruststhlm/
+
+- country: Switzerland
+  meetups:
+
+    - name: Rust Romandie
+      city: Genève
+      url: https://www.meetup.com/rust-romandie/
+
+    - name: Rust Zurich
+      city: Zürich
+      url: https://www.meetup.com/Rust-Zurich/
+
+- country: Taiwan
+  meetups:
+
+    - name: RUST.TW
+      city: Taipei
+      url: https://www.meetup.com/RUST-TW/
+
+- country: UK
+  meetups:
+
+    - name: Rust Belfast Meetup
+      city: Belfast
+      url: https://www.meetup.com/Rust-Belfast-Meetup/
+
+    - name: Rust London User Group
+      city: London
+      url: https://www.meetup.com/Rust-London-User-Group/
+
+    - name: Rust North
+      city: Manchester
+      url: https://www.meetup.com/Rust-North/
+
+    - name: Cambridge Rust
+      city: Cambridge
+      url: https://www.meetup.com/Cambridge-Rust-Meetup/
+
+- country: Uruguay
+  meetups:
+
+    - name: Rust Meetup Uruguay
+      city: Montevideo
+      url: https://www.meetup.com/Rust-Uruguay/
+
+- country: USA
+  states:
+    - Arizona: AZ
+    - California: CA
+    - Colorado: CO
+    - DC: DC
+    - Florida: FL
+    - Georgia: GA
+    - Illinois: IL
+    - Kentucky: KY
+    - Massachusetts: MA
+    - Michigan: MI
+    - Minnesota: MN
+    - Nevada: NV
+    - New York: NY
+    - Ohio: OH
+    - Oregon: OR
+    - Pennsylvania: PA
+    - Texas: TX
+    - Washington: WA
+  meetups:
+    - name: Desert Rust
+      city: Phoenix
+      state: AZ
+      url: https://www.meetup.com/Desert-Rustaceans/
+
+    - name: Rust Atlanta
+      city: Atlanta
+      state: GA
+      url: https://www.meetup.com/Rust-ATL/
+
+    - name: Rust Bay Area
+      city: San Francisco
+      state: CA
+      url: https://www.meetup.com/Rust-Bay-Area/
+
+    - name: Rust Los Angeles
+      city: Los Angeles
+      state: CA
+      url: https://www.meetup.com/Rust-Los-Angeles/
+
+    - name: San Diego Rust
+      city: San Diego
+      state: CA
+      url: https://www.meetup.com/San-Diego-Rust/
+
+    - name: Rust Boulder/Denver
+      city: Boulder
+      state: CO
+      url: https://www.meetup.com/Rust-Boulder-Denver/
+
+    - name: Rust DC
+      city: Washington
+      state: DC
+      url: https://www.meetup.com/RustDC/
+
+    - name: Rust Tampa
+      city: Tampa
+      state: FL
+      url: https://www.meetup.com/Rust-Tampa/
+
+    - name: South Florida Rust
+      city: Fort Lauderdale
+      state: FL
+      url: https://www.meetup.com/South-Florida-Rust-Meetup/
+
+    - name: Chicago Rust Meetup
+      city: Chicago
+      state: IL
+      url: https://www.meetup.com/Chicago-Rust-Meetup/
+
+    - name: Louisville Rust Meetup
+      city: Louisville
+      state: KY
+      url: https://www.meetup.com/Louisville-Rust-Meetup/
+
+    - name: DevVegas the Server-Side with Rust
+      city: Las Vegas
+      state: NV
+      url: https://www.meetup.com/Rust-Vegas/
+
+    - name: Rust Boston
+      city: Boston
+      state: MA
+      url: https://www.meetup.com/BostonRust/
+
+    - name: Rust Detroit
+      city: Detroit
+      state: MI
+      url: https://www.meetup.com/rust-detroit/
+
+    - name: Rust Twin Cities
+      city: Minneapolis
+      state: MN
+      url: https://www.meetup.com/Rust-TC/
+
+    - name: Rust New York City
+      city: New York
+      state: NY
+      url: https://www.meetup.com/RustNY/
+
+    - name: Rust NYC
+      city: New York
+      state: NY
+      url: https://www.meetup.com/Rust-NYC/
+
+    - name: Columbus Rust Society
+      city: Columbus
+      state: OH
+      url: https://www.meetup.com/columbus-rs/
+
+    - name: PDXRust
+      city: Portland
+      state: OR
+      url: https://www.meetup.com/PDXRust/
+
+    - name: Pittsburgh Rust Coffee
+      city: Pittsburgh
+      state: PA
+      url: https://www.meetup.com/Pittsburgh-Rust-Coffee/
+
+    - name: Dallas Rust
+      city: Dallas
+      state: TX
+      url: https://www.meetup.com/Dallas-Rust/
+
+    - name: Seattle Rust Meetup
+      city: Seattle
+      state: WA
+      url: https://www.meetup.com/Seattle-Rust-Meetup/
