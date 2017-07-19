@@ -1041,7 +1041,7 @@ fn main() {
 Rust에서 어떻게 비동기 입출력을 하나요?
 </a></h3>
 
-Rust에서 비동기 입출력을 제공하는 라이브러리로는 [mioco](https://github.com/dpc/mioco), [coio-rs](https://github.com/zonyitoo/coio-rs), 그리고 [rotor](https://github.com/tailhook/rotor) 등이 있습니다.
+Rust에서 비동기 입출력을 제공하는 라이브러리로는 [mio](https://github.com/carllerche/mio), [tokio](https://github.com/tokio-rs/tokio-core), [mioco](https://github.com/dpc/mioco), [coio-rs](https://github.com/zonyitoo/coio-rs), 그리고 [rotor](https://github.com/tailhook/rotor) 등이 있습니다.
 
 <h3><a href="#how-do-i-get-command-line-arguments" name="how-do-i-get-command-line-arguments">
 Rust에서 명령행 인자를 받는 방법은 무엇인가요?
@@ -1238,7 +1238,11 @@ Rust를 안드로이드 및 iOS 프로그래밍에 쓸 수 있나요?
 제 Rust 프로그램을 웹 브라우저에서 실행할 수 있나요?
 </a></h3>
 
-아직은 아니지만, [Emscripten](https://kripken.github.io/emscripten-site/)을 써서 Rust를 웹으로 컴파일하려는 노력이 현재 진행 중입니다.
+아마도요. Rust는 [asm.js]와 [WebAssembly] 모두를 [실험적으로 지원][wasm]합니다.
+
+[wasm]: https://davidmcneil.gitbooks.io/the-rusty-web/
+[asm.js]: http://asmjs.org/
+[WebAssembly]: http://webassembly.org/
 
 <h3><a href="#how-do-i-cross-compile-rust" name="how-do-i-cross-compile-rust">
 Rust에서 크로스 컴파일은 어떻게 하나요?
@@ -1392,7 +1396,9 @@ HTTP 요청을 어떻게 보내나요?
 </a></h3>
 
 표준 라이브러리에는 HTTP 구현이 포함되어 있지 않으므로 외부 크레이트를 사용해야 합니다.
-[Hyper](https://github.com/hyperium/hyper)가 가장 널리 쓰이지만 [다른 라이브러리들도 여럿 있습니다](https://crates.io/keywords/http).
+가장 간단하게는 [reqwest](http://docs.rs/reqwest)가 있습니다.
+[hyper](https://github.com/hyperium/hyper)를 써서 Rust로 만들어져 있고, [다른 라이브러리들도 여럿 있습니다](https://crates.io/keywords/http).
+[curl](https://docs.rs/curl) 크레이트는 curl 라이브러리의 바인딩을 제공하는 널리 쓰이는 라이브러리입니다.
 
 <h3><a href="#how-can-i-write-a-gui-application" name="how-can-i-write-a-gui-application">
 Rust로 GUI 애플리케이션을 작성하려면 어떻게 해야 하나요?

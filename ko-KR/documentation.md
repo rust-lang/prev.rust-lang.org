@@ -54,6 +54,9 @@ Rust의 패키지 관리자인 Cargo의 문서입니다.
 [릴리스 노트][release_notes].
 Rust의 각 릴리스마다 바뀐 점들을 기록합니다.
 
+[플랫폼 지원][platform_support].
+각 지원 단계별 플랫폼의 목록입니다.
+
 [api]: https://doc.rust-lang.org/std/
 [syn]: https://doc.rust-lang.org/book/syntax-index.html
 [ref]: https://doc.rust-lang.org/reference
@@ -62,6 +65,7 @@ Rust의 각 릴리스마다 바뀐 점들을 기록합니다.
 [release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md
 [docs.rs]: https://docs.rs
 [crates.io]: https://crates.io
+[platform_support]: https://forge.rust-lang.org/platform-support.html
 
 ## 프로젝트 정책
 
