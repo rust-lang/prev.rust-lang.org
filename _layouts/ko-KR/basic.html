@@ -11,6 +11,9 @@
 
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
+    {% for css_name in page.extra_css %}
+    <link rel="stylesheet" href="/css/{{ css_name }}">
+    {% endfor %}
   </head>
 
   <body class="container">

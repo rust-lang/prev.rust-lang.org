@@ -10,6 +10,7 @@
 }
 .lead { font-weight: bold; }
 .lead .name::after { content: " (lead)"; }
+.lead .name:lang(ko)::after { content: " (팀장)"; }
 .details {
   display: none;
   position: absolute;
