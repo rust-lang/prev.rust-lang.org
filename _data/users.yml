@@ -442,4 +442,9 @@
   url: https://wildfish.com
   logo: wildfish.svg
   how: "Fast processing and importing of cryptocurrency market data."
+-
+  name: Bitfury Group
+  url: http://bitfury.com/
+  logo: bitfury_group.png
+  how: "<a href='https://exonum.com'>Exonum is an extensible framework for blockchain projects written in Rust.</a>"
 
