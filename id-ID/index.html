@@ -1,0 +1,63 @@
+---
+layout: id-ID/basic
+title: Bahasa Pemrograman Rust
+---
+
+    <div class="row pitch-row">
+      <div class="col-md-8">
+        <p class="pitch">
+          <b>Rust</b> adalah bahasa pemrograman sistem
+          yang berjalan dengan cepat,
+          mencegah segfault,
+          dan menjamin keamanan thread.
+          <br/>
+          <b><a href="friends.html">Lihat siapa saja yang menggunakan Rust.</a></b>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <a class="release-button" href="install.html">
+          <div class="release-version">Instalasi Rust <span>{{ site.stable }}</span></div>
+        </a>
+        <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
+      </div>
+    </div>
+
+    <div class="row code-row">
+      <div class="col-md-4">
+      <h2>Fitur</h2>
+      <ul class="laundry-list">
+        <li>abstraksi bernilai nol</li>
+        <li>bergerak secara semantik</li>
+        <li>menjamin keamanan memori</li>
+        <li>threads tanpa data races</li>
+        <li>sifat dasar generik</li>
+        <li>pencocokan pola</li>
+        <li>tipe Inferensi</li>
+        <li>minimal runtime</li>
+        <li>binding C yang efisien</li>
+      </ul>
+      </div>
+      <div class="col-md-8">
+        <div id="active-code">
+          <button type="button" class="btn btn-primary btn-sm" id="run-code">Jalankan</button>
+          <div id="editor">{% include example.rs %}</div>
+          <div id="result" data-msg-running="Menjalankan...">
+            <a id="playlink"><i class="icon-link-ext"></i></a>
+          </div>
+        </div>
+        <div id="static-code">{% include example.rs.html %}</div>
+        <div class="more-examples">
+          <a href="http://rustbyexample.com/">Contoh Lainnya</a>
+        </div>
+      </div>
+    </div>
+
+  <script type="text/javascript">
+    {% include include.js %}
+
+    include("https://cdn.jsdelivr.net/ace/1.1.3/noconflict/ace.js", function () {
+      include("https://cdn.jsdelivr.net/ace/1.1.3/noconflict/mode-rust.js", function () {
+        {% include editor.js %}
+      });
+    });
+  </script>
