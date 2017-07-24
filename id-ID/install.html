@@ -1,0 +1,195 @@
+---
+layout: id-ID/default
+title: Instalasi &middot; Bahasa Pemrograman Rust
+---
+    <h1 class="rustup">Instalasi Rust</h1>
+
+    <div class="row rustup-row">
+      <div class="col-md-8 instr-column">
+        <div id="platform-instructions-unix" class="instructions" style="display: none;">
+          <p>Untuk instalasi Rust, jalankan perintah dibawah ini di terminal anda, lalu ikuti instruksi yang muncul dilayar.</p>
+          <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+        </div>
+
+        <div id="platform-instructions-win" class="instructions" style="display: none;">
+          <p>
+            Untuk instalasi Rust, unduh dan jalankan
+            <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+            lalu ikuti instruksi yang muncul dilayar.
+          </p>
+        </div>
+
+        <div id="platform-instructions-unknown" class="instructions" style="display: none;">
+          <!-- unrecognized platform: ask for help -->
+          <p>Platform yang saya gunakan tidak di kenali.</p>
+          <p>
+            Rust dapat berjalan di Windows, Linux, Mac OS X, FreeBSD dan NetBSD. Jika
+            jika anda di salah satu platform tersebut namun menjumpai masalah maka segera
+            <a href="https://github.com/rust-lang/rust-www/issues/new">laporkan masalah</a>,
+            dengan isi sebagai berikut :
+          </p>
+
+          <div>
+            <div>navigator.platform:</div>
+            <div id="nav-plat"></div>
+            <div>navigator.appVersion:</div>
+            <div id="nav-app"></div>
+          </div>
+
+          <!-- duplicate the default cross-platform instructions -->
+          <div>
+            <p>Untuk instalasi Rust, jika anda menjalankannya di Unix,<br/>jalankan peintah dibawah ini
+            pada terminal anda, lalu ikuti instruksi yang muncul dilayar.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Jika anda pengguna Windows,<br/>unduh dan jalankan
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              lalu ikuti instruksi yang muncul dilayar.
+            </p>
+          </div>
+        </div>
+
+        <div id="platform-instructions-default" class="instructions">
+          <div>
+            <p>Untuk instalasi Rust, jika anda menjalankannya Unix,<br/>jalankan perintah dibawah ini
+            pada terminal anda, lalu ikuti instruksi yang muncul dilayar.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Jika anda pengguna Windows,<br/>unduh dan jalankan
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              lalu ikuti instruksi yang muncul dilayar.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-4 release-info-column">
+        <div>
+          <div class="release-version">Rust <span>{{ site.stable }}</span></div>
+          <a href="{{ site.stable_blog }}">
+            <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
+          </a>
+
+          <br>
+
+          <a id="platform-button" style="display: none;" href="#">
+            klik atau tekan "n" untuk mengubah platform
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>Catatan instalasi Rust</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <h3>Manajemen toolchain dengan <code>rustup</code></h3>
+
+        <p>
+          Rust di instal dan dimanajemen oleh
+          <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>.
+          Dalam waktu 6 minggu dengan
+          <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
+            proses pelepasan yang cepat
+          </a> dan mendukung
+          <a href="https://forge.rust-lang.org/platform-support.html">
+             sejumlah platform yang besar
+          </a>, Jadi ada banyak pembuatan Rust yang tersedia kapan saja.
+          <code>rustup</code> mengelola ini yang dibangun secara konsisten di setiap
+          platform yang didukung Rust, memungkinkan instalasi Rust dari
+          saluran rilis beta dan nightly serta dukungan untuk target cross-compilation tambahan
+        </p>
+
+        <p>
+          Untuk informasi lebih lanjut lihat
+          <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md">dokumentasi <code>rustup</code>
+          </a>.
+        </p>
+
+        <h3>Konfigurasi <code>PATH</code> variabel lingkungan</h3>
+
+        <p>
+          Di lingkungan pengembangan Rust, semua tool diletakkan ke direktori
+          <span class="platform-specific not-win" style="display: inline;">
+            <code>~/.cargo/bin</code>
+          </span>
+          <span class="platform-specific win" style="display: none;">
+            <code>%USERPROFILE%\.cargo\bin</code>
+          </span>,
+          dan ini adalah direktori di mana anda akan menemukan toolchain Rust, termasuk
+          <code>rustc</code>, <code>cargo</code>, dan <code>rustup</code>.
+        </p>
+
+        <p>
+          Oleh karena itu, biasanya pengembang Rust menyertakan direktori ini di
+          <a href="https://en.wikipedia.org/wiki/PATH_(variable)">lingkungan variabel
+          <code>PATH</code></a> mereka. Selama proses instalasi, <code>rustup</code>,
+          akan mencoba untuk mengkonfigurasi
+          <code>PATH</code>, tapi karena perbedaan antar platform,
+          command shells, dan bugs di <code>rustup</code>, modifikasi
+          untuk <code>PATH</code> mungkin tidak berlaku selama konsol
+          belum di restart, atau pengguna logged out terlebih dahulu, atau mungkin tidak berhasil sama sekali.
+        </p>
+
+        <p>
+          Jika instalasi telah selesai, namun ketika menjalankan perintah <code>rustc --version</code> terjadi kegagalan,
+          ini adalah alasan permasalahan yang biasanya terjadi.
+        </p>
+
+        <div class="platform-specific win">
+
+          <h3>Pertimbangan untuk Windows</h3>
+          <!-- This anchor is probably linked in the wild and should not be broken -->
+          <a id="win-foot"></a>
+
+      	  <p> Di Windows, Rust membutuhkan tambahan C++ build tools
+            untuk Visual Studio 2013 atau setelahnya. Cara yang mudah untuk
+            memperoleh build tools tersebut adalah dengan menginstal
+            <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">
+      	      Microsoft Visual C++ Build Tools 2015
+            </a>
+            yang hanya menyediakan Visual C++ build tools. Sebagai alternatif, anda
+            dapat <a href="https://www.visualstudio.com/downloads/">menginstal</a>
+      	    Visual Studio 2015 atau Visual Studio 2013 dan selama proses instalasi pilih
+      	    "C++ tools".
+      	  </p>
+
+          <p>
+            Untuk informasi lebih lanjut tentang konfigurasi Rust di Windows silakan lihat dokumentasi
+            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows-specific <code>rustup</code></a>.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <h2>Metode instalasi lainnya</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          Instalasi yang dijelaskan diatas, melalui
+          <code>rustup</code>, adalah cara untuk menginstal Rust yang banyak disukai oleh pengguna,
+          namun Rust juga dapat
+          <a href="other-installers.html">diinstal dengan cara yang lainnya</a>.
+        </p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      {% include rustup.js %}
+    </script>

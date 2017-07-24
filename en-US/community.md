@@ -64,18 +64,15 @@ discussion about Rust, and a good place to ask for help. You'll find
 people willing to answer any questions about Rust, and
 responses are typically fast.
 
-Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real-time discussion about hacking on Rust itself. It is also the channel to ask questions about contributing to Rust.
+Rust's developers coordinate in [#rust-internals][internals_irc]. It is for
+real-time discussion about hacking on Rust itself. It is also the channel
+to ask questions about contributing to Rust.
 
 ### Main channels
 
 - [#rust][rust_irc] is for all things Rust
 - [#rust-beginners][beginners_irc] is a space for those new to Rust, lower traffic than #rust
-- [#rust-internals][internals_irc] is for discussion of other Rust implementation topics
-- [#rustc][rustc_irc] is the home of the [compiler team][compiler_team]
-- [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
-- [#rust-tools][tools_irc] is the home of the [tools and infrastructure team][tool_team]
-- [#rust-lang][lang_irc] is the home of the [language team][language_team]
-- [#rust-community][community_irc] is the home of the [community team][community_team]
+- [#rust-internals][internals_irc] is for discussion of working on the Rust project itself
 
 ### International channels
 
@@ -86,18 +83,41 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 - [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
 - [Rust中文][cn_org] Rust 语言中文 Chat 社区(非IRC频道)
 
+### Team channels
+
+- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager and home of the [cargo team][cargo_team]
+- [#rust-community][community_irc] is the home of the [community team][community_team]
+- [#rustc][rustc_irc] is the home of the [compiler team][compiler_team]
+- [#rust-dev-tools][dev_tools_irc] is the home of the [developer tools team][dev_tools_team]
+- [#rust-docs][docs_irc] is the home of the [documentation team][doc_team]
+- [#rust-infra][infra_irc] is the home of the [infrastructure team][infra_team]
+- [#rust-lang][lang_irc] is the home of the [language team][language_team]
+- [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
+- [#rust-mods][mod_irc] is the irc channel for the [moderation team][mod_team]
+- [#rust-style][style_irc] is the home of the [style strike team][style_team]
+
 ### Topical channels
 
-- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager
+These channels are of the wider Rust community, and are not moderated by the [moderation team][mod_team].
+
 - [#rust-bots][bots_irc] notifications about Rust from a selection of bots
-- [#rust-docs][docs_irc] is the home of the unoffical documentation team
 - [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
 - [#rust-embedded][embedded_irc] is for people doing embedded software in Rust
 - [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
+- [#rust-geo][rustgeo_irc] is for discussion on GeoRust, geospatial tools written in Rust
+- [#rust-machine-learning][machine_learning_irc] is for people doing machine learning in Rust
 - [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
 - [#rust-osdev][osdev_irc] is for people doing OS development in Rust
+- [#rust-sci][sci_irc] is for people doing scientific computing in Rust
 - [#rust-webdev][webdev_irc] is for people doing web development in Rust
+- [#hyper][hyper_irc] is for discussion on Hyper, a popular Rust http library
+- [#iron][iron_irc] is for discussion on Iron, the extensible Rust web framework
+- [#nom][nom_irc] is for discussion on Nom, a Rust parser combinator library
+- [#redox][redox_irc] is for discussion on Redox, the operating system written in Rust
+- [#rocket][rocket_irc] is for discussion on Rocket, a popular Rust http framework
+- [#serde][serde_irc] if for discussion on Serde, a popular Rust serialization library
 - [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
+- [#xi][xi_irc] is for discussion of Xi, the text editor written in Rust
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
 [beginners_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
@@ -121,9 +141,23 @@ Rust's developers coordinate in [#rust-internals][internals_irc]. It is for real
 [rust_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
 [rustc_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
 [servo_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23servo
-[tools_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
 [webdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
 [docs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-docs
+[xi_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23xi
+[dev_tools_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-dev-tools
+[style_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23style
+[style_team]: team.html#Style-team
+[mod_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23mods
+[machine_learning_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-machine-learning
+[hyper_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23hyper
+[iron_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23iron
+[redox_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23redox
+[nom_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23nom
+[infra_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-infra
+[rustgeo_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-geo
+[rocket_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rocket
+[serde_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23serde
+[sci_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-sci
 
 ## Discussion Forums
 
