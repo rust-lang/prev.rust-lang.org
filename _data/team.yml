@@ -128,6 +128,9 @@ people:
   peschkaj:
     name: Jeremiah Peschka
     irc: peschkaj
+  petrochenkov:
+    name: Vadim Petrochenkov
+    irc: petrochenkov
   pnkfelix:
     name: Felix Klock
   QuietMisdreavus:
@@ -187,7 +190,7 @@ teams:
     lead: aturon
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
-    members: [arielb1, eddyb, nrc, pnkfelix, nikomatsakis, aatch, jseyfried, michaelwoerister]
+    members: [arielb1, eddyb, nrc, petrochenkov, pnkfelix, nikomatsakis, aatch, jseyfried, michaelwoerister]
     lead: nikomatsakis
   - name: Dev tools team
     responsibility: "overall direction for tools for working with Rust code"
