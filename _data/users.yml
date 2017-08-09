@@ -449,7 +449,7 @@
   how: "<a href='https://exonum.com'>Exonum is an extensible framework for blockchain projects written in Rust.</a>"
 -
   name: WINK Streaming
-  url: www.winkstreaming.com
+  url: http://www.winkstreaming.com
   logo: wink.png
   how: "Rust key to our core low latency H.264 and HEVC encoding and transcoding engine."
 -
