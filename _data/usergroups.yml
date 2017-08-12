@@ -412,6 +412,7 @@
     - Minnesota: MN
     - Nevada: NV
     - New York: NY
+    - North Carolina: NC
     - Ohio: OH
     - Oregon: OR
     - Pennsylvania: PA
@@ -527,3 +528,9 @@
       city: Seattle
       state: WA
       url: https://www.meetup.com/Seattle-Rust-Meetup/
+      
+    - name: Triangle Rustaceans
+      city: Durham
+      state: NC
+      url: https://www.meetup.com/triangle-rustaceans/
+
