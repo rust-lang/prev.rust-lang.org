@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: de-DE/default
 title: Die Rust Community &middot; Die Programmiersprache Rust
 ---
 
