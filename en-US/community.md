@@ -115,7 +115,7 @@ These channels are of the wider Rust community, and are not moderated by the [mo
 - [#nom][nom_irc] is for discussion on Nom, a Rust parser combinator library
 - [#redox][redox_irc] is for discussion on Redox, the operating system written in Rust
 - [#rocket][rocket_irc] is for discussion on Rocket, a popular Rust http framework
-- [#serde][serde_irc] if for discussion on Serde, a popular Rust serialization library
+- [#serde][serde_irc] is for discussion on Serde, a popular Rust serialization library
 - [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
 - [#xi][xi_irc] is for discussion of Xi, the text editor written in Rust
 

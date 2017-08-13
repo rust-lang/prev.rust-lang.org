@@ -57,26 +57,23 @@ Auf Chinesisch kannst du uns auch auf [Weibo][weibo] folgen.
 [twitter]: https://twitter.com/rustlang
 [weibo]: http://weibo.com/u/5616913483
 
-## IRC Channels
+## IRC-Kanäle
 
-Rust-Entwickler über
+Rust-Entwickler überwachen eine Nummer an [IRC]-Kanäle auf Mozillas IRC Netzwerk, irc.mozilla.org.
 
-Rustaceans maintain a number of friendly, high-traffic [IRC] channels on Mozilla's IRC network, irc.mozilla.org.
+Auf [#rust][rust_irc] sammeln sich generelle Diskussionen über Rust - ein guter Platz um nach Hilfe
+zu fragen. Hier findest du sicher Leute, die sich mit deinem Problem befassen - üblicherweise sind
+die Fragen recht schnell beantwortet.
 
-The [#rust][rust_irc] channel is a venue for general
-discussion about Rust, and a good place to ask for help. You'll find
-people willing to answer any questions about Rust, and
-responses are typically fast.
+Entwickler, die an dem Rust-Compiler arbeiten, findest du auf [#rust-internals][internals_irc].
+Hier findest du Echtzeit-Diskussionen über die interne Entwicklung von Rust. Hier kannst du auch
+fragen, falls du zum Rust-Projekt beitragen möchtest.
 
-Rust's developers coordinate in [#rust-internals][internals_irc]. It is for
-real-time discussion about hacking on Rust itself. It is also the channel
-to ask questions about contributing to Rust.
+### Haupt-Kanäle
 
-### Main channels
-
-- [#rust][rust_irc] is for all things Rust
-- [#rust-beginners][beginners_irc] is a space for those new to Rust, lower traffic than #rust
-- [#rust-internals][internals_irc] is for discussion of working on the Rust project itself
+- [#rust][rust_irc] für alles, was Rust betrifft
+- [#rust-beginners][beginners_irc] für Beginner in Rust, weniger Nachrichten als #rust
+- [#rust-internals][internals_irc] für Diskussionen um die Sprache Rust selber
 
 ### International channels
 
@@ -89,39 +86,39 @@ to ask questions about contributing to Rust.
 
 ### Team channels
 
-- [#cargo][cargo_irc] is for discussion of Cargo, Rust's package manager and home of the [cargo team][cargo_team]
-- [#rust-community][community_irc] is the home of the [community team][community_team]
-- [#rustc][rustc_irc] is the home of the [cThe Rust Communityompiler team][compiler_team]
-- [#rust-dev-tools][dev_tools_irc] is the home of the [developer tools team][dev_tools_team]
-- [#rust-docs][docs_irc] is the home of the [documentation team][doc_team]
-- [#rust-infra][infra_irc] is the home of the [infrastructure team][infra_team]
-- [#rust-lang][lang_irc] is the home of the [language team][language_team]
-- [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
-- [#rust-mods][mod_irc] is the irc channel for the [moderation team][mod_team]
-- [#rust-style][style_irc] is the home of the [style strike team][style_team]
+- [#cargo][cargo_irc] - hier findest du Diskussion über Cargo, Rusts Paketmanager und ebenso das [Cargo Team][cargo_team]
+- [#rust-community][community_irc] - hier erreichst du das [Community Team][community_team]
+- [#rustc][rustc_irc] - hier erreichst du das [Compiler Team][compiler_team]
+- [#rust-dev-tools][dev_tools_irc] - hier erreichst du das [Enwicklungs-Tools Team][dev_tools_team]
+- [#rust-docs][docs_irc] - hier erreichst du das [Dokumentations-Team][doc_team]
+- [#rust-infra][infra_irc] - hier erreichst du das [Infrastruktur-Team][infra_team]
+- [#rust-lang][lang_irc] - hier erreichst du das [Sprachdesign-Team][language_team]
+- [#rust-libs][libs_irc] - hier erreichst du das [Bibiliothek-Team][library_team]
+- [#rust-mods][mod_irc] - der IRC Kanal für das [Moderationsteam][mod_team]
+- [#rust-style][style_irc] - hier erreichst du das [Style-Strike Team][style_team]
 
-### Topical channels
+### Thematische Kanäle
 
-These channels are of the wider Rust community, and are not moderated by the [moderation team][mod_team].
+Diese Kanäle sind Teil der größeren Rust Community und werden nicht vom [Moderationsteam][mod_team] moderiert.
 
-- [#rust-bots][bots_irc] notifications about Rust from a selection of bots
-- [#rust-crypto][crypto_irc] is for discussion of cryptography in Rust
-- [#rust-embedded][embedded_irc] is for people doing embedded software in Rust
-- [#rust-gamedev][gamedev_irc] is for people doing game development in Rust
-- [#rust-geo][rustgeo_irc] is for discussion on GeoRust, geospatial tools written in Rust
-- [#rust-machine-learning][machine_learning_irc] is for people doing machine learning in Rust
-- [#rust-networking][networking_irc] is for people doing computer networking and development in Rust
-- [#rust-osdev][osdev_irc] is for people doing OS development in Rust
-- [#rust-sci][sci_irc] is for people doing scientific computing in Rust
-- [#rust-webdev][webdev_irc] is for people doing web development in Rust
-- [#hyper][hyper_irc] is for discussion on Hyper, a popular Rust http library
-- [#iron][iron_irc] is for discussion on Iron, the extensible Rust web framework
-- [#nom][nom_irc] is for discussion on Nom, a Rust parser combinator library
-- [#redox][redox_irc] is for discussion on Redox, the operating system written in Rust
-- [#rocket][rocket_irc] is for discussion on Rocket, a popular Rust http framework
-- [#serde][serde_irc] if for discussion on Serde, a popular Rust serialization library
-- [#servo][servo_irc] is for discussion of Servo, the browser engine written in Rust
-- [#xi][xi_irc] is for discussion of Xi, the text editor written in Rust
+- [#rust-bots][bots_irc] - Nachrichten über Rust, gesendet von automatischen Bots
+- [#rust-crypto][crypto_irc] - Diskussionen über Kryptographie in Rust
+- [#rust-embedded][embedded_irc] - für Enwicklung von Embedded-Systemen in Rust
+- [#rust-gamedev][gamedev_irc] - für Spielentwicklung in Rust
+- [#rust-geo][rustgeo_irc] - für Diskussion über Geoinformationssysteme, die in Rust entwickelt werden
+- [#rust-machine-learning][machine_learning_irc] - für maschinelles Lernen in Rust
+- [#rust-networking][networking_irc] - für Netzwerkprogrammierung und -entwicklung in Rust
+- [#rust-osdev][osdev_irc] - für Entwicklung von Betriebssystemen in Rust
+- [#rust-sci][sci_irc] - für wissenschaftliche Berechnungen in Rust
+- [#rust-webdev][webdev_irc] - für Webentwicklung mit Rust
+- [#hyper][hyper_irc] - für Diskussionen um Hyper, eine beliebte HTTP-Bibliothek
+- [#iron][iron_irc] - für Diskussionen um Iron, einem beliebtes Web-Framework
+- [#nom][nom_irc] - für Diskussionen um Nom, eine Parser-Codegen Bibliothek
+- [#redox][redox_irc] - für Diskussionen über Redox, ein Betriebssystem das in Rust geschrieben wird
+- [#rocket][rocket_irc] - für Diskussionen über Rocket, einem beliebten Web-Framework für Rust
+- [#serde][serde_irc] - für Diskussionen über Serde, einem Serialisierungs-Framework für Rust
+- [#servo][servo_irc] - für Diskussionen über Servo, einer Web-Renderengine, geschrieben in Rust
+- [#xi][xi_irc] - für Diskussionen über Xi, einem Texteditor, geschrieben in Rust
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
 [beginners_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
@@ -163,85 +160,80 @@ These channels are of the wider Rust community, and are not moderated by the [mo
 [serde_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23serde
 [sci_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-sci
 
-## Discussion Forums
+## Diskussionsforen
 
-We have two forums for asynchronous discussion:
+Wir haben zwei Diskussionsforen für asynchrone Diskussion:
 
-- The [Users Forum][users_forum], a space for asking questions, posting code
-  snippets, talking about Rust projects, and so on.
+- Das [Nutzerforum][users_forum], wo du Fragen stellen kannst, Code schreiben
+  sowie von deinen Rust-Projekten erzählen kannst, usw.
 
-- The [Internals Forum][internals_forum], a space dedicated to design and
-  implementation discussion about Rust itself (which includes Cargo, the
-  standard library, and other core bits of infrastructure).
+- Das [Internals-Forum][internals_forum], wo es um das Design und die Implementation
+  der Sprache Rust selber geht (inklusive Cargo, die Standardbibliothek und andere
+  Teile der Infrastruktur)
 
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
 
-## YouTube Channel
+## YouTube Kanal
 
-Rust has a [YouTube channel][youtube_channel] where presentations
-given at user groups and conferences by members of the Rust community
-are uploaded.
+Rust hat einen [YouTube-Kanal][youtube_channel] wo hauptsächlich Präsentationen
+von Nutzergruppen-Treffen und Konferenzen von Mitgliedern der Rust Community
+hochgeladen werden.
 
 [youtube_channel]: https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA
 
-## User Groups and Meetups
+## Nutzergruppen and Meetups
 
-There are more than 90 [Rust User Groups][user_group] worldwide in
-over 35 countries. Rustaceans meet periodically in Rust User Groups.
-Its a great introduction to the community and a great way to learn and
-socialize with other people with a similar interest. Meetings are
-usually held monthly and very informal. Meetings are open to everyone.
+Es gibt mehr als 90 [Rust Nutzergruppen][user_group] (User Groups) weltweit
+in über 35 Ländern. Rust-Entwickler treffen sich periodisch in diesen Gruppen.
+Das ist ein großartiger Weg, um sich vorzustellen, voneinander zu lernen,
+sich auszutauschen und sich mit anderen zu sozialisieren. Meetings werden
+üblicher monatlich gehalten und sind eher informativ. Meetings sind offen für jedermann.
 
-There is a global [calendar][calendar] for keeping up with Rust events.
-Contact the [community team][community_team] to add your own.
+Es gibt einen globalen [Kalendar][calendar] um mit verschiedenen Rust-Events auf
+dem Laufenden zu bleiben. Kontaktieren das [Community-Team][community_team] um dein Event
+hinzuzufügen.
 
 [user_group]: ./user-groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
 
-## The Rust Team
+## Das Rust Team
 
-Rust has a community-driven development process where most decisions are made
-through open discussion and consensus, under the stewardship of various
-[teams][teams]:
+Rust einen von der Community getriebenen Entwicklungsprozess, in dem die meisten Entscheidungen
+durch offene Diskussion und Konsens voran getrieben werden, unter dem Steuer verschiedener [Teams][teams]:
 
-* The [Core Team][core_team] is responsible for steering the design and
-development process, overseeing the introduction of new features, and ultimately
-making decisions for which there is no consensus (this happens rarely).
+* Das [Core Team][core_team] ist verantwortlich für die Leitung des Design- und Entwicklungsprozesses
+  sowie die Überwachung des Einstiegs von neuen Features in Rust, und kann grundsätzlich Entscheidungen
+  treffen, die nicht vorher besprochen werden (das passiert aber sehr selten).
 
-* The [Language Team][language_team] is responsible for the
-  design of new language features.
+* Das [Sprachdesign-Team][language_team] ist verantwortlich für das Design von neuen Sprachfeatures.
 
-* The [Library Team][library_team] is responsible for the Rust standard
-library, rust-lang crates, and conventions.
+* Das [Bibliotheks-Team][library_team] ist verantwortlich für die Rust-Standardbibliothek, rust-lang Bibliotheken
+  und Standardkonventionen.
 
-* The [Compiler Team][compiler_team] is responsible for compiler internals and
-optimizations.
+* Das [Compiler-Team][compiler_team] ist verantwortlich für den Rust-Compiler, sowie Code-Optimierungen.
 
-* The [Dev tools team][dev_tools_team] is responsible for setting the overall
-  direction of tools for working with Rust code.
+* Das [Dev-Tools Team][dev_tools_team] ist verantwortlich für die generelle Direktion von Tools für die
+  Entwicklung von Rust (IDEs, Debugger, etc.).
 
-* The [Cargo team][cargo_team] is responsible for the design and implementation of Cargo.
+* Das [Cargo-Team][cargo_team] ist verantwortlich für das Design und die Implementation von Cargo.
 
-* The [Infrastructure Team][infra_team] is responsible for infrastructure that supports
-  the project itself: CI, release generation, bots, and metrics.
+* Das [Infrastruktur-Team][infra_team] ist verantwortlich für die Infrastuktur, die das Rust-Projekt
+  selber unterstützt: CI, Release-Generierung, Bots und Statistiken.
 
-* The [Community Team][community_team] is responsible for coordinating events,
-outreach, commercial users, teaching materials, and exposure. They can also
-direct inquiries to the correct parties when its not clear who to contact
-about something Rusty.
+* Das [Community-Team][community_team] ist verantwortlich für soziale Arbeit, kommerzielle Nutzer und
+  PR. Es kann ebenso kontaktiert werden, wenn es nicht klar ist, an welches Team sich anfragen richten,
+  sofern das Rust betrifft.
 
-* The [Moderation Team][mod_team] is responsible for helping to uphold the
-[code of conduct][coc].
+* Das [Moderationsteam][mod_team] ist verantwortlich für die Aufrechterhaltung unseres [Verhaltenskodex][coc].
 
-* The [Documentation Team][doc_team] is responsible for ensuring Rust has
-  fantastic documentation.
+* Das [Dokumentationsteam][doc_team] ist verantwortlich dafür, das Rust und die Rust-Standardbibliothek
+  fantastische Dokumentation haben.
 
-In addition to the official team rosters, most teams also have a larger set
-of reviewers who are knowledgeable about the area and can sign off on
-code. If you're interested in getting involved in one of these teams,
-feel free to reach out to the team leader or any other member, who can
-help get you started.
+Zusätzlich zu den offiziellen Dienstplänen haben die meisten Teams auch eine größere Menge
+an Reviewern, welche sich mit spezifischen Gebieten auskennen und Code absegnen können.
+Falls du bei einem dieser Teams mitmachen möchtest, bitte kontaktiere den Leiter des Teams,
+oder ein Mitglied, welche dich in die Aufgaben einleiten können.
 
 [teams]: team.html
 [core_team]: team.html#Core-team
@@ -255,22 +247,21 @@ help get you started.
 [doc_team]: team.html#Documentation-team
 [infra_team]: team.html#Infrastructure-team
 
-## Rust Development
+## Rusts Entwicklung
 
-Rust has had over [2,000 different contributors][authors], a number that grows
-every single week. [We'd love for you to join that list][contribute]!
+Rust hat über [2,000 verschiedene Beitragende][authors], eine Nummer, die jede Woche wächst.
+[Wir würden gerne, dass dieser Liste beitrittst][contribute]!
 
-As mentioned above, the [Rust Internals Forum][internals_forum] is dedicated to
-discussing the design and implementation of Rust. A lot of discussion also
-happens on GitHub:
+Wie oben gesagt, das [Rust-Internals Forum][internals_forum] ist das Forum für
+Sprachdesign und Implementation von Rust. Eine Menge an Diskussion passiert auch auf
+GitHub:
 
-- The [main repository][github] and [issue tracker][issue_tracking] are the
-  front lines of the implementation work. Our reviewers strive to be friendly
-  and to help mentor newcomers, so don't hesitate to open a pull request!
+- Das [Haupt-Repository][github] und dessen [Issue-Tracker][issue_tracking] sind
+  die Hauptseiten für die Implementation von Rust. Unsere Reviewer möchten möglichst
+  freundlich und hilfreich für Neulinge sein, also zöger nicht, einen Pull Request zu öffnen!
 
-- The [RFC repo][rfcs] tracks our Request for Comment process, the main pathway
-  through which the Rust community and the teams reach consensus on new
-  features proposed for the language and official libraries and tools.
+- Das [RFC-Repository][rfcs] enthält den Request for Comment Prozess, der Hauptprozess, durch den
+  die Rust Community und die Teams neue Features für Rust und die Standardbibliothek absegnen.
 
 [authors]: https://thanks.rust-lang.org/rust/all-time
 [contribute]: contribute.html
