@@ -447,4 +447,19 @@
   url: http://bitfury.com/
   logo: bitfury_group.png
   how: "<a href='https://exonum.com'>Exonum is an extensible framework for blockchain projects written in Rust.</a>"
+-
+  name: WINK Streaming
+  url: http://www.winkstreaming.com
+  logo: wink.png
+  how: "Rust key to our core low latency H.264 and HEVC encoding and transcoding engine."
+-
+  name: Collective Sense
+  url: https://collective-sense.com/
+  logo: collective-sense.png
+  how: "We use Rust to implement data collectors and processors in our network monitoring and security analysis software. Our product needs to be both secure and extremely fast which makes Rust a perfect fit."
+-
+  name: Shiftleft
+  url: https://www.shiftleft.io/
+  logo: shift-left.png
+  how: "ShiftLeft is a Silicon Valley startup employing innovative techniques to bring clarity and rigor to the security space. Our <a href='http://blog.shiftleft.io'>bespoke runtime security agent</a> is written in Rust."
 

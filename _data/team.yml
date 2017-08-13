@@ -98,6 +98,8 @@ people:
   Kimundi:
     name: Marvin Löbel
     irc: kimundi
+  KodrAus:
+    name: Ashley Mannix
   llogiq:
     name: llogiq
   Mark-Simulacrum:
@@ -128,6 +130,9 @@ people:
   peschkaj:
     name: Jeremiah Peschka
     irc: peschkaj
+  petrochenkov:
+    name: Vadim Petrochenkov
+    irc: petrochenkov
   pnkfelix:
     name: Felix Klock
   QuietMisdreavus:
@@ -185,9 +190,12 @@ teams:
     responsibility: "the Rust standard library, rust-lang crates, conventions, and ecosystem support"
     members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, dtolnay, aturon]
     lead: aturon
+  - name: Library team shepherds
+    responsibility: "coordinating the Libz Blitz, helping guide libs RFCs to completion, keeping pulse on the ecosystem"
+    members: [KodrAus]
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
-    members: [arielb1, eddyb, nrc, pnkfelix, nikomatsakis, aatch, jseyfried, michaelwoerister]
+    members: [arielb1, eddyb, nrc, petrochenkov, pnkfelix, nikomatsakis, aatch, jseyfried, michaelwoerister]
     lead: nikomatsakis
   - name: Dev tools team
     responsibility: "overall direction for tools for working with Rust code"
