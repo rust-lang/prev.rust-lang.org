@@ -1,0 +1,95 @@
+---
+layout: de-DE/default
+title: Rusts Sicherheitsrichtlinie &middot; Die Programmiersprache Rust
+---
+
+<h1>Rusts Sicherheitsrichtlinie</h1>
+
+<h2>Einen Fehler melden</h2>
+
+<p>Sicherheit ist eine unserer grundlegenden Prinzipien in Rust, und wir würden
+gerne sicherstellen, dass Rust eine sichere Implementierung hat. Vielen Dank, dass
+du dir die Zeit nimmst, die Fehler, die du findest, verantwortungsbewusst zu melden.</p>
+
+<p>Alle Sicherheitsfehler in Rust sollen per E-Mail an die Mailingliste
+<a href="mailto:security@rust-lang.org">security@rust-lang.org</a> berichtet werden.
+Diese Liste wird von einem kleinen Sicherheits-Team geführt. Deine E-Mail wird innerhalb
+von 24 Stunden gelesen und innerhalb von 48 Stunden beantwortet werden - mit einer detaillierten
+Antwort inklusive Anweisungen, was im entsprechenden Fall zu tun ist. Falls du möchtest,
+kannst du die E-Mail mit unserem <a href="../rust-security-team-key.gpg.ascii">öffentlichen PGP-Schlüssel</a>
+verschlüsseln. Dieser Schlüssel ist ebenfalls auf
+<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xEFB9860AE7520DAC">dem Keyserver des MIT</a>
+und <a href="#key">weiter unten auf dieser Seite</a> zu finden.
+
+<p>Diese E-Mail-Adresse erhält leider eine Unmenge an Spam, bitte nimm dir daher Zeit um das
+Subjekt der E-Mail klar und verständlich zu beschreiben, damit dein Report nicht verlorengeht.
+Nach der anfänglichen Antwort wird dich das Sicherheits-Team auf dem Laufenden halten, sowie dir
+Informationen zum Fortschritt, Bugfix und Veröffentlichung geben. Wie in unserer
+<a href="https://de.wikipedia.org/wiki/RFPolicy">RFPolicy</a> beschrieben, werden diese Updates
+mindestens alle fünf Tage gesendet. In Praxis ist der Zeitraum ca. alle 24-48 Stunden.</p>
+
+<p>Falls du keine Antwort innerhalb von 48 Stunden erhalten hast oder nichts vom Sicherheits-Team
+in den letzten fünf Tagen gehört hast, kannst du die folgenden Schritte versuchen:</p>
+
+<ul>
+    <li>Kontaktiere den Sicherheits-Koordinator (<a href="mailto:steve@steveklabnik.com">Steve Klabnik</a>
+        (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xDAE717EFE9424541">Öffentlicher PGP-Schlüssel</a>)) direkt.</li>
+    <li>Kontaktiere seinen Vertreter (<a href="mailto:andersrb@gmail.com">Brian Anderson</a>
+        (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x16457A6368CFF26F">Öffentlicher PGP-Schlüssel</a>)).</li>
+    <li>Poste auf dem <a href="https://internals.rust-lang.org/">Rust-Internals Forum</a>
+    oder frag in #rust-internals IRC chatroom auf irc.mozilla.org nach einem Mitarbeiter des Sicherheits-Teams.</li>
+</ul>
+
+<p>Bitte sei dir im Klaren, dass diese Diskussionen in Foren und auf dem #rust-internals IRC-Channel
+öffentlich zugänglich sind. Wenn du diese Mittel zur Kommunikation von Sicherheits-Bugs benutzt, bitte
+diskutiere nicht den Fehler direkt. Sag einfach nur dass du mit jemandem vom Sicherheits-Team sprechen
+möchtest.</p>
+
+<h2>Veröffentlichungsrichtlinie</h2>
+
+<p>Das Rust-Projekt hat einen 5-Schritte Prozess für Veröffentlichungen von Sicherheitsfehlern.</p>
+
+<ol>
+<li>Der Sicherheitsbericht wird wahrgenommen und einem primären Koordinator zugewiesen.
+Diese Person übernimmt die Koordinierung der Fehlerbehebung und des weiteren Release-Prozesses.</li>
+
+<li>Das Problem wird bestätigt und eine Liste der betroffenen Rust-Versionen wird bestimmt.</li>
+
+<li>Der Code wird geprüft um ähnliche Probleme zu finden.</li>
+
+<li>Fehlerbehebungen werden in allen Rust-Versionen vorbereitet für alle Versionen, die momentan gewartet werden.
+Diese Fehlerbehebungen werden nicht in einem öffentlichen Repository eingepflegt, sondern stattdessen
+lokal gehalten, bis zum Datum der öffentlichen Bekanntmachung.</li>
+
+<li>Nach Ablauf der Sperrfrist, Teilnehmer der
+<a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">Rust-Sicherheits Mailingliste</a>
+erhalten eine Kopie der Bekanntmachung. Die Änderungen werden im Haupt-Repository eingepflegt und neue Builds
+werden auf rust-lang.org veröffentlicht. Innerhalb von sechs Stunden nachdem die Mailing-Liste benachrichtigt wurde,
+wird eine Kopie der Bekanntmachung auf dem Rust blog veröffentlicht.</li> </ol>
+
+<p>Dieser Prozess kann eine Weile dauern, speziell wenn die Koordination von
+Maintainern von anderen Projekten notwendig ist. Jeder Versuch, den Fehler zu
+beheben wird so schnell wie möglich vollzogen, allerdings ist es wichtig den
+Release-Prozess zu beachten, damit die Bekanntgebung in einer professionellen Weise geschieht.</p>
+
+<h2>Empfangen von Rusts Sicherheits-Updates</h2>
+
+<p>Der beste Weg auf dem letzten Stand für Sicherheits-Updates zu sein ist sich in der
+ <a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">Rust
+Sicherheits Bekanntgebungs Mailingliste</a> einzutragen. Diese Mailingliste erhält nicht viel
+Verkehr und wird sofort öffentlich benachrichtigt, wenn die Sperre für einen Fehlerbehebung aufhört.</p>
+
+<h3>Vorzeitige Benachrichtigungen</h3>
+
+<p>Wir werden Sicherheitsschwachstellen 72 Stunden vor dem Ablauf der Sperre auf der Mailingliste von
+<a href="http://oss-security.openwall.org/wiki/mailing-lists/distros">distros@openwall</a> bekanntgeben,
+so dass Linux-Distributionen ihre Pakete aktualisieren können.</p>
+
+<h2>Kommentare zu dieser Richtlinie</h2>
+
+<p>Falls du Fragen oder Vorschläge hast, wie diese Richtlinie verbessert werden kann,
+bitte schreibe einen E-Mail an <a href="mailto:security@rust-lang.org">security@rust-lang.org</a>.</p>
+
+<h2 id="key">Klartext PGP Schlüssel</h2>
+
+<pre><code>{% include rust-security-team-key.gpg.ascii %}</code></pre>

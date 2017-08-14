@@ -1,0 +1,202 @@
+---
+layout: de-DE/default
+title: Installation &middot; Die Programmiersprache Rust
+---
+    <h1 class="rustup">Rust installieren</h1>
+
+    <div class="row rustup-row">
+      <div class="col-md-8 instr-column">
+        <div id="platform-instructions-unix" class="instructions" style="display: none;">
+          <p>Um Rust zu installieren, führe den folgenden Befehl in deinem Terminal aus und folge
+             dann den Anweisungen auf dem Bildschirm.</p>
+          <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+        </div>
+
+        <div id="platform-instructions-win" class="instructions" style="display: none;">
+          <p>
+            Um Rust zu installieren, lade den folgenden Installer herunter:
+            <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+            und folge dann den Anweisungen auf dem Bildschirm.
+          </p>
+        </div>
+
+        <div id="platform-instructions-unknown" class="instructions" style="display: none;">
+          <!-- unrecognized platform: ask for help -->
+          <p>Wir haben Ihre Platform leider nicht erkannt.</p>
+          <p>
+            Rust läuft auf Windows, Linux, Mac OS X, FreeBSD und NetBSD. Falls du auf einem
+            dieser Systeme bist und diese Warnmeldung siehst, bitte
+            <a href="https://github.com/rust-lang/rust-www/issues/new">melde uns den Fehler</a>,
+            mit den folgenden Infos:
+          </p>
+
+          <div>
+            <div>navigator.platform:</div>
+            <div id="nav-plat"></div>
+            <div>navigator.appVersion:</div>
+            <div id="nav-app"></div>
+          </div>
+
+          <!-- duplicate the default cross-platform instructions -->
+          <div>
+            <p>Wenn du ein Unix-basiertes Betriebssystem hast,
+               führe den folgenden Befehl in deinem Terminal aus und folge
+               dann den Anweisungen auf dem Bildschirm.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Unter Windows, bitte lade dir den folgenden Installer herunter:
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              und folge dann den Anweisungen auf dem Bildschirm.
+            </p>
+          </div>
+        </div>
+
+        <div id="platform-instructions-default" class="instructions">
+          <div>
+          <p>Wenn du ein Unix-basiertes Betriebssystem hast,
+             führe den folgenden Befehl in deinem Terminal aus und folge
+             dann den Anweisungen auf dem Bildschirm.</p>
+          <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Unter Windows, bitte lade dir den folgenden Installer herunter:
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              und folge dann den Anweisungen auf dem Bildschirm.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-4 release-info-column">
+        <div>
+          <div class="release-version">Rust <span>{{ site.stable }}</span></div>
+          <a href="{{ site.stable_blog }}">
+            <div class="release-date">{{ site.stable_date | date: "%-d.%-m.%Y" }}</div>
+          </a>
+
+          <br>
+
+          <a id="platform-button" style="display: none;" href="#">
+            Klicken oder "n" drücken, um Plattform zu wechseln
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>Hinweise zur Rust-Installation</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <h3>Toolchain Management mit <code>rustup</code></h3>
+
+        <p>
+          Rust wird vom
+          <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>
+          Tool installiert und verwaltet. Rust hat einen sechswöchigen
+          <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
+            schnellen Release-Prozess
+          </a> und unterstützt eine
+          <a href="https://forge.rust-lang.org/platform-support.html">
+             große Anzahl an Plattformen
+          </a>, somit sind viele Versionen des Rust-Compilers jederzeit verfügbar.
+          <code>rustup</code> verwaltet diese Versionen in einem einheitlichen System auf jeder
+          Plattform, die von Rust unterstützt wird und verwaltet zusätzlich die Installation von
+          Beta- und Nightly Release Channels, sowie zusätzliche Cross-Compilation Versionen.
+        </p>
+
+        <p>
+          Für weitere Informationen lies dir bitte die
+          <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md"><code>rustup</code>
+          Dokumentation</a> durch.
+        </p>
+
+        <h3>Die <code>PATH</code>-Umgebungsvariable konfigurieren</h3>
+
+        <p>
+          In der Rust-Entwicklungsumgebung sind alle Tools im Ordner
+          <span class="platform-specific not-win" style="display: inline;">
+            <code>~/.cargo/bin</code>
+          </span>
+          <span class="platform-specific win" style="display: none;">
+            <code>%USERPROFILE%\.cargo\bin</code>
+          </span> zu finden - hier findest du die Rust-Toolchain, inklusive
+          <code>rustc</code>, <code>cargo</code>, und <code>rustup</code>.
+        </p>
+
+        <p>
+          Dementsprechend ist es für Rust-Entwickler üblich, diesen Ordner zur
+          <a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code>-Umgebungsvariable</a>
+          hinzuzufügen. Während der Installation wird <code>rustup</code>,
+          versuchen, die <code>PATH</code>-Variable automatisch zu konfigurieren,
+          allerdings kann es, aufgrund Unterschieden zwischen verschiedenen
+          Plattformen und Kommandozeilen, sowie Fehlern in <code>rustup</code>
+          dazu kommen, dass Änderungen an der <code>PATH</code>-Variable nicht
+          in Effekt treten, bis die Konsole / das Terminal neu gestartet wurde
+          oder der Benutzer abgemeldet wurde. In seltenen Fällen kann es sein,
+          dass die Änderung fehlschlägt.
+        </p>
+
+        <p>
+          Sollte nach der Installation das Ausführen des Befehls <code>rustc --version</code>
+          fehlschlagen, bitte beachte die folgenden Anweisungen:
+        </p>
+
+        <div class="platform-specific win">
+
+          <h3>Hinweise für Windows</h3>
+          <!-- This anchor is probably linked in the wild and should not be broken -->
+          <a id="win-foot"></a>
+
+	        <p>
+            Auf Windows benötigt Rust zusätzlich die C++ Build-Tools für Visual Studio 2013 oder neuer.
+            Der einfachste Weg, diese zu installieren ist es, die
+	          <a href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2017">
+	            Microsoft Visual C++ Build Tools 2017
+            </a>
+            zu installieren, welche nur die Visual C++ Build-Tools installiert.
+            Alternative kannst du ebenfalls Visual Studio 2017, Visual Studio 2015, or Visual Studio 2013
+            <a href="https://www.visualstudio.com/downloads/">installieren</a>
+      	    und während der Installation "C++ Tools" auswählen.
+      	  </p>
+
+          <p>
+            Für mehr Informationen über die Konfiguration von Rust auf Windows, bitte lies dir die
+            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">
+            Windows-spezifische <code>rustup</code> Dokumentation durch
+            </a>.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <h2>Andere Installationsmethoden</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          Die Installation durch
+          <code>rustup</code>, wie oben beschrieben, ist der bevorzugte Weg für die meisten
+          Entwickler, Rust zu installieren. Allerdings kann Rust auch
+          <a href="other-installers.html">über andere Wege installiert werden</a>.
+        </p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      {% include rustup.js %}
+    </script>
+
