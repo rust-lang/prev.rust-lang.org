@@ -451,7 +451,7 @@
   name: WINK Streaming
   url: http://www.winkstreaming.com
   logo: wink.png
-  how: "Rust key to our core low latency H.264 and HEVC encoding and transcoding engine."
+  how: "Rust is key to our core low latency H.264 and HEVC encoding and transcoding engine."
 -
   name: Collective Sense
   url: https://collective-sense.com/
