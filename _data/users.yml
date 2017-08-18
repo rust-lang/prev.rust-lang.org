@@ -462,4 +462,8 @@
   url: https://www.shiftleft.io/
   logo: shift-left.png
   how: "ShiftLeft is a Silicon Valley startup employing innovative techniques to bring clarity and rigor to the security space. Our <a href='http://blog.shiftleft.io'>bespoke runtime security agent</a> is written in Rust."
-
+-
+  name: Tocco AG
+  url: https://www.tocco.ch
+  logo: tocco.svg
+  how: "Tocco is a Switzerland based company specialized in ERP software that has been using Rust with great enthusiasm for many of its <a href='https://github.com/tocco/lo-migrate'>internal tools</a>."
