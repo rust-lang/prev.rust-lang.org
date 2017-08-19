@@ -43,6 +43,11 @@
   logo: academia.edu.svg
   how: "Turning strings into structured paper and author data, <a href='https://github.com/djudd/human-name-rb'>faster than Ruby</a>."
 -
+  name: Adgear
+  url: https://adgear.com/
+  logo: adgear.svg
+  how: "Real-time bidding platform"
+-
   name: AgilData
   url: http://www.agildata.com/
   logo: agildata.svg
