@@ -451,7 +451,7 @@
   name: WINK Streaming
   url: http://www.winkstreaming.com
   logo: wink.png
-  how: "Rust key to our core low latency H.264 and HEVC encoding and transcoding engine."
+  how: "Rust is key to our core low latency H.264 and HEVC encoding and transcoding engine."
 -
   name: Collective Sense
   url: https://collective-sense.com/
@@ -462,4 +462,13 @@
   url: https://www.shiftleft.io/
   logo: shift-left.png
   how: "ShiftLeft is a Silicon Valley startup employing innovative techniques to bring clarity and rigor to the security space. Our <a href='http://blog.shiftleft.io'>bespoke runtime security agent</a> is written in Rust."
-
+-
+  name: Tocco AG
+  url: https://www.tocco.ch
+  logo: tocco.svg
+  how: "Tocco is a Switzerland based company specialized in ERP software that has been using Rust with great enthusiasm for many of its <a href='https://github.com/tocco/lo-migrate'>internal tools</a>."
+-
+  name: Pressjitsu Inc
+  url: https://pressjitsu.com
+  logo: pressjitsu.png
+  how: "Pressjitsu is a managed WordPress hosting and service company. We use Rust in a handful of our backend systems, including logging routing and aggregation which needs to be fast and scalable."
