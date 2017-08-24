@@ -64,10 +64,11 @@ Rust exists as an alternative that provides both efficient code and a comfortabl
 Is this project controlled by Mozilla?
 </a></h3>
 
-No. Rust started as Graydon Hoare's part-time side project in 2006 and remained so for over 3 years. Mozilla got involved in 2009 once the language was mature enough to run basic tests and demonstrate its core concepts. Though it remains sponsored by Mozilla, Rust is developed by a diverse community of enthusiasts from many different places around the world. The [Rust Team](https://www.rust-lang.org/team.html) is composed of both Mozilla and non-Mozilla members, and `rust` on GitHub has had over [1,500 unique contributors](https://github.com/rust-lang/rust/) so far.
+No. Rust started as Graydon Hoare's part-time side project in 2006 and remained so for over 3 years. Mozilla got involved in 2009 once the language was mature enough to run basic tests and demonstrate its core concepts. Though it remains sponsored by Mozilla, Rust is developed by a diverse community of enthusiasts from many different places around the world. The [Rust Team](https://www.rust-lang.org/team.html) is composed of both Mozilla and non-Mozilla members, and `rust` on GitHub has had over [2,000 unique contributors](https://github.com/rust-lang/rust/) so far.
 
-As far as [project governance](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md) goes, Rust is managed by a core team that sets the vision and priorities for the project,
-guiding it from a global perspective. There are also subteams to guide and foster development of particular areas of interest, including the core language, the compiler, Rust libraries, Rust tools, and moderation of the official Rust communities. Designs in each of these areas are advanced through an [RFC process](https://github.com/rust-lang/rfcs). For changes which do not require an RFC, decisions are made through pull requests on the [`rustc` repository](https://github.com/rust-lang/rust).
+As far as [project governance](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md) goes, Rust is managed by a core team that sets the vision and priorities for the project, guiding it from a global perspective. There are also subteams to guide and foster development of particular areas of interest, including the core language, the compiler, Rust libraries, Rust tools, and moderation of the official Rust communities. Designs in each of these areas are advanced through an [RFC process](https://github.com/rust-lang/rfcs). For changes which do not require an RFC, decisions are made through pull requests on the [`rustc` repository](https://github.com/rust-lang/rust).
+
+Long term planning is guided by a [yearly roadmap](https://github.com/brson/rfcs/blob/north-star/text/0000-north-star.md), with specific milestones set each year.
 
 <h3><a href="#what-are-some-non-goals" name="what-are-some-non-goals">
 What are some non-goals of Rust?
@@ -83,13 +84,13 @@ What are some non-goals of Rust?
 In which projects is Mozilla using Rust?
 </a></h3>
 
-The main project is [Servo](https://github.com/servo/servo), an experimental browser engine Mozilla is working on. They are also working to [integrate Rust components](https://bugzilla.mozilla.org/show_bug.cgi?id=1135640) into Firefox.
+The main project is [Servo](https://github.com/servo/servo), an experimental browser engine Mozilla is working on. Firefox also now ships with components written in Rust, including [Quantum CSS](https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/) (originally named Stylo, and designed as the CSS engine for Servo).
 
 <h3><a href="#what-examples-are-there-of-large-rust-projects" name="what-examples-are-there-of-large-rust-projects">
 What examples are there of large Rust projects?
 </a></h3>
 
-The two biggest open source Rust projects right now are [Servo](https://github.com/servo/servo) and the [Rust compiler](https://github.com/rust-lang/rust) itself.
+The two biggest open source Rust projects right now are [Servo](https://github.com/servo/servo) and the [Rust compiler](https://github.com/rust-lang/rust) itself. There are also many [friends of Rust](https://www.rust-lang.org/en-US/friends.html), running Rust code in production environments.
 
 <h3><a href="#who-else-is-using-rust" name="who-else-is-using-rust">
 Who else is using Rust?
@@ -107,7 +108,7 @@ TODO: Write this answer.
 How can I try Rust easily?
 </a></h3>
 
-The easiest way to try Rust is through the [playpen](https://play.rust-lang.org/), an online app for writing and running Rust code. If you want to try Rust on your system, [install it](https://www.rust-lang.org/install.html) and go through the [Guessing Game](https://doc.rust-lang.org/stable/book/guessing-game.html) tutorial in the book.
+The easiest way to try Rust is through the [playground](https://play.rust-lang.org/), an online app for writing and running Rust code. If you want to try Rust on your system, [install it](https://www.rust-lang.org/install.html) and go through the [Guessing Game](https://doc.rust-lang.org/stable/book/guessing-game.html) tutorial in the book.
 
 <h3><a href="#how-do-i-get-help-with-rust-issues" name="how-do-i-get-help-with-rust-issues">
 How do I get help with Rust issues?
@@ -118,13 +119,12 @@ There are several ways. You can:
 - Post in [users.rust-lang.org](https://users.rust-lang.org/), the official Rust users forum
 - Ask in the official [Rust IRC channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) (#rust on irc.mozilla.org)
 - Ask on [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) with the "rust" tag
-- Post in [/r/rust](https://www.reddit.com/r/rust), the unofficial Rust subreddit
 
 <h3><a href="#why-has-rust-changed-so-much" name="why-has-rust-changed-so-much">
 Why has Rust changed so much over time?
 </a></h3>
 
-Rust started with a goal of creating a safe but usable systems programming language. In pursuit of this goal it explored a lot of ideas, some of which it kept (lifetimes, traits) while others were discarded (the typestate system, green threading). Also, in the run up to 1.0 a lot of the standard library was rewritten as early designs were updated to best use Rust's features and provide quality, consistent cross-platform APIs. Now that Rust has reached 1.0, the language is guaranteed to be "stable"; and while it may continue to evolve, code which works on current Rust should continue to work on future releases.
+Rust started with a goal of creating a safe but usable systems programming language. In pursuit of this goal it explored a lot of ideas, some of which it kept (lifetimes, traits) while others were discarded (the typestate system, green threading). Also, in the run up to 1.0 a lot of the standard library was rewritten as early designs were updated to best use Rust's features and provide quality, consistent cross-platform APIs. Now that Rust has reached 1.0, the language is [guaranteed to be "stable"](https://blog.rust-lang.org/2014/10/30/Stability.html); and while it may continue to evolve, code which works on current Rust should continue to work on future releases.
 
 <h3><a href="#how-does-rust-language-versioning-work" name="how-does-rust-language-versioning-work">
 How does Rust language versioning work?
@@ -169,6 +169,8 @@ How fast is Rust?
 </a></h3>
 
 Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks (like the [Benchmarks Game](https://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp) and [others](https://github.com/kostya/benchmarks)).
+
+There are also real-world instances of Rust programs like Ripgrep [beating well-tuned C and C++ programs](http://blog.burntsushi.net/ripgrep/) in competitive performance benchmarks.
 
 Like C++, Rust takes [zero-cost abstractions](http://blog.rust-lang.org/2015/05/11/traits.html) as one of its core principles: none of Rust's abstractions impose a global performance penalty, nor is there overhead from any runtime system in the traditional sense.
 
@@ -255,8 +257,6 @@ Why curly braces? Why can't Rust's syntax be like Haskell's or Python's?
 </a></h3>
 
 Use of curly braces to denote blocks is a common design choice in a variety of programming languages, and Rust's consistency is useful for people already familiar with the style.
-
-Curly braces also allow for more flexible syntax for the programmer and a simpler parser in the compiler.
 
 <h3><a href="#why-brackets-around-blocks" name="why-brackets-around-blocks">
 I can leave out parentheses on <code>if</code> conditions, so why do I have to put brackets around single line blocks? Why is the C style not allowed?
@@ -733,16 +733,16 @@ You can do that with the [`Option`][Option] type, which can either be `Some(T)` 
 
 <h2 id="generics">Generics</h2>
 
-<h3><a href="#what-is-monomorphisation" name="what-is-monomorphisation">
-What is "monomorphisation"?
+<h3><a href="#what-is-monomorphization" name="what-is-monomorphization">
+What is "monomorphization"?
 </a></h3>
 
 Monomorphisation specializes each use of a generic function (or structure) with specific instance,
 based on the parameter types of calls to that function (or uses of the structure).
 
-During monomorphisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
+During monomorphization a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
 
-Functions that accept [trait objects](https://doc.rust-lang.org/book/trait-objects.html) instead of type parameters do not undergo monomorphisation. Instead, methods on the trait objects are dispatched dynamically at runtime.
+Functions that accept [trait objects](https://doc.rust-lang.org/book/trait-objects.html) instead of type parameters do not undergo monomorphization. Instead, methods on the trait objects are dispatched dynamically at runtime.
 
 <h3><a href="#whats-the-difference-between-a-function-and-a-closure-that-doesnt-capture" name="whats-the-difference-between-a-function-and-a-closure-that-doesnt-capture">
 What's the difference between a function and a closure that doesn't capture any variables?
@@ -909,11 +909,13 @@ What's the deal with <code>unwrap()</code> everywhere?
 
 It's also useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point.
 
+Rust has now added [the syntatic sugar `?`](https://blog.rust-lang.org/2016/11/10/Rust-1.13.html#the--operator), which can be used in place of `unwrap()`.
+
 <h3><a href="#why-do-i-get-errors-with-try" name="why-do-i-get-errors-with-try">
 Why do I get an error when I try to run example code that uses the <code>try!</code> macro?
 </a></h3>
 
-It's probably an issue with the function's return type. The [`try!`][TryMacro] macro either extracts the value from a [`Result`][Result], or returns early with the error [`Result`][Result] is carrying. This means that [`try`][TryMacro] only works for functions that return [`Result`][Result] themselves, where the `Err`-constructed type implements `From::from(err)`. In particular, this means that the [`try!`][TryMacro] macro cannot work inside the `main` function.
+It's probably an issue with the function's return type. The [`try!`][TryMacro] macro either extracts the value from a [`Result`][Result], or returns early with the error [`Result`][Result] is carrying. This means that [`try`][TryMacro] only works for functions that return [`Result`][Result] themselves, where the `Err`-constructed type implements `From::from(err)`. In particular, this means that the [`try!`][TryMacro] macro cannot work inside the `main` function. Note that this will be changing, as [an RFC has been accepted](https://github.com/rust-lang/rfcs/blob/master/text/1937-ques-in-main.md) to allow for the use of `try!` in inside the `main` function.
 
 <h3><a href="#error-handling-without-result" name="error-handling-without-result">
 Is there an easier way to do error handling than having <code>Result</code>s everywhere?
