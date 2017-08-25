@@ -472,3 +472,13 @@
   url: https://pressjitsu.com
   logo: pressjitsu.png
   how: "Pressjitsu is a managed WordPress hosting and service company. We use Rust in a handful of our backend systems, including logging routing and aggregation which needs to be fast and scalable."
+-
+  name: Baidu X-Lab
+  url: https://github.com/baidu/rust-sgx-sdk
+  logo: baidu-x-lab.png
+  how: "We provide Rust SGX SDK for developing Intel SGX enclaves in the Rust programming language."
+-
+  name: CurrySoftware GmbH
+  url: https://www.curry-software.com
+  logo: curry-software.svg
+  how: "Our multi-tenant On-Site Search CurrySearch is written with Rust from head to toe."
