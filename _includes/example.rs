@@ -17,7 +17,7 @@ fn main() {
             7 =>  println!("Esse código é editável e executável!"),
             8 =>  println!("Этот код можно отредактировать и запустить!"),
             9 =>  println!("Bạn có thể edit và run code trực tiếp!"),
-            10 =>  println!("这段代码是可以编辑并且能够运行的！"),
+            10 => println!("这段代码是可以编辑并且能够运行的！"),
             _ =>  {},
         }
     }
