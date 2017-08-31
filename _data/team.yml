@@ -49,6 +49,8 @@ people:
     irc: burntsushi
   carols10cents:
     name: Carol Nichols
+  cramertj:
+    name: Taylor Cramer
   dotdash:
     name: Björn Steinbrink
     irc: doener
@@ -181,11 +183,11 @@ teams:
     members: [nrc, alexcrichton, wycats, steveklabnik, nikomatsakis, carols10cents, aturon, erickt]
   - name: Language team
     responsibility: "designing new language features"
-    members: [withoutboats, eddyb, nrc, pnkfelix, nikomatsakis, aturon]
+    members: [cramertj, withoutboats, eddyb, nrc, pnkfelix, nikomatsakis, aturon]
     lead: nikomatsakis
   - name: Language team shepherds
     responsibility: "helping guide language RFCs to completion, assisting the language team with its work"
-    members: [solson, joshtriplett, whitequark, cramertj, scottmcm]
+    members: [solson, joshtriplett, whitequark, scottmcm]
   - name: Library team
     responsibility: "the Rust standard library, rust-lang crates, conventions, and ecosystem support"
     members: [alexcrichton, sfackler, BurntSushi, Kimundi, dtolnay, aturon]
