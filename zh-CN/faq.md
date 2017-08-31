@@ -245,7 +245,7 @@ Rust 是否有做尾部调用优化？
 Rust 有运行时吗？
 </a></h3>
 
-没有像 Java 语言这样典型意义上的运行时。但 Rust 标准库的一部分可以被认为是一个「运行时」，它提供了堆（heap），回溯（backtraces），展开（unwinding）和栈保护（stack guards）。在用户的 `main` 函数之前只运行[很少的初始化代码](https://github.com/rust-lang/rust/blob/33916307780495fe311fe9c080b330d266f35bfb/src/libstd/rt.rs#L43)。Rust 标准库还链接到 C 标准库，执行类似的[运行时初始化](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html)。 Rsut 代码可以在没有标准库的情况下编译，在这种情况下，运行时大概相当于 C。
+没有像 Java 语言这样典型意义上的运行时。但 Rust 标准库的一部分可以被认为是一个「运行时」，它提供了堆（heap），回溯（backtraces），展开（unwinding）和栈保护（stack guards）。在用户的 `main` 函数之前只运行[很少的初始化代码](https://github.com/rust-lang/rust/blob/33916307780495fe311fe9c080b330d266f35bfb/src/libstd/rt.rs#L43)。Rust 标准库还链接到 C 标准库，执行类似的[运行时初始化](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html)。 Rust 代码可以在没有标准库的情况下编译，在这种情况下，运行时大概相当于 C。
 
 <h2 id="syntax">语法</h2>
 
