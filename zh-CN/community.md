@@ -91,7 +91,7 @@ Rust 开发者的协调位于 [#rust-internals][internals_irc]。此频道中的
 [crypto_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
 [de_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
 [es_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-es
-[embedded_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-embedded
+[embedded_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-embedded
 [fr_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-fr
 [gamedev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
 [internals_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals

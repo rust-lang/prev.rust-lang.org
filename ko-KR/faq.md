@@ -123,7 +123,7 @@ Rust 문제들에 도움을 받으려면 어떻게 해야 하나요?
 여러 방법이 있습니다:
 
 - 공식 Rust 사용자 포럼인 [users.rust-lang.org](https://users.rust-lang.org/)에 글을 올려 보세요.
-- 공식 [Rust IRC 채널](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)(#rust on irc.mozilla.org)에서 질문해 보세요.
+- 공식 [Rust IRC 채널](https://kiwiirc.com/client/irc.mozilla.org/rust)(#rust on irc.mozilla.org)에서 질문해 보세요.
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/rust)에 "rust" 태그를 붙이고 질문해 보세요.
 - 비공식 Rust 서브레딧인 [/r/rust](https://www.reddit.com/r/rust)에 글을 올려 보세요.
 

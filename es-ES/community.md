@@ -100,28 +100,28 @@ adecuado para preguntas sobre como contribuir con Rust.
 - [#servo][servo_irc] es para discutir sobre Servo, el motor de navegador web escrito en Rust
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
-[beginners_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
-[bots_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
-[br_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-br
-[cargo_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23cargo
-[community_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
-[crypto_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
-[de_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
-[es_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-es
-[fr_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-fr
-[gamedev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
-[internals_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
-[lang_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
-[libs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
-[networking_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[osdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
-[ru_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
-[rust_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
-[rustc_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
-[servo_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23servo
-[tools_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
-[webdev_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
-[docs_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-docs
+[beginners_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-beginners
+[bots_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-bots
+[br_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-br
+[cargo_irc]: https://kiwiirc.com/client/irc.mozilla.org/cargo
+[community_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-community
+[crypto_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-crypto
+[de_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-de
+[es_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-es
+[fr_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-fr
+[gamedev_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-gamedev
+[internals_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-internals
+[lang_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-lang
+[libs_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-libs
+[networking_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-networking
+[osdev_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-osdev
+[ru_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-ru
+[rust_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust
+[rustc_irc]: https://kiwiirc.com/client/irc.mozilla.org/rustc
+[servo_irc]: https://kiwiirc.com/client/irc.mozilla.org/servo
+[tools_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-tools
+[webdev_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-webdev
+[docs_irc]: https://kiwiirc.com/client/irc.mozilla.org/rust-docs
 
 ## Foros de discusión
 

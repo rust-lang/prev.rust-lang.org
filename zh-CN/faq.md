@@ -117,7 +117,7 @@ TODO: Write this answer.
 那有很多种方式。你可以尝试：
 
 - 在 [users.rust-lang.org](https://users.rust-lang.org/) 发帖，这是官方的 Rust 用户论坛
-- 在官方的 [Rust IRC 频道](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)提问（irc.mozilla.org 上的 #rust）
+- 在官方的 [Rust IRC 频道](https://kiwiirc.com/client/irc.mozilla.org/rust)提问（irc.mozilla.org 上的 #rust）
 - 在 [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) 提问，加上「rust」tag
 - 在 [/r/rust](https://www.reddit.com/r/rust) 发帖，这是非官方的 Rust 板块
 

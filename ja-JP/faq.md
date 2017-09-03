@@ -124,7 +124,7 @@ Rustで問題に遭遇したときにどうやって助けを求められます�
 いくつか方法があります。
 
 - 公式のユーザフォーラムの[users.rust-lang.org](https://users.rust-lang.org/)に投稿する
-- 公式の[Rust IRC チャネル](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)(#rust on irc.mozilla.org)で質問する
+- 公式の[Rust IRC チャネル](https://kiwiirc.com/client/irc.mozilla.org/rust)(#rust on irc.mozilla.org)で質問する
 - 「rust」タグを付けて[Stack Overflow](https://stackoverflow.com/questions/tagged/rust)で質問する
 - 非公式のRustのサブredditの[/r/rust](https://www.reddit.com/r/rust)に投稿する
 

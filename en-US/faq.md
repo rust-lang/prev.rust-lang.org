@@ -116,7 +116,7 @@ How do I get help with Rust issues?
 There are several ways. You can:
 
 - Post in [users.rust-lang.org](https://users.rust-lang.org/), the official Rust users forum
-- Ask in the official [Rust IRC channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) (#rust on irc.mozilla.org)
+- Ask in the official [Rust IRC channel](https://kiwiirc.com/client/irc.mozilla.org/rust) (#rust on irc.mozilla.org)
 - Ask on [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) with the "rust" tag
 - Post in [/r/rust](https://www.reddit.com/r/rust), the unofficial Rust subreddit
 
