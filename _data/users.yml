@@ -242,7 +242,7 @@
   url: http://www.npmjs.com
   logo: npm.svg
   how: "Replacing C and rewriting performance-critical bottlenecks in the registry service architecture."
-- 
+-
   name: Omnijar Studio
   url: https://omnijar.studio
   logo: omnijar-studio.svg
@@ -482,3 +482,9 @@
   url: https://www.curry-software.com
   logo: curry-software.svg
   how: "Our multi-tenant On-Site Search CurrySearch is written with Rust from head to toe."
+
+-
+  name: Schauspiel Dortmund
+  url: https://www.theaterdo.de/
+  logo: tdo_schauspiel.svg
+  how: "A <a href='https://github.com/rrbone/midioscar'>MIDI-to-OSC converter</a> is used in the <a href='https://www.theaterdo.de/detail/event/einstein-on-the-beach/'>\"Einstein On The Beach\"</a> opera play to power on-stage music and light systems."
