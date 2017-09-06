@@ -1141,7 +1141,7 @@ Rust 프로그램은 C나 C++와 같이 [gdb](https://sourceware.org/gdb/current
 무슨 IDE를 써야 하나요?
 </a></h3>
 
-Rsut 개발 환경에는 여러 선택이 있으며 자세한 사항은 공식 [IDE 지원 페이지](https://forge.rust-lang.org/ides.html)에 설명되어 있습니다.
+Rust 개발 환경에는 여러 선택이 있으며 자세한 사항은 공식 [IDE 지원 페이지](https://forge.rust-lang.org/ides.html)에 설명되어 있습니다.
 
 <h3><a href="#wheres-rustfmt" name="wheres-rustfmt">
 <code>gofmt</code>은 멋져요. <code>rustfmt</code> 같은 건 없나요?
@@ -1808,7 +1808,7 @@ Rust의 연관 타입은 하스켈의 타입 무리(type family)와 동일합니
 
 하스켈 타입 클래스와 Rust 트레이트 사이에 구체적인 차이로는 이런 게 있습니다:
 
-- Rsut 트레이트는 암묵적인 첫 파라미터 `Self`를 받습니다. Rust에서 `trait Bar`는 하스켈에서 `class Bar self`에 대응하고, Rust에서 `trait Bar<foo>`는 하스켈에서 `class Bar foo self`에 대응합니다.
+- Rust 트레이트는 암묵적인 첫 파라미터 `Self`를 받습니다. Rust에서 `trait Bar`는 하스켈에서 `class Bar self`에 대응하고, Rust에서 `trait Bar<foo>`는 하스켈에서 `class Bar foo self`에 대응합니다.
 - Rust에서 "상위 트레이트"나 "상위 클래스 제약"은 `trait Sub: Super`라고 쓰는데 하스켈에서는 `class Super self => Sub self`라고 씁니다.
 - Rust에서는 홀로 떨어진(orphan) 인스턴스를 금지하며, 따라서 Rust의 일관성(coherence) 규칙은 하스켈과 다릅니다.
 - Rust의 `impl` 해소 과정에서는 두 `impl`이 겹치거나 잠재적인 `impl`들 사이에서 선택할 때 관련된 `where` 절과 트레이트 제약을 살펴 봅니다. 하스켈은 오로지 `instance` 선언에 있는 제약 조건만 살펴 보며 다른 곳에서 제공한 제약은 무시합니다.
