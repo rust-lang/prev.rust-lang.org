@@ -63,6 +63,8 @@ people:
     name: E. Dunham
   emilio:
     name: Emilio Cobos Álvarez
+  estebank:
+    name: Esteban Kuber
   erickt:
     name: Erick Tryzelaar
   fitzgen:
@@ -197,7 +199,7 @@ teams:
     members: [KodrAus]
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
-    members: [arielb1, eddyb, nrc, petrochenkov, pnkfelix, nikomatsakis, jseyfried, michaelwoerister]
+    members: [arielb1, eddyb, estebank, nrc, petrochenkov, pnkfelix, nikomatsakis, jseyfried, michaelwoerister]
     lead: nikomatsakis
   - name: Dev tools team
     responsibility: "overall direction for tools for working with Rust code"
