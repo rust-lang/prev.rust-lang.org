@@ -211,7 +211,7 @@ teams:
     lead: nrc
   - name: Cargo team
     responsibility: "design and implementation of Cargo"
-    members: [alexcrichton, carols10cents, withoutboats, matklad, wycats, aturon]
+    members: [alexcrichton, carols10cents, withoutboats, matklad, wycats, joshtriplett, aturon]
     lead: aturon
   - name: Infrastructure team
     responsibility: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
