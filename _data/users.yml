@@ -493,3 +493,9 @@
   url: https://www.theaterdo.de/
   logo: tdo_schauspiel.svg
   how: "A <a href='https://github.com/rrbone/midioscar'>MIDI-to-OSC converter</a> is used in the <a href='https://www.theaterdo.de/detail/event/einstein-on-the-beach/'>\"Einstein On The Beach\"</a> opera play to power on-stage music and light systems."
+
+-
+  name: Centricular
+  url: https://centricular.com
+  logo: centricular.svg
+  how: "Internal & Free Software projects and customer projects, mostly audio/video/multimedia processing related."
