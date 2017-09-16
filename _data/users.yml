@@ -208,6 +208,11 @@
   logo: honeypot.svg
   how: "We <a href='http://blog.honeypot.io/open-sourcing-searchspot/'>built and use Searchspot</a>, a kind of search engine based on Elasticsearch. Recruiters use it to search for the developers they're looking for."
 -
+  name: ImageOptim
+  url: https://imageoptim.com
+  logo: imageoptim.png
+  how: 'High-efficiency modern JPEG encoder written in Rust is at the heart of the <a href="https://imageoptim.com/api">image compression web service</a>.'
+-
   name: krypt.co
   url: https://krypt.co
   logo: krypt.co.png
