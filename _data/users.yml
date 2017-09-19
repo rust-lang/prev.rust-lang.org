@@ -504,3 +504,8 @@
   url: https://centricular.com
   logo: centricular.svg
   how: "Internal & Free Software projects and customer projects, mostly audio/video/multimedia processing related."
+-
+  name: Galois
+  url: https://galois.com
+  logo: galois.svg
+  how: "Galois is integrating Rust with high-assurance technologies like the seL4 secure microkernel to build the next generation of trustworthy cyber-physical systems."
