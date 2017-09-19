@@ -97,6 +97,8 @@ people:
     irc: jseyfried
   jwilm:
     name: Joe Wilm
+  kennytm:
+    name: kennytm
   killercup:
     name: Pascal Hertleif
   Kimundi:
@@ -215,7 +217,7 @@ teams:
     lead: aturon
   - name: Infrastructure team
     responsibility: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
-    members: [alexcrichton, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, aturon]
+    members: [alexcrichton, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, kennytm, aturon]
     lead: aturon
     email: infra-team@rust-lang.org
   - name: Community team
