@@ -176,6 +176,8 @@ people:
     name: Scott McMurray
   cramertj:
     name: Taylor Cramer
+  tromey:
+    name: Tom Tromey
 
 # Information about each team. Omit `lead` for teams without leaders.
 #
@@ -205,12 +207,11 @@ teams:
     lead: nikomatsakis
   - name: Dev tools team
     responsibility: "overall direction for tools for working with Rust code"
-    members: [japaric, nrc, michaelwoerister, killercup, jonathandturner]
+    members: [fitzgen, japaric, jonathandturner, killercup, matklad, michaelwoerister, nrc]
     lead: nrc
   - name: Dev tools peers
     responsibility: "oversight of specific Rust tools, and coordination with dev tools team"
-    members: [alexcrichton, emilio, fitzgen, manishearth, llogiq, oli-obk, matklad, jwilm, GuillaumeGomez, QuietMisdreavus, steveklabnik]
-    lead: nrc
+    members: [alexcrichton, emilio, GuillaumeGomez, jwilm, llogiq, manishearth, oli-obk, QuietMisdreavus, steveklabnik, tromey]
   - name: Cargo team
     responsibility: "design and implementation of Cargo"
     members: [alexcrichton, carols10cents, withoutboats, matklad, wycats, joshtriplett, aturon]
