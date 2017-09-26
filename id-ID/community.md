@@ -236,7 +236,7 @@ yang dapat membantu anda memulainya.
 
 ## Pembangunan Rust
 
-Rust memiliki lebih dari [1,200 kontributor yang berbeda][authors], jumlah yang tumbuh setiap minggu. Kami ingin anda bergabung dengan daftar itu!
+Rust memiliki lebih dari [2,000 kontributor yang berbeda][authors], jumlah yang tumbuh setiap minggu. Kami ingin anda bergabung dengan daftar itu!
 
 Seperti yang disebutkan di atas, [Forum Internal Rust][internals_forum] didedikasikan untuk
 membahas perancangan dan implementasi Rust. Banyak diskusi juga yang terjadi di GitHub:
@@ -249,12 +249,8 @@ membahas perancangan dan implementasi Rust. Banyak diskusi juga yang terjadi di 
   di mana komunitas Rust dan tim mencapai konsensus mengenai fitur baru
   yang diusulkan untuk pustaka bahasa dan pustaka resmi dan tools.
 
-Kira-kira seminggu sekali, tim Rust menghasilkan laporan [tim yang melacak][team_reports] bisnis tim,
-termasuk pengembangan proposal melalui RFC dan proses implementasi.
-
-[authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
+[authors]: https://thanks.rust-lang.org/rust/all-time
 [contribute]: contribute.html
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
-[team_reports]: https://github.com/rust-lang/subteams
 [issue_tracking]: https://github.com/rust-lang/rust/issues

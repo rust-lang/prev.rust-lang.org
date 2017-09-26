@@ -172,7 +172,7 @@ Rust 有一个社区驱动的开发过程，大多数决策都是通过公开的
 
 ## Rust 开发
 
-Rust 有超过[1,200名独立贡献者][authors]，这个数字每周还都在增长。[我们欢迎你加入到此行列中][contribute]！
+Rust 有超过[2,000 名独立贡献者][authors]，这个数字每周还都在增长。[我们欢迎你加入到此行列中][contribute]！
 
 如上所述，[Rust 内部论坛][internals_forum]致力于讨论 Rust 的设计和实现。还有很多讨论发生在 GitHub 上：
 
@@ -180,11 +180,8 @@ Rust 有超过[1,200名独立贡献者][authors]，这个数字每周还都在�
 
 - [RFC 代码库][rfcs]跟踪我们的请求评论流程，Rust 社区和团队主要通过它就为语言、官方库和工具提出的新功能特性达成共识。
 
-大约每周，Rust 团队会制作一份[团队报告][team_reports]跟踪团队事务，包括 RFC 实现流程的提案进展。
-
-[authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
+[authors]: https://thanks.rust-lang.org/rust/all-time
 [contribute]: contribute.html
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
-[team_reports]: https://github.com/rust-lang/subteams
 [issue_tracking]: https://github.com/rust-lang/rust/issues
