@@ -218,7 +218,7 @@ Rust는 커뮤니티가 주도하는 개발 프로세스를 따르며,
 
 ## Rust 개발
 
-Rust에는 [1,200명의 서로 다른 기여자][authors]가 참여해 왔고, 이 숫자는 매주 늘고 있습니다.
+Rust에는 [2,000 명의 서로 다른 기여자][authors]가 참여해 왔고, 이 숫자는 매주 늘고 있습니다.
 [여러분도 이 목록에 들어 갔으면 정말 좋겠네요][contribute]!
 
 앞에서 설명했듯 [Rust 내부(internals) 포럼][internals_forum]은 Rust의 설계와 구현을 다룹니다.
@@ -230,12 +230,8 @@ GitHub에서도 많은 논의가 이루어집니다:
 - [RFC 저장소][rfcs]는 저희의 의견 요청(Request for Comment) 과정을 추적합니다.
   이 과정은 Rust 커뮤니티와 팀이 언어, 공식 라이브러리와 도구에 대해 제안된 새 기능들에 대한 합의에 도달하는 주된 경로입니다.
 
-대략 한 주에 한 번씩 Rust 팀들은 [팀 보고][team_reports]를 펴내어,
-RFC를 통한 제안들이 어떻게 진행되는지와 구현 과정을 포함해 각 팀의 경과를 추적합니다.
-
-[authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
+[authors]: https://thanks.rust-lang.org/rust/all-time
 [contribute]: contribute.html
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
-[team_reports]: https://github.com/rust-lang/subteams
 [issue_tracking]: https://github.com/rust-lang/rust/issues

@@ -216,7 +216,7 @@ współpracę.
 
 ## Rozwój Rusta
 
-Rust ma ponad [1,200 różnych współautorów][authors], liczba ta rośnie
+Rust ma ponad [2,000 różnych współautorów][authors], liczba ta rośnie
 każdego tygodnia. [Chcielibyśmy, abyś dołączył do tej listy][contribute]!
 
 Jak wspomniano powyżej, [Wewnętrzne forum Rusta][internals_forum] jest dedykowane
@@ -231,13 +231,8 @@ GitHubie:
   dzięki której społeczność i zespół Rusta osiągają konsensus dotyczący
   proponowanych funkcjonalności języka, oficjalnych bibliotek i narzędzi.
 
-Co około tydzień, zespoły Rusta tworzą [raporty][team_reports] zawierające
-tematy, którymi się zajmowały, takie jak postęp propozycji (poprzez RFC) oraz
-progres implementacji.
-
-[authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
+[authors]: https://thanks.rust-lang.org/rust/all-time
 [contribute]: contribute.html
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
-[team_reports]: https://github.com/rust-lang/subteams
 [issue_tracking]: https://github.com/rust-lang/rust/issues

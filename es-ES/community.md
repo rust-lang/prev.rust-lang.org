@@ -214,7 +214,7 @@ líder del mismo, quien te ayudará a empezar.
 
 ## Desarrollo de Rust
 
-Rust tiene más [1,200 contribuidores][authors], un numero que crece cada semana.
+Rust tiene más [2,000 contribuidores][authors], un numero que crece cada semana.
 [Nos encantaría que te unieras][contribute]!
 
 Como se mencionó, el [Foro interno de Rust][internals_forum] está dedicado a
@@ -230,13 +230,8 @@ comentarios, la via principal para que la comunidad y equipos de Rust lleven a
 consensos sobre nuevas características planteadas para el lenguaje y las
 herramientas y librerías oficiales.
 
-Aproximadamente cada semana, los equipos de Rust producen un [reporte de
-equipo][team_reports] detallando sus actividades, incluyendo el proceso de
-propuestas en los RFC y el proceso de implementación.
-
-[authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
+[authors]: https://thanks.rust-lang.org/rust/all-time
 [contribute]: contribute.html
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
-[team_reports]: https://github.com/rust-lang/subteams
 [issue_tracking]: https://github.com/rust-lang/rust/issues

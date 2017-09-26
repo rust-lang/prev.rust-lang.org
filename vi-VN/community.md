@@ -184,7 +184,7 @@ Việc tuyển chọn sẽ dựa trên kiến thức và sự hiểu biết củ
 ## Rust Development
 
 
-Rust có hơn [1,200 người đóng góp][authors], con số ấy vẫn tăng lên hàng tuần.
+Rust có hơn [2,000 người đóng góp][authors], con số ấy vẫn tăng lên hàng tuần.
 [Chúng tôi luôn chào đón bạn][contribute]!
 
 [Rust Internals Forum][internals_forum] là nơi để thảo luận về thiết kế và thực hiện các ý tưởng đó. 
@@ -194,11 +194,8 @@ Có một số nhánh trên GitHub:
 
 - [RFC repo][rfcs] theo dõi các Request for Comment.
 
-[team reports][team_reports] theo dõi quá trình phát triển thông qua các đề xuất RFC và quá trình thực hiện.
-
-[authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
+[authors]: https://thanks.rust-lang.org/rust/all-time
 [contribute]: contribute.html
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
-[team_reports]: https://github.com/rust-lang/subteams
 [issue_tracking]: https://github.com/rust-lang/rust/issues
