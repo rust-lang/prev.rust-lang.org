@@ -1491,7 +1491,7 @@ their new owners).
 How can I interoperate with C++ from Rust, or with Rust from C++?
 </a></h3>
 
-Rust and C++ can interoperate through C. Both Rust and C++ provide a [foreign function interface](https://doc.rust-lang.org/book/ffi.html) for C, and can use that to communicate between each other. If writing C bindings is too tedious, you can always use [rust-bindgen](https://github.com/servo/rust-bindgen) to help automatically generate workable C bindings.
+Rust and C++ can interoperate through C. Both Rust and C++ provide a [foreign function interface](https://doc.rust-lang.org/book/ffi.html) for C, and can use that to communicate between each other. If writing C bindings is too tedious, you can often use [rust-bindgen](https://github.com/servo/rust-bindgen) to automatically generate workable C bindings.
 
 <h3><a href="#does-rust-have-cxx-style-constructors" name="does-rust-have-cxx-style-constructors">
 Does Rust have C++-style constructors?
