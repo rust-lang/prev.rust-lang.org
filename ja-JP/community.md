@@ -182,7 +182,7 @@ Rustはコミュニティドリブンな開発プロセスを採用しており�
 
 ## Rustの開発
 
-Rustには[1,200以上のコントリビュータ][authors]がいて、毎週増え続けています。
+Rustには[2,000 以上のコントリビュータ][authors]がいて、毎週増え続けています。
 [あなたも是非このリストに入って下さい][contribute]！
 
 上で言及したように[Rust Internals Forum][internals_forum]でRustの設計と開発について議論します。
@@ -194,11 +194,8 @@ GitHub上でも多くの議論が交わされています。
 - [RFCレポジトリ][rfcs]では「意見募集(Request for Comment)」のプロセスをトラックしています。
   RFCはRustのコミュニティとチームが言語や公式ライブラリ、ツールへの新しい機能の提案について合意に達するための主な経路です。
 
-だいたい週次でRustのチームは[チームレポート][team_reports]を出していて、RFC経由での提案と実装のプロセスの進捗などの内容のチームの仕事についての報告が上がります。
-
-[authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
+[authors]: https://thanks.rust-lang.org/rust/all-time
 [contribute]: contribute.html
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
-[team_reports]: https://github.com/rust-lang/subteams
 [issue_tracking]: https://github.com/rust-lang/rust/issues

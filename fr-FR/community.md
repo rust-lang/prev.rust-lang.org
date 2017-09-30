@@ -170,11 +170,8 @@ Comme indiqué ci-dessus, [le forum interne][internals_forum] est dédié aux di
 
 - Le [dépôt RFC][rfcs] permet de lister notre processus de *Request for Comment*. C'est de cette façon que la communauté Rust ainsi que les équipes échangent et construisent un consensus pour les nouvelles fonctionnalités qui sont proposées pour le langage, pour les bibliothèques officielles et pour les outils officiels.
 
-Environ chaque semaine, les équipes Rust produisent [des rapports d'équipe][team_reports] afin de dresser le suivi des tâches de l'équipe, ce qui inclut la progression des propositions à travers le processus de RFC et d'implémentation.
-
-[authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
+[authors]: https://thanks.rust-lang.org/rust/all-time
 [contribute]: contribute.html
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
-[team_reports]: https://github.com/rust-lang/subteams
 [issue_tracking]: https://github.com/rust-lang/rust/issues

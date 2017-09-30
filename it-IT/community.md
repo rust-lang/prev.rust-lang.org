@@ -231,13 +231,8 @@ GitHub:
   il modo principale in cui la comunità Rust e il team raggiungono il consenso
   sulle nuove funzionalità proposte per il linguaggio, le librerie ufficiali e gli strumenti.
 
-Circa settimanalmente, il team di Rust emana un [rapporto dei team][team_reports]
-che indica su cosa sono impegnati i team, inclusa l'analisi delle RFC e il
-processo di implementazione.
-
-[authors]: https://github.com/rust-lang/rust/blob/88397e092e01b6043b6f65772710dfe0e59056c5/AUTHORS.txt
+[authors]: https://thanks.rust-lang.org/rust/all-time
 [contribute]: contribute.html
 [github]: https://github.com/rust-lang/rust
 [rfcs]: https://github.com/rust-lang/rfcs
-[team_reports]: https://github.com/rust-lang/subteams
 [issue_tracking]: https://github.com/rust-lang/rust/issues
