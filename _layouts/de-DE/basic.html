@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Page last generated {{ site.time }} -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <meta name="keywords" content="Rust, Programmiersprache Rust, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Eine Systemprogrammiersprache die blitzschnell läuft, Speicherfehler vermeidet und Threadsicherheit garantiert.">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    {% for css_name in page.extra_css %}
+    <link rel="stylesheet" href="/css/{{ css_name }}">
+    {% endfor %}
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme.png" alt="Auf GitHub besuchen" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/de-DE/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust logo" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/de-DE/documentation.html">Dokumentation</a></h2>
+	  <h2><a href="/de-DE/install.html">Installation</a></h2>
+	  <h2><a href="/de-DE/community.html">Community</a></h2>
+	  <h2><a href="/de-DE/contribute.html">Mitwirken</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    {{ content }}
+
+    <footer>
+      <p>Diese Seite in anderen Sprachen:
+        {% include footer.html %}
+      </p>
+    </footer>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-58390457-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>
