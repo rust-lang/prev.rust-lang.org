@@ -486,7 +486,7 @@
   name: Baidu X-Lab
   url: https://github.com/baidu/rust-sgx-sdk
   logo: baidu-x-lab.png
-  how: "We provide Rust SGX SDK for developing Intel SGX enclaves in the Rust programming language."
+  how: "We provide Rust SGX SDK for developing Intel SGX applications in the Rust programming language."
 -
   name: CurrySoftware GmbH
   url: https://www.curry-software.com
@@ -509,3 +509,13 @@
   url: https://galois.com
   logo: galois.svg
   how: "Galois is integrating Rust with high-assurance technologies like the seL4 secure microkernel to build the next generation of trustworthy cyber-physical systems."
+-
+  name: Metaswitch
+  url: https://www.metaswitch.com/
+  logo: metaswitch.png
+  how: "Rust is the primary programming language for all communications solutions architected using microservices methodologies."
+-
+  name: Nomalab
+  url: https://www.nomalab.com
+  logo: nomalab.png
+  how: "To analyse video, format and pixels."
