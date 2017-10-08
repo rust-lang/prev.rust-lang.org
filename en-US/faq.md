@@ -107,7 +107,7 @@ TODO: Write this answer.
 How can I try Rust easily?
 </a></h3>
 
-The easiest way to try Rust is through the [playpen](https://play.rust-lang.org/), an online app for writing and running Rust code. If you want to try Rust on your system, [install it](https://www.rust-lang.org/install.html) and go through the [Guessing Game](https://doc.rust-lang.org/stable/book/guessing-game.html) tutorial in the book.
+The easiest way to try Rust is through the [playpen](https://play.rust-lang.org/), an online app for writing and running Rust code. If you want to try Rust on your system, [install it](https://www.rust-lang.org/install.html) and go through the [Guessing Game](https://doc.rust-lang.org/stable/book/second-edition/ch02-00-guessing-game-tutorial.html) tutorial in the book.
 
 <h3><a href="#how-do-i-get-help-with-rust-issues" name="how-do-i-get-help-with-rust-issues">
 How do I get help with Rust issues?
@@ -371,7 +371,7 @@ How can I convert a <code>String</code> or <code>Vec&lt;T&gt;</code> to a slice 
 </a></h3>
 
 Usually, you can pass a reference to a `String` or `Vec<T>` wherever a slice is expected.
-Using [Deref coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html), [`String`s][String] and [`Vec`s][Vec] will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
+Using [Deref coercions](https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html), [`String`s][String] and [`Vec`s][Vec] will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
 
 Methods implemented on `&str` and `&[T]` can be accessed directly on `String` and `Vec<T>`. For example, `some_string.char_at(0)` will work even though `char_at` is a method on `&str` and `some_string` is a `String`.
 
@@ -598,7 +598,7 @@ What are the rules for using <code>self</code>, <code>&amp;self</code>, or <code
 How can I understand the borrow checker?
 </a></h3>
 
-The borrow checker applies only a few rules, which can be found in the Rust book's [section on borrowing](https://doc.rust-lang.org/stable/book/references-and-borrowing.html#the-rules), when evaluating Rust code. These rules are:
+The borrow checker applies only a few rules, which can be found in the Rust book's [section on borrowing](https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html), when evaluating Rust code. These rules are:
 
 > First, any borrow must last for a scope no greater than that of the owner. Second, you may have one or the other of these two kinds of borrows, but not both at the same time:
 >
@@ -637,7 +637,7 @@ to their contents (e.g., `&T`). Deref coercions exist to make using Rust more er
 
 A Deref implementation indicates that the implementing type may be converted into a target by a call to the `deref` method, which takes an immutable reference to the calling type and returns a reference (of the same lifetime) to the target type. The `*` prefix operator is shorthand for the `deref` method.
 
-They're called "coercions" because of the following rule, quoted here [from the Rust book](https://doc.rust-lang.org/stable/book/deref-coercions.html):
+They're called "coercions" because of the following rule, quoted here [from the Rust book](https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html):
 
 > If you have a type `U`, and it implements `Deref<Target=T>`, values of `&U` will automatically coerce to a `&T`.
 
@@ -657,7 +657,7 @@ The most common sorts of deref coercions are:
 Why lifetimes?
 </a></h3>
 
-Lifetimes are Rust's answer to the question of memory safety. They allow Rust to ensure memory safety without the performance costs of garbage collection. They are based on a variety of academic work, which can be found in the [Rust book](https://doc.rust-lang.org/stable/book/bibliography.html#type-system).
+Lifetimes are Rust's answer to the question of memory safety. They allow Rust to ensure memory safety without the performance costs of garbage collection. They are based on a variety of academic work, which can be found in the [Rust book](https://doc.rust-lang.org/stable/book/first-edition/bibliography.html#type-system).
 
 <h3><a href="#why-is-the-lifetime-syntax-the-way-it-is" name="why-is-the-lifetime-syntax-the-way-it-is">
 Why is the lifetime syntax the way it is?
@@ -776,7 +776,7 @@ Rust doesn't currently have support for higher-kinded types because it hasn't be
 What do named type parameters like <code>&lt;T=Foo&gt;</code> in generic types mean?
 </a></h3>
 
-These are called [associated types](https://doc.rust-lang.org/stable/book/associated-types.html), and they allow for the expression of trait bounds that can't be expressed with a `where` clause. For example, a generic bound `X: Bar<T=Foo>` means "`X` must implement the trait `Bar`, and in that implementation of `Bar`, `X` must choose `Foo` for `Bar`'s associated type, `T`." Examples of where such a constraint cannot be expressed via a `where` clause include trait objects like `Box<Bar<T=Foo>>`.
+These are called [associated types](https://doc.rust-lang.org/stable/book/second-edition/ch19-03-advanced-traits.html), and they allow for the expression of trait bounds that can't be expressed with a `where` clause. For example, a generic bound `X: Bar<T=Foo>` means "`X` must implement the trait `Bar`, and in that implementation of `Bar`, `X` must choose `Foo` for `Bar`'s associated type, `T`." Examples of where such a constraint cannot be expressed via a `where` clause include trait objects like `Box<Bar<T=Foo>>`.
 
 Associated types exist because generics often involve families of types, where one type determines all of the others in a family. For example, a trait for graphs might have as its `Self` type the graph itself, and have associated types for nodes and for edges. Each graph type uniquely determines the associated types. Using associated types makes it much more concise to work with these families of types, and also provides better type inference in many cases.
 
@@ -897,7 +897,7 @@ Why doesn't Rust have exceptions?
 
 Exceptions complicate understanding of control-flow, they express validity/invalidity outside of the type system, and they interoperate poorly with multithreaded code (a major focus of Rust).
 
-Rust prefers a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/stable/book/error-handling.html). This fits more nicely with Rust's control flow, concurrency, and everything else.
+Rust prefers a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/stable/book/second-edition/ch09-00-error-handling.html). This fits more nicely with Rust's control flow, concurrency, and everything else.
 
 <h3><a href="#whats-the-deal-with-unwrap" name="whats-the-deal-with-unwrap">
 What's the deal with <code>unwrap()</code> everywhere?
@@ -1075,7 +1075,7 @@ There are a number of possible answers, but a common mistake is not realizing th
 
 There are also `self` and `super`, which disambiguate `use` paths as being relative to the current module or parent module, respectively.
 
-For complete information on `use`ing libraries, read the Rust book's chapter ["Crates and Modules"](https://doc.rust-lang.org/stable/book/crates-and-modules.html).
+For complete information on `use`ing libraries, read the Rust book's chapter ["Crates and Modules"](https://doc.rust-lang.org/stable/book/second-edition/ch07-00-modules.html).
 
 <h3><a href="#why-do-i-have-to-declare-modules-with-mod" name="why-do-i-have-to-declare-modules-with-mod">
 Why do I have to declare module files with <code>mod</code> at the top level of the crate, instead of just <code>use</code>ing them?
@@ -1434,7 +1434,7 @@ Rust was designed from day one to be a safe systems programming language, which 
 How do I do the equivalent of C++ template specialization in Rust?
 </a></h3>
 
-Rust doesn't currently have an exact equivalent to template specialization, but it is [being worked on](https://github.com/rust-lang/rfcs/pull/1210) and will hopefully be added soon. However, similar effects can be achieved via [associated types](https://doc.rust-lang.org/stable/book/associated-types.html).
+Rust doesn't currently have an exact equivalent to template specialization, but it is [being worked on](https://github.com/rust-lang/rfcs/pull/1210) and will hopefully be added soon. However, similar effects can be achieved via [associated types](https://doc.rust-lang.org/stable/book/second-edition/ch19-04-advanced-types.html).
 
 <h3><a href="#how-does-ownership-relate-to-cxx-move-semantics" name="how-does-ownership-relate-to-cxx-move-semantics">
 How does Rust's ownership system relate to move semantics in C++?
