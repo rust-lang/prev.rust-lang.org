@@ -156,9 +156,9 @@
 - country: India
   meetups:
 
-    - name: Hyderabad Rust Meetup
+    - name: Rust Hyderabad
       city: Hyderabad
-      url: https://www.meetup.com/Hyderabad-Rust-Meetup/
+      url: https://www.meetup.com/Rust-Hyderabad
 
     - name: Rust Group Coimbatore
       city: Coimbatore
