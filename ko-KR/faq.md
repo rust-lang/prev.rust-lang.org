@@ -67,7 +67,7 @@ Rust는 효율적인 코드와 편안한 수준의 추상화를 제공하며, �
 아니오. Rust는 2006년에 그레이던 호어(Graydon Hoare)가 시간을 쪼개서 하던 사이드 프로젝트로 시작하여 3년간 개발되었습니다.
 2009년에 언어가 기본 테스트를 실행하고 핵심 개념들을 시연할 수 있을 정도로 성숙하자 Mozilla가 관여하기 시작했습니다.
 Mozilla는 여전히 Rust를 지원하고 있습니다만, Rust는 전 세계의 많은 장소에 퍼져 있는 열정적인 사람들로 이루어진 커뮤니티가 개발하고 있습니다.
-[Rust 팀](https://www.rust-lang.org/team.html)은 Mozilla 직원들과 아닌 사람들 둘 다를 포함하고, GitHub의 `rust` 단체에는 [1,500명 이상의 서로 다른 기여자](https://github.com/rust-lang/rust/)가 참여해 왔습니다.
+[Rust 팀](https://www.rust-lang.org/team.html)은 Mozilla 직원들과 아닌 사람들 둘 다를 포함하고, GitHub의 `rust` 단체에는 [1,900명 이상의 서로 다른 기여자](https://github.com/rust-lang/rust/)가 참여해 왔습니다.
 
 [프로젝트 거버넌스](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)를 따라, Rust는 프로젝트의 비전과 우선 순위를 설정하는 코어 팀에 의해 관리되며 이 코어 팀이 전체적인 관점에서 프로젝트를 인도합니다.
 또한 개별 관심 분야의 개발을 인도하고 장려하기 위한 서브팀들이 있으며, 핵심 언어, 컴파일러, Rust 라이브러리, Rust 도구, 그리고 공식 Rust 커뮤니티의 중재 등이 여기에 포함됩니다.
