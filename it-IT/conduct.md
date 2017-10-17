@@ -9,7 +9,7 @@ title: Il codice di comportamento di Rust &middot; Il linguaggio di programmazio
 
 **Contatto**: [rust-mods@rust-lang.org](mailto:rust-mods@rust-lang.org)
 
-* Noi ci impegniamo a fornire un ambiente amichevole, sicuro e accomodante per tutti, a prescindere dal livello di esperienza, sesso, identità ed espressione sessuale, orientamento sessuale, disabilità, aspetto estetico, dimensione corporea, razza, etnia, età, religione, nazionalità o altre caratteristiche personali.
+* Noi ci impegniamo a fornire un ambiente amichevole, sicuro e accomodante per tutti, a prescindere dal livello di esperienza, identità di genere e rappresentazione dello stesso, orientamento sessuale, disabilità, aspetto estetico, dimensione corporea, razza, etnia, età, religione, nazionalità o altre caratteristiche personali.
 * Su IRC, evita di utilizzare pseudonimi troppo sessualizzanti o altri pseudonimi che potrebbero rovinare un ambiente amichevole, sicuro e accomodante per tutti.
 * Sii gentile e servizievole. Non c'è alcun bisogno di essere cattivi o maleducati.
 * Rispetta le persone che non la pensano come te e che ogni scelta di design o implementazione porta molti compromessi e costi. C'è raramente una vera risposta giusta.

@@ -9,7 +9,7 @@ title: Code de conduite Rust &middot; Rust, le langage de programmation
 
 **Contact**: [rust-mods@rust-lang.org](mailto:rust-mods@rust-lang.org)
 
-* Nous sommes déterminés à fournir un environnement sympathique, sûr et accueillant pour tout le monde, quel que soit le niveau d'expérience, le sexe, l’identité ou l’expression de genre, l’orientation sexuelle, le handicap, l’apparence personnelle, la taille physique, la race, l’origine ethnique, l’âge, la religion, la nationalité, ou toute caractéristique similaire.
+* Nous sommes déterminés à fournir un environnement sympathique, sûr et accueillant pour tout le monde, quel que soit le niveau d'expérience, l’identité ou l’expression de genre, l’orientation sexuelle, le handicap, l’apparence personnelle, la taille physique, la race, l’origine ethnique, l’âge, la religion, la nationalité, ou toute caractéristique similaire.
 * Sur IRC, évitez les pseudonymes ouvertement sexuels ou d’autres pseudonymes qui pourraient nuire à un un environnement sympathique, sûr et accueillant pour tout le monde.
 * Soyez aimable et courtois. Il n’y a aucune raison d’être méchant ou impoli.
 * Respectez que les gens ont des différences d’opinions et que chaque choix de conception ou d’implémentation implique un compromis et de nombreux coûts. Il y a rarement une bonne réponse.

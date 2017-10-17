@@ -9,7 +9,7 @@ title: Der Rust-Verhaltenskodex &middot; Die Programmiersprache Rust
 
 **Kontakt**: [rust-mods@rust-lang.org](mailto:rust-mods@rust-lang.org) (Englisch)
 
-* Wir sind stets bemüht, eine freundliche, sichere und einladende Umgebung für alle zu bieten - unabhängig von Erfahrung, Geschlecht, Geschlechteridentität, sexueller Orientierung, körperlicher Einschränkung, Aussehen, ethnischer Herkunft, Alter, Religion, Nationalität oder ähnlichem.
+* Wir sind stets bemüht, eine freundliche, sichere und einladende Umgebung für alle zu bieten - unabhängig von Erfahrung, Geschlechteridentität und -ausdruck, sexueller Orientierung, körperlicher Einschränkung, Aussehen, ethnischer Herkunft, Alter, Religion, Nationalität oder ähnlichem.
 * Bitte vermeide im IRC offen sexuelle oder andere Nicknames, die eine freundliche, sichere und einladende Umgebung gefährden könnten.
 * Bitte verhalte dich zuvorkommend und höflich. Es gibt keinen Grund, unverschämt zu anderen Teilnehmern zu sein.
 * Bitte respektiere, dass es immer abweichende Meinungen gibt und dass jede Design- oder Implementierungsentscheidung auf Abwägungen basiert und Aufwand verursacht. Es gibt selten eine perfekte Lösung.
