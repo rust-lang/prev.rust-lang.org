@@ -69,7 +69,7 @@ Rustはこれらの4つの点を改善しつつ効率性と快適なレベルの
 いいえ。Rustは2006年にGraydon Hoareの趣味のプロジェクトとして始まり、3年間そのままでした。
 Mozillaは2009年に基本的なテストが通り、コアコンセプトをデモンストレーション出来るようになるくらい言語が成熟してから関わり始めました。
 今でもMozillaによる支援を受けていますが、Rustは世界中多種多様な場所からの熱烈なファンによる様々なコミュニティにより開発されています。
-[Rustチーム](https://www.rust-lang.org/team.html)にはMozillaの職員もいればMozillaと関わりのない人もおり、GitHubの `rust` には[1,500もの貢献者](https://github.com/rust-lang/rust/)がいます。
+[Rustチーム](https://www.rust-lang.org/team.html)にはMozillaの職員もいればMozillaと関わりのない人もおり、GitHubの `rust` には[1,900もの貢献者](https://github.com/rust-lang/rust/)がいます。
 
 [プロジェクト自治](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)が回っている限り、Rustはプロジェクトのヴィジョンと優先順位を定めグローバルな視点で舵を切る役割を持つコアチームによって管理されます。
 また、言語コア、コンパイラ、Rustのライブラリ、Rustのツール、公式のRustコミュニティのモデレーションなどの領域で開発を先導し育成するためのサブチームも存在します。

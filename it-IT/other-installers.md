@@ -21,6 +21,7 @@ Quella pagina descrive l'installazione tramite [`rustup`], uno strumento che
 gestisce compilatori di rust multipli in modo stabile per tutte le piattaforme
 supportate da Rust.
 Perchè quindi uno dovrebbe desiderare di _non_ utilizzarlo?
+
 - Installazione offline. `rustup` scarica componenti dalla rete su richiesta.
   se hai bisogno di installare Rust senza una connessione a internet, `rustup`
   non è adatto.

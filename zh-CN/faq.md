@@ -75,10 +75,10 @@ Rust 由一个从全局角度出发，为项目设定愿景和优先事项的核
 </a></h3>
 
 1. 我们不使用任何特别尖端的技术。旧的、成熟的技术更好。
-2. 我们不会夸奖其他目标的表现力、极简主义或优雅。这些是可取的，但不是主要目标。
-3. 我们不打算覆盖 C++ 或任何其他语言的完整功能集。Rust 应提供较常使用功能。
+2. 我们不把表现力、极简或优雅看的比其他目标更重要。这些特性值得拥有，但这不是主要目标。
+3. 我们不打算覆盖 C++ 或任何其他语言的完整功能集。Rust 应提供适用于大部分场景的功能。
 4. 我们不打算做到 100% 静态， 100% 安全， 100% 反射或任何其他意义上的教条主义。存在权衡。
-5. 我们不打算使 Rust 能在「每个可能的平台」上运行。它必须没有不必要的妥协，最终适用于广泛使用的硬件和软件平台。
+5. 我们不强求 Rust 能在「每个可能的平台」上运行。它必须没有不必要的妥协，最终适用于广泛使用的硬件和软件平台。
 
 <h3><a href="#how-does-mozilla-use-rust" name="how-does-mozilla-use-rust">
 Mozilla 的哪些项目使用 Rust？
@@ -245,7 +245,7 @@ Rust 是否有做尾部调用优化？
 Rust 有运行时吗？
 </a></h3>
 
-没有像 Java 语言这样典型意义上的运行时。但 Rust 标准库的一部分可以被认为是一个「运行时」，它提供了堆（heap），回溯（backtraces），展开（unwinding）和栈保护（stack guards）。在用户的 `main` 函数之前只运行[很少的初始化代码](https://github.com/rust-lang/rust/blob/33916307780495fe311fe9c080b330d266f35bfb/src/libstd/rt.rs#L43)。Rust 标准库还链接到 C 标准库，执行类似的[运行时初始化](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html)。 Rsut 代码可以在没有标准库的情况下编译，在这种情况下，运行时大概相当于 C。
+没有像 Java 语言这样典型意义上的运行时。但 Rust 标准库的一部分可以被认为是一个「运行时」，它提供了堆（heap），回溯（backtraces），展开（unwinding）和栈保护（stack guards）。在用户的 `main` 函数之前只运行[很少的初始化代码](https://github.com/rust-lang/rust/blob/33916307780495fe311fe9c080b330d266f35bfb/src/libstd/rt.rs#L43)。Rust 标准库还链接到 C 标准库，执行类似的[运行时初始化](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html)。 Rust 代码可以在没有标准库的情况下编译，在这种情况下，运行时大概相当于 C。
 
 <h2 id="syntax">语法</h2>
 

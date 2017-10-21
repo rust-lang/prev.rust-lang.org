@@ -68,6 +68,11 @@
   logo: ather.svg
   how: "Sending scooter data to the cloud reliably."
 -
+  name: Atlassian
+  url: https://www.atlassian.com/
+  logo: atlassian.svg
+  how: "We use Rust in a service for analyzing terabytes of source code."
+-
   name: Autumn
   url: http://autumnai.com
   logo: autumn.png
@@ -203,6 +208,11 @@
   logo: honeypot.svg
   how: "We <a href='http://blog.honeypot.io/open-sourcing-searchspot/'>built and use Searchspot</a>, a kind of search engine based on Elasticsearch. Recruiters use it to search for the developers they're looking for."
 -
+  name: ImageOptim
+  url: https://imageoptim.com
+  logo: imageoptim.png
+  how: 'High-efficiency modern JPEG encoder written in Rust is at the heart of the <a href="https://imageoptim.com/api">image compression web service</a>.'
+-
   name: krypt.co
   url: https://krypt.co
   logo: krypt.co.png
@@ -242,7 +252,7 @@
   url: http://www.npmjs.com
   logo: npm.svg
   how: "Replacing C and rewriting performance-critical bottlenecks in the registry service architecture."
-- 
+-
   name: Omnijar Studio
   url: https://omnijar.studio
   logo: omnijar-studio.svg
@@ -282,6 +292,11 @@
   url: http://purchaseclinic.com/
   logo: purchaseclinic.com.png
   how: "Our backend (REST API) is a 100% Rust server, based on Iron."
+-
+  name: QCERT (Qatar's National CERT)
+  url: http://qcert.org/
+  logo: QCERT-Logo.svg
+  how: "DNS log analysis pipeline entirly written in rust, running on top of our own Rust stream processing platform."
 -
   name: Sandstorm
   url: https://sandstorm.io
@@ -472,3 +487,40 @@
   url: https://pressjitsu.com
   logo: pressjitsu.png
   how: "Pressjitsu is a managed WordPress hosting and service company. We use Rust in a handful of our backend systems, including logging routing and aggregation which needs to be fast and scalable."
+-
+  name: Baidu X-Lab
+  url: https://github.com/baidu/rust-sgx-sdk
+  logo: baidu-x-lab.png
+  how: "We provide Rust SGX SDK for developing Intel SGX applications in the Rust programming language."
+-
+  name: CurrySoftware GmbH
+  url: https://www.curry-software.com
+  logo: curry-software.svg
+  how: "Our multi-tenant On-Site Search CurrySearch is written with Rust from head to toe."
+
+-
+  name: Schauspiel Dortmund
+  url: https://www.theaterdo.de/
+  logo: tdo_schauspiel.svg
+  how: "A <a href='https://github.com/rrbone/midioscar'>MIDI-to-OSC converter</a> is used in the <a href='https://www.theaterdo.de/detail/event/einstein-on-the-beach/'>\"Einstein On The Beach\"</a> opera play to power on-stage music and light systems."
+
+-
+  name: Centricular
+  url: https://centricular.com
+  logo: centricular.svg
+  how: "Internal & Free Software projects and customer projects, mostly audio/video/multimedia processing related."
+-
+  name: Galois
+  url: https://galois.com
+  logo: galois.svg
+  how: "Galois is integrating Rust with high-assurance technologies like the seL4 secure microkernel to build the next generation of trustworthy cyber-physical systems."
+-
+  name: Metaswitch
+  url: https://www.metaswitch.com/
+  logo: metaswitch.png
+  how: "Rust is the primary programming language for all communications solutions architected using microservices methodologies."
+-
+  name: Nomalab
+  url: https://www.nomalab.com
+  logo: nomalab.png
+  how: "To analyse video, format and pixels."

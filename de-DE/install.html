@@ -1,0 +1,204 @@
+---
+layout: de-DE/default
+title: Installation &middot; Die Programmiersprache Rust
+---
+    <h1 class="rustup">Rust installieren</h1>
+
+    <div class="row rustup-row">
+      <div class="col-md-8 instr-column">
+        <div id="platform-instructions-unix" class="instructions" style="display: none;">
+          <p>Führe den folgenden Befehl in deinem Terminal aus und folge den Instruktionen auf
+          dem Bildschirm, um Rust zu installieren.</p>
+          <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+        </div>
+
+        <div id="platform-instructions-win" class="instructions" style="display: none;">
+          <p>
+            Um Rust zu installieren, lade das folgende Installationsprogram herunter und führe es aus:
+            <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+            Folge dann den Anweisungen des Installers.
+          </p>
+        </div>
+
+        <div id="platform-instructions-unknown" class="instructions" style="display: none;">
+          <!-- unrecognized platform: ask for help -->
+          <p>Deine Plattform wurde nicht erkannt.</p>
+          <p>
+            Rust ist mit Windows, Linux, Mac OS X, FreeBSD und NetBSD kompatibel. Wenn du dich auf einem
+            dieser Betriebssysteme befindest,
+            <a href="https://github.com/rust-lang/rust-www/issues/new">reiche bitte eine Fehlermeldung</a>,
+            zusammen mit den folgenden Werten ein:
+          </p>
+
+          <div>
+            <div>navigator.platform:</div>
+            <div id="nav-plat"></div>
+            <div>navigator.appVersion:</div>
+            <div id="nav-app"></div>
+          </div>
+
+          <!-- duplicate the default cross-platform instructions -->
+          <div>
+            <p>Um Rust unter Unix zu installieren, führe den folgenden Befehl in einem Terminal aus und
+            folge den Anweisungen auf dem Bildschirm.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Um Rust unter Windows zu installieren, lade das folgende Installationsprogramm
+              herunter und führe es aus:
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              Folge dann den Anweisungen des Installers.
+            </p>
+          </div>
+        </div>
+
+        <div id="platform-instructions-default" class="instructions">
+          <div>
+            <p>Um Rust unter Unix zu installieren, führe den folgenden Befehl in einem Terminal aus und
+            folge den Anweisungen auf dem Bildschirm.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Um Rust unter Windows zu installieren, lade das folgende Installationsprogramm herunter und
+              führe es aus:
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              Folge dann den Anweisungen des Installers.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-4 release-info-column">
+        <div>
+          <div class="release-version">Rust <span>{{ site.stable }}</span></div>
+          <a href="{{ site.stable_blog }}">
+            <div class="release-date">{{ site.stable_date | date: "%d. %B %Y" }}</div>
+          </a>
+
+          <br>
+
+          <a id="platform-button" style="display: none;" href="#">
+            click or press "n" to cycle platforms
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>Hinweise zur Installation von Rust</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <h3>Verwaltung der Toolchains mit <code>rustup</code></h3>
+
+        <p>
+          Rust wird über das
+          <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>-Werkzeug
+          installiert. Rust hat einen sechswöchigen
+          <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
+              Veröffentlichungszyklus
+          </a> und unterstützt eine
+          <a href="https://forge.rust-lang.org/platform-support.html">
+              große Anzahl an Plattformen
+          </a>, sodass zu jeder Zeit eine große Auswahl an Rust-Builds existiert.
+          <code>rustup</code> verwaltet diese Builds konsistent auf jeder
+          Plattform, die von Rust unterstützt wird, und erlaubt die Installation aus den
+          Beta- und Nightly-Veröffentlichungskanälen sowie Toolchains für Cross Compilation
+          auf andere Prozessorarchitekturen.
+        </p>
+
+        <p>
+          Weitere Informationen findest du in der
+          <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md">
+              <code>rustup</code>-Dokumentation</a>.
+        </p>
+
+        <h3>Konfiguration der <code>PATH</code>-Umgebungsvariable</h3>
+
+        <p>
+          In der Rust-Umgebung werden alle Tools in das Verzeichnis
+          <span class="platform-specific not-win" style="display: inline;">
+            <code>~/.cargo/bin</code>
+          </span>
+          <span class="platform-specific win" style="display: none;">
+            <code>%USERPROFILE%\.cargo\bin</code>
+          </span> installiert, dort findet sich auch die Rust-Toolchain mit
+          <code>rustc</code>, <code>cargo</code>, und <code>rustup</code>.
+        </p>
+
+        <p>
+          Deshalb ist es gebräuchlich, dieses Verzeichnis in die
+          <a href="https://en.wikipedia.org/wiki/PATH_(variable)">
+          <code>PATH</code>-Umgebungsvariable</a> aufzunehmen.
+          Während der Installation wird <code>rustup</code> versuchen,
+          <code>PATH</code> selbst zu setzten,
+          doch wegen Unterschieden zwischen den Plattformen, Shells und Fehlern
+          in <code>rustup</code> haben die Anpassungen an <code>PATH</code>
+          unter Umständen keine Effekt, bis das Terminal neu gestartet wurde
+          oder sich der Nutzer ab- und wieder angemeldet hat. In Einzelfällen
+          kann es Vorkommen, dass das Anpassen von <code>PATH</code> überhaupt
+          nicht erfolgt.
+        </p>
+
+        <p>
+          Falls nach der Installation der Befehl <code>rustc --version</code>
+          im Terminal fehlschlägt, ist das der wahrscheinlichste Grund dafür.
+        </p>
+
+        <div class="platform-specific win">
+
+          <h3>Windows-Spezifisches</h3>
+          <!-- This anchor is probably linked in the wild and should not be broken -->
+          <a id="win-foot"></a>
+
+	  <p>
+            Unter Windows setzt Rust außerdem die C++ Build Tools für Visual Studio
+            2013 oder später voraus. Die einfachste Möglichkeit, an die Build Tools
+            zu kommen, ist die
+        <a href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2017">
+             Microsoft Visual C++ Build Tools 2017
+        </a>
+            direkt zu installieren. Alternativ dazu kannst du auch
+            Visual Studio 2017, Visual Studio 2015 oder Visual Studio 2013
+	    <a href="https://www.visualstudio.com/downloads/">herunterladen</a>
+        und im Installer die "C++-Tools" auswählen.
+	  </p>
+
+          <p>
+            Für weiterführende Informationen über die Konfiguration von Rust unter Windows,
+            besuche die
+            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows-spezifische <code>rustup</code>-Dokumentation
+            </a>.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <h2>Andere Installationsmöglichkeiten</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          Die oben beschriebene Weg via <code>rustup</code> ist für die meisten Entwickler die
+          bevorzugte Methode, um Rust zu installieren. Es gibt aber auch
+          <a href="other-installers.html">alternative Installationsmöglichkeiten</a>.
+        </p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      {% include rustup.js %}
+    </script>
+

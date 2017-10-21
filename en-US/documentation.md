@@ -15,8 +15,9 @@ will have a good grasp of the fundamental ideas behind Rust.
 ## Learning Rust
 
 [The Rust Programming Language][book]. Also known as "The Book",
-The Rust Programming Language is the most comprehensive resource for
-all topics related to Rust, and is the primary official document of
+The Rust Programming Language will introduce you to the main topics
+important to learning Rust, and get you to the point where you can
+be productive. The book is the primary official document of
 the language.
 
 [Rust by Example][rbe]. A collection of self-contained Rust

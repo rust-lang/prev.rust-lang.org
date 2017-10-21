@@ -66,7 +66,7 @@ Questo progetto è controllato da Mozilla?
 </a></h3>
 
 No. Rust ebbe inizio nel 2006 come un progetto hobbystico di Graydon Hoare ed è rimasto così per oltre 3 anni. Mozilla è entrata nel 2009, dopo che il linguaggio si è dimostrato abbastanza maturo per eseguire una serie di test di base automatizzati e dimostrare la valenza dei suoi principi base. Anche se sponsorizzato da Mozilla, Rust è un progetto sviluppato da
-una variegata comunità di appassionati da molti paesi del mondo. Il [Team di Rust](team.html) è composto sia da membri Mozilla che da esterni e `rust` su GitHub ha avuto oltre [1500 sviluppatori diversi](https://github.com/rust-lang/rust/) fino a oggi.
+una variegata comunità di appassionati da molti paesi del mondo. Il [Team di Rust](team.html) è composto sia da membri Mozilla che da esterni e `rust` su GitHub ha avuto oltre [1900 sviluppatori diversi](https://github.com/rust-lang/rust/) fino a oggi.
 
 Finché concesso [dalla politica di gestione del progetto](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md), Rust è amministrato da un team base che imposta
 la visione e le priorità del progetto, guidandolo globalmente.

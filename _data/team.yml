@@ -49,6 +49,8 @@ people:
     irc: burntsushi
   carols10cents:
     name: Carol Nichols
+  cramertj:
+    name: Taylor Cramer
   dotdash:
     name: Björn Steinbrink
     irc: doener
@@ -61,6 +63,8 @@ people:
     name: E. Dunham
   emilio:
     name: Emilio Cobos Álvarez
+  estebank:
+    name: Esteban Kuber
   erickt:
     name: Erick Tryzelaar
   fitzgen:
@@ -93,6 +97,8 @@ people:
     irc: jseyfried
   jwilm:
     name: Joe Wilm
+  kennytm:
+    name: kennytm
   killercup:
     name: Pascal Hertleif
   Kimundi:
@@ -152,6 +158,8 @@ people:
     irc: scott
   steveklabnik:
     name: Steve Klabnik
+  tomprince:
+    name: Tom Prince
   TimNN:
     name: Tim Neumann
   vadimcn:
@@ -170,6 +178,8 @@ people:
     name: Scott McMurray
   cramertj:
     name: Taylor Cramer
+  tromey:
+    name: Tom Tromey
 
 # Information about each team. Omit `lead` for teams without leaders.
 #
@@ -178,46 +188,45 @@ people:
 teams:
   - name: Core team
     responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
-    members: [brson, nrc, alexcrichton, wycats, steveklabnik, nikomatsakis, carols10cents, aturon, erickt]
+    members: [nrc, alexcrichton, wycats, steveklabnik, nikomatsakis, carols10cents, aturon, erickt]
   - name: Language team
     responsibility: "designing new language features"
-    members: [withoutboats, eddyb, nrc, pnkfelix, nikomatsakis, aturon]
+    members: [cramertj, withoutboats, eddyb, nrc, pnkfelix, nikomatsakis, aturon]
     lead: nikomatsakis
   - name: Language team shepherds
     responsibility: "helping guide language RFCs to completion, assisting the language team with its work"
-    members: [solson, joshtriplett, whitequark, cramertj, scottmcm]
+    members: [solson, joshtriplett, whitequark, scottmcm]
   - name: Library team
     responsibility: "the Rust standard library, rust-lang crates, conventions, and ecosystem support"
-    members: [brson, alexcrichton, sfackler, BurntSushi, Kimundi, dtolnay, aturon]
+    members: [alexcrichton, sfackler, BurntSushi, Kimundi, dtolnay, aturon]
     lead: aturon
   - name: Library team shepherds
     responsibility: "coordinating the Libz Blitz, helping guide libs RFCs to completion, keeping pulse on the ecosystem"
     members: [KodrAus]
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
-    members: [arielb1, eddyb, nrc, petrochenkov, pnkfelix, nikomatsakis, jseyfried, michaelwoerister]
+    members: [arielb1, eddyb, estebank, nrc, petrochenkov, pnkfelix, nikomatsakis, jseyfried, michaelwoerister]
     lead: nikomatsakis
   - name: Dev tools team
     responsibility: "overall direction for tools for working with Rust code"
-    members: [japaric, brson, nrc, michaelwoerister, killercup, jonathandturner]
+    members: [fitzgen, japaric, jonathandturner, killercup, matklad, michaelwoerister, nrc]
     lead: nrc
   - name: Dev tools peers
     responsibility: "oversight of specific Rust tools, and coordination with dev tools team"
-    members: [alexcrichton, emilio, fitzgen, manishearth, llogiq, oli-obk, matklad, jwilm, GuillaumeGomez, QuietMisdreavus, steveklabnik]
-    lead: nrc
+    members: [alexcrichton, emilio, GuillaumeGomez, jwilm, llogiq, manishearth, oli-obk, QuietMisdreavus, steveklabnik, tromey]
   - name: Cargo team
     responsibility: "design and implementation of Cargo"
-    members: [alexcrichton, carols10cents, withoutboats, matklad, wycats, aturon]
+    members: [alexcrichton, carols10cents, withoutboats, matklad, wycats, joshtriplett, aturon]
     lead: aturon
   - name: Infrastructure team
     responsibility: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
-    members: [brson, alexcrichton, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, aturon]
+    members: [alexcrichton, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, tomprince, kennytm, aturon]
     lead: aturon
     email: infra-team@rust-lang.org
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: erickt
-    members: [brson, edunham, skade, manishearth, johannhof, sebasmagri, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, ashleygwilliams]
+    members: [edunham, skade, manishearth, johannhof, sebasmagri, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, ashleygwilliams]
     email: community-team@rust-lang.org
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
@@ -227,13 +236,13 @@ teams:
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
     email: rust-mods@rust-lang.org
   - name: Style team
-    members: [brson, japaric, nrc, steveklabnik, ubsan, solson, joshtriplett]
+    members: [japaric, nrc, steveklabnik, ubsan, solson, joshtriplett]
     lead: nrc
     responsibility: "temporary 'strike team' charged with deciding on code style guidelines and configuring Rustfmt (process specified in <a href='https://github.com/rust-lang/rfcs/blob/master/text/1607-style-rfcs.md'>RFC 1607</a>)"
     email: style-team@rust-lang.org
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
-    members: [aatch, Gankro, pcwalton, huonw, peschkaj, dotdash, bkoropoff]
+    members: [aatch, Gankro, pcwalton, huonw, peschkaj, dotdash, bkoropoff, brson]
 # Information on sites to get profile information from
 sites:
   github:
