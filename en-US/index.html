@@ -18,7 +18,9 @@ title: The Rust Programming Language
         <a class="release-button" href="install.html">
           <div class="release-version">Install Rust <span>{{ site.stable }}</span></div>
         </a>
-        <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
+        <div class="release-date">
+          <a href="{{ site.stable_blog }}">{{ site.stable_date | date: "%B %-d, %Y" }}</a>
+        </div>
       </div>
     </div>
 
