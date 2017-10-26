@@ -853,9 +853,8 @@ use std::io::Read;
 use std::fs::File;
 
 fn read_file(path: &str) -> Result<String, std::io::Error> {
-    let mut f = try!(File::open(path));
     let mut s = String::new();
-    try!(f.read_to_string(&mut s));  // `s` contains the contents of "foo.txt"
+    let _ = File::open(path)?.read_to_string(&mut s);  // `s` contains the contents of "foo.txt"
     Ok(s)
 }
 
