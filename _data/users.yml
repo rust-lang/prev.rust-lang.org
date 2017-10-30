@@ -411,7 +411,7 @@
   name: CoreOS, Inc.
   url: https://coreos.com/
   logo: coreos.svg
-  how: "Internal tooling including documentation transformation and validation."
+  how: "Tools shipped within the Container Linux distribution as well as internal tooling including documentation transformation and validation."
 -
   name: 3D Hubs
   url: https://www.3dhubs.com/
