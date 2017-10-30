@@ -524,3 +524,8 @@
   url: https://www.nomalab.com
   logo: nomalab.png
   how: "To analyse video, format and pixels."
+
+  name: CancerIQ
+  url: http://www.canceriq.com/
+  logo: canceriq.png
+  how: "CancerIQ provides the tools for genetic counselors, imaging centers, and other practitioners to run a cancer risk program; <a href='http://engineering.canceriq.com/posts/rust/'>Rust powers several of our risk models</a>."
