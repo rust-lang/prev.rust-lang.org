@@ -311,7 +311,7 @@
   name: Sentry
   url: https://sentry.io/
   logo: sentry-horizontal-black.svg
-  how: "<a href='https://blog.sentry.io/2016/10/19/fixing-python-performance-with-rust.html'>JavaScript, Java and iOS event proessing and the command-line client for the Sentry API.</a>"
+  how: "<a href='https://blog.sentry.io/2016/10/19/fixing-python-performance-with-rust.html'>JavaScript, Java and iOS event processing and the command-line client for the Sentry API.</a>"
 -
   name: slowtec
   url: http://www.slowtec.de/
