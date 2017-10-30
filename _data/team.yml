@@ -209,7 +209,7 @@ teams:
     lead: nikomatsakis
   - name: Dev tools team
     responsibility: "overall direction for tools for working with Rust code"
-    members: [fitzgen, japaric, jonathandturner, killercup, matklad, michaelwoerister, nrc]
+    members: [fitzgen, japaric, killercup, matklad, michaelwoerister, nrc]
     lead: nrc
   - name: Dev tools peers
     responsibility: "oversight of specific Rust tools, and coordination with dev tools team"
