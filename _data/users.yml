@@ -309,9 +309,9 @@
   how: "Software-defined storage georeplication daemon"
 -
   name: Sentry
-  url: https://www.getsentry.com/
+  url: https://sentry.io/
   logo: sentry-horizontal-black.svg
-  how: "<a href='http://lucumr.pocoo.org/2016/7/10/rust-rest/'>A command-line client for the Sentry API.</a>"
+  how: "<a href='https://blog.sentry.io/2016/10/19/fixing-python-performance-with-rust.html'>JavaScript, Java and iOS event proessing and the command-line client for the Sentry API.</a>"
 -
   name: slowtec
   url: http://www.slowtec.de/
