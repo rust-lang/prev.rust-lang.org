@@ -534,3 +534,8 @@
   url: http://iambot.ai
   logo: iambot.png
   how: " Our high-performance data acquisition is fully implemented using Rust. Besides that, we are also using Rust for our API endpoints that communicate with internal systems."
+-
+  name: HealPay
+  url: https://healpay.com
+  logo: healpay.png
+  how: "We have been pushing Rust into every project we can. Currently we have several backend services built in rust."
