@@ -56,7 +56,7 @@ en Chino.
 
 ## Canales IRC
 
-Los Rutáceos mantienen varios canales [IRC] amigables y concurridos en la red de
+Los Rustáceos mantienen varios canales [IRC] amigables y concurridos en la red de
 Mozilla, irc.mozilla.org.
 
 El canal [#rust][rust_irc] es el lugar de encuentro para discusiones generales
