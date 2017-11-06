@@ -71,7 +71,7 @@
   name: Atlassian
   url: https://www.atlassian.com/
   logo: atlassian.svg
-  how: "We use Rust in a service for analyzing terabytes of source code."
+  how: "We use Rust in a service for analyzing petabytes of source code."
 -
   name: Autumn
   url: http://autumnai.com
