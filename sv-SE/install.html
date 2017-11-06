@@ -1,0 +1,199 @@
+---
+layout: sv-SE/default
+title: Installation &middot; Programmeringsspråket Rust
+---
+    <h1 class="rustup">Att installera rust</h1>
+
+    <div class="row rustup-row">
+      <div class="col-md-8 instr-column">
+        <div id="platform-instructions-unix" class="instructions" style="display: none;">
+          <p>För att installera rust, kör följande i kommandotolken och följ sedan instruktionerna på skärmen.</p>
+          <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+        </div>
+
+        <div id="platform-instructions-win" class="instructions" style="display: none;">
+          <p>
+            För att installera rust, ladda ner och kör
+            <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+            följ sedan instruktionerna på skrämen.
+          </p>
+        </div>
+
+        <div id="platform-instructions-unknown" class="instructions" style="display: none;">
+          <!-- unrecognized platform: ask for help -->
+          <p>Jag känner inte igen din plattform.</a>
+          <p>
+            Rust kan köras på Windows, Linux, Mac OS X, FreeBSD och NetBSD. Om
+            du är på en av dessa plattformar och ser detta var god och
+            <a href="https://github.com/rust-lang/rust-www/issues/new">rapportera ett problem</a>,
+            och klistra in följande värden:
+          </p>
+
+          <div>
+            <div>navigator.platform:</div>
+            <div id="nav-plat"></div>
+            <div>navigator.appVersion:</div>
+            <div id="nav-app"></div>
+          </div>
+
+          <!-- duplicate the default cross-platform instructions -->
+          <div>
+            <p>För att installera rust om du kör unix, <br/>kör följande
+            i kommandotolken och följ sedan instruktionerna på skärmen.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Om du använder Windows,<br/>ladda ner och kör
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              och följ sedan instruktionerna på skärmen.
+            </p>
+          </div>
+        </div>
+
+        <div id="platform-instructions-default" class="instructions">
+          <div>
+            <p>För att installera rust om du kör unix,<br/>kör följande
+            i kommandotolken och följ sedan instruktionerna på skärmen.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Om du använder Windows,<br/>ladda ner och kör
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              och följ sedan instruktionerna på skärmen.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-4 release-info-column">
+        <div>
+          <div class="release-version">Rust <span>{{ site.stable }}</span></div>
+          <a href="{{ site.stable_blog }}">
+            <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
+          </a>
+
+          <br>
+
+          <a id="platform-button" style="display: none;" href="#">
+            clicka eller tryck på "n" för att gå igenom tillgängliga plattformar
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>Anteckningar om Rust-installation</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <h3>Toolchain hantering med <code>rustup</code></h3>
+
+        <p>
+          Rust installeras och underhålls av verktyget
+          <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>.
+          Rust har en 6-veckors
+          <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
+            snabbrelease-process ("rapid release process")
+          </a> och stödjer en
+          <a href="https://forge.rust-lang.org/platform-support.html">
+             stor uppsjö av plattformar
+          </a>, så det finns många byggningar av Rust tillgängliga vid varje givet tillfälle.
+          <code>rustup</code> hanterar dessa byggningar på ett konsekvent sätt på varje
+          plattform som rust stödjer. Detta möjliggör installation av rust från
+          de nattliga och beta-release-kanalerna samt stöd för ytterligare
+          kross-kompilerings-mål (cross-compilation targets)
+        </p>
+
+        <p>
+          För mer information, se dokumentationen för
+          <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md"><code>rustup</code></a>.
+        </p>
+
+        <h3>Att konfigurera miljövariabeln <code>PATH</code></h3>
+
+        <p>
+          I rusts utvecklingsmiljö är alla verktyg installerade i mappen
+          <span class="platform-specific not-win" style="display: inline;">
+            <code>~/.cargo/bin</code>
+          </span>
+          <span class="platform-specific win" style="display: none;">
+            <code>%USERPROFILE%\.cargo\bin</code>
+          </span>,
+          vilket är vart du kan hitta rusts toolchain, inklusive
+          <code>rustc</code>, <code>cargo</code>, och <code>rustup</code>.
+        </p>
+
+        <p>
+          Följaktligen är det vanligt för rust-utvecklare att inkludera denna
+          mapp i deras miljövariabel
+          <a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code>
+          </a>. Under installation kommer <code>rustup</code>,
+          försöka konfigurera
+          <code>PATH</code>, men på grund av skillnader plattformar och kommandotolkar emellan,
+          så väl som buggar i <code>rustup</code>, kommer ändringarna på <code>PATH</code>
+          inte äga rum tills kommandotolken är omstartad eller tills användaren har
+          loggat ut eller så kommer förändringarna inte att ske över huvud taget.
+        </p>
+
+        <p>
+          Om exekvering av <code>rustc --version</code> i kommandotolken inte går
+          efter installation är problem med miljövariabeln den mest troliga orsaken.
+        </p>
+
+        <div class="platform-specific win">
+
+          <h3>Överväganden för Windows</h3>
+          <!-- This anchor is probably linked in the wild and should not be broken -->
+          <a id="win-foot"></a>
+
+	  <p>
+            På Windows kräver rust dessutom `C++`-byggverktygen för
+            Visual Studio 2013 eller senare. Lättaste sättet att få tag på
+            byggverktygen är att installera 
+	    <a href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2017">
+	      Microsoft Visual C++ Build Tools 2017
+            </a>
+            som tillhandahåller just Visual C++s byggverktyg. Alternativt kan du
+      <a href="https://www.visualstudio.com/downloads/">installera</a>
+      Visual Studio 2017, Visual Studio 2015, eller Visual Studio 2013 och under installationen
+      välja "C++ tools".
+	  </p>
+
+          <p>
+            För mer information om att konfigurera rust på Windows, se den
+            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows-specifika <code>rustup</code>
+            dokumentationen</a>.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <h2>Andra installationssätt</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          Ovan nämna installationssätt via
+          <code>rustup</code> är det rekommenderade sättet att installera rust
+          för de flesta utvecklarna, men rust kan dock dessutom
+          <a href="other-installers.html">installeras på andra sätt</a>.
+        </p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      {% include rustup.js %}
+    </script>
+
