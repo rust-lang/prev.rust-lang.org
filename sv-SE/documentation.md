@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: sv-SE/default
 title:  Dokumentation om rust &middot; Programmeringsspråket Rust
 ---
 
@@ -86,7 +86,7 @@ de officiella forumen, IRC-kanalerna och olika delar av rust-världen.
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/sv-SE/conduct.html
 
 ## Nattlig och beta-dokumentation
 

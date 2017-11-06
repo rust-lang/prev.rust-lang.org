@@ -265,12 +265,12 @@ Som tidigare nämns är [rusts internforum][internals_forum] dedikerad till att
 diskutera design och implementation av rust. En hel del av diskussionen händer
 också på GitHub:
 
-- [huvud-repositoryt][github] och [issue-trackern][issue_tracking] är
+- [huvud-repo][github] och [issue-trackern][issue_tracking] är
   implementationsarbetets frontlinje. Våra granskare strävar efter att vara
   vänliga och att hjälpa till att handleda nykomlingar, så tveka inte att öppna
   en "pull request"!
 
-- [RFC-repositoryt][rfcs] håller koll på vår "Request for Comment" process vilket
+- [RFC-repo][rfcs] håller koll på vår "Request for Comment" process vilket
   är huvudvägen genom vilken rust-communityt och teamen når konsensus om föreslagen
   ny funktionalitet för språket och officiella bibliotek och verktyg.
 

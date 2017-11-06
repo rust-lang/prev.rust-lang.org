@@ -15,7 +15,7 @@ title: Andra installationssätt &middot; Programmeringsspråket Rust
 
 Rust kan köras på många plattformar, och det finns många sätt att installera rust.
 Om du vill installera rust på det mest enkla och rekommenderade sättet följer du
-anvisningarna på [huvudinstallationssidan].
+anvisningarna på [huvudinstallationssidan][installation page].
 
 Den här sidan beskriver installation via [`rustup`], ett verktyg som hanterar
 flera rust toolchains på ett konsekvent sätt på alla plattformar rust stödjer.
