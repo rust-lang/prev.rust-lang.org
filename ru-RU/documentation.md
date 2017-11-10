@@ -58,7 +58,7 @@ title: Документация Rust &middot; Язык Программиров�
 [ref]: https://doc.rust-lang.org/reference
 [cargo]: https://rurust.github.io/cargo-docs-ru/
 [err]: https://doc.rust-lang.org/error-index.html
-[release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md
+[release_notes]: https://github.com/rust-lang/rust/blob/master/RELEASES.md
 
 ## Правила проекта
 
