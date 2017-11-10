@@ -51,7 +51,7 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 [ref]: https://doc.rust-lang.org/reference
 [cargo]: http://doc.crates.io/guide.html
 [err]: https://doc.rust-lang.org/error-index.html
-[release_notes]: https://github.com/rust-lang/rust/blob/stable/RELEASES.md
+[release_notes]: https://github.com/rust-lang/rust/blob/master/RELEASES.md
 [docs.rs]: https://docs.rs
 [crates.io]: https://crates.io
 [platform_support]: https://forge.rust-lang.org/platform-support.html
