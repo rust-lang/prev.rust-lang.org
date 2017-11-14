@@ -85,6 +85,7 @@ Gli sviluppatori di Rust si organizzano su [#rust-internals][internals_irc]. Ded
 - [#rust-es][es_irc] es para una discusión general sobre Rust en español
 - [#rust-fr][fr_irc] est dédié à la programmation en Rust en français
 - [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
+- [#rust-sv](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-sv) är för allmän diskussion om Rust på svenska
 
 ### Canali specifici
 

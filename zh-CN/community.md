@@ -66,6 +66,7 @@ Rust 开发者的协调位于 [#rust-internals][internals_irc]。此频道中的
 - [#rust-es][es_irc] es para una discusión general sobre Rust en español
 - [#rust-fr][fr_irc] est dédié à la programmation en Rust en français
 - [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
+- [#rust-sv](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-sv) är för allmän diskussion om Rust på svenska
 - [Rust中文][cn_org] Rust 语言中文 Chat 社区(非IRC频道)
 
 ### 专题频道

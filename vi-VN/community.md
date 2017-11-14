@@ -77,6 +77,7 @@ nếu bạn đủ tự tin gia nhập core team và muốn vượt lên chính m
 - [#rust-es][es_irc] Rust ở Tây ban nha
 - [#rust-fr][fr_irc] Rust ở Pháp
 - [#rust-ru][ru_irc] Rust ở Nga
+- [#rust-sv](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-sv) är för allmän diskussion om Rust på svenska
 
 ### Các kênh chuyên đề
 
