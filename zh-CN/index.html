@@ -16,7 +16,9 @@ title: Rust 程序设计语言
         <a class="release-button" href="install.html">
           <div class="release-version">安装 Rust <span>{{ site.stable }}</span></div>
         </a>
-        <div class="release-date">{{ site.stable_date | date: "%Y 年 %-m 月 %-d 日" }}</div>
+        <div class="release-date">
+          <a href="{{ site.stable_blog }}">{{ site.stable_date | date: "%Y 年 %-m 月 %-d 日" }}</a>
+        </div>
       </div>
     </div>
 
