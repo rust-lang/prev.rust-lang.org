@@ -94,7 +94,7 @@ curl https://sh.rustup.rs -sSf | sh -s -- --help
 这些二进制文件每个均使用了 [Rust signing key]来签名（由 Rust 构建基础设施使用 [GPG]），该密钥也在 
 [keybase.io] 上提供。在下面的表格中，`.asc` 文件即该签名。
 
-过去发布的版本可在[此处存档]中找到。
+过去发布的版本可在[此处存档][the archives]中找到。
 
 {% for channel in site.channels %}
 
