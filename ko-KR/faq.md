@@ -443,7 +443,7 @@ match val.do_something() {
 [`String`][String]과 [`Vec`][Vec]이 `&`나 `& mut` 참조로 넘겨질 때는 [deref 변환(coercion)](https://doc.rust-lang.org/stable/book/deref-coercions.html)을 통해 각자 대응되는 슬라이스로 자동으로 변환됩니다.
 
 `&str`과 `&[T]`에 구현된 메소드들은 `String`과 `Vec<T>`에서 바로 접근할 수 있습니다.
-예를 들어 `char_at`은 `&str`의 메소드이고 `some_string`이 `String`이라 하더라도 `some_string.char_at(0)`은 동작할 것입니다.
+예를 들어 `trim`은 `&str`의 메소드이고 `some_string`이 `String`이라 하더라도 `some_string.trim()`은 동작할 것입니다.
 
 일반화된 코드 같이 몇몇 상황에서는 수동으로 변환해야 할 필요가 있습니다.
 수동 변환은 슬라이스 연산자를 써서 `&my_vec[..]`과 같이 할 수 있습니다.
