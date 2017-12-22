@@ -42,7 +42,7 @@
       // if we didn't find a supporting language, default to en-US
       if (!language) { language = "en-US"; }
 
-      document.location = "/" + language + '{{ page.url }}';
+      document.location = "/" + language + '{{ page.url }}' + document.location.hash;
     </script>
     <noscript>
       <meta http-equiv="refresh" content="0; url=/en-US{{ page.url }}">
