@@ -38,4 +38,4 @@ Si alguien ataca algo que dices o haces, evita la tentación de ponerte a la def
 
 La aplicación de las políticas listadas aplica a todos los medios de comunicación de Rust, incluidos los canales oficiales de IRC (#rust, #rust-internals, #rust-tools, #rust-libs, #rustc, #rust-beginners, #rust-docs, #rust-community, #rust-lang, and #cargo); los repositorios en GitHub rust-lang, rust-lang-nursery, and rust-lang-deprecated; y todos los foros de rust-lang.org (users.rust-lang.org, internals.rust-lang.org). Si deseas que otro proyecto adopte el código de conducta de Rust, por favor comunícate con los desarrolladores de esos proyectos. Si deseas usar este código de conducta en tu proyecto, considera mencionar explícitamente tu propia política de moderación para evitar confusión.
 
-*Adaptación de [Node.js Policy on Trolling](http://blog.izs.me/post/30036893703/policy-on-trolling) y [Contributor Covenant v1.3.0](http://contributor-covenant.org/version/1/3/0/).*
+*Adaptación de [Node.js Policy on Trolling](http://blog.izs.me/post/30036893703/policy-on-trolling) y [Contributor Covenant v1.3.0](https://www.contributor-covenant.org/version/1/3/0/).*

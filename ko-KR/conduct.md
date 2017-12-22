@@ -37,4 +37,4 @@ Rust 커뮤니티에서 우리는 서로를 신경쓰는 데 추가적인 단계
 
 위에 나열된 적용 규칙은 모든 공식 Rust 장소에서 적용됩니다. 여기에는 공식 IRC 채널들(#rust, #rust-internals, #rust-tools, #rust-libs, #rustc, #rust-beginners, #rust-docs, #rust-community, #rust-lang, 그리고 #cargo), rust-lang, rust-lang-nursery, rust-lang-deprecated 아래의 GitHub 저장소들, 그리고 rust-lang.org 아래의 모든 포럼들(users.rust-lang.org, internals.rust-lang.org)이 포함됩니다. Rust 행동 규칙을 채택한 다른 프로젝트에서 적용을 바란다면 그 프로젝트의 관리자들에게 연락해 주세요. 혼란을 피하기 위해, 이 행동 규칙을 프로젝트에서 사용하기 원한다면 명시적으로 중재 정책을 언급하거나 이 문서를 복제해 중재 정책을 변경하는 걸 생각해 보세요.
 
-*[트롤링에 대한 Node.js 정책](http://blog.izs.me/post/30036893703/policy-on-trolling)과 [기여자 행동 규칙 v1.3.0](http://contributor-covenant.org/version/1/3/0/)에서 일부 개작함.*
+*[트롤링에 대한 Node.js 정책](http://blog.izs.me/post/30036893703/policy-on-trolling)과 [기여자 행동 규칙 v1.3.0](https://www.contributor-covenant.org/version/1/3/0/)에서 일부 개작함.*
