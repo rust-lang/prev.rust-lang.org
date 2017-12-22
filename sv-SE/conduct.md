@@ -29,7 +29,7 @@ Vi tolererar särskilt inte beteende som utesluter folk från socialt utsatta gr
 * Trakassering privat är också oacceptabelt. Oavsett vem du är, om du känner att
 du har blivit eller är trakasserad eller blivit obehagligt bemött av någon i communityt,
 var god kontakta då någon av kanalens ops (operatörer på en IRC-kanal) eller någon
-i [rusts modereringsteam](/team.html#Moderation) omgående.  Oavsett om du bidrar ofta
+i [rusts modereringsteam](/team.html#Moderation-team) omgående.  Oavsett om du bidrar ofta
 eller är ny till språket bryr vi oss om att göra communityt en säker plats för dig
 och vi står bakom dig.
 * Likaledes är spammning, trollning, flejmning, att hetsa eller annan
@@ -38,7 +38,7 @@ uppmärksamhet-stjälande beteende ej välkommen.
 ## Moderering
 
 Dessa är riktlinjerna för att upprätthålla våra uppföranderegler. Om du känner att en
-tråd är i behov av moderering, vänligen kontakta [rusts modereringsteam](/team.html#Moderation).
+tråd är i behov av moderering, vänligen kontakta [rusts modereringsteam](/team.html#Moderation-team).
 
 1. Anmärkningar som bryter mot rusts uppförandekod och normer, inklusive hatiska,
 sårande, förtryckande eller uteslutande kommentarer, är inte tillåtna. (Svordomar

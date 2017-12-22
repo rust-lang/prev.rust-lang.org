@@ -21,14 +21,14 @@ title: O Código de Conduta de Rust &middot; A linguagem de programação Rust
   interpretaremos o termo "humilhação" como incluido na definição no <a href="http://citizencodeofconduct.org/">Código de Conduta do Cidadão</a>; se você teve alguma dúvida sobre o que está incluso nesse conceito, por favor leia a definição deles. Em particular,
   nós não toleramos comportamento que exclua pessoas de minorias e grupos marginalizados.
 * Humilhação privada é também inaceitável. Não interessa quem você é, se você sente que foi ou está sendo humilhado ou se sentido
-  desconfortável por um membro da comunidade, por favor contate um dos canais de interação ou o [time da moderação do Rust](/team.html#Moderation) imediatamente. Independentemente de você é um contribuidor regular ou um novato, nós nos preocupamos
+  desconfortável por um membro da comunidade, por favor contate um dos canais de interação ou o [time da moderação do Rust](/team.html#Moderation-team) imediatamente. Independentemente de você é um contribuidor regular ou um novato, nós nos preocupamos
   em fazer dessa comunidade um lugar seguro para você e nós lhe protegeremos.
 * Da mesma forma, qualquer spam, trolagem, brigas, enganação (fishing) ou "roubo de atenção" não é bem vindo.
 
 ## Moderação
 
 Essas são as políticas para confirmar os padrões de conduta da nossa comunidade. Se você acha que um tópico precisa de moderação,
-por favor contate o [time de moderação do Rust](/team.html#Moderation).
+por favor contate o [time de moderação do Rust](/team.html#Moderation-team).
 
 1. Observações que violam o código de conduta de Rust, incluindo comentários de ódio, que machucam, opressivos ou como exclusão não
 são permitidos. (Xingamentos são permitidos, desde que não sejam destinados à outros usuarios ou numa forma odiosa)

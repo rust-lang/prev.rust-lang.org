@@ -12,6 +12,7 @@ Rust 编程语言有很多特质，但 Rust 最伟大的力量是，我们的社
 如果您感觉到不适或者正被社区成员骚扰，请立即 [联系][mod_team_email] [Rust 管理团队][mod_team] 中的任何人。无论您是常规贡献者还是新来者，我们都十分关切您在社区的感受。
 
 [coc]: https://www.rust-lang.org/conduct.html
+[mod_team]: https://www.rust-lang.org/team.html#Moderation-team
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
 ## 入门

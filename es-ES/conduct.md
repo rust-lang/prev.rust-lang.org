@@ -15,13 +15,13 @@ title: El código de conducta de Rust &middot; El lenguaje de programación Rust
 * Respeta las diferencias de opinión de otras personas, y recuerda que toda decisión de diseño procura balancear ventajas y desventajas, rara vez hay una única respuesta correcta.
 * Por favor, usa el mínimo posible de crítica no constructiva. Si tienes ideas sólidas con las que te gustaría experimentar, haz una bifurcación y pruébala.
 * Serás excluido de la interacción si insultas o acosas a alguien. No es comportamiento admitido. Interpretaremos el termino “acoso” como el la definición del <a href="http://citizencodeofconduct.org/">Código de conducta</a>. Si no tienes claro sobre lo que se incluye en este concepto, por favor lee la definición. En particular, no toleraremos comportamiento que excluya personas de grupos marginados.
-* El acoso de forma privada tampoco es aceptable. No importa quién seas, si sientes que estás siendo acosado por un miembro de la comunidad, por favor contacta a uno de los moderadores del canal o a un miembro del [equipo de moderación de Rust](/team.html#Moderation) inmediatamente. Seas un contribuidor regular o un novato, nos encargaremos de hacer de esta comunidad un lugar seguro para ti.
+* El acoso de forma privada tampoco es aceptable. No importa quién seas, si sientes que estás siendo acosado por un miembro de la comunidad, por favor contacta a uno de los moderadores del canal o a un miembro del [equipo de moderación de Rust](/team.html#Moderation-team) inmediatamente. Seas un contribuidor regular o un novato, nos encargaremos de hacer de esta comunidad un lugar seguro para ti.
 * De igual forma, el *spam*, el *trolleo* y el comportamiento que desvía la atención tampoco es bienvenido.
 
 ## Moderación
 
 
-Estas son las políticas para adherirse a las estándares de conducta de nuestra comunidad. Si consideras que un hilo de discusión requiere moderación, por favor contacta a un miembro del [equipo de moderación de Rust](/team.html#Moderation).
+Estas son las políticas para adherirse a las estándares de conducta de nuestra comunidad. Si consideras que un hilo de discusión requiere moderación, por favor contacta a un miembro del [equipo de moderación de Rust](/team.html#Moderation-team).
 
 1. No se permiten observaciones que infringen los estándares de conducta de Rust, incluidos comportamientos de odio, opresivos o exclusivos.
 2. Tampoco se permiten comportamientos que los moderadores encuentren inapropiados, estén o no listados en el código de conducta.

@@ -21,7 +21,7 @@ title: Сообщество Rust &middot; Язык Программирован�
 вас.
 
 [coc]: https://www.rust-lang.org/conduct.html
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
+[mod_team]: https://www.rust-lang.org/team.html#Moderation-team
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
 ## С чего начать
@@ -192,7 +192,7 @@ title: Сообщество Rust &middot; Язык Программирован�
 [compiler_team]: https://www.rust-lang.org/team.html#Compiler
 [tool_team]: https://www.rust-lang.org/team.html#Tooling-and-infrastructure
 [community_team]: https://www.rust-lang.org/team.html#Community
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
+[mod_team]: https://www.rust-lang.org/team.html#Moderation-team
 [doc_team]: https://www.rust-lang.org/en-US/team.html#Documentation-team
 
 ## Разработка Rust

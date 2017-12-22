@@ -12,7 +12,7 @@ Nous nous appliquons à fournir un environnement amical, sûr et accueillant pou
 Si vous êtes ou avez été victime de harcèlement ou si un membre de la communauté vous importune, veuillez immédiatement [contacter][mod_team_email] un des membres de [l'équipe de modération Rust][mod_team]. Que vous soyez un contributeur régulier ou que vous soyez nouveau, nous tenons à cœur que cette communauté soit un espace sûr pour vous.
 
 [coc]: https://www.rust-lang.org/conduct.html
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
+[mod_team]: https://www.rust-lang.org/team.html#Moderation-team
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
 ## Où commencer
@@ -158,7 +158,7 @@ En plus de ces équipes officielles, la plupart des équipes incluent un ensembl
 [compiler_team]: https://www.rust-lang.org/team.html#Compiler
 [tool_team]: https://www.rust-lang.org/team.html#Tooling-and-infrastructure
 [community_team]: https://www.rust-lang.org/team.html#Community
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
+[mod_team]: https://www.rust-lang.org/team.html#Moderation-team
 [doc_team]: https://www.rust-lang.org/en-US/team.html#Documentation-team
 
 ## Le développement de Rust
