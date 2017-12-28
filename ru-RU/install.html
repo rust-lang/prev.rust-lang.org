@@ -91,89 +91,84 @@ title: Установка &middot; The Rust Programming Language
 
     </div>
 
-    <h2>Notes about Rust installation</h2>
+    <h2>Дополнительная информация по установке Rust</h2>
 
     <div class="row">
       <div class="col-md-12">
-
-        <h3>Toolchain management with <code>rustup</code></h3>
+        <h3>Управление инстурментами с помощью <code>rustup</code></h3>
 
         <p>
-          Rust is installed and managed by the
-          <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>
-          tool. Rust has a 6-week
+          Rust устанавливается и управляется инструментом 
+          <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>.
+           Rust имеет 6-недельный процесс 
           <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
-            rapid release process
-          </a> and supports a
+            быстрого выпуска.
+          </a> и поддерживает
           <a href="https://forge.rust-lang.org/platform-support.html">
-             great number of platforms
-          </a>, so there are many builds of Rust available at any time.
-          <code>rustup</code> manages these builds in a consistent way on every
-          platform that Rust supports, enabling installation of Rust from the
-          beta and nightly release channels as well as support for additional
-          cross-compilation targets
+             обширное количество платформ
+          </a>, поэтому в любой момент доступны несколько билдов Rust.
+          <code>rustup</code> управляет этими билдами в последовательном порядке на каждой
+          платформе которую поддерживает Rust, обеспечивая установку Rust как с бета и nightly сборок, так  и поддержу для дополнительных целей  кросс-компиляции.
         </p>
 
         <p>
-          For more information see the
+          Для дополнительной информации см.
           <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md"><code>rustup</code>
-          documentation</a>.
+          документацию</a>.
         </p>
 
-        <h3>Configuring the <code>PATH</code> environment variable</h3>
+        <h3>Настройка переменной среды <code>PATH</code></h3>
 
         <p>
-          In the Rust development environment, all tools are installed to the
+          В среде разработки Rust, все инструменты устанавливаются в папку
           <span class="platform-specific not-win" style="display: inline;">
             <code>~/.cargo/bin</code>
           </span>
           <span class="platform-specific win" style="display: none;">
             <code>%USERPROFILE%\.cargo\bin</code>
-          </span> directory,
-          and this is where you will find the Rust toolchain, including
-          <code>rustc</code>, <code>cargo</code>, and <code>rustup</code>.
+          </span>,
+          и это то место, откуда вы можете запустить инструментарий Rust, включая
+          <code>rustc</code>, <code>cargo</code>, и <code>rustup</code>.
         </p>
 
         <p>
-          Accordingly, it is customary for Rust developers to include this
-          directory in their
+          Соответственно, это нормально для Rust разработчиков включать этот путь в переменную среды 
           <a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code>
-          environment variable</a>.  During installation, <code>rustup</code>,
-          will attempt to configure
-          <code>PATH</code>, but because of differences between platforms,
-          command shells, and bugs in <code>rustup</code>, the modifications
-          to <code>PATH</code> may not take effect until the console is
-          restarted, or the user logged out, or may not succeed at all.
+          </a>.  Во время установки, <code>rustup</code>,
+          попытается настроить
+          <code>PATH</code>, но из-за отличий между платформами,
+          командными оболочками и багами в <code>rustup</code>, изменения в
+          <code>PATH</code> могут не вступить в силу пока консоль не будет
+          перезапущена, или пользователь не выйдет из сессии, или могут не вступить в силу вообще.
         </p>
 
         <p>
-          If, after installation, running <code>rustc --version</code> in the
-          console fails, this is the most likely reason.
+          Если попытка запустить <code>rustc --version</code> в
+          консоли заканчивается неудачей, то скорее всего это наиболее вероятная причина. 
         </p>
 
         <div class="platform-specific win">
 
-          <h3>Windows considerations</h3>
+          <h3>Windows</h3>
           <!-- This anchor is probably linked in the wild and should not be broken -->
           <a id="win-foot"></a>
 
 	  <p>
-            On Windows, Rust additionally requires the C++ build tools
-            for Visual Studio 2013 or later. The easiest way to acquire the build
-            tools is by installing
+            На Windows, Rust дополнительно требует набор сборки C++ 
+            для Visual Studio 2013 или более поздней версии. Самый простой спосбов получения
+            инструментов сборки - это загрузить 
 	    <a href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2017">
 	      Microsoft Visual C++ Build Tools 2017
             </a>
-            which provides just the Visual C++ build tools. Alternately, you
-	    can <a href="https://www.visualstudio.com/downloads/">install</a>
-	    Visual Studio 2017, Visual Studio 2015, or Visual Studio 2013 and during install select
-	    the "C++ tools".
+            который предоставляет только инструменты сборки Visual C++. Альтернативно, вы
+	    можете <a href="https://www.visualstudio.com/downloads/">установить</a>
+	    Visual Studio 2017, Visual Studio 2015, или Visual Studio 2013 и во время установки выбрать "C++ tools".
 	  </p>
 
           <p>
-            For further information about configuring Rust on Windows see the
-            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows-specific <code>rustup</code>
-            documentation</a>.
+            Для дальнейшей информации о настроке Rust на Windows, см.
+            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows"><code>rustup</code>
+            документацию</a>.
           </p>
 
         </div>
@@ -181,16 +176,15 @@ title: Установка &middot; The Rust Programming Language
       </div>
     </div>
 
-    <h2>Other installation methods</h2>
+    <h2>Другие способы установки</h2>
 
     <div class="row">
       <div class="col-md-12">
         <p>
-          The installation described above, via
-          <code>rustup</code>, is the preferred way to install Rust for most developers,
-          but Rust can be
-          <a href="other-installers.html">installed via other methods</a>
-          as well.
+          Установка, описаная выше, через
+          <code>rustup</code>, это предпочтительный способ установки Rust для большинства разработчиков,
+          но Rust может быть установлен и
+          <a href="other-installers.html">другими способами</a>.
         </p>
       </div>
     </div>
