@@ -188,7 +188,7 @@ people:
 teams:
   - name: Core team
     responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
-    members: [nrc, alexcrichton, wycats, steveklabnik, nikomatsakis, carols10cents, aturon, erickt]
+    members: [nrc, alexcrichton, wycats, steveklabnik, nikomatsakis, carols10cents, aturon, ashleygwilliams]
   - name: Language team
     responsibility: "designing new language features"
     members: [cramertj, withoutboats, eddyb, nrc, pnkfelix, nikomatsakis, aturon]
@@ -225,7 +225,7 @@ teams:
     email: infra-team@rust-lang.org
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
-    lead: erickt
+    lead: ashleygwilliams
     members: [edunham, skade, manishearth, johannhof, sebasmagri, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, ashleygwilliams]
     email: community-team@rust-lang.org
   - name: Documentation team
@@ -242,7 +242,7 @@ teams:
     email: style-team@rust-lang.org
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
-    members: [aatch, Gankro, pcwalton, huonw, peschkaj, dotdash, bkoropoff, brson]
+    members: [aatch, Gankro, pcwalton, huonw, peschkaj, dotdash, bkoropoff, brson, erickt]
 # Information on sites to get profile information from
 sites:
   github:
