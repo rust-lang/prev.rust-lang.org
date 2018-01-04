@@ -15,13 +15,13 @@ title: Rust 行为守则 &middot; Rust 程序设计语言
 * Respect that people have differences of opinion and that every design or implementation choice carries a trade-off and numerous costs. There is seldom a right answer.
 * Please keep unstructured critique to a minimum. If you have solid ideas you want to experiment with, make a fork and see how it works.
 * We will exclude you from interaction if you insult, demean or harass anyone. That is not welcome behaviour. We interpret the term "harassment" as including the definition in the <a href="http://citizencodeofconduct.org/">Citizen Code of Conduct</a>; if you have any lack of clarity about what might be included in that concept, please read their definition. In particular, we don't tolerate behavior that excludes people in socially marginalized groups.
-* Private harassment is also unacceptable. No matter who you are, if you feel you have been or are being harassed or made uncomfortable by a community member, please contact one of the channel ops or any of the [Rust moderation team](/team.html#Moderation) immediately. Whether you're a regular contributor or a newcomer, we care about making this community a safe place for you and we've got your back.
+* Private harassment is also unacceptable. No matter who you are, if you feel you have been or are being harassed or made uncomfortable by a community member, please contact one of the channel ops or any of the [Rust moderation team](/team.html#Moderation-team) immediately. Whether you're a regular contributor or a newcomer, we care about making this community a safe place for you and we've got your back.
 * Likewise any spamming, trolling, flaming, baiting or other attention-stealing behaviour is not welcome.
 
 ## 管理
 
 
-These are the policies for upholding our community's standards of conduct. 如果你认为某个主题需要被处理，请联系 [Rust 管理团队](/team.html#Moderation)。
+These are the policies for upholding our community's standards of conduct. 如果你认为某个主题需要被处理，请联系 [Rust 管理团队](/team.html#Moderation-team)。
 
 1. Remarks that violate the Rust standards of conduct, including hateful, hurtful, oppressive, or exclusionary remarks, are not allowed. (Cursing is allowed, but never targeting another user, and never in a hateful manner.)
 2. Remarks that moderators find inappropriate, whether listed in the code of conduct or not, are also not allowed.
