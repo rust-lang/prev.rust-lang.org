@@ -37,5 +37,5 @@ Falls jemand an einer deiner Bemerkungen oder Taten Anstoß nimmt, versuche nich
 
 Die Durchsetzung der aufgezählten Richtlinien gelten für alle Dienste des Rust-Projekts, einschließlich der offiziellen IRC-Kanäle (#rust, #rust-internals, #rust-tools, #rust-libs, #rustc, #rust-beginners, #rust-docs, #rust-community, #rust-lang, und #cargo), den GitHub-Repositories unter rust-lang, rust-lang-nursery und rust-lang-deprecated, sowie allen Foren unter rust-lang.org (users.rust-lang.org, internals.rust-lang.org). Für andere Projekte, die den Rust-Verhaltenskodex übernehmen, kontaktiere bitte deren Administratoren zu Anfragen oder Problemen. Falls du den Verhaltenskodex für dein eigenes Projekt implementieren möchtest, empfiehlt es sich, deine eigenen Moderationsregeln zu erwähnen um Verwirrung zu vermeiden.
 
-*Basierend auf der [Node.js Policy on Trolling](http://blog.izs.me/post/30036893703/policy-on-trolling) und dem [Contributor Covenant v1.3.0](http://contributor-covenant.org/version/1/3/0/).*
+*Basierend auf der [Node.js Policy on Trolling](http://blog.izs.me/post/30036893703/policy-on-trolling) und dem [Contributor Covenant v1.3.0](https://www.contributor-covenant.org/version/1/3/0/).*
 

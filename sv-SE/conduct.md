@@ -81,4 +81,4 @@ GitHub repon under rust-lang, rust-lang-nursery, och rust-lang-deprecated; och a
 För andra projekt som antagit rusts uppförandekod, var god kontakta de som sköter dessa projekt för tillsyn. Om du vill använda den här uppförandekoden
 för ditt egna projekt, överväg då att explicit nämna din modereringspolicy eller att göra en kopia med din egna modereringspolicy för att undvika förvirring.
 
-*Anpassad från [Node.js policy om trollning](http://blog.izs.me/post/30036893703/policy-on-trolling) och [Contributor Covenant v1.3.0](http://contributor-covenant.org/version/1/3/0/).*
+*Anpassad från [Node.js policy om trollning](http://blog.izs.me/post/30036893703/policy-on-trolling) och [Contributor Covenant v1.3.0](https://www.contributor-covenant.org/version/1/3/0/).*
