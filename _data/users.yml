@@ -323,6 +323,11 @@
   logo: smartthings.png
   how: "Memory-safe embedded applications on our <a href='https://www.smartthings.com/how-it-works'>SmartThings Hub</a> and supporting services in the cloud."
 -
+  name: Snapview
+  url: https://www.snapview.de
+  logo: snapview-logo.svg
+  how: "<a href='https://www.snapview.de'>We use Rust to power our screen sharing and video conferencing service. In detail we use it to power a server service and native clients on Windows, macOS, Linux and more operating systems in future.</a>"
+-
   name: Snips
   url: https://snips.ai/
   logo: snips.svg
