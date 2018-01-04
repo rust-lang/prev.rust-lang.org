@@ -5,11 +5,11 @@ title:  Dokumentation om rust &middot; Programmeringsspråket Rust
 
 # Dokumentation om rust
 
-Om du hitintills inte set rust alls så är det första du borde läsa
+Om du hitintills inte sett rust alls så är det första du borde läsa
 introduktionen till boken [Programmeringsspråket Rust][book]. Den kommer ge dig
 en god uppfattning om vad rust är, hur du installerar det, samt förklara språkets
 syntax och koncept. När du har läst klart boken kommer du vara en novis
-rustutvecklare och kommer ha få ett bra grepp på de idéer som ligger till
+rustutvecklare och kommer ha ett bra grepp om de idéer som ligger till
 grund för rust.
 
 ## Att lära sig rust
@@ -19,16 +19,16 @@ som "Boken" kommer introducera huvudämnena som är viktiga för att lära sig r
 och ta dig till den punkt då du kan vara produktiv. Boken är språkets primära
 officiella dokument.
 
-[Rust by Example][rbe]. En samling av själv av fristående exempel skriva i rust
+[Rust by Example][rbe]. En samling av fristående exempel skrivna i rust
 om en rad olika ämnen som är körbara i webbläsaren.
 
 [Vanliga frågor][faq].
 
-[Den sk. Rustonomicon][nomicon]. En hel bok dedikerad till att förklara hur
+[Den sk. Rustonomicon][nomicon]. En hel bok ägnad åt att förklara hur
 man skriver osäker (`unsafe`) rustkod. Den är till för rustprogrammerare på
 en avancerad nivå.
 
-[rust-learning]. En kollektiv av resurser för att lära sig rust som underhålls
+[rust-learning]. Ett kollektiv av resurser för att lära sig rust som underhålls
 av communityt.
 
 [book]: https://doc.rust-lang.org/book/
@@ -44,11 +44,11 @@ standardbiblioteket.
 
 [docs.rs]. Dokumentation för alla crates publicerade på [crates.io].
 
-[Rusts referenshandbok][ref]. Medan rust inte har en formell specifikation
-försöker referensen att beskriva hur rust fungerar i detail. Den tenderar
-att vara utdaterad.
+[Rusts referenshandbok][ref]. Även om rust inte har en formell specifikation
+försöker referensen att beskriva hur rust fungerar i detalj. Den brukar
+vara föråldrad.
 
-[Indexet över syntax][syn]. Denna appendix från Boken innehåller diverse exempel
+[Indexet över syntax][syn]. Detta appendix från Boken innehåller diverse exempel
 för all syntax i rust korsrefererad med det kapitel i boken som beskriver exemplet.
 
 [Guiden till Cargo][cargo]. Dokumentation för cargo, rusts pakethanterare.
@@ -70,16 +70,14 @@ felmeddelande som kompilatorn genererar.
 [crates.io]: https://crates.io
 [platform_support]: https://forge.rust-lang.org/platform-support.html
 
-## Projektets policier
+## Projektets policyer
 
-[Rusts säkerhetspolicy][security]. Projektets policier för att rapportera,
+[Rusts säkerhetspolicy][security]. Projektets policyer för att rapportera,
 fixa och avslöja säkerhetsrelaterade buggar.
 
-[Rusts policy kring upphovsrätt och varumärke][legal]. 
-
-Rusts upphovsrätter ägs av rustsprojektets utvecklare
-("The Rust Project Developers"), och dess varumärken ägs av Mozilla.
-Lämplig användning av Rusts varumärken beskrivs här.
+[Rusts policy kring upphovsrätt och varumärke][legal]. Rusts upphovsrätter
+ägs av rustprojektets utvecklare ("The Rust Project Developers"), och dess
+varumärken ägs av Mozilla. Lämplig användning av Rusts varumärken beskrivs här.
 
 [Uppförandekod][coc]. Gäller för organisationen rust-lang på GitHub,
 de officiella forumen, IRC-kanalerna och olika delar av rust-världen.
@@ -92,7 +90,7 @@ de officiella forumen, IRC-kanalerna och olika delar av rust-världen.
 
 Mycket av den officiella dokumentationen om rust är också tillgänglig för
 [nattliga][nightly] och [beta-][beta]releaser utöver den dokumentationen
-för den stabila versionen av rust ovan länkad.
+för den stabila versionen av rust länkad ovan.
 
 [nightly]: https://doc.rust-lang.org/nightly/
 [beta]: https://doc.rust-lang.org/beta/
@@ -100,6 +98,6 @@ för den stabila versionen av rust ovan länkad.
 ## Icke-engelska resurser
 
 För resurser på andra språk än engelska, se de
-[lokala specifika länkarna i rust-learning][locale].
+[språkspecifika länkarna i rust-learning][locale].
 
 [locale]: https://github.com/ctjhoa/rust-learning#locale-links

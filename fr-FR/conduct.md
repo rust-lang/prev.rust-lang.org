@@ -15,12 +15,12 @@ title: Code de conduite Rust &middot; Rust, le langage de programmation
 * Respectez que les gens ont des différences d’opinions et que chaque choix de conception ou d’implémentation implique un compromis et de nombreux coûts. Il y a rarement une bonne réponse.
 * Conservez la critique libre au minimum. Si vous avez des idées solides avec lesquelles vous souhaitez expérimenter, faites un fork et voyez comment ça marche.
 * Nous vous exclurons si vous insultez, dénigrer ou harcelez une personne. Ce genre de comportement n’est pas toléré. Nous interprétons le terme «&nbsp;harcèlement&nbsp;» comme incluant la définition du <a href="http://citizencodeofconduct.org/">Citizen Code of Conduct (en)</a>&nbsp;; si vous doutez un tant soit peu de ce qui peut être inclut dans ce concept, lisez cette définition. En particulier, nous ne tolérons pas les comportements excluant les personnes appartenant à des groupes socialement marginalisés.
-* Le harcèlement privé est également inacceptable. Peu importe qui vous êtes, si vous (pensez que vous) avez été harcelé·e ou mis·e mal à l’aise par un·e membre de la communauté, contactez un·e des ops du canal ou membre de l’[équipe de modération de Rust](/team.html#Moderation) immédiatement. Que vous contribuiez régulièrement ou veniez d’arriver, nous tenons à faire de cette communauté un lieu sûr pour vous et nous vous soutenons.
+* Le harcèlement privé est également inacceptable. Peu importe qui vous êtes, si vous (pensez que vous) avez été harcelé·e ou mis·e mal à l’aise par un·e membre de la communauté, contactez un·e des ops du canal ou membre de l’[équipe de modération de Rust](/team.html#Moderation-team) immédiatement. Que vous contribuiez régulièrement ou veniez d’arriver, nous tenons à faire de cette communauté un lieu sûr pour vous et nous vous soutenons.
 * De même, le spam, le troll, le *flaming*, les brimades ou autre comportement détournant l’attention n’est pas toléré.
 
 ## Modération
 
-Ici se trouvent les politiques de maintien de nos standards de conduite communautaire. Si vous pensez qu’un fil nécessite une modération, contactez l’[équipe de modération de Rust](/team.html#Moderation).
+Ici se trouvent les politiques de maintien de nos standards de conduite communautaire. Si vous pensez qu’un fil nécessite une modération, contactez l’[équipe de modération de Rust](/team.html#Moderation-team).
 
 1. Les remarques qui enfreignent les standards de conduite de Rust, incluant les remarques haineuses, blessantes, oppressives ou excluantes ne sont pas autorisées. (Jurer est autorisé, mais jamais envers une autre personne, et jamais de façon haineuse.)
 2. Les remarques que la modération considère inappropriées, qu’elles soient listées dans le code de conduite ou pas, ne sont pas non plus autorisées.
@@ -37,4 +37,4 @@ Et si une personne relève quelque chose que vous avez dit ou fait, ne soyez pas
 
 Les règles d’application listées ci-dessus s’appliquent à tous les lieux officiels de Rust&nbsp;; incluant les canaux IRC officiels (#rust, #rust-internals, #rust-tools, #rust-libs, #rustc, #rust-beginners, #rust-docs, #rust-community, #rust-lang, et #cargo); Les dépôts GitHub sous rust-lang, rust-lang-nursery et rust-lang-deprecated; et tous les forums sous rust-lang.org (users.rust-lang.org, internals.rust-lang.org). Pour les autres projets adoptant le code de conduite Rust, contactez la maintenance de ces projets pour son application. Si vous souhaitez utiliser ce code de conduite pour votre propre projet, envisagez de mentionner explicitement votre politique de modération ou faites une copie avec votre propre politique de modération pour éviter toute confusion.
 
-*Adapté de la [Node.js Policy on Trolling](http://blog.izs.me/post/30036893703/policy-on-trolling) ainsi que du [Contributor Covenant v1.3.0](http://contributor-covenant.org/version/1/3/0/).*
+*Adapté de la [Node.js Policy on Trolling](http://blog.izs.me/post/30036893703/policy-on-trolling) ainsi que du [Contributor Covenant v1.3.0](https://www.contributor-covenant.org/version/1/3/0/).*

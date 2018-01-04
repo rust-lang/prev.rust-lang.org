@@ -189,4 +189,4 @@ Vergangene Veröffentlichungen können in [den Archiven] gefunden werden.
 [Rust signing key]: https://static.rust-lang.org/rust-key.gpg.ascii
 [GPG]: https://gnupg.org/
 [available on keybase.io]: https://keybase.io/rust
-[the archives]: https://static.rust-lang.org/dist/index.html
+[den Archiven]: https://static.rust-lang.org/dist/index.html

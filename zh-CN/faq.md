@@ -64,7 +64,7 @@ Rust 作为一种备选方案，可以提供高效的代码和舒适的抽象级
 这个项目由 Mozilla 控制？
 </a></h3>
 
-不是。Rust 始于 2006 年 Graydon Hoare 的兼职项目，并持续了三年。Mozilla 在语言成熟到足以运行基本测试并展示其核心概念时于 2009 年开始参与。虽然它由 Mozilla 资助，但 Rust 是由来自世界各地的多样化的发烧友开发的。[Rust 团队](https://www.rust-lang.org/team.html)由 Mozilla 和非 Mozilla 成员组成，`rustc`（Rust 的编译器）至今也有超过[一千名独立贡献者](https://github.com/rust-lang/rust/)。
+不是。Rust 始于 2006 年 Graydon Hoare 的兼职项目，并持续了三年。Mozilla 在语言成熟到足以运行基本测试并展示其核心概念时于 2009 年开始参与。虽然它由 Mozilla 资助，但 Rust 是由来自世界各地的多样化的发烧友开发的。[Rust 团队](https://www.rust-lang.org/team.html)由 Mozilla 和非 Mozilla 成员组成，`rustc`（Rust 的编译器）至今也有超过[1,900 名独立贡献者](https://github.com/rust-lang/rust/)。
 
 就[项目治理](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)而言，
 Rust 由一个从全局角度出发，为项目设定愿景和优先事项的核心团队管理。
@@ -108,7 +108,7 @@ TODO: Write this answer.
 怎样轻松地尝试 Rust？
 </a></h3>
 
-[playpen](https://play.rust-lang.org/) 是尝试 Rust 的最简单方法，它是一个可编写和运行 Rust 代码的在线应用。如果想在你的系统上尝试 Rust，[安装](https://www.rust-lang.org/install.html)并尝试[猜谜游戏](https://doc.rust-lang.org/stable/book/guessing-game.html)教程。
+[playpen](https://play.rust-lang.org/) 是尝试 Rust 的最简单方法，它是一个可编写和运行 Rust 代码的在线应用。如果想在你的系统上尝试 Rust，[安装](https://www.rust-lang.org/install.html)并尝试[猜谜游戏](https://doc.rust-lang.org/stable/book/second-edition/ch02-00-guessing-game-tutorial.html)教程。
 
 <h3><a href="#how-do-i-get-help-with-rust-issues" name="how-do-i-get-help-with-rust-issues">
 如何就 Rust 问题取得帮助？
@@ -172,7 +172,7 @@ Rust 有多快？
 
 飞快！Rust 在一些基准测试中（例如 [Benchmarks Game](https://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp)、[等等](https://github.com/kostya/benchmarks)）已经有与惯用的 C 和 C++ 竞争的能力。
 
-与 C++ 类似，Rust 采用[零成本抽象](http://blog.rust-lang.org/2015/05/11/traits.html)作为其核心原则之一：Rust 的抽象都没有施加全局性能损失，也不会有任何运行时系统的开销。
+与 C++ 类似，Rust 采用[零成本抽象](http://blog.rust-lang.org/2015/05/11/traits.html)作为其核心原则之一：Rust 的抽象都没有施加全局性能损失，也不会有任何传统意义上的运行时系统的开销。
 
 鉴于 Rust 建立在 LLVM 上，以及力求从 LLVM 的角度来看 C 语言，任何 LLVM 的性能改进也都有助于 Rust。从长远来看，Rust 的类型系统中更丰富的信息也应该能够实现对于 C / C++ 代码来说困难或不可能的优化。
 
@@ -215,7 +215,7 @@ Rust 编译似乎很慢。这是为什么？
 
 首先，Rust 有中等复杂类型的系统，并且必须花费不可忽略的编译时间来强制在运行时使 Rust 安全的约束。
 
-其次，Rust 编译器遭受着长期的技术债务，特别是生成质量差的 LLVM IR，而 LLVM 必须花时间「修复」。这有希望在未来[基于 MIR](https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md) 优化和转换传递来减轻 Rust 编译器在 LLVM 上的负担。
+其次，Rust 编译器遭受着长期的技术债务，特别是生成质量差的 LLVM IR，而 LLVM 必须花时间「修复」。 在 Rust 编译器内部增加了一个名为 [MIR](https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md) 的新的内部表示方式，为执行更多优化和提升 LLVM IR 的生成质量提供了潜在的可能，然而这项工作尚未展开。
 
 第三，Rust 使用的 LLVM 代码生成是一把双刃剑：虽然它能够使 Rust 具有世界一流的运行时性能，但 LLVM 是一个不重视编译时性能的大型框架，特别是在使用较差输入质量时。
 
@@ -367,9 +367,9 @@ match val.do_something() {
 如何将 <code>String</code> 或 <code>Vec&lt;T&gt;</code> 转换成切片（<code>&amp;str</code> 和 <code>&amp;[T]</code>）？
 </a></h3>
 
-通常，你可以在需要切片的地方传入 `String` 或 `Vec<T>`。使用[强制解引（Deref）](https://doc.rust-lang.org/stable/book/deref-coercions.html)，在用 `&` 或 `&mut` 传递引用时，[`String`][String] 和 [`Vec`][Vec] 会自动强制转换为对应的切片。
+通常，你可以在需要切片的地方传入 `String` 或 `Vec<T>`。使用[强制解引（Deref）](https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html)，在用 `&` 或 `&mut` 传递引用时，[`String`][String] 和 [`Vec`][Vec] 会自动强制转换为对应的切片。
 
-在 `&str` 和 `&[T]` 上实现的方法可以直接在 `String` 和 `Vec<T>` 上访问。例如，即使 `char_at` 是 `&str` 上的方法，而 `some_string` 是一个 `String`，`some_string.char_at(0)` 也可以运行。
+在 `&str` 和 `&[T]` 上实现的方法可以直接在 `String` 和 `Vec<T>` 上访问。例如，即使 `trim` 是 `&str` 上的方法，而 `some_string` 是一个 `String`，`some_string.trim()` 也可以运行。
 
 在某些情况下，例如泛型代码，需要手动转换。可以用切片操作符实现手动转换，如：`&my_vec[..]`。
 
@@ -592,7 +592,7 @@ fn main() {
 我该怎么能理解借用检查器？
 </a></h3>
 
-借用检查器在对 Rust 代码进行求值的时候只使用几条规则，可以在 Rust 之书的[借用章节](https://doc.rust-lang.org/stable/book/references-and-borrowing.html#the-rules)找到。这些规则为：
+借用检查器在对 Rust 代码进行求值的时候只使用几条规则，可以在 Rust 之书的[借用章节](https://doc.rust-lang.org/stable/book/second-edition/ch04-02-references-and-borrowing.html)找到。这些规则为：
 
 > 首先，任何借用所持续的作用范围不得超过它的拥有者。其次，你可以使用以下两种借用形式的其中任何一种，但不能同时使用：
 >
@@ -626,7 +626,7 @@ Rust 的非原子引用计数指针类型，在官方文档中涵盖了 [`Rc`][R
 什么是强制解引（deref coercion），它是如何工作的？
 </a></h3>
 
-[强制解引](https://doc.rust-lang.org/book/deref-coercions.html)是自动将指向指针的引用（例如
+[强制解引](https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html) 是自动将指向指针的引用（例如
 `&Rc<T>` 或者 `&Box<T>`）转换为指向内容的引用（例如 `&T`）这种强制转换的一种便捷方式。
 强制解引的存在使得 Rust 更加符合人体工程学，它是通过 [`Deref`][Deref] trait 来实现的。
 
@@ -653,7 +653,7 @@ Rust 的非原子引用计数指针类型，在官方文档中涵盖了 [`Rc`][R
 为什么有生命周期？
 </a></h3>
 
-生命周期是 Rust 以于内存安全问题的解答。它允许 Rust 确保内存安全，而无需付出垃圾收集的性能代价。这是基于多种学术成果的，这些参考文献可以从 [Rust 之书](https://doc.rust-lang.org/stable/book/bibliography.html#type-system)中找到。
+生命周期是 Rust 以于内存安全问题的解答。它允许 Rust 确保内存安全，而无需付出垃圾收集的性能代价。这是基于多种学术成果的，这些参考文献可以从 [Rust 之书](https://doc.rust-lang.org/stable/book/first-edition/bibliography.html#type-system)中找到。
 
 <h3><a href="#why-is-the-lifetime-syntax-the-way-it-is" name="why-is-the-lifetime-syntax-the-way-it-is">
 为什么生命周期语法是这样的？
@@ -760,7 +760,7 @@ Rust 目前不支持更高级的类型，因为与我们想要进行的其它改
 泛型类型中 <code>&lt;T=Foo&gt;</code> 这样的命名类型参数是什么意思？
 </a></h3>
 
-这些被称为[关联类型](https://doc.rust-lang.org/stable/book/associated-types.html)，允许表达不能用 `where` 子句表达的 trait 约束。例如，一个泛型约束 `X: Bar<T=Foo>` 的意思是「`X` 必须实现 `Bar` 这个 trait，而且在 `Bar` 的实现中，`X` 必须将 `Foo` 作为 `Bar` 的关联类型 `T`」。例子中这样的约束不能通过一个 `where` 子句表示，也不能用像 `Box<Bar<T=Foo>>` 这样的 trait 对象表示。
+这些被称为[关联类型](https://doc.rust-lang.org/stable/book/second-edition/ch19-03-advanced-traits.html)，允许表达不能用 `where` 子句表达的 trait 约束。例如，一个泛型约束 `X: Bar<T=Foo>` 的意思是「`X` 必须实现 `Bar` 这个 trait，而且在 `Bar` 的实现中，`X` 必须将 `Foo` 作为 `Bar` 的关联类型 `T`」。例子中这样的约束不能通过一个 `where` 子句表示，也不能用像 `Box<Bar<T=Foo>>` 这样的 trait 对象表示。
 
 关联类型的存在，是由于泛型通常牵涉类型家族，其中某个类型决定了家族中的所有其它类型。例如，一个用于图形的 trait 可能具有图形自己的 `Self` 类型，而且具有节点和边缘的关联类型。每个图形类型唯一确定其关联类型。使用关联类型可以使这些类型的家族更加简洁，并且在许多情况下还能提供更好的类型推断。
 
@@ -837,9 +837,8 @@ use std::io::Read;
 use std::fs::File;
 
 fn read_file(path: &str) -> Result<String, std::io::Error> {
-    let mut f = try!(File::open(path));
     let mut s = String::new();
-    try!(f.read_to_string(&mut s));  // `s` contains the contents of "foo.txt"
+    let _ = File::open(path)?.read_to_string(&mut s);  // `s` contains the contents of "foo.txt"
     Ok(s)
 }
 
@@ -881,7 +880,7 @@ Rust 中如何进行异步输入 / 输出？
 
 异常使对于控制流的理解复杂化，它们表示了类型系统之外的有效性/无效性，而且它们与多线程代码（Rust 的主要关注点）交互并不佳。
 
-Rust 更倾向于使用基于类型的错误处理方式，在[这本书中有详细的介绍](https://doc.rust-lang.org/stable/book/error-handling.html)。这会更适合 Rust 的控制流，并发和其它所有的特性。
+Rust 更倾向于使用基于类型的错误处理方式，在[这本书中有详细的介绍](https://doc.rust-lang.org/stable/book/second-edition/ch09-00-error-handling.html)。这会更适合 Rust 的控制流，并发和其它所有的特性。
 
 <h3><a href="#whats-the-deal-with-unwrap" name="whats-the-deal-with-unwrap">
 到处都有 <code>unwrap()</code> 是怎么回事？
@@ -1059,7 +1058,7 @@ Rust 确实为每个受支持平台方法[标准库副本](https://static.rust-l
 
 还有 `self` 和 `super`，它们分别使用相对于当前模块或者父模块的路径。
 
-有关 `use` 库的完整信息，请阅读 Rust 之书的[「包和模块」](https://doc.rust-lang.org/stable/book/crates-and-modules.html) 一章。
+有关 `use` 库的完整信息，请阅读 Rust 之书的[「包和模块」](https://doc.rust-lang.org/stable/book/second-edition/ch07-00-modules.html) 一章。
 
 <h3><a href="#why-do-i-have-to-declare-modules-with-mod" name="why-do-i-have-to-declare-modules-with-mod">
 为什么我必须在包顶层用 <code>mod</code> 声明模块文件，而不能直接 <code>use</code> 它们？
@@ -1387,7 +1386,7 @@ fn start(_argc: isize, _argv: *const *const u8) -> isize {
 为什么 Rust 没有像 C 一样稳定的 ABI，以及为什么必须用 extern 来标注？
 </a></h3>
 
-承诺一个 ABI 是一个很重大的决定，这会限制语言在将来潜在的有利改进。鉴于 Rust 在 2015 年 5 朋才达到 1.0，拟作出一个像稳定 ABI 这样的大承诺还为时过早。但这并不意味着将来不会有。（虽然 C++ 已经设法发展了很多年，但并没有指定一个稳定的 ABI。）
+承诺一个 ABI 是一个很重大的决定，这会限制语言在将来潜在的有利改进。鉴于 Rust 在 2015 年 5 月才达到 1.0，拟作出一个像稳定 ABI 这样的大承诺还为时过早。但这并不意味着将来不会有。（虽然 C++ 已经设法发展了很多年，但并没有指定一个稳定的 ABI。）
 
 `extern` 关键字允许 Rust 使用一些特定的 ABI，例如明确定义的 C ABI，来与其它语言交互。
 
@@ -1415,7 +1414,7 @@ Rust 是从第一天开始就被设计成一种安全的系统编程语言，这
 如何在 Rust 中做到相当于 C++ 模板特化？
 </a></h3>
 
-Rust 目前还没有完全等同的模板特化，这[正在研究](https://github.com/rust-lang/rfcs/pull/1210)并有希望尽快加入。不过，可以用[关联类型](https://doc.rust-lang.org/stable/book/associated-types.html)达成类似的效果。
+Rust 目前还没有完全等同的模板特化，这[正在研究](https://github.com/rust-lang/rfcs/pull/1210)并有希望尽快加入。不过，可以用[关联类型](https://doc.rust-lang.org/stable/book/second-edition/ch19-03-advanced-traits.html)达成类似的效果。
 
 <h3><a href="#how-does-ownership-relate-to-cxx-move-semantics" name="how-does-ownership-relate-to-cxx-move-semantics">
 Rust 的所有权系统如何与 C++ 中的 move 语义相关联？

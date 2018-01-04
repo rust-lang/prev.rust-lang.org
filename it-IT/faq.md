@@ -452,7 +452,7 @@ Solitamente, puoi passare un riferimento a una `String` o ad un `Vec<T>` ovunque
 Utilizzando le [costrizione da de-riferimento](https://doc.rust-lang.org/stable/book/deref-coercions.html), [`String`][String] e [`Vec`][Vec] verrano automaticamente ridotti alle rispettive partizioni quando passate come riferimento tramite `&` o `& mut`.
 
 I metodi implementati su `&str` e `&[T]` possono essere utilizzati direttamente su `String` e `Vec<T>`.
-Ad esempio `una_stringa.char_at(0)` funzionerà anche se `char_at` è un metodo su `&str` e `una_stringa` è una `String`.
+Ad esempio `una_stringa.trim()` funzionerà anche se `trim` è un metodo su `&str` e `una_stringa` è una `String`.
 
 In alcuni casi, come nella programmazione generica è necessario convertire manualmente, questa operazione è effettuabile utilizzando l'operatore di partizione, in questo modo: `&mio_vettore[..]`.
 

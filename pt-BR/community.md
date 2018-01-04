@@ -20,7 +20,7 @@ do [Time de moderação de Rust][mod_team] imediatamente. Independentemente se v
 como um espaço confortável para você.
 
 [coc]: https://www.rust-lang.org/conduct.html
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
+[mod_team]: https://www.rust-lang.org/team.html#Moderation-team
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
 ## Começando
@@ -193,7 +193,7 @@ livre para contatar o lider do time ou qualquer outro membro que pode te ajudar 
 [compiler_team]: https://www.rust-lang.org/team.html#Compiler
 [tool_team]: https://www.rust-lang.org/team.html#Tooling-and-infrastructure
 [community_team]: https://www.rust-lang.org/team.html#Community
-[mod_team]: https://www.rust-lang.org/team.html#Moderation
+[mod_team]: https://www.rust-lang.org/team.html#Moderation-team
 [doc_team]: https://www.rust-lang.org/en-US/team.html#Documentation-team
 
 ## Desenvolvimento de Rust

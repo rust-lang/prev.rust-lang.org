@@ -367,7 +367,7 @@ Wie kann ich einen <code>String</code> oder <code>Vec&lt;T&gt;</code> in einen S
 Normalerweise kannst du eine Referenz zu einem `String` oder `Vec<T>` immer dort übergeben, wo ein Slice passend wäre.
 Mithilfe von [Deref Coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html) können [`String`s][String] und [`Vec`s][Vec] automatisch in ihren jeweiligen Slice-Typen „zerfallen“, wenn man eine Referenz darauf mit `&` oder `&mut` übergibt.
 
-Methoden, die auf `&str` oder `&[T]` implementiert wurden, können auf `String` und `Vec<T>` direkt aufgerufen werden. Der Aufruf `some_string.char_at(0)` zum Beispiel funktioniert, obwohl `char_at` eine Methode von `&str` und `some_string` ein `String` ist.
+Methoden, die auf `&str` oder `&[T]` implementiert wurden, können auf `String` und `Vec<T>` direkt aufgerufen werden. Der Aufruf `some_string.trim()` zum Beispiel funktioniert, obwohl `trim` eine Methode von `&str` und `some_string` ein `String` ist.
 
 Manchmal, zum Beispiel in generischem Code, wird manuelle Konversion notwendig. Diese kann man mit dem _Slicing-Operator_ `&my_vec[..]` erreicht werden.
 

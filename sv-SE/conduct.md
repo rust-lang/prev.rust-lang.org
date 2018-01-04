@@ -29,7 +29,7 @@ Vi tolererar särskilt inte beteende som utesluter folk från socialt utsatta gr
 * Trakassering privat är också oacceptabelt. Oavsett vem du är, om du känner att
 du har blivit eller är trakasserad eller blivit obehagligt bemött av någon i communityt,
 var god kontakta då någon av kanalens ops (operatörer på en IRC-kanal) eller någon
-i [rusts modereringsteam](/team.html#Moderation) omgående.  Oavsett om du bidrar ofta
+i [rusts modereringsteam](/team.html#Moderation-team) omgående.  Oavsett om du bidrar ofta
 eller är ny till språket bryr vi oss om att göra communityt en säker plats för dig
 och vi står bakom dig.
 * Likaledes är spammning, trollning, flejmning, att hetsa eller annan
@@ -38,7 +38,7 @@ uppmärksamhet-stjälande beteende ej välkommen.
 ## Moderering
 
 Dessa är riktlinjerna för att upprätthålla våra uppföranderegler. Om du känner att en
-tråd är i behov av moderering, vänligen kontakta [rusts modereringsteam](/team.html#Moderation).
+tråd är i behov av moderering, vänligen kontakta [rusts modereringsteam](/team.html#Moderation-team).
 
 1. Anmärkningar som bryter mot rusts uppförandekod och normer, inklusive hatiska,
 sårande, förtryckande eller uteslutande kommentarer, är inte tillåtna. (Svordomar
@@ -81,4 +81,4 @@ GitHub repon under rust-lang, rust-lang-nursery, och rust-lang-deprecated; och a
 För andra projekt som antagit rusts uppförandekod, var god kontakta de som sköter dessa projekt för tillsyn. Om du vill använda den här uppförandekoden
 för ditt egna projekt, överväg då att explicit nämna din modereringspolicy eller att göra en kopia med din egna modereringspolicy för att undvika förvirring.
 
-*Anpassad från [Node.js policy om trollning](http://blog.izs.me/post/30036893703/policy-on-trolling) och [Contributor Covenant v1.3.0](http://contributor-covenant.org/version/1/3/0/).*
+*Anpassad från [Node.js policy om trollning](http://blog.izs.me/post/30036893703/policy-on-trolling) och [Contributor Covenant v1.3.0](https://www.contributor-covenant.org/version/1/3/0/).*

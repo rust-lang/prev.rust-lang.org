@@ -406,6 +406,7 @@
     - Florida: FL
     - Georgia: GA
     - Illinois: IL
+    - Indiana: IN
     - Kentucky: KY
     - Massachusetts: MA
     - Michigan: MI
@@ -469,6 +470,11 @@
       state: IL
       url: https://www.meetup.com/Chicago-Rust-Meetup/
 
+    - name: Indy Rust
+      city: Indianapolis
+      state: IN
+      url: https://www.meetup.com/indyrs/
+      
     - name: Louisville Rust Meetup
       city: Louisville
       state: KY

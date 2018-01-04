@@ -218,6 +218,11 @@
   logo: krypt.co.png
   how: "Shared code between iOS and Android for <a href='https://github.com/kryptco/ssh-wire'>SSH host signature verification</a> as well as a <a href='https://github.com/KryptCo/kr/tree/master/pkcs11shim'>PKCS11 shared library</a>."
 -
+  name: kupibilet.ru
+  url: https://www.kupibilet.ru/
+  logo: kupibilet.svg
+  how: "We use Rust for our ticket search engine."
+-
   name: LINE
   url: https://line.me/
   logo: line.png
@@ -322,6 +327,11 @@
   url: http://www.smartthings.com/
   logo: smartthings.png
   how: "Memory-safe embedded applications on our <a href='https://www.smartthings.com/how-it-works'>SmartThings Hub</a> and supporting services in the cloud."
+-
+  name: Snapview
+  url: https://www.snapview.de
+  logo: snapview-logo.svg
+  how: "<a href='https://www.snapview.de'>We use Rust to power our screen sharing and video conferencing service. In detail we use it to power a server service and native clients on Windows, macOS, Linux and more operating systems in future.</a>"
 -
   name: Snips
   url: https://snips.ai/
