@@ -218,6 +218,11 @@
   logo: krypt.co.png
   how: "Shared code between iOS and Android for <a href='https://github.com/kryptco/ssh-wire'>SSH host signature verification</a> as well as a <a href='https://github.com/KryptCo/kr/tree/master/pkcs11shim'>PKCS11 shared library</a>."
 -
+  name: kupibilet.ru
+  url: https://www.kupibilet.ru/
+  logo: kupibilet.svg
+  how: "We use Rust for our ticket search engine."
+-
   name: LINE
   url: https://line.me/
   logo: line.png
