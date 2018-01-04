@@ -3,6 +3,6 @@ layout: default
 title: 将 rust-lang.org 译为其他语言以拥抱国际化
 ---
 
-# Rust is universal
+# Rust 是全世界的
 
-Some docs on contributing translations!
+一些文档正在被贡献翻译中！
