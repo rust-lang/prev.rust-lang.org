@@ -3,7 +3,7 @@ fn main() {
                      "Ciao", "こんにちは", "안녕하세요",
                      "Cześć", "Olá", "Здравствуйте",
                      "Chào bạn", "您好", "Hallo",
-                     "Hej"];
+                     "Hej", "سلام"];
 
     for (num, greeting) in greetings.iter().enumerate() {
         print!("{} : ", greeting);
@@ -21,6 +21,7 @@ fn main() {
             10 => println!("这段代码是可以编辑并且能够运行的！"),
             11 => println!("Dieser Code kann bearbeitet und ausgeführt werden!"),
             12 => println!("Den här koden kan redigeras och köras!"),
+            13 => println!("این کد قابلیت ویرایش و اجرا دارد!"),
             _ =>  {},
         }
     }
