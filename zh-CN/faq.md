@@ -369,7 +369,7 @@ match val.do_something() {
 
 通常，你可以在需要切片的地方传入 `String` 或 `Vec<T>`。使用[强制解引（Deref）](https://doc.rust-lang.org/stable/book/deref-coercions.html)，在用 `&` 或 `&mut` 传递引用时，[`String`][String] 和 [`Vec`][Vec] 会自动强制转换为对应的切片。
 
-在 `&str` 和 `&[T]` 上实现的方法可以直接在 `String` 和 `Vec<T>` 上访问。例如，即使 `char_at` 是 `&str` 上的方法，而 `some_string` 是一个 `String`，`some_string.char_at(0)` 也可以运行。
+在 `&str` 和 `&[T]` 上实现的方法可以直接在 `String` 和 `Vec<T>` 上访问。例如，即使 `trim` 是 `&str` 上的方法，而 `some_string` 是一个 `String`，`some_string.trim()` 也可以运行。
 
 在某些情况下，例如泛型代码，需要手动转换。可以用切片操作符实现手动转换，如：`&my_vec[..]`。
 

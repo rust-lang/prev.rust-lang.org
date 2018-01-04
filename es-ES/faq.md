@@ -373,7 +373,7 @@ How can I convert a <code>String</code> or <code>Vec&lt;T&gt;</code> to a slice 
 Usually, you can pass a reference to a `String` or `Vec<T>` wherever a slice is expected.
 Using [Deref coercions](https://doc.rust-lang.org/stable/book/deref-coercions.html), [`String`s][String] and [`Vec`s][Vec] will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
 
-Methods implemented on `&str` and `&[T]` can be accessed directly on `String` and `Vec<T>`. For example, `some_string.char_at(0)` will work even though `char_at` is a method on `&str` and `some_string` is a `String`.
+Methods implemented on `&str` and `&[T]` can be accessed directly on `String` and `Vec<T>`. For example, `some_string.trim()` will work even though `trim` is a method on `&str` and `some_string` is a `String`.
 
 In some cases, such as generic code, it's necessary to convert manually. Manual conversions can be achieved using the slicing operator, like so: `&my_vec[..]`.
 
