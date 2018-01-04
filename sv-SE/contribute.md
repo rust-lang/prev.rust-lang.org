@@ -11,19 +11,19 @@ Om du inte vet hur du ska bli involverad kommer den här sidan att hjälpa till.
 **Hittade du en bugg och behöver rapportera den?**
 [Följ buggrapporteringsguiden][bugs]. Tack på förhand!
 
-Rust är ett expansivt system av projekt, av vilket det mest framträdande
+Rust är ett expansivt system av projekt, av vilket de mest framträdande
 underhålls av [rustprojektets utvecklare][devs] i
 [rust-lang organisationen på GitHub][rust-lang]. Nykomlingar kan vara intresserade
 av projektets [CONTRIBUTING.md]-fil som förklarar hur man bidrar till repot
 [rust-lang/rust].
 
 Det finns många sätt att bidra till rusts framgång.
-Denna guiden fokuserar på nya avenyer för den nya bidragsgivaren:
+Den här guiden fokuserar på några olika vägar in för den nya bidragsgivaren:
 
-* [Att hitta, categorisera, prioritera och fixa problem](contribute-bugs.html).
-  Det grundläggande arbetet att underhålla ett stort och aktivt projekt likt rust.
+* [Att hitta, kategorisera, prioritera och fixa problem](contribute-bugs.html).
+  Det grundläggande arbetet att underhålla ett stort och aktivt projekt som rust.
 * [Dokumentation](contribute-docs.html). Inte bara officiell dokumentation,
-  utan också för crates, bloginlägg och andra inofficiella källor och resurser.
+  utan också för crates, blogginlägg och andra inofficiella källor och resurser.
 * [Bygga communityt](contribute-community.html). Att hjälpa andra rustprogrammerare
   och udvidga rusts räckvidd.
 * [Verktyg, IDE:er och infrastruktur](contribute-tools.html). De viktiga

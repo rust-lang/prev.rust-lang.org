@@ -5,9 +5,9 @@ title: Rust-communityt &middot; Programmeringsspråket Rust
 
 # Rust-communityt
 
-Programmeringsspråket rust har många kvalitéter, men språkets
+Programmeringsspråket rust har många kvalitéer, men språkets
 största styrka är den gemenskap av människor som samlas för att
-se att användning av språket är en givande upplevelse.
+se till att användning av språket är en givande upplevelse.
 
 Vi är hängivna till och ämnar att tillhandahålla en vänlig, säker
 och välkomnande miljö för alla, oavsett könsidentitet, sexuell läggning,
@@ -19,7 +19,7 @@ Om du känner att du har blivit eller är trakasserad av eller
 obehagligt bemött av någon i communityt, [kontakta][mod_team_email]
 då någon i [rusts modereringsteam][mod_team] omgående. Oavsett om
 du bidrar ofta eller är ny till språket bryr vi oss om att göra
-communityt en säker plats för dig.
+communityt till en säker plats för dig.
 
 [coc]: conduct.html
 [mod_team_email]: mailto:rust-mods@rust-lang.org
@@ -27,13 +27,13 @@ communityt en säker plats för dig.
 ## Att komma igång
 
 Den viktigaste resurserna communityt har att erbjuda för de som
-är nya till språket rust är:
+är nya för språket rust är:
 
 - [#rust-beginners][beginners_irc], en IRC-kanal som gillar att
   svara på frågor oavsett djup.
 - [Användarnas forum][users_forum], för allmän diskussion om Rust.
 
-Du kan också hitta hjälp på fråge-och-svar-siten [Stack Overflow][stack_overflow].
+Du kan också hitta hjälp på fråge-och-svar-webbplatsen [Stack Overflow][stack_overflow].
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
@@ -58,10 +58,10 @@ du också följa vår [Weibo][weibo] på kinesiska.
 ## IRC-kanaler
 
 "Rustaceans" (de som deltar i rust-communityt) tillhandahåller ett antal
-vänliga och högtraffikerade [IRC]-kanaler på Mozillas IRC-nätverk,
+vänliga och högtrafikerade [IRC]-kanaler på Mozillas IRC-nätverk,
 irc.mozilla.org.
 
-[#rust][rust_irc] kanalen är en plats för generell diskussion om rust och
+Kanalen [#rust][rust_irc] är en plats för generell diskussion om rust och
 ett bra ställe att att fråga om hjälp. Där finner du folk som är villiga
 att svara alla sorts frågor om rust. Vanligtvis får du svar snabbt.
 
@@ -71,8 +71,8 @@ Kanalen är också rätt plats för frågor om att bidra till rust.
 
 ### Huvudkanaler
 
-- [#rust][rust_irc] är en allmän kanal för Rust-relaterat
-- [#rust-beginners][beginners_irc] är ett ställe för de som är nya till språket
+- [#rust][rust_irc] är en allmän kanal för allt Rust-relaterat
+- [#rust-beginners][beginners_irc] är ett ställe för de som är nya för språket
 och har lägre traffik än #rust
 - [#rust-internals][internals_irc] är för diskussion om arbete för och på
 Rust-projektet självt.
@@ -89,8 +89,8 @@ Rust-projektet självt.
 
 ### Team-kanaler
 
-- [#cargo][cargo_irc] är för diskussion om Cargo, rusts pakethanterare och [cargo teamets][cargo_team] hemvist
-- [#rust-community][community_irc] är [community teamets][community_team] hemvist
+- [#cargo][cargo_irc] är för diskussion om Cargo, rusts pakethanterare och [cargo-teamets][cargo_team] hemvist
+- [#rust-community][community_irc] är [community-teamets][community_team] hemvist
 - [#rustc][rustc_irc] är [kompilatorteamets][compiler_team] hemvist
 - [#rust-dev-tools][dev_tools_irc] är [utvecklarverktygsteamets][dev_tools_team] hemvist
 - [#rust-docs][docs_irc] är [dokumentationsteamets][doc_team] hemvist
