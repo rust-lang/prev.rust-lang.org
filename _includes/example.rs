@@ -3,8 +3,7 @@ fn main() {
                      "Ciao", "こんにちは", "안녕하세요",
                      "Cześć", "Olá", "Здравствуйте",
                      "Chào bạn", "您好", "Hallo",
-                     "Hej", "Ahoj",
-                     "Hej", "سلام"];
+                     "Hej", "Ahoj", "سلام"];
 
     for (num, greeting) in greetings.iter().enumerate() {
         print!("{} : ", greeting);
