@@ -23,7 +23,7 @@ fn main() {
             11 => println!("Dieser Code kann bearbeitet und ausgeführt werden!"),
             12 => println!("Den här koden kan redigeras och köras!"),
             13 => println!("Tento kód můžete upravit a spustit"),
-            13 => println!("این کد قابلیت ویرایش و اجرا دارد!"),
+            14 => println!("این کد قابلیت ویرایش و اجرا دارد!"),
             _ =>  {},
         }
     }
