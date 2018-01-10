@@ -207,7 +207,7 @@ teams:
     members: [KodrAus]
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
-    members: [arielb1, eddyb, estebank, nrc, petrochenkov, pnkfelix, nikomatsakis, jseyfried, michaelwoerister, Zoxc]
+    members: [arielb1, cramertj, eddyb, estebank, nrc, petrochenkov, pnkfelix, nikomatsakis, jseyfried, michaelwoerister, Zoxc]
     lead: nikomatsakis
   - name: Dev tools team
     responsibility: "overall direction for tools for working with Rust code"
