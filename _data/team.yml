@@ -75,6 +75,8 @@ people:
   Gankro:
     name: Alexis Beingessner
     ex-teams: ["libs"]
+  Havvy:
+    name: Ryan Scheel
   huonw:
     name: Huon Wilson
     irc: huon
@@ -233,6 +235,9 @@ teams:
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
     members: [steveklabnik, GuillaumeGomez, frewsxcv, QuietMisdreavus]
+  - name: Documentation peers
+    responsibility: "oversight of specific documentation, and coordination with the docs team"
+    members: ["Havvy"]
   - name: Moderation team
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
