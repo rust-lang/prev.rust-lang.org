@@ -74,7 +74,7 @@
   how: "We use Rust in a service for analyzing petabytes of source code."
 -
   name: Autumn
-  url: http://autumnai.com
+  url: https://medium.com/@autumn_eng/about-rust-s-machine-learning-community-4cda5ec8a790
   logo: autumn.png
   how: "<a href='https://medium.com/@autumn_eng/about-rust-s-machine-learning-community-4cda5ec8a790'>Machine learning in Rust</a>."
 -
