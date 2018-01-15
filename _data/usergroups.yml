@@ -197,6 +197,10 @@
       city: Rome
       url: https://www.meetup.com/it-IT/Rust-Roma/
 
+    - name: Rust FVG
+      city: Trieste
+      url: https://www.meetup.com/Rust-FVG-Meetup/
+
 - country: Japan
   meetups:
 
@@ -474,7 +478,7 @@
       city: Indianapolis
       state: IN
       url: https://www.meetup.com/indyrs/
-      
+
     - name: Louisville Rust Meetup
       city: Louisville
       state: KY
@@ -534,9 +538,8 @@
       city: Seattle
       state: WA
       url: https://www.meetup.com/Seattle-Rust-Meetup/
-      
+
     - name: Triangle Rustaceans
       city: Durham
       state: NC
       url: https://www.meetup.com/triangle-rustaceans/
-
