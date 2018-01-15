@@ -192,7 +192,7 @@ people:
 teams:
   - name: Core team
     responsibility: "overall direction of the project, subteam leadership, cross-cutting concerns"
-    members: [nrc, alexcrichton, wycats, steveklabnik, nikomatsakis, carols10cents, aturon, ashleygwilliams]
+    members: [nrc, alexcrichton, aidanhs, wycats, steveklabnik, nikomatsakis, carols10cents, Mark-Simulacrum, aturon, ashleygwilliams]
   - name: Language team
     responsibility: "designing new language features"
     members: [cramertj, withoutboats, eddyb, nrc, pnkfelix, nikomatsakis, aturon]
@@ -225,7 +225,12 @@ teams:
   - name: Infrastructure team
     responsibility: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
     members: [alexcrichton, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, tomprince, kennytm, aturon]
-    lead: aturon
+    lead: aidanhs
+    email: infra-team@rust-lang.org
+  - name: Release team
+    responsibility: "tracking regressions, stabilizations, and producing Rust releases"
+    members: [Mark-Simulacrum]
+    lead: Mark-Simulacrum
     email: infra-team@rust-lang.org
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
