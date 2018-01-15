@@ -226,17 +226,17 @@ teams:
     responsibility: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
     members: [alexcrichton, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, tomprince, kennytm, aturon]
     lead: aidanhs
-    email: infra-team@rust-lang.org
+    email: infra@rust-lang.org
   - name: Release team
     responsibility: "tracking regressions, stabilizations, and producing Rust releases"
     members: [Mark-Simulacrum]
     lead: Mark-Simulacrum
-    email: infra-team@rust-lang.org
+    email: release@rust-lang.org
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: ashleygwilliams
     members: [edunham, skade, manishearth, johannhof, sebasmagri, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, ashleygwilliams]
-    email: community-team@rust-lang.org
+    email: community@rust-lang.org
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
     members: [steveklabnik, GuillaumeGomez, frewsxcv, QuietMisdreavus]
