@@ -202,11 +202,8 @@ teams:
     members: [solson, joshtriplett, whitequark, scottmcm]
   - name: Library team
     responsibility: "the Rust standard library, rust-lang crates, conventions, and ecosystem support"
-    members: [alexcrichton, sfackler, BurntSushi, Kimundi, dtolnay, aturon]
+    members: [alexcrichton, sfackler, BurntSushi, Kimundi, dtolnay, aturon, KodrAus, withoutboats]
     lead: aturon
-  - name: Library team shepherds
-    responsibility: "coordinating the Libz Blitz, helping guide libs RFCs to completion, keeping pulse on the ecosystem"
-    members: [KodrAus]
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
     members: [arielb1, cramertj, eddyb, estebank, nrc, petrochenkov, pnkfelix, nikomatsakis, jseyfried, michaelwoerister, Zoxc]
