@@ -94,7 +94,7 @@ perguntar questões sobre contribuir para o Rust.
 - [#rust-mods][mod_irc] é o canal IRC do [time de moderação][mod_team]
 - [#rust-style][style_irc] é a casa do [time do guia de estilo da linguagem][style_team]
 
-### Canais por tópicos
+### Canais sobre tópicos
 Esses canais são da ampla comunidade Rust e não são moderados pelo [time de moderação][mod_team].
 
 - [#rust-bots][bots_irc] notificações sobre Rust de uma seleção de bots
