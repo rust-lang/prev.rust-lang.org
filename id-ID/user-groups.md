@@ -130,13 +130,15 @@ Budapest.
 
 ## Japan
 
-[Tokyo Rust](https://www.meetup.com/Tokyo-Rust-Meetup/), Tokyo.
+[Akasaka Rust](https://akasaka-rust.doorkeeper.jp/), Akasaka, Tokyo.
 
-[Rust Of Us](https://rust-of-us.doorkeeper.jp/), Akihabara, Tokyo.
+[Kansai Rust](https://www.meetup.com/Kansai-Rust/), Osaka.
 
 [Rust Mokumoku Kai](https://rust.doorkeeper.jp/), Roppongi, Tokyo.
 
-[Akasaka Rust](https://akasaka-rust.doorkeeper.jp/), Akasaka, Tokyo.
+[Rust Of Us](https://rust-of-us.doorkeeper.jp/), Akihabara, Tokyo.
+
+[Tokyo Rust](https://www.meetup.com/Tokyo-Rust-Meetup/), Tokyo.
 
 ## Lithuania
 
