@@ -1,16 +1,16 @@
 ---
 layout: sv-SE/default
-title: Rusts rättsliga policies &middot; Programmeringsspråket Rust
+title: Rusts Rättsliga Policies &middot; Programmeringsspråket Rust
 ---
 
-Notera att det här dokumentet är översatt från engelska varför den kan vara
-mindre korrekt i rättslig mening.
+Notera att det här dokumentet är översatt från engelska och därför kan den vara
+inkorrekt ur ett rättsligt perspektiv.
 
 # Upphovsrätt
 
 ## Kod
 
-Rusts [kod](https://github.com/rust-lang/rust) är primärt distribuerat enligt
+Rust [kod](https://github.com/rust-lang/rust) är primärt distribuerat enligt
 både licensen "MIT license" och licensen "Apache License (Version 2.0)",
 med vissa delar också täckta av diverse BSD-lika licenser.
 Se [LICENSE-APACHE](https://github.com/rust-lang/rust/blob/master/LICENSE-APACHE),
@@ -62,7 +62,7 @@ användning kräver tillstånd. I båda fallen är den viktigaste regelen att
 användningen av varumärkena inte kan verka officiell eller innebära något
 godkännande från rust-projektet.
 
-## Rusts varumärken
+## Rusts Varumärken
 
 Programmeringsspråket rust är ett community-project med öppen källkod styrt
 av ett kärnteam. Projektet sponsras även av Mozilla Foundation ("Mozilla") som
@@ -94,9 +94,9 @@ producerat av rust-projektet och inte någon annans modifierade version.
 Varumärket försäkrar användare och utvecklare om kvalitén och säkerheten på
 den produkt de använder.
 
-## Användning av varumärkena
+## Användning av Varumärkena
 
-### Att verka officiell, associerad eller godkänd
+### Att Verka Officiell, Associerad eller Godkänd
 
 Grundregeln är att rust-varumärkena inte kan användas på sätt som verkar
 (för en lekman) officiel, associerad, eller godkänd av rust-projetet eller
@@ -124,7 +124,7 @@ De kan inte användas:
 - på sätt som förvirrar communityt programmeringspråket rust är open source
   (se öppen källkod) och fri att använda.
 
-### Användningar som inte kräver explicit godkännande
+### Användningar som inte Kräver Explicit Godkännande
 
 Det finns en mängd olika användningsområden som inte kräver explicit godkännande.
 **Men i alla fall som beskrivs nedan måste du se till att användningen av Rust-varumärkena inte verkar officiellt, såsom ovan förklarat.**
@@ -167,7 +167,7 @@ utan skriftligt godkännande.
 akademiska artiklar, böcker och produktförpackningar för att referera till
 programmeringsspråket rust eller rust-projektet är tillåtet.
 
-### Användningar som kräver explicit godkännande
+### Användningar som Kräver Explicit Godkännande
 
 * Att distribuera en modifierad version av programmeringsspråket rust eller
 pakethanteraren Cargo och kalla det Rust eller Cargo kräver uttryckligt
@@ -196,7 +196,7 @@ Detta dokument härstammade delvis från
 Detta dokument är inte ett officiellt uttalande om mozillas varumärkespolicy,
 men syftar till att klargöra mozillas varumärkespolicy vad gäller rust.
 
-## Hjälpa till
+## Hjälpa Till
 
 Som medlem i Rust-samhället, 
 

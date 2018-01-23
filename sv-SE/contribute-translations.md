@@ -1,8 +1,8 @@
 ---
 layout: sv-SE/default
-title: Att översätta rust-lang.org till andra språk för att anamma internationalisering
+title: Att Översätta rust-lang.org till Andra Språk för att Anamma Internationalisering
 ---
 
-# Rust är universellt
+# Rust är Universellt
 
-Någon dokumentation om att bidra med översättningar!
+Dokumentation om att bidra med översättningar!

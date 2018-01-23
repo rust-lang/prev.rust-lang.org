@@ -1,19 +1,19 @@
 ---
 layout: sv-SE/default
-title: Rusts säkerhetspolicy &middot; Programmingsspråk Rust
+title: Rusts Säkerhetspolicy &middot; Programmingsspråk Rust
 ---
 
-<h1>Rusts säkerhetspolicy</h1>
+<h1>Rusts Säkerhetspolicy</h1>
 
-<h2>Rapportera en bugg</h2>
+<h2>Rapportera en Bugg</h2>
 
 <p>Säkerhet är en av kärnprinciperna för Rust, och därför vill vi se till att
-rust har en säker implementation. Tack för att du tar dig tiden att ansvarsfullt
+Rust har en säker implementation. Tack för att du tar dig tid att ansvarsfullt
 avslöja eventuella problem som du hittar.</p>
 
-<p>Alla säkerhetsbuggar i rust-distributionen ska rapporteras via email till
+<p>Alla säkerhetsbuggar i Rust-distributionen ska rapporteras via email till
 <a href="mailto:security@rust-lang.org">security@rust-lang.org</a>.
-Denna listan är levererad till ett litet säkerhetsteam. Ditt email kommer
+Denna listan vidarebefordras till ett litet säkerhetsteam. Ditt email kommer
 uppmärksammas inom 24 timmar och du kommer få ett mer detaljerat svar till din
 email inom 48 timmar som indikerar de nästa stegen i hanteringen av din rapport.
 Om du vill kan du kryptera din rapport med
@@ -22,7 +22,7 @@ Denna nyckel är också <a
 href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xEFB9860AE7520DAC">på
 MITs nyckelserver</a> och <a href="#key">reproducerad nedan</a>.</p>
 
-<p>Den här e-postadressen mottar en stor mängd skräppost, så se till att du
+<p>Den här emailadressen tar emot en stor mängd skräppost, så se till att du
 använder en beskrivande ämnesrad för att undvika att din rapport missas. Efter
 det första svaret på din rapport kommer säkerhetsgruppen att försöka hålla dig
 informerad om framsteg som görs mot en åtgärd och ett fullständigt tillkännagivande.
@@ -30,7 +30,7 @@ Som rekommenderat på <a href="https://en.wikipedia.org/wiki/RFPolicy">RFPolicy<
 kommer dessa uppdateringar skickas åtminstone var femte dag. I verkligheten är
 det snarare var 24-48:e timme.</p>
 
-<p>Om du inte har fått ett svar på ditt email inom 48 timmar, eller har inte
+<p>Om du inte har fått ett svar på ditt email inom 48 timmar, eller inte har
 hört från säkerhetsgruppen under de senaste fem dagarna, finns det några steg du kan ta:</p>
 
 <ul>
@@ -46,9 +46,9 @@ hört från säkerhetsgruppen under de senaste fem dagarna, finns det några ste
 När du eskalerar på dessa platser ska du inte diskutera ditt säkerhetsproblem.
 Säg istället helt enkelt att du försöker få tag på någon från säkerhetsteamet.</p>
 
-<h2>Policy för tillkännagivande</h2>
+<h2>Policy för Iillkännagivande</h2>
 
-<p>Rustprojektet har en 5-stegs tillkännagivandeprocess.</p>
+<p>Rust-projektet har en 5-stegs tillkännagivandeprocess.</p>
 
 <ol>
 <li>Säkerhetsrapporten tas emot och tilldelas en huvudsamordnare.
@@ -62,11 +62,11 @@ Den här personen kommer att samordna fix- och release-processen.</li>
 Dessa fixar comittas inte till det offentliga git-repot utan hålls istället
 lokalt i väntan på tillkännagivande.</li>
 
-<li>På embargodagen skickas en kopia av tillgännagivandet till
-<a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">rusts säkerhets-email-lista</a>.
+<li>På tillgännagivandedagen skickas en kopia av tillgännagivandet till
+<a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">Rusts säkerhets-email-lista</a>.
 Förändringarna pushas till det offentliga git-repot och nya byggda releaser
 distribueras till rust-lang.org. Inom 6 timmar efter att email-listan notifierats
-kommer en kopia av tillkännagivandet att publiceras på rust-bloggen.</li>
+kommer en kopia av tillkännagivandet att publiceras på Rust-bloggen.</li>
 </ol>
 
 <p>Den här processen kan ta lite tid, speciellt när koordinering krävs
@@ -75,21 +75,21 @@ hantera buggarna så snabbt som möjligt, men det är viktigt att vi följer
 releaseprocessen ovan för att säkerställa att tillkännagivandet hanteras på ett
 konsekvent sätt.</p>
 
-<h2>Att ta emot säkerhetsuppdateringar</h2>
+<h2>Att Ta Emot Säkerhetsuppdateringar</h2>
 
 <p>Det bästa sättet att ta emot alla säkerhetstillkännagivanden är att prenumerera
 på <a href="https://groups.google.com/group/rustlang-security-announcements/subscribe">
-rusts mail-lista för säkerhetstillkännagivanden</a> (alternativt genom att skicka ett email till
+Rusts mail-lista för säkerhetstillkännagivanden</a> (alternativt genom att skicka ett email till
 <a href="mailto:rustlang-security-announcements+subscribe@googlegroups.com">rustlang-security-announcements+subscribe@googlegroups.com</a>)
 Den här mail-listan har väldigt låg traffik och tar emot den publika notifikationen när embargot upphävs.</p>
 
-<h3>Notifikation på förhand</h3>
+<h3>Notifikation på Förhand</h3>
 
-<p>Vi kommer tillkännage sårbarheter 72 timmar före emargot lyfts på mail-listan
+<p>Vi kommer at tillkännage sårbarheter 72 timmar före emargot lyfts på mail-listan
 <a href="http://oss-security.openwall.org/wiki/mailing-lists/distros">distros@openwall</a>,
 så att linux-distributioner kan uppdatera deras paket.</p>
 
-<h2>Kommentarer på denna policy</h2>
+<h2>Kommentarer på Denna Policy</h2>
 
 <p>Om du har några förslag på hur denna policy kan förbättras, var god skicka
 ett email till <a href="mailto:security@rust-lang.org">security@rust-lang.org</a>.</p>

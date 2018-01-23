@@ -5,7 +5,7 @@ title: Rust-communityt &middot; Programmeringsspråket Rust
 
 # Rust-communityt
 
-Programmeringsspråket rust har många kvalitéer, men språkets
+Programmeringsspråket Rust har många kvalitéer, men språkets
 största styrka är den gemenskap av människor som samlas för att
 se till att användning av språket är en givande upplevelse.
 
@@ -13,27 +13,27 @@ Vi är hängivna till och ämnar att tillhandahålla en vänlig, säker
 och välkomnande miljö för alla, oavsett könsidentitet, sexuell läggning,
 funktionshinder, etnicitet, religion eller liknande personliga
 drag. Vår [uppförandekod][coc] sätter standarden för hur man beter
-sig i alla rusts officiella forum.
+sig i alla Rust's officiella forum.
 
-Om du känner att du har blivit eller är trakasserad av eller
+Om du känner att du har blivit eller är trakasserad eller
 obehagligt bemött av någon i communityt, [kontakta][mod_team_email]
-då någon i [rusts modereringsteam][mod_team] omgående. Oavsett om
+då någon i [Rusts modereringsteam][mod_team] omgående. Oavsett om
 du bidrar ofta eller är ny till språket bryr vi oss om att göra
 communityt till en säker plats för dig.
 
 [coc]: conduct.html
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
-## Att komma igång
+## Att Komma Igång
 
-Den viktigaste resurserna communityt har att erbjuda för de som
-är nya för språket rust är:
+De viktigaste resurserna communityt har att erbjuda för de som
+är nya för språket Rust är:
 
 - [#rust-beginners][beginners_irc], en IRC-kanal som gillar att
   svara på frågor oavsett djup.
 - [Användarnas forum][users_forum], för allmän diskussion om Rust.
 
-Du kan också hitta hjälp på fråge-och-svar-webbplatsen [Stack Overflow][stack_overflow].
+Du kan också hitta hjälp på frågor-och-svar-webbplatsen [Stack Overflow][stack_overflow].
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
@@ -41,8 +41,8 @@ Du kan också hitta hjälp på fråge-och-svar-webbplatsen [Stack Overflow][stac
 
 [Den Här Veckan i Rust][twir] samlar alla senaste nyheter, kommande
 evenemang och en veckovis redogörelse av alla förändringar i språket Rust
-och bibliotek för Rust. [Rustbloggen][rust_blog] är stället där Rust-teamet
-annoncerar om större förändringar. Och nästan allt som händer kring Rust
+och bibliotek för Rust. [Rust-bloggen][rust_blog] är stället där Rust-teamet
+annonserar om större förändringar. Och nästan allt som händer kring Rust
 diskuteras på den inofficiella subredditen [/r/rust][reddit].
 
 Vi har också ett [twitterkonto][twitter]. Om du inte kan läsa engelska kan
@@ -55,29 +55,29 @@ du också följa vår [Weibo][weibo] på kinesiska.
 [twitter]: https://twitter.com/rustlang
 [weibo]: http://weibo.com/u/5616913483
 
-## IRC-kanaler
+## IRC-Kanaler
 
-"Rustaceans" (de som deltar i rust-communityt) tillhandahåller ett antal
+"Rustaceans" (de som deltar i Rust-communityt) tillhandahåller ett antal
 vänliga och högtrafikerade [IRC]-kanaler på Mozillas IRC-nätverk,
 irc.mozilla.org.
 
-Kanalen [#rust][rust_irc] är en plats för generell diskussion om rust och
+Kanalen [#rust][rust_irc] är en plats för generell diskussion om Rust och
 ett bra ställe att att fråga om hjälp. Där finner du folk som är villiga
-att svara alla sorts frågor om rust. Vanligtvis får du svar snabbt.
+att svara alla sorts frågor om Rust. Vanligtvis får du svar snabbt.
 
 Rusts utvecklare koordinerar i kanalen [#rust-internals][internals_irc].
-Den är för realtidsdiskussion om utveckling av språket rust självt.
-Kanalen är också rätt plats för frågor om att bidra till rust.
+Den är för realtidsdiskussion om utveckling av språket Rust.
+Kanalen är också rätt plats för frågor om att bidra till Rust.
 
 ### Huvudkanaler
 
 - [#rust][rust_irc] är en allmän kanal för allt Rust-relaterat
-- [#rust-beginners][beginners_irc] är ett ställe för de som är nya för språket
+- [#rust-beginners][beginners_irc] är en plats för de som är nya för språket
 och har lägre traffik än #rust
 - [#rust-internals][internals_irc] är för diskussion om arbete för och på
-Rust-projektet självt.
+Rust-projektet.
 
-### Internationella kanaler
+### Internationella Kanaler
 
 - [#rust-br][br_irc] é dedicado à discussão sobre Rust no Brasil
 - [#rust-de][de_irc] ist für die allgemeine Diskussion über Rust auf Deutsch
@@ -89,7 +89,7 @@ Rust-projektet självt.
 
 ### Team-kanaler
 
-- [#cargo][cargo_irc] är för diskussion om Cargo, rusts pakethanterare och [cargo-teamets][cargo_team] hemvist
+- [#cargo][cargo_irc] är för diskussion om Cargo, Rusts pakethanterare och [cargo-teamets][cargo_team] hemvist
 - [#rust-community][community_irc] är [community-teamets][community_team] hemvist
 - [#rustc][rustc_irc] är [kompilatorteamets][compiler_team] hemvist
 - [#rust-dev-tools][dev_tools_irc] är [utvecklarverktygsteamets][dev_tools_team] hemvist
@@ -100,31 +100,30 @@ Rust-projektet självt.
 - [#rust-mods][mod_irc] är irc-kanalen för [moderationsteamet][mod_team]
 - [#rust-style][style_irc] är [stil-guide-fixar-teamets][style_team] hemvist
 
-### Kanaler för specifika ämnen
+### Kanaler för Specifika Ämnen
 
-Dessa kanaler tillhandahålls av det bredare rust-communityt och modereras ej
+Dessa kanaler tillhandahålls av det bredare Rust-communityt och modereras ej
 av [modereringsteamet][mod_team].
 
-- [#rust-bots][bots_irc] ger notiser om rust från ett urval av bottar
-- [#rust-crypto][crypto_irc] är för diskussion om kryptografi i rust
-- [#rust-embedded][embedded_irc] är för folk som sysslar med inbyggda system i rust
-- [#rust-gamedev][gamedev_irc] är för folk som sysslar med spelutveckling i rust
-- [#rust-geo][rustgeo_irc] är för diskussion om GeoRust, ett geospatialverktyg skriven i rust
-- [#rust-machine-learning][machine_learning_irc] är för folk som sysslar med maskininlärning i rust
-- [#rust-networking][networking_irc] är för folk som sysslar med datornätverk och sådan utveckling i rust
-- [#rust-osdev][osdev_irc] är för folk som sysslar med utveckling av operativsystem i rust
-- [#rust-sci][sci_irc] är för folk som sysslar med vetenskaplig databehandling i rust
-- [#rust-wasm][wasm_irc] är för diskussion om att använda rust tillsammans med WebAssembly
-- [#rust-webdev][webdev_irc] är för folk som sysslar med webbutveckling i rust
-- [#hyper][hyper_irc] är för diskussion om Hyper, ett populärt http-bibliotek för rust
-- [#iron][iron_irc] är för diskussion om Iron, det is for discussion on Iron, det
-utökningsbara webbramverket för rust
-- [#nom][nom_irc] är för diskussion om Nom, en parser-combinator-bibliotek för rust
-- [#redox][redox_irc] är för diskussion om Redox, operativsystemet skrivet i rust
-- [#rocket][rocket_irc] är för diskussion om Rocket, ett populärt webbramverk för rust
-- [#serde][serde_irc] är för diskussion om Serde, ett populärt serialiseringsbibliotek för rust
-- [#servo][servo_irc] är för diskussion om Servo, webbläsarmotorn skriven i rust
-- [#xi][xi_irc] är för diskussion om Xi, texteditorn skriven i rust
+- [#rust-bots][bots_irc] ger notiser om Rust från ett urval av bottar
+- [#rust-crypto][crypto_irc] är för diskussion om kryptografi i Rust
+- [#rust-embedded][embedded_irc] är för folk som sysslar med inbyggda system i Rust
+- [#rust-gamedev][gamedev_irc] är för folk som sysslar med spelutveckling i Rust
+- [#rust-geo][rustgeo_irc] är för diskussion om GeoRust, ett geospatialverktyg skriven i Rust
+- [#rust-machine-learning][machine_learning_irc] är för folk som sysslar med maskininlärning i Rust
+- [#rust-networking][networking_irc] är för folk som sysslar med datornätverk och sådan utveckling i Rust
+- [#rust-osdev][osdev_irc] är för folk som sysslar med utveckling av operativsystem i Rust
+- [#rust-sci][sci_irc] är för folk som sysslar med vetenskaplig databehandling i Rust
+- [#rust-wasm][wasm_irc] är för diskussion om att använda Rust tillsammans med WebAssembly
+- [#rust-webdev][webdev_irc] är för folk som sysslar med webbutveckling i Rust
+- [#hyper][hyper_irc] är för diskussion om Hyper, ett populärt http-bibliotek för Rust
+- [#iron][iron_irc] är för diskussion om Iron, det utökningsbara webbramverket för Rust
+- [#nom][nom_irc] är för diskussion om Nom, en parser-combinator-bibliotek för Rust
+- [#redox][redox_irc] är för diskussion om Redox, operativsystemet skrivet i Rust
+- [#rocket][rocket_irc] är för diskussion om Rocket, ett populärt webbramverk för Rust
+- [#serde][serde_irc] är för diskussion om Serde, ett populärt serialiseringsbibliotek för Rust
+- [#servo][servo_irc] är för diskussion om Servo, webbläsarmotorn skriven i Rust
+- [#xi][xi_irc] är för diskussion om Xi, texteditorn skriven i Rust
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
 [beginners_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
@@ -169,59 +168,59 @@ utökningsbara webbramverket för rust
 
 ## Diskussionsforum
 
-Vi har två diskussionsforum för asynkron diskussion (dvs. inte med direktmeddelande)
+Vi har två diskussionsforum för asynkron diskussion (d.v.s. inte med direktmeddelande)
 
 - [Användarnas forum][users_forum], ett ställe för att ställa frågor, klistra
-kodavsnitt, och diskussion om rust-projekt, osv.
+kodsnuttar och diskussion om Rust-projekt o.s.v.
 
 - [Intern-forumet][internals_forum], ett utrymme dedikerat för design och 
-diskusson om implementation av rust självt (som innefattar cargo, standardbibiolteket,
+diskusson om implementation av Rust (som innefattar cargo, standardbiblioteket,
 och annan essentiell infrastruktur).
 
 [users_forum]: https://users.rust-lang.org/
 [internals_forum]: https://internals.rust-lang.org/
 
-## YouTube-kanalen
+## YouTube-Kanalen
 
 Rust har en [YouTube-kanal][youtube_channel] där presentationer och föreläsningar
-som ges vid användargrupper och konferenser av rust-communityts medlemmar laddas upp.
+som ges vid användargrupper och konferenser av Rust-communityts medlemmar laddas upp.
 
 [youtube_channel]: https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA
 
 ## Användargrupper och Meetups
 
 Det finns mer än 90 [Användargrupper för Rust][user_group] världen över i 
-över 35 länder. Folk i rust-communityt ses periodvis i dessa användargrupper.
+över 35 länder. Folk i Rust-communityt ses periodvis i dessa användargrupper.
 Det är en väldigt bra introduktion till communityt och ett bra sätt att 
-lära sig och mingla med annat folk med liknande intressen. Möten hålls vanligtvis
-månadvis och väldigt informellt. Dessa möten är öppna för alla.
+lära sig och mingla med människor med liknande intressen. Möten hålls vanligtvis
+månadvis och är väldigt informella. Dessa möten är öppna för alla.
 
-Det finns en global [kalender][calendar] för att hålla koll på rust-evenemang.
+Det finns en global [kalender][calendar] för att hålla koll på Rust-evenemang.
 Kontakta [community-teamet][community_team] för att lägga till ditt egna evenemang.
 
 [user_group]: ./user-groups.html
 [calendar]: https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com
 
-## Rust-teamet
+## Rust-Teamet
 
 Rust har en community-driven utvecklingsprocess där de flesta beslut tas genom
 öppen diskussion och konsensus under förvaltning av diverse [team][teams]:
 
 * [Core-teamet][core_team] ansvarar för att styra design- och
 utvecklings-processen, hålla uppsikt över introduktionen av ny funktionalitet,
-och i slutändan ta beslut för vilket det saknas konsensus (detta händer sällan).
+och för att ta beslut för diskussioner där konsensus saknas (detta händer dock sällan).
 
 * [Språkteamet][language_team] ansvarar för design av ny funktionalitet i 
   språket.
 
-* [Biblioteksteamet][library_team] ansvarar för rusts standardbibliotek,
- "rust-lang crates", och rusts språkkonventioner.
+* [Biblioteksteamet][library_team] ansvarar för Rusts standardbibliotek,
+ "Rust-lang crates", och Rusts språkkonventioner.
 
 * [Kompilatorteamet][compiler_team] ansvarar för kompilatorns interna
 angelägenheter och optimeringar.
 
 * [Utveckligsverktygsteamet][dev_tools_team] ansvarar för att sätta riktningen
-för verktyg för rustutveckling.
+för verktyg för Rust-utveckling.
 
 * [Cargo-teamet][cargo_team] ansvarar för design och implementation av cargo.
 
@@ -231,12 +230,12 @@ för verktyg för rustutveckling.
 
 + [Communityteamet][community_team] ansvarar för samordning av händelser,
 outreach, kommersiella användare, läromedel och exponering. De kan också
-rikta förfrågningar till rätt parter när det inte är tydligt vem som ska
+rikta förfrågningar till rätt parter när det är otydligt vem som ska
 kontaktas om något "rostigt".
 
 * [Modereringsteamet][mod_team] ansvarar för att upprätthålla [uppförandekoden][coc].
 
-* [Dokumentationsteamet][doc_team] ansvarar för att säkerställa att rust har
+* [Dokumentationsteamet][doc_team] ansvarar för att säkerställa att Rust har
  fantastiskt bra dokumentation.
 
 Utöver de officiella team-uppställningarna har de flesta team en större
@@ -257,13 +256,13 @@ komma igång om är intresserad av att bli involverad i någon av dessa team.
 [doc_team]: team.html#Documentation-team
 [infra_team]: team.html#Infrastructure-team
 
-## Utveckling av rust
+## Utveckling av Rust
 
 Rust har haft över [2,000 olika bidragsgivare][authors], en siffra som växer 
 varje vecka. [Det skulle vara underbart om du ville bli en av dem][contribute]!
 
-Som tidigare nämns är [rusts internforum][internals_forum] dedikerad till att
-diskutera design och implementation av rust. En hel del av diskussionen händer
+Som tidigare nämnt är [Rusts internforum][internals_forum] dedikerad till att
+diskutera design och implementation av Rust. En hel del av diskussionen händer
 också på GitHub:
 
 - [huvud-repo][github] och [issue-trackern][issue_tracking] är
@@ -272,7 +271,7 @@ också på GitHub:
   en "pull request"!
 
 - [RFC-repo][rfcs] håller koll på vår "Request for Comment" process vilket
-  är huvudvägen genom vilken rust-communityt och teamen når konsensus om föreslagen
+  är huvudvägen genom vilken Rust-communityt och teamen når konsensus om föreslagen
   ny funktionalitet för språket och officiella bibliotek och verktyg.
 
 [authors]: https://thanks.rust-lang.org/rust/all-time

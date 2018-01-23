@@ -1,68 +1,67 @@
 ---
 layout: sv-SE/default
-title: Andra installationssätt &middot; Programmeringsspråket Rust
+title: Andra Installationssätt &middot; Programmeringsspråket Rust
 ---
 
-# Andra installationssätt för rust
+# Andra Installationssätt för Rust
 
-- [Vilka installatörer ska du använda?](#which)
+- [Vilken installation ska du använda?](#which)
 - [Andra sätt att installera `rustup`](#more-rustup)
-- [Fristående installatörer](#standalone)
+- [Fristående installationer](#standalone)
 - [Källkod](#source)
 
-## Vilka installatörer ska du använda?
+## Vilka installation ska du använda?
 <span id="which"></span>
 
-Rust kan köras på många plattformar, och det finns många sätt att installera rust.
-Om du vill installera rust på det mest enkla och rekommenderade sättet följer du
-anvisningarna på [huvudinstallationssidan][installation page].
+Rust kan köras på många olika plattformar, och det finns många sätt att installera Rust på.
+Det enklaste och rekommenderade sättet att installera Rust på hittar du [här][installation page].
 
 Den här sidan beskriver installation via [`rustup`], ett verktyg som hanterar
-flera rust toolchains på ett konsekvent sätt på alla plattformar rust stödjer.
+flera Rust toolchains på ett konsekvent sätt på alla plattformar Rust stödjer.
 Varför skulle man _inte_ vilja installera med hjälp av dessa instruktioner?
 
 - Installation offline. `rustup` laddar ner komponenter från internet när det
-  behövs. Om du behöver installera rust utan tillgång till internet är `rustup`
+  behövs. Om du behöver installera Rust utan tillgång till internet är `rustup`
   inte lämpligt.
 - Preferens för (operativ)systemets pakethanterare. På Linux i synnerhet, men
   även på macOS med [Homebrew] och på Windows med [Chocolatey], föredrar
-  utvecklare ibland att installera rust med sin plattforms pakethanterare.
+  utvecklare ibland att installera Rust med sin plattforms pakethanterare.
 - Preferens emot `curl | sh`. På unix installerar vi vanligtvis `rustup` genom
   att köra ett shell-script via `curl`. Vissa oroas över säkerheten för detta
-  arrangemang och föredrar att ladda ner och köra installatören själva.
+  arrangemang och föredrar att ladda ner och köra installationen själva.
 - Verifierade signaturer. Även om `rustup` utför nedladdningar via HTTPS är det
-  enda sättet att verifiera signaturerna för rust-installatörer idag att göra
-  det manuellt med fristående installatörer.
+  enda sättet att verifiera signaturerna för Rust-installationer idag att göra
+  det manuellt med fristående installationer.
 - Installation via grafiska gränssnitt och integrering med
   "Lägg till/ta bort program" på Windows. `rustup` kör i kommandotolken och
-  registrerar inte sin installation som typiska windowsprogram. Om du föredrar
-  en mer typisk installation via grafiskt gränssnitt på windows finns det
-  självständiga `.msi` installatörer. I framtiden kommer `rustup` även ha en
-  installatör med grafiskt gränssnitt på Windows.
+  registrerar inte sin installation som typiska Windows-program. Om du föredrar
+  en mer typisk installation via grafiskt gränssnitt på Windows finns det
+  självständiga `.msi` installationer. I framtiden kommer `rustup` även ha en
+  installationer med grafiskt gränssnitt på Windows.
 
 Rusts plattformsstöd definieras i [tre nivåer][three tiers] vilket nära
 motsvarar de tillgängliga installationsmetoderna: i allmänhet tillhandahåller
-rustprojektet byggda binärer för alla plattformar i nivå 1 och nivå 2, och de kan
+Rust-projektet byggda binärer för alla plattformar i nivå 1 och nivå 2, och de kan
 alla installeras via `rustup`.
 
 Vissa nivå 2-plattformar har dock bara standardbiblioteket tillgängligt,
 inte kompilatorn själv; det vill säga att de är endast mål för kross-kompilering.
-Rustkod kan köras på dessa plattformar, men de kan inte köra kompilatorn själv.
+Rust-kod kan köras på dessa plattformar, men de kan inte köra kompilatorn själv.
 Sådana mål kan installeras med kommandot `rustup target add`.
 
 ## Andra sätt att installera `rustup`
 <span id="rustup"></span>
 
-Sättet att installera `rustup` på skiljer sig mellan plattformar:
+Hur man installerar `rustup` skiljer sig mellan olika plattformar:
 
-* På unix, kör `curl https://sh.rustup.rs -sSf | sh` i din kommandotolk.
+* På unix, kör `curl https://sh.rustup.rs -sSf | sh` i din terminal.
   Detta hämtar och kör [`rustup-init.sh`] som i sin tur hämtar och kör den
   korrekta versionen, för din plattform, av den körbara filen` rustup-init`.
 * På Windows, ladda ner och kör [`rustup-init.exe`].
 
 `rustup-init` kan konfigureras interaktivt, och alla alternativ kan dessutom
 kontrolleras av kommandoradsargument som kan skickas genom shell-scriptet.
-Skicka in `--help` till `rustup-init` som följer för att visa argumenten som
+Skicka med `--help` till `rustup-init` för att visa argumenten som
 `rustup-init` accepterar:
 
 ```
@@ -90,16 +89,16 @@ Om du föredrar att inte använda shell-scriptet kan du direkt ladda ner
   {% endfor %}
 </div>
 
-## Fristående installatörer
+## Fristående installationer
 <span id="standalone"></span>
 
-De officiella fristående rust installatörerna innehåller en enda utgåva av rust
-och är lämpliga för offlineinstallation. De finns i tre former: tarballs
+De officiella fristående Rust installationerna innehåller en enda utgåva av Rust
+och är lämpliga för offlineinstallationer. De finns i tre former: tarballs
 (filändelse `.tar.gz`), som fungerar i alla unix-liknande miljöer,
-windows-installatörer (` .msi`) och macOS-installatörer (`.pkg`). Dessa
-installatörer levereras med: `rustc`,` cargo`, `rustdoc`, standardbiblioteket
-och standarddokumentationen, men ger inte tillgång till ytterligare korsmål
-såsom `rustup` gör.
+Windows-installationer (` .msi`) och macOS-installationer (`.pkg`). Dessa
+installationer levereras med: `rustc`,` cargo`, `rustdoc`, standardbiblioteket
+och standarddokumentationen, men ger inte tillgång till ytterligare cross-targets
+som `rustup` gör.
 
 De vanligaste anledningarna till att använda dessa är:
 
@@ -107,7 +106,7 @@ De vanligaste anledningarna till att använda dessa är:
 - Du föredrar ett mer plattformsintegrerat grafiskt installationsprogram på Windows
 
 Var och en av dessa binärer är signerad med
-[rusts signeringsnyckel][Rust signing key], som är
+[Rusts signeringsnyckel][Rust signing key], som är
 [tillgänglig på keybase.io][available on keybase.io],
 av "Rust build infrastructure", med [GPG].
 I tabellerna nedan är `.asc`-filerna signaturerna.

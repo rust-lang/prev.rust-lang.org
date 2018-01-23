@@ -1,50 +1,50 @@
 ---
 layout: sv-SE/default
-title: Att bidra till rust &mdash; dokumentation &middot; Programmeringsspråket Rust
+title: Att Bidra till Rust &mdash; Dokumentation &middot; Programmeringsspråket Rust
 ---
 
-# Att bidra till rust &mdash; dokumentation
+# Att Bidra till Rust &mdash; Dokumentation
 
 Dokumentation är aldrig bra nog, och det finns aldrig tillräckligt av det.
-Många aspekter av rusts dokumentaton kräver ej djup kunskap för att förbättra.
-Att skriva, granska, och redigera dokumentation är bra sätt att lära sig rust på.
-Därutöver är förbättringar på dokumentationen lättidentifierbara och obegränsade.
+Många aspekter av Rusts dokumentaton kräver inte djup kunskap för att förbättra.
+Att skriva, granska, och redigera dokumentation är bra sätt att lära sig Rust på.
+Förbättringar av dokumentationen är oftast lättidentifierbara och obegränsade.
 Gillar du inte hur något läses? Har du hittat någon odokumenterad information?
 Dina pull requests kommer bli glatt välkomnade.
 
 ***Den dokumentation du kan skriva som hjälper ekosystemet mest är
-[för crates som utgör rusts "ekosystem"][crate_docs]***. Medan standardbibliotekets
-dokumentation är relativt utförlig är detsamma ej sant för
-[många populära crates och verktyg][awesome-rust] som rustprogrammerare
-använder varje dag. Att bidra med API-dokumentation till ett populärt rustprojekt
-kommer ge dig evig uppskattning från de som underhåller projektet.
+[för crates som utgör Rusts "ekosystem"][crate_docs]***. Medan standardbibliotekets
+dokumentation är relativt utförlig är detsamma inte sant för
+[många populära crates och verktyg][awesome-rust] som Rustprogrammerare
+använder varje dag. Att bidra med API-dokumentation till ett populärt Rust-projekt
+kommer att ge dig evig uppskattning från de som underhåller projektet.
 
-[Boken (om rust)][The Book] är den primära källan för dokumentation om rust,
-den underhålls i huvudrepot. Den har sig egna problem-etikett, [A-book] och
-förbättras ständigt. Annan dokumentation i huvudrepot inbegriper
-[rusts referenshandbok][The Rust Reference],
+[Boken (om Rust)][The Book] är den primära källan för dokumentation om Rust,
+den underhålls i huvudrepot. Den har sina egna problem-etikett, [A-book] och
+förbättras ständigt. Annan dokumentation i huvudrepot är
+[Rusts referenshandbok][The Rust Reference],
 [standardbibliotekets API-dokumentation][std],
-[den sk. Rustonomicon][The Rustonomicon] (en guide till att använda `unsafe`
-på ett korrekt sätt; begreppet härör ur kombinationen "rust" och "necronomicon").
+[den s.k. Rustonomicon][The Rustonomicon] (en guide till att använda `unsafe`
+på ett korrekt sätt; begreppet härör ur kombinationen "Rust" och "necronomicon").
 [Rusts stilguide][Rust Style Guidelines] är så ofullständig att den inte länkas
 till ofta; den som är ambitiös kan bidra mycket där. [Indexet över fel][err]
 tillhandahåller utförliga beskrivningar av diverse felmeddelanden som kompilatorn
-kan ge. Allteftersom nya felmeddelanden läggs till i kompilatorn
+kan ge. Allt eftersom nya felmeddelanden läggs till i kompilatorn
 [måste dokumentationen underhållas][err-issue]. Därför finns det alltid
 felmeddelanden som inte beskrivs i indexet att lägga till och beskriva.
 Den större delen av dokumentationen i huvudrepot finns i mappen [src/doc].
 I issue-trackern märks problem relaterade till denna dokumentation med etiketten
 [A-docs]. Till sist är detta dokument och andra webbsidematerial underhållna i
-[rustwebbsidans gitrepo][Rust website Git repository]. För att bidra till den
+[Rustwebbsidans gitrepo][Rust website Git repository]. För att bidra till den
 behöver du bara redigera och skicka in en pull request.
 
-En hel del viktig rustdokumentation finns ej i huvudrepot eller underhålls inte
-av projektet men är fortfarande kritiskt viktig för rusts framgång.
-Exempel på utmärkt rustdokumentation som utvecklas aktivt och behöver folk som
+En hel del viktig Rust-dokumentation finns ej i huvudrepot eller underhålls inte
+av projektet men är fortfarande kritiskt viktig för Rusts framgång.
+Exempel på utmärkt Rust-dokumentation som utvecklas aktivt och behöver folk som
 bidrar är [Rust By Example], [Rust Design Patterns], och [rust-rosetta].
 För annan existerande dokumentationsprojekt att bidra till, se [rust-learning].
 
-Träffa annat folk som dokumenterar rust i [#rust-docs].
+Träffa andra människor som dokumenterar Rust i [#rust-docs].
 
 <!--
 TODO: blogging, translation
