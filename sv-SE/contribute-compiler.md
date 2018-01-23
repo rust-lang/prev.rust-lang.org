@@ -1,33 +1,33 @@
 ---
 layout: sv-SE/default
-title: Att bidra till rust &mdash; språket, kompilatorn och standardbiblioteket &middot; Programmeringsspråket rust
+title: Att Bidra till Rust &mdash; Språket, Kompilatorn och Standardbiblioteket &middot; Programmeringsspråket rust
 ---
 
-# Att bidra till rust &mdash; språket, kompilatorn och standardbiblioteket
+# Att Bidra till Rust &mdash; Språket, Kompilatorn och Standardbiblioteket
 
 Källkoden för kompilatorn och standardbiblioteket är i huvud-repot och
-deras underhåll är det primära målet för det repot. Många etiketter på
+dess underhåll är det primära målet för det repot. Många etiketter på
 issue trackern är relaterade till det. Några av de mer fruktbara etiketterna
-inbegriper [A-codegen], för översättning av rust-kod till LLVM IR;
-[A-debuginfo], för generation av metadata använt av debuggers;
+är [A-codegen], för översättning av Rust-kod till LLVM IR;
+[A-debuginfo], för generation av metadata för debuggers;
 [A-diagnostics], feedbacken som kompilatorn ger vid fel;
 [A-libs], problem i standardbiblioteket;
 [A-macros] och [A-syntaxext], båda relaterade till syntax extensions
 ("syntax-utökningar"); och [A-typesystem], som handlar om typsystemet.
 
-Det finns ingen välunderhållen guide till kompilatorns arkitektur men
+Det finns ingen väl underhållen guide till kompilatorns arkitektur men
 [det finns en liten översikt i repot][rustc-guide].
 [API-dokumentationen för de crates som utgör kompilatorn][internals-docs] kan 
 hjälpa till med att navigera i koden, likväl som källkods-browsern [Rust DXR].
-[Guiden till rusts testsvit][testsuite] kan lära dig hur du kan använda rusts
+[Guiden till Rusts testsvit][testsuite] kan lära dig hur du kan använda Rusts
 byggsystem effektivt likväl som att köra [`make tips`][tips] i terminalen.
 
 Under överskådlig framtid är en av de initiativen i utvecklingen av
-rust-kompilatorn att konvertera dess interna mekanismer från att
-arbete direkt på det abstrakta syntax trädet (AST) till att arbeta med
+Rust-kompilatorn att konvertera dess interna mekanismer från att
+arbeta direkt på det abstrakta syntax trädet (AST) till att arbeta med
 och på [en mellanliggande representation vid namn MIR][mir].
-Detta arbete förväntas uppna upp för många nya möjligheter genom att
-förenkla kompilatorn, och hjälp behövs för att t.ex skapa ett MIR-baserat
+Detta arbete förväntas öppna upp för många nya möjligheter genom att
+förenkla kompilatorn, och hjälp behövs för att t.ex. skapa ett MIR-baserat
 översättningssteg, lägga till MIR-baserade optimeringar och implementera
 inkrementell kompilering. Det finns tillsvidare ingen enskild resurs för
 information om arbetet som krävs här, men fråga på [internals.rust-lang.org]
@@ -37,25 +37,25 @@ eller [#rust-internals] för att bli guidad.
 fruktade 'internt-kompilator-fel' (ICE). Etiketten [I-ICE]
 håller koll på dessa och det finns ofta många sådana märkta problem.
 Dessa är oftast bra buggar att börja med eftersom det är lätt att veta
-när du har fixat dom och de är ofta relativt fristående.
+när du har fixat dem och de är ofta relativt fristående.
 
-Rustkods prestanda är en av dess stora fördelar; och prestandan på rustkompilatorn
+Rust-kods prestanda är en av dess stora fördelar; och prestandan på Rust-kompilatorn
 är en av dess stora svagheter. Förbättringar av körsningstid eller speciellt
 prestandan på kompileringstiden är mycket uppskattade. Etiketterna [I-slow] och
 [A-optimization] är för körningstidsprestanda, och [I-compiletime] för
 kompileringstid. Vi har en [sida som håller koll på kompileringstidsprestanda][rustc-perf]
 på ett antal projekt. Kompilatorflaggan `-Z time-passes` kan hjälpa till att
-debugga kompilatorprestanda, och rustkod kan profilas med standard-profilers såsom
+debugga kompilatorprestanda, och Rust-kod kan profileras med standard-profiler såsom
 `perf` på Linux.
 
 Större ny funktionalitet genomgår en [Förfrågningar för kommentarer (RFC)][rfc]
-process, igenom vilken en design för funktionaliteten bestäms. Denna process är
+process, genom vilken en design för funktionaliteten bestäms. Denna process är
 öppen för alla. Det är en social process utvecklare emellan som redan har olika
-mängd erfarenhet av att arbeta tillsammas och det rekommenderas att bli involverad
+mängd erfarenhet av att arbeta tillsammans och det rekommenderas att bli involverad
 sakta &mdash; att bidra en snabbskriven RFC utan att förstå ämnets historiska,
 tekniska eller sociala kontext är ett lätt sätt att göra ett dåligt intryck och
 att bli besviken på resultatet. Läs den tidigare nämnda readme-filen för att bättre
-förstå hur det hela går till. Många idéer har debatterats under rusts historia.
+förstå hur det hela går till. Många idéer har debatterats under Rusts historia.
 Vissa har avvisats, några har skjutits upp på framtiden och [issue trackern][rfc-issues]
 för RFCs katalogiserar vissa önskemål som ännu inte blivit en del av språket.
 Strax innan en RFC blir accepterad för implementation går den in i en
@@ -68,7 +68,7 @@ Båda FCPs är kritiska stunder att bli involverad och uttrycka åsikter om
 språkets utvecklingsriktning. FCPs påannonsers i de veckovisa sub-team
 rapporterna på [internals.rust-lang.org].
 
-Träffa andra rust-kompilator ingenjörer i [#rustc], språkdesigners i
+Träffa andra Rust-kompilator-ingenjörer i [#rustc], språkdesigners i
 [#rust-lang], och bibliotekdesigners i [#rust-libs].
 
 <!--

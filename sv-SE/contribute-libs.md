@@ -1,42 +1,42 @@
 ---
 layout: sv-SE/default
-title: Att bidra till rust &mdash; bibliotek &middot; Programmeringsspråket Rust
+title: Att bidra till Rust &mdash; bibliotek &middot; Programmeringsspråket Rust
 ---
 
-# Att bidra till rust &mdash; bibliotek
+# Att bidra till Rust &mdash; bibliotek
 
-Om du vill bidra till rust genom att skriva volymer av rustkod så är 
-bibliotek där du kan göra det. Eftersom rust är ett nytt språk finns
-det många typer av bibliotek som antingen inte finns än eller är
-ofullständiga och är i behov av förbättring eller andra konkurrens.
+Om du vill bidra till Rust genom att skriva Rust-kod så är bibliotek en
+bra start. Eftersom Rust är ett nytt språk finns det många typer av
+bibliotek som antingen inte finns än eller är ofullständiga och är i
+behov av förbättring eller konkurrens.
 
-Att bestämma vad du ska skriva som kommer ha effekt på ekosystemet och vara
-kul är en vanlig svårighet. Här är ett antal idéer som kan hjälpa:
+Att bestämma vad du ska skriva som kommer ha effekt på ekosystemet och
+vara kul är en vanlig svårighet. Här är ett antal idéer som kan hjälpa:
 
 * Läs och delta i de veckovisa "vad jobbar alla med denna veckan"-trådar
   ("what's everyone working on this week") på subredditen [/r/rust] och
   [users.rust-lang.org]. Dessa är fyllda med spännande nyheter från andra
-  rustprogrammerare som är i behov av medarbetare.
-* Bekanta dig med de bästa rust-biblioteken via [awesome-rust] och [libs.rs].
+  Rust-programmerare som är i behov av medarbetare.
+* Bekanta dig med de bästa Rust-biblioteken via [awesome-rust] och [libs.rs].
 * Vissa större projekt, inklusive webbläsaren [Servo], http-biblioteket [hyper],
-  källkodsformateraren [rustfmt], och unix-bindnings-biblioteket [nix], och
+  källkodsformateraren [rustfmt], unix-bindnings-biblioteket [nix], och
   kodförbättringstipsaren [clippy] märker problem med 'easy' etiketter för nya
   medarbetare.
-* Bli involverad med en av de mest aktiva rust-orienterade GitHub organisationerna
+* Bli involverad med en av de mest aktiva Rust-orienterade GitHub organisationerna
   såsom: [PistonDevelopers], [servo], [redox-os], [iron], [contain-rs] och [hyperium].
   Det är ofta enklare att hitta ett ställe att passa in i i dessa del-communities.
-  De är också i större behov av hjälp än rust-lang organisationen självt och de är
-  fyllda med erfarna rustutvecklare som kan vägleda dig.
+  De är också i större behov av hjälp än rust-lang organisationen själv och de är
+  fyllda av erfarna Rust-utvecklare som kan vägleda dig.
 * Hjälp till att guida bibliotek från [rust-lang-nursery] till huvudorganisationen rust-lang.
   Dessvärre finns det inte mycket dokumentation om vad som behövs göras här. Du
-  kan dock fråga på kanalen [#rust-libs].
+  kan dock fråga i kanalen [#rust-libs].
 * Ta en titt på RFC-issue-trackern för ett [efterfrågat bibliotek][requested] och bygg det.
-* Håll koll på [Github Trending][trending] för rustprojekt som är aktiva just nu.
+* Håll koll på [Github Trending][trending] för Rust-projekt som är aktiva just nu.
 
 Som biblioteksförfattare behöver du vara medveten om
-[bästa praxis för rustbibliotek][lib-prac].
+[bästa praxis för Rust-bibliotek][lib-prac].
 
-Träffa andra rustbibliotekdesigners i [#rust-libs].
+Träffa andra Rust-bibliotekdesigners i [#rust-libs].
 
 <!--
 TODO: Not sure #rust-libs is the place to direct people

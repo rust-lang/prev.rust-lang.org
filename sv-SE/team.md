@@ -1,14 +1,14 @@
 ---
 layout: sv-SE/default
-title: Rustteamet &middot; Programmeringsspråket Rust
+title: Rust-teamet &middot; Programmeringsspråket Rust
 extra_css:
   - team.css
 ---
 
-# Rustteamet
+# Rust-teamet
 
-Rustprojektet [styrs](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)
-by a number of teams som var och en fokuserade på ett specifikt problemområde.
+Rust-projektet [styrs](https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md)
+av flera team som var och en fokuserar på ett specifikt problemområde.
 Nedan finns laguppställningar i alfabetisk ordning.
 
 För att kontakta ett team, skicka in din fråga eller kommentar på

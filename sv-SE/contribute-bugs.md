@@ -1,29 +1,29 @@
 ---
 layout: sv-SE/default
-title: Att bidra till rust &mdash; att hitta, kategorisera, prioritera och fixa problem &middot; Programmeringsspråket Rust
+title: Att Bidra till Rust &mdash; Att Hitta, Kategorisera, Prioritera och Fixa Problem &middot; Programmeringsspråket Rust
 ---
 
-# Att bidra till rust &mdash; att hitta, kategorisera, prioritera och fixa problem
+# Att Bidra till Rust &mdash; Att Hitta, Kategorisera, Prioritera och Fixa Problem
 
-Det dagliga underhållet av projetet kretsar kring rusts [issue tracker] och
-[issue tracker] och [pull requests][PR], och mer hjälp behövs alltid.
-Det enklaste sättet att komma igång med att bidra till rust är att leta efter
-etiketterna [E-easy] eller [E-mentor]. Dessa är ämnade att kunna lösas av nya
-rustprogrammerare.
+Det dagliga underhållet av projetet kretsar kring Rusts [issue tracker] och
+[pull requests][PR], och mer hjälp behövs alltid. Det enklaste sättet
+att komma igång med att bidra till Rust är att leta efter etiketterna
+[E-easy] eller [E-mentor]. Dessa är ämnade att kunna lösas av nya
+Rust-programmerare.
 
-På issues ("problem") märkta `E-mentor` har en erfaren rust-utvecklare anmält
+På issues ("problem") märkta `E-mentor` har en erfaren Rust-utvecklare anmält
 sig frivilligt i kommentarerna för att handleda dig genom lösandet av problemet
 och att [skicka in en fix via pull requests på GitHub][pull]. Kontakta dem om problemet
 på issue trackern genom att [@nämna][@mentioning] deras namn i en kommentar, på IRC,
-eller via email. Notera att rust-utvecklare får många notiser och att det därför är
-lätt att missa några; tveka inte att hitta dem med alla till båds stående medel!
+eller via email. Notera att Rust-utvecklare får många notiser och att det därför är
+lätt att missa några; tveka inte för att ta till alla medel för att nå dem!
 
-Andra projekt i rust tillhandahåller likande uppgifter på nybörjarnivå inklusive
-webbläsaren [Servo], httpbiblioteket [hyper], källkodsformateraren [rustfmt], och 
-projektet för unix-biblioteks-bindningar [nix], och källkodsförbättringsförslagsgivaren [clippy].
+Andra projekt i Rust tillhandahåller likande uppgifter på nybörjarnivå inklusive
+webbläsaren [Servo], http-biblioteket [hyper], källkodsformateraren [rustfmt], och
+projektet för unix-biblioteks-bindningar [nix] och källkodsförbättringsförslagsgivaren [clippy].
 
-Medan rust har en [extensiv testsvit][test] finns det alltid mer att testa.
-Etiketten [E-needstest] indikerar problem som tros ha fixats med saknar tester.
+Medan Rust har en [extensiv testsvit][test] finns det alltid mer att testa.
+Etiketten [E-needstest] indikerar problem som tros ha fixats men saknar tester.
 Att skriva testfall är ett mycket bra sätt att förstå ett nytt projekt och att
 börja att bidra.
 
@@ -33,8 +33,8 @@ Notera att du behöver upphöjda GitHub-privilegier för att etikettera, men det
 är lätt att få för någon med lite erfarenhet i projektet. Fråga en [teammedlem][team]
 för att få dessa privilegier.
 
-När du har hittat dig runt projektet och skapat några
-dra pull requests inom ett visst område, överväg då att granska andras förslag.
+När du har hittat dig runt projektet och skapat några pull requests inom
+ett visst område, överväg då att granska andras förslag.
 Bra granskningsförmåga är en sällsynt skicklighet och uppskattas alltid.
 
 Inget tidigare tillstånd krävs &mdash; börja bara att ge konstruktiva och artiga
