@@ -10,7 +10,7 @@ install:
 - pip install --user awscli
 - ~/.local/bin/aws configure set preview.cloudfront true
 
-before_script: bash tidy.sh
+before_script: bash scripts/tidy.sh
 
 # Build and deploy the site to the S3 bucket on push to master, unless PR
 script: bundle exec jekyll build
