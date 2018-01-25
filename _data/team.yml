@@ -21,6 +21,8 @@
 people:
   aatch:
     name: James Miller
+  Aaronepower:
+    name: Aaron Power
   aidanhs:
     name: Aidan Hobson Sayers
   arielb1:
@@ -28,6 +30,8 @@ people:
   alexcrichton:
     name: Alex Crichton
     irc: acrichto
+  ArazAbishov:
+    name: Araz Abishov
   ashleygwilliams:
     name: Ashley Williams
     irc: agdubs
@@ -35,6 +39,8 @@ people:
     name: Aaron Turon
   badboy:
     name: Jan-Erik Rediger
+  BatmanAoD:
+    name: BatmanAoD
   bkoropoff:
     name: Brian Koropoff
     ex-teams: ["compiler"]
@@ -49,8 +55,17 @@ people:
     irc: burntsushi
   carols10cents:
     name: Carol Nichols
+  Centril:
+    name: Mazdak Farrokhzad
+    irc: centril
   cramertj:
     name: Taylor Cramer
+  cssivision:
+    name: cssivision
+  cuviper:
+    name: Josh Stone
+  dirtybit:
+    name: Sertac Olgunsoylu
   dotdash:
     name: Björn Steinbrink
     irc: doener
@@ -75,17 +90,21 @@ people:
   Gankro:
     name: Alexis Beingessner
     ex-teams: ["libs"]
+  gsollazzo:
+    name: Giovanni Sollazzo
+  GuillaumeGomez:
+    name: Guillaume Gomez
+    irc: imperio
   Havvy:
     name: Ryan Scheel
   huonw:
     name: Huon Wilson
     irc: huon
     ex-teams: ["core", "lang", "libs"]
-  GuillaumeGomez:
-    name: Guillaume Gomez
-    irc: imperio
   japaric:
     name: Jorge Aparicio
+  jkordish:
+    name: Joseph Kordish
   johannhof:
     name: Johann Hofmann
   jonathandturner:
@@ -94,6 +113,8 @@ people:
   joshtriplett:
     name: Josh Triplett
     irc: JoshTriplett
+  jrozner:
+    name: Joe Rozner
   jseyfried:
     name: Jeffrey Seyfried
     irc: jseyfried
@@ -110,6 +131,8 @@ people:
     name: Ashley Mannix
   llogiq:
     name: llogiq
+  Lubits:
+    name: Lubits
   Mark-Simulacrum:
     name: Mark Simulacrum
     irc: simulacrum
@@ -133,6 +156,8 @@ people:
     name: Nick Cameron
   oli-obk:
     name: Oliver Schneider
+  pambihira:
+    name: pambihira
   pcwalton:
     name: Patrick Walton
   peschkaj:
@@ -141,8 +166,12 @@ people:
   petrochenkov:
     name: Vadim Petrochenkov
     irc: petrochenkov
+  pietroalbini:
+    name: Pietro Albini
   pnkfelix:
     name: Felix Klock
+  PramodBisht:
+    name: Pramod Bisht
   QuietMisdreavus:
     name: QuietMisdreavus
     irc: misdreavus
@@ -150,6 +179,8 @@ people:
     name: Sebastián Magrí
   sfackler:
     name: Steven Fackler
+  sgrif:
+    name: Sean Griffin
   shepmaster:
     name: Jake Goulding
     irc: shep
@@ -160,10 +191,14 @@ people:
     irc: scott
   steveklabnik:
     name: Steve Klabnik
+  stokhos:
+    name: Stokhos
   tomprince:
     name: Tom Prince
   TimNN:
     name: Tim Neumann
+  treiff:
+    name: Trevor Reiff
   vadimcn:
     name: Vadim Chugunov
   ubsan:
@@ -226,7 +261,7 @@ teams:
     email: infra@rust-lang.org
   - name: Release team
     responsibility: "tracking regressions, stabilizations, and producing Rust releases"
-    members: [Mark-Simulacrum]
+    members: [Mark-Simulacrum, jrozner, jkordish, cuviper, alexcrichton, dirtybit, Centril, sgrif, pietroalbini, BatmanAoD, PramodBisht, Lubits, ArazAbishov, Aaronepower, treiff, cssivision, gsollazzo, pambihira, stokhos]
     lead: Mark-Simulacrum
     email: release@rust-lang.org
   - name: Community team
