@@ -21,14 +21,14 @@ title: O Código de Conduta de Rust &middot; A linguagem de programação Rust
   interpretaremos o termo "humilhação" como incluido na definição no <a href="http://citizencodeofconduct.org/">Código de Conduta do Cidadão</a>; se você teve alguma dúvida sobre o que está incluso nesse conceito, por favor leia a definição deles. Em particular,
   nós não toleramos comportamento que exclua pessoas de minorias e grupos marginalizados.
 * Humilhação privada é também inaceitável. Não interessa quem você é, se você sente que foi ou está sendo humilhado ou se sentido
-  desconfortável por um membro da comunidade, por favor contate um dos canais de interação ou o [time da moderação do Rust](/team.html#Moderation-team) imediatamente. Independentemente de você é um contribuidor regular ou um novato, nós nos preocupamos
+  desconfortável por um membro da comunidade, por favor contate um dos canais de interação ou o [time da moderação do Rust][mod_team] imediatamente. Independentemente de você é um contribuidor regular ou um novato, nós nos preocupamos
   em fazer dessa comunidade um lugar seguro para você e nós lhe protegeremos.
 * Da mesma forma, qualquer spam, trolagem, brigas, enganação (fishing) ou "roubo de atenção" não é bem vindo.
 
 ## Moderação
 
 Essas são as políticas para confirmar os padrões de conduta da nossa comunidade. Se você acha que um tópico precisa de moderação,
-por favor contate o [time de moderação do Rust](/team.html#Moderation-team).
+por favor contate o [time de moderação do Rust][mod_team].
 
 1. Observações que violam o código de conduta de Rust, incluindo comentários de ódio, que machucam, opressivos ou como exclusão não
 são permitidos. (Xingamentos são permitidos, desde que não sejam destinados à outros usuarios ou numa forma odiosa)
@@ -47,3 +47,5 @@ E se alguém não gostar de algo que você fez ou falou, resista ao máximo ser 
 O refoço de políticas listadas acima é para todos os canais oficiais de Rust; incluindo os canais oficiais de IRC (#rust, #rust-internals,  #rust-tools, #rust-libs, #rustc, #rust-beginners, #rust-docs, #rust-community, #rust-lang e #cargo); Repositórios no GitHub sob rust-lang, rust-lang-nursery e rust-lang-deprecared; e todos os fóruns sob rust-lang.org (users.rust-lang.org, internals.rust-lang.org). Para outros projetos que adotam o código de conduta de Rust, por favor contate um dos mantedores desses projetos para reforço. Se você pretende usar esse código de conduta para seu próprio projeto, considere mencionar explicitamente sua política de moderação ou fazendo uma cópia com sua própria política de moderação para evitar confusão.
 
 *Adaptado da [Política do Node.js em Trolagens](http://blog.izs.me/post/30036893703/policy-on-trolling) assim como o [Convênio do Contribuidor v1.3.0](http://contributor-covenant.org/version/1/3/0).*
+
+[mod_team]: /team.html#Moderation-team
