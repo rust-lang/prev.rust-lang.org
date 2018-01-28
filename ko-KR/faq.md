@@ -1453,7 +1453,7 @@ Rust는 여러 패러다임을 지원합니다.
 </a></h3>
 
 가장 쉬운 방법은 구조체 인스턴스를 생성하는 어떤 함수에든 (보통 `new()`에) [`Option`][Option] 타입을 쓰는 겁니다.
-또 다른 방법은 [빌더(builder) 패턴](https://aturon.github.io/ownership/builders.html)을 써서, 타입을 생성하기 전에 멤버 변수를 인스턴스화하는 특정 함수들을 호출해야 하도록 하는 것입니다.
+또 다른 방법은 [빌더(builder) 패턴](https://doc.rust-lang.org/stable/book/first-edition/method-syntax.html#builder-pattern)을 써서, 타입을 생성하기 전에 멤버 변수를 인스턴스화하는 특정 함수들을 호출해야 하도록 하는 것입니다.
 
 <h3><a href="#how-do-i-do-global-variables" name="how-do-i-do-global-variables">
 Rust에서 전역 변수를 쓰려면 어떻게 하죠?

@@ -1216,7 +1216,7 @@ Rust 是面向对象吗？
 如何处理有可选参数的结构体的配置？
 </a></h3>
 
-最简单的方法是在你用来构造结构体实现的任何函数（ 通常是 `new`）中使用 [`Option`][Option] 类型。另一种方法是使用 [构造器模式](https://aturon.github.io/ownership/builders.html)，在构造类型之前，一些明确实例化成员变量的函数必须被调用。
+最简单的方法是在你用来构造结构体实现的任何函数（ 通常是 `new`）中使用 [`Option`][Option] 类型。另一种方法是使用 [构造器模式](https://doc.rust-lang.org/stable/book/first-edition/method-syntax.html#builder-pattern)，在构造类型之前，一些明确实例化成员变量的函数必须被调用。
 
 <h3><a href="#how-do-i-do-global-variables" name="how-do-i-do-global-variables">
 如何在 Rust 中做全局对象？
