@@ -272,6 +272,7 @@ teams:
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
     members: [steveklabnik, GuillaumeGomez, frewsxcv, QuietMisdreavus]
+    lead: steveklabnik
   - name: Documentation peers
     responsibility: "oversight of specific documentation, and coordination with the docs team"
     members: ["Havvy"]
