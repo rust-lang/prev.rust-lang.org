@@ -300,8 +300,6 @@ Budapest.
 
 ### New York
 
-[Rust New York City](https://www.meetup.com/RustNY/), New York, NY.
-
 [Rust NYC](https://www.meetup.com/Rust-NYC/), New York, NY.
 
 ### Ohio

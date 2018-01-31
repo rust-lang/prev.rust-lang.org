@@ -504,11 +504,6 @@
       state: MN
       url: https://www.meetup.com/Rust-TC/
 
-    - name: Rust New York City
-      city: New York
-      state: NY
-      url: https://www.meetup.com/RustNY/
-
     - name: Rust NYC
       city: New York
       state: NY
