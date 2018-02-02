@@ -168,6 +168,10 @@
       city: Bangalore
       url: https://www.meetup.com/rustox/
 
+    - name: Rust Chennai
+      city: Chennai (Madras)
+      url: https://www.meetup.com/mad-rs/
+
 - country: Indonesia
   meetups:
 
