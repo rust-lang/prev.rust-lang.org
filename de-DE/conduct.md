@@ -15,12 +15,12 @@ title: Der Rust-Verhaltenskodex &middot; Die Programmiersprache Rust
 * Bitte respektiere, dass es immer abweichende Meinungen gibt und dass jede Design- oder Implementierungsentscheidung auf Abwägungen basiert und Aufwand verursacht. Es gibt selten eine perfekte Lösung.
 * Bitte reduziere unstrukturierte Beiträge auf ein Minimum. Wenn du konkrete Ideen hast, forke eins unserer Repositories, experimentiere damit und arbeite einen gut durchdachten Vorschlag oder ein Pull Request aus.
 * Falls wir feststellen müssen, dass du andere Teilnehmer beleidigst, belästigst oder schikanierst, werden wir dich von der Kommunikation ausschließen. Solches Verhalten ist nicht willkommen. Falls du dir nicht sicher bist, was aus unserer Sicht alles in diese Kategorie fällt, lies im <a href="http://citizencodeofconduct.org/">Citizen Code of Conduct</a> unter dem Stichwort "harassment" nach. Wir übernehmen die dortige Definition für unsere Zwecke. Insbesondere tolerieren wir kein Verhalten, das dazu geeignet ist, sozial benachteiligte Gruppen auszuschließen.
-* Persönliche Belästigung ist ebenso unakzeptabel. Falls du das Gefühl hast von einem anderen Teilnehmer schikaniert oder unangenehm bedrängt zu werden, kontaktiere bitte sofort einen der IRC-Ops oder ein Mitglied des [Rust-Moderationsteams](/team.html#Moderation-team) (englisch). Egal ob du regelmäßig am Projekt mitwirkst oder frisch dazugekommen bist - es ist uns sehr wichtig diese Gemeinschaft zu einer sicheren Umgebung zu machen, und wir werden dich unterstützen.
+* Persönliche Belästigung ist ebenso unakzeptabel. Falls du das Gefühl hast von einem anderen Teilnehmer schikaniert oder unangenehm bedrängt zu werden, kontaktiere bitte sofort einen der IRC-Ops oder ein Mitglied des [Rust-Moderationsteams][mod_team] (englisch). Egal ob du regelmäßig am Projekt mitwirkst oder frisch dazugekommen bist - es ist uns sehr wichtig diese Gemeinschaft zu einer sicheren Umgebung zu machen, und wir werden dich unterstützen.
 * Genauso ist Spamming, Trolling, Flaming und anderes Verhalten, das nur der Erregung von Aufmerksamkeit dient, nicht willkommen.
 
 ## Moderation
 
-Dies sind die Richtlinien, um den Verhaltenskodex unserer Community aufrecht zu erhalten. Falls du der Meinung bist, dass ein Thread der Moderation bedarf, kontaktiere bitte das [Rust-Moderationsteam](/team.html#Moderation-team) (englisch).
+Dies sind die Richtlinien, um den Verhaltenskodex unserer Community aufrecht zu erhalten. Falls du der Meinung bist, dass ein Thread der Moderation bedarf, kontaktiere bitte das [Rust-Moderationsteam][mod_team] (englisch).
 
 1. Bemerkungen, die gegen den Rust-Verhaltenskodex verstoßen, wie etwa verhasste, verletzende, unterdrückende oder ausschließende Bemerkungen sind verboten (Fluchen und die Benutzung von Schimpfwörtern ist grundsätzlich erlaubt, aber nicht wenn sie andere Personen zum Ziel haben).
 2. Bemerkungen, die Moderatoren als unangemessen einstufen, ob sie Teil des Verhaltenskodex sind oder nicht, sind ebenfalls verboten.
@@ -39,3 +39,4 @@ Die Durchsetzung der aufgezählten Richtlinien gelten für alle Dienste des Rust
 
 *Basierend auf der [Node.js Policy on Trolling](http://blog.izs.me/post/30036893703/policy-on-trolling) und dem [Contributor Covenant v1.3.0](https://www.contributor-covenant.org/version/1/3/0/).*
 
+[mod_team]: /team.html#Moderation-team
