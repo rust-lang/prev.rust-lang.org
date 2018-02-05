@@ -12,7 +12,7 @@ Keep an eye on the [#rust-beginners] channel. This is where we direct
 new Rust programmers to ask for help, and it is vital when they do
 that they receive prompt, accurate, and courteous responses. Likewise,
 [Stack Overflow], [users.rust-lang.org], and [/r/rust], are all forums
-where Rust programers commonly look for assistance. If you want
+where Rust programmers commonly look for assistance. If you want
 training on answering programmers' questions [read this
 guide][helpful].
 
