@@ -294,7 +294,7 @@
 
     - name: Rust Philippines
       city: Manila
-      url: http://www.rustph.tech
+      url: https://www.facebook.com/groups/rustph/
 
     - name: Cebu Rust Camp
       city: Cebu
