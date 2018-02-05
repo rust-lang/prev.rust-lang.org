@@ -1235,7 +1235,7 @@ Kommt darauf an. Es _gibt_ Möglichkeiten, um objektorientierte Konzepte wie [Me
 Wie kann ich einen Struct mit optionalen Parametern konfigurieren?
 </a></h3>
 
-Die einfachste Möglichkeit ist es, den Typ [`Option`][Option] als Parameter für Funktionen wie `new` zu verwenden. Alternativ kannst du das [Builder Pattern](https://aturon.github.io/ownership/builders.html) implementieren, mit dem einzelne Attribute durch Funktionsaufrufe an einen Builder belegt werden, bevor der eigentliche Struct konstruiert wird.
+Die einfachste Möglichkeit ist es, den Typ [`Option`][Option] als Parameter für Funktionen wie `new` zu verwenden. Alternativ kannst du das [Builder Pattern](https://doc.rust-lang.org/stable/book/first-edition/method-syntax.html#builder-pattern) implementieren, mit dem einzelne Attribute durch Funktionsaufrufe an einen Builder belegt werden, bevor der eigentliche Struct konstruiert wird.
 
 <h3><a href="#how-do-i-do-global-variables" name="how-do-i-do-global-variables">
 Wie benutze ich globale Variablen in Rust?

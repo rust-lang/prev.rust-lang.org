@@ -1422,7 +1422,7 @@ Come gestisco la configurazione di una `struct` con parametri opzionali?
 </a></h3>
 
 Il modo più semplice è utilizzare il tipo [`Option`][Option] in qualsiasi funzione venga utilizzata per costruire istanze della struttura (generalmente `new()`).
-Un altro modo è utilizzare il [metodo del costruttore](https://aturon.github.io/ownership/builders.html), dove alcune funzioni devono essere chiamate dopo la costruzione del tipo.
+Un altro modo è utilizzare il [metodo del costruttore](https://doc.rust-lang.org/stable/book/first-edition/method-syntax.html#builder-pattern), dove alcune funzioni devono essere chiamate dopo la costruzione del tipo.
 
 <h3><a href="#how-do-i-do-global-variables" name="how-do-i-do-global-variables">
 Come faccio le variabili globali in Rust?
