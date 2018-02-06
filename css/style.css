@@ -185,6 +185,11 @@ p.pitch a {
 	font-size: 80%;
 }
 
+p.friends-pitch {
+    font-size: 25px;
+    font-weight: 300;
+}
+
 hr {
 	margin-top: 2em;
 	margin-bottom: 3em;
