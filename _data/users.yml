@@ -280,7 +280,7 @@
 -
   name: Pollen Robotics
   url: https://www.pollen-robotics.com/
-  logo: pollen-robotics.svg
+  logo: pollen-logo-for-rust.svg
   how: "We created <a href='https://github.com/pollen-robotics/luos'>Luos</a> and <a href='https://github.com/pollen-robotics/robus'>Robus</a>, Rust based <a href='https://www.luos.io/'>tools for Robot development</a>."
 -
   name: Postlight
