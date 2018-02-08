@@ -278,6 +278,11 @@
   logo: pantsbuild.png
   how: "As of the 1.3.0 stable release, the <a href='https://docs.google.com/document/d/1C64MreDeVoZAl3HrqtWUVE-qnj3MyWW0NQ52xejjaWw/edit?usp=sharing'>core scheduling algorithms</a> of Pants are implemented in Rust. We hope to incrementally port more of Pant's Python code to Rust over time."
 -
+  name: Pollen Robotics
+  url: https://www.pollen-robotics.com/
+  logo: pollen-robotics.svg
+  how: "We created <a href='https://github.com/pollen-robotics/luos'>Luos</a> and <a href='https://github.com/pollen-robotics/robus'>Robus</a>, Rust based <a href='https://www.luos.io/'>tools for Robot development</a>."
+-
   name: Postlight
   url: https://postlight.com/
   logo: postlight.svg
