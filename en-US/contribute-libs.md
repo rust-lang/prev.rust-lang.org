@@ -18,7 +18,7 @@ difficulty. Here are some ideas:
   packed with exciting announcements from other Rust programmers in
   need of collaborators.
 * Familiarize yourself with the best Rust libraries through
-  [awesome-rust] and [libs.rs].
+  [awesome-rust] and [crates.io].
 * Some larger projects, including the web browser [Servo], the HTTP
   library [hyper], the source-formatter [rustfmt], the Unix library bindings
   [nix], and the lint collection [clippy], tag issues with 'easy' labels for new
