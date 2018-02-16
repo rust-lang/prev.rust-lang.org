@@ -57,7 +57,6 @@ TODO: Not sure #rust-libs is the place to direct people
 [hyperium]: https://github.com/hyperium
 [iron]: https://github.com/iron
 [lib-prac]: https://pascalhertleif.de/artikel/good-practices-for-writing-rust-libraries/
-[libs.rs]: http://libs.rs
 [nix]: https://github.com/nix-rust/nix/
 [redox-os]: https://github.com/redox-os
 [requested]: https://github.com/rust-lang/rfcs/labels/A-community-library
