@@ -65,3 +65,4 @@ TODO: Not sure #rust-libs is the place to direct people
 [rustfmt]: https://github.com/rust-lang-nursery/rustfmt
 [trending]: https://github.com/trending?l=rust
 [users.rust-lang.org]: https://users.rust-lang.org
+[crates.io]: https://crates.io
