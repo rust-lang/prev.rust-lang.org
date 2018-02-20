@@ -30,6 +30,8 @@ people:
   alexcrichton:
     name: Alex Crichton
     irc: acrichto
+  alercah:
+    name: Alexis Hunt
   ArazAbishov:
     name: Araz Abishov
   ashleygwilliams:
@@ -139,8 +141,12 @@ people:
   manishearth:
     name: Manish Goregaokar
     irc: Manishearth
+  marioidival:
+    name: Mario Idival
   matklad:
     name: Aleksey Kladov
+  matthewjasper:
+    name: Matthew Jasper
   mbrubeck:
     name: Matt Brubeck
   michaelwoerister:
@@ -175,6 +181,8 @@ people:
     name: Felix Klock
   PramodBisht:
     name: Pramod Bisht
+  projektir:
+    name: projektir
   QuietMisdreavus:
     name: QuietMisdreavus
     irc: misdreavus
@@ -278,7 +286,7 @@ teams:
     lead: steveklabnik
   - name: Documentation peers
     responsibility: "oversight of specific documentation, and coordination with the docs team"
-    members: ["Havvy"]
+    members: [Havvy, matthewjasper, alercah, marioidival, projektir]
   - name: Moderation team
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
