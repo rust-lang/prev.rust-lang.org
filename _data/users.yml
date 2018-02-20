@@ -559,3 +559,8 @@
   url: https://zeplin.io
   logo: zeplin.svg
   how: "Zeplin's Adobe XD CC integration is built on Rust."
+-
+  name: Starry
+  url: https://starry.com
+  logo: starry.svg
+  how: "Re-imagining broadband by engineering a new wireless access network and building an ecosystem of products designed to simplify and improve your connected life."
