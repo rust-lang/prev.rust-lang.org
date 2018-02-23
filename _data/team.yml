@@ -230,6 +230,11 @@ people:
     name: Tom Tromey
   Zoxc:
     name: Zoxc
+  llogiq:
+    name: Andre Bogus
+  matthieu-m:
+    name: Matthieu M.
+    irc: matthieum
 
 # Information about each team. Omit `lead` for teams without leaders.
 #
@@ -289,7 +294,7 @@ teams:
     members: [Havvy, matthewjasper, alercah, marioidival, projektir]
   - name: Moderation team
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
-    members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii]
+    members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii, llogiq, matthieu-m]
     email: rust-mods@rust-lang.org
   - name: Style team
     members: [japaric, nrc, steveklabnik, ubsan, solson, joshtriplett]
