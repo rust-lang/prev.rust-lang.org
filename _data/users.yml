@@ -554,3 +554,8 @@
   url: https://healpay.com
   logo: healpay.png
   how: "We have been pushing Rust into every project we can. Currently we have several backend services built in rust."
+-
+  name: Zeplin
+  url: https://zeplin.io
+  logo: zeplin.svg
+  how: "Zeplin's Adobe XD CC integration is built on Rust."
