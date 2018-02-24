@@ -96,6 +96,7 @@ to ask questions about contributing to Rust.
 - [#rust-libs][libs_irc] is the home of the [libraries team][library_team]
 - [#rust-mods][mod_irc] is the irc channel for the [moderation team][mod_team]
 - [#rust-style][style_irc] is the home of the [style strike team][style_team]
+- [#rustdoc][rustdoc_irc] is the home of the Rustdoc team.
 
 ### Topical channels
 
@@ -161,6 +162,7 @@ These channels are of the wider Rust community, and are not moderated by the [mo
 [serde_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23serde
 [sci_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-sci
 [wasm_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-wasm
+[rustdoc_irc]: https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustdoc
 
 ## Discussion Forums
 
