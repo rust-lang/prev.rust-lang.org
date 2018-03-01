@@ -5,8 +5,8 @@ title: Contribuindo para Rust &middot; A linguagem de programação Rust
 
 # Contribuindo para Rust
 
-Você começou a aprender Rust. Você a ama e quer fazer parte dela.
-Se você não tem certeza que como se involver, então essa página irá ajudar.
+Você começou a aprender a linguagem Rust? Você a ama e quer fazer parte dela?
+Se você ainda não tem certeza de como se involver, então essa página irá te ajudar.
 
 **Encontrou um bug e precisa reportá-lo?** [Siga o guia de report de bugs][bugs].
 Grato desde já!
@@ -26,11 +26,11 @@ Esse guia foca em alguns poucos nichos para o novo contribuidor:
 * [Construção da comunidade](contribute-community.html). Ajudando seu colega
   *Rustacean*, e expandindo o alcance de Rust.
 * [Ferramentas, IDE e infraestrutura](contribute-tools.html). As partes importantes
-  que fazem o uso de uma linguagem mais prático e menos doloroso.
+  que fazem o uso da linguagem ser mais prático e menos doloroso.
 * [Bibliotecas](contribute-libs.html). A adequação de Rust para qualquer
   tarefa particular depende na disponibilidade de bibliotecas de qualidade.
 * [Linguagem, compilador e a biblioteca padrão](contribute-compiler.html).
-  Design da linguagem, implementação de *features* e melhoras de performance.
+  Design da linguagem, implementação de *features* e melhorias de performance.
 
 Se você necessitar de orientação adicional, pergunte no [#rust-internals] ou
 [internals.rust-lang.org]
