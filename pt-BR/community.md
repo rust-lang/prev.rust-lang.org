@@ -19,7 +19,7 @@ do [Time de moderação de Rust][mod_team] imediatamente. Independentemente se v
 é um contribuidor regular ou um novato, nós nos preocupamos em manter a comunidade
 como um espaço confortável para você.
 
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/pt-BR/conduct.html
 [mod_team]: https://www.rust-lang.org/team.html#Moderation-team
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
