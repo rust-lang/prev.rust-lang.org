@@ -188,6 +188,8 @@ people:
     irc: misdreavus
   sebasmagri:
     name: Sebastián Magrí
+  SimonSapin:
+    name: Simon Sapin
   sfackler:
     name: Steven Fackler
   sgrif:
@@ -253,7 +255,7 @@ teams:
     members: [solson, joshtriplett, whitequark, scottmcm]
   - name: Library team
     responsibility: "the Rust standard library, rust-lang crates, conventions, and ecosystem support"
-    members: [alexcrichton, sfackler, BurntSushi, Kimundi, dtolnay, aturon, KodrAus, withoutboats]
+    members: [alexcrichton, sfackler, BurntSushi, Kimundi, SimonSapin, dtolnay, aturon, KodrAus, withoutboats]
     lead: aturon
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
