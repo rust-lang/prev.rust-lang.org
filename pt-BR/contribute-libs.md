@@ -26,7 +26,7 @@ Aqui vão algumas ideias:
   necessidade de ajuda do que rust-lang em si, e são cheios de desenvolvedores experientes
   prontos pra te guiar no que for preciso.
 * Ajude a guiar bibliotecas de [rust-lang-nursery] de volta à rust-lang. Infelizmente,
-  não há muita documentação sobre o que precisa ser feito lá. Pergunte em [#rust-libs].
+  não há muita documentação sobre o que precisa ser feito lá, pergunte em [#rust-libs].
 * Inspecione o seguidor de problemas do PDC para uma [biblioteca requisitada pela comunidade][requested]
   e faça-o.
 * Veja o [Github Trending][trending] para projetos Rust atualmente ativos.
