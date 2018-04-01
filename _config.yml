@@ -1,5 +1,5 @@
 name: The Rust Programming Language
-stable: "1.25"
+stable: "1.25.0"
 stable_date: "2018-03-29"
 stable_blog: "https://blog.rust-lang.org/2018/03/29/Rust-1.25.html"
 stable_full_version: "rustc 1.25.0 (84203cac6 2018-03-25)"
