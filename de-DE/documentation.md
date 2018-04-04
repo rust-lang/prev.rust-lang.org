@@ -20,7 +20,7 @@ Wenn du Rust noch nie gesehen hast, solltest du zuerst einen Blick in das Buch [
 [rust-learning]. Eine gemeinschaftlich verwaltete Sammlung an Ressourcen, um Rust zu lernen.
 
 [book]: https://doc.rust-lang.org/book/
-[rbe]: http://rustbyexample.com
+[rbe]: https://doc.rust-lang.org/rust-by-example/
 [faq]: faq.html
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning
