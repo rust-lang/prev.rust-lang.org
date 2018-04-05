@@ -20,7 +20,7 @@ Si vous découvrez Rust, la première chose à lire est l'introduction du livre 
 [rust-learning]. Un ensemble de ressources pour apprendre Rust, maintenu par la communauté.
 
 [book]: https://doc.rust-lang.org/book/
-[rbe]: http://rustbyexample.com
+[rbe]: https://doc.rust-lang.org/rust-by-example/
 [faq]: faq.html
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning

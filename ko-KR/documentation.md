@@ -26,7 +26,7 @@ Rust와 관련해 모든 주제를 가장 넓게 다루는 자료이며, Rust의
 [rust-learning]은 커뮤니티가 관리하는, Rust를 배우기 위한 자료들의 모임입니다.
 
 [book]: https://doc.rust-lang.org/book/
-[rbe]: http://rustbyexample.com
+[rbe]: https://doc.rust-lang.org/rust-by-example/
 [faq]: faq.html
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning
