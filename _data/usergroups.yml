@@ -53,6 +53,13 @@
       city: São Paulo
       url: https://www.meetup.com/Rust-Sao-Paulo-Meetup/
 
+- country: Bulgaria
+  meetups:
+
+    - name: Rust Bulgaria
+      city: Sofia
+      url: https://www.meetup.com/Rust-Bulgaria/
+
 - country: Canada
   meetups:
 
