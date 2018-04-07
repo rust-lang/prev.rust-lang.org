@@ -496,7 +496,7 @@
   name: Tocco AG
   url: https://www.tocco.ch
   logo: tocco.svg
-  how: "Tocco is a Switzerland based company specialized in ERP software that has been using Rust with great enthusiasm for many of its <a href='https://github.com/tocco/lo-migrate'>internal tools</a>."
+  how: "Tocco is a Switzerland-based company specialized in ERP software that has been using Rust with great enthusiasm for many of its <a href='https://github.com/tocco/lo-migrate'>internal tools</a>."
 -
   name: Pressjitsu Inc
   url: https://pressjitsu.com
