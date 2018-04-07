@@ -11,45 +11,19 @@ title: 为 Rust 出力 &mdash; 社区建设 &middot; Rust 程序设计语言
 请您留意 [#rust-beginners] 频道，这是我们为新 Rust 程序员的询问提供帮助的地方，给他们提供迅速、准确和礼貌的回应很重要。与此类似，[Stack Overflow]、[users.rust-lang.org] 和 [/r/rust] 都是 Rust 程序员常来寻求帮助的地方。
 如果您想了解怎样更好地回答程序员的提问，[阅读这份指南吧][helpful]。
 
-If you are already experienced in some area of the project, please
-look out for potential [E-easy] bugs. When you see an
-easy issue on the bug tracker that you know how to fix, write up a
-description of the fix and tag it with E-easy. Note that what is
-obvious to you is not obvious to a new Rust contributor, and its
-important to describe the problem and the solution clearly. It is
-thus also helpful to triage E-easy bugs for poor descrptions and
-improve them.
+如果您已经在这个项目的某些领域有经验，请寻找潜在的 [E-easy] bug。当您在 bug 追踪系统寻找到一个容易解决并且您会修复的问题时，请写下修复方法并且将其标签为 E-easy。请注意一个对您明显的解决方法可能并不会对一个新的 Rust 贡献者那么明显。清晰的形容问题以及解决方式是非常重要的。因此，另一个帮助方式是分类 E-easy 问题以及帮助改善问题的解释。
 
-Experienced developers who are patient and communicate clearly should
-consider [指导新贡献者][mentor]. Tag easy issues with
-[E-mentor] and mention in a comment that you will mentor. Expect people
-to contact you about the issue, and attempt to respond promptly.
+有经验，耐心并且可以清晰的沟通的开发者应考虑 [指导新贡献者][mentor] 。将容易的问题加上 [E-mentor] 标签并且在评论中表示您会指导。预料其他人会联系您关于那个问题，并且尽量快速的回答。
 
-Maintaining entry-level tasks is good not only for The Rust Project
-itself but all projects. If your project has a consistent supply of
-entry-level tasks you might institute such a program
-yourself. ***Curating entry-level tasks is one of the most effective
-methods of bringing new programmers into the project***. If you want
-training on mentoring new contributors [read this
-guide][mentor-guide].
+保持一些入门级的问题并不仅是在 Rust 计划是一个好主意，在其他的计划也是。如果您的计划有一个持续性的供应入门级的问题的话，请考虑一个像 Rust 这样的系统。***分类入门级的问题是让新的开发者加入最好的方法之一*** 如果您需要关于指导新开发者的训练，请阅读这个[指南][mentor-guide]。
 
-Talk about what you are working on in the weekly "what's everyone
-working on this week" threads on [/r/rust] and [users.rust-lang.org],
-and indicate what you need help with. These are great starting points
-for collaboration.
+在[/r/rust] 或 [users.rust-lang.org]每周的 "what's everyone working on this week" 话题上讲述您的计划以及您在那个方面需要帮助。这些是一些很好的合作开始点。
 
-Advocate Rust in your own local community. Rust [user groups] and [events]
-are a unique and exciting part of the Rust experience: there are so
-many, and they are everywhere! If you haven't been yet, go and enjoy
-new experiences. If there is nothing Rusty going on near you then
-consider organizing something. You can poll for interest and announce
-events on [/r/rust] or [users.rust-lang.org]. Contact the [community
-team] to put events on the calendar, and thus be announced on [This
-Week in Rust].
 
-Remember as you are advocating Rust though to be considerate of
-others' views &mdash; not everybody is going to be receptive to Rust, and
-that's just fine.
+在您的地区提倡 Rust 。Rust [用户组][user groups]和[活动][events]是一个 Rust 的独特以及令人兴奋的部分，有非常多，并且在很多地方都有！如果您没有去过，去享受新的经验。如果在您附近没有什么 Rust 有关的事情发生，考虑组织一个新的活动。您可以在 [/r/rust] 或 [users.rust-lang.org] 上调查兴趣和宣布你的活动。您可以联系[社区团队][community team] 来将您的活动放在日历上, 并且在 [This
+Week in Rust] 上宣布。
+
+请记得当您在提倡 Rust 的时候需要考虑其他人的意见。不是所有人都会接受 Rust，但这并不是一个问题。
 
 在 [#rust-community] 中能遇到其他 Rust 社区建设者。
 
