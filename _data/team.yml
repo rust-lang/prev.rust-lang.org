@@ -240,6 +240,22 @@ people:
   rpjohnst:
     name: Russell Johnston
     irc: Rusky
+  ollie27:
+    name: Oliver Middleton
+  onur:
+    name: Onur Aslan
+  Xanewok:
+    name: Igor Matuszewski 
+  vlad20012:
+    name: Vlad Beskrovnyy 
+  alexheretic:
+    name: Alex Butler 
+  jasonwilliams:
+    name: Jason Williams 
+  autozimu:
+    name: Junfeng Li 
+  LucasBullen:
+    name: Lucas Bullen 
 
 # Information about each team. Omit `lead` for teams without leaders.
 #
@@ -265,16 +281,17 @@ teams:
     members: [cramertj, eddyb, estebank, nagisa, nrc, oli-obk, petrochenkov, pnkfelix, nikomatsakis, michaelwoerister, Zoxc]
     lead: nikomatsakis
   - name: Dev tools team
-    responsibility: "overall direction for tools for working with Rust code"
-    members: [fitzgen, japaric, killercup, michaelwoerister, nrc]
+    responsibility: "Rust developer tools"
+    members: [fitzgen, japaric, killercup, manishearth, nrc, steveklabnik, withoutboats]
     lead: nrc
-  - name: Dev tools peers
-    responsibility: "oversight of specific Rust tools, and coordination with dev tools team"
-    members: [alexcrichton, emilio, GuillaumeGomez, jwilm, llogiq, manishearth, oli-obk, QuietMisdreavus, steveklabnik, tromey]
   - name: Cargo team
     responsibility: "design and implementation of Cargo"
     members: [alexcrichton, carols10cents, withoutboats, wycats, joshtriplett, aturon]
     lead: aturon
+  - name: IDEs and editors team
+    responsibility: "IDEs, editors, and supporting tools such as Racer and the RLS"
+    members: [alexheretic, autozimu, jasonwilliams, LucasBullen, matklad, nrc, vlad20012, Xanewok]
+    lead: nrc
   - name: Infrastructure team
     responsibility: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
     members: [alexcrichton, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, tomprince, kennytm]
@@ -297,15 +314,14 @@ teams:
   - name: Documentation peers
     responsibility: "oversight of specific documentation, and coordination with the docs team"
     members: [Havvy, matthewjasper, alercah, marioidival, projektir]
+  - name: Rustdoc team
+    responsibility: "Documentation tools including Rustdoc and docs.rs"
+    members: [GuillaumeGomez, QuietMisdreavus, ollie27, onur, steveklabnik]
+    lead: QuietMisdreavus
   - name: Moderation team
     responsibility: "helping uphold the <a href='https://www.rust-lang.org/conduct.html'>code of conduct</a>"
     members: [mbrubeck, BurntSushi, manishearth, pnkfelix, niconii, llogiq, matthieu-m]
     email: rust-mods@rust-lang.org
-  - name: Style team
-    members: [japaric, nrc, steveklabnik, ubsan, solson, joshtriplett]
-    lead: nrc
-    responsibility: "temporary 'strike team' charged with deciding on code style guidelines and configuring Rustfmt (process specified in <a href='https://github.com/rust-lang/rfcs/blob/master/text/1607-style-rfcs.md'>RFC 1607</a>)"
-    email: style-team@rust-lang.org
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
     members: [aatch, Gankro, pcwalton, huonw, peschkaj, dotdash, bkoropoff, brson, erickt, matklad, arielb1, jseyfried]
