@@ -104,6 +104,6 @@ TODO: some of this RFC description could probably go in the RFC readme
 [rfc-issues]: https://github.com/rust-lang/rfcs/issues
 [rfc]: https://github.com/rust-lang/rfcs#table-of-contents
 [rustc-guide]: https://github.com/rust-lang/rust/blob/master/src/librustc/README.md
-[rustc-perf]: http://ncameron.org/perf-rustc/
+[rustc-perf]: http://perf.rust-lang.org
 [testsuite]: https://github.com/rust-lang/rust-wiki-backup/blob/master/Note-testsuite.md
 [tips]: https://github.com/rust-lang/rust/blob/3d1f3c9d389d46607ae28c51cc94c1f43d65f3f9/Makefile.in#L48
