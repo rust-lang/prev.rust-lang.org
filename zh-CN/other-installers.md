@@ -49,12 +49,9 @@ Rust 代码可以在这些平台上运行，但并不在这些平台上运行编
   `rustup-init` 可执行文件的正确版本。
 * 在 Windows 上，下载并运行 [`rustup-init.exe`].
 
-Pass `--help` to `rustup-init` as follows to display the arguments
-`rustup-init` accepts:
-
 `rustup-init` 可以交互式配置，所有选项都可以由命令行参数控制，
-可以通过 shell 脚本传递。 将`--help`传递给`rustup-init`，
-以下是 `rustup-init` 接受的参数：
+可以通过 shell 脚本传递。 像下面这样将`--help`传递给`rustup-init`，
+会显示出 `rustup-init` 接受的参数：
 
 ```
 curl https://sh.rustup.rs -sSf | sh -s -- --help
