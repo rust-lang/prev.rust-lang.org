@@ -317,7 +317,7 @@ teams:
     lead: nrc
   - name: Infrastructure team
     responsibility: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
-    members: [alexcrichton, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, tomprince, kennytm]
+    members: [alexcrichton, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, tomprince, kennytm, ashleygwilliams, sgrif]
     lead: aidanhs
     email: infra@rust-lang.org
   - name: Release team
