@@ -48,6 +48,11 @@
   logo: agildata.svg
   how: "<a href='http://www.agildata.com/packet-capturing-mysql-with-rust/'>MySQL packet capture tool</a>."
 -
+  name: AISenz 艾森智能
+  url: https://loraflow.io/
+  logo: aisenz.svg
+  how: "Rust contributes to our LoRaWAN services and industry solutions in performance, reliability, and productivity."
+-
   name: Algorithmia
   url: https://algorithmia.com/
   logo: algorithmia.png
@@ -564,3 +569,13 @@
   url: https://starry.com
   logo: starry.svg
   how: "Re-imagining broadband by engineering a new wireless access network and building an ecosystem of products designed to simplify and improve your connected life."
+-
+  name: Tonsser
+  url: https://tonsser.com
+  logo: tonsser.png
+  how: "Moving performance intensive parts of our Ruby on Rails API to Rust for more speed and higher reliability."
+-
+  name: Tula Technology
+  url: https://www.tulatech.com/
+  logo: tulatech.png
+  how: "All our automotive code is verified using a Rust based harness; we're also working on transpiling MATLAB to Rust for additional model verification"
