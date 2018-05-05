@@ -8,16 +8,21 @@ title: Ngôn ngữ lập trình Rust
         <p class="pitch">
           <b>Rust</b> là ngôn ngữ lập trình hệ thống có tốc độ thực thi cực kỳ nhanh,
           ngăn chặn các lỗi segfaults,
-          và đảm bảo thread safety.
-          <br/>
-          <b><a href="friends.html">Các công ty đang dùng Rust.</a></b>
+          và đảm bảo đa luồng một cách an toàn.
         </p>
       </div>
       <div class="col-md-4">
         <a class="release-button" href="install.html">
           <div class="release-version">Cài đặt Rust <span>{{ site.stable }}</span></div>
         </a>
-        <div class="release-date">{{ site.stable_date | date: "%B %-d, %Y" }}</div>
+        <div class="release-date">
+          <a href="{{ site.stable_blog }}">{{ site.stable_date | date: "%B %-d, %Y" }}</a>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <p class="friends-pitch">
+          <a href="friends.html">Xem những ai đang sử dụng Rust</a>, và <a href="whitepapers.html">đọc nhiều hơn nữa về Rust trong sản xuất</a>.
+        </p>
       </div>
     </div>
 
@@ -25,15 +30,15 @@ title: Ngôn ngữ lập trình Rust
       <div class="col-md-4">
       <h2>Các tính năng</h2>
       <ul class="laundry-list">
-        <li>zero-cost abstractions</li>
-        <li>move semantics</li>
-        <li>Luôn đảm bảo bộ nhớ an toàn</li>
-        <li>threads không xảy ra data races</li>
+        <li>trừu tượng không mất phí</li>
+        <li>di chuyển ngữ nghĩa</li>
+        <li>đảm bảo an toàn bộ nhớ</li>
+        <li>đa luồng không bị tranh chấp dữ liệu</li>
         <li>trait-based generics</li>
-        <li>pattern matching</li>
-        <li>type inference</li>
-        <li>runtime rất nhỏ</li>
-        <li>Binding từ C rất hiệu quả</li>
+        <li>so khớp mẫu</li>
+        <li>tự suy luận kiểu dữ liệu</li>
+        <li>môi trường thực thi không đáng kể</li>
+        <li>gắn kết với C hiệu quả</li>
       </ul>
       </div>
       <div class="col-md-8">
