@@ -33,6 +33,11 @@
   logo: 360dialog.png
   how: "Most of our service consumers are written with Rust."
 -
+  name: 49nord
+  url: https://49nord.de/rust
+  logo: 49nord.svg
+  how: "49nord develops safe and secure Industrial IoT hardware and applications using Rust."
+-
   name: 3DR
   url: https://3dr.com/
   logo: 3dr.svg
