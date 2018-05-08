@@ -583,4 +583,39 @@
   name: Tula Technology
   url: https://www.tulatech.com/
   logo: tulatech.png
-  how: "All our automotive code is verified using a Rust based harness; we're also working on transpiling MATLAB to Rust for additional model verification"
+  how: "All our automotive code is verified using a Rust based harness; we're also working on transpiling MATLAB to Rust for additional model verification."
+-
+  name: ChartMogul
+  url: https://chartmogul.com
+  logo: chartmogul.png
+  how: "Our main microservice that generates the aggregate data displayed in ChartMogul graphs is written in Rust."
+-
+  name: FacturaDirecta
+  url: https://www.facturadirecta.com/
+  logo: facturadirecta.svg
+  how: "Optimizing search speed in our accounting software as a service."
+-
+  name: Yomura Fiber
+  url: https://yomurafiber.com/
+  logo: yomura.png
+  how: "Rust powers our GPON provisioning and statistic gathering."
+-
+  name: NAVITAS Solutions GmbH
+  url: https://www.navitas.de/
+  logo: navitas.png
+  how: "We're using Rust for a Scheduling-Service for one of our clients and the corresponding webserver backend."
+-
+  name: Webbula
+  url: https://webbula.com
+  logo: webbula.png
+  how: "For our back end data processing and fulfillment."
+-
+  name: Imeka
+  url: https://www.imeka.ca
+  logo: imeka.svg
+  how: "High performance medical imaging algorithms."
+-
+  name: Figma
+  url: https://www.figma.com/
+  logo: figma.svg
+  how: "<a href='https://blog.figma.com/rust-in-production-at-figma-e10a0ec31929'>High performance medical imaging algorithms.</a>"
