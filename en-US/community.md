@@ -46,7 +46,7 @@ announcements about major developments. And nearly everything happening in
 Rust is discussed on the unofficial subreddit, [/r/rust][reddit].
 
 We also have a [Twitter][twitter] account.
-If you can't read English, You can also follow our [Weibo][weibo] for Chinese.
+If you can't read English, you can also follow our [Weibo][weibo] for Chinese.
 
 [twir]: https://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
