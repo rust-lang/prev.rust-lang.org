@@ -140,6 +140,10 @@ Budapest.
 
 [Tokyo Rust](https://www.meetup.com/Tokyo-Rust-Meetup/), Tokyo.
 
+## Kenya
+
+[Rust Nairobi](https://www.meetup.com/Rust-Nairobi/), Nairobi.
+
 ## Lithuania
 
 [Rust Vilnius](https://www.meetup.com/Rust-in-Vilnius/), Vilnius.
