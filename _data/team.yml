@@ -34,6 +34,9 @@ people:
     name: Alexis Hunt
   ArazAbishov:
     name: Araz Abishov
+  arshiamufti:
+    name: Arshia Mufti
+    irc: arshia
   ashleygwilliams:
     name: Ashley Williams
     irc: agdubs
@@ -60,6 +63,8 @@ people:
   Centril:
     name: Mazdak Farrokhzad
     irc: centril
+  celaus:
+    name: Claus Matzinger 
   cramertj:
     name: Taylor Cramer
   cssivision:
@@ -86,6 +91,9 @@ people:
     name: Erick Tryzelaar
   fitzgen:
     name: Nick Fitzgerald
+  flaki:
+    name: István Szmozsánszky
+    irc: flaki
   frewsxcv:
     name: Corey Farwell
     irc: frewsxcv
@@ -145,6 +153,8 @@ people:
     name: Mario Idival
   matklad:
     name: Aleksey Kladov
+  mattgathu:
+    name: Matt Gathu
   matthewjasper:
     name: Matthew Jasper
   mbrubeck:
@@ -163,10 +173,15 @@ people:
     irc: nmatsakis
   nrc:
     name: Nick Cameron
+  oe:
+    name: Olivia Hugger
+    irc: liv
   oli-obk:
     name: Oliver Schneider
   pambihira:
     name: pambihira
+  parrywinkle:
+    name: Parry Wilcox
   pcwalton:
     name: Patrick Walton
   peschkaj:
@@ -202,10 +217,16 @@ people:
   solson:
     name: Scott Olson
     irc: scott
+  spacekookie:
+    name: Katharina
   steveklabnik:
     name: Steve Klabnik
+  sunjay:
+    name: Sunjay Varma
   stokhos:
     name: Stokhos
+  technetos:
+    name: Josh Gould
   tomprince:
     name: Tom Prince
   TimNN:
@@ -216,6 +237,8 @@ people:
     name: Vadim Chugunov
   ubsan:
     name: Nicole Mazzuca
+  wezm:
+    name: Wesley Moore
   whitequark:
     name: whitequark
   withoutboats:
@@ -294,7 +317,7 @@ teams:
     lead: nrc
   - name: Infrastructure team
     responsibility: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
-    members: [alexcrichton, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, tomprince, kennytm]
+    members: [alexcrichton, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, tomprince, kennytm, ashleygwilliams, sgrif]
     lead: aidanhs
     email: infra@rust-lang.org
   - name: Release team
@@ -305,7 +328,7 @@ teams:
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: ashleygwilliams
-    members: [edunham, skade, manishearth, johannhof, sebasmagri, carols10cents, badboy, booyaa, bstrie, erickt, jonathandturner, ashleygwilliams]
+    members: [skade, manishearth, sebasmagri, badboy, booyaa, ashleygwilliams, oe, technetos, arshiamufti, parrywinkle, spacekookie, flaki, mattgathu, celaus, wezm, sunjay, carols10cents, bstrie, edunham, jonathandturner]
     email: community@rust-lang.org
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
