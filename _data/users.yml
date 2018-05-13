@@ -619,3 +619,8 @@
   url: https://www.figma.com/
   logo: figma.svg
   how: "<a href='https://blog.figma.com/rust-in-production-at-figma-e10a0ec31929'>Our real-time multiplayer syncing server (used to edit all Figma documents) is written in Rust.</a>"
+-
+  name: EXSigma
+  url: https://www.exsigma.com
+  logo: exsigma.svg
+  how: "EXSigma developed a privacy preserving, secure and environmental friendly Ad Network entirely in Rust."
