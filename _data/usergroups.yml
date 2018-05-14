@@ -231,6 +231,13 @@
       city: Akasaka, Tokyo
       url: https://akasaka-rust.doorkeeper.jp/
 
+- country: Kenya
+  meetups:
+    
+    - name: Rust Nairobi
+      city: Nairobi
+      url: https://www.meetup.com/Rust-Nairobi/
+
 - country: Lithuania
   meetups:
 
