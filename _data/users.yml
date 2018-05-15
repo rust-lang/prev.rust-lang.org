@@ -624,3 +624,8 @@
   url: https://www.exsigma.com
   logo: exsigma.svg
   how: "EXSigma developed a privacy preserving, secure and environmental friendly Ad Network entirely in Rust."
+-
+  name: Aprila Bank
+  url: https://www.aprila.no
+  logo: aprila.svg
+  how: "Orchestrating business process flows for onboarding, KYC, credit decisions and more."
