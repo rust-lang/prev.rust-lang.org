@@ -281,7 +281,7 @@
   name: OVH
   url: https://www.ovh.com
   logo: ovh.png
-  how: "We used Rust to build a high performance, highly available <a href='https://www.runabove.com/paas-logs.xml'>log management system</a>."
+  how: "We used Rust to build a high performance, highly available <a href='https://www.ovh.com/world/a2202.paas-logs-management-ovh'>log management system</a>."
 -
   name: Pants Build
   url: http://www.pantsbuild.org/
