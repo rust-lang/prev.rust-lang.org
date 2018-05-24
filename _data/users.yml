@@ -168,6 +168,11 @@
   logo: delimiter.png
   how: "Rust powers our bare metal provisioning system."
 -
+  name: Deliveroo
+  url: https://deliveroo.co.uk
+  logo: deliveroo.svg
+  how: "We are using Rust to quickly make assignment decisions in our food delivery network."
+-
   name: Dropbox
   url: https://www.dropbox.com
   logo: dropbox.svg
