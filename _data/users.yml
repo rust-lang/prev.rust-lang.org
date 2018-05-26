@@ -629,3 +629,8 @@
   url: https://www.aprila.no
   logo: aprila.svg
   how: "Orchestrating business process flows for onboarding, KYC, credit decisions and more."
+-
+  name: Fire and Emergency NZ
+  url: https://fireandemergency.nz/
+  logo: fenz-logo.svg
+  how: "The New Zealand Fire Service is using a custom geolocation search engine, built in rust, that runs on embedded hardware within a fire truck to stream hazard information to a fire crew at an incident."
