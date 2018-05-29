@@ -624,3 +624,8 @@
   url: https://www.exsigma.com
   logo: exsigma.svg
   how: "EXSigma developed a privacy preserving, secure and environmental friendly Ad Network entirely in Rust."
+-
+  name: Sourcegraph
+  url: https://sourcegraph.com
+  logo: sourcegraph.svg
+  how: "All files and code search previews (<a href='https://sourcegraph.com/search?q=repogroup:crates+lang:rust+open'>example</a>) on Sourcegraph are syntax-highlighted by <a href='https://github.com/sourcegraph/syntect_server'>sourcegraph/syntect_server</a>, written in Rust."
