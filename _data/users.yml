@@ -388,6 +388,11 @@
   logo: threatx.svg
   how: "Threat X Web Application Firewall (WAF) and central analysis engine are written in Rust, facilitating real time analysis of high bandwidth web applications."
 -
+  name: Threema
+  url: https://threema.ch/
+  logo: threema.svg
+  how: "We use Rust in our iOS app (see <a href='https://github.com/saltyrtc/saltyrtc-client-rs'>saltyrtc-client-rs</a>) as well as for <a href='https://github.com/threema-ch/push-relay'>some of our backend services</a>."
+-
   name: Tilde
   url: http://www.tilde.io
   logo: tilde.png
