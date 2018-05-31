@@ -649,6 +649,7 @@ footer a {
 }
 
 #platform-instructions-unix > pre,
+#platform-instructions-win > pre,
 #platform-instructions-default > div > pre {
     background-color: #515151;
     color: white;
