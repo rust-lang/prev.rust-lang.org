@@ -31,7 +31,7 @@ Ini untuk programmer Rust level lanjut.
 untuk belajar Rust.
 
 [book]: https://doc.rust-lang.org/book/
-[rbe]: http://rustbyexample.com
+[rbe]: https://doc.rust-lang.org/rust-by-example/
 [faq]: faq.html
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning

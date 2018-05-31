@@ -53,6 +53,13 @@
       city: São Paulo
       url: https://www.meetup.com/Rust-Sao-Paulo-Meetup/
 
+- country: Bulgaria
+  meetups:
+
+    - name: Rust Bulgaria
+      city: Sofia
+      url: https://www.meetup.com/Rust-Bulgaria/
+
 - country: Canada
   meetups:
 
@@ -224,6 +231,13 @@
       city: Akasaka, Tokyo
       url: https://akasaka-rust.doorkeeper.jp/
 
+- country: Kenya
+  meetups:
+    
+    - name: Rust Nairobi
+      city: Nairobi
+      url: https://www.meetup.com/Rust-Nairobi/
+
 - country: Lithuania
   meetups:
 
@@ -268,6 +282,10 @@
       city: Utrecht
       url: https://www.meetup.com/Rust-Utrecht/
 
+    - name: Rust Gouda
+      city: Gouda
+      url: https://www.meetup.com/Rust-Gouda/
+
 - country: New Zealand
   meetups:
 
@@ -294,7 +312,7 @@
 
     - name: Rust Philippines
       city: Manila
-      url: http://www.rustph.tech
+      url: https://www.facebook.com/groups/rustph/
 
     - name: Cebu Rust Camp
       city: Cebu

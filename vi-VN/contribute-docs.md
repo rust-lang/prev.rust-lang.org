@@ -20,14 +20,14 @@ documentation is relatively complete, the same is not yet true for
 programmers interact with every day. Contributing API documentation to
 a popular Rust project will earn you the enduring love of its maintainer.
 
-[The Book] is the primary documentation for Rust, maintained in the
-main repository. It has its own issue label, [A-book] and
-is continually being refined. Other documentation in the main
-repository include [The Rust Reference], the [standard library API
-documentation][std], [The Rustonomicon] (a guide to using `unsafe`
-correctly). The [Rust Style Guidelines] are so incomplete they are not
-linked prominently; an ambitious contributor can make much headway
-there. The [error index][err] provides extended explanations of the
+[The Book] is the primary documentation for Rust — it’s maintained in its [own
+repository][book repo]. [The Rust Reference] is the primary language reference
+for Rust — it’s maintained in its [own repository][reference repo].
+[The Rustonomicon] is a guide to using `unsafe` correctly — it’s maintained in
+its [own repository][nomicon repo]. The
+[standard library API documentation][std] is maintained in the
+[main repository][rust repo].
+The [error index][err] provides extended explanations of the
 errors produced by the compiler. As new errors are added this
 documentation [must be maintained][err-issue], so there always are
 errors not reflected in the index to be added. Most in-tree
@@ -54,7 +54,6 @@ TODO: blogging, translation
 [A-docs]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-docs
 [Rust By Example]: https://github.com/rust-lang/rust-by-example
 [Rust Design Patterns]: https://github.com/nrc/patterns
-[Rust Style Guidelines]: https://doc.rust-lang.org/style/index.html
 [The Book]: https://doc.rust-lang.org/book/index.html
 [The Rust Reference]: https://doc.rust-lang.org/reference
 [The Rustonomicon]: https://doc.rust-lang.org/nomicon/index.html
@@ -67,3 +66,7 @@ TODO: blogging, translation
 [src/doc]: https://github.com/rust-lang/rust/tree/master/src/doc
 [std]: https://doc.rust-lang.org/std/index.html
 [Rust website Git repository]: https://github.com/rust-lang/rust-www
+[book repo]: https://github.com/rust-lang/book
+[reference repo]: https://github.com/rust-lang-nursery/reference
+[nomicon repo]: https://github.com/rust-lang-nursery/nomicon
+[rust repo]: https://github.com/rust-lang/rust
