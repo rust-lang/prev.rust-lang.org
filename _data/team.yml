@@ -298,7 +298,7 @@ teams:
   - name: Library team
     responsibility: "the Rust standard library, rust-lang crates, conventions, and ecosystem support"
     members: [alexcrichton, sfackler, BurntSushi, Kimundi, SimonSapin, dtolnay, aturon, KodrAus, withoutboats]
-    lead: aturon
+    lead: alexcrichton
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
     members: [cramertj, eddyb, estebank, nagisa, nrc, oli-obk, petrochenkov, pnkfelix, nikomatsakis, michaelwoerister, Zoxc]
