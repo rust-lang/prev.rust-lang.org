@@ -250,19 +250,19 @@ Not in the typical sense used by languages such as Java, but parts of the Rust s
 
 <h2 id="syntax">Syntax</h2>
 
-<h3><a href="#why-curly-braces" name="why-curly-braces">
-Why curly braces? Why can't Rust's syntax be like Haskell's or Python's?
+<h3><a href="#why-curly-brackets" name="why-curly-brackets">
+Why curly brackets? Why can't Rust's syntax be like Haskell's or Python's?
 </a></h3>
 
-Use of curly braces to denote blocks is a common design choice in a variety of programming languages, and Rust's consistency is useful for people already familiar with the style.
+Use of curly brackets to denote blocks is a common design choice in a variety of programming languages, and Rust's consistency is useful for people already familiar with the style.
 
-Curly braces also allow for more flexible syntax for the programmer and a simpler parser in the compiler.
+Curly brackets also allow for more flexible syntax for the programmer and a simpler parser in the compiler.
 
-<h3><a href="#why-brackets-around-blocks" name="why-brackets-around-blocks">
-I can leave out parentheses on <code>if</code> conditions, so why do I have to put brackets around single line blocks? Why is the C style not allowed?
+<h3><a href="#why-curly-brackets-around-blocks" name="why-curly-brackets-around-blocks">
+I can leave out parentheses on <code>if</code> conditions, so why do I have to put curly brackets around single line blocks? Why is the C style not allowed?
 </a></h3>
 
-Whereas C requires mandatory parentheses for `if`-statement conditionals but leaves brackets optional, Rust makes the opposite choice for its `if`-expressions. This keeps the conditional clearly separate from the body and avoids the hazard of optional brackets, which can lead to easy-to-miss errors during refactoring, like Apple's [goto fail](https://gotofail.com/) bug.
+Whereas C requires mandatory parentheses for `if`-statement conditionals but leaves curly brackets optional, Rust makes the opposite choice for its `if`-expressions. This keeps the conditional clearly separate from the body and avoids the hazard of optional curly brackets, which can lead to easy-to-miss errors during refactoring, like Apple's [goto fail](https://gotofail.com/) bug.
 
 <h3><a href="#why-no-literal-syntax-for-dictionaries" name="why-no-literal-syntax-for-dictionaries">
 Why is there no literal syntax for dictionaries?
