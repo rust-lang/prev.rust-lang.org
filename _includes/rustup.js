@@ -33,6 +33,15 @@ function detect_platform() {
         // rust-www/#692 - FreeBSD epiphany!
         if (navigator.appVersion.indexOf("FreeBSD")!=-1) {os = "unix";}
     }
+    
+    // Firefox Quantum likes to hide platform and appVersion but oscpu works
+    if (navigator.oscpu) {
+        if (navigator.oscpu.indexOf("Windows")!=-1) {os = "win";}
+        if (navigator.oscpu.indexOf("Mac")!=-1) {os = "unix";}
+        if (navigator.oscpu.indexOf("Linux")!=-1) {os = "unix";}
+        if (navigator.oscpu.indexOf("FreeBSD")!=-1) {os = "unix";}
+        if (navigator.oscpu.indexOf("NetBSD")!=-1) {os = "unix";}
+    }
 
     return os;
 }
