@@ -328,7 +328,7 @@ teams:
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: ashleygwilliams
-    members: [skade, manishearth, sebasmagri, badboy, booyaa, ashleygwilliams, oe, technetos, arshiamufti, parrywinkle, spacekookie, flaki, mattgathu, celaus, wezm, sunjay, carols10cents, bstrie, jonathandturner]
+    members: [skade, manishearth, sebasmagri, badboy, booyaa, ashleygwilliams, oe, technetos, arshiamufti, parrywinkle, spacekookie, flaki, mattgathu, celaus, wezm, carols10cents, bstrie, jonathandturner]
     email: community@rust-lang.org
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
