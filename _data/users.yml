@@ -649,3 +649,8 @@
   url: https://fireandemergency.nz/
   logo: fenz-logo.svg
   how: "The New Zealand Fire Service is using a custom geolocation search engine, built in rust, that runs on embedded hardware within a fire truck to stream hazard information to a fire crew at an incident."
+-
+  name: Solana
+  url: https://solana.com/
+  logo: solana.png
+  how: "High performance blockchain, rebuilt for scale."
