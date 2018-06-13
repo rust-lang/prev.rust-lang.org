@@ -309,7 +309,7 @@ teams:
     lead: nrc
   - name: Cargo team
     responsibility: "design and implementation of Cargo"
-    members: [alexcrichton, carols10cents, matklad, withoutboats, wycats, joshtriplett, aturon]
+    members: [alexcrichton, matklad, withoutboats, wycats, joshtriplett, aturon]
     lead: aturon
   - name: IDEs and editors team
     responsibility: "IDEs, editors, and supporting tools such as Racer and the RLS"
@@ -317,7 +317,7 @@ teams:
     lead: nrc
   - name: Infrastructure team
     responsibility: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
-    members: [alexcrichton, shepmaster, aidanhs, TimNN, carols10cents, Mark-Simulacrum, erickt, tomprince, kennytm, ashleygwilliams, sgrif]
+    members: [alexcrichton, shepmaster, aidanhs, TimNN, Mark-Simulacrum, erickt, tomprince, kennytm, ashleygwilliams, sgrif]
     lead: aidanhs
     email: infra@rust-lang.org
   - name: Release team
@@ -328,7 +328,7 @@ teams:
   - name: Community team
     responsibility: "coordinating events, outreach, commercial users, teaching materials, and exposure"
     lead: ashleygwilliams
-    members: [skade, manishearth, sebasmagri, badboy, booyaa, ashleygwilliams, oe, technetos, arshiamufti, parrywinkle, spacekookie, flaki, mattgathu, celaus, wezm, carols10cents, bstrie, jonathandturner]
+    members: [skade, manishearth, sebasmagri, badboy, booyaa, ashleygwilliams, oe, technetos, arshiamufti, parrywinkle, spacekookie, flaki, mattgathu, celaus, wezm, bstrie, jonathandturner]
     email: community@rust-lang.org
   - name: Documentation team
     responsibility: "ensuring Rust has fantastic documentation"
