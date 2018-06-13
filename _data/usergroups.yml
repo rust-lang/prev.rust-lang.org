@@ -282,6 +282,10 @@
       city: Utrecht
       url: https://www.meetup.com/Rust-Utrecht/
 
+    - name: Rust Gouda
+      city: Gouda
+      url: https://www.meetup.com/Rust-Gouda/
+
 - country: New Zealand
   meetups:
 

@@ -168,6 +168,11 @@
   logo: delimiter.png
   how: "Rust powers our bare metal provisioning system."
 -
+  name: Deliveroo
+  url: https://deliveroo.co.uk
+  logo: deliveroo.svg
+  how: "We are using Rust to quickly make assignment decisions in our food delivery network."
+-
   name: Dropbox
   url: https://www.dropbox.com
   logo: dropbox.svg
@@ -281,7 +286,7 @@
   name: OVH
   url: https://www.ovh.com
   logo: ovh.png
-  how: "We used Rust to build a high performance, highly available <a href='https://www.runabove.com/paas-logs.xml'>log management system</a>."
+  how: "We used Rust to build a high performance, highly available <a href='https://www.ovh.com/world/a2202.paas-logs-management-ovh'>log management system</a>."
 -
   name: Pants Build
   url: http://www.pantsbuild.org/
@@ -387,6 +392,11 @@
   url: https://threat-x.com/
   logo: threatx.svg
   how: "Threat X Web Application Firewall (WAF) and central analysis engine are written in Rust, facilitating real time analysis of high bandwidth web applications."
+-
+  name: Threema
+  url: https://threema.ch/
+  logo: threema.svg
+  how: "We use Rust in our iOS app (see <a href='https://github.com/saltyrtc/saltyrtc-client-rs'>saltyrtc-client-rs</a>) as well as for <a href='https://github.com/threema-ch/push-relay'>some of our backend services</a>."
 -
   name: Tilde
   url: http://www.tilde.io
@@ -624,3 +634,18 @@
   url: https://www.exsigma.com
   logo: exsigma.svg
   how: "EXSigma developed a privacy preserving, secure and environmental friendly Ad Network entirely in Rust."
+-
+  name: Sourcegraph
+  url: https://sourcegraph.com
+  logo: sourcegraph.svg
+  how: "All files and code search previews (<a href='https://sourcegraph.com/search?q=repogroup:crates+lang:rust+open'>example</a>) on Sourcegraph are syntax-highlighted by <a href='https://github.com/sourcegraph/syntect_server'>sourcegraph/syntect_server</a>, written in Rust."
+-
+  name: Aprila Bank
+  url: https://www.aprila.no
+  logo: aprila.svg
+  how: "Orchestrating business process flows for onboarding, KYC, credit decisions and more."
+-
+  name: Fire and Emergency NZ
+  url: https://fireandemergency.nz/
+  logo: fenz-logo.svg
+  how: "The New Zealand Fire Service is using a custom geolocation search engine, built in rust, that runs on embedded hardware within a fire truck to stream hazard information to a fire crew at an incident."

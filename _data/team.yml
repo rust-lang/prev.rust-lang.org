@@ -298,7 +298,7 @@ teams:
   - name: Library team
     responsibility: "the Rust standard library, rust-lang crates, conventions, and ecosystem support"
     members: [alexcrichton, sfackler, BurntSushi, Kimundi, SimonSapin, dtolnay, aturon, KodrAus, withoutboats]
-    lead: aturon
+    lead: alexcrichton
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
     members: [cramertj, eddyb, estebank, nagisa, nrc, oli-obk, petrochenkov, pnkfelix, nikomatsakis, michaelwoerister, Zoxc]
@@ -309,7 +309,7 @@ teams:
     lead: nrc
   - name: Cargo team
     responsibility: "design and implementation of Cargo"
-    members: [alexcrichton, carols10cents, withoutboats, wycats, joshtriplett, aturon]
+    members: [alexcrichton, carols10cents, matklad, withoutboats, wycats, joshtriplett, aturon]
     lead: aturon
   - name: IDEs and editors team
     responsibility: "IDEs, editors, and supporting tools such as Racer and the RLS"
@@ -347,7 +347,7 @@ teams:
     email: rust-mods@rust-lang.org
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
-    members: [aatch, Gankro, pcwalton, huonw, peschkaj, dotdash, bkoropoff, brson, erickt, matklad, arielb1, jseyfried, edunham]
+    members: [aatch, Gankro, pcwalton, huonw, peschkaj, dotdash, bkoropoff, brson, erickt, arielb1, jseyfried, edunham]
 # Information on sites to get profile information from
 sites:
   github:
