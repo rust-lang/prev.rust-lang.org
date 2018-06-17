@@ -7,7 +7,7 @@ title: Contribuindo para Rust &mdash; encontrando, fazendo triagem e solucionand
 
 A manutenção diária do projeto gira em torno do [seguidor de problemas][issue tracker]
 e das [pull requests][PR] de Rust, e mais ajuda é sempre necessária. O jeito mais
-básico de se começar a contribuir para Rust é olhar para *labels* [E-easy] e [E-mentor].
+básico de se começar a contribuir para Rust é olhar para *rótulos* [E-easy] e [E-mentor].
 Esses são pensados para novos programadores Rust.
 
 Em problemas `E-mentor`, um desenvolvedor Rust experiente se voluntariou nos comentários
@@ -21,14 +21,14 @@ a biblioteca HTTP [hyper], o formatador de código [rustfmt], as *bindings* para
 e a coleção de lints, [clippy].
 
 Enquanto Rust tem uma [suite de testes intensiva][tests], há sempre mais para testar.
-Os *labels* [E-needstest] indica que problemas estão quase solucionados mas não foram completamente
+Os *rótulos* [E-needstest] indica que problemas estão quase solucionados mas não foram completamente
 testados ainda. Escrever test cases é um ótimo jeito de entender um novo projeto
 e começar a contribuir.
 
 Rust está sempre necessitando de pessoas para realizar a triagem de problemas:
-reproduzir bugs, minimizar as test cases, aplicar *labels*, fechar problemas já
+reproduzir bugs, minimizar as test cases, aplicar *rótulos*, fechar problemas já
 solucionados. Perceba que você precisará de permissões elevadas no GitHub para aplicar
-*labels*, mas isso é fácil de se obter para alguém com um pouco de experiência no projeto.
+*rótulos*, mas isso é fácil de se obter para alguém com um pouco de experiência no projeto.
 Pergunte um [membro do time][team].
 
 Assim que você encontrar seu lugar no projeto e já tiver criado algumas pull requests

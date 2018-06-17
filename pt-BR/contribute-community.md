@@ -16,13 +16,13 @@ assistência. Se você quer treinamento em responder questões de programadores,
 
 Se você já é experiente em alguma área do projeto, por favor olhe por potenciais bugs
 marcados com [E-easy]. Quando você ver um problema fácil de resolver e sabe como fazê-lo,
-escreva uma descrição e rolule-o com a *label* E-easy. Note que o que é óbvio pra você pode não ser
+escreva uma descrição e rolule-o com a *rótulo* E-easy. Note que o que é óbvio pra você pode não ser
 para um novo contribuinte de Rust, então é importante que você descreva o problema e a solução de
 forma clara. Isso ajuda na triagem de bugs E-easy com descrições fracas e tambem ajuda a melhorá-las.
 
 Desenvolvedores experientes que são pacientes e comunicam de forma clara deveriam considerar
 auxiliar alguém [como mentor de novos contribuidores][mentor]. Rotule problemas fáceis
-com a *label* [E-mentor] e mencione nos comentários que você está disposto a auxiliar. Espere
+com a *rótulo* [E-mentor] e mencione nos comentários que você está disposto a auxiliar. Espere
 que pessoas irão contatá-lo sobre o problema, e responda de imediato.
 
 Manter tarefas é bom não só para o projeto Rust em si, mas para todos. Se seu projeto

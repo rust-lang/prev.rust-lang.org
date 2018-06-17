@@ -14,7 +14,7 @@ title: O Código de Conduta de Rust &middot; A linguagem de programação Rust
   idade, religião, nacionalidade ou qualquer outra característica pessoal.
 * No IRC, por favor evite usar nomes sugestivos ou outros nomes que podem denegrir a imagem de um ambiente amigável, seguro e acolhedor para todos.
 * Por favor, seja gentil e cortês. Não há necessidade de ser mau ou rude.
-* Respeite as pessoas que diferem de sua opinião e que escolhas de design ou implementação que levem à problemas e inúmeros custos. Raramente há apenas uma única escolha certa.
+* Respeite as pessoas que diferem de sua opinião, escolhas de design ou implementação que levem à problemas e inúmeros custos. Raramente há apenas uma única escolha certa.
 * Por favor, deixe críticas não-construtivas de lado. Se você tem ideias sólidas que deseja experimentar, faça um fork e veja como
   funciona.
 * Nós excluiremos você da interação caso você insulte, faça mal ou humilhe qualquer um. Isso não é um comportamento acolhedor. Nós
@@ -37,7 +37,7 @@ são permitidos. (Xingamentos são permitidos, desde que não sejam destinados �
 4. Se o aviso for ignorado, o usuário será "chutado", isso é, expulso do canal de comunicação para dar uma acalmada.
 5. Se o usuário retornar e continuar a causar problemas, ele será banido, ou seja, definitivamente excluído.
 6. Moderadores podem escolher des-banir um usuário se foi uma primeira ofensa e eles oferecem uma desculpa sincera e genuina.
-7. Se um moderador baneficiar alguem e você achar que foi injusto, por favor converse com esse moderador, ou com um moderador diferente, **em privado**. Reclamações sobre banimentos no canal público não são permitidos.
+7. Se um moderador banir alguem e você achar que foi injusto, por favor converse com esse moderador, ou com um moderador diferente, **em privado**. Reclamações sobre banimentos no canal público não são permitidos.
 8. Moderadores estão sob um padrão maior que os outros membros da comunidade. Se um moderador cria uma situação inapropriada, ele deve esperar menos liberdade que os outros.
 
 Na comunidade Rust, nós lutamos para chegar ao próximo nível em cuidarmos um dos outros. Não apenas tente ser tecnicamente incontestável, tente ser o seu melhor. Em particular, evite se divertir com problemas ofensivos ou sensíveis, particularmente se forem fora de tópico, tudo isso muitas vezes leva a brigas desnecessárias, sentimentos feridos ou confiança danificada, ou pior isso pode levar pessoas a se distanciarem da comunidade inteiramente.

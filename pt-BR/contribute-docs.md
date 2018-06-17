@@ -18,7 +18,7 @@ programadores Rust interagem todos os dias. Contribuindo documentação de APIs 
 Rust popular vai te recompensar com eterno amor de seu responsável.
 
 [O livro][The Book] é a documentação primária para Rust, mantido no repositório
-principal. Ele tem sua própria *label*, [A-book] e está continuamente sendo refinado.
+principal. Ele tem sua própria *rótulo*, [A-book] e está continuamente sendo refinado.
 Outras documentações no repositório principal incluem [A referência para Rust][The Rust Reference],
 a [Documentação da Biblioteca Padrão][std], O [Rustonomicon][The Rustonomicon] (um guia para
 código `inseguro` em Rust, corretamente). O [Guia de Estilo de Rust][Rust Style Guide] está tão
@@ -27,7 +27,7 @@ muito bem nele. O [índice de erros][err] fornece explicações extendidas para 
 que o compilador emite. Ao mesmo tempo que novos erros são adicionados, essa documentação
 precisa [ser atualizada][err-issue], então há sempre erros não indexados no índice prontos
 para serem adicionados. A maior parte da documentação interna vive na pasta [src/doc].
-Tudo lá é regido pela *label* [A-docs]. Finalmente, esse documento e outros materiais do website são mantidos no [Repositório Git do website Rust][Rust website Git repository].
+Tudo lá é regido pela *rótulo* [A-docs]. Finalmente, esse documento e outros materiais do website são mantidos no [Repositório Git do website Rust][Rust website Git repository].
 Para contribuir, simplesmente edite e mande uma pull request.
 
 Uma grande quantidade de documentação importante para Rust não fica no repositório

@@ -7,7 +7,7 @@ title: Contribuindo para Rust &mdash; a linguagem, o compilador, e a biblioteca 
 
 O código fonte para o compilador e da biblioteca padrão estão no repositório
 principal, e como sua manutenção é o objetivo primário desse repositório, muitas
-*labels* são relacionados a eles. Algumas das *labels* mais frutíferas são [A-codegen],
+*rótulos* são relacionados a eles. Algumas das *rótulos* mais frutíferas são [A-codegen],
 da tradução do código Rust para LLVM IR; [A-debuginfo], geração de metadatas usada
 por debugadores; [A-diagnostics], o feedback que o compilador produz em casos
 de erros; [A-libs], problemas com a biblioteca padrão; [A-macros] e [A-syntaxext],
@@ -36,12 +36,12 @@ são muitas vezes independentes.
 A performance do código Rust é uma das suas melhores vantagens; e a performance
 do compilador Rust uma de suas maiores fraquezas. Qualquer melhora, seja no runtime
 ou &mdash; especialmente &mdash; performance no tempo de compilação são extremamente
-celebradas. As *labels* [I-slow] e [A-optimization] lidam com problemas na performance
+celebradas. As *rótulos* [I-slow] e [A-optimization] lidam com problemas na performance
 de execução e [I-compiletime] com tempo de compilação. Nos temos um [site que segue a performance de compilação][rustc-perf]
 numa série de testes. A flag `-Z time-passes` do compilador pode ajudar a debugar
 performance do compilador, e o código Rust pode ser medido com profilers como `perf`, no Linux.
 
-As Pirncipais novas features em Rust passam por um processo de [Pedido por Comentários (RFC)][rfc],
+As principais novas features em Rust passam por um processo de [Pedido por Comentários (RFC)][rfc],
 que por design é de consenso público. Embora seja aberto à todos, isso é um processo social
 entre desenvolvedores que já possuem muita experiência trabalhando juntos, e é recomendado
 se envolver de forma lenta &mdash; submeter um RFC precicpitado, sem entendimento
@@ -51,7 +51,7 @@ melhor como tudo funciona. Mutias ideias já foram debatidas na história de Rus
 rejeitadas, algumas deixadas pro futuro, e o [seguidor de problemas RFC][rfc-issues]
 cataloga algumas ideias que ainda não fizeram seu caminho para dentro da linguagem.
 Pouco antes de um RFC ser aceito para implementação, ele entra no 'perído de comentário final',
-indicado pela *label* [final-comment-period][rfc-fcp] no repositório rust-lang/rfcs.
+indicado pela *rótulo* [final-comment-period][rfc-fcp] no repositório rust-lang/rfcs.
 Da mesma forma, antes de uma feature ser implementada no compilador estável (chamado de 'libertação')
 ele entra no [final-comment-period][issue-fcp] no repositório rust-lang/rust. Ambos
 FCPs são momentos críticos para se envolver e expressar opniões na direção que a linguagem
