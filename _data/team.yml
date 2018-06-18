@@ -301,7 +301,7 @@ teams:
     lead: alexcrichton
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
-    members: [cramertj, eddyb, estebank, nagisa, nrc, oli-obk, petrochenkov, pnkfelix, nikomatsakis, michaelwoerister, Zoxc]
+    members: [cramertj, eddyb, estebank, nagisa, oli-obk, petrochenkov, pnkfelix, nikomatsakis, michaelwoerister, Zoxc]
     lead: nikomatsakis
   - name: Dev tools team
     responsibility: "Rust developer tools"
