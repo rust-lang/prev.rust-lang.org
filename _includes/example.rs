@@ -2,8 +2,9 @@ fn main() {
     let greetings = ["Hello", "Hola", "Bonjour",
                      "Ciao", "こんにちは", "안녕하세요",
                      "Cześć", "Olá", "Здравствуйте",
-                     "Chào bạn", "您好", "Hallo",
-                     "Hej", "Ahoj", "سلام","สวัสดี"];
+                     "Вітаємо", "Chào bạn", "您好",
+                     "Hallo", "Hej", "Ahoj", "سلام",
+                     "สวัสดี"];
 
     for (num, greeting) in greetings.iter().enumerate() {
         print!("{} : ", greeting);
@@ -17,13 +18,14 @@ fn main() {
             6 =>  println!("Ten kod można edytować oraz uruchomić!"),
             7 =>  println!("Este código é editável e executável!"),
             8 =>  println!("Этот код можно отредактировать и запустить!"),
-            9 =>  println!("Bạn có thể edit và run code trực tiếp!"),
-            10 => println!("这段代码是可以编辑并且能够运行的！"),
-            11 => println!("Dieser Code kann bearbeitet und ausgeführt werden!"),
-            12 => println!("Den här koden kan redigeras och köras!"),
-            13 => println!("Tento kód můžete upravit a spustit"),
-            14 => println!("این کد قابلیت ویرایش و اجرا دارد!"),
-            15 => println!("โค้ดนี้สามารถแก้ไขได้และรันได้"),
+            9 =>  println!("Цей код можна відредагувати та зупустити!"),
+            10 =>  println!("Bạn có thể edit và run code trực tiếp!"),
+            11 => println!("这段代码是可以编辑并且能够运行的！"),
+            12 => println!("Dieser Code kann bearbeitet und ausgeführt werden!"),
+            13 => println!("Den här koden kan redigeras och köras!"),
+            14 => println!("Tento kód můžete upravit a spustit"),
+            15 => println!("این کد قابلیت ویرایش و اجرا دارد!"),
+            16 => println!("โค้ดนี้สามารถแก้ไขได้และรันได้"),
             _ =>  {},
         }
     }
