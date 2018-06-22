@@ -193,7 +193,7 @@ Questo è parzialmente dovuto alla preferenza dello sviluppatore originario (Gra
 Quanto è performante Rust?
 </a></h3>
 
-Molto! Rust è già competitivo con programmi C e C++ ben scritti in una serie di prove (come nel [Benchmarks Game](https://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp) e [altri](https://github.com/kostya/benchmarks)).
+Molto! Rust è già competitivo con programmi C e C++ ben scritti in una serie di prove (come nel [Benchmarks Game](https://benchmarksgame-team.pages.debian.net/benchmarksgame/faster/rust.html) e [altri](https://github.com/kostya/benchmarks)).
 
 Come il C++, il Rust possiede [astrazioni a costo zero](http://blog.rust-lang.org/2015/05/11/traits.html) come uno dei suoi principi chiave: nessuna delle astrazioni di Rust impone un rallentamento, in qualsiasi caso.
 
