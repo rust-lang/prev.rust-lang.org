@@ -235,6 +235,8 @@ people:
     name: Trevor Reiff
   vadimcn:
     name: Vadim Chugunov
+  varkor:
+    name: varkor
   ubsan:
     name: Nicole Mazzuca
   wezm:
@@ -301,7 +303,7 @@ teams:
     lead: alexcrichton
   - name: Compiler team
     responsibility: "compiler internals, optimizations"
-    members: [cramertj, eddyb, estebank, nagisa, oli-obk, petrochenkov, pnkfelix, nikomatsakis, michaelwoerister, Zoxc]
+    members: [cramertj, eddyb, estebank, nagisa, oli-obk, petrochenkov, pnkfelix, nikomatsakis, michaelwoerister, varkor, Zoxc]
     lead: nikomatsakis
   - name: Dev tools team
     responsibility: "Rust developer tools"
