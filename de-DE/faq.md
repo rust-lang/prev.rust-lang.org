@@ -168,7 +168,7 @@ Das liegt zu einem Teil an einer persönlichen Vorliebe des originalen Entwickle
 Wie schnell ist Rust?
 </a></h3>
 
-Sehr schnell! Rust kann sich bereits in einigen Benchmarks (zu Beispiel dem [Benchmarks Game](https://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp) und [anderen](https://github.com/kostya/benchmarks)) mit idiomatischem C und C++ Code messen.
+Sehr schnell! Rust kann sich bereits in einigen Benchmarks (zu Beispiel dem [Benchmarks Game](https://benchmarksgame-team.pages.debian.net/benchmarksgame/faster/rust.html) und [anderen](https://github.com/kostya/benchmarks)) mit idiomatischem C und C++ Code messen.
 
 Eins der wichtigsten Prinzipien in Rust (wie auch in C++) sind [Zero-Cost Abstractions](http://blog.rust-lang.org/2015/05/11/traits.html): Keine der Abstraktionen in Rust verursachen programmweite Verlangsamungen oder einen Mehraufwand zur Laufzeit.
 

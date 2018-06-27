@@ -196,7 +196,7 @@ Rust는 얼마나 빠른가요?
 </a></h3>
 
 빠릅니다!
-Rust는 이미 여러 벤치마크(이를테면 [Benchmarks Game](https://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp)이나 [기타 이것 저것](https://github.com/kostya/benchmarks))에서 관용적인 C 및 C++ 코드에 경쟁력이 있습니다.
+Rust는 이미 여러 벤치마크(이를테면 [Benchmarks Game](https://benchmarksgame-team.pages.debian.net/benchmarksgame/faster/rust.html)이나 [기타 이것 저것](https://github.com/kostya/benchmarks))에서 관용적인 C 및 C++ 코드에 경쟁력이 있습니다.
 
 C++와 동일하게 Rust는 [비용 없는 추상화](http://blog.rust-lang.org/2015/05/11/traits.html)를 주요 원칙으로 삼습니다.
 Rust에는 전역으로 성능을 떨어뜨리는 추상화가 존재하지 않으며, 런타임 시스템에서 부하가 발생하지도 않습니다.

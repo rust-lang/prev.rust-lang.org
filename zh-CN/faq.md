@@ -170,7 +170,7 @@ Apache 许可证包含对专利侵权的重要保护，但它与 GPL 第二版�
 Rust 有多快？
 </a></h3>
 
-飞快！Rust 在一些基准测试中（例如 [Benchmarks Game](https://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp)、[等等](https://github.com/kostya/benchmarks)）已经有与惯用的 C 和 C++ 竞争的能力。
+飞快！Rust 在一些基准测试中（例如 [Benchmarks Game](https://benchmarksgame-team.pages.debian.net/benchmarksgame/faster/rust.html)、[等等](https://github.com/kostya/benchmarks)）已经有与惯用的 C 和 C++ 竞争的能力。
 
 与 C++ 类似，Rust 采用[零成本抽象](http://blog.rust-lang.org/2015/05/11/traits.html)作为其核心原则之一：Rust 的抽象都没有施加全局性能损失，也不会有任何传统意义上的运行时系统的开销。
 

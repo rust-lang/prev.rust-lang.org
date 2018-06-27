@@ -194,7 +194,7 @@ RustをGPL2と一緒に使うときの問題を回避するために代替とし
 Rustはどのくらい速いですか？
 </a></h3>
 
-速いです！Rustの性能はすでに、多数のベンチマークについて、自然に書かれたC/C++に匹敵しています（[Benchmarks Game](https://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=rust&lang2=gpp)や[他](https://github.com/kostya/benchmarks)など）。
+速いです！Rustの性能はすでに、多数のベンチマークについて、自然に書かれたC/C++に匹敵しています（[Benchmarks Game](https://benchmarksgame-team.pages.debian.net/benchmarksgame/faster/rust.html)や[他](https://github.com/kostya/benchmarks)など）。
 
 RustはC++と同じように、基本原則の1つとして[ゼロコスト抽象化](http://blog.rust-lang.org/2015/05/11/traits.html)を掲げています。つまり、Rustの抽象には、全体的な性能にペナルティを課すようなものはなく、ランタイムシステムのオーバーヘッドもないということです。
 
