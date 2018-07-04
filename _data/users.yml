@@ -186,7 +186,7 @@
   name: Parity Technologies
   url: https://parity.io/
   logo: parity-logo.png
-  how: "<a href='https://parity.io/parity.html'>Powering the Ethereum revolution.</a>"
+  how: "<a href='https://www.parity.io/#parity'>Powering the Ethereum revolution.</a>"
 -
   name: Everlane
   url: http://www.everlane.com/
@@ -666,6 +666,6 @@
   how: "We created CodeChain, a programmable open source blockchain technology optimal for developing and customizing multi-asset management systems."
 -
   name: TenX
-  url: www.tenx.tech
+  url: https://www.tenx.tech
   logo: tenx.png
   how: "Building a secure and scalable distributed payments system in Rust."
