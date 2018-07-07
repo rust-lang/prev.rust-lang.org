@@ -669,3 +669,8 @@
   url: https://www.tenx.tech
   logo: tenx.png
   how: "Building a secure and scalable distributed payments system in Rust."
+-
+  name: Star Lab
+  url: https://starlab.io/
+  logo: starlab.svg
+  how: "As an embedded security company, Rust allows us to have confidence in the performance and reliability of our products."
