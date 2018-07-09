@@ -133,6 +133,11 @@
   logo: clever-cloud.svg
   how: "We <a href='https://www.clever-cloud.com/doc/rust/rust/'>host Rust web applications</a>, and a part of our infrastructure is developed in Rust."
 -
+  name: Cloudflare
+  url: https://www.cloudflare.com/
+  logo: cloudflare.svg
+  how: "We are <a href='https://blog.cloudflare.com/tag/rust/'>using Rust</a> as a replacement for memory-unsafe languages (particularly C) and are using it in our core edge logic."
+-
   name: CodePicnic
   url: https://codepicnic.com
   logo: codepicnic.png
