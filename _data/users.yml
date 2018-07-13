@@ -163,6 +163,11 @@
   logo: craftai.png
   how: "Our core machine learning engine is written in Rust."
 -
+  name: Cultivate Software
+  url: https://cultivatehq.com/
+  logo: cultivate-logo.svg
+  how: "<a href='https://cultivatehq.com/posts/how-we-built-a-visual-studio-code-extension-for-iot-prototyping/'>We used Rust as a bridge between a VSCode extension and IoT devices</a>."
+-
   name: Dazta
   url: https://www.dazta.com
   logo: dazta.svg
