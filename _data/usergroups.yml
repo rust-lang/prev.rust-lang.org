@@ -325,6 +325,11 @@
       city: Warsaw
       url: https://www.meetup.com/Rust-Warsaw/
 
+
+    - name: Rust Wrocław
+      city: Wrocław
+      url: https://www.meetup.com/pl-PL/Rust-Wroclaw/
+ 
 - country: Russia
   meetups:
 
