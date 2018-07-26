@@ -361,9 +361,9 @@
       city: Madrid
       url: https://github.com/rustmadrid
 
-    - name: Rust Barcelona
+    - name: Bcn Rust
       city: Barcelona
-      url: https://www.meetup.com/Rust-Barcelona/
+      url: https://www.meetup.com/BcnRust/
 
 - country: South Korea
   meetups:
