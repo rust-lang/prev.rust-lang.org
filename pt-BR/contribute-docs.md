@@ -21,9 +21,7 @@ Rust popular vai te recompensar com eterno amor de seu responsável.
 principal. Ele tem seu próprio rótulo, [A-book] e está continuamente sendo refinado.
 Outras documentações no repositório principal incluem [A referência para Rust][The Rust Reference],
 a [Documentação da Biblioteca Padrão][std], O [Rustonomicon][The Rustonomicon] (um guia para
-código `inseguro` em Rust, corretamente). O [Guia de Estilo de Rust][Rust Style Guide] está tão
-incompleto que ele não é referenciado com frequência; um contribuidor ambicioso pode se dar
-muito bem nele. O [índice de erros][err] fornece explicações extendidas para os erros
+código `inseguro` em Rust, corretamente). O [índice de erros][err] fornece explicações extendidas para os erros
 que o compilador emite. Ao mesmo tempo que novos erros são adicionados, essa documentação
 precisa [ser atualizada][err-issue], então há sempre erros não indexados no índice prontos
 para serem adicionados. A maior parte da documentação interna vive na pasta [src/doc].
@@ -49,7 +47,6 @@ TODO: blogging, translation
 [A-docs]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-docs
 [Rust By Example]: https://github.com/rust-lang/rust-by-example
 [Rust Design Patterns]: https://github.com/nrc/patterns
-[Rust Style Guidelines]: https://doc.rust-lang.org/style/index.html
 [The Book]: https://doc.rust-lang.org/book/index.html
 [The Rust Reference]: https://doc.rust-lang.org/reference
 [The Rustonomicon]: https://doc.rust-lang.org/nomicon/index.html

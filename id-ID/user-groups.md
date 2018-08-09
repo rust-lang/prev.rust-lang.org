@@ -108,8 +108,6 @@ Budapest.
 
 [Hyderabad Rust Meetup](https://www.meetup.com/Hyderabad-Rust-Meetup/), Hyderabad.
 
-[Rust Group Coimbatore](https://github.com/dvigneshwer/Rust_Group_Coimbatore), Coimbatore.
-
 [Rust Bangalore](https://www.meetup.com/rustox/), Bangalore.
 
 ## Indonesia

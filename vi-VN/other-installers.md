@@ -97,10 +97,10 @@ If you prefer not to use the shell script, you may directly download
     <a href="https://static.rust-lang.org/rustup/dist/mips-unknown-linux-gnu/rustup-init">
       mips-unknown-linux-gnu
     </a>
-    <a href="https://static.rust-lang.org/rustup/dist/mipsel-unknown-linux-gnu/rustup-init.exe">
+    <a href="https://static.rust-lang.org/rustup/dist/mipsel-unknown-linux-gnu/rustup-init">
       mipsel-unknown-linux-gnu
     </a>
-    <a href="https://static.rust-lang.org/rustup/dist/mips64-unknown-linux-gnuabi64/rustup-init.exe">
+    <a href="https://static.rust-lang.org/rustup/dist/mips64-unknown-linux-gnuabi64/rustup-init">
       mips64-unknown-linux-gnuabi64
     </a>
     <a href="https://static.rust-lang.org/rustup/dist/mips64el-unknown-linux-gnuabi64/rustup-init">

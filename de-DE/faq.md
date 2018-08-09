@@ -114,7 +114,7 @@ Wie bekomme ich bei Problemen mit Rust Hilfe?
 
 Es gibt viele Wege. Du kannst:
 
-- Einen Forenpost im offiziellen Rust User Forum [users.rust-lang.org](https://nsers.rust-lang.org/) absetzen.
+- Einen Forenpost im offiziellen Rust User Forum [users.rust-lang.org](https://users.rust-lang.org/) absetzen.
 - Im offiziellen [Rust-IRC-Kanal](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) (#rust on irc.mozilla.org) eine Frage stellen.
 - Auf [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) eine Frage stellen (denke daran, sie mit dem „rust“-Tag zu markieren!).
 - Im inoffiziellen Rust-Subreddit [/r/rust](https://www.reddit.com/r/rust) posten.
@@ -401,7 +401,7 @@ Wie kann ich in O(1) auf ein Zeichen in einem <code>String</code> zugreifen?
 </a></h3>
 
 Das ist unmöglich, außer wenn über den String im Vornherein so viel bekannt ist, dass der Index eines Zeichens genau berechnet werden kann.
-[comment] <> (You cannot. At least not without a firm understanding of what you mean by "character", and preprocessing the string to find the index of the desired character)
+[comment]: <> (You cannot. At least not without a firm understanding of what you mean by "character", and preprocessing the string to find the index of the desired character)
 
 In Rust sind Strings in UTF-8-kodiert. In ASCII wäre ein einzelnes Zeichen auch genau ein Byte, aber dies ist in UTF-8 nicht zwingend der Fall. Ein Byte wird _Code Unit_ genannt (in UTF-16 sind Code Units 2 Bytes lang; in UTF-32 sind es 4 Bytes). Ein _Code Point_ besteht aus einem oder mehreren Code Units, und mehrere Code Points formen _Grapheme Cluster_, welche am ehesten als Zeichen interpretiert werden können.
 

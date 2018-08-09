@@ -18,7 +18,6 @@ Rustのドキュメントを様々な側面から改善するのに深い知識�
 [プログラミング言語Rust][The Book]はRustの主要なドキュメントでRustのメインレポジトリでメンテナンスされています。
 独自の[A-book]ラベルを持っていて、継続的に改善されています。
 メインレポジトリにある他のドキュメントには[Rustリファレンス][The Rust Reference]、[標準ライブラリAPIドキュメント][std]、[Rustonomicon][The Rustonomicon]（`unsafe`を正しく使うためのガイド）があります。
-[Rustスタイルガイドライン][Rust Style Guidelines]はまだ未完成で、表立ってはリンクが張られていません。
 意欲的なコントリビュータはここを狙うとよい成果が得られるでしょう。
 [エラーインデックス][err]はコンパイラによって生成されたエラーの詳解を提供します。
 新たなエラーが追加されたらこのドキュメントも[メンテナンスされないといけません][err-issue]し、インデックスに反映されていないエラーが常に追加されていきます。
@@ -41,7 +40,6 @@ TODO: blogging, translation
 [A-docs]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-docs
 [Rust By Example]: https://github.com/rust-lang/rust-by-example
 [Rust Design Patterns]: https://github.com/nrc/patterns
-[Rust Style Guidelines]: https://doc.rust-lang.org/style/index.html
 [The Book]: https://doc.rust-lang.org/book/index.html
 [The Rust Reference]: https://doc.rust-lang.org/reference
 [The Rustonomicon]: https://doc.rust-lang.org/nomicon/index.html

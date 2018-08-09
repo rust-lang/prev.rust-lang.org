@@ -237,7 +237,7 @@ livre para contatar o lider do time ou qualquer outro membro que pode te ajudar 
 [library_team]: https://www.rust-lang.org/team.html#Library
 [compiler_team]: https://www.rust-lang.org/team.html#Compiler
 [dev_tools_team]: https://www.rust-lang.org/team.html#Dev-tools-team
-[cargo_team]: https://www.rust-lang.org/tteam.html#Cargo-team
+[cargo_team]: https://www.rust-lang.org/team.html#Cargo-team
 [community_team]: https://www.rust-lang.org/team.html#Community-team
 [mod_team]: https://www.rust-lang.org/team.html#Moderation-team
 [doc_team]: https://www.rust-lang.org/team.html#Documentation-team

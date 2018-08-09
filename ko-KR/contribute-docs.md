@@ -24,8 +24,6 @@ Rust 생태계를 이루는 크레이트의 문서입니다***.
 주 저장소에 있는 다른 문서로는 [Rust 참조 문서][The Rust Reference],
 [표준 라이브러리 API 문서][std], 그리고 (`unsafe`를 올바르게 쓰는 안내서인)
 《<i lang="en">[Rustonomicon][The Rustonomicon]</i>》이 있습니다.
-[Rust 스타일 가이드라인][Rust Style Guidelines]은 많이 불완전하기 때문에
-눈에 띄게 링크되어 있진 않으나, 의욕적인 기여자라면 많은 개선을 이루어낼 수 있을 겁니다.
 [오류 색인][err]은 컴파일러가 만들어 낸 오류들에 대해 자세한 설명을 제공합니다.
 오류가 새로 추가되면 이 문서도 [함께 관리되어야 하며][err-issue],
 따라서 색인에 아직 반영되지 않아 추가되어야 하는 오류들이 항상 있습니다.
@@ -53,7 +51,6 @@ TODO: blogging, translation
 [A-docs]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-docs
 [Rust By Example]: https://github.com/rust-lang/rust-by-example
 [Rust Design Patterns]: https://github.com/nrc/patterns
-[Rust Style Guidelines]: https://doc.rust-lang.org/style/index.html
 [The Book]: https://doc.rust-lang.org/book/index.html
 [The Rust Reference]: https://doc.rust-lang.org/reference
 [The Rustonomicon]: https://doc.rust-lang.org/nomicon/index.html

@@ -607,7 +607,7 @@ fn main() {
 
 理解借用检查器是重要的环节是实践。Rust 的强静态分析保证与许多程序员以往接触过的有天壤之别。需要花些时间来适应这些。
 
-如果你发现你在借用检查器中遇到困难，或者失去耐心，可以随时联系 [Rust 社区](community.thml)寻求帮助。
+如果你发现你在借用检查器中遇到困难，或者失去耐心，可以随时联系 [Rust 社区](community.html)寻求帮助。
 
 <h3><a href="#when-is-rc-useful" name="when-is-rc-useful">
 <code>Rc</code> 在什么时候有用？

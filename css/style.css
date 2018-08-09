@@ -4,7 +4,7 @@
     src: url('../fonts/Fira/eot/FiraSans-Light.eot') format('embedded-opentype'),
          url('../fonts/Fira/woff2/FiraSans-Light.woff2') format('woff2'),
          url('../fonts/Fira/woff/FiraSans-Light.woff') format('woff'),
-         url('ttf/FiraSans-Light.ttf') format('truetype');
+         url('../fonts/Fira/ttf/FiraSans-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }

@@ -28,8 +28,7 @@ Possiede anche la sua etichetta per le problematiche, [A-book] ed
 è continuamente in miglioramento.
 Ulteriore documentazione nel repository principale include [il riferimento di Rust][The Rust Reference], 
 la [documentazione della libreria standard][std], [Il Rustonomico][The Rustonomicon] (un guida su come usare `unsafe`
-correttamente). Le [guide di stile di Rust][Rust Style Guidelines] sono così incomplete che non vengono elencate spesso;
-uno sviluppatore ambizioso può sicuramente fare molta strada contribuendo lì.
+correttamente).
 L'[indice degli errori][err] fornisce spiegazioni dettagliate agli errori del compilatore. 
 Quando vengono aggiunti nuovi errori, essi devono essere [inclusi nella documentazione][err-issue], quindi ci sono
 sempre errori non presenti ancora ma con la necessità di essere aggiunti.
@@ -56,7 +55,6 @@ TODO: blogging, translation
 [A-docs]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-docs
 [Rust By Example]: https://github.com/rust-lang/rust-by-example
 [Rust Design Patterns]: https://github.com/nrc/patterns
-[Rust Style Guidelines]: https://doc.rust-lang.org/style/index.html
 [The Book]: https://doc.rust-lang.org/book/index.html
 [The Rust Reference]: https://doc.rust-lang.org/reference
 [The Rustonomicon]: https://doc.rust-lang.org/nomicon/index.html

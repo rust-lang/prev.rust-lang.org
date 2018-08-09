@@ -26,8 +26,7 @@ förbättras ständigt. Annan dokumentation i huvudrepot är
 [standardbibliotekets API-dokumentation][std],
 [den s.k. Rustonomicon][The Rustonomicon] (en guide till att använda `unsafe`
 på ett korrekt sätt; begreppet härör ur kombinationen "Rust" och "necronomicon").
-[Rusts stilguide][Rust Style Guidelines] är så ofullständig att den inte länkas
-till ofta; den som är ambitiös kan bidra mycket där. [Indexet över fel][err]
+[Indexet över fel][err]
 tillhandahåller utförliga beskrivningar av diverse felmeddelanden som kompilatorn
 kan ge. Allt eftersom nya felmeddelanden läggs till i kompilatorn
 [måste dokumentationen underhållas][err-issue]. Därför finns det alltid
@@ -55,7 +54,6 @@ TODO: blogging, translation
 [A-docs]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-docs
 [Rust By Example]: https://github.com/rust-lang/rust-by-example
 [Rust Design Patterns]: https://github.com/nrc/patterns
-[Rust Style Guidelines]: https://doc.rust-lang.org/style/index.html
 [The Book]: https://doc.rust-lang.org/book/index.html
 [The Rust Reference]: https://doc.rust-lang.org/reference
 [The Rustonomicon]: https://doc.rust-lang.org/nomicon/index.html
