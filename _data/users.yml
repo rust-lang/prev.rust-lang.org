@@ -684,3 +684,18 @@
   url: https://starlab.io/
   logo: starlab.svg
   how: "As an embedded security company, Rust allows us to have confidence in the performance and reliability of our products."
+-
+  name: Helium
+  url: www.helium.com
+  logo: helium.svg
+  how: "Helium uses Rust and Tock for secure wireless IoT devices."
+-
+  name: Simpleweb Studio One
+  url: https://simpleweb.co.uk
+  logo: simpleweb-logo.svg
+  how: "<a href=https://simpleweb.co.uk/getting-personal-in-the-simpleweb-playground/?utm_medium=social&utm_source=Rust&utm_campaign=Getting%20personal%20in%20the%20Simpleweb%20Playground&utm_content=Rust%20Friends>We are using Rust as the server for our new internal tool to help manage personal development budgets.</a>"
+-
+  name: Panoptix
+  url: https://www.panoptix.co.za
+  logo: Panoptix_Highres.png
+  how: "Panoptix is using Rust to create all new code, our specialty is log management and data analytics from remote locations and Rust is ideally suited to help us ship all our metrics and events."
