@@ -19,7 +19,7 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 
 [学习 Rust][rust-learning]：由社区维护、收集的学习 Rust 资料合集。
 
-[Rust中文文档中心][rust-cn-docs]: Rust生态中文文档中心.
+[Rust中文文档中心][rust-docs-cn]: Rust生态中文文档中心.
 
 [常见问题解答][faq]
 
@@ -28,7 +28,7 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning
 [faq]: faq.html
-[rust-cn-docs]: https://ruster.xyz/
+[rust-docs-cn]: https://ruster.xyz/
 
 ## 参考文献
 
