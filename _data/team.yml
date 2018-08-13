@@ -292,11 +292,11 @@ teams:
     members: [nrc, alexcrichton, aidanhs, wycats, steveklabnik, nikomatsakis, carols10cents, Mark-Simulacrum, aturon, ashleygwilliams]
   - name: Language team
     responsibility: "designing new language features"
-    members: [cramertj, withoutboats, eddyb, nrc, pnkfelix, nikomatsakis, aturon, joshtriplett, scottmcm]
+    members: [cramertj, withoutboats, eddyb, nrc, pnkfelix, nikomatsakis, aturon, joshtriplett, scottmcm, Centril]
     lead: nikomatsakis
   - name: Language team shepherds
     responsibility: "helping guide language RFCs to completion, assisting the language team with its work"
-    members: [solson, whitequark, Centril, rpjohnst]
+    members: [solson, whitequark, rpjohnst]
   - name: Library team
     responsibility: "the Rust standard library, rust-lang crates, conventions, and ecosystem support"
     members: [alexcrichton, sfackler, BurntSushi, Kimundi, SimonSapin, dtolnay, aturon, KodrAus, withoutboats]
