@@ -319,7 +319,7 @@ teams:
     lead: nrc
   - name: Infrastructure team
     responsibility: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
-    members: [alexcrichton, shepmaster, aidanhs, TimNN, Mark-Simulacrum, erickt, tomprince, kennytm, ashleygwilliams, sgrif]
+    members: [alexcrichton, shepmaster, aidanhs, TimNN, Mark-Simulacrum, erickt, kennytm, ashleygwilliams, sgrif]
     lead: aidanhs
     email: infra@rust-lang.org
   - name: Release team
@@ -349,7 +349,7 @@ teams:
     email: rust-mods@rust-lang.org
   - name: Rust team alumni
     responsibility: "enjoying a leisurely retirement"
-    members: [aatch, Gankro, pcwalton, huonw, peschkaj, dotdash, bkoropoff, brson, erickt, arielb1, jseyfried, edunham]
+    members: [aatch, Gankro, pcwalton, huonw, peschkaj, dotdash, bkoropoff, brson, erickt, arielb1, jseyfried, edunham, tomprince]
 # Information on sites to get profile information from
 sites:
   github:
