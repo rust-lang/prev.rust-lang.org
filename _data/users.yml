@@ -267,6 +267,11 @@
   url: http://www.maidsafe.net
   logo: maidsafe.svg
   how: "Building a decentralised data and communications network."
+  
+  name: MONOQI
+  url: https://monoqi.com
+  logo: monoqi.png
+  how: "Speeding up computationally intensive tasks in our Rails back-office app."
 -
   name: Mozilla
   url: https://www.mozilla.org
