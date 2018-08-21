@@ -292,6 +292,10 @@
     - name: Wellington Rust Meetup
       city: Wellington
       url: https://www.meetup.com/Wellington-Rust-Meetup/
+      
+    - name: Rust AKL
+      city: Auckland
+      url: https://www.meetup.com/rust-akl/
 
 - country: Norway
   meetups:
