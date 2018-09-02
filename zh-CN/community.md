@@ -63,6 +63,7 @@ Rust 开发者们在 [#rust-internals][internals_irc] 上协作。此频道中�
 - [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
 - [#rust-sv](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-sv) är för allmän diskussion om Rust på svenska
 - [Rust中文][cn_org] Rust 语言中文 Chat 社区(非IRC频道)
+- [Rust中文][cn-community] Rust中文社区(文档中心和论坛社区)
 
 ### 团队频道
 - [#cargo][cargo_irc] 讨论 Rust 的包管理器 —— Cargo
@@ -106,6 +107,7 @@ Rust 开发者们在 [#rust-internals][internals_irc] 上协作。此频道中�
 [br_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-br
 [cargo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23cargo
 [cn_org]: https://chat.rust-china.org/
+[cn-community]: https://ruster.xyz/
 [community_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
 [crypto_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
 [de_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
