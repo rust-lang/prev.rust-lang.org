@@ -1474,7 +1474,7 @@ buffer). The caller then must either pass a temporary expression or
 make an explicit move using `std::move`. The rough equivalent to the
 function `process` above, then, would be:
 
-```
+```cpp
 void process(string&& s) { }
 
 void caller() {
