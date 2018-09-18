@@ -89,7 +89,7 @@ other corners of the Rust world.
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/en-US/conduct.html
 
 ## Nightly and beta documentation
 
