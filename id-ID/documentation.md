@@ -86,7 +86,7 @@ sudut dunia Rust lainnya.
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/id-ID/conduct.html
 
 ## Dokumentasi Nightly dan Beta
 
