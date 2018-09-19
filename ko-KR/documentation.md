@@ -81,7 +81,7 @@ GitHub의 rust-lang organization, 공식 포럼, IRC 채널 및 Rust 커뮤니�
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/ko-KR/conduct.html
 
 ## 나이틀리 및 베타 문서
 
