@@ -80,7 +80,7 @@ foros oficiales, canales IRC, y varios otros rincones del mundo de Rust.
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/es-ES/conduct.html
 
 ## Documentación beta y nightly
 
