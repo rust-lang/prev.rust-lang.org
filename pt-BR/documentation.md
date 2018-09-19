@@ -75,7 +75,7 @@ canais IRC e vários outros cantos do mundo Rust.
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/pt-BR/conduct.html
 
 ## Documentação sobre versões noturna (nightly) e beta
 
