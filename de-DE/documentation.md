@@ -63,7 +63,7 @@ Wenn du Rust noch nie gesehen hast, solltest du zuerst einen Blick in das Buch [
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/de-DE/conduct.html
 
 ## Dokumentation zu Nightly- und Betaversionen
 
