@@ -75,7 +75,7 @@ title: Документация Rust &middot; Язык Программиров�
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/ru-RU/conduct.html
 
 ## Документация nightly и beta
 
