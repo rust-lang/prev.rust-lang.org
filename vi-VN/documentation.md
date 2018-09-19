@@ -74,7 +74,7 @@ mô tả tại đây.
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/vi-VN/conduct.html
 
 ## Tài liệu phiên bản Nightly và beta
 
