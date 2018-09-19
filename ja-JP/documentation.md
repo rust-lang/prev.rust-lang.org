@@ -79,7 +79,7 @@ GitHubのrust-langオーガニゼーション、公式フォーラム、IRCチ�
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/ja-JP/conduct.html
 
 ## Nightly及びベータのドキュメント
 
