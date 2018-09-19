@@ -56,7 +56,7 @@ Si vous découvrez Rust, la première chose à lire est l'introduction du livre 
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/fr-FR/conduct.html
 
 ## La documentation pour les versions nightly et bêta
 
