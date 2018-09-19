@@ -68,7 +68,7 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 
 [security]: security.html
 [legal]: legal.html
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/zh-CN/conduct.html
 
 ## 开发版(nightly) 与 测试版(beta) 文档
 
