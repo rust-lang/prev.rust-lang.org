@@ -11,7 +11,7 @@ title: Rustへ貢献する &mdash; ツール、IDE、インフラ &middot; プ�
 さらなる情報へはリンク先へ飛んで下さい。
 
 パッケージマネージャのCargoとドキュメントジェネレータのrustdocは一通り機能を実装していますしきちんと使えますが開発者不足に苦しんでいます。
-Rustdocにはメインレポジトリに[A-rustdoc]ラベルのついたイシューがいくつもあります。
+Rustdocにはメインレポジトリに[T-rustdoc]ラベルのついたイシューがいくつもあります。
 そのほとんどがバグで、貢献するにはバグを直してプルリクエストを送ればよいでしょう。
 Cargoは[自身のレポジトリとイシューを持っており][Cargo]、貢献したいと思っている人は[#cargo]に入ると良いでしょう。
 
@@ -27,7 +27,7 @@ Rustはgdbとlldbの両方のデバッガの下である程度動きますが、
 [#cargo]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
 [#rust-tools]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
 [A-debuginfo]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo
-[A-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-rustdoc
+[T-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AT-rustdoc
 [Cargo]: https://github.com/rust-lang/cargo/issues
 [awesome-rust]: https://github.com/kud1ing/awesome-rust
 [ides]: https://forge.rust-lang.org/ides.html
