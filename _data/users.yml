@@ -684,3 +684,8 @@
   url: https://starlab.io/
   logo: starlab.svg
   how: "As an embedded security company, Rust allows us to have confidence in the performance and reliability of our products."
+-
+  name: Uptime Ventures
+  url: https://uptime.ventures/
+  logo: uptimeventures.svg
+  how: "Rust helps us tackle new frontiers by accelerating the evolution of bold new companies innovating in healthcare, data science, and machine learning."
