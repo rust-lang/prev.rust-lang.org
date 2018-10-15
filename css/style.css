@@ -13,9 +13,9 @@
     font-family: 'Fira Sans';
     src: url('../fonts/Fira/eot/FiraSans-Regular.eot');
     src: url('../fonts/Fira/eot/FiraSans-Regular.eot') format('embedded-opentype'),
-         url('../fonts/Fira/woff2/FiraSans-Regular.woff2') format('woff2'),
-         url('../fonts/Fira/woff/FiraSans-Regular.woff') format('woff'),
-         url('../fonts/Fira/ttf/FiraSans-Regular.ttf') format('truetype');
+    url('../fonts/Fira/woff2/FiraSans-Regular.woff2') format('woff2'),
+    url('../fonts/Fira/woff/FiraSans-Regular.woff') format('woff'),
+    url('../fonts/Fira/ttf/FiraSans-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -24,9 +24,9 @@
     font-family: 'Fira Sans';
     src: url('../fonts/Fira/eot/FiraSans-Medium.eot');
     src: url('../fonts/Fira/eot/FiraSans-Medium.eot') format('embedded-opentype'),
-         url('../fonts/Fira/woff2/FiraSans-Medium.woff2') format('woff2'),
-         url('../fonts/Fira/woff/FiraSans-Medium.woff') format('woff'),
-         url('../fonts/Fira/ttf/FiraSans-Medium.ttf') format('truetype');
+    url('../fonts/Fira/woff2/FiraSans-Medium.woff2') format('woff2'),
+    url('../fonts/Fira/woff/FiraSans-Medium.woff') format('woff'),
+    url('../fonts/Fira/ttf/FiraSans-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
@@ -40,29 +40,30 @@
 }
 
 body {
-	font-family: 'Fira Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	max-width: 820px;
+    font-family: 'Fira Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 10px;
 }
 p {
-	margin-top: 1.2em;
+    margin-top: 1.2em;
 	margin-bottom: 1.2em;
 }
 .pitch b {
-	font-weight: 400;
+    font-weight: 400;
 }
 li {
-	margin-bottom: .5em;
+    margin-bottom: .5em;
 }
 h1 {
-	font-size: 2em;
+    font-size: 2em;
 	margin-top: 1.2em;
 	margin-bottom: 0.5em;
 }
 
 ul {
-	padding-left: 30px;
+    padding-left: 30px;
+}
+.container {
+    margin-top: -20px;
 }
 ul.menu {
 	font-size: 1em;
@@ -224,20 +225,25 @@ ul.laundry-list {
 	display: none;
 }
 
+.ribbon {
+    display: none;
+}
 @media (min-width: 992px) {
 	ul.laundry-list {
 	  column-count: auto;
 	  -moz-column-count: auto;
 	  -webkit-column-count: auto;
 	}
-	img.ribbon {
-		display: inline !important;
-		position: absolute;
-		top: 0;
-		right: 0;
+	.ribbon {
+		display: block;
+        position: absolute;
+        position: sticky;
+        top: 0;
+        right: 0;
 		border: 0;
-    width: 149px;
-    height: 149px;
+        height: 0;
+        width: 149px;
+		margin-left: calc(100% - 149px);
 	}
 	ul.menu .col-xs-12 {
 		padding-left: 0;
