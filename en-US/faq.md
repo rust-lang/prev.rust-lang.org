@@ -1336,7 +1336,20 @@ It is also useful to note that compiling in release mode with Cargo is equivalen
 
 __Jemalloc__
 
-Rust uses jemalloc as the default allocator, which adds some size to compiled Rust binaries. Jemalloc is chosen because it is a consistent, quality allocator that has preferable performance characteristics compared to a number of common system-provided allocators. There is work being done to [make it easier to use custom allocators](https://github.com/rust-lang/rust/issues/32838), but that work is not yet finished.
+Rust uses jemalloc as the default allocator, which adds some size to compiled Rust binaries. Jemalloc is chosen because it is a consistent, quality allocator that has preferable performance characteristics compared to a number of common system-provided allocators. To remove jemalloc and instead use the system interpretter, add the following code to `main.rs`:
+
+```rust
+use std::alloc::System;
+
+#[global_allocator]
+static GLOBAL: System = System;
+
+fn main() {
+    let mut v = Vec::new();
+    // This will allocate memory using the system allocator.
+    v.push(1);
+}
+```
 
 __Link-time optimization__
 
