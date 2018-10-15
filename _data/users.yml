@@ -103,6 +103,11 @@
   logo: braintree.png
   how: "Speeding up batch processing and for small command-line utilities."
 -
+  name: Bytedance
+  url: https://bytedance.com/
+  logo: bytedance.png
+  how: "Use Rust for our cross-platform client-side development, safe and fast"
+-
   name: Calyptech
   url: http://calyptech.com
   logo: calyptech.png
