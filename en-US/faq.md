@@ -1355,6 +1355,10 @@ __Link-time optimization__
 
 Rust does not do link-time optimization by default, but [can be instructed to do so](https://doc.rust-lang.org/cargo/reference/manifest.html#the-profile-sections). This increases the amount of optimization that the Rust compiler can potentially do, and can have a small effect on binary size. This effect is likely larger in combination with the previously mentioned size optimizing mode.
 
+__Panic Strategy__
+
+By default, Rust supports unwinding when a panic occurs. This provides a helpful traceback, but requires additional generated code to support unwinding. The Rust compiler [can be instructed to abort on panic](https://doc.rust-lang.org/cargo/reference/manifest.html#the-profile-sections), instead, which reduces the size of the compiled binary.
+
 __Standard library__
 
 The Rust standard library includes libbacktrace and libunwind, which may be undesirable in some programs. Using `#![no_std]` can thus result in smaller binaries, but will also usually result in substantial changes to the sort of Rust code you're writing. Note that using Rust without the standard library is often functionally closer to the equivalent C code.
