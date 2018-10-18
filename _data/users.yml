@@ -243,6 +243,11 @@
   logo: imageoptim.png
   how: 'High-efficiency modern JPEG encoder written in Rust is at the heart of the <a href="https://imageoptim.com/api">image compression web service</a>.'
 -
+  name: iqlusion
+  url: https://iqlusion.io
+  logo: iqlusion.svg
+  how: "Rust is the main language we use to develop in-house and OSS software, and used for infrastructure/devops tools as well as cryptographic key management services."
+-
   name: krypt.co
   url: https://krypt.co
   logo: krypt.co.png
