@@ -73,6 +73,8 @@ people:
     name: Josh Stone
   dirtybit:
     name: Sertac Olgunsoylu
+  dwijnand:
+    name: Dale Wijnand
   dotdash:
     name: Björn Steinbrink
     irc: doener
@@ -83,8 +85,10 @@ people:
     name: Eduard Burtescu
   edunham:
     name: E. Dunham
-  emilio:
-    name: Emilio Cobos Álvarez
+  eh2406:
+    name: Jacob Finkelman
+  ehuss:
+    name: Eric Huss
   estebank:
     name: Esteban Kuber
   erickt:
@@ -311,8 +315,8 @@ teams:
     lead: nrc
   - name: Cargo team
     responsibility: "design and implementation of Cargo"
-    members: [alexcrichton, matklad, withoutboats, wycats, joshtriplett, aturon]
-    lead: aturon
+    members: [alexcrichton, dwijnand, eh2406, ehuss, joshtriplett, nrc, withoutboats, wycats]
+    lead: nrc
   - name: IDEs and editors team
     responsibility: "IDEs, editors, and supporting tools such as Racer and the RLS"
     members: [alexheretic, autozimu, jasonwilliams, LucasBullen, matklad, nrc, vlad20012, Xanewok]
