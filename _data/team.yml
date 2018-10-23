@@ -285,6 +285,10 @@ people:
     name: Junfeng Li
   LucasBullen:
     name: Lucas Bullen
+  ishitatsuyuki:
+    name: Tatsuyuki Ishi
+  jtgeibel:
+    name: Justin Geibel
 
 # Information about each team. Omit `lead` for teams without leaders.
 #
@@ -326,6 +330,11 @@ teams:
     members: [alexcrichton, shepmaster, aidanhs, TimNN, Mark-Simulacrum, erickt, kennytm, ashleygwilliams, sgrif, pietroalbini]
     lead: aidanhs
     email: infra@rust-lang.org
+  - name: Crates.io team
+    responsibility: "management of operations, development, and policies for crates.io"
+    members: [carols10cents, ashleygwilliams, sgrif, jtgeibel, withoutboats, joshtriplett, ishitatsuyuki, steveklabnik, wycats]
+    lead: sgrif
+    email: help@crates.io
   - name: Release team
     responsibility: "tracking regressions, stabilizations, and producing Rust releases"
     members: [Mark-Simulacrum, jrozner, jkordish, cuviper, alexcrichton, dirtybit, Centril, sgrif, pietroalbini, BatmanAoD, PramodBisht, Lubits, ArazAbishov, Aaronepower, treiff, cssivision, gsollazzo, pambihira, stokhos]
