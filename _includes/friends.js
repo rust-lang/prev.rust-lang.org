@@ -14,9 +14,8 @@ function swapDiv(e1, e2){
 function shuffle() {
     var friends = document.querySelectorAll(".friend");
     for (var i = 0; i < friends.length; i++) {
-        var r1 = Math.floor(Math.random() * friends.length);
-        var r2 = Math.floor(Math.random() * friends.length);
-        swapDiv(friends[r1], friends[r2]);
+        var r = Math.floor(Math.random() * (i + 1));
+        swapDiv(friends[r], friends[i]);
     }
 }
 
