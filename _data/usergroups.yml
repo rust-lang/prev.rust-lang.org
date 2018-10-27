@@ -100,6 +100,13 @@
       city: Copenhagen
       url: http://cph.rs
 
+- country: Finland
+  meetups:
+
+    - name: Finland Rust-lang Group
+      city: Helsinki
+      url: https://www.meetup.com/Finland-Rust-Meetup/
+
 - country: France
   meetups:
 
@@ -114,13 +121,6 @@
     - name: Rust Paris
       city: Paris
       url: https://www.meetup.com/Rust-Paris/
-
-- country: Finland
-  meetups:
-
-    - name: Finland Rust-lang Group
-      city: Helsinki
-      url: https://www.meetup.com/Finland-Rust-Meetup/
 
 - country: Germany
   meetups:
