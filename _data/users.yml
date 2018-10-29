@@ -694,3 +694,8 @@
   url: https://starlab.io/
   logo: starlab.svg
   how: "As an embedded security company, Rust allows us to have confidence in the performance and reliability of our products."
+-
+  name: Routific
+  url: https://routific.com/
+  logo: routific.svg
+  how: "High performance route optimization software."
