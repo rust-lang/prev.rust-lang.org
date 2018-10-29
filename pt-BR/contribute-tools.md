@@ -13,7 +13,7 @@ no link para mais informações.
 
 Ambos Cargo, o gerenciador de pacotes do Rust, e o rustdoc, o gerador de Documentação
 do Rust, enquanto cheio de funcionalidades e funcional, sofre da falta de desenvolvedores.
-Rustdoc tem muitos problemas em aberto, no repositório principal no rótulo [A-rustdoc].
+Rustdoc tem muitos problemas em aberto, no repositório principal no rótulo [T-rustdoc].
 Eles são, na sua maioria, bugs e contribuir é apenas sanar o problema e mandar uma pull
 request. Cargo tem [seu próprio repositório e seção de problemas][Cargo], e interessados
 em contribuir talvez queiram se introduzir em [#cargo].
@@ -30,7 +30,7 @@ de ferramentas para Rust em [#rust-tools].
 [#cargo]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
 [#rust-tools]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
 [A-debuginfo]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo
-[A-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-rustdoc
+[T-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AT-rustdoc
 [Cargo]: https://github.com/rust-lang/cargo/issues
 [awesome-rust]: https://github.com/kud1ing/awesome-rust
 [ides]: https://forge.rust-lang.org/ides.html

@@ -13,7 +13,7 @@ favorit-IDE. Följ länken för mer information.
 
 Både Cargo, Rusts pakethanterare och Rustdoc,
 Rusts dokumentationsgenerator, saknar utvecklare trots att de är funktionella.
-Rustdoc har många öppna problem (issues) märkta med etiketten [A-rustdoc]
+Rustdoc har många öppna problem (issues) märkta med etiketten [T-rustdoc]
 i huvudrepot. De är för det mesta buggar och att bidra handlar om att fixa
 en bugg och att skicka in en pull request. Cargo har
 [sitt egna repo och problem/issues][Cargo]. De som är intresserade av att bidra
@@ -32,7 +32,7 @@ ska dyka upp och implementera dem. Diskutera med andra Rust-verktygsentusiaster 
 [#cargo]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
 [#rust-tools]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
 [A-debuginfo]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo
-[A-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-rustdoc
+[T-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AT-rustdoc
 [Cargo]: https://github.com/rust-lang/cargo/issues
 [awesome-rust]: https://github.com/kud1ing/awesome-rust
 [ides]: https://forge.rust-lang.org/ides.html
