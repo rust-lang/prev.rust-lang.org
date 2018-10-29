@@ -115,6 +115,10 @@
       city: Paris
       url: https://www.meetup.com/Rust-Paris/
 
+    - name: Rust Montpellier
+      city: Montpellier
+      url: https://www.meetup.com/Montpellier-Rust-Meetup/
+
 - country: Finland
   meetups:
 
