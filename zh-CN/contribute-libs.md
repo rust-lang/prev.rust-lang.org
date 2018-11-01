@@ -39,7 +39,7 @@ title: 为 Rust 出力 &mdash; 库 &middot; Rust 程序设计语言
 TODO: Not sure #rust-libs is the place to direct people
 -->
 
-[#rust-libs]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
+[#rust-libs]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-libs?nick=rustacean??
 [/r/rust]: https://reddit.com/r/rust
 [PistonDevelopers]: https://github.com/PistonDevelopers
 [Servo]: https://github.com/servo/servo

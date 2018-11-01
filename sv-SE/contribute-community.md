@@ -62,8 +62,8 @@ conf talks
 Conduct training on Rust. (link to training material).
 -->
 
-[#rust-beginners]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
-[#rust-community]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
+[#rust-beginners]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-beginners?nick=rustacean??
+[#rust-community]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-community?nick=rustacean??
 [/r/rust]: https://reddit.com/r/rust
 [E-easy]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy
 [E-mentor]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy+label%3AE-mentor

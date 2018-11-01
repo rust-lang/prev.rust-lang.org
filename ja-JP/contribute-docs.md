@@ -36,7 +36,7 @@ Rustの重要なドキュメントのうち、かなりの量がメインレポ�
 TODO: blogging, translation
 -->
 
-[#rust-docs]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-docs
+[#rust-docs]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-docs?nick=rustacean??
 [A-book]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-book
 [A-docs]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-docs
 [Rust By Example]: https://github.com/rust-lang/rust-by-example

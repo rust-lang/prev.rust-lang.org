@@ -122,7 +122,7 @@ Come posso ricevere aiuto con Rust?
 Ci sono diversi modi. Puoi:
 
 - Scrivere su [users.rust-lang.org](https://users.rust-lang.org/), il forum ufficiale di Rust
-- Chiedere sul [canale IRC ufficiale di Rust](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) (#rust on irc.mozilla.org)
+- Chiedere sul [canale IRC ufficiale di Rust](https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust?nick=rustacean??) (#rust on irc.mozilla.org)
 - Chiedere su [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) with the "rust" tag
 - Scrivere su [/r/rust](https://www.reddit.com/r/rust), il subreddit non ufficiale di Rust
 

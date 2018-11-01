@@ -28,8 +28,8 @@ Rust를 gdb와 lldb 디버거로 어느 정도까지는 성공적으로 실행�
 올바른 사람들이 찾아 와서 구현될 때까지 기다리고 있기도 합니다.
 [#rust-tools]에서 도구에 관심이 있는 다른 분들과 상의해 보세요.
 
-[#cargo]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
-[#rust-tools]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
+[#cargo]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rustc?nick=rustacean??
+[#rust-tools]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-tools?nick=rustacean??
 [A-debuginfo]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo
 [T-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AT-rustdoc
 [Cargo]: https://github.com/rust-lang/cargo/issues

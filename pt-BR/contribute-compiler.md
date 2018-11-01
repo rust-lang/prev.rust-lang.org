@@ -67,10 +67,10 @@ TODO: some of this RFC description could probably go in the RFC readme
 -->
 
 
-[#rust-internals]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
-[#rust-lang]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
-[#rust-libs]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
-[#rustc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
+[#rust-internals]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-internals?nick=rustacean??
+[#rust-lang]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-lang?nick=rustacean??
+[#rust-libs]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-libs?nick=rustacean??
+[#rustc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rustc?nick=rustacean??
 [A-codegen]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-codegen
 [A-debuginfo]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo
 [A-diagnostics]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-diagnostics

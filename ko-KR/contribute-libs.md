@@ -40,7 +40,7 @@ Rust는 어린 언어이므로, 아직 존재하지 않거나 불완전하여 �
 TODO: Not sure #rust-libs is the place to direct people
 -->
 
-[#rust-libs]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
+[#rust-libs]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-libs?nick=rustacean??
 [/r/rust]: https://reddit.com/r/rust
 [PistonDevelopers]: https://github.com/PistonDevelopers
 [Servo]: https://github.com/servo/servo

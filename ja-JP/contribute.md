@@ -36,7 +36,7 @@ Rustの成功へと貢献する方法はいくつもあります。
 私たちは良識ある論議を維持していることにプライドを持っており、そのためにコントリビュータは[行動規範][coc]に従うことが期待されています。
 これについて質問があれば、[コミュニティチーム][community team]に問い合わせてみてください。
 
-[#rust-internals]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
+[#rust-internals]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-internals?nick=rustacean??
 [CONTRIBUTING.md]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md
 [bugs]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#bug-reports
 [coc]: https://www.rust-lang.org/conduct.html

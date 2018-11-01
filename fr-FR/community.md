@@ -64,7 +64,7 @@ Les développeurs de Rust échangent sur [#rust-internals][internals_irc]. Ce ca
 - [#rust-de][de_irc] ist für die allgemeine Diskussion über Rust auf Deutsch
 - [#rust-es][es_irc] es para una discusión general sobre Rust en español
 - [#rust-fr][fr_irc] est dédié à la programmation en Rust en français
-- [#rust-sv](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-sv) är för allmän diskussion om Rust på svenska
+- [#rust-sv](https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-sv?nick=rustacean??) är för allmän diskussion om Rust på svenska
 - [#rust-ru][ru_irc] для общих дискуссий о Rust на русском языке
 
 ### Les canaux thématiques
@@ -80,28 +80,28 @@ Les développeurs de Rust échangent sur [#rust-internals][internals_irc]. Ce ca
 - [#servo][servo_irc] pour les discussions sur Servo, le moteur de rendu écrit en Rust
 
 [IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
-[beginners_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners
-[bots_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-bots
-[br_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-br
-[cargo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23cargo
-[community_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-community
-[crypto_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-crypto
-[de_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-de
-[es_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-es
-[fr_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-fr
-[gamedev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
-[internals_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
-[lang_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-lang
-[libs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-libs
-[networking_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-networking
-[osdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev
-[ru_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-ru
-[rust_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
-[rustc_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
-[servo_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23servo
-[tools_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
-[webdev_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-webdev
-[docs_irc]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-docs
+[beginners_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-beginners?nick=rustacean??
+[bots_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-bots?nick=rustacean??
+[br_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-br?nick=rustacean??
+[cargo_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#cargo?nick=rustacean??
+[community_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-community?nick=rustacean??
+[crypto_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-crypto?nick=rustacean??
+[de_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-de?nick=rustacean??
+[es_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-es?nick=rustacean??
+[fr_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-fr?nick=rustacean??
+[gamedev_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-gamedev?nick=rustacean??
+[internals_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-internals?nick=rustacean??
+[lang_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-lang?nick=rustacean??
+[libs_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-libs?nick=rustacean??
+[networking_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-networking?nick=rustacean??
+[osdev_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-osdev?nick=rustacean??
+[ru_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-ru?nick=rustacean??
+[rust_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust?nick=rustacean??
+[rustc_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rustc?nick=rustacean??
+[servo_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#servo?nick=rustacean??
+[tools_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-tools?nick=rustacean??
+[webdev_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-webdev?nick=rustacean??
+[docs_irc]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-docs?nick=rustacean??
 
 ## Les forums de discussion
 

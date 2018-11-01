@@ -15,8 +15,8 @@ Rust 包管理器 Cargo，Rust 文档生成器 rustdoc，虽然功能齐全且�
 
 通常还有其它有意思的工具项目，只是在等待合适的人来实现。在 [#rust-tools] 与其它 Rust 工具爱好者讨论。
 
-[#cargo]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
-[#rust-tools]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
+[#cargo]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rustc?nick=rustacean??
+[#rust-tools]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-tools?nick=rustacean??
 [A-debuginfo]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo
 [T-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AT-rustdoc
 [Cargo]: https://github.com/rust-lang/cargo/issues

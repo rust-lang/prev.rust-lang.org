@@ -115,7 +115,7 @@ Wie bekomme ich bei Problemen mit Rust Hilfe?
 Es gibt viele Wege. Du kannst:
 
 - Einen Forenpost im offiziellen Rust User Forum [users.rust-lang.org](https://nsers.rust-lang.org/) absetzen.
-- Im offiziellen [Rust-IRC-Kanal](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) (#rust on irc.mozilla.org) eine Frage stellen.
+- Im offiziellen [Rust-IRC-Kanal](https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust?nick=rustacean??) (#rust on irc.mozilla.org) eine Frage stellen.
 - Auf [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) eine Frage stellen (denke daran, sie mit dem „rust“-Tag zu markieren!).
 - Im inoffiziellen Rust-Subreddit [/r/rust](https://www.reddit.com/r/rust) posten.
 

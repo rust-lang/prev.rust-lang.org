@@ -15,8 +15,8 @@ Pour découvrir d'autres projets liés aux outils et auxquels contribuer, voir [
 
 De nombreux projets autour d'outils attendent simplement les bonnes personnes pour les implémenter. Vous pouvez discuter avec les autres personnes motivées par l'environnement Rust sur le canal [#rust-tools].
 
-[#cargo]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
-[#rust-tools]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
+[#cargo]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rustc?nick=rustacean??
+[#rust-tools]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-tools?nick=rustacean??
 [A-debuginfo]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo
 [T-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AT-rustdoc
 [Cargo]: https://github.com/rust-lang/cargo/issues

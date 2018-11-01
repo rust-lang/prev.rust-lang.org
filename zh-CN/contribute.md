@@ -44,7 +44,7 @@ TODO: Write guide to advertising Rust projects to link from
 libs / community building
 -->
 
-[#rust-internals]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
+[#rust-internals]: https://kiwiirc.com/nextclient/#ircs://irc.mozilla.org:6697/#rust-internals?nick=rustacean??
 [CONTRIBUTING.md]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md
 [bugs]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#bug-reports
 [coc]: https://www.rust-lang.org/conduct.html
