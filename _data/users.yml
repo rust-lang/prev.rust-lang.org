@@ -699,3 +699,8 @@
   url: https://routific.com/
   logo: routific.svg
   how: "High performance route optimization software."
+-
+  name: Kentik
+  url: https://kentik.com/
+  logo: kentik.svg
+  how: "Our advanced network analytics platform relies on <a href='https://www.kentik.com/blog/under-the-hood-how-rust-helps-keep-kentik%27s-performance-on-high'>many Rust components</a>."
