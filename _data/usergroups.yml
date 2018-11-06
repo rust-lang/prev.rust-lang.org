@@ -365,9 +365,9 @@
 - country: Spain
   meetups:
 
-    - name: Rust Madrid
+    - name: MadRust
       city: Madrid
-      url: https://github.com/rustmadrid
+      url: https://www.meetup.com/MadRust/
 
     - name: Rust Barcelona
       city: Barcelona
