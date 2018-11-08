@@ -151,7 +151,7 @@
   name: Coursera
   url: https://www.coursera.org
   logo: coursera.png
-  how: "<a href='https://building.coursera.org/blog/2016/07/07/rust-docker-in-production-coursera/'>Programming Assignments</a> in <a href='http://betacs.pro/blog/2016/07/07/docker-and-rust/'>secured Docker containers</a>."
+  how: "<a href='https://medium.com/coursera-engineering/rust-docker-in-production-coursera-f7841d88e6ed'>Programming Assignments</a> in secured Docker containers."
 -
   name: Coredump Hackerspace
   url: https://www.coredump.ch/
