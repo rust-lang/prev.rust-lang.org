@@ -88,6 +88,11 @@
   logo: autumn.png
   how: "<a href='https://medium.com/@autumn_eng/about-rust-s-machine-learning-community-4cda5ec8a790'>Machine learning in Rust</a>."
 -
+  name: balena
+  url: https://balena.io
+  logo: balena.svg
+  how: "We’re using Rust with <a href='https://balena.io/cloud'>balenaCloud</a> and other products to solve the problems faced when deploying and managing fleets of connected IoT devices. We run Rust on the backend, on the development machines and on the devices themselves."
+-
   name: Beget
   url: https://beget.com
   logo: beget.png
