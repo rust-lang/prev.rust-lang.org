@@ -433,6 +433,11 @@
   logo: trafficland.svg
   how: "Video transcoding, manipulation, and analysis."
 -
+  name: TVbeat
+  url: https://tvbeat.com/
+  logo: tvbeat.svg
+  how: "TVbeat uses Rust to <a href='https://tvbeat.com/friends-of-rust/'>process and analyze large amounts of TV viewing and advertising data</a>."
+-
   name: Wire
   url: https://wire.com
   logo: wire.svg
