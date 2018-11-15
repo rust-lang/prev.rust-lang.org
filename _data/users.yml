@@ -281,7 +281,7 @@
   name: Microsoft
   url: https://www.microsoft.com
   logo: microsoft.svg
-  how: "Microsoft uses Rust to enable background updates for VS Code on Windows."
+  how: "Microsoft uses Rust to <a href='https://github.com/Microsoft/inno-updater'>enable background updates for VS Code on Windows.</a>"
 -
   name: Mozilla
   url: https://www.mozilla.org
