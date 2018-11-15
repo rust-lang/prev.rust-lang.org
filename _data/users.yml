@@ -278,6 +278,11 @@
   logo: maidsafe.svg
   how: "Building a decentralised data and communications network."
 -
+  name: Microsoft
+  url: https://www.microsoft.com
+  logo: microsoft.svg
+  how: "Microsoft uses Rust to enable background updates for VS Code on Windows."
+-
   name: Mozilla
   url: https://www.mozilla.org
   logo: mozilla.png
