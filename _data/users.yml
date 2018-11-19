@@ -704,3 +704,8 @@
   url: https://kentik.com/
   logo: kentik.svg
   how: "Our advanced network analytics platform relies on <a href='https://www.kentik.com/blog/under-the-hood-how-rust-helps-keep-kentik%27s-performance-on-high'>many Rust components</a>."
+-
+  name: Seq
+  url: https://datalust.co/seq
+  logo: datalust-seq.svg
+  how: "Seq keeps its log event data in a storage engine <a href='https://blog.getseq.net/rust-at-datalust/'>written in Rust.</a>"
