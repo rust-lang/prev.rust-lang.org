@@ -704,3 +704,8 @@
   url: https://kentik.com/
   logo: kentik.svg
   how: "Our advanced network analytics platform relies on <a href='https://www.kentik.com/blog/under-the-hood-how-rust-helps-keep-kentik%27s-performance-on-high'>many Rust components</a>."
+-
+  name: Careem
+  url: https://careem.com/
+  logo: careem.png
+  how: "Security Engineering Team at Careem is using Rust for real time log analysis and other stream processing of logs and metrics."
