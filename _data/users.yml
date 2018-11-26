@@ -704,3 +704,8 @@
   url: https://kentik.com/
   logo: kentik.svg
   how: "Our advanced network analytics platform relies on <a href='https://www.kentik.com/blog/under-the-hood-how-rust-helps-keep-kentik%27s-performance-on-high'>many Rust components</a>."
+-
+  name: Hadean
+  url: https://hadean.com/
+  logo: hadean.svg
+  how: "Hadean is using Rust to build to build a cloud-first OS, and applications and libraries on top of it."
