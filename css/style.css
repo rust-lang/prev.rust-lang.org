@@ -784,3 +784,22 @@ h1.rustup {
     margin-left: 1em;
     margin-right: 1em;
 }
+
+.flash {
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: #428bca;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+}
+
+.flash a {
+  color: white;
+}
+
+header {
+  margin-top: 40px;
+}
