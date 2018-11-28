@@ -3,3 +3,4 @@ serve/
 *~
 **/.DS_Store
 **/*.bak*
+.jekyll-metadata
