@@ -798,6 +798,7 @@ h1.rustup {
 
 .flash a {
   color: white;
+  padding: 10px;
 }
 
 header {
