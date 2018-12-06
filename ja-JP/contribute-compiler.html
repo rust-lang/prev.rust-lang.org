@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rustへ貢献する &mdash; 言語、コンパイラ、標準ライブラリ &middot; The Rust Programming Language</title>
+    <meta name="keywords" content="Rust, Rust言語, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Rustは速度、安全性、並行性の3つのゴールにフォーカスしたシステムプログラミング言語です。">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme.svg" alt="Fork me on GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/ja-JP/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust logo" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/ja-JP/documentation.html">ドキュメント</a></h2>
+	  <h2><a href="/ja-JP/install.html">インストール</a></h2>
+	  <h2><a href="/ja-JP/community.html">コミュニティ</a></h2>
+	  <h2><a href="/ja-JP/contribute.html">開発に参加する</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1 id="rust-mdash-">Rustへ貢献する — 言語、コンパイラ、標準ライブラリ</h1>
+
+<p>コンパイラと標準ライブラリのソースコードはメインレポジトリにあります。
+メインレポジトリは主にそれらのメンテナンスのために存在しているので、イシュートラッカー上にあるラベルの多くはこれに関連したものです。
+RustからLLVM IRへの変換についての<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-codegen">A-codegen</a>、デバッガで使うためのメタデータ生成についての<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo">A-debuginfo</a>、エラー時にコンパイラーが提供するフィードバックについての<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-diagnostics">A-diagnostics</a>、標準ライブラリの問題についての<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-libs">A-libs</a>、構文拡張に関連する<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-macros">A-macros</a>と <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-syntaxext">A-syntaxext</a>、型についての<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-typesystem">A-typesystem</a>などが有益なラベルです。</p>
+
+<p>コンパイラのアーキテクチャについてきちんとメンテナンスされているガイドはありませんが<a href="https://github.com/rust-lang/rust/blob/master/src/librustc/README.md">ソースツリーに多少の概要はあります</a>。
+<a href="https://manishearth.github.io/rust-internals-docs">コンパイラを構成するクレートのAPIドキュメント</a>もコードを読むときの指針となるでしょうし、同じくソースコードブラウザの<a href="https://dxr.mozilla.org/rust/source/src">Rust DXR</a>も参考になるはずです。
+<a href="https://github.com/rust-lang/rust-wiki-backup/blob/master/Note-testsuite.md">Rustのテストスィートのガイド</a>はRustのビルドシステムに馴染む方法を教えてくれますし、同様に<a href="https://github.com/rust-lang/rust/blob/3d1f3c9d389d46607ae28c51cc94c1f43d65f3f9/Makefile.in#L48">make tips</a>をコマンドラインから走らせても得られるものはあるでしょう。</p>
+
+<p>近々入る予定のコンパイラの大きな変更に、内部でASTを直接操作することから<a href="https://github.com/rust-lang/rust/issues/27840">MIRと呼ばれる中間表現</a>を使うようにするものがあります。（訳注: 翻訳時点で既に入っています）。
+この作業でコンパイラが単純化されるため様々な新たな可能性を開くことが期待されます。
+例えばMIRベースの変換パスやMIRベースの最適化、インクリメンタルコンパイルなどです。
+このため手助けが必要になります。
+この作業に必要なまとまった情報源はありませんが<a href="https://internals.rust-lang.org/">internals.rust-lang.org</a>や<a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-internals">#rust-internals</a>で案内してもらいましょう。</p>
+
+<p><a href="https://users.rust-lang.org/t/glacier-a-big-ol-pile-of-ice/3380">コンパイラがクラッシュしたらばつが悪いですね</a> — とても恐しい「コンパイラ内部のエラー(internal compiler error)」 (ICE)。
+<a href="https://github.com/rust-lang/rust/labels/I-ICE">I-ICE</a>ラベルはこれらをトラックしており、大抵ありあまるほどあります。
+これらは通常、とっかかりとしては良いバグです、何故なら直ったかどうかは簡単に分かりますし、比較的それ自身で完結することが多いからです。</p>
+
+<p>RustのコードのパフォーマンスはRustの大きな長所の1つです。そしてRustコンパイラのパフォーマンスはRustの大きな短所の一つです。
+実行時、あるいは — 特に — コンパイル時のパフォーマンスの改善はどんなものであっても歓迎されます。
+<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AI-slow">I-slow</a>や<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-optimization">A-optimization</a>は実行時のパフォーマンスを、<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AI-compiletime">I-compiletime</a>はコンパイル時のパフォーマンスを扱います。
+多数の負荷に対する<a href="http://ncameron.org/perf-rustc/">コンパイル時間のパフォーマンスをトラックするサイト</a>もあります。
+コンパイラフラグの <code class="highlighter-rouge">-Z time-passes</code> はコンパイラパフォーマンスのデバッグに役立つでしょうし、RustのコードはLinuxの <code class="highlighter-rouge">perf</code> などの標準的なプロファイラでプロファイルが取れます。</p>
+
+<p>大きな新機能は<a href="https://github.com/rust-lang/rfcs#table-of-contents">Request for Comments (RFC)</a>プロセスを通して採用されます。RFCでは設計への合意を取ります。
+RFCは全員に開かれていますが、既に何度も協業をしている人と関わり合うプロセスなので徐々に関わることをお勧めします — 思い付きのRFCを歴史的、技術的、人的背景を理解せずに提出すると簡単に印象が悪くなり、人望を失うでしょう。
+先程のREADMEファイルを読んでどういう仕組みかをしっかりと理解しましょう。
+Rustの歴史の中で多数のアイディアが議論されてきており、拒絶されたものもあれば将来へ保留になったものありますし、RFCの<a href="https://github.com/rust-lang/rfcs/issues">イシュートラッカー</a>上に言語に導入されようとしているアイディアの一覧があります。
+RFCが受理され実装されることになる直前に「最後のコメント期間(final comment period)」と呼ばれるものに入ります。<a href="https://github.com/rust-lang/rfcs/pulls?q=is%3Aopen+is%3Apr+label%3Afinal-comment-period">rust-lang/rfcsのfinal-comment-periodラベル</a>がついているものがそれです。
+同じように、安定版コンパイラで機能が有効にされる（「ungating」と呼ばれています）前に<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AB-unstable+label%3Afinal-comment-period">rust-lang/rustでfinal-comment-period</a>に入ります。
+どちらのFCPも言語の方針へ関わったり意見を言ったりするための重要な期間であり、<a href="https://internals.rust-lang.org/">internals.rust-lang.org</a>のサブチームの週報で広報されます。</p>
+
+<p>Rustのコンパイラエンジニアには<a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rustc">#rustc</a>で、言語設計者には<a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-lang">#rust-lang</a>で、ライブラリの設計者には<a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-libs">#rust-libs</a>で会いましょう。</p>
+
+<!--
+TODO: guide to compile-time benchmarking
+TODO: using the triage bot?
+TODO: some of this RFC description could probably go in the RFC readme
+-->
+
+
+</div>
+
+
+    <footer>
+      <p>他の言語のページ:
+	    <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

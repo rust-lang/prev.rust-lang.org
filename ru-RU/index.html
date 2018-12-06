@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Язык программирования Rust</title>
+    <meta name="keywords" content="Rust, Rust programming language, язык программирования Rust, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Безумно быстрый язык для системного программирования без segfault'ов и с гарантиями потокобезопасности.">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme.svg" alt="Fork me on GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/ru-RU/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust logo" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/ru-RU/documentation.html">Документация</a></h2>
+	  <h2><a href="/ru-RU/install.html">Установка</a></h2>
+	  <h2><a href="/ru-RU/community.html">Сообщество</a></h2>
+	  <h2><a href="/ru-RU/contribute.html">Участие</a></h2>
+	</li>
+      </ul>
+    </header>
+
+        <div class="row pitch-row">
+      <div class="col-md-8">
+        <p class="pitch">
+          <b>Rust</b> — невероятно быстрый язык для системного программирования без segfault'ов и с гарантиями потокобезопасности.
+          <br/>
+          <a href="https://doc.rust-lang.org/book/README.html">Покажите!</a>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <a class="release-button" href="install.html">
+          <div class="release-version">Установить Rust <span>1.31.0</span></div>
+        </a>
+        <div class="release-date">December 6, 2018</div>
+      </div>
+    </div>
+
+    <div class="row code-row">
+      <div class="col-md-4">
+      <h2>Возможности</h2>
+      <ul class="laundry-list">
+        <li>абстракции с нулевой стоимостью</li>
+        <li>семантика перемещения</li>
+        <li>гарантированная безопасность памяти</li>
+        <li>потоки без гонок данных</li>
+        <li>обобщение через типажи</li>
+        <li>сопоставление с образцом</li>
+        <li>вывод типов</li>
+        <li>маленькая среда исполнения</li>
+        <li>эффективный FFI</li>
+      </ul>
+      </div>
+      <div class="col-md-8">
+        <div id="active-code">
+          <button type="button" class="btn btn-primary btn-sm" id="run-code">Запустить</button>
+          <div id="editor">fn main() {
+    let greetings = ["Hello", "Hola", "Bonjour",
+                     "Ciao", "こんにちは", "안녕하세요",
+                     "Cześć", "Olá", "Здравствуйте",
+                     "Chào bạn", "您好", "Hallo",
+                     "Hej", "Ahoj", "سلام","สวัสดี"];
+
+    for (num, greeting) in greetings.iter().enumerate() {
+        print!("{} : ", greeting);
+        match num {
+            0 =>  println!("This code is editable and runnable!"),
+            1 =>  println!("¡Este código es editable y ejecutable!"),
+            2 =>  println!("Ce code est modifiable et exécutable !"),
+            3 =>  println!("Questo codice è modificabile ed eseguibile!"),
+            4 =>  println!("このコードは編集して実行出来ます！"),
+            5 =>  println!("여기에서 코드를 수정하고 실행할 수 있습니다!"),
+            6 =>  println!("Ten kod można edytować oraz uruchomić!"),
+            7 =>  println!("Este código é editável e executável!"),
+            8 =>  println!("Этот код можно отредактировать и запустить!"),
+            9 =>  println!("Bạn có thể edit và run code trực tiếp!"),
+            10 => println!("这段代码是可以编辑并且能够运行的！"),
+            11 => println!("Dieser Code kann bearbeitet und ausgeführt werden!"),
+            12 => println!("Den här koden kan redigeras och köras!"),
+            13 => println!("Tento kód můžete upravit a spustit"),
+            14 => println!("این کد قابلیت ویرایش و اجرا دارد!"),
+            15 => println!("โค้ดนี้สามารถแก้ไขได้และรันได้"),
+            _ =>  {},
+        }
+    }
+}
+</div>
+          <div id="result">
+            <a id="playlink"><i class="icon-link-ext"></i></a>
+          </div>
+        </div>
+        <div id="static-code"><pre class='rust'>
+<span class='kw'>fn</span> main() {
+    <span class='kw'>let</span> greetings = [<span class='string'>"Hello"</span>, <span class='string'>"Hola"<span>, <span class='string'>"Bonjour"</span>,
+                     <span class='string'>"こんにちは"</span>, <span class='string'>"您好"</span>];
+
+    <span class='kw'>for</span> (num, greeting) in greetings.iter().enumerate() {
+        <span class='prelude-val'>println!</span>(<span class='string'>"{}"</span>, greeting);
+        <span class='kw'>match</span> num {
+            0 =>  <span class='prelude-val'>println!</span>(<span class='string'>"This code is editable and runnable!"</span>),
+            1 =>  <span class='prelude-val'>println!</span>(<span class='string'>"¡Este código es editable y ejecutable!"</span>),
+            2 =>  <span class='prelude-val'>println!</span>(<span class='string'>"Ce code est modifiable et exécutable !"</span>),
+            3 =>  <span class='prelude-val'>println!</span>(<span class='string'>"このコードは編集して実行出来ます！"</span>),
+            4 =>  <span class='prelude-val'>println!</span>(<span class='string'>"这段代码是可以编辑并且能够运行的！"</span>),
+            _ =>  {},
+        }
+    }
+}
+</pre>
+</div>
+        <div class="more-examples">
+          <a href="https://doc.rust-lang.org/rust-by-example/">Больше примеров</a>
+        </div>
+      </div>
+    </div>
+
+  <script type="text/javascript">
+    include = function() {
+
+  // save references to save a few bytes
+  var args = arguments;
+  var doc = document;
+
+  var toLoad = args.length; // load this many scripts
+  var lastArgument = args[toLoad - 1];
+  var hasCallback = lastArgument.call; // is the last arg a callback?
+  if (hasCallback) {
+    toLoad--;
+  }
+
+  function onScriptLoaded() {
+    var readyState = this.readyState; // we test for "complete" or "loaded" if on IE
+    if (!readyState || /ded|te/.test(readyState)) {
+      toLoad--;
+      if (!toLoad && hasCallback) {
+        lastArgument();
+      }
+    }
+  }
+
+  for (var i = 0; i < toLoad; i++) {
+
+    var script = doc.createElement('script');
+    script.src = arguments[i];
+    script.async = true;
+    script.onload = script.onerror = script.onreadystatechange = onScriptLoaded;
+    (
+     doc.head ||
+     doc.getElementsByTagName('head')[0]
+    ).appendChild(script);
+
+  }
+
+};
+
+
+    include("https://cdn.jsdelivr.net/ace/1.1.3/noconflict/ace.js", function () {
+      include("https://cdn.jsdelivr.net/ace/1.1.3/noconflict/mode-rust.js", function () {
+        (function () {
+  "use strict";
+  // ECMAScript 6 Backwards compatability
+  if (typeof String.prototype.startsWith !== 'function') {
+    String.prototype.startsWith = function(str) {
+      return this.slice(0, str.length) === str;
+    };
+  }
+
+  // Regex for finding new lines
+  var newLineRegex = /(?:\r\n|\r|\n)/g;
+
+  // Fetching DOM items
+  var activeCode = document.getElementById("active-code");
+  var editorDiv = document.getElementById("editor");
+  var staticCode = document.getElementById("static-code");
+  var runButton = document.getElementById("run-code");
+  var resultDiv = document.getElementById("result");
+  var playLink = document.getElementById("playlink");
+
+  // Background colors for program result on success/error
+  var successColor = "#E2EEF6";
+  var errorColor = "#F6E2E2";
+  var warningColor = "#FFFBCB";
+
+  // Message to show when the program is running
+  var runningMsg = resultDiv.getAttribute("data-msg-running") || "Running...";
+
+  // Error message to return when there's a server failure
+  var errMsg = "The server encountered an error while running the program.";
+
+  // Stores ACE editor markers (highights) for errors
+  var markers = [];
+
+  // Status codes, because there are no enums in Javascript
+  var SUCCESS = 0;
+  var ERROR = 1;
+  var WARNING = 2;
+
+  // JS exists, display ACE editor
+  staticCode.style.display = "none";
+  activeCode.style.display = "block";
+
+  // Setting up ace editor
+  var editor = ace.edit("editor");
+  var Range = ace.require('ace/range').Range;
+  editor.setTheme("ace/theme/chrome");
+  editor.getSession().setMode("ace/mode/rust");
+  editor.setShowPrintMargin(false);
+  editor.renderer.setShowGutter(false);
+  editor.setHighlightActiveLine(false);
+
+  // Changes the height of the editor to match its contents
+  function updateEditorHeight() {
+    // https://stackoverflow.com/questions/11584061/
+    var newHeight = editor.getSession().getScreenLength()
+      * editor.renderer.lineHeight
+      + editor.renderer.scrollBar.getWidth();
+
+    editorDiv.style.height = Math.ceil(newHeight).toString() + "px";
+    editor.resize();
+  }
+
+  // Set initial size to match initial content
+  updateEditorHeight();
+
+  // Safely remove all content from the result div
+  function clearResultDiv() {
+    // Clearing the result div will break our reference to
+    // the playlink icon, so let's save it if it exists
+    var newPlayLink = document.getElementById("playlink");
+    if (newPlayLink) {
+      playLink = resultDiv.removeChild(newPlayLink);
+    }
+    resultDiv.innerHTML = "";
+  }
+
+  function escapeHTML(unsafe) {
+    return unsafe
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;")
+      .replace(newLineRegex, '<br />');
+  }
+
+  // Dispatches a XMLHttpRequest to the Rust playpen, running the program, and
+  // issues a callback to `callback` with the result (or null on error)
+  function runProgram(program, callback) {
+    var req = new XMLHttpRequest();
+    var data = JSON.stringify({
+      version: "beta",
+      optimize: "0",
+      code: program
+    });
+
+    req.timeout = 6000;
+
+    // console.log("Sending", data);
+    req.open('POST', "https://play.rust-lang.org/evaluate.json", true);
+    req.onload = function(e) {
+      var statusCode = false;
+      var result = null;
+
+      if (req.readyState === 4 && req.status === 200) {
+        result = JSON.parse(req.response);
+
+        // handle application errors from playpen
+        if (typeof result['error'] === 'string') {
+          statusCode = ERROR;
+          result = 'Playpen Error: ' + result['error'];
+        } else if (typeof result['result'] === 'string') {
+          statusCode = SUCCESS;
+          result = result['result'];
+
+          // handle rustc errors/warnings
+          // Need server support to get an accurate version of this.
+          if (result.indexOf("error:") !== -1) {
+            statusCode = ERROR;
+          } else if (result.indexOf("warning:") !== -1) {
+            statusCode = WARNING;
+          }
+        }
+      }
+
+      callback(statusCode, result);
+    };
+
+    req.onerror = function(e) {
+      callback(false, null);
+    };
+
+    req.ontimeout = function(e) {
+      var statusCode = ERROR;
+      var result = "play.rust-lang.org not responding, please check back later";
+
+      callback(statusCode, result);
+    }
+
+    req.setRequestHeader("Content-Type", "application/json");
+    req.send(data);
+  }
+
+  // The callback to runProgram
+  function handleResult(statusCode, message) {
+    // Dispatch depending on result type
+    if (result == null) {
+      clearResultDiv();
+      resultDiv.style.backgroundColor = errorColor;
+      resultDiv.innerHTML = errMsg;
+    } else if (statusCode === SUCCESS) {
+      handleSuccess(message);
+    } else if (statusCode === WARNING) {
+      handleWarning(message);
+    } else {
+      handleError(message);
+    }
+  }
+
+  // Called on successful program run: display output and playground icon
+  function handleSuccess(message) {
+    resultDiv.style.backgroundColor = successColor;
+    displayOutput(escapeHTML(message), editor.getValue());
+  }
+
+  // Called when program run results in warning(s)
+  function handleWarning(message) {
+    resultDiv.style.backgroundColor = warningColor;
+    handleProblem(message, "warning");
+  }
+
+  // Called when program run results in error(s)
+  function handleError(message) {
+    resultDiv.style.backgroundColor = errorColor;
+    handleProblem(message, "error");
+  }
+
+  // Called on unsuccessful program run. Detects and prints problems (either
+  // warnings or errors) in program output and highlights relevant lines and text
+  // in the code.
+  function handleProblem(message, problem) {
+    // Getting list of ranges with problems
+    var lines = message.split(newLineRegex);
+
+    // Cleaning up the message: keeps only relevant problem output.
+    var cleanMessage = lines.filter(function(line) {
+      return !line.trim().startsWith("--> <anon>")
+        && !line.startsWith("playpen:")
+        && !line.trim().startsWith("error: aborting");
+    }).map(function(line) {
+      return escapeHTML(line);
+    }).filter(function(line) {
+      return line != "";
+    }).map(function(line) {
+      return line.replace(/  /g, '\u00a0\u00a0');
+    }).join("<br />");
+
+    // Get all of the row:col in the message.
+    var errorLines = lines.filter(function(line) {
+      return line.indexOf("--> <anon>") !== -1;
+    }).map(function(line) {
+      var lineIndex = line.indexOf(":");
+      if (lineIndex !== -1) {
+        return line.slice(lineIndex);
+      }
+
+      return "";
+    }).filter(function(line) {
+      return line != "";
+    });
+
+    // Setting message
+    displayOutput(cleanMessage, editor.getValue());
+
+    // Highlighting the lines
+    var ranges = parseProblems(errorLines);
+    markers = ranges.map(function(range) {
+      return editor.getSession().addMarker(range, "ace-" + problem + "-line",
+        "fullLine", false);
+    });
+
+    // Highlighting the specific text
+    markers = markers.concat(ranges.map(function(range) {
+      return editor.getSession().addMarker(range, "ace-" + problem + "-text",
+        "text", false);
+    }));
+  }
+
+  // Parses a problem message returning a list of ranges (row:col, row:col) where
+  // problems in the code have occured.
+  function parseProblems(lines) {
+    var ranges = [];
+    for (var i in lines) {
+      var line = lines[i];
+      var parts = line.split(/:\s?|\s+/, 5).slice(1, 5);
+      var ip = parts.map(function(p) { return parseInt(p, 10) - 1; });
+      console.log("line:", line, parts, ip);
+      ranges.push(new Range(ip[0], ip[1], ip[2], ip[3]));
+    }
+
+    return ranges;
+  }
+
+  // Registering handler for run button click
+  runButton.addEventListener("click", function(ev) {
+    resultDiv.style.display = "block";
+    clearResultDiv();
+    resultDiv.innerHTML = runningMsg;
+
+    // clear previous markers, if any
+    markers.map(function(id) { editor.getSession().removeMarker(id); });
+
+    // Get the code, run the program
+    var program = editor.getValue();
+    runProgram(program, handleResult);
+  });
+
+  // Display an output message and a link to the Rust playground
+  function displayOutput(message, program) {
+    var programUrl = "https://play.rust-lang.org/?code=" +
+        encodeURIComponent(program) + "&run=1";
+    playLink.href = programUrl;
+
+    clearResultDiv();                // clear resultDiv, then add
+    resultDiv.appendChild(playLink); // playLink icon and message
+    resultDiv.innerHTML += message;
+  }
+
+  // Highlight active line when focused
+  editor.on('focus', function() {
+    editor.setHighlightActiveLine(true);
+  });
+
+  // Don't when not
+  editor.on('blur', function() {
+    editor.setHighlightActiveLine(false);
+  });
+}());
+
+      });
+    });
+  </script>
+
+
+	<footer>
+      <p>Наш сайт на других языках:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

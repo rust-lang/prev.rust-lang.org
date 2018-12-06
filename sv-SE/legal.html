@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rusts Rättsliga Policies &middot; Programmeringsspråket Rust</title>
+    <meta name="keywords" content="Rust, programmeringsspråket rust, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Ett systemprogrammeringsspråk som kör blixtsnabbt, förhindrar segmenteringsfel och garanterar trådsäkerhet.">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme.svg" alt="Forka mig på GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/sv-SE/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rusts logotyp" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/sv-SE/documentation.html">Dokumentation</a></h2>
+	  <h2><a href="/sv-SE/install.html">Installation</a></h2>
+	  <h2><a href="/sv-SE/community.html">Community</a></h2>
+	  <h2><a href="/sv-SE/contribute.html">Bidra</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <p>Notera att det här dokumentet är översatt från engelska och därför kan den vara
+inkorrekt ur ett rättsligt perspektiv.</p>
+
+<h1 id="upphovsrtt">Upphovsrätt</h1>
+
+<h2 id="kod">Kod</h2>
+
+<p>Rust <a href="https://github.com/rust-lang/rust">kod</a> är primärt distribuerat enligt
+både licensen “MIT license” och licensen “Apache License (Version 2.0)”,
+med vissa delar också täckta av diverse BSD-lika licenser.
+Se <a href="https://github.com/rust-lang/rust/blob/master/LICENSE-APACHE">LICENSE-APACHE</a>,
+<a href="https://github.com/rust-lang/rust/blob/master/LICENSE-MIT">LICENSE-MIT</a>,
+och <a href="https://github.com/rust-lang/rust/blob/master/COPYRIGHT">COPYRIGHT</a> för detaljer.</p>
+
+<h2 id="konstverk">Konstverk</h2>
+
+<p>Rust och cargos logotyper (bitmap och vectorgrafik) ägs av Mozilla och
+distribueras enligt vilkoren för licensen
+<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license (CC-BY)</a>.
+Denna är den mest tillåtande Creative Commons-licensen och låter användaren
+att återanvända och modifiera för alla ändamål. De restriktioner som finns är
+att distributörer måste “ge ett korrekt erkännande, ange en hyperlänk till licensen,
+och ange om bearbetningar är gjorda”. <strong>Notera att användning av dessa logotyper och
+varumärkerna Rust och Cargo regleras även av varumärkeslagstifning; vår policy
+kring varumärken beskrivs nedan</strong>.</p>
+
+<p>Varianter av rusts logotyp can återfinns på:</p>
+
+<ul>
+  <li><a href="/logos/rust-logo-128x128-blk.png">rust-logo-128x128-blk.png</a></li>
+  <li><a href="/logos/rust-logo-128x128-blk-v2.png">rust-logo-128x128-blk-v2.png</a></li>
+  <li><a href="/logos/rust-logo-128x128.png">rust-logo-128x128.png</a></li>
+  <li><a href="/logos/rust-logo-16x16-blk.png">rust-logo-16x16-blk.png</a></li>
+  <li><a href="/logos/rust-logo-16x16.png">rust-logo-16x16.png</a></li>
+  <li><a href="/logos/rust-logo-256x256-blk.png">rust-logo-256x256-blk.png</a></li>
+  <li><a href="/logos/rust-logo-256x256.png">rust-logo-256x256.png</a></li>
+  <li><a href="/logos/rust-logo-32x32-blk.png">rust-logo-32x32-blk.png</a></li>
+  <li><a href="/logos/rust-logo-32x32.png">rust-logo-32x32.png</a></li>
+  <li><a href="/logos/rust-logo-512x512-blk.png">rust-logo-512x512-blk.png</a></li>
+  <li><a href="/logos/rust-logo-512x512.png">rust-logo-512x512.png</a></li>
+  <li><a href="/logos/rust-logo-64x64-blk.png">rust-logo-64x64-blk.png</a></li>
+  <li><a href="/logos/rust-logo-64x64.png">rust-logo-64x64.png</a></li>
+  <li><a href="/logos/rust-logo-blk.svg">rust-logo-blk.svg</a></li>
+</ul>
+
+<h1 id="varumrkespolicy">Varumärkespolicy</h1>
+
+<p>Varumärkena och namnen Rust och Cargo gör det möjligt att officiellt säga vad
+som är en del av rust-communityt och vad som inte är det. Därför vi är noga med
+var vi tillåter dem att visas. Men samtidigt vill vi tillåta så mycket kreativ
+användning av dessa varumärken som vi kan. Den policy som anges här förklarar
+hur vi vi når en bra balans. Om du vill använda dessa namn eller varumärken,
+särskilt på ett kommersiellt sätt, läs den här sidan eller
+<a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;">hör av dig</a> och fråga oss om det!</p>
+
+<p><strong>TL;DR</strong>: De flesta icke-kommersiella användningarna av namnen Rust/Cargo och
+dess logotyper är tillåtna och kräver inte tillstånd. Merparten av kommersiell
+användning kräver tillstånd. I båda fallen är den viktigaste regelen att
+användningen av varumärkena inte kan verka officiell eller innebära något
+godkännande från rust-projektet.</p>
+
+<h2 id="rusts-varumrken">Rusts Varumärken</h2>
+
+<p>Programmeringsspråket rust är ett community-project med öppen källkod styrt
+av ett kärnteam. Projektet sponsras även av Mozilla Foundation (“Mozilla”) som
+äger och skyddar varumärkena Rust och Cargo och dess varumärken
+(rust-varumärkena). Det här dokumentet ger information om användning av
+Rust-varumärkena specifikt gällande ett programmeringsspråk och exempel på
+vanliga sätt som man kan vilja använda dessa varumärken med förklaringar om
+huruvida dessa användningar är OK eller inte eller kräver godkännande.
+Detta dokument kompletterar
+<a href="https://www.mozilla.org/foundation/trademarks/policy/">mozillas officiella varumärkespolicy</a>
+som reglerar användningen av alla Mozilla-varumärken.</p>
+
+<p>Rust-varumärkena inbegriper två ordmärken och två logotyper:</p>
+
+<ul>
+  <li>Rust</li>
+  <li>Cargo</li>
+  <li><img src="https://www.rust-lang.org/logos/rust-logo-blk.svg" /></li>
+  <li><img src="https://www.rust-lang.org/logos/cargo.png" /></li>
+</ul>
+
+<p>Varumärken är namn och designer som talar om för världen källan till en bra
+vara eller service. Att skydda varumärken för ett öppen-källkods-project är
+särskilt viktigt. Vem som helst kan ändra källkoden och producera en produkt
+från koden. Därför är det viktigt att endast den ursprungliga produkten eller
+variationer som har godkänts av projektet, använder projektets varumärken.</p>
+
+<p>Genom att begränsa användningen av Rust-varumärkena kan Mozilla och
+rust-projektet hjälpa användare och utvecklare att veta att de får produkten
+producerat av rust-projektet och inte någon annans modifierade version.
+Varumärket försäkrar användare och utvecklare om kvalitén och säkerheten på
+den produkt de använder.</p>
+
+<h2 id="anvndning-av-varumrkena">Användning av Varumärkena</h2>
+
+<h3 id="att-verka-officiell-associerad-eller-godknd">Att Verka Officiell, Associerad eller Godkänd</h3>
+
+<p>Grundregeln är att rust-varumärkena inte kan användas på sätt som verkar
+(för en lekman) officiel, associerad, eller godkänd av rust-projetet eller
+mozilla såvida du inte har tillåtelse i skrift från rusts kärn-team. Detta
+är det grundläggande sättet vi skyddar användare och utvecklare från förvirring.</p>
+
+<p>Eftersom denna regel handlar om att hantera uppfattningar är det subjektivt
+och lite svårt att konkretisera. Det finns vissa uppenbara sätt att undvika
+problem såsom att inkludera ordet “inofficiell” på ett mycket framträdande sätt.
+Om du dock är osäker, skulle vi vara mer än gärna till hjälp. Skicka då bara
+ett mail till <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;">&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;</a>.</p>
+
+<h3 id="grunderna-hnvisningar-till-rust--cargo">Grunderna: hänvisningar till Rust / Cargo</h3>
+
+<p>Som med alla varumärken kan ordmärkena för Rust och Cargo användas med minimal
+restriktion för att hänvisa till programmeringsspråket Rust och pakethanteraren
+och registret Cargo.</p>
+
+<p>De kan inte användas:</p>
+
+<ul>
+  <li>för att referera till några andra programmeringsspråk;</li>
+  <li>på ett sätt som är vilseledande eller kan implicera association till
+orelaterade moduler, verktyg, dokumentation eller andra resurser med
+programmeringsspråket rust;</li>
+  <li>på sätt som förvirrar communityt programmeringspråket rust är open source
+(se öppen källkod) och fri att använda.</li>
+</ul>
+
+<h3 id="anvndningar-som-inte-krver-explicit-godknnande">Användningar som inte Kräver Explicit Godkännande</h3>
+
+<p>Det finns en mängd olika användningsområden som inte kräver explicit godkännande.
+<strong>Men i alla fall som beskrivs nedan måste du se till att användningen av Rust-varumärkena inte verkar officiellt, såsom ovan förklarat.</strong></p>
+
+<ul>
+  <li>
+    <p>Att korrekt ange att mjukvaran är skriven i programmeringsspråket rust,
+att det är kompatibelt med programmeringsspråket rust, eller att det innehåller
+programmeringspråket rust, är tillåtet. I dessa fall kan du använda
+rust-varumärkerna för att visa detta utan utan föregående godkännande.
+Detta är sant både för icke-kommersiellt och kommersiellt användande.</p>
+  </li>
+  <li>
+    <p>Att använda rust-varumärkena i namn för icke-kommersiella produkter såsom
+RustPostgres eller Rustymine, eller i namnen för kod-repon på t.ex GitHub,
+är tillåtet när man refererar till användning med eller lämplighet för
+programmeringsspråket rust. Sådana användningar kan också inkludera rusts
+logotyp även i modifierad form. För kommersiella produkter, inklusive
+gräsrotsfinansiering eller sponsrade sådana, var god kolla med 
+<a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;">&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;</a> för att säkerställa
+att din användning inte verkar officiell.</p>
+  </li>
+  <li>
+    <p>Att använda rust-varumärkena på t-shirts, hattar, och annat konstverk eller
+varor, även i modifierad form, är tillåtet för din personliga användning eller
+för användning av en liten grupp av community-medlemmar så länge som de inte
+säljs. Om du vill distribuera varor med rust-varumärkena på på ett
+rust-associerat evenemang, hör av dig till oss för godkännande på
+<a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;">&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;</a>.</p>
+  </li>
+  <li>
+    <p>Att använda rust-varumärkena (även i modifierad form) för sociala evenemang
+såsom meetups, tutorials och liknande är tillåtet för evenemang som är fria
+och gratis att delta i. För kommersiella evenemang (inklusive spondrade sådana)
+var god kolla med <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;">&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;</a>.
+Orden “RustCamp”, “RustCon” eller “RustConf” kan dock inte användas utan
+uttryckligt tillstånd. Och, som med alla ovan nämnda användningar kan
+<strong>evenemanget inte verka att vara officiellt godkänd eller organiserade av rustprojektet</strong>
+utan skriftligt godkännande.</p>
+  </li>
+  <li>
+    <p>Användning av av rust-varumärkena i böcker eller publikationer såsom
+“Rust Journal” eller “Rust Cookbook” är tillåtet.</p>
+  </li>
+  <li>
+    <p>Användning av ordet “rust” på webbsidor, broschyrer, dokumentation,
+akademiska artiklar, böcker och produktförpackningar för att referera till
+programmeringsspråket rust eller rust-projektet är tillåtet.</p>
+  </li>
+</ul>
+
+<h3 id="anvndningar-som-krver-explicit-godknnande">Användningar som Kräver Explicit Godkännande</h3>
+
+<ul>
+  <li>
+    <p>Att distribuera en modifierad version av programmeringsspråket rust eller
+pakethanteraren Cargo och kalla det Rust eller Cargo kräver uttryckligt
+skriftligt tillstånd från rusts kärnteam. Vi brukar tillåta dessa användningar
+så länge ändringarna är (1) relativt små och (2) mycket tydligt kommunicerade
+med slutanvändarna.</p>
+  </li>
+  <li>
+    <p>Försäljning av t-shirts, hattar och annat konstverk eller varor kräver
+uttryckligt skriftligt tillstånd från rusts kärnteam. Vi brukar tillåta dessa
+användningar så länge som (1) det klart framgår att varorna inte på något sätt
+är en officiell del av rustprojektet och (2) det klart kommuniceras om vinsten
+gynnar rustprojektet.</p>
+  </li>
+  <li>
+    <p>Användning av rust-varumärkena inom ett annat varumärke kräver skriftligt
+tillstånd från rusts kärnteam, förutom som beskrivits ovan.</p>
+  </li>
+</ul>
+
+<h2 id="anteckningar">Anteckningar</h2>
+
+<p>Om du är osäker på om din avsedda användning av ett rust-varumärke kräver
+tillstånd, var god kontakta oss på
+<a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;">&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;</a>.</p>
+
+<p>Detta dokument härstammade delvis från
+<a href="https://www.python.org/psf/trademarks/">Python Software Foundation Trademark Usage Policy</a>.</p>
+
+<p>Detta dokument är inte ett officiellt uttalande om mozillas varumärkespolicy,
+men syftar till att klargöra mozillas varumärkespolicy vad gäller rust.</p>
+
+<h2 id="hjlpa-till">Hjälpa Till</h2>
+
+<p>Som medlem i Rust-samhället,</p>
+
+<p>Som en medlem i rust-communityt var god håll utkik efter tvivelaktiga
+användningar av rust-logotypen och ordmärket “Rust”. Du kan rapportera
+potentiellt missbruk till
+<a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;">&#116;&#114;&#097;&#100;&#101;&#109;&#097;&#114;&#107;&#064;&#114;&#117;&#115;&#116;&#045;&#108;&#097;&#110;&#103;&#046;&#111;&#114;&#103;</a>. Vi kommer att
+utvärdera varje fall och vidta lämpliga åtgärder.</p>
+
+<p>Var vänlig kontakta inte användarna av varumärkena med ett klagomål.
+Detta borde överlämnas till mozilla och dess företrädare.</p>
+
+<p>Tack!</p>
+
+<h2 id="licens">Licens</h2>
+
+<p>Intresserade parter kan anpassa detta dokument fritt under licensen
+<a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0</a>.</p>
+
+</div>
+
+
+    <footer>
+      <p>Vår webbsida på andra språk:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rustへ貢献する &mdash; 問題を捜し、仕分け、修正する &middot; プログラミング言語Rust</title>
+    <meta name="keywords" content="Rust, Rust言語, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Rustは速度、安全性、並行性の3つのゴールにフォーカスしたシステムプログラミング言語です。">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme.svg" alt="Fork me on GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/ja-JP/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust logo" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/ja-JP/documentation.html">ドキュメント</a></h2>
+	  <h2><a href="/ja-JP/install.html">インストール</a></h2>
+	  <h2><a href="/ja-JP/community.html">コミュニティ</a></h2>
+	  <h2><a href="/ja-JP/contribute.html">開発に参加する</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1 id="rust-mdash-">Rustへ貢献する — 問題を捜し、仕分け、修正する</h1>
+
+<p>日々のプロジェクトのメンテナンスはRustの<a href="https://github.com/rust-lang/rust/issues">イシュートラッカー</a>や<a href="https://github.com/rust-lang/rust/pulls">プルリクエスト</a>を中心に行われていて、常により多くの助けを必要としています。
+Rustへ貢献する最も基本的な方法は<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy">E-easy</a>または<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy+label%3AE-mentor">E-mentor</a>ラベルを探すことです。
+これらは新しいRustプログラマでも手が出しやすいことを意図しています。</p>
+
+<p><code class="highlighter-rouge">E-mentor</code>では、あなたがイシューを解決し<a href="https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#pull-requests">GitHubにプルリクエストを送る</a>まで経験豊富なRust開発者からアドバイスをもらえます。
+イシューについて何か質問があればイシュートラッカー上でメンターの名前に<a href="https://github.com/blog/821">@メンション</a>するか、あるいはIRC、E-Mailで連絡を取って下さい。
+Rust開発者は多数の通知を受けるため、見逃す可能性があることを覚えておいて下さい。
+彼らを捜すために必要ならどんな手段を取ろうとも遠慮は不要です。</p>
+
+<p>他のRustプロジェクトも同様の入門向けのタスクがあります。
+例えばWebブラウザの<a href="https://github.com/servo/servo">Servo</a>やHTTPライブラリの<a href="https://github.com/hyperium/hyper">hyper</a>、ソースフォーマッタの<a href="https://github.com/rust-lang-nursery/rustfmt">rustfmt</a>、Unixライブラリバインディングの<a href="https://github.com/nix-rust/nix/">nix</a>、lint集の<a href="https://github.com/Manishearth/rust-clippy">clippy</a>など。</p>
+
+<p>Rustには<a href="https://github.com/rust-lang/rust-wiki-backup/blob/master/Note-testsuite.md">広範囲に渡るテストスイート</a>がありますが、大抵の場合さらにテストする必要があります。
+<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-needstest">E-needstest</a>ラベルは修正はされたと思われるがテストが必要なイシューを示します。
+テストケースを書くのは新たなプロジェクトを理解して貢献を始める良いきっかけです。</p>
+
+<p>Rustは常にイシューの<a href="https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#issue-triage">仕分け</a>をしてくれる人を必要としています。バグの再現、テストケースの最小化、ラベル付け、解決済みのイシューの終了などのタスクです。
+ラベルを付けるにはGitHubのパーミッションが必要になると思いますが、プロジェクトである程度の経験のある人なら権限を得ることはそこまで難しくはありません。
+<a href="team.html">チームメンバー</a>に尋ねてみて下さい。</p>
+
+<p>プロジェクトに関わるようになってある領域で何度かプルリクエストを作ったら、他の人のプルリクエストをレビューすることを検討してみましょう。
+レビュー出来る人というのはそう多くないので常に歓迎されます。
+特に権限は必要ありません — 興味のあるプルリクエストに対して建設的で礼儀正しいコメントをつけるだけです。
+コードレビューの作法を身につけたいなら<a href="http://blog.originate.com/blog/2014/09/29/effective-code-reviews/">このガイドを読むとよいでしょう</a>。</p>
+
+<!--
+TODO: weekly triage email?
+TODO: @nrc says suggesting everybody review w/o training is bad
+-->
+
+
+</div>
+
+
+    <footer>
+      <p>他の言語のページ:
+	    <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

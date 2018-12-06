@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rust 보안 정책 &middot; Rust 프로그래밍 언어</title>
+    <meta name="keywords" content="Rust, Rust 프로그래밍 언어, rustlang, rust-lang, Mozilla Rust, 러스트, Mozilla, 모질라">
+    <meta name="description" content="매우 빠르며, 세그폴트를 방지하고, 스레드 안전성을 보장하는 시스템 프로그래밍 언어">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme_ko_kr.svg" alt="GitHub에서 포크" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/ko-KR/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust 로고" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/ko-KR/documentation.html">문서</a></h2>
+	  <h2><a href="/ko-KR/install.html">설치</a></h2>
+	  <h2><a href="/ko-KR/community.html">커뮤니티</a></h2>
+	  <h2><a href="/ko-KR/contribute.html">기여하기</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1>Rust 보안 정책</h1>
+
+<h2>버그 보고하기</h2>
+
+<p>안전성은 Rust의 주 원칙 중 하나이며,
+이를 따라 저희는 Rust의 구현이 안전하다는 걸 확실히 하려 합니다.
+찾으신 문제를 책임을 가지고 공표하는 데 시간을 들여 주셔서 감사드립니다.</p>
+
+<p>Rust 배포판의 모든 보안 버그는
+<a href="mailto:security@rust-lang.org">security@rust-lang.org</a>에
+이메일로 보고되어야 합니다.
+이 메일링 리스트는 소규모의 보안 팀에게 배달됩니다.
+24시간 안에 여러분의 메일에 답장이 갈 것이고,
+48시간 안에 보고를 처리하는 다음 단계에 대해 더 자세한 응답을 받게 됩니다.
+원하신다면 <a href="../rust-security-team-key.gpg.ascii">저희 공개키</a>로
+보고를 암호화할 수 있습니다.
+이 키는 <a
+href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xEFB9860AE7520DAC">MIT
+키 서버</a> 및 <a href="#key">이 페이지 아래쪽</a>에서도 찾을 수 있습니다.</p>
+
+<p>이 이메일 주소는 스팸을 많이 받으므로 보고가 유실되지 않도록
+설명이 담긴 제목을 사용해 주세요.
+보고에 대한 첫 답장 뒤 보안 팀은 수정 및 완전한 발표까지의 과정을
+알려 드리도록 노력할 것입니다.
+<a href="https://en.wikipedia.org/wiki/RFPolicy">RFPolicy</a>의 추천에 따라
+최신 정보는 적어도 5일마다 한 번씩 갱신될 것이며,
+현실적으로는 아마 24시간에서 48시간마다 한 번 갱신될 것입니다.</p>
+
+<p>메일에 대한 답장을 48시간이 지나도록 받지 못 했거나,
+지난 5일간 보안 팀에서 아무 얘기도 듣지 못 했다면 다음을 시도해 볼 수 있습니다:</p>
+
+<ul>
+    <li>현 보안 조정자(<a href="mailto:steve@steveklabnik.com">Steve Klabnik</a>
+        (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xDAE717EFE9424541">공개키</a>))에게 직접 연락해 봅니다.</li>
+    <li>백업 연락처(<a href="mailto:andersrb@gmail.com">Brian Anderson</a>
+        (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x16457A6368CFF26F">공개키</a>))로 직접 연락해 봅니다.</li>
+    <li><a href="https://internals.rust-lang.org/">내부(internals) 포럼</a>에 글을 올리거나
+    irc.mozilla.org의 #rust-internals IRC 채팅방에서 물어 봅니다.</li>
+</ul>
+
+<p>토론 포럼 및 #rust-internals IRC 채널은 공개 장소라는 점을 알려 드립니다.
+이 곳들로 장소를 넓힐 때 문제를 언급하지 말아 주세요.
+그냥 보안 팀 아무한테나 연락을 하려 한다고만 말하세요.</p>
+
+<h2>공표 정책</h2>
+
+<p>Rust 프로젝트는 다섯 단계의 공표 절차를 가지고 있습니다.</p>
+
+<ol>
+<li>보안 보고를 받은 뒤 주 담당자에게 할당됩니다.
+이 사람이 수정 및 릴리스 과정을 조정할 것입니다.</li>
+
+<li>문제가 입증되고 어느 버전들이 영향을 받았는지 확인됩니다.</li>
+
+<li>잠재적으로 비슷한 문제들이 있는지 코드를 감사합니다.</li>
+
+<li>아직 유지보수 중인 모든 릴리스에 대한 수정이 준비됩니다.
+이 수정은 공개 저장소에 커밋되지 않으며 발표 전까지 로컬에 유지됩니다.</li>
+
+<li>보도 금지(엠바고)가 풀리는 날짜에
+<a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">
+Rust 보안 메일링 리스트</a>에 발표의 사본이 올라갑니다.
+공개 저장소에 변경점이 올라가고 rust-lang.org에 새 빌드가 배치됩니다.
+메일링 리스트에 공지된지 6시간 안에 Rust 블로그에 보고의 사본이 올라갈 것입니다.</li> </ol>
+
+<p>이 과정에는, 특히 다른 프로젝트의 관리자들과 조정이 필요할 경우 시간이 걸릴 수 있습니다.
+가능한한 버그를 빠르게 처리하려 노력하겠지만,
+공표가 일관된 방법으로 처리될 수 있도록 위의 릴리스 과정을 따르는 것은 중요합니다.</p>
+
+<h2>보안 소식을 받기</h2>
+
+<p>모든 보안 발표를 받는 가장 좋은 방법은 <a
+href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">Rust
+보안 발표 메일링 리스트</a>를 구독하는 것입니다.
+이 메일링 리스트에는 아주 적은 양의 메일만 송신되며
+보도 금지가 풀리는 시점에 공개 알림을 받게 됩니다.</p>
+
+<h3>미리 알림받기</h3>
+
+<p>저희는 리눅스 배포판들이 패키지를 갱신할 수 있도록 보도 금지가 풀리기 72시간 전에
+<a href="http://oss-security.openwall.org/wiki/mailing-lists/distros">distros@openwall</a>에
+보안 취약점을 발표할 것입니다.</p>
+
+<h2>이 정책에 대한 의견</h2>
+
+<p>이 정책을 개선하기 위한 의견이 있다면
+<a href="mailto:security@rust-lang.org">security@rust-lang.org</a>로 메일을 보내 주세요.</p>
+
+<h2 id="key">평문 PGP 키</h2>
+
+<pre><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1
+
+mQINBFVT5MsBEADKZtOjBhitDx1aYt2ljz1+MUhnmsnJy8duMe6T/b30rEuXTLH8
+6INTYoU08qw7m+7YmxAlpdNHZW3VL0csYiaOOKsHJ4KuUB0Phjnm1ePjE/Q3g7el
+H6TNXQWsjy3V9E0cI3r5En0SDnBmwZoYuE0/mf9Gc313DvSjipFpyXS0R+D3RiPz
+t4LcDWDS7XPRgp9LJ4mWDeYI4GitKfKxvSYrQpLjdNUSmehJ62rZY+i/Mox+zHEQ
+QCrjfKttkoVs6fvLSKJTUGsy4eSViSLLYR8ty2SC/o9u/EG17dfX/EeEbo9yu2iK
+lLo+W58RvmdAtK6Y9MSX2rzlB2akbbEp6LYDaBKDlWBOAT/qQdMmHmUOWjV/8PSi
+Y03Cmx0v/6N3bv617iRe5MXIih7KZH4uYzf7eoCDA7LoopkI84xQIkciKblIGzpe
+0hCOdUYnf+uC3EWmP/e4TA9M7OjiSezOjsedI41ryRKMgpmdx1kHBqsZZVKIGHaf
+mdL/MxlvZrzfgbV8/6e5VhumPBWqih1HwvEzmNSdvFZV8/BgXqhlDidzGNa3eKIT
+1iTYX/YVikBLP0HsvSNwrtOZIjmeiMMivf4daH9bcySthp6PyAcjFa7pcS+GmPrz
+RJh3wAX1fpiaP/HQaIQJzvYHwpCwjFVt5/WpPLBB1b6miUebFpz5oZfApwARAQAB
+tDZSdXN0IExhbmd1YWdlIChTZWN1cml0eSBUZWFtKSA8c2VjdXJpdHlAcnVzdC1s
+YW5nLm9yZz6JAjgEEwECACIFAlVT5MsCGwMGCwkIBwMCBhUIAgkKCwQWAgMBAh4B
+AheAAAoJEO+5hgrnUg2sEsIQAMff5YzBLQb+6Z2euj/+7tcKdAflvTGToHiRZ4xK
+7mhZs5ytQ0/qBKLJ51lM3qo33MUXk8Yx6uQxJjLV/3Fjr/In7jrGXLLtEsXF1+RZ
+8+o5XQahhSjJ5W5E9O7E9tbHZe9VB0Tfv30S6CRZD9F/tUQhknwmgc+0twc3zKq0
+8X8jtNCAgSt0JZ+jOPlXUwMkoK9bsRVTVqj227cHxG6l1ZZmxm29JVOWPtqN3vXZ
+hAwwaHpn09fvcavnBWm9fX4jfdodnOmtnS0a5YQXrjF8TP+MV9fgdpg+lVjJB7NE
+azR3Tj0XYLze+KpL3aSNkpMz0RuXd4OqR3Z3pOOMiov2cEQooH0NGpYSTWzXzZCI
+C5CcgFqxYjv/KjN3FwxCFfdkn22V14jw+IkmOV8n7i2HVpw/D+/0+X4tnp9zaVW2
++1S4xeX13UMEgr29kYoKngzKmolruOftiBdLpM9HWNu/14hggOmSZ2+qNANw27JJ
+lXve/dpZdMpLPMgk+bwa2aXAvygUSlELFVcZf9fFLFoN3bInixzy28zeywwkv4Tn
+Ar5BLLbeS5rfzrAGR8hj55uVdiLTEL+ayG/mXOfSkqigvSzTKxgixPAxhHtOJtmF
+vDVL/UXhprRp6olDRLXA8a+mkIMWt4bpwflxQUNrxIee9T8tZCIShU5ubhvXXKtf
+bjT7iQIcBBABAgAGBQJVU+27AAoJEBZFemNoz/JvQ4cP/0X9xnapa8+Bx0BqSdVH
+CLqJinywVcTsjsY+TTeT+T+rFoERBI/ljFd7OhZg8bPOMln/KXLlh+7nLFoKyxUm
+XqAyY0tXMDGaEWT+KcnVLs/5hMv/KidswFAWq9TiJJFu9DJUt+OwyVT+/troC3VL
+28tAtMEmMIH+7EjH9qRlTf0ZtrNEmgIL8Fa2QEeaIZI8u3jDnrZGsBSxPB+fOW17
+745d7APWCmsv6ZYEv+h0JqVAb4QGIQVo2lQvqpEh0jLg8yqiyp89bdPfmo3ZOm8x
+Ns8JDWQrtbtoEAlVrrKu9oL9T+zbyrRLniYmCgtRxFAcYx5idxYjuWWTP/kwDwq2
+y0F6frZjGMwOsTCHqeZIVuCWHWkLzEduAxOdh7H8hJSpl2E2JnvBhEtAmlyEhrJc
+7Kyf8ZQ4VJe3Q8mcoAbSZS0Q36UnQAH9ww0rYXqCZA+uaPFdjOwW1Puzq6wM7AfT
+Z5EHToho9LPvmyoRvY26sTqxsS6E/HG4DTkD6JqScHCSwPk0GkPCVjOnnnjBVMFS
+n7/s7x6Vhmv/lIkMQ0qW12hfJFuxSWcqBo0Vro6R1IqeoWUewnvY0OEmxiPC+j1X
+2aIHXqTV1jZDVWQ9sBx+v/L/giPbiBFdTofOFXLkaT4A+ZwIexyKuaMVSOhrq1x+
+3Uf5sZAW5Yn6zI0wgIcsw2OPiQIcBBABAgAGBQJVU+5mAAoJEIWrlub6G+X++kQQ
+AMHAP5N88Po0tebcfZTpDCm2/fjFFh29h9mdltbZ0yjOQHNnhfkLDzyQnoQMge5g
+W4Cf3+U6yPx97wUXUVh0lxFlXVZpLExOEYOjPHah6DvvzWjvn2CimzQ5wurI6Bhw
+PPEO6ucDhjeEdr784/4yR2DEjKW+NTCZWaJT67JvKhQFs3N74AeeuWj6caFgxKLk
+qK8LRt7rjlXem+vQgGSHEZQGG4+Srd2Kr1EyhP5SHG3RDaLb3vcUBRhTBaoTT3xj
+aIdz/vt6Ve1W5Mcc2UPY0PO/pRnVQUGNt7MSbt50XJXbDt+zFJ2xKaHnJihDg81z
+/GxKrjHS5t0RAdW5SRfB9izboWIPJo4I/vmuxXINeK+KjmPEazxdkULXzfVOOAxg
+NJjxz46sZw7lZkHcz94g8TthndQHTo6v8AS9JtkIfe54cfg9PFUmlURTatabw67x
+Wqs6+PLmjInvGmAByFw2IgV0Y760xJ+JuPY1W7II/PIa6uSb8VIrkB8tNPFqASAT
+k3xIUEvRqMT62gnRB+iIb7aZUEKPmYZ9Q7OuB1yEHd+juxy5xoZ9jKx3ru6ia+jh
+bneg+Obpl6d9t0mpCblWXuCcnb2hwAr45xWNz8/rexDZQeNFfeNB3sq0u4jdwzjU
+CKFivH2P07FEJajgbIy6t4T0+AzwpEVMU5BN6bhNI3M6uQINBFVT5MsBEAC5xvIx
+8Oa3US6RGaM/SZ9nF3xCdVQhQWK3VL+MsClDInULgNpdzZspwc9JtClUo/fCNgM9
+zXIzFOwlyTPAhwDbQYLSdfkwhT6vsvfPx+T0uC96OrVhNsJsUmLuYNLOlQa3ybpi
+XTmNcnLaEvMEwHPVNYAw88HjHp23jdTOLOHZFg0p+q2dByfbpgGNy8xHDG28AZ+i
+BToLQCT2IZTZlOpnLr3gLI5C54ZNX7dbVu7xnC0mibOCqUi7nRH/a2oJRV/6DvtY
+uqHdDJumXW6/h0JvfNVydsy2N+WK9pirmsgIUq52sAey7MSbzKqbdw+zyZSA/Iyv
+XzMXoTPYxTCCE5MSwHwW5Mar9KelvTRjpBj5DqkBxVVPyehH3FXOGfvomgbB+F2I
+ZK1h9wCZDWnk0i8i/7pdQXPw22i/k7BOrBjQ5je60ezZUKvDAq4z5/xjXaD/ZtxO
+HRTTgPboEluuUl0KEtEVm/8zDXas89GlmTYaXv3baXFCGsV+TIkYRtsyWr6Mtirq
+/ZkU0RE+newBCBSF7tDrXoVrcflRIo8XG5y2UqKkiLqssBVx9J9s8LBwA/6+xkgA
+yxS7+KfkOVITW3QuiDCH/ydxnpU/9kzxv9Y68jgOnX3a8wmBTqU3PRwbz9WCQ8qi
+qNCKPBDwf42SVbdSBCljGTiVI9mcaMYtRHDQAQARAQABiQIfBBgBAgAJBQJVU+TL
+AhsMAAoJEO+5hgrnUg2sstoP+wbfIr5vR8CiIqoU8qxU/Co5m2jyyUMiU9iYSaSO
+9Itu9cCpP6dFbx1p7u41zutDaeO/wil3fpH2I7T3qAilvqey9UqhVTkSlotFh07T
+yXw/929Pd3tTekIbeJON+4XdHeF6gfsT/SL9hCDwsMk9Jzyx01n1Oq2fq2fGxqHg
+G6er9HssF7VBs7N0jOgMG2ou8DVEIjbhKJqyvLUsKk6Zolfy+HGn6OWSdgjenaFT
+KcDCOMhQs8ZH95I50stp26njFfcoh82qJNYZbTPWe05ZsGNFdBM+pANxHsiS1Mbd
+Fo21HM8tp8Vs2toimaa1dIyFl5+2vvCcGECcCQ3eT1mb8Ac5rR0TsDMiVGPmhabg
+9mKehJIR4OsqruyCF5yk/zwa7gFb7t83xTDxarlXyN1ltroF/sGod0IDk0UlQPsp
+d0BSiGNx9eNOi2iavxg94cqEK+dF1dUZsuSzTW1UDA4hA5aiX56YOiiSoC9mBqgN
+ZjaHjR6KwulHdIDUg8icmmJdtYDtFDz0DKUBuZshadb9gv3TUe3FbO3W1YhlDA+i
+t1yhhXbJR4oYYwpMuxtpeE+lGkFiJbBeIKG2WocWUn385KPUo2r2trvZUnvaxWy1
+/WMRGsGeczGIkGawwYuSXtkzmYpqs7VdQaPq4JZmAPcU9ogwMSlNYVsuV3FUtVsv
+u05l
+=SPB7
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre>
+
+</div>
+
+
+    <footer>
+      <p>이 사이트를 다른 언어로 보기:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

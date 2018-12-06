@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rusts Säkerhetspolicy &middot; Programmingsspråk Rust</title>
+    <meta name="keywords" content="Rust, programmeringsspråket rust, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Ett systemprogrammeringsspråk som kör blixtsnabbt, förhindrar segmenteringsfel och garanterar trådsäkerhet.">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme.svg" alt="Forka mig på GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/sv-SE/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rusts logotyp" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/sv-SE/documentation.html">Dokumentation</a></h2>
+	  <h2><a href="/sv-SE/install.html">Installation</a></h2>
+	  <h2><a href="/sv-SE/community.html">Community</a></h2>
+	  <h2><a href="/sv-SE/contribute.html">Bidra</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1>Rusts Säkerhetspolicy</h1>
+
+<h2>Rapportera en Bugg</h2>
+
+<p>Säkerhet är en av kärnprinciperna för Rust, och därför vill vi se till att
+Rust har en säker implementation. Tack för att du tar dig tid att ansvarsfullt
+avslöja eventuella problem som du hittar.</p>
+
+<p>Alla säkerhetsbuggar i Rust-distributionen ska rapporteras via email till
+<a href="mailto:security@rust-lang.org">security@rust-lang.org</a>.
+Denna listan vidarebefordras till ett litet säkerhetsteam. Ditt email kommer
+uppmärksammas inom 24 timmar och du kommer få ett mer detaljerat svar till din
+email inom 48 timmar som indikerar de nästa stegen i hanteringen av din rapport.
+Om du vill kan du kryptera din rapport med
+<a href="../rust-security-team-key.gpg.ascii">vår publika nyckel</a>.
+Denna nyckel är också <a
+href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xEFB9860AE7520DAC">på
+MITs nyckelserver</a> och <a href="#key">reproducerad nedan</a>.</p>
+
+<p>Den här emailadressen tar emot en stor mängd skräppost, så se till att du
+använder en beskrivande ämnesrad för att undvika att din rapport missas. Efter
+det första svaret på din rapport kommer säkerhetsgruppen att försöka hålla dig
+informerad om framsteg som görs mot en åtgärd och ett fullständigt tillkännagivande.
+Som rekommenderat på <a href="https://en.wikipedia.org/wiki/RFPolicy">RFPolicy</a>,
+kommer dessa uppdateringar skickas åtminstone var femte dag. I verkligheten är
+det snarare var 24-48:e timme.</p>
+
+<p>Om du inte har fått ett svar på ditt email inom 48 timmar, eller inte har
+hört från säkerhetsgruppen under de senaste fem dagarna, finns det några steg du kan ta:</p>
+
+<ul>
+    <li>Kontakta den nuvarande säkerhetskoordinatorn (<a href="mailto:steve@steveklabnik.com">Steve Klabnik</a>
+        (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xDAE717EFE9424541">publik nyckel</a>)) direkt.</li>
+    <li>Kontakta backup-kontakten (<a href="mailto:alex@alexcrichton.com">Alex Crichton</a>
+        (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x5D54B6F551FF5E33">publik nyckel</a>)) direkt.</li>
+    <li>Skriv på <a href="https://internals.rust-lang.org/">de interna forumen</a>
+    eller fråga i IRC-kanalen #rust-internals på irc.mozilla.org.</li>
+</ul>
+
+<p>Observera att diskussionsforumen och IRC-kanalen #rust-internals är publika arenor.
+När du eskalerar på dessa platser ska du inte diskutera ditt säkerhetsproblem.
+Säg istället helt enkelt att du försöker få tag på någon från säkerhetsteamet.</p>
+
+<h2>Policy för Iillkännagivande</h2>
+
+<p>Rust-projektet har en 5-stegs tillkännagivandeprocess.</p>
+
+<ol>
+<li>Säkerhetsrapporten tas emot och tilldelas en huvudsamordnare.
+Den här personen kommer att samordna fix- och release-processen.</li>
+
+<li>Problemet bekräftas och en lista över alla drabbade versioner bestäms.</li>
+
+<li>Koden granskas för att hitta eventuella liknande problem.</li>
+
+<li>Åtgärder förbereds för alla releaser som fortfarande är under underhåll.
+Dessa fixar comittas inte till det offentliga git-repot utan hålls istället
+lokalt i väntan på tillkännagivande.</li>
+
+<li>På tillgännagivandedagen skickas en kopia av tillgännagivandet till
+<a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">Rusts säkerhets-email-lista</a>.
+Förändringarna pushas till det offentliga git-repot och nya byggda releaser
+distribueras till rust-lang.org. Inom 6 timmar efter att email-listan notifierats
+kommer en kopia av tillkännagivandet att publiceras på Rust-bloggen.</li>
+</ol>
+
+<p>Den här processen kan ta lite tid, speciellt när koordinering krävs
+med underhållare av andra projekt. Alla ansträngningar kommer att göras för att
+hantera buggarna så snabbt som möjligt, men det är viktigt att vi följer
+releaseprocessen ovan för att säkerställa att tillkännagivandet hanteras på ett
+konsekvent sätt.</p>
+
+<h2>Att Ta Emot Säkerhetsuppdateringar</h2>
+
+<p>Det bästa sättet att ta emot alla säkerhetstillkännagivanden är att prenumerera
+på <a href="https://groups.google.com/group/rustlang-security-announcements/subscribe">
+Rusts mail-lista för säkerhetstillkännagivanden</a> (alternativt genom att skicka ett email till
+<a href="mailto:rustlang-security-announcements+subscribe@googlegroups.com">rustlang-security-announcements+subscribe@googlegroups.com</a>)
+Den här mail-listan har väldigt låg traffik och tar emot den publika notifikationen när embargot upphävs.</p>
+
+<h3>Notifikation på Förhand</h3>
+
+<p>Vi kommer at tillkännage sårbarheter 72 timmar före emargot lyfts på mail-listan
+<a href="http://oss-security.openwall.org/wiki/mailing-lists/distros">distros@openwall</a>,
+så att linux-distributioner kan uppdatera deras paket.</p>
+
+<h2>Kommentarer på Denna Policy</h2>
+
+<p>Om du har några förslag på hur denna policy kan förbättras, var god skicka
+ett email till <a href="mailto:security@rust-lang.org">security@rust-lang.org</a>.</p>
+
+<h2 id="key">PGP-nyckel i klartext</h2>
+
+<pre><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1
+
+mQINBFVT5MsBEADKZtOjBhitDx1aYt2ljz1+MUhnmsnJy8duMe6T/b30rEuXTLH8
+6INTYoU08qw7m+7YmxAlpdNHZW3VL0csYiaOOKsHJ4KuUB0Phjnm1ePjE/Q3g7el
+H6TNXQWsjy3V9E0cI3r5En0SDnBmwZoYuE0/mf9Gc313DvSjipFpyXS0R+D3RiPz
+t4LcDWDS7XPRgp9LJ4mWDeYI4GitKfKxvSYrQpLjdNUSmehJ62rZY+i/Mox+zHEQ
+QCrjfKttkoVs6fvLSKJTUGsy4eSViSLLYR8ty2SC/o9u/EG17dfX/EeEbo9yu2iK
+lLo+W58RvmdAtK6Y9MSX2rzlB2akbbEp6LYDaBKDlWBOAT/qQdMmHmUOWjV/8PSi
+Y03Cmx0v/6N3bv617iRe5MXIih7KZH4uYzf7eoCDA7LoopkI84xQIkciKblIGzpe
+0hCOdUYnf+uC3EWmP/e4TA9M7OjiSezOjsedI41ryRKMgpmdx1kHBqsZZVKIGHaf
+mdL/MxlvZrzfgbV8/6e5VhumPBWqih1HwvEzmNSdvFZV8/BgXqhlDidzGNa3eKIT
+1iTYX/YVikBLP0HsvSNwrtOZIjmeiMMivf4daH9bcySthp6PyAcjFa7pcS+GmPrz
+RJh3wAX1fpiaP/HQaIQJzvYHwpCwjFVt5/WpPLBB1b6miUebFpz5oZfApwARAQAB
+tDZSdXN0IExhbmd1YWdlIChTZWN1cml0eSBUZWFtKSA8c2VjdXJpdHlAcnVzdC1s
+YW5nLm9yZz6JAjgEEwECACIFAlVT5MsCGwMGCwkIBwMCBhUIAgkKCwQWAgMBAh4B
+AheAAAoJEO+5hgrnUg2sEsIQAMff5YzBLQb+6Z2euj/+7tcKdAflvTGToHiRZ4xK
+7mhZs5ytQ0/qBKLJ51lM3qo33MUXk8Yx6uQxJjLV/3Fjr/In7jrGXLLtEsXF1+RZ
+8+o5XQahhSjJ5W5E9O7E9tbHZe9VB0Tfv30S6CRZD9F/tUQhknwmgc+0twc3zKq0
+8X8jtNCAgSt0JZ+jOPlXUwMkoK9bsRVTVqj227cHxG6l1ZZmxm29JVOWPtqN3vXZ
+hAwwaHpn09fvcavnBWm9fX4jfdodnOmtnS0a5YQXrjF8TP+MV9fgdpg+lVjJB7NE
+azR3Tj0XYLze+KpL3aSNkpMz0RuXd4OqR3Z3pOOMiov2cEQooH0NGpYSTWzXzZCI
+C5CcgFqxYjv/KjN3FwxCFfdkn22V14jw+IkmOV8n7i2HVpw/D+/0+X4tnp9zaVW2
++1S4xeX13UMEgr29kYoKngzKmolruOftiBdLpM9HWNu/14hggOmSZ2+qNANw27JJ
+lXve/dpZdMpLPMgk+bwa2aXAvygUSlELFVcZf9fFLFoN3bInixzy28zeywwkv4Tn
+Ar5BLLbeS5rfzrAGR8hj55uVdiLTEL+ayG/mXOfSkqigvSzTKxgixPAxhHtOJtmF
+vDVL/UXhprRp6olDRLXA8a+mkIMWt4bpwflxQUNrxIee9T8tZCIShU5ubhvXXKtf
+bjT7iQIcBBABAgAGBQJVU+27AAoJEBZFemNoz/JvQ4cP/0X9xnapa8+Bx0BqSdVH
+CLqJinywVcTsjsY+TTeT+T+rFoERBI/ljFd7OhZg8bPOMln/KXLlh+7nLFoKyxUm
+XqAyY0tXMDGaEWT+KcnVLs/5hMv/KidswFAWq9TiJJFu9DJUt+OwyVT+/troC3VL
+28tAtMEmMIH+7EjH9qRlTf0ZtrNEmgIL8Fa2QEeaIZI8u3jDnrZGsBSxPB+fOW17
+745d7APWCmsv6ZYEv+h0JqVAb4QGIQVo2lQvqpEh0jLg8yqiyp89bdPfmo3ZOm8x
+Ns8JDWQrtbtoEAlVrrKu9oL9T+zbyrRLniYmCgtRxFAcYx5idxYjuWWTP/kwDwq2
+y0F6frZjGMwOsTCHqeZIVuCWHWkLzEduAxOdh7H8hJSpl2E2JnvBhEtAmlyEhrJc
+7Kyf8ZQ4VJe3Q8mcoAbSZS0Q36UnQAH9ww0rYXqCZA+uaPFdjOwW1Puzq6wM7AfT
+Z5EHToho9LPvmyoRvY26sTqxsS6E/HG4DTkD6JqScHCSwPk0GkPCVjOnnnjBVMFS
+n7/s7x6Vhmv/lIkMQ0qW12hfJFuxSWcqBo0Vro6R1IqeoWUewnvY0OEmxiPC+j1X
+2aIHXqTV1jZDVWQ9sBx+v/L/giPbiBFdTofOFXLkaT4A+ZwIexyKuaMVSOhrq1x+
+3Uf5sZAW5Yn6zI0wgIcsw2OPiQIcBBABAgAGBQJVU+5mAAoJEIWrlub6G+X++kQQ
+AMHAP5N88Po0tebcfZTpDCm2/fjFFh29h9mdltbZ0yjOQHNnhfkLDzyQnoQMge5g
+W4Cf3+U6yPx97wUXUVh0lxFlXVZpLExOEYOjPHah6DvvzWjvn2CimzQ5wurI6Bhw
+PPEO6ucDhjeEdr784/4yR2DEjKW+NTCZWaJT67JvKhQFs3N74AeeuWj6caFgxKLk
+qK8LRt7rjlXem+vQgGSHEZQGG4+Srd2Kr1EyhP5SHG3RDaLb3vcUBRhTBaoTT3xj
+aIdz/vt6Ve1W5Mcc2UPY0PO/pRnVQUGNt7MSbt50XJXbDt+zFJ2xKaHnJihDg81z
+/GxKrjHS5t0RAdW5SRfB9izboWIPJo4I/vmuxXINeK+KjmPEazxdkULXzfVOOAxg
+NJjxz46sZw7lZkHcz94g8TthndQHTo6v8AS9JtkIfe54cfg9PFUmlURTatabw67x
+Wqs6+PLmjInvGmAByFw2IgV0Y760xJ+JuPY1W7II/PIa6uSb8VIrkB8tNPFqASAT
+k3xIUEvRqMT62gnRB+iIb7aZUEKPmYZ9Q7OuB1yEHd+juxy5xoZ9jKx3ru6ia+jh
+bneg+Obpl6d9t0mpCblWXuCcnb2hwAr45xWNz8/rexDZQeNFfeNB3sq0u4jdwzjU
+CKFivH2P07FEJajgbIy6t4T0+AzwpEVMU5BN6bhNI3M6uQINBFVT5MsBEAC5xvIx
+8Oa3US6RGaM/SZ9nF3xCdVQhQWK3VL+MsClDInULgNpdzZspwc9JtClUo/fCNgM9
+zXIzFOwlyTPAhwDbQYLSdfkwhT6vsvfPx+T0uC96OrVhNsJsUmLuYNLOlQa3ybpi
+XTmNcnLaEvMEwHPVNYAw88HjHp23jdTOLOHZFg0p+q2dByfbpgGNy8xHDG28AZ+i
+BToLQCT2IZTZlOpnLr3gLI5C54ZNX7dbVu7xnC0mibOCqUi7nRH/a2oJRV/6DvtY
+uqHdDJumXW6/h0JvfNVydsy2N+WK9pirmsgIUq52sAey7MSbzKqbdw+zyZSA/Iyv
+XzMXoTPYxTCCE5MSwHwW5Mar9KelvTRjpBj5DqkBxVVPyehH3FXOGfvomgbB+F2I
+ZK1h9wCZDWnk0i8i/7pdQXPw22i/k7BOrBjQ5je60ezZUKvDAq4z5/xjXaD/ZtxO
+HRTTgPboEluuUl0KEtEVm/8zDXas89GlmTYaXv3baXFCGsV+TIkYRtsyWr6Mtirq
+/ZkU0RE+newBCBSF7tDrXoVrcflRIo8XG5y2UqKkiLqssBVx9J9s8LBwA/6+xkgA
+yxS7+KfkOVITW3QuiDCH/ydxnpU/9kzxv9Y68jgOnX3a8wmBTqU3PRwbz9WCQ8qi
+qNCKPBDwf42SVbdSBCljGTiVI9mcaMYtRHDQAQARAQABiQIfBBgBAgAJBQJVU+TL
+AhsMAAoJEO+5hgrnUg2sstoP+wbfIr5vR8CiIqoU8qxU/Co5m2jyyUMiU9iYSaSO
+9Itu9cCpP6dFbx1p7u41zutDaeO/wil3fpH2I7T3qAilvqey9UqhVTkSlotFh07T
+yXw/929Pd3tTekIbeJON+4XdHeF6gfsT/SL9hCDwsMk9Jzyx01n1Oq2fq2fGxqHg
+G6er9HssF7VBs7N0jOgMG2ou8DVEIjbhKJqyvLUsKk6Zolfy+HGn6OWSdgjenaFT
+KcDCOMhQs8ZH95I50stp26njFfcoh82qJNYZbTPWe05ZsGNFdBM+pANxHsiS1Mbd
+Fo21HM8tp8Vs2toimaa1dIyFl5+2vvCcGECcCQ3eT1mb8Ac5rR0TsDMiVGPmhabg
+9mKehJIR4OsqruyCF5yk/zwa7gFb7t83xTDxarlXyN1ltroF/sGod0IDk0UlQPsp
+d0BSiGNx9eNOi2iavxg94cqEK+dF1dUZsuSzTW1UDA4hA5aiX56YOiiSoC9mBqgN
+ZjaHjR6KwulHdIDUg8icmmJdtYDtFDz0DKUBuZshadb9gv3TUe3FbO3W1YhlDA+i
+t1yhhXbJR4oYYwpMuxtpeE+lGkFiJbBeIKG2WocWUn385KPUo2r2trvZUnvaxWy1
+/WMRGsGeczGIkGawwYuSXtkzmYpqs7VdQaPq4JZmAPcU9ogwMSlNYVsuV3FUtVsv
+u05l
+=SPB7
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre>
+
+</div>
+
+
+    <footer>
+      <p>Vår webbsida på andra språk:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

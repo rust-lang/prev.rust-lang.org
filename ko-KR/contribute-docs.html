@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rust에 기여하기 &mdash; 문서 &middot; Rust 프로그래밍 언어</title>
+    <meta name="keywords" content="Rust, Rust 프로그래밍 언어, rustlang, rust-lang, Mozilla Rust, 러스트, Mozilla, 모질라">
+    <meta name="description" content="매우 빠르며, 세그폴트를 방지하고, 스레드 안전성을 보장하는 시스템 프로그래밍 언어">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme_ko_kr.svg" alt="GitHub에서 포크" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/ko-KR/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust 로고" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/ko-KR/documentation.html">문서</a></h2>
+	  <h2><a href="/ko-KR/install.html">설치</a></h2>
+	  <h2><a href="/ko-KR/community.html">커뮤니티</a></h2>
+	  <h2><a href="/ko-KR/contribute.html">기여하기</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1 id="rust--mdash-">Rust에 기여하기 — 문서</h1>
+
+<p>문서는 언제나 충분히 좋을 수도 충분히 많을 수도 없습니다.
+Rust 문서의 많은 면에서는 깊은 지식이 필요하지 않으며,
+문서를 쓰고, 리뷰하고 편집하는 것은 Rust를 배우는 좋은 방법입니다.
+게다가 문서를 개선하는 건 알아 보기 쉽고 제한이 없습니다.
+뭔가 잘 읽히지 않는다고요? 문서화가 안 된 정보를 발견했다고요?
+여러분의 풀 요청(pull request)은 기꺼이 받아들여질 것입니다.</p>
+
+<p><strong><em>여러분이 쓸 수 있는 가장 영향력 있는 문서는
+Rust 생태계를 이루는 크레이트의 문서입니다</em></strong>.
+저장소 내의 문서는 비교적 완전하지만, Rust 프로그래머들이 매일같이 부대끼는
+<a href="https://github.com/kud1ing/awesome-rust">많은 유명 크레이트와 도구</a>에 대해서는 아직 그렇지 않습니다.
+유명한 Rust 프로젝트에 API 문서를 기여하면
+프로젝트 관리자의 끊임 없는 사랑을 얻게 될 겁니다.</p>
+
+<p>《<a href="https://doc.rust-lang.org/book/index.html">Rust 프로그래밍 언어</a>》는 주 저장소에서 관리되는 Rust의 주 문서입니다.
+이 책에는 별도의 이슈 라벨 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-book">A-book</a>이 존재하며 지속적으로 개정되고 있습니다.
+주 저장소에 있는 다른 문서로는 <a href="https://doc.rust-lang.org/reference">Rust 참조 문서</a>,
+<a href="https://doc.rust-lang.org/std/index.html">표준 라이브러리 API 문서</a>, 그리고 (<code class="highlighter-rouge">unsafe</code>를 올바르게 쓰는 안내서인)
+《<i lang="en"><a href="https://doc.rust-lang.org/nomicon/index.html">Rustonomicon</a></i>》이 있습니다.
+<a href="https://doc.rust-lang.org/style/index.html">Rust 스타일 가이드라인</a>은 많이 불완전하기 때문에
+눈에 띄게 링크되어 있진 않으나, 의욕적인 기여자라면 많은 개선을 이루어낼 수 있을 겁니다.
+<a href="https://doc.rust-lang.org/error-index.html">오류 색인</a>은 컴파일러가 만들어 낸 오류들에 대해 자세한 설명을 제공합니다.
+오류가 새로 추가되면 이 문서도 <a href="https://github.com/rust-lang/rust/issues/24407">함께 관리되어야 하며</a>,
+따라서 색인에 아직 반영되지 않아 추가되어야 하는 오류들이 항상 있습니다.
+저장소 내 대부분의 문서는 <a href="https://github.com/rust-lang/rust/tree/master/src/doc">src/doc</a> 디렉토리에 있으며
+이슈 트래커에서는 모두 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-docs">A-docs</a> 라벨로 커버됩니다.
+마지막으로 이 문서와 다른 웹사이트 내용은
+<a href="https://github.com/rust-lang/rust-www">Rust 웹사이트 Git 저장소</a>에서 관리됩니다.
+기여하려면 간단히 편집한 뒤에 풀 요청을 보내 주세요.</p>
+
+<p>중요한 Rust 문서들 상당수는 주 저장소에도 없고, 프로젝트에서 관리하지도 않지만,
+여전히 Rust의 성공에 결정적으로 중요합니다.
+현재 개발 중이며 기여자가 필요한 탁월한 Rust 문서의 예로는
+《<a href="https://github.com/rust-lang/rust-by-example">예제로 보는 Rust</a>》,
+《<a href="https://github.com/nrc/patterns">Rust 디자인 패턴</a>》, 그리고 <a href="https://github.com/Hoverbear/rust-rosetta">rust-rosetta</a>가 있습니다.
+기존의 다른 문서화 프로젝트 중 기여할 걸 찾고 있다면 <a href="https://github.com/ctjhoa/rust-learning">rust-learning</a>을 보세요.</p>
+
+<p><a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-docs">#rust-docs</a>에서 다른 Rust 문서 저자들을 만나세요.</p>
+
+<!--
+TODO: blogging, translation
+-->
+
+
+</div>
+
+
+    <footer>
+      <p>이 사이트를 다른 언어로 보기:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

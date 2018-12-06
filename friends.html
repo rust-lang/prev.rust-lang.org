@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Rust Programming Language</title>
+    <script type="text/javascript">
+      // a list of mappings, the keys are what we might get from a browser, and the
+      // values are what URL we should send that value to.
+      var languages = {
+        "en": "en-US",
+        "en-US": "en-US",
+        "es": "es-ES",
+        "es-ES":"es-ES",
+        "fr": "fr-FR",
+        "fr-FR": "fr-FR",
+        "ja": "ja-JP",
+        "ja-JP": "ja-JP",
+        "ko": "ko-KR",
+        "ko-KR": "ko-KR",
+        "pl": "pl-PL",
+        "pl-PL": "pl-PL",
+        "pt": "pt-BR", // For now, since there's no pt-PT page, redirect to pt-BR
+        "pt-BR": "pt-BR",
+        "ru": "ru-RU",
+        "ru-RU": "ru-RU",
+        "zh": "zh-CN",
+        "zh-CN": "zh-CN",
+        "it": "it-IT",
+        "it-IT": "it-IT",
+        "vi": "vi-VN",
+        "vi-VN": "vi-VN",
+        "id": "id-ID",
+        "id-ID": "id-ID",
+        "sv": "sv-SE",
+        "sv-SE": "sv-SE",
+      };
+
+      // look up the provided language in the map
+      var code = window.navigator.language || window.navigator.userLanguage || "en";
+      var language = languages[code];
+
+      // if we didn't find a supporting language, default to en-US
+      if (!language) { language = "en-US"; }
+
+      document.location = "/" + language + '/friends.html' + document.location.hash;
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/en-US/friends.html">
+    </noscript>
+  </head>
+  <body>
+    <p><a href="/en-US/friends.html">Click here</a> to be redirected.</p>
+  </body>
+</html>

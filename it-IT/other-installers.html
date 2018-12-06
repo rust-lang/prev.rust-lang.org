@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Altri metodi di installazione &middot; Linguaggio di programmazione Rust</title>
+    <meta name="keywords" content="Rust, Linguaggio di programmazione Rust, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Un linguaggio di programmazione per sistemi ad altissime prestazioni che previene errori di segmentazione e assicura la sicurezza della memoria.">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme_it_it.svg" alt="Forkami on GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/it-IT/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust logo" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/it-IT/documentation.html">Documentazione</a></h2>
+	  <h2><a href="/it-IT/install.html">Installazione</a></h2>
+	  <h2><a href="/it-IT/community.html">Comunità</a></h2>
+	  <h2><a href="/it-IT/contribute.html">Contribuisci</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1 id="altri-metodi-di-installazione-di-rust">Altri metodi di installazione di Rust</h1>
+
+<ul>
+  <li><a href="#which">Quale installatore dovrei usare?</a></li>
+  <li><a href="#more-rustup">Altri modi per installare <code class="highlighter-rouge">rustup</code></a></li>
+  <li><a href="#standalone">Installatori indipendenti</a></li>
+  <li><a href="#source">Codice sorgente</a></li>
+</ul>
+
+<h2 id="quale-installatore-dovrei-usare">Quale installatore dovrei usare?</h2>
+<p><span id="which"></span></p>
+
+<p>Rust funziona su molte piattaforme e ci sono molti modi per installare Rust.
+Se vuoi installare Rust nel modo più semplice e consigliato, segui le istruzioni
+della <a href="install.html">pagina di installazione principale</a>.</p>
+
+<p>Quella pagina descrive l’installazione tramite <a href="https://github.com/rust-lang-nursery/rustup.rs"><code class="highlighter-rouge">rustup</code></a>, uno strumento che
+gestisce compilatori di rust multipli in modo stabile per tutte le piattaforme
+supportate da Rust.
+Perchè quindi uno dovrebbe desiderare di <em>non</em> utilizzarlo?</p>
+
+<ul>
+  <li>Installazione offline. <code class="highlighter-rouge">rustup</code> scarica componenti dalla rete su richiesta.
+se hai bisogno di installare Rust senza una connessione a internet, <code class="highlighter-rouge">rustup</code>
+non è adatto.</li>
+  <li>Preferenza per il gestore di pacchetti di sistema. Su Linux in particolare may
+anche su macOS con <a href="http://brew.sh/">Homebrew</a> e in Windows con <a href="http://chocolatey.org/">Chocolatey</a>, gli sviluppatori
+a volte preferiscono installare Rust con il gestore di pacchetti del loro
+sistema operativo.</li>
+  <li>Astio contro <code class="highlighter-rouge">curl | sh</code>. Sugli Unix, installiamo <code class="highlighter-rouge">rustup</code> eseguendo
+uno script scaricato da <code class="highlighter-rouge">curl</code>. Alcuni non si fidano di questa operazione
+e preferiscono scaricare e installare Rust in autonomia.</li>
+  <li>Verifica firme. Anche se <code class="highlighter-rouge">rustup</code> effettua download tramite HTTPS,
+l’unico modo ad oggi possibile per verificare le firme digitali è 
+l’installazione manuale.</li>
+  <li>Installazione da interfaccia grafica e integrazione con “Aggiungi/Rimuovi Programmi”
+su Windows. <code class="highlighter-rouge">rustup</code> funziona da riga di comando e non registra le sue installazioni
+nel menu di Windows come gli altri programmi. Se preferisci un’installazione più
+tipica su Windows sono disponibili gli installatori indipendenti <code class="highlighter-rouge">.msi</code>.
+In futuro <code class="highlighter-rouge">rustup</code> includerà un’interfaccia grafica su Windows.</li>
+</ul>
+
+<p>Il supporto di Rust alle piattaforme è definito in <a href="https://forge.rust-lang.org/platform-support.html">tre fasce</a>, che
+corrispondono strettamente con il metodo di installazione disponibile: in generale,
+Rust fornisce eseguibili per tutte le piattaforme di prima e seconda fascia,
+rendendoli disponibili anche allo strumento <code class="highlighter-rouge">rustup</code>.
+Alcune piattaforme di seconda fascia ad ogni modo hanno solo la libreria standard,
+non il compilatore, possono quindi essere usate solo per la compilazione incrociata
+da un’altra piattaforma. Queste piattaforme sono installabili con il comando
+<code class="highlighter-rouge">rustup target add</code>.</p>
+
+<h2 id="altri-modi-per-installare-rustup">Altri modi per installare <code class="highlighter-rouge">rustup</code></h2>
+<p><span id="rustup"></span></p>
+
+<p>Il modo per installare <code class="highlighter-rouge">rustup</code> differisce tra le piattaforme:</p>
+
+<ul>
+  <li>Sugli Unix, esegui <code class="highlighter-rouge">curl https://sh.rustup.rs -sSf | sh</code> nella tua riga di comando.
+Questo scarica e esegue <a href="https://static.rust-lang.org/rustup/rustup-init.sh"><code class="highlighter-rouge">rustup-init.sh</code></a>, che a sua volta
+scarica e esegue la versione di <code class="highlighter-rouge">rustup-init</code> più 
+adatta alla piattaforma corrente.</li>
+  <li>Su Windows, scarica e installa <a href="https://static.rust-lang.org/rustup/dist/i686-pc-windows-gnu/rustup-init.exe"><code class="highlighter-rouge">rustup-init.exe</code></a>.</li>
+</ul>
+
+<p><code class="highlighter-rouge">rustup-init</code> può essere configurato interattivamente, tutte le operazioni
+possono inoltre essere comandate da degli argomenti da riga di comando da
+fornire allo script di installazione. Passando <code class="highlighter-rouge">--help</code> a <code class="highlighter-rouge">rustup-init</code>
+farà mostrare gli argomenti disponibili:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl https://sh.rustup.rs -sSf | sh -s -- --help
+</code></pre>
+</div>
+
+<p>Se preferisci non usare lo script, puoi scaricare direttamente <code class="highlighter-rouge">rustup-init</code>
+per una piattaforma a tua scelta:</p>
+
+<div class="rustup-init-table">
+  
+  <div>
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/aarch64-unknown-linux-gnu/rustup-init">
+      aarch64-unknown-linux-gnu
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/arm-unknown-linux-gnueabi/rustup-init">
+      arm-unknown-linux-gnueabi
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/arm-unknown-linux-gnueabihf/rustup-init">
+      arm-unknown-linux-gnueabihf
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/i686-apple-darwin/rustup-init">
+      i686-apple-darwin
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/i686-pc-windows-gnu/rustup-init.exe">
+      i686-pc-windows-gnu
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/i686-pc-windows-msvc/rustup-init.exe">
+      i686-pc-windows-msvc
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/i686-unknown-linux-gnu/rustup-init">
+      i686-unknown-linux-gnu
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/mips-unknown-linux-gnu/rustup-init">
+      mips-unknown-linux-gnu
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/mipsel-unknown-linux-gnu/rustup-init">
+      mipsel-unknown-linux-gnu
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/mips64-unknown-linux-gnuabi64/rustup-init">
+      mips64-unknown-linux-gnuabi64
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/mips64el-unknown-linux-gnuabi64/rustup-init">
+      mips64el-unknown-linux-gnuabi64
+    </a>
+    
+    
+  </div>
+  
+  <div>
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/powerpc-unknown-linux-gnu/rustup-init">
+      powerpc-unknown-linux-gnu
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/powerpc64-unknown-linux-gnu/rustup-init">
+      powerpc64-unknown-linux-gnu
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/powerpc64le-unknown-linux-gnu/rustup-init">
+      powerpc64le-unknown-linux-gnu
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/x86_64-apple-darwin/rustup-init">
+      x86_64-apple-darwin
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-gnu/rustup-init.exe">
+      x86_64-pc-windows-gnu
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe">
+      x86_64-pc-windows-msvc
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/x86_64-unknown-freebsd/rustup-init">
+      x86_64-unknown-freebsd
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init">
+      x86_64-unknown-linux-gnu
+    </a>
+    
+    
+    
+    <a href="https://static.rust-lang.org/rustup/dist/x86_64-unknown-netbsd/rustup-init">
+      x86_64-unknown-netbsd
+    </a>
+    
+    
+  </div>
+  
+</div>
+
+<h2 id="installatori-indipendenti">Installatori indipendenti</h2>
+<p><span id="standalone"></span></p>
+
+<p>L’installatore indipendente di Rust contiene una versione singola di rust e
+permettono l’installazione in assenza di connessione a internet.
+Sono disponibili in tre forme: pacchetti compressi tar(estensione <code class="highlighter-rouge">.tar.gz</code>),
+funzionanti in ambienti Unix, installatori Windows(<code class="highlighter-rouge">.msi</code>) e pacchetti applicativi
+Mac (<code class="highlighter-rouge">.pkg</code>), questi installatori contengono <code class="highlighter-rouge">rustc</code>, <code class="highlighter-rouge">cargo</code>, <code class="highlighter-rouge">rustdoc</code>, la libreria
+standard e la documentazione standard ma non forniscono le possibilità di compilazione
+incrociata offerte da <code class="highlighter-rouge">rustup</code>.</p>
+
+<p>Le ragioni più comuni per utilizzarli sono:</p>
+
+<ul>
+  <li>Installazione in assenza di rete</li>
+  <li>Preferenza per un installatore grafico, più integrato con Windows</li>
+</ul>
+
+<p>Ciascuno di questi eseguibili sono firmati digitalmente con la <a href="https://static.rust-lang.org/rust-key.gpg.ascii">firma digitale di Rust</a>
+disponibile su [keybase.io], rilasciata dall’infrastruttura di rilascio di Rust,
+tramite <a href="https://gnupg.org/">GPG</a>.
+Nelle tabelle sottostanti, i file <code class="highlighter-rouge">.asc</code> sono i file di firma digitale.</p>
+
+<p>Le versioni passate si possono trovare negli <a href="https://static.rust-lang.org/dist/index.html">archivi</a>.</p>
+
+<h3 id="stable-1310">Stable (1.31.0)</h3>
+<p><span id="stable"></span></p>
+
+<div class="installer-table stable">
+  
+  <div>
+    
+    <div>
+      <span>aarch64-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-aarch64-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-aarch64-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>arm-unknown-linux-gnueabi</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-arm-unknown-linux-gnueabi.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-arm-unknown-linux-gnueabi.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>arm-unknown-linux-gnueabihf</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-arm-unknown-linux-gnueabihf.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-arm-unknown-linux-gnueabihf.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>i686-apple-darwin</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-apple-darwin.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-apple-darwin.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>i686-apple-darwin</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-apple-darwin.pkg">.pkg</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-apple-darwin.pkg.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>i686-pc-windows-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-pc-windows-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-pc-windows-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>i686-pc-windows-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-pc-windows-gnu.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-pc-windows-gnu.msi.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>i686-pc-windows-msvc</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-pc-windows-msvc.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-pc-windows-msvc.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>i686-pc-windows-msvc</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-pc-windows-msvc.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-pc-windows-msvc.msi.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>i686-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-i686-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>mips-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-mips-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-mips-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>mipsel-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-mipsel-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-mipsel-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>mips64-unknown-linux-gnuabi64</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-mips64-unknown-linux-gnuabi64.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-mips64-unknown-linux-gnuabi64.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>mips64el-unknown-linux-gnuabi64</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-mips64el-unknown-linux-gnuabi64.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-mips64el-unknown-linux-gnuabi64.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+  </div>
+  
+  <div>
+    
+    <div>
+      <span>powerpc-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-powerpc-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-powerpc-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>powerpc64-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-powerpc64-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-powerpc64-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>powerpc64le-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-powerpc64le-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-powerpc64le-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>s390x-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-s390x-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-s390x-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-apple-darwin</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-apple-darwin.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-apple-darwin.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>x86_64-apple-darwin</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-apple-darwin.pkg">.pkg</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-apple-darwin.pkg.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-pc-windows-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-pc-windows-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-pc-windows-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>x86_64-pc-windows-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-pc-windows-gnu.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-pc-windows-gnu.msi.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-pc-windows-msvc</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-pc-windows-msvc.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-pc-windows-msvc.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>x86_64-pc-windows-msvc</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-pc-windows-msvc.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-pc-windows-msvc.msi.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-unknown-freebsd</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-unknown-freebsd.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-unknown-freebsd.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-unknown-netbsd</span>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-unknown-netbsd.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-1.31.0-x86_64-unknown-netbsd.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+  </div>
+  
+</div>
+
+<h3 id="beta-132">Beta (1.32)</h3>
+<p><span id="beta"></span></p>
+
+<div class="installer-table beta">
+  
+  <div>
+    
+    <div>
+      <span>aarch64-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-aarch64-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-aarch64-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>arm-unknown-linux-gnueabi</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-arm-unknown-linux-gnueabi.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-arm-unknown-linux-gnueabi.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>arm-unknown-linux-gnueabihf</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-arm-unknown-linux-gnueabihf.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-arm-unknown-linux-gnueabihf.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>i686-apple-darwin</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-apple-darwin.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-apple-darwin.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>i686-apple-darwin</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-apple-darwin.pkg">.pkg</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-apple-darwin.pkg.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>i686-pc-windows-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>i686-pc-windows-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-gnu.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-gnu.msi.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>i686-pc-windows-msvc</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-msvc.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-msvc.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>i686-pc-windows-msvc</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-msvc.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-pc-windows-msvc.msi.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>i686-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-i686-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>mips-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-mips-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-mips-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>mipsel-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-mipsel-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-mipsel-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>mips64-unknown-linux-gnuabi64</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-mips64-unknown-linux-gnuabi64.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-mips64-unknown-linux-gnuabi64.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+  </div>
+  
+  <div>
+    
+    <div>
+      <span>powerpc-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-powerpc-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-powerpc-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>powerpc64-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-powerpc64-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-powerpc64-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>powerpc64le-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-powerpc64le-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-powerpc64le-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>s390x-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-s390x-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-s390x-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-apple-darwin</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-apple-darwin.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-apple-darwin.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>x86_64-apple-darwin</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-apple-darwin.pkg">.pkg</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-apple-darwin.pkg.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-pc-windows-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>x86_64-pc-windows-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-gnu.msi.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-pc-windows-msvc</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-msvc.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-msvc.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>x86_64-pc-windows-msvc</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-msvc.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-pc-windows-msvc.msi.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-unknown-freebsd</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-unknown-freebsd.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-unknown-freebsd.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-unknown-netbsd</span>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-unknown-netbsd.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-beta-x86_64-unknown-netbsd.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+  </div>
+  
+</div>
+
+<h3 id="nightly-133">Nightly (1.33)</h3>
+<p><span id="nightly"></span></p>
+
+<div class="installer-table nightly">
+  
+  <div>
+    
+    <div>
+      <span>aarch64-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-aarch64-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-aarch64-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>arm-unknown-linux-gnueabi</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-arm-unknown-linux-gnueabi.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-arm-unknown-linux-gnueabi.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>arm-unknown-linux-gnueabihf</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-arm-unknown-linux-gnueabihf.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-arm-unknown-linux-gnueabihf.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>i686-apple-darwin</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>i686-apple-darwin</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.pkg">.pkg</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-apple-darwin.pkg.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>i686-pc-windows-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>i686-pc-windows-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-gnu.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-gnu.msi.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>i686-pc-windows-msvc</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-msvc.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-msvc.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>i686-pc-windows-msvc</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-msvc.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-pc-windows-msvc.msi.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>i686-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-i686-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>mips-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-mips-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-mips-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>mipsel-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-mipsel-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-mipsel-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>mips64-unknown-linux-gnuabi64</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-mips64-unknown-linux-gnuabi64.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-mips64-unknown-linux-gnuabi64.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>mips64el-unknown-linux-gnuabi64</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-mips64el-unknown-linux-gnuabi64.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-mips64el-unknown-linux-gnuabi64.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+  </div>
+  
+  <div>
+    
+    <div>
+      <span>powerpc-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-powerpc-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-powerpc-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>powerpc64-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-powerpc64-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-powerpc64-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>powerpc64le-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-powerpc64le-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-powerpc64le-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>s390x-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-s390x-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-s390x-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-apple-darwin</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>x86_64-apple-darwin</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.pkg">.pkg</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.pkg.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-pc-windows-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>x86_64-pc-windows-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.msi.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-pc-windows-msvc</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-msvc.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-msvc.tar.gz.asc">.asc</a>
+    </div>
+    
+    <div>
+      <span>x86_64-pc-windows-msvc</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-msvc.msi">.msi</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-msvc.msi.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-unknown-freebsd</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-freebsd.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-freebsd.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-unknown-linux-gnu</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-linux-gnu.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-linux-gnu.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+    <div>
+      <span>x86_64-unknown-netbsd</span>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-netbsd.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-netbsd.tar.gz.asc">.asc</a>
+    </div>
+    
+    
+  </div>
+  
+</div>
+
+<h2 id="codice-sorgente">Codice sorgente</h2>
+<p><span id="source"></span></p>
+
+<div class="installer-table">
+  <div>
+    <div>
+      <span>Stabile</span>
+      <a href="https://static.rust-lang.org/dist/rustc-1.31.0-src.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rustc-1.31.0-src.tar.gz.asc">.asc</a>
+    </div>
+  </div>
+  <div>
+    <div>
+      <span>Beta</span>
+      <a href="https://static.rust-lang.org/dist/rustc-beta-src.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rustc-beta-src.gz.asc">.asc</a>
+    </div>
+  </div>
+  <div>
+    <div>
+      <span>Nightly</span>
+      <a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz">.tar.gz</a>
+      <a href="https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz.asc">.asc</a>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+    <footer>
+      <p>Il nostro sito in altre lingue:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

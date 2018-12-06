@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Frequently Asked Questions &middot; The Rust Programming Language</title>
+    <meta name="keywords" content="Rust, programmeringsspråket rust, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Ett systemprogrammeringsspråk som kör blixtsnabbt, förhindrar segmenteringsfel och garanterar trådsäkerhet.">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme.svg" alt="Forka mig på GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/sv-SE/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rusts logotyp" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/sv-SE/documentation.html">Dokumentation</a></h2>
+	  <h2><a href="/sv-SE/install.html">Installation</a></h2>
+	  <h2><a href="/sv-SE/community.html">Community</a></h2>
+	  <h2><a href="/sv-SE/contribute.html">Bidra</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600' rel='stylesheet' type='text/css'>
+<link href='/css/syntax-highlight.css' rel='stylesheet' type='text/css'>
+
+<div class="faq">
+  <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+
+<p class="faq-intro">
+This page exists to answer common questions about the Rust programming language. It is not a complete guide to the language, nor is it a tool for teaching the language. It is a reference to answer oft-repeated questions people in the Rust community encounter, and to clarify the reasoning behind some of Rust's design decisions.
+</p>
+
+<p class="faq-intro">
+If there is some common or important question you feel is wrongly left unanswered here, feel free to <a href="https://github.com/rust-lang/rust-www/blob/master/CONTRIBUTING.md">help us fix it</a>.
+</p>
+
+<div id="toc">
+    <h2>Table of Contents</h2><a href="#toggle-toc"></a>
+    <div class="contents">
+        <ol id="toc-contents">
+            <li><a href="#project">The Rust Project</a></li>
+            <li><a href="#performance">Performance</a></li>
+            <li><a href="#syntax">Syntax</a></li>
+            <li><a href="#numerics">Numerics</a></li>
+            <li><a href="#strings">Strings</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#ownership">Ownership</a></li>
+            <li><a href="#lifetimes">Lifetimes</a></li>
+            <li><a href="#generics">Generics</a></li>
+            <li><a href="#input-output">Input / Output</a></li>
+            <li><a href="#error-handling">Error Handling</a></li>
+            <li><a href="#concurrency">Concurrency</a></li>
+            <li><a href="#macros">Macros</a></li>
+            <li><a href="#debugging">Debugging and Tooling</a></li>
+            <li><a href="#low-level">Low-Level</a></li>
+            <li><a href="#cross-platform">Cross-Platform</a></li>
+            <li><a href="#modules-and-crates">Modules and Crates</a></li>
+            <li><a href="#libraries">Libraries</a></li>
+            <li><a href="#design-patterns">Design Patterns</a></li>
+            <li><a href="#other-languages">Other Languages</a></li>
+            <li><a href="#documentation">Documentation</a></li>
+        </ol>
+    </div>
+</div>
+
+<h2 id="project">The Rust Project</h2>
+
+<h3><a href="#what-is-this-projects-goal" name="what-is-this-projects-goal">
+What is this project's goal?
+</a></h3>
+
+<p>To design and implement a safe, concurrent, practical systems language.</p>
+
+<p>Rust exists because other languages at this level of abstraction and efficiency are unsatisfactory. In particular:</p>
+
+<ol>
+  <li>There is too little attention paid to safety.</li>
+  <li>They have poor concurrency support.</li>
+  <li>There is a lack of practical affordances.</li>
+  <li>They offer limited control over resources.</li>
+</ol>
+
+<p>Rust exists as an alternative that provides both efficient code and a comfortable level of abstraction, while improving on all four of these points.</p>
+
+<h3><a href="#is-this-project-controlled-by-mozilla" name="is-this-project-controlled-by-mozilla">
+Is this project controlled by Mozilla?
+</a></h3>
+
+<p>No. Rust started as Graydon Hoare’s part-time side project in 2006 and remained so for over 3 years. Mozilla got involved in 2009 once the language was mature enough to run basic tests and demonstrate its core concepts. Though it remains sponsored by Mozilla, Rust is developed by a diverse community of enthusiasts from many different places around the world. The <a href="https://www.rust-lang.org/team.html">Rust Team</a> is composed of both Mozilla and non-Mozilla members, and <code class="highlighter-rouge">rust</code> on GitHub has had over <a href="https://github.com/rust-lang/rust/">1,900 unique contributors</a> so far.</p>
+
+<p>As far as <a href="https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md">project governance</a> goes, Rust is managed by a core team that sets the vision and priorities for the project,
+guiding it from a global perspective. There are also subteams to guide and foster development of particular areas of interest, including the core language, the compiler, Rust libraries, Rust tools, and moderation of the official Rust communities. Designs in each of these areas are advanced through an <a href="https://github.com/rust-lang/rfcs">RFC process</a>. For changes which do not require an RFC, decisions are made through pull requests on the <a href="https://github.com/rust-lang/rust"><code class="highlighter-rouge">rustc</code> repository</a>.</p>
+
+<h3><a href="#what-are-some-non-goals" name="what-are-some-non-goals">
+What are some non-goals of Rust?
+</a></h3>
+
+<ol>
+  <li>We do not employ any particularly cutting-edge technologies. Old, established techniques are better.</li>
+  <li>We do not prize expressiveness, minimalism or elegance above other goals. These are desirable but subordinate goals.</li>
+  <li>We do not intend to cover the complete feature-set of C++, or any other language. Rust should provide majority-case features.</li>
+  <li>We do not intend to be 100% static, 100% safe, 100% reflective, or too dogmatic in any other sense. Trade-offs exist.</li>
+  <li>We do not demand that Rust run on “every possible platform”. It must eventually work without unnecessary compromises on widely-used hardware and software platforms.</li>
+</ol>
+
+<h3><a href="#how-does-mozilla-use-rust" name="how-does-mozilla-use-rust">
+In which projects is Mozilla using Rust?
+</a></h3>
+
+<p>The main project is <a href="https://github.com/servo/servo">Servo</a>, an experimental browser engine Mozilla is working on. They are also working to <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1135640">integrate Rust components</a> into Firefox.</p>
+
+<h3><a href="#what-examples-are-there-of-large-rust-projects" name="what-examples-are-there-of-large-rust-projects">
+What examples are there of large Rust projects?
+</a></h3>
+
+<p>The two biggest open source Rust projects right now are <a href="https://github.com/servo/servo">Servo</a> and the <a href="https://github.com/rust-lang/rust">Rust compiler</a> itself.</p>
+
+<h3><a href="#who-else-is-using-rust" name="who-else-is-using-rust">
+Who else is using Rust?
+</a></h3>
+
+<p><a href="friends.html">A growing number of organizations!</a></p>
+
+<!--
+### What projects are good examples of idiomatic Rust code?
+
+TODO: Write this answer.
+-->
+
+<h3><a href="#how-can-i-try-rust-easily" name="how-can-i-try-rust-easily">
+How can I try Rust easily?
+</a></h3>
+
+<p>The easiest way to try Rust is through the <a href="https://play.rust-lang.org/">playpen</a>, an online app for writing and running Rust code. If you want to try Rust on your system, <a href="https://www.rust-lang.org/install.html">install it</a> and go through the <a href="https://doc.rust-lang.org/stable/book/second-edition/ch02-00-guessing-game-tutorial.html">Guessing Game</a> tutorial in the book.</p>
+
+<h3><a href="#how-do-i-get-help-with-rust-issues" name="how-do-i-get-help-with-rust-issues">
+How do I get help with Rust issues?
+</a></h3>
+
+<p>There are several ways. You can:</p>
+
+<ul>
+  <li>Post in <a href="https://users.rust-lang.org/">users.rust-lang.org</a>, the official Rust users forum</li>
+  <li>Ask in the official <a href="https://chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust">Rust IRC channel</a> (#rust on irc.mozilla.org)</li>
+  <li>Ask on <a href="https://stackoverflow.com/questions/tagged/rust">Stack Overflow</a> with the “rust” tag</li>
+  <li>Post in <a href="https://www.reddit.com/r/rust">/r/rust</a>, the unofficial Rust subreddit</li>
+</ul>
+
+<h3><a href="#why-has-rust-changed-so-much" name="why-has-rust-changed-so-much">
+Why has Rust changed so much over time?
+</a></h3>
+
+<p>Rust started with a goal of creating a safe but usable systems programming language. In pursuit of this goal it explored a lot of ideas, some of which it kept (lifetimes, traits) while others were discarded (the typestate system, green threading). Also, in the run up to 1.0 a lot of the standard library was rewritten as early designs were updated to best use Rust’s features and provide quality, consistent cross-platform APIs. Now that Rust has reached 1.0, the language is guaranteed to be “stable”; and while it may continue to evolve, code which works on current Rust should continue to work on future releases.</p>
+
+<h3><a href="#how-does-rust-language-versioning-work" name="how-does-rust-language-versioning-work">
+How does Rust language versioning work?
+</a></h3>
+
+<p>Rust’s language versioning follows <a href="http://semver.org/">SemVer</a>, with backwards incompatible changes of stable APIs only allowed in minor versions if those changes fix compiler bugs, patch safety holes, or change dispatch or type inference to require additional annotation. More detailed guidelines for minor version changes are available as approved RFCs for both the <a href="https://github.com/rust-lang/rfcs/blob/master/text/1122-language-semver.md">language</a> and <a href="https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md">standard library</a>.</p>
+
+<p>Rust maintains three “release channels”: stable, beta, and nightly. Stable and beta are updated every six weeks, with the current nightly becoming the new beta, and the current beta becoming the new stable. Language and standard library features marked unstable or hidden behind feature gates may only be used on the nightly release channel. New features land as unstable, and are “ungated” once approved by the core team and relevant subteams. This approach allows for experimentation while providing strong backwards-compatibility guarantees for the stable channel.</p>
+
+<p>For additional details, read the Rust blog post <a href="http://blog.rust-lang.org/2014/10/30/Stability.html">“Stability as a Deliverable.”</a></p>
+
+<h3><a href="#can-i-use-unstable-features-on-the-beta-or-stable-channel" name="can-i-use-unstable-features-on-the-beta-or-stable-channel">
+Can I use unstable features on the beta or stable channel?
+</a></h3>
+
+<p>No, you cannot. Rust works hard to provide strong guarantees about the stability of the features provided on the beta and stable channels. When something is unstable, it means that we can’t provide those guarantees for it yet, and don’t want people relying on it staying the same. This gives us the opportunity to try changes in the wild on the nightly release channel, while still maintaining strong guarantees for people seeking stability.</p>
+
+<p>Things stabilize all the time, and the beta and stable channels update every six weeks, with occasional fixes accepted into beta at other times. If you’re waiting for a feature to be available without using the nightly release channel, you can locate its tracking issue by checking the <a href="https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable"><code class="highlighter-rouge">B-unstable</code></a> tag on the issue tracker.</p>
+
+<h3><a href="#what-are-feature-gates" name="what-are-feature-gates">
+What are "Feature Gates"?
+</a></h3>
+
+<p>“Feature gates” are the mechanism Rust uses to stabilize features of the compiler, language, and standard library. A feature that is “gated” is accessible only on the nightly release channel, and then only when it has been explicitly enabled through <code class="highlighter-rouge">#[feature]</code> attributes or the <code class="highlighter-rouge">-Z unstable-options</code> command line argument. When a feature is stabilized it becomes available on the stable release channel, and does not need to be explicitly enabled. At that point the feature is considered “ungated”. Feature gates allow developers to test experimental features while they are under development, before they are available in the stable language.</p>
+
+<h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
+Why a dual MIT/ASL2 License?
+</a></h3>
+
+<p>The Apache license includes important protection against patent aggression, but it is not compatible with the GPL, version 2. To avoid problems using Rust with GPL2, it is alternately MIT licensed.</p>
+
+<h3><a href="#why-a-permissive-license" name="why-a-permissive-license">
+Why a BSD-style permissive license rather than MPL or tri-license?
+</a></h3>
+
+<p>This is partly due to preference of the original developer (Graydon), and partly due to the fact that languages tend to have a wider audience and more diverse set of possible embeddings and end-uses than products such as web browsers. We’d like to appeal to as many of those potential contributors as possible.</p>
+
+<h2 id="performance">Performance</h2>
+
+<h3><a href="#how-fast-is-rust" name="how-fast-is-rust">
+How fast is Rust?
+</a></h3>
+
+<p>Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks (like the <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/faster/rust.html">Benchmarks Game</a> and <a href="https://github.com/kostya/benchmarks">others</a>).</p>
+
+<p>Like C++, Rust takes <a href="http://blog.rust-lang.org/2015/05/11/traits.html">zero-cost abstractions</a> as one of its core principles: none of Rust’s abstractions impose a global performance penalty, nor is there overhead from any runtime system in the traditional sense.</p>
+
+<p>Given that Rust is built on LLVM and strives to resemble Clang from LLVM’s perspective, any LLVM performance improvements also help Rust. In the long run, the richer information in Rust’s type system should also enable optimizations that are difficult or impossible for C/C++ code.</p>
+
+<h3><a href="#is-rust-garbage-collected" name="is-rust-garbage-collected">
+Is Rust garbage collected?
+</a></h3>
+
+<p>No. One of Rust’s key innovations is guaranteeing memory safety (no segfaults) <em>without</em> requiring garbage collection.</p>
+
+<p>By avoiding GC, Rust can offer numerous benefits: predictable cleanup of resources, lower overhead for memory management, and essentially no runtime system. All of these traits make Rust lean and easy to embed into arbitrary contexts, and make it much easier to <a href="http://calculist.org/blog/2015/12/23/neon-node-rust/">integrate Rust code with languages that have a GC</a>.</p>
+
+<p>Rust avoids the need for GC through its system of ownership and borrowing, but that same system helps with a host of other problems, including
+<a href="http://blog.skylight.io/rust-means-never-having-to-close-a-socket/">resource management in general</a> and <a href="http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html">concurrency</a>.</p>
+
+<p>For when single ownership does not suffice, Rust programs rely on the standard reference-counting smart pointer type, <a href="https://doc.rust-lang.org/std/rc/struct.Rc.html"><code class="highlighter-rouge">Rc</code></a>, and its thread-safe counterpart, <a href="https://doc.rust-lang.org/std/sync/struct.Arc.html"><code class="highlighter-rouge">Arc</code></a>, instead of GC.</p>
+
+<p>We are however investigating <em>optional</em> garbage collection as a future
+extension. The goal is to enable smooth integration with
+garbage-collected runtimes, such as those offered by the
+<a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey">Spidermonkey</a>
+and <a href="https://developers.google.com/v8/?hl=en">V8</a> JavaScript engines.
+Finally, some people have investigated implementing
+<a href="https://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/">pure Rust garbage collectors</a>
+without compiler support.</p>
+
+<h3><a href="#why-is-my-program-slow" name="why-is-my-program-slow">
+Why is my program slow?
+</a></h3>
+
+<p>The Rust compiler doesn’t compile with optimizations unless asked to, <a href="https://users.rust-lang.org/t/why-does-cargo-build-not-optimise-by-default/4150/3">as optimizations slow down compilation and are usually undesirable during development</a>.</p>
+
+<p>If you compile with <code class="highlighter-rouge">cargo</code>, use the <code class="highlighter-rouge">--release</code> flag. If you compile with <code class="highlighter-rouge">rustc</code> directly, use the <code class="highlighter-rouge">-O</code> flag. Either of these will turn on optimizations.</p>
+
+<h3><a href="#why-is-rustc-slow" name="why-is-rustc-slow">
+Rust compilation seems slow. Why is that?
+</a></h3>
+
+<p>Code translation and optimizations. Rust provides high level abstractions that compile down into efficient machine code, and those translations take time to run, especially when optimizing.</p>
+
+<p>But Rust’s compilation time is not as bad as it may seem, and there is reason to believe it will improve. When comparing projects of similar size between C++ and Rust, compilation time of the entire project is generally believed to be comparable. The common perception that Rust compilation is slow is in large part due to the differences in the <em>compilation model</em> between C++ and Rust: C++’s compilation unit is the file, while Rust’s is the crate, composed of many files. Thus, during development, modifying a single C++ file can result in much less recompilation than in Rust. There is a major effort underway to refactor the compiler to introduce <a href="https://github.com/rust-lang/rfcs/blob/master/text/1298-incremental-compilation.md">incremental compilation</a>, which will provide Rust the compile time benefits of C++’s model.</p>
+
+<p>Aside from the compilation model, there are several other aspects of Rust’s language design and compiler implementation that affect compile-time performance.</p>
+
+<p>First, Rust has a moderately-complex type system, and must spend a non-negligible amount of compile time enforcing the constraints that make Rust safe at runtime.</p>
+
+<p>Secondly, the Rust compiler suffers from long-standing technical debt, and notably generates poor-quality LLVM IR which LLVM must spend time “fixing.” The addition of a new internal representation called <a href="https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md">MIR</a> to the Rust compiler offers the potential to perform more optimizations and improve the quality of LLVM IR generated, but this work has not yet occured.</p>
+
+<p>Thirdly, Rust’s use of LLVM for code generation is a double-edged sword: while it enables Rust to have world-class runtime performance, LLVM is a large framework that is not focused on compile-time performance, particularly when working with poor-quality inputs.</p>
+
+<p>Finally, while Rust’s preferred strategy of monomorphising generics (ala C++) produces fast code, it demands that significantly more code be generated than other translation strategies. Rust programmers can use trait objects to trade away this code bloat by using dynamic dispatch instead.</p>
+
+<h3><a href="#why-are-rusts-hashmaps-slow" name="why-are-rusts-hashmaps-slow">
+Why are Rust's <code>HashMap</code>s slow?
+</a></h3>
+
+<p>By default, Rust’s <a href="https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html"><code class="highlighter-rouge">HashMap</code></a> uses the <a href="https://131002.net/siphash/">SipHash</a> hashing algorithm, which is designed to prevent <a href="http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited">hash table collision attacks</a> while providing <a href="https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6">reasonable performance on a variety of workloads</a>.</p>
+
+<p>While SipHash <a href="http://cglab.ca/%7Eabeinges/blah/hash-rs/">demonstrates competitive performance</a> in many cases, one case where it is notably slower than other hashing algorithms is with short keys, such as integers. This is why Rust programmers often observe slow performance with <a href="https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html"><code class="highlighter-rouge">HashMap</code></a>. The <a href="https://crates.io/crates/fnv">FNV hasher</a> is frequently recommended for these cases, but be aware that it does not have the same collision-resistance properties as SipHash.</p>
+
+<h3><a href="#why-is-there-no-integrated-benchmarking" name="why-is-there-no-integrated-benchmarking">
+Why is there no integrated benchmarking infrastructure?
+</a></h3>
+
+<p>There is, but it’s only available on the nightly release channel. We ultimately plan to build a pluggable system for integrated benchmarks, but in the meantime, the current system is <a href="https://github.com/rust-lang/rust/issues/29553">considered unstable</a>.</p>
+
+<h3><a href="#does-rust-do-tail-call-optimization" name="does-rust-do-tail-call-optimization">
+Does Rust do tail-call optimization?
+</a></h3>
+
+<p>Not generally, no. Tail-call optimization may be done in <a href="http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization">limited circumstances</a>, but is <a href="https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html">not guaranteed</a>. As the feature has always been desired, Rust has a keyword (<code class="highlighter-rouge">become</code>) reserved, though it is not clear yet whether it is technically possible, nor whether it will be implemented. There was a <a href="https://github.com/rust-lang/rfcs/pull/81">proposed extension</a> that would allow tail-call elimination in certain contexts, but it is currently postponed.</p>
+
+<h3><a href="#does-rust-have-a-runtime" name="does-rust-have-a-runtime">
+Does Rust have a runtime?
+</a></h3>
+
+<p>Not in the typical sense used by languages such as Java, but parts of the Rust standard library can be considered a “runtime”, providing a heap, backtraces, unwinding, and stack guards. There is a <a href="https://github.com/rust-lang/rust/blob/33916307780495fe311fe9c080b330d266f35bfb/src/libstd/rt.rs#L43">small amount of initialization code</a> that runs before the user’s <code class="highlighter-rouge">main</code> function. The Rust standard library additionally links to the C standard library, which does similar <a href="http://www.embecosm.com/appnotes/ean9/html/ch05s02.html">runtime initialization</a>. Rust code can be compiled without the standard library, in which case the runtime is roughly equivalent to C’s.</p>
+
+<h2 id="syntax">Syntax</h2>
+
+<h3><a href="#why-curly-braces" name="why-curly-braces">
+Why curly braces? Why can't Rust's syntax be like Haskell's or Python's?
+</a></h3>
+
+<p>Use of curly braces to denote blocks is a common design choice in a variety of programming languages, and Rust’s consistency is useful for people already familiar with the style.</p>
+
+<p>Curly braces also allow for more flexible syntax for the programmer and a simpler parser in the compiler.</p>
+
+<h3><a href="#why-brackets-around-blocks" name="why-brackets-around-blocks">
+I can leave out parentheses on <code>if</code> conditions, so why do I have to put brackets around single line blocks? Why is the C style not allowed?
+</a></h3>
+
+<p>Whereas C requires mandatory parentheses for <code class="highlighter-rouge">if</code>-statement conditionals but leaves brackets optional, Rust makes the opposite choice for its <code class="highlighter-rouge">if</code>-expressions. This keeps the conditional clearly separate from the body and avoids the hazard of optional brackets, which can lead to easy-to-miss errors during refactoring, like Apple’s <a href="https://gotofail.com/">goto fail</a> bug.</p>
+
+<h3><a href="#why-no-literal-syntax-for-dictionaries" name="why-no-literal-syntax-for-dictionaries">
+Why is there no literal syntax for dictionaries?
+</a></h3>
+
+<p>Rust’s overall design preference is for limiting the size of the <em>language</em> while enabling powerful <em>libraries</em>. While Rust does provide initialization syntax for arrays and string literals, these are the only collection types built into the language. Other library-defined types, including the ubiquitous <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec</code></a> collection type, use macros for initialization like the <a href="https://doc.rust-lang.org/stable/std/macro.vec!.html"><code class="highlighter-rouge">vec!</code></a> macro.</p>
+
+<p>This design choice of using Rust’s macro facilities to initialize collections will likely be extended generically to other collections in the future, enabling simple initialization of not only <a href="https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html"><code class="highlighter-rouge">HashMap</code></a> and <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec</code></a>, but also other collection types such as <a href="https://doc.rust-lang.org/stable/std/collections/struct.BTreeMap.html"><code class="highlighter-rouge">BTreeMap</code></a>. In the meantime, if you want a more convenient syntax for initializing collections, you can <a href="https://stackoverflow.com/questions/27582739/how-do-i-create-a-hashmap-literal">create your own macro</a> to provide it.</p>
+
+<h3><a href="#when-should-i-use-an-implicit-return" name="when-should-i-use-an-implicit-return">
+When should I use an implicit return?
+</a></h3>
+
+<p>Rust is a very expression-oriented language, and “implicit returns” are part of that design. Constructs like <code class="highlighter-rouge">if</code>s, <code class="highlighter-rouge">match</code>es, and normal blocks are all expressions in Rust. For example, the following code checks if an <a href="https://doc.rust-lang.org/stable/std/primitive.i64.html"><code class="highlighter-rouge">i64</code></a> is odd, returning the result by simply yielding it as a value:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">is_odd</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">i64</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">bool</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span> <span class="k">true</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="k">false</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Although it can be simplified even further like so:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">is_odd</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">i64</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">bool</span> <span class="p">{</span>
+    <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>In each example, the last line of the function is the return value of that function. It is important to note that if a function ends in a semicolon, its return type will be <code class="highlighter-rouge">()</code>, indicating no returned value. Implicit returns must omit the semicolon to work.</p>
+
+<p>Explicit returns are only used if an implicit return is impossible because you are returning before the end of the function’s body. While each of the above functions could have been written with a <code class="highlighter-rouge">return</code> keyword and semicolon, doing so would be unnecessarily verbose, and inconsistent with the conventions of Rust code.</p>
+
+<h3><a href="#why-arent-function-signatures-inferred" name="why-arent-function-signatures-inferred">
+Why aren't function signatures inferred?
+</a></h3>
+
+<p>In Rust, declarations tend to come with explicit types, while actual code has its types inferred. There are several reasons for this design:</p>
+
+<ul>
+  <li>Mandatory declaration signatures help enforce interface stability at both the module and crate level.</li>
+  <li>Signatures improve code comprehension for the programmer, eliminating the need for an IDE running an inference algorithm across an entire crate to be able to guess at a function’s argument types; it’s always explicit and nearby.</li>
+  <li>Mechanically, it simplifies the inference algorithm, as inference only requires looking at one function at a time.</li>
+</ul>
+
+<h3><a href="#why-does-match-have-to-be-exhaustive" name="why-does-match-have-to-be-exhaustive">
+Why does <code>match</code> have to be exhaustive?
+</a></h3>
+
+<p>To aid in refactoring and clarity.</p>
+
+<p>First, if every possibility is covered by the <code class="highlighter-rouge">match</code>, adding variants to the <code class="highlighter-rouge">enum</code> in the future will cause a compilation failure, rather than an error at runtime. This type of compiler assistance makes fearless refactoring possible in Rust.</p>
+
+<p>Second, exhaustive checking makes the semantics of the default case explicit: in general, the only safe way to have a non-exhaustive <code class="highlighter-rouge">match</code> would be to panic the thread if nothing is matched. Early versions of Rust did not require <code class="highlighter-rouge">match</code> cases to be exhaustive and it was found to be a great source of bugs.</p>
+
+<p>It is easy to ignore all unspecified cases by using the <code class="highlighter-rouge">_</code> wildcard:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">match</span> <span class="n">val</span><span class="nf">.do_something</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">Cat</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+    <span class="n">_</span>      <span class="k">=&gt;</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="numerics">Numerics</h2>
+
+<h3><a href="#which-type-of-float-should-i-use" name="which-type-of-float-should-i-use">
+Which of <code>f32</code> and <code>f64</code> should I prefer for floating-point math?
+</a></h3>
+
+<p>The choice of which to use is dependent on the purpose of the program.</p>
+
+<p>If you are interested in the greatest degree of precision with your floating point numbers, then prefer <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html"><code class="highlighter-rouge">f64</code></a>. If you are more interested in keeping the size of the value small or being maximally efficient, and are not concerned about the associated inaccuracy of having fewer bits per value, then <a href="https://doc.rust-lang.org/stable/std/primitive.f32.html"><code class="highlighter-rouge">f32</code></a> is better. Operations on <a href="https://doc.rust-lang.org/stable/std/primitive.f32.html"><code class="highlighter-rouge">f32</code></a> are usually faster, even on 64-bit hardware. As a common example, graphics programming typically uses <a href="https://doc.rust-lang.org/stable/std/primitive.f32.html"><code class="highlighter-rouge">f32</code></a> because it requires high performance, and 32-bit floats are sufficient for representing pixels on the screen.</p>
+
+<p>If in doubt, choose <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html"><code class="highlighter-rouge">f64</code></a> for the greater precision.</p>
+
+<h3><a href="#why-cant-i-compare-floats" name="why-cant-i-compare-floats">
+Why can't I compare floats or use them as <code>HashMap</code> or <code>BTreeMap</code> keys?
+</a></h3>
+
+<p>Floats can be compared with the <code class="highlighter-rouge">==</code>, <code class="highlighter-rouge">!=</code>, <code class="highlighter-rouge">&lt;</code>, <code class="highlighter-rouge">&lt;=</code>, <code class="highlighter-rouge">&gt;</code>, and <code class="highlighter-rouge">&gt;=</code> operators, and with the <code class="highlighter-rouge">partial_cmp()</code> function. <code class="highlighter-rouge">==</code> and <code class="highlighter-rouge">!=</code> are part of the <a href="https://doc.rust-lang.org/stable/std/cmp/trait.PartialEq.html"><code class="highlighter-rouge">PartialEq</code></a> trait, while <code class="highlighter-rouge">&lt;</code>, <code class="highlighter-rouge">&lt;=</code>, <code class="highlighter-rouge">&gt;</code>, <code class="highlighter-rouge">&gt;=</code>, and <code class="highlighter-rouge">partial_cmp()</code> are part of the <a href="https://doc.rust-lang.org/stable/std/cmp/trait.PartialOrd.html"><code class="highlighter-rouge">PartialOrd</code></a> trait.</p>
+
+<p>Floats cannot be compared with the <code class="highlighter-rouge">cmp()</code> function, which is part of the <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html"><code class="highlighter-rouge">Ord</code></a> trait, as there is no total ordering for floats. Furthermore, there is no total equality relation for floats, and so they also do not implement the <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html"><code class="highlighter-rouge">Eq</code></a> trait.</p>
+
+<p>There is no total ordering or equality on floats because the floating-point value <a href="https://en.wikipedia.org/wiki/NaN"><code class="highlighter-rouge">NaN</code></a> is not less than, greater than, or equal to any other floating-point value or itself.</p>
+
+<p>Because floats do not implement <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html"><code class="highlighter-rouge">Eq</code></a> or <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html"><code class="highlighter-rouge">Ord</code></a>, they may not be used in types whose trait bounds require those traits, such as <a href="https://doc.rust-lang.org/stable/std/collections/struct.BTreeMap.html"><code class="highlighter-rouge">BTreeMap</code></a> or <a href="https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html"><code class="highlighter-rouge">HashMap</code></a>. This is important because these types <em>assume</em> their keys provide a total ordering or total equality relation, and will malfunction otherwise.</p>
+
+<p>There <a href="https://crates.io/crates/ordered-float">is a crate</a> that wraps <a href="https://doc.rust-lang.org/stable/std/primitive.f32.html"><code class="highlighter-rouge">f32</code></a> and <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html"><code class="highlighter-rouge">f64</code></a> to provide <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html"><code class="highlighter-rouge">Ord</code></a> and <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html"><code class="highlighter-rouge">Eq</code></a> implementations, which may be useful in certain cases.</p>
+
+<h3><a href="#how-can-i-convert-between-numeric-types" name="how-can-i-convert-between-numeric-types">
+How can I convert between numeric types?
+</a></h3>
+
+<p>There are two ways: the <code class="highlighter-rouge">as</code> keyword, which does simple casting for primitive types, and the <a href="https://doc.rust-lang.org/stable/std/convert/trait.Into.html"><code class="highlighter-rouge">Into</code></a> and <a href="https://doc.rust-lang.org/stable/std/convert/trait.From.html"><code class="highlighter-rouge">From</code></a> traits, which are implemented for a number of type conversions (and which you can implement for your own types). The <a href="https://doc.rust-lang.org/stable/std/convert/trait.Into.html"><code class="highlighter-rouge">Into</code></a> and <a href="https://doc.rust-lang.org/stable/std/convert/trait.From.html"><code class="highlighter-rouge">From</code></a> traits are only implemented in cases where conversions are lossless, so for example, <code class="highlighter-rouge">f64::from(0f32)</code> will compile while <code class="highlighter-rouge">f32::from(0f64)</code> will not. On the other hand, <code class="highlighter-rouge">as</code> will convert between any two primitive types, truncating values as necessary.</p>
+
+<h3><a href="#why-doesnt-rust-have-increment-and-decrement-operators" name="why-doesnt-rust-have-increment-and-decrement-operators">
+Why doesn't Rust have increment and decrement operators?
+</a></h3>
+
+<p>Preincrement and postincrement (and the decrement equivalents), while convenient, are also fairly complex. They require knowledge of evaluation order, and often lead to subtle bugs and undefined behavior in C and C++. <code class="highlighter-rouge">x = x + 1</code> or <code class="highlighter-rouge">x += 1</code> is only slightly longer, but unambiguous.</p>
+
+<h2 id="strings">Strings</h2>
+
+<h3><a href="#how-to-convert-string-or-vec-to-slice" name="how-to-convert-string-or-vec-to-slice">
+How can I convert a <code>String</code> or <code>Vec&lt;T&gt;</code> to a slice (<code>&amp;str</code> and <code>&amp;[T]</code>)?
+</a></h3>
+
+<p>Usually, you can pass a reference to a <code class="highlighter-rouge">String</code> or <code class="highlighter-rouge">Vec&lt;T&gt;</code> wherever a slice is expected.
+Using <a href="https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html">Deref coercions</a>, <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code>s</a> and <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec</code>s</a> will automatically coerce to their respective slices when passed by reference with <code class="highlighter-rouge">&amp;</code> or <code class="highlighter-rouge">&amp; mut</code>.</p>
+
+<p>Methods implemented on <code class="highlighter-rouge">&amp;str</code> and <code class="highlighter-rouge">&amp;[T]</code> can be accessed directly on <code class="highlighter-rouge">String</code> and <code class="highlighter-rouge">Vec&lt;T&gt;</code>. For example, <code class="highlighter-rouge">some_string.trim()</code> will work even though <code class="highlighter-rouge">trim</code> is a method on <code class="highlighter-rouge">&amp;str</code> and <code class="highlighter-rouge">some_string</code> is a <code class="highlighter-rouge">String</code>.</p>
+
+<p>In some cases, such as generic code, it’s necessary to convert manually. Manual conversions can be achieved using the slicing operator, like so: <code class="highlighter-rouge">&amp;my_vec[..]</code>.</p>
+
+<h3><a href="#how-to-convert-between-str-and-string" name="how-to-convert-between-str-and-string">
+How can I convert from <code>&amp;str</code> to <code>String</code> or the other way around?
+</a></h3>
+
+<p>The <a href="https://doc.rust-lang.org/stable/std/string/trait.ToString.html#tymethod.to_string"><code class="highlighter-rouge">to_string()</code></a> method converts from a <a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">&amp;str</code></a> into a <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a>, and <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code>s</a> are automatically converted into <a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">&amp;str</code></a> when you borrow a reference to them. Both are demonstrated in the following example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">s</span> <span class="o">=</span> <span class="s">"Jane Doe"</span><span class="nf">.to_string</span><span class="p">();</span>
+    <span class="nf">say_hello</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello {}!"</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3><a href="#what-are-the-differences-between-str-and-string" name="what-are-the-differences-between-str-and-string">
+What are the differences between the two different string types?
+</a></h3>
+
+<p><a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a> is an owned buffer of UTF-8 bytes allocated on the heap. Mutable <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code>s</a> can be modified, growing their capacity as needed. <a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">&amp;str</code></a> is a fixed-capacity “view” into a <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a> allocated elsewhere, commonly on the heap, in the case of slices dereferenced from <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code>s</a>, or in static memory, in the case of string literals.</p>
+
+<p><a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">&amp;str</code></a> is a primitive type implemented by the Rust language, while <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a> is implemented in the standard library.</p>
+
+<h3><a href="#how-do-i-do-o1-character-access-in-a-string" name="how-do-i-do-o1-character-access-in-a-string">
+How do I do O(1) character access in a <code>String</code>?
+</a></h3>
+
+<p>You cannot. At least not without a firm understanding of what you mean by “character”, and preprocessing the string to find the index of the desired character.</p>
+
+<p>Rust strings are UTF-8 encoded. A single visual character in UTF-8 is not necessarily a single byte as it would be in an ASCII-encoded string. Each byte is called a “code unit” (in UTF-16, code units are 2 bytes; in UTF-32 they are 4 bytes). “Code points” are composed of one or more code units, and combine in “grapheme clusters” which most closely approximate characters.</p>
+
+<p>Thus, even though you may index on bytes in a UTF-8 string, you can’t access the <code class="highlighter-rouge">i</code>th code point or grapheme cluster in constant time. However, if you know at which byte that desired code point or grapheme cluster begins, then you <em>can</em> access it in constant time. Functions including <a href="https://doc.rust-lang.org/stable/std/primitive.str.html#method.find"><code class="highlighter-rouge">str::find()</code></a> and regex matches return byte indices, facilitating this sort of access.</p>
+
+<h3><a href="#why-are-strings-utf-8" name="why-are-strings-utf-8">
+Why are strings UTF-8 by default?
+</a></h3>
+
+<p>The <a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">str</code></a> type is UTF-8 because we observe more text in the wild in this encoding – particularly in network transmissions, which are endian-agnostic – and we think it’s best that the default treatment of I/O not involve having to recode codepoints in each direction.</p>
+
+<p>This does mean that locating a particular Unicode codepoint inside a string is an O(n) operation, although if the starting byte index is already known then they can be accessed in O(1) as expected. On the one hand, this is clearly undesirable; on the other hand, this problem is full of trade-offs and we’d like to point out a few important qualifications:</p>
+
+<p>Scanning a <a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">str</code></a> for ASCII-range codepoints can still be done safely byte-at-a-time. If you use <a href="https://doc.rust-lang.org/stable/std/primitive.str.html#method.as_bytes"><code class="highlighter-rouge">.as_bytes()</code></a>, pulling out a <a href="https://doc.rust-lang.org/stable/std/primitive.u8.html"><code class="highlighter-rouge">u8</code></a> costs only <code class="highlighter-rouge">O(1)</code> and produces a value that can be cast and compared to an ASCII-range <a href="https://doc.rust-lang.org/stable/std/primitive.char.html"><code class="highlighter-rouge">char</code></a>. So if you’re (say) line-breaking on <code class="highlighter-rouge">'\n'</code>, byte-based treatment still works. UTF-8 was well-designed this way.</p>
+
+<p>Most “character oriented” operations on text only work under very restricted language assumptions such as “ASCII-range codepoints only”. Outside ASCII-range, you tend to have to use a complex (non-constant-time) algorithm for determining linguistic-unit (glyph, word, paragraph) boundaries anyway. We recommend using an “honest” linguistically-aware, Unicode-approved algorithm.</p>
+
+<p>The <a href="https://doc.rust-lang.org/stable/std/primitive.char.html"><code class="highlighter-rouge">char</code></a> type is UTF-32. If you are sure you need to do a codepoint-at-a-time algorithm, it’s trivial to write a <code class="highlighter-rouge">type wstr = [char]</code>, and unpack a <a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">str</code></a> into it in a single pass, then work with the <code class="highlighter-rouge">wstr</code>. In other words: the fact that the language is not “decoding to UTF32 by default” shouldn’t stop you from decoding (or re-encoding any other way) if you need to work with that encoding.</p>
+
+<p>For a more in-depth explanation of why UTF-8 is usually preferable over UTF-16 or UTF-32, read the <a href="http://utf8everywhere.org/">UTF-8 Everywhere manifesto</a>.</p>
+
+<h3><a href="#what-string-type-should-i-use" name="what-string-type-should-i-use">
+What string type should I use?
+</a></h3>
+
+<p>Rust has four pairs of string types, <a href="http://www.suspectsemantics.com/blog/2016/03/27/string-types-in-rust/">each serving a distinct purpose</a>. In each pair, there is an “owned” string type, and a “slice” string type. The organization looks like this:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left">“Slice” type</th>
+      <th style="text-align: left">“Owned” type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">UTF-8</td>
+      <td style="text-align: left"><code class="highlighter-rouge">str</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">String</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">OS-compatible</td>
+      <td style="text-align: left"><code class="highlighter-rouge">OsStr</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">OsString</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">C-compatible</td>
+      <td style="text-align: left"><code class="highlighter-rouge">CStr</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">CString</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">System path</td>
+      <td style="text-align: left"><code class="highlighter-rouge">Path</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">PathBuf</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Rust’s different string types serve different purposes. <code class="highlighter-rouge">String</code> and <code class="highlighter-rouge">str</code> are UTF-8 encoded general-purpose strings. <code class="highlighter-rouge">OsString</code> and <code class="highlighter-rouge">OsStr</code> are encoded according to the current platform, and are used when interacting with the operating system. <code class="highlighter-rouge">CString</code> and <code class="highlighter-rouge">CStr</code> are the Rust equivalent of strings in C, and are used in FFI code, and <code class="highlighter-rouge">PathBuf</code> and <code class="highlighter-rouge">Path</code> are convenience wrappers around <code class="highlighter-rouge">OsString</code> and <code class="highlighter-rouge">OsStr</code>, providing methods specific to path manipulation.</p>
+
+<h3><a href="#why-are-there-multiple-types-of-strings" name="why-are-there-multiple-types-of-strings">
+How can I write a function that accepts both <code>&amp;str</code> and <code>String</code>?
+</a></h3>
+
+<p>There are several options, depending on the needs of the function:</p>
+
+<ul>
+  <li>If the function needs an owned string, but wants to accept any type of string, use an <code class="highlighter-rouge">Into&lt;String&gt;</code> bound.</li>
+  <li>If the function needs a string slice, but wants to accept any type of string, use an <code class="highlighter-rouge">AsRef&lt;str&gt;</code> bound.</li>
+  <li>If the function does not care about the string type, and wants to handle the two possibilities uniformly, use <code class="highlighter-rouge">Cow&lt;str&gt;</code> as the input type.</li>
+</ul>
+
+<p><strong>Using <code class="highlighter-rouge">Into&lt;String&gt;</code></strong></p>
+
+<p>In this example, the function will accept both owned strings and string slices, either doing nothing or converting the input into an owned string within the function body. Note that the conversion needs to be done explicitly, and will not happen otherwise.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="n">accepts_both</span><span class="o">&lt;</span><span class="n">S</span><span class="p">:</span> <span class="n">Into</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="n">S</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="nf">.into</span><span class="p">();</span>   <span class="c">// This will convert s into a `String`.</span>
+    <span class="c">// ... the rest of the function</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>Using <code class="highlighter-rouge">AsRef&lt;str&gt;</code></strong></p>
+
+<p>In this example, the function will accept both owned strings and string slices, either doing nothing or converting the input into a string slice. This can be done automatically by taking the input by reference, like so:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="n">accepts_both</span><span class="o">&lt;</span><span class="n">S</span><span class="p">:</span> <span class="n">AsRef</span><span class="o">&lt;</span><span class="nb">str</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">S</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c">// ... the body of the function</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>Using <code class="highlighter-rouge">Cow&lt;str&gt;</code></strong></p>
+
+<p>In this example, the function takes in a <code class="highlighter-rouge">Cow&lt;str&gt;</code>, which is not a generic type but a container, containing either an owned string or string slice as needed.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">accepts_cow</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="n">Cow</span><span class="o">&lt;</span><span class="nb">str</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c">// ... the body of the function</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="collections">Collections</h2>
+
+<h3><a href="#can-i-implement-linked-lists-in-rust" name="can-i-implement-linked-lists-in-rust">
+Can I implement data structures like vectors and linked lists efficiently in Rust?
+</a></h3>
+
+<p>If your reason for implementing these data structures is to use them for other programs, there’s no need, as efficient implementations of these data structures are provided by the standard library.</p>
+
+<p>If, however, <a href="http://cglab.ca/~abeinges/blah/too-many-lists/book/">your reason is simply to learn</a>, then you will likely need to dip into unsafe code. While these data structures <em>can</em> be implemented entirely in safe Rust, the performance is likely to be worse than it would be with the use of unsafe code. The simple reason for this is that data structures like vectors and linked lists rely on pointer and memory operations that are disallowed in safe Rust.</p>
+
+<p>For example, a doubly-linked list requires that there be two mutable references to each node, but this violates Rust’s mutable reference aliasing rules. You can solve this using <a href="https://doc.rust-lang.org/stable/std/rc/struct.Weak.html"><code class="highlighter-rouge">Weak&lt;T&gt;</code></a>, but the performance will be poorer than you likely want. With unsafe code you can bypass the mutable reference aliasing rule restriction, but must manually verify that your code introduces no memory safety violations.</p>
+
+<h3><a href="#how-can-i-iterate-over-a-collection-without-consuming-it" name="how-can-i-iterate-over-a-collection-without-consuming-it">
+How can I iterate over a collection without moving/consuming it?
+</a></h3>
+
+<p>The easiest way is by using the collection’s <a href="https://doc.rust-lang.org/stable/std/iter/trait.IntoIterator.html"><code class="highlighter-rouge">IntoIterator</code></a> implementation. Here is an example for <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">&amp;Vec</code></a>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="n">v</span> <span class="o">=</span> <span class="nd">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">];</span>
+<span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="o">&amp;</span><span class="n">v</span> <span class="p">{</span>
+    <span class="nd">print!</span><span class="p">(</span><span class="s">"{} "</span><span class="p">,</span> <span class="n">item</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Length: {}"</span><span class="p">,</span> <span class="n">v</span><span class="nf">.len</span><span class="p">());</span>
+</code></pre>
+</div>
+
+<p>Rust <code class="highlighter-rouge">for</code> loops call <code class="highlighter-rouge">into_iter()</code> (defined on the <a href="https://doc.rust-lang.org/stable/std/iter/trait.IntoIterator.html"><code class="highlighter-rouge">IntoIterator</code></a> trait) for whatever they’re iterating over. Anything implementing the <a href="https://doc.rust-lang.org/stable/std/iter/trait.IntoIterator.html"><code class="highlighter-rouge">IntoIterator</code></a> trait may be looped over with a <code class="highlighter-rouge">for</code> loop. <a href="https://doc.rust-lang.org/stable/std/iter/trait.IntoIterator.html"><code class="highlighter-rouge">IntoIterator</code></a> is implemented for <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">&amp;Vec</code></a> and <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">&amp;mut Vec</code></a>, causing the iterator from <code class="highlighter-rouge">into_iter()</code> to borrow the contents of the collection, rather than moving/consuming them. The same is true for other standard collections as well.</p>
+
+<p>If a moving/consuming iterator is desired, write the <code class="highlighter-rouge">for</code> loop without <code class="highlighter-rouge">&amp;</code> or <code class="highlighter-rouge">&amp;mut</code> in the iteration.</p>
+
+<p>If you need direct access to a borrowing iterator, you can usually get it by calling the <code class="highlighter-rouge">iter()</code> method.</p>
+
+<h3><a href="#why-do-i-need-to-type-the-array-size-in-the-array-declaration" name="why-do-i-need-to-type-the-array-size-in-the-array-declaration">
+Why do I need to type the array size in the array declaration?
+</a></h3>
+
+<p>You don’t necessarily have to. If you’re declaring an array directly, the size is inferred based on the number of elements. But if you’re declaring a function that takes a fixed-size array, the compiler has to know how big that array will be.</p>
+
+<p>One thing to note is that currently Rust doesn’t offer generics over arrays of different size. If you’d like to accept a contiguous container of a variable number of values, use a <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec</code></a> or slice (depending on whether you need ownership).</p>
+
+<h2 id="ownership">Ownership</h2>
+
+<h3><a href="#how-can-i-implement-a-data-structure-that-contains-cycles" name="how-can-i-implement-a-data-structure-that-contains-cycles">
+How can I implement a graph or other data structure that contains cycles?
+</a></h3>
+
+<p>There are at least four options (discussed at length in <a href="http://cglab.ca/~abeinges/blah/too-many-lists/book/">Too Many Linked Lists</a>):</p>
+
+<ul>
+  <li>You can implement it using <a href="https://doc.rust-lang.org/stable/std/rc/struct.Rc.html"><code class="highlighter-rouge">Rc</code></a> and <a href="https://doc.rust-lang.org/stable/std/rc/struct.Weak.html"><code class="highlighter-rouge">Weak</code></a> to allow shared ownership of nodes,
+although this approach pays the cost of memory management.</li>
+  <li>You can implement it using <code class="highlighter-rouge">unsafe</code> code using raw pointers. This will be
+more efficient, but bypasses Rust’s safety guarantees.</li>
+  <li>Using vectors and indices into those vectors. There are <a href="http://smallcultfollowing.com/babysteps/blog/2015/04/06/modeling-graphs-in-rust-using-vector-indices/">several</a> <a href="https://featherweightmusings.blogspot.com/2015/04/graphs-in-rust.html">available</a> examples and explanations of this approach.</li>
+  <li>Using borrowed references with <a href="https://doc.rust-lang.org/stable/std/cell/struct.UnsafeCell.html"><code class="highlighter-rouge">UnsafeCell</code></a>. There are <a href="https://github.com/nrc/r4cppp/blob/master/graphs/README.md#node-and-unsafecell">explanations and code</a> available for this approach.</li>
+</ul>
+
+<h3><a href="#how-can-i-define-a-struct-that-contains-a-reference-to-one-of-its-own-fields" name="how-can-i-define-a-struct-that-contains-a-reference-to-one-of-its-own-fields">
+How can I define a struct that contains a reference to one of its own fields?
+</a></h3>
+
+<p>It’s possible, but useless to do so. The struct becomes permanently borrowed by itself and therefore can’t be moved. Here is some code illustrating this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">cell</span><span class="p">::</span><span class="n">Cell</span><span class="p">;</span>
+
+<span class="cp">#[derive(Debug)]</span>
+<span class="k">struct</span> <span class="n">Unmovable</span><span class="o">&lt;</span><span class="err">'</span><span class="n">a</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">:</span> <span class="n">Cell</span><span class="o">&lt;</span><span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="err">'</span><span class="n">a</span> <span class="nb">u32</span><span class="o">&gt;&gt;</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Unmovable</span> <span class="p">{</span> <span class="n">x</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nn">Cell</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nb">None</span><span class="p">)</span> <span class="p">};</span>
+    <span class="n">test</span><span class="py">.y</span><span class="nf">.set</span><span class="p">(</span><span class="nf">Some</span><span class="p">(</span><span class="o">&amp;</span><span class="n">test</span><span class="py">.x</span><span class="p">));</span>
+
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span> <span class="n">test</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3><a href="#what-is-the-difference-between-consuming-and-moving" name="what-is-the-difference-between-consuming-and-moving">
+What is the difference between passing by value, consuming, moving, and transferring ownership?
+</a></h3>
+
+<p>These are different terms for the same thing. In all cases, it means the value has been moved to another owner, and moved out of the possession of the original owner, who can no longer use it. If a type implements the <code class="highlighter-rouge">Copy</code> trait, the original owner’s value won’t be invalidated, and can still be used.</p>
+
+<h3><a href="#why-can-values-of-some-types-by-reused-while-others-are-consumed" name="why-can-values-of-some-types-by-reused-while-others-are-consumed">
+Why can values of some types be used after passing them to a function, while reuse of values of other types results in an error?
+</a></h3>
+
+<p>If a type implements the <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">Copy</code></a> trait, then it will be copied when passed to a function. All numeric types in Rust implement <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">Copy</code></a>, but struct types do not implement <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">Copy</code></a> by default, so they are moved instead. This means that the struct can no longer be used elsewhere, unless it is moved back out of the function via the return.</p>
+
+<h3><a href="#how-do-you-deal-with-a-use-of-moved-value-error" name="how-do-you-deal-with-a-use-of-moved-value-error">
+How do you deal with a "use of moved value" error?
+</a></h3>
+
+<p>This error means that the value you’re trying to use has been moved to a new owner. The first thing to check is whether the move in question was necessary: if it moved into a function, it may be possible to rewrite the function to use a reference, rather than moving. Otherwise if the type being moved implements <a href="https://doc.rust-lang.org/stable/std/clone/trait.Clone.html#tymethod.clone"><code class="highlighter-rouge">Clone</code></a>, then calling <code class="highlighter-rouge">clone()</code> on it before moving will move a copy of it, leaving the original still available for further use. Note though that cloning a value should typically be the last resort since cloning can be expensive, causing further allocations.</p>
+
+<p>If the moved value is of your own custom type, consider implementing <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">Copy</code></a> (for implicit copying, rather than moving) or <a href="https://doc.rust-lang.org/stable/std/clone/trait.Clone.html#tymethod.clone"><code class="highlighter-rouge">Clone</code></a> (explicit copying). <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">Copy</code></a> is most commonly implemented with <code class="highlighter-rouge">#[derive(Copy, Clone)]</code> (<a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">Copy</code></a> requires <a href="https://doc.rust-lang.org/stable/std/clone/trait.Clone.html#tymethod.clone"><code class="highlighter-rouge">Clone</code></a>), and <a href="https://doc.rust-lang.org/stable/std/clone/trait.Clone.html#tymethod.clone"><code class="highlighter-rouge">Clone</code></a> with <code class="highlighter-rouge">#[derive(Clone)]</code>.</p>
+
+<p>If none of these are possible, you may want to modify the function that acquired ownership to return ownership of the value when the function exits.</p>
+
+<h3><a href="#what-are-the-rules-for-different-self-types-in-methods" name="what-are-the-rules-for-different-self-types-in-methods">
+What are the rules for using <code>self</code>, <code>&amp;self</code>, or <code>&amp;mut self</code> in a method declaration?
+</a></h3>
+
+<ul>
+  <li>Use <code class="highlighter-rouge">self</code> when a function needs to consume the value</li>
+  <li>Use <code class="highlighter-rouge">&amp;self</code> when a function only needs a read-only reference to the value</li>
+  <li>Use <code class="highlighter-rouge">&amp;mut self</code> when a function needs to mutate the value without consuming it</li>
+</ul>
+
+<h3><a href="#how-can-i-understand-the-borrow-checker" name="how-can-i-understand-the-borrow-checker">
+How can I understand the borrow checker?
+</a></h3>
+
+<p>The borrow checker applies only a few rules, which can be found in the Rust book’s <a href="https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html">section on borrowing</a>, when evaluating Rust code. These rules are:</p>
+
+<blockquote>
+  <p>First, any borrow must last for a scope no greater than that of the owner. Second, you may have one or the other of these two kinds of borrows, but not both at the same time:</p>
+
+  <ul>
+    <li>one or more references (&amp;T) to a resource.</li>
+    <li>exactly one mutable reference (&amp;mut T)</li>
+  </ul>
+</blockquote>
+
+<p>While the rules themselves are simple, following them consistently is not, particularly for those unaccustomed to reasoning about lifetimes and ownership.</p>
+
+<p>The first step in understanding the borrow checker is reading the errors it produces. A lot of work has been put into making sure the borrow checker provides quality assistance in resolving the issues it identifies. When you encounter a borrow checker problem, the first step is to slowly and carefully read the error reported, and to only approach the code after you understand the error being described.</p>
+
+<p>The second step is to become familiar with the ownership and mutability-related container types provided by the Rust standard library, including <a href="https://doc.rust-lang.org/stable/std/cell/struct.Cell.html"><code class="highlighter-rouge">Cell</code></a>, <a href="https://doc.rust-lang.org/stable/std/cell/struct.RefCell.html"><code class="highlighter-rouge">RefCell</code></a>, and <a href="https://doc.rust-lang.org/stable/std/borrow/enum.Cow.html"><code class="highlighter-rouge">Cow</code></a>. These are useful and necessary tools for expressing certain ownership and mutability situations, and have been written to be of minimal performance cost.</p>
+
+<p>The single most important part of understanding the borrow checker is practice. Rust’s strong static analyses guarantees are strict and quite different from what many programmers have worked with before. It will take some time to become completely comfortable with everything.</p>
+
+<p>If you find yourself struggling with the borrow checker, or running out of patience, always feel free to reach out to the <a href="community.html">Rust community</a> for help.</p>
+
+<h3><a href="#when-is-rc-useful" name="when-is-rc-useful">
+When is <code>Rc</code> useful?
+</a></h3>
+
+<p>This is covered in the official documentation for <a href="https://doc.rust-lang.org/stable/std/rc/struct.Rc.html"><code class="highlighter-rouge">Rc</code></a>, Rust’s non-atomically reference-counted pointer type. In short, <a href="https://doc.rust-lang.org/stable/std/rc/struct.Rc.html"><code class="highlighter-rouge">Rc</code></a> and its thread-safe cousin <a href="https://doc.rust-lang.org/stable/std/sync/struct.Arc.html"><code class="highlighter-rouge">Arc</code></a> are useful to express shared ownership, and have the system automatically deallocate the associated memory when no one has access to it.</p>
+
+<h3><a href="#how-do-i-return-a-closure-from-a-function" name="how-do-i-return-a-closure-from-a-function">
+How do I return a closure from a function?
+</a></h3>
+
+<p>To return a closure from a function, it must be a “move closure”, meaning that the closure is declared with the <code class="highlighter-rouge">move</code> keyword. As <a href="https://doc.rust-lang.org/book/closures.html#move-closures">explained in the Rust book</a>, this gives the closure its own copy of the captured variables, independent of its parent stack frame. Otherwise, returning a closure would be unsafe, as it would allow access to variables that are no longer valid; put another way: it would allow reading potentially invalid memory. The closure must also be wrapped in a <a href="https://doc.rust-lang.org/stable/std/boxed/struct.Box.html"><code class="highlighter-rouge">Box</code></a>, so that it is allocated on the heap. Read more about this <a href="https://doc.rust-lang.org/book/closures.html#returning-closures">in the book</a>.</p>
+
+<h3><a href="#what-are-deref-coercions" name="what-are-deref-coercions">
+What is a deref coercion and how does it work?
+</a></h3>
+
+<p>A <a href="https://doc.rust-lang.org/book/deref-coercions.html">deref coercion</a> is a handy coercion
+that automatically converts references to pointers (e.g., <code class="highlighter-rouge">&amp;Rc&lt;T&gt;</code> or <code class="highlighter-rouge">&amp;Box&lt;T&gt;</code>) into references
+to their contents (e.g., <code class="highlighter-rouge">&amp;T</code>). Deref coercions exist to make using Rust more ergonomic, and are implemented via the <a href="https://doc.rust-lang.org/stable/std/ops/trait.Deref.html"><code class="highlighter-rouge">Deref</code></a> trait.</p>
+
+<p>A Deref implementation indicates that the implementing type may be converted into a target by a call to the <code class="highlighter-rouge">deref</code> method, which takes an immutable reference to the calling type and returns a reference (of the same lifetime) to the target type. The <code class="highlighter-rouge">*</code> prefix operator is shorthand for the <code class="highlighter-rouge">deref</code> method.</p>
+
+<p>They’re called “coercions” because of the following rule, quoted here <a href="https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html">from the Rust book</a>:</p>
+
+<blockquote>
+  <p>If you have a type <code class="highlighter-rouge">U</code>, and it implements <code class="highlighter-rouge">Deref&lt;Target=T&gt;</code>, values of <code class="highlighter-rouge">&amp;U</code> will automatically coerce to a <code class="highlighter-rouge">&amp;T</code>.</p>
+</blockquote>
+
+<p>For example, if you have a <code class="highlighter-rouge">&amp;Rc&lt;String&gt;</code>, it will coerce via this rule into a <code class="highlighter-rouge">&amp;String</code>, which then coerces to a <code class="highlighter-rouge">&amp;str</code> in the same way. So if a function takes a <code class="highlighter-rouge">&amp;str</code> parameter, you can pass in a <code class="highlighter-rouge">&amp;Rc&lt;String&gt;</code> directly, with all coercions handled automatically via the <code class="highlighter-rouge">Deref</code> trait.</p>
+
+<p>The most common sorts of deref coercions are:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&amp;Rc&lt;T&gt;</code> to <code class="highlighter-rouge">&amp;T</code></li>
+  <li><code class="highlighter-rouge">&amp;Box&lt;T&gt;</code> to <code class="highlighter-rouge">&amp;T</code></li>
+  <li><code class="highlighter-rouge">&amp;Arc&lt;T&gt;</code> to <code class="highlighter-rouge">&amp;T</code></li>
+  <li><code class="highlighter-rouge">&amp;Vec&lt;T&gt;</code> to <code class="highlighter-rouge">&amp;[T]</code></li>
+  <li><code class="highlighter-rouge">&amp;String</code> to <code class="highlighter-rouge">&amp;str</code></li>
+</ul>
+
+<h2 id="lifetimes">Lifetimes</h2>
+
+<h3><a href="#why-lifetimes" name="why-lifetimes">
+Why lifetimes?
+</a></h3>
+
+<p>Lifetimes are Rust’s answer to the question of memory safety. They allow Rust to ensure memory safety without the performance costs of garbage collection. They are based on a variety of academic work, which can be found in the <a href="https://doc.rust-lang.org/stable/book/first-edition/bibliography.html#type-system">Rust book</a>.</p>
+
+<h3><a href="#why-is-the-lifetime-syntax-the-way-it-is" name="why-is-the-lifetime-syntax-the-way-it-is">
+Why is the lifetime syntax the way it is?
+</a></h3>
+
+<p>The <code class="highlighter-rouge">'a</code> syntax comes from the ML family of programming languages, where <code class="highlighter-rouge">'a</code> is used to indicate a generic type parameter. For Rust, the syntax had to be something that was unambiguous, noticeable, and fit nicely in a type declaration right alongside traits and references. Alternative syntaxes have been discussed, but no alternative syntax has been demonstrated to be clearly better.</p>
+
+<h3><a href="#how-do-i-return-a-borrow-to-something-i-created-from-a-function" name="how-do-i-return-a-borrow-to-something-i-created-from-a-function">
+How do I return a borrow to something I created from a function?
+</a></h3>
+
+<p>You need to ensure that the borrowed item will outlive the function. This can be done by binding the output lifetime to some input lifetime like so:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">type</span> <span class="n">Pool</span> <span class="o">=</span> <span class="n">TypedArena</span><span class="o">&lt;</span><span class="n">Thing</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="c">// (the lifetime below is only written explicitly for</span>
+<span class="c">// expository purposes; it can be omitted via the</span>
+<span class="c">// elision rules described in a later FAQ entry)</span>
+<span class="k">fn</span> <span class="n">create_borrowed</span><span class="o">&lt;</span><span class="err">'</span><span class="n">a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pool</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">'</span><span class="n">a</span> <span class="n">Pool</span><span class="p">,</span>
+                       <span class="n">x</span><span class="p">:</span> <span class="nb">i32</span><span class="p">,</span>
+                       <span class="n">y</span><span class="p">:</span> <span class="nb">i32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="o">&amp;</span><span class="err">'</span><span class="n">a</span> <span class="n">Thing</span> <span class="p">{</span>
+    <span class="n">pool</span><span class="nf">.alloc</span><span class="p">(</span><span class="n">Thing</span> <span class="p">{</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="p">})</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>An alternative is to eliminate the references entirely by returning an owning type like <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">happy_birthday</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">i64</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="nd">format!</span><span class="p">(</span><span class="s">"Hello {}! You're {} years old!"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>This approach is simpler, but often results in unnecessary allocations.</p>
+
+<h3><a href="#when-are-lifetimes-required-to-be-explicit" name="when-are-lifetimes-required-to-be-explicit">
+Why do some references have lifetimes, like <code>&amp;'a T</code>, and some do not, like <code>&amp;T</code>?
+</a></h3>
+
+<p>In fact, <em>all</em> reference types have a lifetime, but most of the time you do not have to write
+it explicitly. The rules are as follows:</p>
+
+<ol>
+  <li>Within a function body, you never have to write a lifetime explicitly; the correct value
+should always be inferred.</li>
+  <li>Within a function <em>signature</em> (for example, in the types of its
+arguments, or its return type), you <em>may</em> have to write a lifetime
+explicitly. Lifetimes there use a simple defaulting scheme called
+<a href="https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision">“lifetime elision”</a>,
+which consists of the following three rules:
+    <ul>
+      <li>Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.</li>
+      <li>If there is exactly one input lifetime, elided or not, that
+ lifetime is assigned to all elided lifetimes in the return values
+ of that function.</li>
+      <li>If there are multiple input lifetimes, but one of them is &amp;self
+ or &amp;mut self, the lifetime of self is assigned to all elided
+ output lifetimes.</li>
+    </ul>
+  </li>
+  <li>Finally, in a <code class="highlighter-rouge">struct</code> or <code class="highlighter-rouge">enum</code> definition, all lifetimes must be explicitly declared.</li>
+</ol>
+
+<p>If these rules result in compilation errors, the Rust compiler will provide an error message indicating the error caused, and suggesting a potential solution based on which step of the inference process caused the error.</p>
+
+<h3><a href="#how-can-rust-guarantee-no-null-pointers" name="how-can-rust-guarantee-no-null-pointers">
+How can Rust guarantee "no null pointers" and "no dangling pointers"?
+</a></h3>
+
+<p>The only way to construct a value of type <code class="highlighter-rouge">&amp;Foo</code> or <code class="highlighter-rouge">&amp;mut Foo</code> is to specify an existing value of type <code class="highlighter-rouge">Foo</code> that the reference points to. The reference “borrows” the original value for a given region of code (the lifetime of the reference), and the value being borrowed from cannot be moved or destroyed for the duration of the borrow.</p>
+
+<h3><a href="#how-do-i-express-the-absense-of-a-value-without-null" name="how-do-i-express-the-absense-of-a-value-without-null">
+How do I express the absence of a value without <code>null</code>?
+</a></h3>
+
+<p>You can do that with the <a href="https://doc.rust-lang.org/stable/std/option/enum.Option.html"><code class="highlighter-rouge">Option</code></a> type, which can either be <code class="highlighter-rouge">Some(T)</code> or <code class="highlighter-rouge">None</code>. <code class="highlighter-rouge">Some(T)</code> indicates that a value of type <code class="highlighter-rouge">T</code> is contained within, while <code class="highlighter-rouge">None</code> indicates the absence of a value.</p>
+
+<h2 id="generics">Generics</h2>
+
+<h3><a href="#what-is-monomorphisation" name="what-is-monomorphisation">
+What is "monomorphisation"?
+</a></h3>
+
+<p>Monomorphisation specializes each use of a generic function (or structure) with specific instance,
+based on the parameter types of calls to that function (or uses of the structure).</p>
+
+<p>During monomorphisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause “code bloat”, where multiple function instances result in larger binaries than would be created with other translation strategies.</p>
+
+<p>Functions that accept <a href="https://doc.rust-lang.org/book/trait-objects.html">trait objects</a> instead of type parameters do not undergo monomorphisation. Instead, methods on the trait objects are dispatched dynamically at runtime.</p>
+
+<h3><a href="#whats-the-difference-between-a-function-and-a-closure-that-doesnt-capture" name="whats-the-difference-between-a-function-and-a-closure-that-doesnt-capture">
+What's the difference between a function and a closure that doesn't capture any variables?
+</a></h3>
+
+<p>Functions and closures are operationally equivalent, but have different runtime representations due to their differing implementations.</p>
+
+<p>Functions are a built-in primitive of the language, while closures are essentially syntactic sugar for one of three traits: <a href="https://doc.rust-lang.org/stable/std/ops/trait.Fn.html"><code class="highlighter-rouge">Fn</code></a>, <a href="https://doc.rust-lang.org/stable/std/ops/trait.FnMut.html"><code class="highlighter-rouge">FnMut</code></a>, and <a href="https://doc.rust-lang.org/stable/std/ops/trait.FnOnce.html"><code class="highlighter-rouge">FnOnce</code></a>. When you make a closure, the Rust compiler automatically creates a struct implementing the appropriate trait of those three and containing the captured environment variables as members, and makes it so the struct can be called as a function. Bare functions can not capture an environment.</p>
+
+<p>The big difference between these traits is how they take the <code class="highlighter-rouge">self</code> parameter. <a href="https://doc.rust-lang.org/stable/std/ops/trait.Fn.html"><code class="highlighter-rouge">Fn</code></a> takes <code class="highlighter-rouge">&amp;self</code>, <a href="https://doc.rust-lang.org/stable/std/ops/trait.FnMut.html"><code class="highlighter-rouge">FnMut</code></a> takes <code class="highlighter-rouge">&amp;mut self</code>, and <a href="https://doc.rust-lang.org/stable/std/ops/trait.FnOnce.html"><code class="highlighter-rouge">FnOnce</code></a> takes <code class="highlighter-rouge">self</code>.</p>
+
+<p>Even if a closure does not capture any environment variables, it is represented at runtime as two pointers, the same as any other closure.</p>
+
+<h3><a href="#what-are-higher-kinded-types" name="what-are-higher-kinded-types">
+What are higher-kinded types, why would I want them, and why doesn't Rust have them?
+</a></h3>
+
+<p>Higher-kinded types are types with unfilled parameters. Type constructors, like <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec</code></a>, <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a>, and <a href="https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html"><code class="highlighter-rouge">HashMap</code></a> are all examples of higher-kinded types: each requires some additional type parameters in order to actually denote a specific type, like <code class="highlighter-rouge">Vec&lt;u32&gt;</code>. Support for higher-kinded types means these “incomplete” types may be used anywhere “complete” types can be used, including as generics for functions.</p>
+
+<p>Any complete type, like <a href="https://doc.rust-lang.org/stable/std/primitive.i32.html"><code class="highlighter-rouge">i32</code></a>, <a href="https://doc.rust-lang.org/stable/std/primitive.bool.html"><code class="highlighter-rouge">bool</code></a>, or <a href="https://doc.rust-lang.org/stable/std/primitive.char.html"><code class="highlighter-rouge">char</code></a> is of kind <code class="highlighter-rouge">*</code> (this notation comes from the field of type theory). A type with one parameter, like <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec&lt;T&gt;</code></a> is of kind <code class="highlighter-rouge">* -&gt; *</code>, meaning that <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec&lt;T&gt;</code></a> takes in a complete type like <a href="https://doc.rust-lang.org/stable/std/primitive.i32.html"><code class="highlighter-rouge">i32</code></a> and returns a complete type <code class="highlighter-rouge">Vec&lt;i32&gt;</code>. A type with three parameters, like <a href="https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html"><code class="highlighter-rouge">HashMap&lt;K, V, S&gt;</code></a> is of kind <code class="highlighter-rouge">* -&gt; * -&gt; * -&gt; *</code>, and takes in three complete types (like <a href="https://doc.rust-lang.org/stable/std/primitive.i32.html"><code class="highlighter-rouge">i32</code></a>, <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a>, and <a href="https://doc.rust-lang.org/stable/std/collections/hash_map/struct.RandomState.html"><code class="highlighter-rouge">RandomState</code></a>) to produce a new complete type <code class="highlighter-rouge">HashMap&lt;i32, String, RandomState&gt;</code>.</p>
+
+<p>In addition to these examples, type constructors can take <em>lifetime</em> arguments, which we’ll denote as <code class="highlighter-rouge">Lt</code>. For example, <code class="highlighter-rouge">slice::Iter</code> has kind <code class="highlighter-rouge">Lt -&gt; * -&gt; *</code>, because it must be instantiated like <code class="highlighter-rouge">Iter&lt;'a, u32&gt;</code>.</p>
+
+<p>The lack of support for higher-kinded types makes it difficult to write certain kinds of generic code. It’s particularly problematic for abstracting over concepts like iterators, since iterators are often parameterized over a lifetime at least. That in turn has prevented the creation of traits abstracting over Rust’s collections.</p>
+
+<p>Another common example is concepts like functors or monads, both of which are type constructors, rather than single types.</p>
+
+<p>Rust doesn’t currently have support for higher-kinded types because it hasn’t been a priority compared to other improvements we want to make. Since the design is a major, cross-cutting change, we also want to approach it carefully. But there’s no inherent reason for the current lack of support.</p>
+
+<h3><a href="#what-do-named-type-parameters-in-generic-types-mean" name="what-do-named-type-parameters-in-generic-types-mean">
+What do named type parameters like <code>&lt;T=Foo&gt;</code> in generic types mean?
+</a></h3>
+
+<p>These are called <a href="https://doc.rust-lang.org/stable/book/second-edition/ch19-03-advanced-traits.html">associated types</a>, and they allow for the expression of trait bounds that can’t be expressed with a <code class="highlighter-rouge">where</code> clause. For example, a generic bound <code class="highlighter-rouge">X: Bar&lt;T=Foo&gt;</code> means “<code class="highlighter-rouge">X</code> must implement the trait <code class="highlighter-rouge">Bar</code>, and in that implementation of <code class="highlighter-rouge">Bar</code>, <code class="highlighter-rouge">X</code> must choose <code class="highlighter-rouge">Foo</code> for <code class="highlighter-rouge">Bar</code>’s associated type, <code class="highlighter-rouge">T</code>.” Examples of where such a constraint cannot be expressed via a <code class="highlighter-rouge">where</code> clause include trait objects like <code class="highlighter-rouge">Box&lt;Bar&lt;T=Foo&gt;&gt;</code>.</p>
+
+<p>Associated types exist because generics often involve families of types, where one type determines all of the others in a family. For example, a trait for graphs might have as its <code class="highlighter-rouge">Self</code> type the graph itself, and have associated types for nodes and for edges. Each graph type uniquely determines the associated types. Using associated types makes it much more concise to work with these families of types, and also provides better type inference in many cases.</p>
+
+<h3><a href="#how-do-i-overload-operators" name="how-do-i-overload-operators">
+Can I overload operators? Which ones and how?
+</a></h3>
+
+<p>You can provide custom implementations for a variety of operators using their associated traits: <a href="https://doc.rust-lang.org/stable/std/ops/trait.Add.html"><code class="highlighter-rouge">Add</code></a> for <code class="highlighter-rouge">+</code>, <a href="https://doc.rust-lang.org/stable/std/ops/trait.Mul.html"><code class="highlighter-rouge">Mul</code></a> for <code class="highlighter-rouge">*</code>, and so on. It looks like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">ops</span><span class="p">::</span><span class="nb">Add</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="n">Foo</span><span class="p">;</span>
+
+<span class="k">impl</span> <span class="nb">Add</span> <span class="k">for</span> <span class="n">Foo</span> <span class="p">{</span>
+    <span class="k">type</span> <span class="n">Output</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">;</span>
+    <span class="k">fn</span> <span class="nf">add</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="n">rhs</span><span class="p">:</span> <span class="n">Foo</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nn">Self</span><span class="p">::</span><span class="n">Output</span> <span class="p">{</span>
+        <span class="nd">println!</span><span class="p">(</span><span class="s">"Adding!"</span><span class="p">);</span>
+        <span class="k">self</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>The following operators can be overloaded:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Operation</th>
+      <th style="text-align: left">Trait</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">+</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Add.html"><code class="highlighter-rouge">Add</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">+=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.AddAssign.html"><code class="highlighter-rouge">AddAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">binary -</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Sub.html"><code class="highlighter-rouge">Sub</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.SubAssign.html"><code class="highlighter-rouge">SubAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">*</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Mul.html"><code class="highlighter-rouge">Mul</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">*=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.MulAssign.html"><code class="highlighter-rouge">MulAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">/</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Div.html"><code class="highlighter-rouge">Div</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">/=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.DivAssign.html"><code class="highlighter-rouge">DivAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">unary -</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Neg.html"><code class="highlighter-rouge">Neg</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">%</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Rem.html"><code class="highlighter-rouge">Rem</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">%=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.RemAssign.html"><code class="highlighter-rouge">RemAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">&amp;</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.BitAnd.html"><code class="highlighter-rouge">BitAnd</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>&#124;</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.BitOr.html"><code class="highlighter-rouge">BitOr</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>&#124;</code>=</td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.BitOrAssign.html"><code class="highlighter-rouge">BitOrAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">^</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.BitXor.html"><code class="highlighter-rouge">BitXor</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">^=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.BitXorAssign.html"><code class="highlighter-rouge">BitXorAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">!</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Not.html"><code class="highlighter-rouge">Not</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">&lt;&lt;</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Shl.html"><code class="highlighter-rouge">Shl</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">&lt;&lt;=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.ShlAssign.html"><code class="highlighter-rouge">ShlAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">&gt;&gt;</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Shr.html"><code class="highlighter-rouge">Shr</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">&gt;&gt;=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.ShrAssign.html"><code class="highlighter-rouge">ShrAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">*</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Deref.html"><code class="highlighter-rouge">Deref</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">mut *</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.DerefMut.html"><code class="highlighter-rouge">DerefMut</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">[]</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Index.html"><code class="highlighter-rouge">Index</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">mut []</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.IndexMut.html"><code class="highlighter-rouge">IndexMut</code></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3><a href="#why-the-split-between-eq-partialeq-and-ord-partialord" name="why-the-split-between-eq-partialeq-and-ord-partialord">
+Why the split between <code>Eq</code>/<code>PartialEq</code> and <code>Ord</code>/<code>PartialOrd</code>?
+</a></h3>
+
+<p>There are some types in Rust whose values are only partially ordered, or have only partial equality. Partial ordering means that there may be values of the given type that are neither less than nor greater than each other. Partial equality means that there may be values of the given type that are not equal to themselves.</p>
+
+<p>Floating point types (<a href="https://doc.rust-lang.org/stable/std/primitive.f32.html"><code class="highlighter-rouge">f32</code></a> and <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html"><code class="highlighter-rouge">f64</code></a>) are good examples of each. Any floating point type may have the value <code class="highlighter-rouge">NaN</code> (meaning “not a number”). <code class="highlighter-rouge">NaN</code> is not equal to itself (<code class="highlighter-rouge">NaN == NaN</code> is false), and not less than or greater than any other floating point value. As such, both <a href="https://doc.rust-lang.org/stable/std/primitive.f32.html"><code class="highlighter-rouge">f32</code></a> and <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html"><code class="highlighter-rouge">f64</code></a> implement <a href="https://doc.rust-lang.org/stable/std/cmp/trait.PartialOrd.html"><code class="highlighter-rouge">PartialOrd</code></a> and <a href="https://doc.rust-lang.org/stable/std/cmp/trait.PartialEq.html"><code class="highlighter-rouge">PartialEq</code></a> but not <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html"><code class="highlighter-rouge">Ord</code></a> and not <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html"><code class="highlighter-rouge">Eq</code></a>.</p>
+
+<p>As explained in <a href="#why-cant-i-compare-floats">the earlier question on floats</a>, these distinctions are important because some collections rely on total orderings/equality in order to give correct results.</p>
+
+<h2 id="input-output">Input / Output</h2>
+
+<h3><a href="#how-do-i-read-a-file-into-a-string" name="how-do-i-read-a-file-into-a-string">
+How do I read a file into a <code>String</code>?
+</a></h3>
+
+<p>Using the <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.read_to_string"><code class="highlighter-rouge">read_to_string()</code></a> method, which is defined on the <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html"><code class="highlighter-rouge">Read</code></a> trait in <a href="https://doc.rust-lang.org/stable/std/io/index.html"><code class="highlighter-rouge">std::io</code></a>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">io</span><span class="p">::</span><span class="n">Read</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">fs</span><span class="p">::</span><span class="n">File</span><span class="p">;</span>
+
+<span class="k">fn</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">Result</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span> <span class="nn">std</span><span class="p">::</span><span class="nn">io</span><span class="p">::</span><span class="n">Error</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
+    <span class="k">let</span> <span class="n">_</span> <span class="o">=</span> <span class="nn">File</span><span class="p">::</span><span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="err">?</span><span class="nf">.read_to_string</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">);</span>  <span class="c">// `s` contains the contents of "foo.txt"</span>
+    <span class="nf">Ok</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">match</span> <span class="nf">read_file</span><span class="p">(</span><span class="s">"foo.txt"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">Ok</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"Got file contents!"</span><span class="p">),</span>
+        <span class="nf">Err</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"Getting file contents failed with error: {}"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3><a href="#how-do-i-read-file-input-efficiently" name="how-do-i-read-file-input-efficiently">
+How do I read file input efficiently?
+</a></h3>
+
+<p>The <a href="https://doc.rust-lang.org/stable/std/fs/struct.File.html"><code class="highlighter-rouge">File</code></a> type implements the <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html"><code class="highlighter-rouge">Read</code></a> trait, which has a variety of functions for reading and writing data, including <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#tymethod.read"><code class="highlighter-rouge">read()</code></a>, <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.read_to_end"><code class="highlighter-rouge">read_to_end()</code></a>, <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.bytes"><code class="highlighter-rouge">bytes()</code></a>, <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.chars"><code class="highlighter-rouge">chars()</code></a>, and <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.take"><code class="highlighter-rouge">take()</code></a>. Each of these functions reads a certain amount of input from a given file. <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#tymethod.read"><code class="highlighter-rouge">read()</code></a> reads as much input as the underlying system will provide in a single call. <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.read_to_end"><code class="highlighter-rouge">read_to_end()</code></a> reads the entire buffer into a vector, allocating as much space as is needed. <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.bytes"><code class="highlighter-rouge">bytes()</code></a> and <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.chars"><code class="highlighter-rouge">chars()</code></a> allow you to iterate over the bytes and characters of the file, respectively. Finally, <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.take"><code class="highlighter-rouge">take()</code></a> allows you to read up to an arbitrary number of bytes from the file. Collectively, these should allow you to efficiently read in any data you need.</p>
+
+<p>For buffered reads, use the <a href="https://doc.rust-lang.org/stable/std/io/struct.BufReader.html"><code class="highlighter-rouge">BufReader</code></a> struct, which helps to reduce the number of system calls when reading.</p>
+
+<h3><a href="#how-do-i-do-asynchronous-input-output-in-rust" name="how-do-i-do-asynchronous-input-output-in-rust">
+How do I do asynchronous input / output in Rust?
+</a></h3>
+
+<p>There are several libraries providing asynchronous input / output in Rust, including <a href="https://github.com/carllerche/mio">mio</a>, <a href="https://github.com/tokio-rs/tokio-core">tokio</a>, <a href="https://github.com/dpc/mioco">mioco</a>, <a href="https://github.com/zonyitoo/coio-rs">coio-rs</a>, and <a href="https://github.com/tailhook/rotor">rotor</a>.</p>
+
+<h3><a href="#how-do-i-get-command-line-arguments" name="how-do-i-get-command-line-arguments">
+How do I get command line arguments in Rust?
+</a></h3>
+
+<p>The easiest way is to use <a href="https://doc.rust-lang.org/stable/std/env/struct.Args.html"><code class="highlighter-rouge">Args</code></a>, which provides an iterator over the input arguments.</p>
+
+<p>If you’re looking for something more powerful, there are a <a href="https://crates.io/keywords/argument">number of options on crates.io</a>.</p>
+
+<h2 id="error-handling">Error Handling</h2>
+
+<h3><a href="#why-doesnt-rust-have-exceptions" name="why-doesnt-rust-have-exceptions">
+Why doesn't Rust have exceptions?
+</a></h3>
+
+<p>Exceptions complicate understanding of control-flow, they express validity/invalidity outside of the type system, and they interoperate poorly with multithreaded code (a major focus of Rust).</p>
+
+<p>Rust prefers a type-based approach to error handling, which is <a href="https://doc.rust-lang.org/stable/book/second-edition/ch09-00-error-handling.html">covered at length in the book</a>. This fits more nicely with Rust’s control flow, concurrency, and everything else.</p>
+
+<h3><a href="#whats-the-deal-with-unwrap" name="whats-the-deal-with-unwrap">
+What's the deal with <code>unwrap()</code> everywhere?
+</a></h3>
+
+<p><code class="highlighter-rouge">unwrap()</code> is a function that extracts the value inside an <a href="https://doc.rust-lang.org/stable/std/option/enum.Option.html"><code class="highlighter-rouge">Option</code></a> or <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a> and panics if no value is present.</p>
+
+<p><code class="highlighter-rouge">unwrap()</code> shouldn’t be your default way to handle errors you expect to arise, such as incorrect user input. In production code, it should be treated like an assertion that the value is non-empty, which will crash the program if violated.</p>
+
+<p>It’s also useful for quick prototypes where you don’t want to handle an error yet, or blog posts where error handling would distract from the main point.</p>
+
+<h3><a href="#why-do-i-get-errors-with-try" name="why-do-i-get-errors-with-try">
+Why do I get an error when I try to run example code that uses the <code>try!</code> macro?
+</a></h3>
+
+<p>It’s probably an issue with the function’s return type. The <a href="https://doc.rust-lang.org/stable/std/macro.try!.html"><code class="highlighter-rouge">try!</code></a> macro either extracts the value from a <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a>, or returns early with the error <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a> is carrying. This means that <a href="https://doc.rust-lang.org/stable/std/macro.try!.html"><code class="highlighter-rouge">try</code></a> only works for functions that return <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a> themselves, where the <code class="highlighter-rouge">Err</code>-constructed type implements <code class="highlighter-rouge">From::from(err)</code>. In particular, this means that the <a href="https://doc.rust-lang.org/stable/std/macro.try!.html"><code class="highlighter-rouge">try!</code></a> macro cannot work inside the <code class="highlighter-rouge">main</code> function.</p>
+
+<h3><a href="#error-handling-without-result" name="error-handling-without-result">
+Is there an easier way to do error handling than having <code>Result</code>s everywhere?
+</a></h3>
+
+<p>If you’re looking for a way to avoid handling <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code>s</a> in other people’s code, there’s always <a href="https://doc.rust-lang.org/stable/core/option/enum.Option.html#method.unwrap"><code class="highlighter-rouge">unwrap()</code></a>, but it’s probably not what you want. <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a> is an indicator that some computation may or may not complete successfully. Requiring you to handle these failures explicitly is one of the ways that Rust encourages robustness. Rust provides tools like the <a href="https://doc.rust-lang.org/stable/std/macro.try!.html"><code class="highlighter-rouge">try!</code> macro</a> to make handling failures ergonomic.</p>
+
+<p>If you really don’t want to handle an error, use <a href="https://doc.rust-lang.org/stable/core/option/enum.Option.html#method.unwrap"><code class="highlighter-rouge">unwrap()</code></a>, but know that doing so means that the code panics on failure, which usually results in a shutting down the process.</p>
+
+<h2 id="concurrency">Concurrency</h2>
+
+<h3><a href="#can-i-use-static-values-across-threads-without-an-unsafe-block" name="can-i-use-static-values-across-threads-without-an-unsafe-block">
+Can I use static values across threads without an <code>unsafe</code> block?
+</a></h3>
+
+<p>Mutation is safe if it’s synchronized. Mutating a static <a href="https://doc.rust-lang.org/stable/std/sync/struct.Mutex.html"><code class="highlighter-rouge">Mutex</code></a> (lazily initialized via the <a href="https://crates.io/crates/lazy_static/">lazy-static</a> crate) does not require an <code class="highlighter-rouge">unsafe</code> block, nor does mutating a static <a href="https://doc.rust-lang.org/stable/std/sync/atomic/struct.AtomicUsize.html"><code class="highlighter-rouge">AtomicUsize</code></a> (which can be initialized without lazy_static).</p>
+
+<p>More generally, if a type implements <a href="https://doc.rust-lang.org/stable/std/marker/trait.Sync.html"><code class="highlighter-rouge">Sync</code></a> and does not implement <a href="https://doc.rust-lang.org/stable/std/ops/trait.Drop.html"><code class="highlighter-rouge">Drop</code></a>, it <a href="https://doc.rust-lang.org/book/const-and-static.html#static">can be used in a <code class="highlighter-rouge">static</code></a>.</p>
+
+<h2 id="macros">Macros</h2>
+
+<h3><a href="#can-i-write-a-macro-to-generate-identifiers" name="can-i-write-a-macro-to-generate-identifiers">
+Can I write a macro to generate identifiers?
+</a></h3>
+
+<p>Not currently. Rust macros are <a href="https://en.wikipedia.org/wiki/Hygienic_macro">“hygienic macros”</a>, which intentionally avoid capturing or creating identifiers that may cause unexpected collisions with other identifiers. Their capabilities are significantly different than the style of macros commonly associated with the C preprocessor. Macro invocations can only appear in places where they are explicitly supported: items, method declarations, statements, expressions, and patterns. Here, “method declarations” means a blank space where a method can be put. They can’t be used to complete a partial method declaration. By the same logic, they can’t be used to complete a partial variable declaration.</p>
+
+<h2 id="debugging">Debugging and Tooling</h2>
+
+<h3><a href="#how-do-i-debug-rust-programs" name="how-do-i-debug-rust-programs">
+How do I debug Rust programs?
+</a></h3>
+
+<p>Rust programs can be debugged using <a href="https://sourceware.org/gdb/current/onlinedocs/gdb/">gdb</a> or <a href="http://lldb.llvm.org/tutorial.html">lldb</a>, the same as C and C++. In fact, every Rust installation comes with one or both of rust-gdb and rust-lldb (depending on platform support). These are wrappers over gdb and lldb with Rust pretty-printing enabled.</p>
+
+<h3><a href="#how-do-i-locate-a-panic" name="how-do-i-locate-a-panic">
+<code>rustc</code> said a panic occurred in standard library code. How do I locate the mistake in my code?
+</a></h3>
+
+<p>This error is usually caused by <a href="https://doc.rust-lang.org/stable/core/option/enum.Option.html#method.unwrap"><code class="highlighter-rouge">unwrap()</code>ing</a> a <code class="highlighter-rouge">None</code> or <code class="highlighter-rouge">Err</code> in client code. Enabling backtraces by setting the environment variable <code class="highlighter-rouge">RUST_BACKTRACE=1</code> helps with getting more information. Compiling in debug mode (the default for <code class="highlighter-rouge">cargo build</code>) is also helpful. Using a debugger like the provided <code class="highlighter-rouge">rust-gdb</code> or <code class="highlighter-rouge">rust-lldb</code> is also helpful.</p>
+
+<h3><a href="#what-ide-should-i-use" name="what-ide-should-i-use">
+What IDE should I use?
+</a></h3>
+
+<p>There are a number of options for development environment with Rust, all of which are detailed on the official <a href="https://forge.rust-lang.org/ides.html">IDE support page</a>.</p>
+
+<h3><a href="#wheres-rustfmt" name="wheres-rustfmt">
+<code>gofmt</code> is great. Where's <code>rustfmt</code>?
+</a></h3>
+
+<p><code class="highlighter-rouge">rustfmt</code> is <a href="https://github.com/rust-lang-nursery/rustfmt">right here</a>, and is being actively developed to make reading Rust code as easy and predictable as possible.</p>
+
+<h2 id="low-level">Low-Level</h2>
+
+<h3><a href="#how-do-i-memcpy-bytes" name="how-do-i-memcpy-bytes">
+How do I <code>memcpy</code> bytes?
+</a></h3>
+
+<p>If you want to clone an existing slice safely, you can use <a href="https://doc.rust-lang.org/stable/std/primitive.slice.html#method.clone_from_slice"><code class="highlighter-rouge">clone_from_slice</code></a>.</p>
+
+<p>To copy potentially overlapping bytes, use <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">copy</code></a>. To copy nonoverlapping bytes, use <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy_nonoverlapping.html"><code class="highlighter-rouge">copy_nonoverlapping</code></a>. Both of these functions are <code class="highlighter-rouge">unsafe</code>, as both can be used to subvert the language’s safety guarantees. Take care when using them.</p>
+
+<h3><a href="#does-rust-work-without-the-standard-library" name="does-rust-work-without-the-standard-library">
+Can Rust function reasonably without the standard library?
+</a></h3>
+
+<p>Absolutely. Rust programs can be set to not load the standard library using the <code class="highlighter-rouge">#![no_std]</code> attribute. With this attribute set, you can continue to use the Rust core library, which is nothing but the platform-agnostic primitives. As such, it doesn’t include IO, concurrency, heap allocation, etc.</p>
+
+<h3><a href="#can-i-write-an-operating-system-in-rust" name="can-i-write-an-operating-system-in-rust">
+Can I write an operating system in Rust?
+</a></h3>
+
+<p>Yes! In fact there are <a href="http://wiki.osdev.org/Rust">several projects underway doing just that</a>.</p>
+
+<h3><a href="#how-can-i-write-endian-independent-values" name="how-can-i-write-endian-independent-values">
+How can I read or write numeric types like <code>i32</code> or <code>f64</code> in big-endian or little-endian format in a file or other byte stream?
+</a></h3>
+
+<p>You should check out the <a href="http://burntsushi.net/rustdoc/byteorder/">byteorder crate</a>, which provides utilities for exactly that.</p>
+
+<h3><a href="#does-rust-guarantee-data-layout" name="does-rust-guarantee-data-layout">
+Does Rust guarantee a specific data layout?
+</a></h3>
+
+<p>Not by default. In the general case, <code class="highlighter-rouge">enum</code> and <code class="highlighter-rouge">struct</code> layouts are undefined. This allows the compiler to potentially do optimizations like re-using padding for the discriminant, compacting variants of nested <code class="highlighter-rouge">enum</code>s, reordering fields to remove padding, etc. <code class="highlighter-rouge">enums</code> which carry no data (“C-like”) are eligible to have a defined representation. Such <code class="highlighter-rouge">enums</code> are easily distinguished in that they are simply a list of names that carry no data:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">enum</span> <span class="n">CLike</span> <span class="p">{</span>
+    <span class="n">A</span><span class="p">,</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="mi">34</span><span class="p">,</span>
+    <span class="n">D</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">#[repr(C)]</code> attribute can be applied to such <code class="highlighter-rouge">enums</code> to give them the same representation they would have in equivalent C code. This allows using Rust <code class="highlighter-rouge">enum</code>s in FFI code where C <code class="highlighter-rouge">enum</code>s are also used, for most use cases. The attribute can also be applied to <code class="highlighter-rouge">struct</code>s to get the same layout as a C <code class="highlighter-rouge">struct</code> would.</p>
+
+<h2 id="cross-platform">Cross-Platform</h2>
+
+<!--
+### How do I build a Windows binary that doesn't display the console window?
+
+TODO: Write this answer.
+-->
+
+<!--
+### How do I make the console-less binary not crash on panic!?
+
+TODO: Write this answer.
+-->
+
+<h3><a href="#how-do-i-express-platform-specific-behavior" name="how-do-i-express-platform-specific-behavior">
+What's the idiomatic way to express platform-specific behavior in Rust?
+</a></h3>
+
+<p>Platform-specific behavior can be expressed using <a href="https://doc.rust-lang.org/reference/attributes.html#conditional-compilation">conditional compilation attributes</a> such as <code class="highlighter-rouge">target_os</code>, <code class="highlighter-rouge">target_family</code>, <code class="highlighter-rouge">target_endian</code>, etc.</p>
+
+<h3><a href="#can-rust-be-used-for-android-ios-programs" name="can-rust-be-used-for-android-ios-programs">
+Can Rust be used for Android/iOS programming?
+</a></h3>
+
+<p>Yes it can! There are already examples of using Rust for both <a href="https://github.com/tomaka/android-rs-glue">Android</a> and <a href="https://www.bignerdranch.com/blog/building-an-ios-app-in-rust-part-1/">iOS</a>. It does require a bit of work to set up, but Rust functions fine on both platforms.</p>
+
+<h3><a href="#can-i-run-my-rust-program-in-a-web-browser" name="can-i-run-my-rust-program-in-a-web-browser">
+Can I run my Rust program in a web browser?
+</a></h3>
+
+<p>Possibly. Rust has <a href="https://davidmcneil.gitbooks.io/the-rusty-web/">experimental support</a> for both <a href="http://asmjs.org/">asm.js</a> and <a href="http://webassembly.org/">WebAssembly</a>.</p>
+
+<h3><a href="#how-do-i-cross-compile-rust" name="how-do-i-cross-compile-rust">
+How do I cross-compile in Rust?
+</a></h3>
+
+<p>Cross compilation is possible in Rust, but it requires <a href="https://github.com/japaric/rust-cross/blob/master/README.md">a bit of work</a> to set up. Every Rust compiler is a cross-compiler, but libraries need to be cross-compiled for the target platform.</p>
+
+<p>Rust does distribute <a href="https://static.rust-lang.org/dist/index.html">copies of the standard library</a> for each of the supported platforms, which are contained in the <code class="highlighter-rouge">rust-std-*</code> files for each of the build directories found on the distribution page, but there are not yet automated ways to install them.</p>
+
+<h2 id="modules-and-crates">Modules and Crates</h2>
+
+<h3><a href="#what-is-the-relationship-between-a-module-and-a-crate" name="what-is-the-relationship-between-a-module-and-a-crate">
+What is the relationship between a module and a crate?
+</a></h3>
+
+<ul>
+  <li>A crate is a compilation unit, which is the smallest amount of code that the Rust compiler can operate on.</li>
+  <li>A module is a (possibly nested) unit of code organization inside a crate.</li>
+  <li>A crate contains an implicit, un-named top-level module.</li>
+  <li>Recursive definitions can span modules, but not crates.</li>
+</ul>
+
+<h3><a href="#why-cant-the-rust-compiler-find-a-library-im-using" name="why-cant-the-rust-compiler-find-a-library-im-using">
+Why can't the Rust compiler find this library I'm <code>use</code>ing?
+</a></h3>
+
+<p>There are a number of possible answers, but a common mistake is not realizing that <code class="highlighter-rouge">use</code> declarations are relative to the crate root. Try rewriting your declarations to use the paths they would use if defined in the root file of your project and see if that fixes the problem.</p>
+
+<p>There are also <code class="highlighter-rouge">self</code> and <code class="highlighter-rouge">super</code>, which disambiguate <code class="highlighter-rouge">use</code> paths as being relative to the current module or parent module, respectively.</p>
+
+<p>For complete information on <code class="highlighter-rouge">use</code>ing libraries, read the Rust book’s chapter <a href="https://doc.rust-lang.org/stable/book/second-edition/ch07-00-modules.html">“Crates and Modules”</a>.</p>
+
+<h3><a href="#why-do-i-have-to-declare-modules-with-mod" name="why-do-i-have-to-declare-modules-with-mod">
+Why do I have to declare module files with <code>mod</code> at the top level of the crate, instead of just <code>use</code>ing them?
+</a></h3>
+
+<p>There are two ways to declare modules in Rust, inline or in another file. Here is an example of each:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">// In main.rs</span>
+<span class="k">mod</span> <span class="n">hello</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nd">println!</span><span class="p">(</span><span class="s">"hello!"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nn">hello</span><span class="p">::</span><span class="nf">f</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">// In main.rs</span>
+<span class="k">mod</span> <span class="n">hello</span><span class="p">;</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nn">hello</span><span class="p">::</span><span class="nf">f</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c">// In hello.rs</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"hello!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>In the first example, the module is defined in the same file it’s used. In the second example, the module declaration in the main file tells the compiler to look for either <code class="highlighter-rouge">hello.rs</code> or <code class="highlighter-rouge">hello/mod.rs</code>, and to load that file.</p>
+
+<p>Note the difference between <code class="highlighter-rouge">mod</code> and <code class="highlighter-rouge">use</code>: <code class="highlighter-rouge">mod</code> declares that a module exists, whereas <code class="highlighter-rouge">use</code> references a module declared elsewhere, bringing its contents into scope within the current module.</p>
+
+<h3><a href="#how-do-i-configure-cargo-to-use-a-proxy" name="how-do-i-configure-cargo-to-use-a-proxy">
+How do I configure Cargo to use a proxy?
+</a></h3>
+
+<p>As explained on the Cargo <a href="http://doc.crates.io/config.html">configuration documentation</a>, you can set Cargo to use a proxy by setting the “proxy” variable under <code class="highlighter-rouge">[http]</code> in the configuration file.</p>
+
+<h3><a href="#why-cant-the-compile-find-method-implementations" name="why-cant-the-compile-find-method-implementations">
+Why can't the compiler find the method implementation even though I'm already <code>use</code>ing the crate?
+</a></h3>
+
+<p>For methods defined on a trait, you have to explicitly import the trait declaration. This means it’s not enough to import a module where a struct implements the trait, you must also import the trait itself.</p>
+
+<h3><a href="#why-cant-the-compiler-infer-use-statements" name="why-cant-the-compiler-infer-use-statements">
+Why can't the compiler infer <code>use</code> declarations for me?
+</a></h3>
+
+<p>It probably could, but you also don’t want it to. While in many cases it is likely that the compiler could determine the correct module to import by simply looking for where a given identifier is defined, this may not be the case in general. Any decision rule in <code class="highlighter-rouge">rustc</code> for choosing between competing options would likely cause surprise and confusion in some cases, and Rust prefers to be explicit about where names are coming from.</p>
+
+<p>For example, the compiler could say that in the case of competing identifier definitions the definition from the earliest imported module is chosen. So if both module <code class="highlighter-rouge">foo</code> and module <code class="highlighter-rouge">bar</code> define the identifier <code class="highlighter-rouge">baz</code>, but <code class="highlighter-rouge">foo</code> is the first registered module, the compiler would insert <code class="highlighter-rouge">use foo::baz;</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">mod</span> <span class="n">foo</span><span class="p">;</span>
+<span class="k">mod</span> <span class="n">bar</span><span class="p">;</span>
+
+<span class="c">// use foo::baz  // to be inserted by the compiler.</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">baz</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>If you know this is going to happen, perhaps it saves a small number of keystrokes, but it also greatly increases the possibility for surprising error messages when you actually meant for <code class="highlighter-rouge">baz()</code> to be <code class="highlighter-rouge">bar::baz()</code>, and it decreases the readability of the code by making the meaning of a function call dependent on module declaration. These are not tradeoffs we are willing to make.</p>
+
+<p>However, in the future, an IDE could help manage declarations, which gives you the best of both worlds: machine assistance for pulling in names, but explicit declarations about where those names are coming from.</p>
+
+<!--
+### How do I package and archive crates from [https://crates.io](https://crates.io)?
+
+TODO: Write this answer.
+-->
+
+<h3><a href="#how-do-i-do-dynamic-rust-library-loading" name="how-do-i-do-dynamic-rust-library-loading">
+How do I do dynamic Rust library loading?
+</a></h3>
+
+<p>Import dynamic libraries in Rust with <a href="https://crates.io/crates/libloading">libloading</a>, which provides a cross-platform system for dynamic linking.</p>
+
+<h3><a href="#why-doesnt-crates-io-have-namespaces" name="why-doesnt-crates-io-have-namespaces">
+Why doesn't crates.io have namespaces?
+</a></h3>
+
+<p>Quoting the <a href="https://internals.rust-lang.org/t/crates-io-package-policies/1041">official explanation</a> of <a href="https://crates.io">https://crates.io</a>’s design:</p>
+
+<blockquote>
+  <p>In the first month with crates.io, a number of people have asked us about the possibility of introducing <a href="https://github.com/rust-lang/crates.io/issues/58">namespaced packages</a>.<br /><br /></p>
+
+  <p>While namespaced packages allow multiple authors to use a single, generic name, they add complexity to how packages are referenced in Rust code and in human communication about packages. At first glance, they allow multiple authors to claim names like <code class="highlighter-rouge">http</code>, but that simply means that people will need to refer to those packages as <code class="highlighter-rouge">wycats' http</code> or <code class="highlighter-rouge">reem's http</code>, offering little benefit over package names like <code class="highlighter-rouge">wycats-http</code> or <code class="highlighter-rouge">reem-http</code>.<br /><br /></p>
+
+  <p>When we looked at package ecosystems without namespacing, we found that people tended to go with more creative names (like <code class="highlighter-rouge">nokogiri</code> instead of “tenderlove’s libxml2”). These creative names tend to be short and memorable, in part because of the lack of any hierarchy. They make it easier to communicate concisely and unambiguously about packages. They create exciting brands. And we’ve seen the success of several 10,000+ package ecosystems like NPM and RubyGems whose communities are prospering within a single namespace.<br /><br /></p>
+
+  <p>In short, we don’t think the Cargo ecosystem would be better off if Piston chose a name like <code class="highlighter-rouge">bvssvni/game-engine</code> (allowing other users to choose <code class="highlighter-rouge">wycats/game-engine</code>) instead of simply <code class="highlighter-rouge">piston</code>.<br /><br /></p>
+
+  <p>Because namespaces are strictly more complicated in a number of ways, and because they can be added compatibly in the future should they become necessary, we’re going to stick with a single shared namespace.</p>
+</blockquote>
+
+<h2 id="libraries">Libraries</h2>
+
+<h3><a href="#how-can-i-make-an-http-request" name="how-can-i-make-an-http-request">
+How can I make an HTTP request?
+</a></h3>
+
+<p>The standard library does not include an implementation of HTTP, so you will want to use an external crate.
+<a href="http://docs.rs/reqwest">reqwest</a> is the simplest.
+It is built on <a href="https://github.com/hyperium/hyper">hyper</a>, and written in Rust, but there are <a href="https://crates.io/keywords/http">a number of others as well</a>.
+The <a href="https://docs.rs/curl">curl</a> crate is widely used and provides bindings to the curl library.</p>
+
+<h3><a href="#how-can-i-write-a-gui-application" name="how-can-i-write-a-gui-application">
+How can I write a GUI application in Rust?
+</a></h3>
+
+<p>There are a variety of ways to write GUI applications in Rust. Just check out <a href="https://github.com/kud1ing/awesome-rust#gui">this list of GUI frameworks</a>.</p>
+
+<h3><a href="#how-can-i-parse-json-xml" name="how-can-i-parse-json-xml">
+How can I parse JSON/XML?
+</a></h3>
+
+<p><a href="https://github.com/serde-rs/serde">Serde</a> is the recommended library for serialization and deserialization of Rust data to and from a number of different formats.</p>
+
+<h3><a href="#is-there-a-standard-2d-vector-crate" name="is-there-a-standard-2d-vector-crate">
+Is there a standard 2D+ vector and shape crate?
+</a></h3>
+
+<p>Not yet! Want to write one?</p>
+
+<h3><a href="#how-do-i-write-an-opengl-app" name="how-do-i-write-an-opengl-app">
+How do I write an OpenGL app in Rust?
+</a></h3>
+
+<p><a href="https://github.com/tomaka/glium">Glium</a> is the major library for OpenGL programming in Rust. <a href="https://github.com/bjz/glfw-rs">GLFW</a> is also a solid option.</p>
+
+<h3><a href="#can-i-write-a-video-game-in-rust" name="can-i-write-a-video-game-in-rust">
+Can I write a video game in Rust?
+</a></h3>
+
+<p>Yes you can! The major game programming library for Rust is <a href="http://www.piston.rs/">Piston</a>, and there’s both a <a href="https://www.reddit.com/r/rust_gamedev/">subreddit for game programming in Rust</a> and an IRC channel (<code class="highlighter-rouge">#rust-gamedev</code> on <a href="https://wiki.mozilla.org/IRC">Mozilla IRC</a>)  as well.</p>
+
+<h2 id="design-patterns">Design Patterns</h2>
+
+<h3><a href="#is-rust-object-oriented" name="is-rust-object-oriented">
+Is Rust object oriented?
+</a></h3>
+
+<p>It is multi-paradigm. Many things you can do in OO languages you can do in Rust, but not everything, and not always using the same abstraction you’re accustomed to.</p>
+
+<h3><a href="#how-do-i-map-object-oriented-concepts-to-rust" name="how-do-i-map-object-oriented-concepts-to-rust">
+How do I map object-oriented concepts to Rust?
+</a></h3>
+
+<p>That depends. There <em>are</em> ways of translating object-oriented concepts like <a href="https://www.reddit.com/r/rust/comments/2sryuw/ideaquestion_about_multiple_inheritence/">multiple inheritance</a> to Rust, but as Rust is not object-oriented the result of the translation may look substantially different from its appearance in an OO language.</p>
+
+<h3><a href="#how-do-i-configure-a-struct-with-optional-parameters" name="how-do-i-configure-a-struct-with-optional-parameters">
+How do I handle configuration of a struct with optional parameters?
+</a></h3>
+
+<p>The easiest way is to use the <a href="https://doc.rust-lang.org/stable/std/option/enum.Option.html"><code class="highlighter-rouge">Option</code></a> type in whatever function you’re using to construct instances of the struct (usually <code class="highlighter-rouge">new()</code>). Another way is to use the <a href="https://doc.rust-lang.org/stable/book/first-edition/method-syntax.html#builder-pattern">builder pattern</a>, where only certain functions instantiating member variables must be called before the construction of the built type.</p>
+
+<h3><a href="#how-do-i-do-global-variables" name="how-do-i-do-global-variables">
+How do I do global variables in Rust?
+</a></h3>
+
+<p>Globals in Rust can be done using <code class="highlighter-rouge">const</code> declarations for compile-time computed global constants, while <code class="highlighter-rouge">static</code> can be used for mutable globals. Note that modifying a <code class="highlighter-rouge">static mut</code> variable requires the use of <code class="highlighter-rouge">unsafe</code>, as it allows for data races, one of the things guaranteed not to happen in safe Rust. One important distinction between <code class="highlighter-rouge">const</code> and <code class="highlighter-rouge">static</code> values is that you can take references to <code class="highlighter-rouge">static</code> values, but not references to <code class="highlighter-rouge">const</code> values, which don’t have a specified memory location. For more information on <code class="highlighter-rouge">const</code> vs. <code class="highlighter-rouge">static</code>, read <a href="https://doc.rust-lang.org/book/const-and-static.html">the Rust book</a>.</p>
+
+<h3><a href="#how-can-i-set-compile-time-constants-that-are-defined-procedurally" name="how-can-i-set-compile-time-constants-that-are-defined-procedurally">
+How can I set compile-time constants that are defined procedurally?
+</a></h3>
+
+<p>Rust currently has limited support for compile time constants. You can define primitives using <code class="highlighter-rouge">const</code> declarations (similar to <code class="highlighter-rouge">static</code>, but immutable and without a specified location in memory) as well as define <code class="highlighter-rouge">const</code> functions and inherent methods.</p>
+
+<p>To define procedural constants that can’t be defined via these mechanisms, use the <a href="https://github.com/rust-lang-nursery/lazy-static.rs"><code class="highlighter-rouge">lazy-static</code></a> crate, which emulates compile-time evaluation by automatically evaluating the constant at first use.</p>
+
+<h3><a href="#can-i-run-code-before-main" name="can-i-run-code-before-main">
+Can I run initialization code that happens before main?
+</a></h3>
+
+<p>Rust has no concept of “life before <code class="highlighter-rouge">main</code>”. The closest you’ll see can be done through the <a href="https://github.com/Kimundi/lazy-static.rs"><code class="highlighter-rouge">lazy-static</code></a> crate, which simulates a “before main” by lazily initializing static variables at their first usage.</p>
+
+<!--
+
+This answer needs significant work. Let's revise after the initial posting. --aturon
+
+<h3><a href="#why-doesnt-rust-have-inheritance" name="why-doesnt-rust-have-inheritance">
+Why doesn't Rust have inheritance?
+</a></h3>
+
+There are two meanings for the word "inheritance": _subtyping_, and _interface sharing_. Both purposes are already handled by traits.
+
+For the first, subtyping exists for polymorphism, which traits already provide.
+
+For the second, interface sharing is handled via trait methods, which define a collection of related functions that must be implemented for any implementation of the trait.
+
+Rust has consistently worked to avoid having features with overlapping purposes, preferring to keep features orthogonal. For this reason, and given that the two major purposes are already handled by traits, Rust has opted not to include inheritance.
+
+-->
+
+<h3><a href="#does-rust-allow-non-constant-expression-values-for-globals" name="does-rust-allow-non-constant-expression-values-for-globals">
+Does Rust allow non-constant-expression values for globals?
+</a></h3>
+
+<p>No. Globals cannot have a non-constant-expression constructor and cannot have a destructor at all. Static constructors are undesirable because portably ensuring a static initialization order is difficult. Life before main is often considered a misfeature, so Rust does not allow it.</p>
+
+<p>See the <a href="http://yosefk.com/c++fqa/ctors.html#fqa-10.12">C++ FQA</a> about the “static initialization order fiasco”, and <a href="https://ericlippert.com/2013/02/06/static-constructors-part-one/">Eric Lippert’s blog</a> for the challenges in C#, which also has this feature.</p>
+
+<p>You can approximate non-constant-expression globals with the <a href="https://crates.io/crates/lazy_static/">lazy-static</a> crate.</p>
+
+<h2 id="other-languages">Other Languages</h2>
+
+<h3><a href="#how-can-i-use-static-fields" name="how-can-i-use-static-fields">
+How can I implement something like C's <code>struct X { static int X; };</code> in Rust?
+</a></h3>
+
+<p>Rust does not have <code class="highlighter-rouge">static</code> fields as shown in the code snippet above. Instead, you can declare a <code class="highlighter-rouge">static</code> variable in a given module, which is kept private to that module.</p>
+
+<h3><a href="#how-can-i-convert-a-c-style-enum-to-an-integer" name="how-can-i-convert-a-c-style-enum-to-an-integer">
+How can I convert a C-style enum to an integer, or vice-versa?
+</a></h3>
+
+<p>Converting a C-style enum to an integer can be done with an <code class="highlighter-rouge">as</code> expression, like <code class="highlighter-rouge">e as i64</code> (where <code class="highlighter-rouge">e</code> is some enum).</p>
+
+<p>Converting in the other direction can be done with a <code class="highlighter-rouge">match</code> statement, which maps different numeric values to different potential values for the enum.</p>
+
+<h3><a href="#why-do-rust-programs-have-larger-binary-sizes-than-C-programs" name="why-do-rust-programs-have-larger-binary-sizes-than-C-programs">
+Why do Rust programs have larger binary sizes than C programs?
+</a></h3>
+
+<p>There are several factors that contribute to Rust programs having, by default, larger binary sizes than functionally-equivalent C programs. In general, Rust’s preference is to optimize for the performance of real-world programs, not the size of small programs.</p>
+
+<p><strong>Monomorphization</strong></p>
+
+<p>Rust monomorphizes generics, meaning that a new version of a generic function or type is generated for each concrete type it’s used with in the program. This is similar to how templates work in C++. For example, in the following program:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="n">foo</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c">// ... do something</span>
+<span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">foo</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>       <span class="c">// i32</span>
+    <span class="nf">foo</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span>  <span class="c">// &amp;str</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Two distinct versions of <code class="highlighter-rouge">foo</code> will be in the final binary, one specialized to an <code class="highlighter-rouge">i32</code> input, one specialized to a <code class="highlighter-rouge">&amp;str</code> input. This enables efficient static dispatch of the generic function, but at the cost of a larger binary.</p>
+
+<p><strong>Debug symbols</strong></p>
+
+<p>Rust programs compile with some debug symbols retained, even when compiling in release mode. These are used for providing backtraces on panics, and can be removed with <code class="highlighter-rouge">strip</code>, or another debug symbol removal tool. It is also useful to note that compiling in release mode with Cargo is equivalent to setting optimization level 3 with rustc. An alternative optimization level (called <code class="highlighter-rouge">s</code> or <code class="highlighter-rouge">z</code>) <a href="https://github.com/rust-lang/rust/pull/32386">has recently landed</a> and tells the compiler to optimize for size rather than performance.</p>
+
+<p><strong>Jemalloc</strong></p>
+
+<p>Rust uses jemalloc as the default allocator, which adds some size to compiled Rust binaries. Jemalloc is chosen because it is a consistent, quality allocator that has preferable performance characteristics compared to a number of common system-provided allocators. There is work being done to <a href="https://github.com/rust-lang/rust/issues/32838">make it easier to use custom allocators</a>, but that work is not yet finished.</p>
+
+<p><strong>Link-time optimization</strong></p>
+
+<p>Rust does not do link-time optimization by default, but can be instructed to do so. This increases the amount of optimization that the Rust compiler can potentially do, and can have a small effect on binary size. This effect is likely larger in combination with the previously mentioned size optimizing mode.</p>
+
+<p><strong>Standard library</strong></p>
+
+<p>The Rust standard library includes libbacktrace and libunwind, which may be undesirable in some programs. Using <code class="highlighter-rouge">#![no_std]</code> can thus result in smaller binaries, but will also usually result in substantial changes to the sort of Rust code you’re writing. Note that using Rust without the standard library is often functionally closer to the equivalent C code.</p>
+
+<p>As an example, the following C program reads in a name and says “hello” to the person with that name.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"What's your name?</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="kt">char</span> <span class="n">input</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">input</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Hello %s!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">input</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Rewriting this in Rust, you may get something like the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="n">io</span><span class="p">;</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"What's your name?"</span><span class="p">);</span>
+    <span class="k">let</span> <span class="k">mut</span> <span class="n">input</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
+    <span class="nn">io</span><span class="p">::</span><span class="nf">stdin</span><span class="p">()</span><span class="nf">.read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">input</span><span class="p">)</span><span class="nf">.unwrap</span><span class="p">();</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello {}!"</span><span class="p">,</span> <span class="n">input</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>This program, when compiled and compared against the C program, will have a larger binary and use more memory. But this program is not exactly equivalent to the above C code. The equivalent Rust code would instead look something like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">#</span><span class="o">!</span><span class="p">[</span><span class="nf">feature</span><span class="p">(</span><span class="n">lang_items</span><span class="p">)]</span>
+<span class="err">#</span><span class="o">!</span><span class="p">[</span><span class="nf">feature</span><span class="p">(</span><span class="n">libc</span><span class="p">)]</span>
+<span class="err">#</span><span class="o">!</span><span class="p">[</span><span class="nf">feature</span><span class="p">(</span><span class="n">no_std</span><span class="p">)]</span>
+<span class="err">#</span><span class="o">!</span><span class="p">[</span><span class="nf">feature</span><span class="p">(</span><span class="n">start</span><span class="p">)]</span>
+<span class="err">#</span><span class="o">!</span><span class="p">[</span><span class="n">no_std</span><span class="p">]</span>
+
+<span class="k">extern</span> <span class="n">crate</span> <span class="n">libc</span><span class="p">;</span>
+
+<span class="k">extern</span> <span class="s">"C"</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="nf">printf</span><span class="p">(</span><span class="n">fmt</span><span class="p">:</span> <span class="o">*</span><span class="k">const</span> <span class="nb">u8</span><span class="p">,</span> <span class="err">...</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">i32</span><span class="p">;</span>
+    <span class="k">fn</span> <span class="nf">scanf</span><span class="p">(</span><span class="n">fmt</span><span class="p">:</span> <span class="o">*</span><span class="k">const</span> <span class="nb">u8</span><span class="p">,</span> <span class="err">...</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">i32</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#[start]</span>
+<span class="k">fn</span> <span class="nf">start</span><span class="p">(</span><span class="n">_argc</span><span class="p">:</span> <span class="n">isize</span><span class="p">,</span> <span class="n">_argv</span><span class="p">:</span> <span class="o">*</span><span class="k">const</span> <span class="o">*</span><span class="k">const</span> <span class="nb">u8</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">isize</span> <span class="p">{</span>
+    <span class="k">unsafe</span> <span class="p">{</span>
+        <span class="nf">printf</span><span class="p">(</span><span class="n">b</span><span class="s">"What's your name?</span><span class="se">\n</span><span class="err">\</span><span class="s">0"</span><span class="nf">.as_ptr</span><span class="p">());</span>
+        <span class="k">let</span> <span class="k">mut</span> <span class="n">input</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0u8</span><span class="p">;</span> <span class="mi">100</span><span class="p">];</span>
+        <span class="nf">scanf</span><span class="p">(</span><span class="n">b</span><span class="s">"</span><span class="si">%s</span><span class="err">\</span><span class="s">0"</span><span class="nf">.as_ptr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="k">mut</span> <span class="n">input</span><span class="p">);</span>
+        <span class="nf">printf</span><span class="p">(</span><span class="n">b</span><span class="s">"Hello </span><span class="si">%s</span><span class="s">!</span><span class="se">\n</span><span class="err">\</span><span class="s">0"</span><span class="nf">.as_ptr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">input</span><span class="p">);</span>
+        <span class="mi">0</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">#[lang=</span><span class="s">"eh_personality"</span><span class="cp">]</span> <span class="k">extern</span> <span class="k">fn</span> <span class="nf">eh_personality</span><span class="p">()</span> <span class="p">{}</span>
+<span class="cp">#[lang=</span><span class="s">"panic_fmt"</span><span class="cp">]</span> <span class="k">fn</span> <span class="nf">panic_fmt</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="o">!</span> <span class="p">{</span> <span class="k">loop</span> <span class="p">{}</span> <span class="p">}</span>
+<span class="cp">#[lang=</span><span class="s">"stack_exhausted"</span><span class="cp">]</span> <span class="k">extern</span> <span class="k">fn</span> <span class="nf">stack_exhausted</span><span class="p">()</span> <span class="p">{}</span>
+</code></pre>
+</div>
+
+<p>Which should indeed roughly match C in memory usage, at the expense of more programmer complexity, and a lack of static guarantees usually provided by Rust (avoided here with the use of <code class="highlighter-rouge">unsafe</code>).</p>
+
+<h3><a href="#why-no-stable-abi" name="why-no-stable-abi">
+Why does Rust not have a stable ABI like C does, and why do I have to annotate things with extern?
+</a></h3>
+
+<p>Committing to an ABI is a big decision that can limit potentially advantageous language changes in the future. Given that Rust only hit 1.0 in May of 2015, it is still too early to make a commitment as big as a stable ABI. This does not mean that one won’t happen in the future, though. (Though C++ has managed to go for many years without specifying a stable ABI.)</p>
+
+<p>The <code class="highlighter-rouge">extern</code> keyword allows Rust to use specific ABI’s, such as the well-defined C ABI, for interop with other languages.</p>
+
+<h3><a href="#can-rust-code-call-c-code" name="can-rust-code-call-c-code">
+Can Rust code call C code?
+</a></h3>
+
+<p>Yes. Calling C code from Rust is designed to be as efficient as calling C code from C++.</p>
+
+<h3><a href="#can-c-code-call-rust-code" name="can-c-code-call-rust-code">
+Can C code call Rust code?
+</a></h3>
+
+<p>Yes. The Rust code has to be exposed via an <code class="highlighter-rouge">extern</code> declaration, which makes it C-ABI compatible. Such a function can be passed to C code as a function pointer or, if given the <code class="highlighter-rouge">#[no_mangle]</code> attribute to disable symbol mangling, can be called directly from C code.</p>
+
+<h3><a href="#why-rust-vs-cxx" name="why-rust-vs-cxx">
+I already write perfect C++. What does Rust give me?
+</a></h3>
+
+<p>Modern C++ includes many features that make writing safe and correct code less error-prone, but it’s not perfect, and it’s still easy to introduce unsafety. This is something the C++ core developers are working to overcome, but C++ is limited by a long history that predates a lot of the ideas they are now trying to implement.</p>
+
+<p>Rust was designed from day one to be a safe systems programming language, which means it’s not limited by historic design decisions that make getting safety right in C++ so complicated. In C++, safety is achieved by careful personal discipline, and is very easy to get wrong. In Rust, safety is the default. It gives you the ability to work in a team that includes people less perfect than you are, without having to spend your time double-checking their code for safety bugs.</p>
+
+<h3><a href="#how-to-get-cxx-style-template-specialization" name="how-to-get-cxx-style-template-specialization">
+How do I do the equivalent of C++ template specialization in Rust?
+</a></h3>
+
+<p>Rust doesn’t currently have an exact equivalent to template specialization, but it is <a href="https://github.com/rust-lang/rfcs/pull/1210">being worked on</a> and will hopefully be added soon. However, similar effects can be achieved via <a href="https://doc.rust-lang.org/stable/book/second-edition/ch19-04-advanced-types.html">associated types</a>.</p>
+
+<h3><a href="#how-does-ownership-relate-to-cxx-move-semantics" name="how-does-ownership-relate-to-cxx-move-semantics">
+How does Rust's ownership system relate to move semantics in C++?
+</a></h3>
+
+<p>The underlying concepts are similar, but the two systems work very
+differently in practice. In both systems, “moving” a value is a way to
+transfer ownership of its underlying resources. For example, moving a
+string would transfer the string’s buffer rather than copying it.</p>
+
+<p>In Rust, ownership transfer is the default behavior. For example, if I
+write a function that takes a <code class="highlighter-rouge">String</code> as argument, this function will
+take ownership of the <code class="highlighter-rouge">String</code> value supplied by its caller:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">process</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">caller</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">);</span>
+    <span class="nf">process</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="c">// Transfers ownership of `s` to `process`</span>
+    <span class="nf">process</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="c">// Error! ownership already transferred.</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>As you can see in the snippet above, in the function <code class="highlighter-rouge">caller</code>, the
+first call to <code class="highlighter-rouge">process</code> transfers ownership of the variable <code class="highlighter-rouge">s</code>. The
+compiler tracks ownership, so the second call to <code class="highlighter-rouge">process</code> results in
+an error, because it is illegal to give away ownership of the same
+value twice. Rust will also prevent you from moving a value if there
+is an outstanding reference into that value.</p>
+
+<p>C++ takes a different approach. In C++, the default is to copy a value
+(to invoke the copy constructor, more specifically). However, callees
+can declare their arguments using an “rvalue reference”, like
+<code class="highlighter-rouge">string&amp;&amp;</code>, to indicate that they will take ownership of some of the
+resources owned by that argument (in this case, the string’s internal
+buffer). The caller then must either pass a temporary expression or
+make an explicit move using <code class="highlighter-rouge">std::move</code>. The rough equivalent to the
+function <code class="highlighter-rouge">process</code> above, then, would be:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>void process(string&amp;&amp; s) { }
+
+void caller() {
+    string s("Hello, world!");
+    process(std::move(s));
+    process(std::move(s));
+}
+</code></pre>
+</div>
+
+<p>C++ compilers are not obligated to track moves. For example, the code
+above compiles without a warning or error, at least using the default
+settings on clang. Moreover, in C++ ownership of the string <code class="highlighter-rouge">s</code> itself
+(if not its internal buffer) remains with <code class="highlighter-rouge">caller</code>, and so the
+destructor for <code class="highlighter-rouge">s</code> will run when <code class="highlighter-rouge">caller</code> returns, even though it has
+been moved (in Rust, in contrast, moved values are dropped only by
+their new owners).</p>
+
+<h3><a href="#how-to-interoperate-with-cxx" name="how-to-interoperate-with-cxx">
+How can I interoperate with C++ from Rust, or with Rust from C++?
+</a></h3>
+
+<p>Rust and C++ can interoperate through C. Both Rust and C++ provide a <a href="https://doc.rust-lang.org/book/ffi.html">foreign function interface</a> for C, and can use that to communicate between each other. If writing C bindings is too tedious, you can always use <a href="https://github.com/servo/rust-bindgen">rust-bindgen</a> to help automatically generate workable C bindings.</p>
+
+<h3><a href="#does-rust-have-cxx-style-constructors" name="does-rust-have-cxx-style-constructors">
+Does Rust have C++-style constructors?
+</a></h3>
+
+<p>No. Functions serve the same purpose as constructors without adding language complexity. The usual name for the constructor-equivalent function in Rust is <code class="highlighter-rouge">new()</code>, although this is just a convention rather than a language rule. The <code class="highlighter-rouge">new()</code> function in fact is just like any other function. An example of it looks like so:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Foo</span> <span class="p">{</span>
+    <span class="n">a</span><span class="p">:</span> <span class="nb">i32</span><span class="p">,</span>
+    <span class="n">b</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+    <span class="n">c</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">Foo</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="nf">new</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="n">Foo</span> <span class="p">{</span>
+        <span class="n">Foo</span> <span class="p">{</span>
+            <span class="n">a</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">b</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="n">c</span><span class="p">:</span> <span class="k">false</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3><a href="#does-rust-have-copy-constructors" name="does-rust-have-copy-constructors">
+Does Rust have copy constructors?
+</a></h3>
+
+<p>Not exactly. Types which implement <code class="highlighter-rouge">Copy</code> will do a standard C-like “shallow copy” with no extra work (similar to trivially copyable types in C++). It is impossible to implement <code class="highlighter-rouge">Copy</code> types that require custom copy behavior. Instead, in Rust “copy constructors” are created by implementing the <code class="highlighter-rouge">Clone</code> trait, and explicitly calling the <code class="highlighter-rouge">clone</code> method. Making user-defined copy operators explicit surfaces the underlying complexity, making it easier for the developer to identify potentially expensive operations.</p>
+
+<h3><a href="#does-rust-have-move-constructors" name="does-rust-have-move-constructors">
+Does Rust have move constructors?
+</a></h3>
+
+<p>No. Values of all types are moved via <code class="highlighter-rouge">memcpy</code>. This makes writing generic unsafe code much simpler since assignment, passing and returning are known to never have a side effect like unwinding.</p>
+
+<h3><a href="#compare-go-and-rust" name="compare-go-and-rust">
+How are Go and Rust similar, and how are they different?
+</a></h3>
+
+<p>Rust and Go have substantially different design goals. The following differences are not the only ones (which are too numerous to list), but are a few of the more important ones:</p>
+
+<ul>
+  <li>Rust is lower level than Go. For example, Rust does not require a garbage collector, whereas Go does. In general, Rust affords a level of control that is comparable to C or C++.</li>
+  <li>Rust’s focus is on ensuring safety and efficiency while also providing high-level affordances, while Go’s is on being a small, simple language which compiles quickly and can work nicely with a variety of tools.</li>
+  <li>Rust has strong support for generics, which Go does not.</li>
+  <li>Rust has strong influences from the world of functional programming, including a type system which draws from Haskell’s typeclasses. Go has a simpler type system, using interfaces for basic generic programming.</li>
+</ul>
+
+<h3><a href="#how-do-rust-traits-compare-to-haskell-typeclasses" name="how-do-rust-traits-compare-to-haskell-typeclasses">
+How do Rust traits compare to Haskell typeclasses?
+</a></h3>
+
+<p>Rust traits are similar to Haskell typeclasses, but are currently not as powerful, as Rust cannot express higher-kinded types. Rust’s associated types are equivalent to Haskell type families.</p>
+
+<p>Some specific difference between Haskell typeclasses and Rust traits include:</p>
+
+<ul>
+  <li>Rust traits have an implicit first parameter called <code class="highlighter-rouge">Self</code>. <code class="highlighter-rouge">trait Bar</code> in Rust corresponds to <code class="highlighter-rouge">class Bar self</code> in Haskell, and <code class="highlighter-rouge">trait Bar&lt;Foo&gt;</code> in Rust corresponds to <code class="highlighter-rouge">class Bar foo self</code> in Haskell.</li>
+  <li>“Supertraits” or “superclass constraints” in Rust are written <code class="highlighter-rouge">trait Sub: Super</code>, compared to <code class="highlighter-rouge">class Super self =&gt; Sub self</code> in Haskell.</li>
+  <li>Rust forbids orphan instances, resulting in different coherence rules in Rust compared to Haskell.</li>
+  <li>Rust’s <code class="highlighter-rouge">impl</code> resolution considers the relevant <code class="highlighter-rouge">where</code> clauses and trait bounds when deciding whether two <code class="highlighter-rouge">impl</code>s overlap, or choosing between potential <code class="highlighter-rouge">impl</code>s. Haskell only considers the constraints in the <code class="highlighter-rouge">instance</code> declaration, disregarding any constraints provided elsewhere.</li>
+  <li>A subset of Rust’s traits (the <a href="https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md">“object safe”</a> ones) can be used for dynamic dispatch via trait objects. The same feature is available in Haskell via GHC’s <code class="highlighter-rouge">ExistentialQuantification</code>.</li>
+</ul>
+
+<h2 id="documentation">Documentation</h2>
+
+<h3><a href="#why-are-so-many-rust-answers-on-stackoverflow-wrong" name="why-are-so-many-rust-answers-on-stackoverflow-wrong">
+Why are so many Rust answers on Stack Overflow wrong?
+</a></h3>
+
+<p>The Rust language has been around for a number of years, and only reached version 1.0 in May of 2015. In the time before then the language changed significantly, and a number of Stack Overflow answers were given at the time of older versions of the language.</p>
+
+<p>Over time more and more answers will be offered for the current version, thus improving this issue as the proportion of out-of-date answers is reduced.</p>
+
+<h3><a href="#where-do-i-report-issues-in-the-rust-documentation" name="where-do-i-report-issues-in-the-rust-documentation">
+Where do I report issues in the Rust documentation?
+</a></h3>
+
+<p>You can report issues in the Rust documentation on the Rust compiler <a href="https://github.com/rust-lang/rust/issues">issue tracker</a>. Make sure to read the <a href="https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#writing-documentation">contributing guidelines</a> first.</p>
+
+<h3><a href="#how-do-i-view-rustdoc-documentation-for-a-library-my-project-depends-on" name="how-do-i-view-rustdoc-documentation-for-a-library-my-project-depends-on">
+How do I view rustdoc documentation for a library my project depends on?
+</a></h3>
+
+<p>When you use <code class="highlighter-rouge">cargo doc</code> to generate documentation for your own project, it also generates docs for the active dependency versions. These are put into the <code class="highlighter-rouge">target/doc</code> directory of your project. Use <code class="highlighter-rouge">cargo doc --open</code> to open the docs after building them, or just open up <code class="highlighter-rouge">target/doc/index.html</code> yourself.</p>
+
+
+</div>
+
+</div>
+
+
+    <footer>
+      <p>Vår webbsida på andra språk:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

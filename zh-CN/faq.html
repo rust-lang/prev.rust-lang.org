@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>常见问题解答 &middot; Rust 程序设计语言</title>
+    <meta name="keywords" content="Rust, Rust 编程语言, Rust 语言, Rust 程序设计语言, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="一种注重高效、安全、并行的系统程序语言。">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme_zh_cn.svg" alt="从 GitHub 上拷贝源码" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/zh-CN/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust logo" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/zh-CN/documentation.html">文档</a></h2>
+	  <h2><a href="/zh-CN/install.html">安装</a></h2>
+	  <h2><a href="/zh-CN/community.html">社区</a></h2>
+	  <h2><a href="/zh-CN/contribute.html">贡献</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600' rel='stylesheet' type='text/css'>
+<link href='/css/syntax-highlight.css' rel='stylesheet' type='text/css'>
+
+<div class="faq">
+  <h1 id="section">常见问题解答</h1>
+
+<p class="faq-intro">
+此页面回答了有关 Rust 编程语言的常见问题。它不是这个语言的完整指南，也不是教学该语言的工具。这是 Rust 社区常遇到的人们重复提问的回答，及澄清了 Rust 某些设计决策幕后的理由。
+</p>
+
+<p class="faq-intro">
+如果你觉得有一些常见或重要的问题没有在此列出，欢迎<a href="https://github.com/rust-lang/rust-www/blob/master/CONTRIBUTING.md">帮我们解决</a>。
+</p>
+
+<div id="toc">
+    <h2>目录</h2><a href="#toggle-toc"></a>
+    <div class="contents">
+        <ol id="toc-contents">
+            <li><a href="#project">Rust 项目</a></li>
+            <li><a href="#performance">性能</a></li>
+            <li><a href="#syntax">语法</a></li>
+            <li><a href="#numerics">数字</a></li>
+            <li><a href="#strings">字符串</a></li>
+            <li><a href="#collections">集合</a></li>
+            <li><a href="#ownership">所有权</a></li>
+            <li><a href="#lifetimes">生命周期</a></li>
+            <li><a href="#generics">泛型</a></li>
+            <li><a href="#input-output">输入 / 输出</a></li>
+            <li><a href="#error-handling">错误处理</a></li>
+            <li><a href="#concurrency">并发</a></li>
+            <li><a href="#macros">宏</a></li>
+            <li><a href="#debugging">调试和工具</a></li>
+            <li><a href="#low-level">底层</a></li>
+            <li><a href="#cross-platform">跨平台</a></li>
+            <li><a href="#modules-and-crates">模块和包</a></li>
+            <li><a href="#libraries">库</a></li>
+            <li><a href="#design-patterns">设计模式</a></li>
+            <li><a href="#other-languages">其他语言</a></li>
+            <li><a href="#documentation">文档</a></li>
+        </ol>
+    </div>
+</div>
+
+<h2 id="project">Rust 项目</h2>
+
+<h3><a href="#what-is-this-projects-goal" name="what-is-this-projects-goal">
+此项目的目标是什么？
+</a></h3>
+
+<p>设计和实现一个安全、并发、实用的系统语言。</p>
+
+<p>Rust 存在的原因是，其他语言在这个抽象层次和效率上不能令人满意。尤其是：</p>
+
+<ol>
+  <li>太少注重安全性。</li>
+  <li>对并发的支持不够好。</li>
+  <li>缺乏实用的可见功能。</li>
+  <li>对资源的控制能力有限。</li>
+</ol>
+
+<p>Rust 作为一种备选方案，可以提供高效的代码和舒适的抽象级别，同时改进上述四项要点。</p>
+
+<h3><a href="#is-this-project-controlled-by-mozilla" name="is-this-project-controlled-by-mozilla">
+这个项目由 Mozilla 控制？
+</a></h3>
+
+<p>不是。Rust 始于 2006 年 Graydon Hoare 的兼职项目，并持续了三年。Mozilla 在语言成熟到足以运行基本测试并展示其核心概念时于 2009 年开始参与。虽然它由 Mozilla 资助，但 Rust 是由来自世界各地的多样化的发烧友开发的。<a href="https://www.rust-lang.org/team.html">Rust 团队</a>由 Mozilla 和非 Mozilla 成员组成，<code class="highlighter-rouge">rustc</code>（Rust 的编译器）至今也有超过<a href="https://github.com/rust-lang/rust/">1,900 名独立贡献者</a>。</p>
+
+<p>就<a href="https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md">项目治理</a>而言，
+Rust 由一个从全局角度出发，为项目设定愿景和优先事项的核心团队管理。
+我们还有小组指导和促进特定兴趣领域的发展，包括核心语言、编译器、Rust 库、Rust 工具和官方 Rust 社区的管理。这些领域中的设计都先进地经过一个 <a href="https://github.com/rust-lang/rfcs">RFC 流程</a>。对于不需要 RFC 的更改，决定是通过 <a href="https://github.com/rust-lang/rust"><code class="highlighter-rouge">rustc</code> 代码库</a>上的拉取请求决定。</p>
+
+<h3><a href="#what-are-some-non-goals" name="what-are-some-non-goals">
+哪些不是 Rust 的目标？
+</a></h3>
+
+<ol>
+  <li>我们不使用任何特别尖端的技术。旧的、成熟的技术更好。</li>
+  <li>我们不把表现力、极简或优雅看的比其他目标更重要。这些特性值得拥有，但这不是主要目标。</li>
+  <li>我们不打算覆盖 C++ 或任何其他语言的完整功能集。Rust 应提供适用于大部分场景的功能。</li>
+  <li>我们不打算做到 100% 静态， 100% 安全， 100% 反射或任何其他意义上的教条主义。存在权衡。</li>
+  <li>我们不强求 Rust 能在「每个可能的平台」上运行。它必须没有不必要的妥协，最终适用于广泛使用的硬件和软件平台。</li>
+</ol>
+
+<h3><a href="#how-does-mozilla-use-rust" name="how-does-mozilla-use-rust">
+Mozilla 的哪些项目使用 Rust？
+</a></h3>
+
+<p>主要项目是 <a href="https://github.com/servo/servo">Servo</a>，它是 Mozilla 正在雕琢的一个实验性的浏览器引擎。Mozilla 还在努力<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1135640">整合 Rust 组件</a>到 Firefox。</p>
+
+<h3><a href="#what-examples-are-there-of-large-rust-projects" name="what-examples-are-there-of-large-rust-projects">
+有哪些大型的 Rust 项目？
+</a></h3>
+
+<p>目前两个最大的 Rust 开源项目是 <a href="https://github.com/servo/servo">Servo</a> 和 <a href="https://github.com/rust-lang/rust">Rust 编译器</a>本身。</p>
+
+<h3><a href="#who-else-is-using-rust" name="who-else-is-using-rust">
+还有谁在使用 Rust？
+</a></h3>
+
+<p><a href="friends.html">越来越多的组织在使用 Rust！</a></p>
+
+<!--
+### What projects are good examples of idiomatic Rust code?
+
+TODO: Write this answer.
+-->
+
+<h3><a href="#how-can-i-try-rust-easily" name="how-can-i-try-rust-easily">
+怎样轻松地尝试 Rust？
+</a></h3>
+
+<p><a href="https://play.rust-lang.org/">playpen</a> 是尝试 Rust 的最简单方法，它是一个可编写和运行 Rust 代码的在线应用。如果想在你的系统上尝试 Rust，<a href="https://www.rust-lang.org/install.html">安装</a>并尝试<a href="https://doc.rust-lang.org/stable/book/second-edition/ch02-00-guessing-game-tutorial.html">猜谜游戏</a>教程。</p>
+
+<h3><a href="#how-do-i-get-help-with-rust-issues" name="how-do-i-get-help-with-rust-issues">
+如何就 Rust 问题取得帮助？
+</a></h3>
+
+<p>那有很多种方式。你可以尝试：</p>
+
+<ul>
+  <li>在 <a href="https://users.rust-lang.org/">users.rust-lang.org</a> 发帖，这是官方的 Rust 用户论坛</li>
+  <li>在官方的 <a href="https://chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust">Rust IRC 频道</a>提问（irc.mozilla.org 上的 #rust）</li>
+  <li>在 <a href="https://stackoverflow.com/questions/tagged/rust">Stack Overflow</a> 提问，加上「rust」tag</li>
+  <li>在 <a href="https://www.reddit.com/r/rust">/r/rust</a> 发帖，这是非官方的 Rust 板块</li>
+</ul>
+
+<h3><a href="#why-has-rust-changed-so-much" name="why-has-rust-changed-so-much">
+为什么 Rust 随时间推移在大幅变化？
+</a></h3>
+
+<p>Rust 起步的目标是创建一个安全且合用的系统编程语言。为了追求这个目标，它探索了很多想法，其中一些（生命周期、trait）被保留，而其他则被丢弃（类型体系系统、绿色线程）。此外，由于早期的设计被升级以最好地使用 Rust 的特性，并提供高质量，一致的跨平台 API，在 2.0 之前，许多标准库被重写。现在的 Rust 已达到了 1.0，语言保证为「稳定」（stable）；虽然它可能继续演变，但运行于目前 Rust 上的代码，在未来的发行版本上应该能继续工作。</p>
+
+<h3><a href="#how-does-rust-language-versioning-work" name="how-does-rust-language-versioning-work">
+Rust 语言的版本控制是怎样的？
+</a></h3>
+
+<p>Rust 的语言版本遵循 <a href="http://semver.org/">SemVer</a>，如果更改修复了编译器错误、补丁安全漏洞，或更改调度或类型推断需要附加注明，则稳定 API 的向后不兼容更改允许在次要版本中出现。次要版本更改的更详细指南可以在<a href="https://github.com/rust-lang/rfcs/blob/master/text/1122-language-semver.md">语言</a>和<a href="https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md">标准库</a>的已批准 RFC 中找到。</p>
+
+<p>Rust 维护三个「发行频道」：稳定版（stable）、测试版（beta）和开发版（nightly）。稳定版和测试版每六周更新一次，而在那时的开发版会变为新的测试版，测试版变为新的稳定版。标记为不稳定或者隐藏在特性门控后的语言和标准库特性只能在开发版上使用，新特性最初会被标记为不稳定，一旦被核心团队和相关的子团队批准的话就变成「通过门控的（ungated）」，这种方法允许实验性变更，并同时为稳定频道提供强有力的向后兼容保证。</p>
+
+<p>就相关的其他详细信息，请阅读 Rust 博客 <a href="http://blog.rust-lang.org/2014/10/30/Stability.html">「Stability as a Deliverable」</a>。</p>
+
+<h3><a href="#can-i-use-unstable-features-on-the-beta-or-stable-channel" name="can-i-use-unstable-features-on-the-beta-or-stable-channel">
+我可以在 beta 或 stable 频道上使用不稳定的功能吗？
+</a></h3>
+
+<p>并不能。Rust 努力保证测试版和稳定版的特性稳定性。当某些特性不稳定时，意味着我们还不能提供这种保证，不希望开发者依赖它。这给了我们在开发版上适时尝试改变的机会，同时继续维护开发者寻求的稳定性。</p>
+
+<p>测试和稳定版每六周更新一次是固定的，偶然有测试版的修正被及时接受，你不想使用开发版而等待希望的某个特性的话，你可以通过在 issue tracker 上查看 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aissue+is%3Aopen+tracking+label%3AB-unstable"><code class="highlighter-rouge">B-unstable</code></a> tag 跟踪尚存的问题。</p>
+
+<h3><a href="#what-are-feature-gates" name="what-are-feature-gates">
+什么是「特性门控」（Feature Gates）？
+</a></h3>
+
+<p>「特性门控」（Feature Gates）是 Rust 用来稳定编译器、语言和标准库特性的机制。一个受「门控」的特性只能在 nightly 发布渠道才能使用，且必须显式指定 <code class="highlighter-rouge">#[feature]</code> 属性或者命令行参数 <code class="highlighter-rouge">-Z unstable-options</code>。当一个特性稳定了，它才能在稳定版上可用，不需要显式启用。此时，这个特性被认为是通过门控的（ungated）。特性门控允许开发者在稳定版提供之前，在开发中测试试验性的功能。</p>
+
+<h3><a href="#why-a-dual-mit-asl2-license" name="why-a-dual-mit-asl2-license">
+为什么采用 MIT/ASL2 双许可证？
+</a></h3>
+
+<p>Apache 许可证包含对专利侵权的重要保护，但它与 GPL 第二版不兼容。为避免 Rust 使用 GPL2 会遇到的问题，因而同时采用 MIT 许可证。</p>
+
+<h3><a href="#why-a-permissive-license" name="why-a-permissive-license">
+为什么是 BSD 风格的许可证，而不是 MPL 或三个许可证？
+</a></h3>
+
+<p>这一部分是由于原始开发者（Graydon）的偏好，另一部分原因在于，语言倾向于拥有更广泛的受众群体，以及将其更多样的嵌入和提供到终端，例如网页浏览器。我们希望呼吁尽可能多地潜在贡献者。</p>
+
+<h2 id="performance">性能</h2>
+
+<h3><a href="#how-fast-is-rust" name="how-fast-is-rust">
+Rust 有多快？
+</a></h3>
+
+<p>飞快！Rust 在一些基准测试中（例如 <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/faster/rust.html">Benchmarks Game</a>、<a href="https://github.com/kostya/benchmarks">等等</a>）已经有与惯用的 C 和 C++ 竞争的能力。</p>
+
+<p>与 C++ 类似，Rust 采用<a href="http://blog.rust-lang.org/2015/05/11/traits.html">零成本抽象</a>作为其核心原则之一：Rust 的抽象都没有施加全局性能损失，也不会有任何传统意义上的运行时系统的开销。</p>
+
+<p>鉴于 Rust 建立在 LLVM 上，以及力求从 LLVM 的角度来看 C 语言，任何 LLVM 的性能改进也都有助于 Rust。从长远来看，Rust 的类型系统中更丰富的信息也应该能够实现对于 C / C++ 代码来说困难或不可能的优化。</p>
+
+<h3><a href="#is-rust-garbage-collected" name="is-rust-garbage-collected">
+Rust 会垃圾收集吗？
+</a></h3>
+
+<p>不会。Rust 的重要创新之一就是保证内存安全（无段错误 segfaults），<em>无需</em>垃圾收集。</p>
+
+<p>通过避免垃圾收集（GC），Rust 可以提供许多益处：可预测的资源清理，降低内存管理开销，基本上没有运行时系统。这些特征使 Rust 很容易嵌入到任意上下文，并使其更容易<a href="http://calculist.org/blog/2015/12/23/neon-node-rust/">集成 Rust 代码到有 GC 的语言</a>。</p>
+
+<p>Rust 通过其所有权和借用（borrowing）系统避免了垃圾收集的需求，而同一系统也有助于解决许多其他问题，包括<a href="http://blog.skylight.io/rust-means-never-having-to-close-a-socket/">一般的资源管理</a>和<a href="http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html">并发</a>。</p>
+
+<p>如果单一的所有权不够，Rust 程序依赖标准的引用计数智能指针类型，<a href="https://doc.rust-lang.org/std/rc/struct.Rc.html"><code class="highlighter-rouge">Rc</code></a>，及其线程安全版的 <a href="https://doc.rust-lang.org/std/sync/struct.Arc.html"><code class="highlighter-rouge">Arc</code></a>，而不是 GC。</p>
+
+<p>不过，我们也在调查<em>可选</em>的垃圾收集作为一项未来扩展。
+其目标旨在顺利与有垃圾收集的运行时整合，
+例如由
+<a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey">Spidermonkey</a>
+和 <a href="https://developers.google.com/v8/?hl=en">V8</a> JavaScript 引擎所提供的那些。 最后，有人已调研了无编译器支持实现的<a href="https://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/">纯 Rust 垃圾收集器</a>
+。</p>
+
+<h3><a href="#why-is-my-program-slow" name="why-is-my-program-slow">
+为什么我的程序很慢？
+</a></h3>
+
+<p>如非要求，Rust 编译器不会优化编译，<a href="https://users.rust-lang.org/t/why-does-cargo-build-not-optimise-by-default/4150/3">因为优化会编译速度，且在开发过程中通常是不合需要</a>。</p>
+
+<p>如果你使用 <code class="highlighter-rouge">cargo</code> 编译，请使用 <code class="highlighter-rouge">--release</code> 标志。如果你直接使用 <code class="highlighter-rouge">rustc</code>，使用 <code class="highlighter-rouge">-O</code> 标志。两者都将优化编译。</p>
+
+<h3><a href="#why-is-rustc-slow" name="why-is-rustc-slow">
+Rust 编译似乎很慢。这是为什么？
+</a></h3>
+
+<p>代码转换和优化。Rust 提供了高级抽象，它可以编译成高效的机器代码，而这些翻译需要时间来运行，特别是优化。</p>
+
+<p>但 Rust 的编译时间并不像看起来那么糟糕，并有理由相信会有所改善。当比较 C++ 与 Rust 的类似大小的项目时，整个项目的编译时间一般被认为是可比的。Rust 编译缓慢的一般认识很大程度上是由于 C++ 与 Rust 的<em>编译模型</em>的差异：C++ 的编译单元是文件，而 Rust 则是包（crate），它由很多文件组成。因此，在开发过程中，修改单个 C++ 文件导致的重新编译比 Rust 更少。正在进行的重大工作将重构编译器来引入<a href="https://github.com/rust-lang/rfcs/blob/master/text/1298-incremental-compilation.md">增量编译</a>，这将使 Rust 的编译时间变得比 C++ 的模型更有优势。</p>
+
+<p>除了编译模型外，Rust 的语言设计和编译器实现的其他几个方面也影响了编译时性能。</p>
+
+<p>首先，Rust 有中等复杂类型的系统，并且必须花费不可忽略的编译时间来强制在运行时使 Rust 安全的约束。</p>
+
+<p>其次，Rust 编译器遭受着长期的技术债务，特别是生成质量差的 LLVM IR，而 LLVM 必须花时间「修复」。 在 Rust 编译器内部增加了一个名为 <a href="https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md">MIR</a> 的新的内部表示方式，为执行更多优化和提升 LLVM IR 的生成质量提供了潜在的可能，然而这项工作尚未展开。</p>
+
+<p>第三，Rust 使用的 LLVM 代码生成是一把双刃剑：虽然它能够使 Rust 具有世界一流的运行时性能，但 LLVM 是一个不重视编译时性能的大型框架，特别是在使用较差输入质量时。</p>
+
+<p>最后，虽然 Rust 的单态（monomorphising）泛型（C ++  风格                                                          ）的首选策略产生快速代码，但它需要比其他翻译策略产生更多的代码。Rust 程序员可以使用 trait 对象通过动态调度来抵消这个代码膨胀。</p>
+
+<h3><a href="#why-are-rusts-hashmaps-slow" name="why-are-rusts-hashmaps-slow">
+为什么 Rust 的 <code>HashMap</code> 很慢？
+</a></h3>
+
+<p>默认情况下，Rust 的 <a href="https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html"><code class="highlighter-rouge">HashMap</code></a> 使用 <a href="https://131002.net/siphash/">SipHash</a> 哈希算法，其旨在防止<a href="http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited">哈希表碰撞攻击</a>，同时<a href="https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6">在各种工作负载上提供合理的性能</a>。</p>
+
+<p>虽然 SipHash 在许多情况下<a href="http://cglab.ca/%7Eabeinges/blah/hash-rs/">表现出竞争优势</a>，但其中一个比其它哈希算法要慢的情况是使用短键，例如整数。这就是为什么 Rust 程序员经常观察到 <a href="https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html"><code class="highlighter-rouge">HashMap</code></a> 表现不佳的原因。在这些情况下，经常推荐 <a href="https://crates.io/crates/fnv">FNV 哈希</a>，但请注意，它不具备与 SipHash 相同的防碰撞性。</p>
+
+<h3><a href="#why-is-there-no-integrated-benchmarking" name="why-is-there-no-integrated-benchmarking">
+为什么没有集成的基准测试基础设施？
+</a></h3>
+
+<p>有，但它只在 nightly 发行频道上可用。我们最终计划为集成的基准建立一个可插拔系统，但同时，目前的系统<a href="https://github.com/rust-lang/rust/issues/29553">被认为是不稳定的</a>。</p>
+
+<h3><a href="#does-rust-do-tail-call-optimization" name="does-rust-do-tail-call-optimization">
+Rust 是否有做尾部调用优化？
+</a></h3>
+
+<p>一般来说，没有。尾部调用优化可能在<a href="http://llvm.org/docs/CodeGenerator.html#sibling-call-optimization">有限的情况</a>下进行，但是<a href="https://mail.mozilla.org/pipermail/rust-dev/2013-April/003557.html">不能保证</a>。由于该功能总归是需要的， Rust 保留了一个关键字（<code class="highlighter-rouge">become</code>），尽管目前还不清楚它在技术上是否可行，以及它是否会被实现。有一个<a href="https://github.com/rust-lang/rfcs/pull/81">提议的扩展</a>，将允许在某些情况下消除尾部调用，但目前被推迟了。</p>
+
+<h3><a href="#does-rust-have-a-runtime" name="does-rust-have-a-runtime">
+Rust 有运行时吗？
+</a></h3>
+
+<p>没有像 Java 语言这样典型意义上的运行时。但 Rust 标准库的一部分可以被认为是一个「运行时」，它提供了堆（heap），回溯（backtraces），展开（unwinding）和栈保护（stack guards）。在用户的 <code class="highlighter-rouge">main</code> 函数之前只运行<a href="https://github.com/rust-lang/rust/blob/33916307780495fe311fe9c080b330d266f35bfb/src/libstd/rt.rs#L43">很少的初始化代码</a>。Rust 标准库还链接到 C 标准库，执行类似的<a href="http://www.embecosm.com/appnotes/ean9/html/ch05s02.html">运行时初始化</a>。 Rust 代码可以在没有标准库的情况下编译，在这种情况下，运行时大概相当于 C。</p>
+
+<h2 id="syntax">语法</h2>
+
+<h3><a href="#why-curly-braces" name="why-curly-braces">
+为什么用花括号？为什么 Rust 的语法不能像 Haskell 或者 Python 那样？
+</a></h3>
+
+<p>使用花括号表示块是各种编程语言中常见的设计选择，Rust 与此一致，对于那些已经熟悉这种风格的人员来说很有用。</p>
+
+<p>对程序员和编译器中的更简单的解析器来说，花括号允许更加灵活的语法。</p>
+
+<h3><a href="#why-brackets-around-blocks" name="why-brackets-around-blocks">
+我可以在 <code>if</code> 条件中省略括号，那为什么我还必须在单行块上面加括号？为什么不允许 C 的风格？
+</a></h3>
+
+<p>鉴于 C 强制要求 <code class="highlighter-rouge">if</code> 条件语句加括号，但花括号可选。 Rust 在 <code class="highlighter-rouge">if</code> 表达式中作出了相反的选择。这使得条件明确地与主体分离，并避免了可选花括号可能导致的在重构时易漏的错误，就像 Apple 的 <a href="https://gotofail.com/">goto 故障</a> bug。</p>
+
+<h3><a href="#why-no-literal-syntax-for-dictionaries" name="why-no-literal-syntax-for-dictionaries">
+为什么字典类型没有字面语法？
+</a></h3>
+
+<p>Rust 的整体设计偏好是限制<em>语言</em>的大小，同时支持强大的<em>库</em>。Rust 确实为数组和字符串字面值提供了初始化语法，这些是该语言中仅有的内建集合类型。其它由库定义的类型，包括无处不在的 <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec</code></a> 集合类型，使用像 <a href="https://doc.rust-lang.org/stable/std/macro.vec!.html"><code class="highlighter-rouge">vec!</code></a> 这样的宏来进行初始化。</p>
+
+<p>这种使用 Rust 宏机制来初始化集合的设计选择，在将来很可能会被普遍地扩展到其它集合类型，不仅可以简化 <a href="https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html"><code class="highlighter-rouge">HashMap</code></a> 和 <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec</code></a> 的初始化，还可以用于其它类型如 <a href="https://doc.rust-lang.org/stable/std/collections/struct.BTreeMap.html"><code class="highlighter-rouge">BTreeMap</code></a>。同时，如果你想要一个更加方便的语法来初始化集合，你可以通过<a href="https://stackoverflow.com/questions/27582739/how-do-i-create-a-hashmap-literal">创建你自己的宏</a>来提供。</p>
+
+<h3><a href="#when-should-i-use-an-implicit-return" name="when-should-i-use-an-implicit-return">
+我什么时候应该使用隐式返回？
+</a></h3>
+
+<p>Rust 是一个非常面向表达式的语言，「隐式返回」是设计的一部分。 像 <code class="highlighter-rouge">if</code>，<code class="highlighter-rouge">match</code> 的结构和正常的块，在 Rust 中都是表达式。例如，以下代码检查一个 <a href="https://doc.rust-lang.org/stable/std/primitive.i64.html"><code class="highlighter-rouge">i64</code></a> 是否是奇数，通过简单地将将其作为值来返回结果：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">is_odd</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">i64</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">bool</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span> <span class="k">true</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="k">false</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>然而，它还可以更进一步简化为：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">is_odd</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">i64</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">bool</span> <span class="p">{</span>
+    <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>在每个示例中，函数的最后一行是该函数的返回值。重要的是要注意，如果一个函数以分号结尾，它的返回类型将是 <code class="highlighter-rouge">()</code> ，表示没有返回值。隐式返回必须省略分号才能起作用。</p>
+
+<p>只有在隐式返回不可用的时候才使用显式返回，因为你在函数体结尾之前返回。虽然上述每个函数都可以写成 <code class="highlighter-rouge">return</code> 关键字加上分号，但这样做是不必要的冗余，而且与 Rust 的惯例不一致。</p>
+
+<h3><a href="#why-arent-function-signatures-inferred" name="why-arent-function-signatures-inferred">
+为什么函数签名不作推导？
+</a></h3>
+
+<p>在 Rust 中，声明倾向于使用显式类型，而实际代码则用类型推导。这种设计有几个原因：</p>
+
+<ul>
+  <li>强制性声明有助于在模块和包（crate）级别上实现接口的稳定性。</li>
+  <li>签名便于提高程序员对代码的理解，消除 IDE 在整个包上运行类型推导算法来猜测一个函数参数类型的必要；它总是明确和就近的。</li>
+  <li>实现上，它简化了类型推导算法，因为推导只需要一次查看一个函数。</li>
+</ul>
+
+<h3><a href="#why-does-match-have-to-be-exhaustive" name="why-does-match-have-to-be-exhaustive">
+为什么 <code>match</code> 必须是穷举的？
+</a></h3>
+
+<p>有助于重构和明确性。</p>
+
+<p>首先，如果 <code class="highlighter-rouge">match</code> 涵盖了所有的可能性，将来在 <code class="highlighter-rouge">enum</code> 中添加变量将导致编译失败，而不是运行时错误。这种类型的编译器辅助使得在 Rust 中大胆地重构成为可能。</p>
+
+<p>其次，穷举检查使得默认情况下的语义很明确：通常，在一个非穷举的 <code class="highlighter-rouge">match</code> 中如果没有匹配到任何项，唯一安全的做法是 panic 当前的线程。早期版本的 Rust 并不要求 <code class="highlighter-rouge">match</code> 项需要穷举，发现这是一个很大的 bug 的来源。</p>
+
+<p>使用通配符 <code class="highlighter-rouge">_</code> 可以很容易地忽略所有未指定的情况：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">match</span> <span class="n">val</span><span class="nf">.do_something</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">Cat</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+    <span class="n">_</span>      <span class="k">=&gt;</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="numerics">数字</h2>
+
+<h3><a href="#which-type-of-float-should-i-use" name="which-type-of-float-should-i-use">
+在浮点运算中我该用 <code>f32</code> 还是 <code>f64</code>？
+</a></h3>
+
+<p>对于这两者的选择取决于程序的目的。</p>
+
+<p>如果你对浮点数的最大精度感兴趣，那么更倾向于选择 <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html"><code class="highlighter-rouge">f64</code></a>。如果你更注重于保持数值占用更小的空间，或者更高的效率，而不关心由于每个数值具有较少的位而失去一些精确性，则选择 <a href="https://doc.rust-lang.org/stable/std/primitive.f32.html"><code class="highlighter-rouge">f32</code></a> 会更好。在 <a href="https://doc.rust-lang.org/stable/std/primitive.f32.html"><code class="highlighter-rouge">f32</code></a> 上的操作通常更快，即使在 64 位的硬件上也是如此。作为一个常见的例子，图形编程通常使用 <a href="https://doc.rust-lang.org/stable/std/primitive.f32.html"><code class="highlighter-rouge">f32</code></a> 因为它需要更高的性能，而且 32 位浮点数足以表示屏幕上的像素。</p>
+
+<p>如果有疑问，请选择 <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html"><code class="highlighter-rouge">f64</code></a> 以获得更高的精度。</p>
+
+<h3><a href="#why-cant-i-compare-floats" name="why-cant-i-compare-floats">
+为什么我不能比较浮点数，或者把它们作为 <code>HashMap</code> 或 <code>BTreeMap</code> 的键？
+</a></h3>
+
+<p>浮点数可以用操作符 <code class="highlighter-rouge">==</code>，<code class="highlighter-rouge">!=</code>，<code class="highlighter-rouge">&lt;</code>，<code class="highlighter-rouge">&lt;=</code>，<code class="highlighter-rouge">&gt;</code>，<code class="highlighter-rouge">&gt;=</code>，以及函数 <code class="highlighter-rouge">partial_cmp()</code> 进行比较。<code class="highlighter-rouge">==</code> 和 <code class="highlighter-rouge">!=</code> 是 <a href="https://doc.rust-lang.org/stable/std/cmp/trait.PartialEq.html"><code class="highlighter-rouge">PartialEq</code></a> trait 的一部分，而 <code class="highlighter-rouge">&lt;</code>，<code class="highlighter-rouge">&lt;=</code>，<code class="highlighter-rouge">&gt;</code>，<code class="highlighter-rouge">&gt;=</code>，以及 <code class="highlighter-rouge">partial_cmp()</code> 是 <a href="https://doc.rust-lang.org/stable/std/cmp/trait.PartialOrd.html"><code class="highlighter-rouge">PartialOrd</code></a> trait 的一部分。</p>
+
+<p>浮点数不能用 <code class="highlighter-rouge">cmp()</code> 函数进行比较，它是 <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html"><code class="highlighter-rouge">Ord</code></a> trait 的一部分，因为浮点数不是全序的。此外，浮点数也不是完全等价的，所以它们没有实现 <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html"><code class="highlighter-rouge">Eq</code></a> trait。</p>
+
+<p>浮点数不是全序或等价的，因为浮点值 <a href="https://en.wikipedia.org/wiki/NaN"><code class="highlighter-rouge">NaN</code></a> 既不小于，也不大于，或者等于其它任何浮点数或者自身。</p>
+
+<p>因为浮点数没有实现 <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html"><code class="highlighter-rouge">Eq</code></a> 或 <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html"><code class="highlighter-rouge">Ord</code></a>，它们不能用于 trait 约束要求是这两种 trait 的地方，例如 <a href="https://doc.rust-lang.org/stable/std/collections/struct.BTreeMap.html"><code class="highlighter-rouge">BTreeMap</code></a> 或 <a href="https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html"><code class="highlighter-rouge">HashMap</code></a>。这很重要，因为这些类型<em>假设</em>它们的键提供一个全序或完全等价的关系，否则将失败。</p>
+
+<p>有一个<a href="https://crates.io/crates/ordered-float">包</a>提供了对 <a href="https://doc.rust-lang.org/stable/std/primitive.f32.html"><code class="highlighter-rouge">f32</code></a> 和 <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html"><code class="highlighter-rouge">f64</code></a> 的 <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html"><code class="highlighter-rouge">Ord</code></a> 和 <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html"><code class="highlighter-rouge">Eq</code></a> 的实现的封装，可能在某些情况下会有用。</p>
+
+<h3><a href="#how-can-i-convert-between-numeric-types" name="how-can-i-convert-between-numeric-types">
+如何在数字类型间进行转换？
+</a></h3>
+
+<p>有两种方法：一种是 <code class="highlighter-rouge">as</code> 关键字，它用于原生类型的简单转换，另一种是 <a href="https://doc.rust-lang.org/stable/std/convert/trait.Into.html"><code class="highlighter-rouge">Into</code></a> 和 <a href="https://doc.rust-lang.org/stable/std/convert/trait.From.html"><code class="highlighter-rouge">From</code></a> trait，用于实现多种类型的转换（也可以用于你自己定义的类型）。<a href="https://doc.rust-lang.org/stable/std/convert/trait.Into.html"><code class="highlighter-rouge">Into</code></a> 和 <a href="https://doc.rust-lang.org/stable/std/convert/trait.From.html"><code class="highlighter-rouge">From</code></a> trait 仅用于无损转换的情况，所以例如 <code class="highlighter-rouge">f64::from(0f32)</code> 可以成功编译而 <code class="highlighter-rouge">f32::from(0f64)</code> 则不行。另一方面，<code class="highlighter-rouge">as</code> 可以用于任意两种原生类型的转换，并根据需要进行截断。</p>
+
+<h3><a href="#why-doesnt-rust-have-increment-and-decrement-operators" name="why-doesnt-rust-have-increment-and-decrement-operators">
+为什么 Rust 没有递增或递减操作符？
+</a></h3>
+
+<p>先增和后增（以及相对应的减法）虽然方便，但也相当复杂。它们都需要求值顺序的知识，而且经常导致 C 和 C++ 中的细节错误和未定义的行为。 <code class="highlighter-rouge">x = x + 1</code> 或 <code class="highlighter-rouge">x += 1</code> 只是略长一点，但更加明确。</p>
+<h2 id="strings">字符串</h2>
+
+<h3><a href="#how-to-convert-string-or-vec-to-slice" name="how-to-convert-string-or-vec-to-slice">
+如何将 <code>String</code> 或 <code>Vec&lt;T&gt;</code> 转换成切片（<code>&amp;str</code> 和 <code>&amp;[T]</code>）？
+</a></h3>
+
+<p>通常，你可以在需要切片的地方传入 <code class="highlighter-rouge">String</code> 或 <code class="highlighter-rouge">Vec&lt;T&gt;</code>。使用<a href="https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html">强制解引（Deref）</a>，在用 <code class="highlighter-rouge">&amp;</code> 或 <code class="highlighter-rouge">&amp;mut</code> 传递引用时，<a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a> 和 <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec</code></a> 会自动强制转换为对应的切片。</p>
+
+<p>在 <code class="highlighter-rouge">&amp;str</code> 和 <code class="highlighter-rouge">&amp;[T]</code> 上实现的方法可以直接在 <code class="highlighter-rouge">String</code> 和 <code class="highlighter-rouge">Vec&lt;T&gt;</code> 上访问。例如，即使 <code class="highlighter-rouge">trim</code> 是 <code class="highlighter-rouge">&amp;str</code> 上的方法，而 <code class="highlighter-rouge">some_string</code> 是一个 <code class="highlighter-rouge">String</code>，<code class="highlighter-rouge">some_string.trim()</code> 也可以运行。</p>
+
+<p>在某些情况下，例如泛型代码，需要手动转换。可以用切片操作符实现手动转换，如：<code class="highlighter-rouge">&amp;my_vec[..]</code>。</p>
+
+<h3><a href="#how-to-convert-between-str-and-string" name="how-to-convert-between-str-and-string">
+如何将 <code>&amp;str</code> 转换为 <code>String</code>，或者反向转换？
+</a></h3>
+
+<p><a href="https://doc.rust-lang.org/stable/std/string/trait.ToString.html#tymethod.to_string"><code class="highlighter-rouge">to_string()</code></a> 方法将 <a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">&amp;str</code></a> 转换为 <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a>，当你借用一个 <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a> 的引用时，它会自动转换成 <a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">&amp;str</code></a>。两者都在以下示例中演示：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">s</span> <span class="o">=</span> <span class="s">"Jane Doe"</span><span class="nf">.to_string</span><span class="p">();</span>
+    <span class="nf">say_hello</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello {}!"</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3><a href="#what-are-the-differences-between-str-and-string" name="what-are-the-differences-between-str-and-string">
+两种不同的字符串类型有什么区别？
+</a></h3>
+
+<p><a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a> 是一个被拥有（owned）的在堆上分配的 UTF-8 的字节缓冲区。可变 <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a> 可以被修改，根据需要增加其容量。<a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">&amp;str</code></a> 是一个指向分配在某处的 <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a> 的一个固定容量的「视图」。如果切片是在从 <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a> 解引而来的，则通常是指向在堆上，如果是字符串字面值，则指向静态内存。</p>
+
+<p><a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">&amp;str</code></a> 是一个由 Rust 语言实现的原生类型，而 <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a> 则是由标准库实现的。</p>
+
+<h3><a href="#how-do-i-do-o1-character-access-in-a-string" name="how-do-i-do-o1-character-access-in-a-string">
+如何以 O(1) 复杂度访问一个 <code>String</code> 中的字符？
+</a></h3>
+
+<p>做不到。至少在缺少对你所说的「字符（character）」充分的理解，并且缺少用于查找所需字符的索引而对字符串的预处理的情况下，无法做到。</p>
+
+<p>Rust 字符串是用 UTF-8 编码的。UTF-8 中的单个可见字符不一定是单个字节，除非它是用 ASCII 编码的字符串。每个字节被称为「码元（code unit）」（在 UTF-16 中，码元是 2 字节，在 UTF-32 中码元是 4 字节）。「码位（code point）」由一个或多个码元组成，并由此结合成「grapheme cluster」，这是最接近字符的概念了。</p>
+
+<p>因此，即使你可以在 UTF-8 字符串中索引字节，你也不能在常数时间里访问第 <code class="highlighter-rouge">i</code> 个码元或 grapheme cluster。但是，如果你知道所需的 code point 或 grapheme cluster 开始的字节的位置，那么你 <em>可以</em> 在常数时间时访问它。包括 <a href="https://doc.rust-lang.org/stable/std/primitive.str.html#method.find"><code class="highlighter-rouge">str::find()</code></a> 和正则匹配函数都返回字节索引，以便于此类的访问。</p>
+
+<h3><a href="#why-are-strings-utf-8" name="why-are-strings-utf-8">
+为什么字符串默认为 UTF-8？
+</a></h3>
+
+<p><a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">str</code></a> 类型之所以是 UTF-8，是因为我们观察了许多实现中这种编码的文本 —— 尤其是在与字节顺序无关的网络传输中 —— 我们认为 I/O 的默认处理无需牵涉到对码位的双向重编码是最好的选择。</p>
+
+<p>这意味着在一个字符串中的定位一个特定的 Unicode 码位是一个 O(n) 的操作，但是如果已经知道起始字节的索引，则可以按预期以 O(1) 访问。一方面，这显然是不可取的；另一方面，这个问题充满了权衡，我们要指出一些重要的限定：</p>
+
+<p>扫描一个 ASCII 范围的 <a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">str</code></a> 仍然可以安全地依字节进行。如果你使用 <a href="https://doc.rust-lang.org/stable/std/primitive.str.html#method.as_bytes"><code class="highlighter-rouge">.as_bytes()</code></a>，取出一个 <a href="https://doc.rust-lang.org/stable/std/primitive.u8.html"><code class="highlighter-rouge">u8</code></a> 只需要消耗 <code class="highlighter-rouge">O(1)</code>，并生产一个可以与 ASCII 范围内的 <a href="https://doc.rust-lang.org/stable/std/primitive.char.html"><code class="highlighter-rouge">char</code></a> 相互转换和比较的值。所以如果你要在 <code class="highlighter-rouge">'\n'</code> 处换行，基于字节的处理依然可以运行。UTF-8 是用这种方式精心设计的。</p>
+
+<p>大多数在文本上「面向字符」的操作只能在非常受限的语言假设前提下工作，例如「ASCII 范围内的码位」。在 ASCII 范围之外，你往往必须使用复杂的（非常数时间）算法来确定语言单位（字形，单词，段落）的边界。我们建议使用一个「可靠的」有语言感知的，经 Unicode 验证过的算法。</p>
+
+<p><a href="https://doc.rust-lang.org/stable/std/primitive.char.html"><code class="highlighter-rouge">char</code></a> 类型是 UTF-32 的。如果你确定需要一个依码位的算法，写一个 <code class="highlighter-rouge">type wstr = [char]</code>，将一个 <a href="https://doc.rust-lang.org/stable/std/primitive.str.html"><code class="highlighter-rouge">str</code></a> 放入其中，然后使用 <code class="highlighter-rouge">wstr</code>，这是很简单的。换句话说：实际上如果你需要用到该编码，编程语言不会「默认解码为 UTF32」的事实不应该阻止你解码（或用其它任何方式重新编码）。</p>
+
+<p>要更深入了解为什么 UTF-8 通常比 UTF-16 或 UTF-32 更好的解释，请阅读 <a href="http://utf8everywhere.org/">UTF-8 遍地开花宣言</a>。</p>
+
+<h3><a href="#what-string-type-should-i-use" name="what-string-type-should-i-use">
+我应该使用哪种字符串类型？
+</a></h3>
+
+<p>Rust 拥有四种字符串类型，<a href="http://www.suspectsemantics.com/blog/2016/03/27/string-types-in-rust/">每种都用于不同的目的</a>。在每一对中，都有一个「Owned」的字符串类型，和一个「切片」的字符串类型。组织起来像这样：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left">「Slice」类型</th>
+      <th style="text-align: left">「Owned」类型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">UTF-8</td>
+      <td style="text-align: left"><code class="highlighter-rouge">str</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">String</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">OS 兼容</td>
+      <td style="text-align: left"><code class="highlighter-rouge">OsStr</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">OsString</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">C 兼容</td>
+      <td style="text-align: left"><code class="highlighter-rouge">CStr</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">CString</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">系统路径</td>
+      <td style="text-align: left"><code class="highlighter-rouge">Path</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">PathBuf</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Rust 的不同字符串类型适用于不同的目的。<code class="highlighter-rouge">String</code> 和 <code class="highlighter-rouge">str</code> 为 UTF-8 编码的通用目的字符串。<code class="highlighter-rouge">OsString</code> 和 <code class="highlighter-rouge">OsStr</code> 的编码取决于当前平台，在与操作系统交互时使用。<code class="highlighter-rouge">CString</code> 和 <code class="highlighter-rouge">CStr</code> 是 Rust 中与 C 字符串相当的存在，用于 FFI 代码。<code class="highlighter-rouge">PathBuf</code> 和 <code class="highlighter-rouge">Path</code> 是 <code class="highlighter-rouge">OsString</code> 和 <code class="highlighter-rouge">OsStr</code> 的方便封装，提供路径操作的特定方法。</p>
+
+<h3><a href="#why-are-there-multiple-types-of-strings" name="why-are-there-multiple-types-of-strings">
+怎样写一个同时接受 <code>&amp;str</code> 与 <code>String</code> 的函数？
+</a></h3>
+
+<p>有几种方法，具体取决于该函数的需求：</p>
+
+<ul>
+  <li>如果函数需要拥有一个字符串，又希望接受任何类型的字符串，请使用 <code class="highlighter-rouge">Into&lt;String&gt;</code> 约束。</li>
+  <li>如果函数需要一个字符串切片，又希望接受任何类型的字符串，请使用 <code class="highlighter-rouge">AsRef&lt;str&gt;</code> 约束。</li>
+  <li>如果函数不关心字符串类型，希望用统一的方式处理两种可能性，请使用 <code class="highlighter-rouge">Cow&lt;str&gt;</code> 作为输入类型。</li>
+</ul>
+
+<p><strong>使用 <code class="highlighter-rouge">Into&lt;String&gt;</code></strong></p>
+
+<p>在此例中，该函数可以接受 owned 字符串和字符串切片作为参数，它要么不作任何处理，要么将输入转换为函数体内部拥有的字符串。请注意，转换需要显式调用，否则不会生效。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="n">accepts_both</span><span class="o">&lt;</span><span class="n">S</span><span class="p">:</span> <span class="n">Into</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="n">S</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="nf">.into</span><span class="p">();</span>   <span class="c">// This will convert s into a `String`.</span>
+    <span class="c">// ... the rest of the function</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>使用 <code class="highlighter-rouge">AsRef&lt;str&gt;</code></strong></p>
+
+<p>在此例中，该函数可以接受 owned 字符串和字符串切片作为参数，它要么不做任何处理，要么将输入转换为一个字符串切片。这里可以通过引用输入参数来自动完成，如下所示：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="n">accepts_both</span><span class="o">&lt;</span><span class="n">S</span><span class="p">:</span> <span class="n">AsRef</span><span class="o">&lt;</span><span class="nb">str</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">S</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c">// ... the body of the function</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>使用 <code class="highlighter-rouge">Cow&lt;str&gt;</code></strong></p>
+
+<p>在此例中，该函数接受一个 <code class="highlighter-rouge">Cow&lt;str&gt;</code>，它不是泛型类型，而是一个容器，包含一个 owned 字符串或字符串切片。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">accepts_cow</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="n">Cow</span><span class="o">&lt;</span><span class="nb">str</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c">// ... the body of the function</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="collections">集合</h2>
+
+<h3><a href="#can-i-implement-linked-lists-in-rust" name="can-i-implement-linked-lists-in-rust">
+可以在 Rust 中高效地实现向量和链表的数据结构吗？
+</a></h3>
+
+<p>如果实现这些数据结构的原因是要将它们用于其它程序，则不需要，因为标准库已经提供了这些数据结构的高效实现。</p>
+
+<p>但是，如果<a href="http://cglab.ca/~abeinges/blah/too-many-lists/book/">你的目的只是为了学习</a>，那么你可能需要深入学习 unsafe 代码。虽然这些数据结构可以完全在安全的 Rust 中实现，但性能可能会比使用 unsafe 代码更差。简单来说原因是如向量和链表这样的数据结构依赖于指针和内存操作，而这些在安全的 Rust 中是不允许的。</p>
+
+<p>例如，双向链表需要每个节点有两个可变引用，但这违反了 Rust 的可变引用规则。你可以用 <a href="https://doc.rust-lang.org/stable/std/rc/struct.Weak.html"><code class="highlighter-rouge">Weak&lt;T&gt;</code></a> 解决这个问题，但性能会比你想的要差。使用 unsafe 代码，你可以绕过可变引用规则的限制，但必须自行验证你引入的代码不会违反内存安全。</p>
+
+<h3><a href="#how-can-i-iterate-over-a-collection-without-consuming-it" name="how-can-i-iterate-over-a-collection-without-consuming-it">
+如何在不移动/消费的情况下迭代集合？
+</a></h3>
+
+<p>最简单的方法是使用集合的 <a href="https://doc.rust-lang.org/stable/std/iter/trait.IntoIterator.html"><code class="highlighter-rouge">IntoIterator</code></a> 实现。这里有一个 <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">&amp;Vec</code></a> 的例子：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="n">v</span> <span class="o">=</span> <span class="nd">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">];</span>
+<span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="o">&amp;</span><span class="n">v</span> <span class="p">{</span>
+    <span class="nd">print!</span><span class="p">(</span><span class="s">"{} "</span><span class="p">,</span> <span class="n">item</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Length: {}"</span><span class="p">,</span> <span class="n">v</span><span class="nf">.len</span><span class="p">());</span>
+</code></pre>
+</div>
+
+<p>Rust 的 <code class="highlighter-rouge">for</code> 循环对于任何迭代都调用 <code class="highlighter-rouge">into_iter()</code>（在 <a href="https://doc.rust-lang.org/stable/std/iter/trait.IntoIterator.html"><code class="highlighter-rouge">IntoIterator</code></a> trait 中定义）。任何实现了 <a href="https://doc.rust-lang.org/stable/std/iter/trait.IntoIterator.html"><code class="highlighter-rouge">IntoIterator</code></a> trait 的类型都可以用在 <code class="highlighter-rouge">for</code> 循环中。 <a href="https://doc.rust-lang.org/stable/std/iter/trait.IntoIterator.html"><code class="highlighter-rouge">IntoIterator</code></a> 是对针 <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">&amp;Vec</code></a> 和 <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">&amp;mut Vec</code></a> 实现的，所以 <code class="highlighter-rouge">into_iter()</code> 返回的迭代器只是借用集合的内容，而不是移动/消费它们。其它标准集合也是如此。</p>
+
+<p>如果需要移动/消费迭代器，在迭代中用没有 <code class="highlighter-rouge">&amp;</code> 或 <code class="highlighter-rouge">&amp;mut</code> 的 <code class="highlighter-rouge">for</code>。</p>
+
+<p>如果你需要直接访问一个借用的迭代器，你通常可以调用 <code class="highlighter-rouge">iter()</code> 方法来获取它。</p>
+
+<h3><a href="#why-do-i-need-to-type-the-array-size-in-the-array-declaration" name="why-do-i-need-to-type-the-array-size-in-the-array-declaration">
+为什么需要在数组声明中输入数组大小？
+</a></h3>
+
+<p>不一定要。如果你直接声明数组，数组大小会根据元素的数量来推断。但是如果你声明一个固定大小的数组，那么编译器就需要知道该数组的大小。</p>
+
+<p>需要注意的是，目前 Rust 并没有提供针对不同大小数组的泛型。如果你想接受可变数值的连续容器，请使用 <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec</code></a> 或切片（视是否需要所有权而定）。</p>
+
+<h2 id="ownership">所有权</h2>
+
+<h3><a href="#how-can-i-implement-a-data-structure-that-contains-cycles" name="how-can-i-implement-a-data-structure-that-contains-cycles">
+如何实现包含循环的图或其他数据结构？
+</a></h3>
+
+<p>至少有四种选择（在 <a href="http://cglab.ca/~abeinges/blah/too-many-lists/book/">Too Many Linked Lists</a> 里有详细的讨论）：</p>
+
+<ul>
+  <li>你可以使用 <a href="https://doc.rust-lang.org/stable/std/rc/struct.Rc.html"><code class="highlighter-rouge">Rc</code></a> 和 <a href="https://doc.rust-lang.org/stable/std/rc/struct.Weak.html"><code class="highlighter-rouge">Weak</code></a> 来实现，以允许节点共享所有权以实现它。然而这种方法要付出内存管理的成本。</li>
+  <li>你可以通过使用包含裸指针的 <code class="highlighter-rouge">unsafe</code> 代码来实现。这会更高效，但绕过了 Rust 的安全保障机制。</li>
+  <li>在这些向量中使用向量和索引。有<a href="http://smallcultfollowing.com/babysteps/blog/2015/04/06/modeling-graphs-in-rust-using-vector-indices/">几种</a><a href="https://featherweightmusings.blogspot.com/2015/04/graphs-in-rust.html">可用</a>的例子和这种方法的解释。</li>
+  <li>使用借用的引用和 <a href="https://doc.rust-lang.org/stable/std/cell/struct.UnsafeCell.html"><code class="highlighter-rouge">UnsafeCell</code></a>。这种方法有<a href="https://github.com/nrc/r4cppp/blob/master/graphs/README.md#node-and-unsafecell">解释和代码</a>。</li>
+</ul>
+
+<h3><a href="#how-can-i-define-a-struct-that-contains-a-reference-to-one-of-its-own-fields" name="how-can-i-define-a-struct-that-contains-a-reference-to-one-of-its-own-fields">
+我该如何定义一个包含对其自身字段之一引用的结构体？
+</a></h3>
+
+<p>这有可能，但没有用。结构本身是永久借用，因此无法移动。下面用一些代码说明：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">cell</span><span class="p">::</span><span class="n">Cell</span><span class="p">;</span>
+
+<span class="cp">#[derive(Debug)]</span>
+<span class="k">struct</span> <span class="n">Unmovable</span><span class="o">&lt;</span><span class="err">'</span><span class="n">a</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">:</span> <span class="n">Cell</span><span class="o">&lt;</span><span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="err">'</span><span class="n">a</span> <span class="nb">u32</span><span class="o">&gt;&gt;</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Unmovable</span> <span class="p">{</span> <span class="n">x</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nn">Cell</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nb">None</span><span class="p">)</span> <span class="p">};</span>
+    <span class="n">test</span><span class="py">.y</span><span class="nf">.set</span><span class="p">(</span><span class="nf">Some</span><span class="p">(</span><span class="o">&amp;</span><span class="n">test</span><span class="py">.x</span><span class="p">));</span>
+
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span> <span class="n">test</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3><a href="#what-is-the-difference-between-consuming-and-moving" name="what-is-the-difference-between-consuming-and-moving">
+按值传递，消费，移动和转让所有权之间有什么区别？
+</a></h3>
+
+<p>它们是同一个东西的不同术语。所有的情况下，这意味着该值已经从原始所有者移动到另一个所有者，原始所有者不能再使用它。如果一个类型实现了 <code class="highlighter-rouge">Copy</code> trait，原始所有者的值不会无效，仍然可以使用。</p>
+
+<h3><a href="#why-can-values-of-some-types-by-reused-while-others-are-consumed" name="why-can-values-of-some-types-by-reused-while-others-are-consumed">
+为什么某些类型的值在传递到一个函数后可以使用，而另一些类型的值传递后使用会导致错误？
+</a></h3>
+
+<p>如果一个类型实现了 <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">Copy</code></a> trait，则它将在传递到一个函数时被复制。Rust 中的所有数字类型都实现了 <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">Copy</code></a>，但结构类型默认并未实现 <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">Copy</code></a>，因此它们是被移动。这意味着结构体不能在其他地方重用，除非它是通过 return 从函数中移出。</p>
+
+<h3><a href="#how-do-you-deal-with-a-use-of-moved-value-error" name="how-do-you-deal-with-a-use-of-moved-value-error">
+如何处理「use of moved value」错误？
+</a></h3>
+
+<p>此错误表示你尝试使用的值已经被移动给新的拥有者。首先要检查的是这个移动是否有必要：如果移动到一个函数中，可能可以尝试重写函数，改为使用引用而不是移动。另外如果如果被移动的类型实现了 <a href="https://doc.rust-lang.org/stable/std/clone/trait.Clone.html#tymethod.clone"><code class="highlighter-rouge">Clone</code></a>，那么在移动之前调用它的 <code class="highlighter-rouge">clone()</code> 方法，将移动它的一个拷贝，原始的值可以在之后继续使用。注意，然后克隆一个值通常应该是最后考虑的手段，因为克隆可能会是昂贵的，会导致更多的内存分配。</p>
+
+<p>如果移动的值是你自定义的类型，请考虑实现 <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">Copy</code></a>（用于隐式拷贝而不是移动）或者 <a href="https://doc.rust-lang.org/stable/std/clone/trait.Clone.html#tymethod.clone"><code class="highlighter-rouge">Clone</code></a>（用于显式拷贝）。<a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">Copy</code></a> 经常是用 <code class="highlighter-rouge">#[derive(Copy, Clone)]</code> 来实现的（<a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">Copy</code></a> 的实现要求要实现 <a href="https://doc.rust-lang.org/stable/std/clone/trait.Clone.html#tymethod.clone"><code class="highlighter-rouge">Clone</code></a>，<a href="https://doc.rust-lang.org/stable/std/clone/trait.Clone.html#tymethod.clone"><code class="highlighter-rouge">Clone</code></a> 也是用 <code class="highlighter-rouge">#[derive(Clone)]</code> 来实现的。</p>
+
+<p>如果这些方式都不行，你可能需要修改这个要求获取所有权的函数，改为在函数退出的时候返回这个值的所有权。</p>
+
+<h3><a href="#what-are-the-rules-for-different-self-types-in-methods" name="what-are-the-rules-for-different-self-types-in-methods">
+在方法声明中使用 <code>self</code>、<code>&amp;self</code> 与 <code>&amp;mut self</code> 的规则是什么？
+</a></h3>
+
+<ul>
+  <li>如果一个函数需要消费该值，用 <code class="highlighter-rouge">self</code></li>
+  <li>如果一个函数只需要该值的只读引用，用 <code class="highlighter-rouge">&amp;self</code></li>
+  <li>如果一个函数不需消费而要变更该值，用 <code class="highlighter-rouge">&amp;mut self</code></li>
+</ul>
+
+<h3><a href="#how-can-i-understand-the-borrow-checker" name="how-can-i-understand-the-borrow-checker">
+我该怎么能理解借用检查器？
+</a></h3>
+
+<p>借用检查器在对 Rust 代码进行求值的时候只使用几条规则，可以在 Rust 之书的<a href="https://doc.rust-lang.org/stable/book/second-edition/ch04-02-references-and-borrowing.html">借用章节</a>找到。这些规则为：</p>
+
+<blockquote>
+  <p>首先，任何借用所持续的作用范围不得超过它的拥有者。其次，你可以使用以下两种借用形式的其中任何一种，但不能同时使用：</p>
+
+  <ul>
+    <li>某个资源的一个或者多个引用（&amp;T）。</li>
+    <li>该资源的一个可变引用（&amp;mut T）。</li>
+  </ul>
+</blockquote>
+
+<p>虽然规则本身很简单，但是要遵循它们却并不容易，尤其是对于那些不习惯于推导生命周期和所有权的人。</p>
+
+<p>理解借用检查器的第一步是阅读它产生的错误信息。为了确保借用检查器能够产生高质量的帮助信息来解决发现的问题，已经投入了大量的工作。当你遇到一个借用检查器的问题，首先要做的是慢慢扡仔细地阅读错误报告，只有在理解了所描述的错误之后才着手处理相关的代码。</p>
+
+<p>第二步是熟悉 Rust 标准库所提供的与所有权和可变性相关的容器类型，包括 <a href="https://doc.rust-lang.org/stable/std/cell/struct.Cell.html"><code class="highlighter-rouge">Cell</code></a>，<a href="https://doc.rust-lang.org/stable/std/cell/struct.RefCell.html"><code class="highlighter-rouge">RefCell</code></a>，以及 <a href="https://doc.rust-lang.org/stable/std/borrow/enum.Cow.html"><code class="highlighter-rouge">Cow</code></a>。这些都是用于表达某些涉及所有权和可变性的情况时，非常有用有且必需的工具，而且是具有最低的性能损耗的实现。</p>
+
+<p>理解借用检查器是重要的环节是实践。Rust 的强静态分析保证与许多程序员以往接触过的有天壤之别。需要花些时间来适应这些。</p>
+
+<p>如果你发现你在借用检查器中遇到困难，或者失去耐心，可以随时联系 <a href="community.thml">Rust 社区</a>寻求帮助。</p>
+
+<h3><a href="#when-is-rc-useful" name="when-is-rc-useful">
+<code>Rc</code> 在什么时候有用？
+</a></h3>
+
+<p>Rust 的非原子引用计数指针类型，在官方文档中涵盖了 <a href="https://doc.rust-lang.org/stable/std/rc/struct.Rc.html"><code class="highlighter-rouge">Rc</code></a> 的描述。简而言之，<a href="https://doc.rust-lang.org/stable/std/rc/struct.Rc.html"><code class="highlighter-rouge">Rc</code></a> 和它的线程安全版本 <a href="https://doc.rust-lang.org/stable/std/sync/struct.Arc.html"><code class="highlighter-rouge">Arc</code></a> 在表示共享所有权的时候是有用的，当没有人拥有它的访问权限的时候，系统会自动释放相应的内存。</p>
+
+<h3><a href="#how-do-i-return-a-closure-from-a-function" name="how-do-i-return-a-closure-from-a-function">
+如何从函数返回一个闭包？
+</a></h3>
+
+<p>要从一个函数中返回闭包，这个闭包必须是一个「move 闭包」，意思是这个闭包是使用关键字 <code class="highlighter-rouge">move</code> 来定义的。正如
+<a href="https://doc.rust-lang.org/book/closures.html#move-closures">Rust 之书中的解释</a>，这让这个闭包拥有了它所在环境里的变量的拷贝，独立于它的父级栈帧。另外，返回一个闭包会是不安全的，因为它会被允许访问那些失效的变量；换句话说，它会允许访问潜在的无效内存。返回的闭包也必须用 <a href="https://doc.rust-lang.org/stable/std/boxed/struct.Box.html"><code class="highlighter-rouge">Box</code></a> 包装，这样它才会在堆上分配空间。<a href="https://doc.rust-lang.org/book/closures.html#returning-closures">在这本书</a>里阅读更多相关的信息。</p>
+
+<h3><a href="#what-are-deref-coercions" name="what-are-deref-coercions">
+什么是强制解引（deref coercion），它是如何工作的？
+</a></h3>
+
+<p><a href="https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html">强制解引</a> 是自动将指向指针的引用（例如
+<code class="highlighter-rouge">&amp;Rc&lt;T&gt;</code> 或者 <code class="highlighter-rouge">&amp;Box&lt;T&gt;</code>）转换为指向内容的引用（例如 <code class="highlighter-rouge">&amp;T</code>）这种强制转换的一种便捷方式。
+强制解引的存在使得 Rust 更加符合人体工程学，它是通过 <a href="https://doc.rust-lang.org/stable/std/ops/trait.Deref.html"><code class="highlighter-rouge">Deref</code></a> trait 来实现的。</p>
+
+<p>一个 Deref 的实现表示该实现类型可以通过调用 <code class="highlighter-rouge">deref</code> 方法来转换成一个目标类型，该方法接受该调用类型的一个不可变引用，并返回一个指向目标的引用（相同的生命周期）。前缀操作符 <code class="highlighter-rouge">*</code> 是 <code class="highlighter-rouge">deref</code> 方法的缩写方式。</p>
+
+<p>之所以被称为「强制 coercions」是因为以下的规则，这里引用自 <a href="https://doc.rust-lang.org/stable/book/deref-coercions.html">Rust 之书</a>：</p>
+
+<blockquote>
+  <p>假设你有一个类型 <code class="highlighter-rouge">U</code>，并且它实现了 <code class="highlighter-rouge">Deref&lt;Target=T&gt;</code>，那么 <code class="highlighter-rouge">&amp;U</code> 将会自动强制转换为 <code class="highlighter-rouge">&amp;T</code>。</p>
+</blockquote>
+
+<p>例如，假设你有一个 <code class="highlighter-rouge">&amp;Rc&lt;String&gt;</code>，它会被此规则强制转换为 <code class="highlighter-rouge">&amp;String</code>，然后再被用同样的方式强制转换为 <code class="highlighter-rouge">&amp;str</code>。
+那么对于一个接收 <code class="highlighter-rouge">&amp;str</code> 参数的函数，你可以直接传入一个 <code class="highlighter-rouge">&amp;Rc&lt;String&gt;</code>，所有的强制转换都通过 <code class="highlighter-rouge">Deref</code> trait 自动处理。</p>
+
+<p>以下是最常见的一些强制解引：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&amp;Rc&lt;T&gt;</code> 到 <code class="highlighter-rouge">&amp;T</code></li>
+  <li><code class="highlighter-rouge">&amp;Box&lt;T&gt;</code> 到 <code class="highlighter-rouge">&amp;T</code></li>
+  <li><code class="highlighter-rouge">&amp;Arc&lt;T&gt;</code> 到 <code class="highlighter-rouge">&amp;T</code></li>
+  <li><code class="highlighter-rouge">&amp;Vec&lt;T&gt;</code> 到 <code class="highlighter-rouge">&amp;[T]</code></li>
+  <li><code class="highlighter-rouge">&amp;String</code> 到 <code class="highlighter-rouge">&amp;str</code></li>
+</ul>
+
+<h2 id="lifetimes">生命周期</h2>
+
+<h3><a href="#why-lifetimes" name="why-lifetimes">
+为什么有生命周期？
+</a></h3>
+
+<p>生命周期是 Rust 以于内存安全问题的解答。它允许 Rust 确保内存安全，而无需付出垃圾收集的性能代价。这是基于多种学术成果的，这些参考文献可以从 <a href="https://doc.rust-lang.org/stable/book/first-edition/bibliography.html#type-system">Rust 之书</a>中找到。</p>
+
+<h3><a href="#why-is-the-lifetime-syntax-the-way-it-is" name="why-is-the-lifetime-syntax-the-way-it-is">
+为什么生命周期语法是这样的？
+</a></h3>
+
+<p><code class="highlighter-rouge">'a</code> 用于表示一个通用类型参数，这种语法来自于 ML 系列编程语言。对于 Rust 来说，这种语法必须是无歧义的，显而易见的，并且在类型声明中适合于与 trait 和引用放在一起。一些替代语法也被讨论过，但没有一种替代语法会表现得更好。</p>
+
+<h3><a href="#how-do-i-return-a-borrow-to-something-i-created-from-a-function" name="how-do-i-return-a-borrow-to-something-i-created-from-a-function">
+我该如何从一个函数中返回我创建的某个东西的借用？
+</a></h3>
+
+<p>你必须确保这个借用项的生命周期要比这个函数更长。将输出的生命周期和某些输入的生命周期绑定在一起，这样就可以做到，如下所示：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">type</span> <span class="n">Pool</span> <span class="o">=</span> <span class="n">TypedArena</span><span class="o">&lt;</span><span class="n">Thing</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="c">// （以下的生命周期只是为了说明而显式写出来；</span>
+<span class="c">//  可以通过稍后 FAQ 条目中所描述的省略规则来省略它）</span>
+<span class="k">fn</span> <span class="n">create_borrowed</span><span class="o">&lt;</span><span class="err">'</span><span class="n">a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pool</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">'</span><span class="n">a</span> <span class="n">Pool</span><span class="p">,</span>
+                       <span class="n">x</span><span class="p">:</span> <span class="nb">i32</span><span class="p">,</span>
+                       <span class="n">y</span><span class="p">:</span> <span class="nb">i32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="o">&amp;</span><span class="err">'</span><span class="n">a</span> <span class="n">Thing</span> <span class="p">{</span>
+    <span class="n">pool</span><span class="nf">.alloc</span><span class="p">(</span><span class="n">Thing</span> <span class="p">{</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="p">})</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>另一个替代的方式是通过返回一个拥有的类型（owning type）来彻底消除引用，如 <a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a>：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">happy_birthday</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">i64</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="nd">format!</span><span class="p">(</span><span class="s">"Hello {}! You're {} years old!"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>这种方法更简单，但往往导致不必要的分配。</p>
+
+<h3><a href="#when-are-lifetimes-required-to-be-explicit" name="when-are-lifetimes-required-to-be-explicit">
+为什么有些引用有生命周期，如 <code>&amp;'a T</code>，而有些没有，如 <code>&amp;T</code>？
+</a></h3>
+
+<p>实际上，<em>所有的</em>引用类型都有一个生命周期，但在大多数时候你无需将它显式写出来。规定如下：</p>
+
+<ol>
+  <li>在函数体内，你无需显式写出生命周期；正确的值总会被推导出来。</li>
+  <li>在函数<em>签名</em>中（例如，其参数类型或其返回值类型），你<em>可能</em>要显式写出生命周期。生命周期有一个简单的默认机制，称作<a href="https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision">「生命周期省略（lifetime elision）」</a>，其中包含了以下有三条规则：
+    <ul>
+      <li>函数的参数中，每个省略的生命周期都变成独立的生命周期参数。</li>
+      <li>如果只有一个输入的生命周期，无论省略与否，此生命周期将被赋给函数返回值中所有省略的生命周期。</li>
+      <li>如果有多个输入的生命周期，但其中一个是 &amp;self 或者 &amp;mut self，那这个 self 的生命周期将被赋给输出中所有省略的生命周期。</li>
+    </ul>
+  </li>
+  <li>最后，在 <code class="highlighter-rouge">struct</code> 或者 <code class="highlighter-rouge">enum</code> 定义中，所有的生命周期都必须明确声明。</li>
+</ol>
+
+<p>如果这些规则导致编译错误， Rust 编译器会给出一个错误信息，指出错误的原因，并根据推导过程中出错的步骤给出潜在的解决方案。</p>
+
+<h3><a href="#how-can-rust-guarantee-no-null-pointers" name="how-can-rust-guarantee-no-null-pointers">
+Rust 如何保证「无空指针」和「无悬挂指针」？
+</a></h3>
+
+<p>构造一个类型为 <code class="highlighter-rouge">&amp;Foo</code> 或者 <code class="highlighter-rouge">&amp;mut Foo</code> 的值的唯一方式是指定该引用指向的类型 <code class="highlighter-rouge">Foo</code> 的一个已存在的值。该引用在给定的代码区域中（该引用的生命周期）「借用」了原始值，而被借用的值在借用期间无法被移动或者被销毁。</p>
+
+<h3><a href="#how-do-i-express-the-absense-of-a-value-without-null" name="how-do-i-express-the-absense-of-a-value-without-null">
+如果没有 <code>null</code>，我该怎么表达缺失值？
+</a></h3>
+
+<p>你可以使用 <a href="https://doc.rust-lang.org/stable/std/option/enum.Option.html"><code class="highlighter-rouge">Option</code></a> 类型，可以是 <code class="highlighter-rouge">Some(T)</code> 或者是 <code class="highlighter-rouge">None</code>。<code class="highlighter-rouge">Some(T)</code> 表示其包含类型为 <code class="highlighter-rouge">T</code> 的值，而 <code class="highlighter-rouge">None</code> 则表示没有值。</p>
+
+<h2 id="generics">泛型</h2>
+
+<h3><a href="#what-is-monomorphisation" name="what-is-monomorphisation">
+什么是「单态化（monomorphisation）」？
+</a></h3>
+
+<p>单态化是基于函数调用（或结构的使用）的参数类型，对每个泛型函数（或结构）的特化。</p>
+
+<p>在单态化期间，该泛型函数实例化的每个单独的类型集被翻译成一个新的拷贝。这和 C++ 使用的策略相同。它产生专门针对每次调用和静态调度的快速代码，比起使用其它翻译策略所产生的二进制文件，这种函数被多个不同的类型实例化的权衡可能会导致「代码膨胀」，其中多个函数实例导致了更大的二进制文件。</p>
+
+<p>相比接收不同类型的参数，接受 <a href="https://doc.rust-lang.org/book/trait-objects.html">trait 对象</a>的函数不会发生单态化。相反，trait 对象的方法在运行时是动态调度的。</p>
+
+<h3><a href="#whats-the-difference-between-a-function-and-a-closure-that-doesnt-capture" name="whats-the-difference-between-a-function-and-a-closure-that-doesnt-capture">
+一个函数和一个没有捕获任何变量的闭包有什么区别？
+</a></h3>
+
+<p>函数和闭包在操作上是等效的，但是由于它们的不同实现而具有不同的运行时表现。</p>
+
+<p>函数是语言内置的原生类型，而闭包基本上是三种 trait 之一的语法糖：<a href="https://doc.rust-lang.org/stable/std/ops/trait.Fn.html"><code class="highlighter-rouge">Fn</code></a>，<a href="https://doc.rust-lang.org/stable/std/ops/trait.FnMut.html"><code class="highlighter-rouge">FnMut</code></a>，和 <a href="https://doc.rust-lang.org/stable/std/ops/trait.FnOnce.html"><code class="highlighter-rouge">FnOnce</code></a>。当你创建一个闭包时，Rust 编译器会自动创建一个实现了这三种 trait 之中相应的 trait 的结构，并将捕获到的环境变量作为成员，并使此结构能够作为函数一样调用。裸函数无法捕获它的环境。</p>
+
+<p>这些 trait 之间的差异是它们如何使用 <code class="highlighter-rouge">self</code> 参数。<a href="https://doc.rust-lang.org/stable/std/ops/trait.Fn.html"><code class="highlighter-rouge">Fn</code></a> 使用 <code class="highlighter-rouge">&amp;self</code>，<a href="https://doc.rust-lang.org/stable/std/ops/trait.FnMut.html"><code class="highlighter-rouge">FnMut</code></a> 使用 <code class="highlighter-rouge">&amp;mut self</code>，而 <a href="https://doc.rust-lang.org/stable/std/ops/trait.FnOnce.html"><code class="highlighter-rouge">FnOnce</code></a> 则使用 <code class="highlighter-rouge">self</code>。</p>
+
+<p>即使闭包没有捕获任何环境变量，它在运行时也表现为两个指针，与其它任何闭包相同。</p>
+
+<h3><a href="#what-are-higher-kinded-types" name="what-are-higher-kinded-types">
+什么是更高级的类型，为什么我想要它们，为什么 Rust 没有它们？
+</a></h3>
+
+<p>高级类型具有未知参数。类型构造器，如 <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec</code></a>，<a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a>，以及 <a href="https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html"><code class="highlighter-rouge">HashMap</code></a> 都是高级类型的范例：每个都需要一些额外的类型参数，以便于实际显示一个特定的类型，如 <code class="highlighter-rouge">Vec&lt;u32&gt;</code>。对高级类型的支持意味着这些「不完全」的类型可以用于任何「完全」类型可以使用的地方，包括函数的泛型。</p>
+
+<p>任意的完全类型，如 <a href="https://doc.rust-lang.org/stable/std/primitive.i32.html"><code class="highlighter-rouge">i32</code></a>，<a href="https://doc.rust-lang.org/stable/std/primitive.bool.html"><code class="highlighter-rouge">bool</code></a>，或 <a href="https://doc.rust-lang.org/stable/std/primitive.char.html"><code class="highlighter-rouge">char</code></a> 都是一种 <code class="highlighter-rouge">*</code> 类型（这种符号来自类型理论领域）。具有一个参数的类型，如 <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec&lt;T&gt;</code></a> 是一种 <code class="highlighter-rouge">* -&gt; *</code>，意思是 <a href="https://doc.rust-lang.org/stable/std/vec/struct.Vec.html"><code class="highlighter-rouge">Vec&lt;T&gt;</code></a> 接受一个如 <a href="https://doc.rust-lang.org/stable/std/primitive.i32.html"><code class="highlighter-rouge">i32</code></a> 的完全类型，并返回一个完全类型 <code class="highlighter-rouge">Vec&lt;i32&gt;</code>。一个具有三个参数的类型，如 <a href="https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html"><code class="highlighter-rouge">HashMap&lt;K, V, S&gt;</code></a> 是 <code class="highlighter-rouge">* -&gt; * -&gt; * -&gt; *</code> 类型，它接受三个完全类型（如 <a href="https://doc.rust-lang.org/stable/std/primitive.i32.html"><code class="highlighter-rouge">i32</code></a>，<a href="https://doc.rust-lang.org/stable/std/string/struct.String.html"><code class="highlighter-rouge">String</code></a>，以及 <a href="https://doc.rust-lang.org/stable/std/collections/hash_map/struct.RandomState.html"><code class="highlighter-rouge">RandomState</code></a>），产生一个新的完全类型 <code class="highlighter-rouge">HashMap&lt;i32, String, RandomState&gt;</code>。</p>
+
+<p>除了这些例子，类型构造器还可以接受 <em>生命周期（lifetime）</em> 参数，我们将其表示为 <code class="highlighter-rouge">Lt</code>。例如，<code class="highlighter-rouge">slice::Iter</code> 具有 <code class="highlighter-rouge">Lt -&gt; * -&gt; *</code> 类型，因为它必须像 <code class="highlighter-rouge">Iter&lt;'a, u32&gt;</code> 这样实例化。</p>
+
+<p>缺少对高级类型的支持，使得很验证编写某些类型的泛型代码。尤其是对于像迭代器这样的概念进行抽象会有问题，因为迭代器通常为至少需要用一个生命周期才能进行参数化。这反过来又阻止了对 Rust 的集合类型上的 trait 抽象。</p>
+
+<p>另一个常见的例子是像 function 或 monad 这样的概念，它们都是类型构造器，而不是单一的类型。</p>
+
+<p>Rust 目前不支持更高级的类型，因为与我们想要进行的其它改进相比，这不是一个高优先的事项。由于这种设计涉及了主要和交叉的改动，我们也想仔细考虑。但目前缺乏支持并没有固有的内在原因。</p>
+
+<h3><a href="#what-do-named-type-parameters-in-generic-types-mean" name="what-do-named-type-parameters-in-generic-types-mean">
+泛型类型中 <code>&lt;T=Foo&gt;</code> 这样的命名类型参数是什么意思？
+</a></h3>
+
+<p>这些被称为<a href="https://doc.rust-lang.org/stable/book/second-edition/ch19-03-advanced-traits.html">关联类型</a>，允许表达不能用 <code class="highlighter-rouge">where</code> 子句表达的 trait 约束。例如，一个泛型约束 <code class="highlighter-rouge">X: Bar&lt;T=Foo&gt;</code> 的意思是「<code class="highlighter-rouge">X</code> 必须实现 <code class="highlighter-rouge">Bar</code> 这个 trait，而且在 <code class="highlighter-rouge">Bar</code> 的实现中，<code class="highlighter-rouge">X</code> 必须将 <code class="highlighter-rouge">Foo</code> 作为 <code class="highlighter-rouge">Bar</code> 的关联类型 <code class="highlighter-rouge">T</code>」。例子中这样的约束不能通过一个 <code class="highlighter-rouge">where</code> 子句表示，也不能用像 <code class="highlighter-rouge">Box&lt;Bar&lt;T=Foo&gt;&gt;</code> 这样的 trait 对象表示。</p>
+
+<p>关联类型的存在，是由于泛型通常牵涉类型家族，其中某个类型决定了家族中的所有其它类型。例如，一个用于图形的 trait 可能具有图形自己的 <code class="highlighter-rouge">Self</code> 类型，而且具有节点和边缘的关联类型。每个图形类型唯一确定其关联类型。使用关联类型可以使这些类型的家族更加简洁，并且在许多情况下还能提供更好的类型推断。</p>
+
+<h3><a href="#how-do-i-overload-operators" name="how-do-i-overload-operators">
+我可以重载运算符吗？哪些可以，怎么做？
+</a></h3>
+
+<p>你可以通过实现相应的 trait 来为多种操作符提供自定义的实现：<a href="https://doc.rust-lang.org/stable/std/ops/trait.Add.html"><code class="highlighter-rouge">Add</code></a> 对应于 <code class="highlighter-rouge">+</code>，<a href="https://doc.rust-lang.org/stable/std/ops/trait.Mul.html"><code class="highlighter-rouge">Mul</code></a> 对应于 <code class="highlighter-rouge">*</code>，等等。类似这样：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">ops</span><span class="p">::</span><span class="nb">Add</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="n">Foo</span><span class="p">;</span>
+
+<span class="k">impl</span> <span class="nb">Add</span> <span class="k">for</span> <span class="n">Foo</span> <span class="p">{</span>
+    <span class="k">type</span> <span class="n">Output</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">;</span>
+    <span class="k">fn</span> <span class="nf">add</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="n">rhs</span><span class="p">:</span> <span class="n">Foo</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nn">Self</span><span class="p">::</span><span class="n">Output</span> <span class="p">{</span>
+        <span class="nd">println!</span><span class="p">(</span><span class="s">"Adding!"</span><span class="p">);</span>
+        <span class="k">self</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>以下的操作符可以被重载：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Operation</th>
+      <th style="text-align: left">Trait</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">+</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Add.html"><code class="highlighter-rouge">Add</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">+=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.AddAssign.html"><code class="highlighter-rouge">AddAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">binary -</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Sub.html"><code class="highlighter-rouge">Sub</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.SubAssign.html"><code class="highlighter-rouge">SubAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">*</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Mul.html"><code class="highlighter-rouge">Mul</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">*=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.MulAssign.html"><code class="highlighter-rouge">MulAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">/</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Div.html"><code class="highlighter-rouge">Div</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">/=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.DivAssign.html"><code class="highlighter-rouge">DivAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">unary -</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Neg.html"><code class="highlighter-rouge">Neg</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">%</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Rem.html"><code class="highlighter-rouge">Rem</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">%=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.RemAssign.html"><code class="highlighter-rouge">RemAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">&amp;</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.BitAnd.html"><code class="highlighter-rouge">BitAnd</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>&#124;</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.BitOr.html"><code class="highlighter-rouge">BitOr</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>&#124;</code>=</td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.BitOrAssign.html"><code class="highlighter-rouge">BitOrAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">^</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.BitXor.html"><code class="highlighter-rouge">BitXor</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">^=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.BitXorAssign.html"><code class="highlighter-rouge">BitXorAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">!</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Not.html"><code class="highlighter-rouge">Not</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">&lt;&lt;</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Shl.html"><code class="highlighter-rouge">Shl</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">&lt;&lt;=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.ShlAssign.html"><code class="highlighter-rouge">ShlAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">&gt;&gt;</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Shr.html"><code class="highlighter-rouge">Shr</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">&gt;&gt;=</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.ShrAssign.html"><code class="highlighter-rouge">ShrAssign</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">*</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Deref.html"><code class="highlighter-rouge">Deref</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">mut *</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.DerefMut.html"><code class="highlighter-rouge">DerefMut</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">[]</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.Index.html"><code class="highlighter-rouge">Index</code></a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">mut []</code></td>
+      <td style="text-align: left"><a href="https://doc.rust-lang.org/stable/std/ops/trait.IndexMut.html"><code class="highlighter-rouge">IndexMut</code></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3><a href="#why-the-split-between-eq-partialeq-and-ord-partialord" name="why-the-split-between-eq-partialeq-and-ord-partialord">
+为什么要把 <code>Eq</code>/<code>PartialEq</code> 及 <code>Ord</code>/<code>PartialOrd</code> 分开？
+</a></h3>
+
+<p>Rust 中有一些类型的值只是部分有序（偏序），或者只有部分等价。部分有序的意思对于给定的类型，可能存在既不小于也不大于彼此的值。部分等价的意思是对于给定的类型，可能存在与自身不相等的值。</p>
+
+<p>浮点类型（<a href="https://doc.rust-lang.org/stable/std/primitive.f32.html"><code class="highlighter-rouge">f32</code></a> 和 <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html"><code class="highlighter-rouge">f64</code></a>）对于这两种类型是个好例子。任何浮点类型可能具有值 <code class="highlighter-rouge">NaN</code>（意思是「非数字」）。<code class="highlighter-rouge">NaN</code> 不等于自身（<code class="highlighter-rouge">NaN == NaN</code> 为假），也不小于或者大于任何其它浮点值。这样，<a href="https://doc.rust-lang.org/stable/std/primitive.f32.html"><code class="highlighter-rouge">f32</code></a> 和 <a href="https://doc.rust-lang.org/stable/std/primitive.f64.html"><code class="highlighter-rouge">f64</code></a> 都实现了 <a href="https://doc.rust-lang.org/stable/std/cmp/trait.PartialOrd.html"><code class="highlighter-rouge">PartialOrd</code></a> 和 <a href="https://doc.rust-lang.org/stable/std/cmp/trait.PartialEq.html"><code class="highlighter-rouge">PartialEq</code></a>， 而非 <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html"><code class="highlighter-rouge">Ord</code></a> 也非 <a href="https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html"><code class="highlighter-rouge">Eq</code></a>。</p>
+
+<p>正如<a href="#why-cant-i-compare-floats">先前关于浮点类型问题</a>的解答，这些区别很重要，因为一些集合依赖于全序/完全等价以得出正确的结果。</p>
+
+<h2 id="input-output">输入 / 输出</h2>
+
+<h3><a href="#how-do-i-read-a-file-into-a-string" name="how-do-i-read-a-file-into-a-string">
+如何将文件读入一个 <code>String</code>？
+</a></h3>
+
+<p>使用 <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.read_to_string"><code class="highlighter-rouge">read_to_string()</code></a> 方法，它定义在 <a href="https://doc.rust-lang.org/stable/std/io/index.html"><code class="highlighter-rouge">std::io</code></a> 的 <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html"><code class="highlighter-rouge">Read</code></a> trait 中。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">io</span><span class="p">::</span><span class="n">Read</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">fs</span><span class="p">::</span><span class="n">File</span><span class="p">;</span>
+
+<span class="k">fn</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">Result</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span> <span class="nn">std</span><span class="p">::</span><span class="nn">io</span><span class="p">::</span><span class="n">Error</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
+    <span class="k">let</span> <span class="n">_</span> <span class="o">=</span> <span class="nn">File</span><span class="p">::</span><span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="err">?</span><span class="nf">.read_to_string</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">);</span>  <span class="c">// `s` contains the contents of "foo.txt"</span>
+    <span class="nf">Ok</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">match</span> <span class="nf">read_file</span><span class="p">(</span><span class="s">"foo.txt"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">Ok</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"Got file contents!"</span><span class="p">),</span>
+        <span class="nf">Err</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"Getting file contents failed with error: {}"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3><a href="#how-do-i-read-file-input-efficiently" name="how-do-i-read-file-input-efficiently">
+如何有效地读取文件输入？
+</a></h3>
+
+<p><a href="https://doc.rust-lang.org/stable/std/fs/struct.File.html"><code class="highlighter-rouge">File</code></a> 类型实现了 <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html"><code class="highlighter-rouge">Read</code></a> trait，它具有读写数据的各种函数，包括<a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#tymethod.read"><code class="highlighter-rouge">read()</code></a>，<a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.read_to_end"><code class="highlighter-rouge">read_to_end()</code></a>，<a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.bytes"><code class="highlighter-rouge">bytes()</code></a>，<a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.chars"><code class="highlighter-rouge">chars()</code></a>，和 <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.take"><code class="highlighter-rouge">take()</code></a>。这些函数中每个都从给定的文件中读取一定量的输入。<a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#tymethod.read"><code class="highlighter-rouge">read()</code></a> 在单次调用中读取与底层系统一样多的输入。<a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.read_to_end"><code class="highlighter-rouge">bytes_to_end()</code></a> 将整个缓冲区读进一个向量，分配所需的空间。<a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.bytes"><code class="highlighter-rouge">bytes()</code></a> 和 <a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.chars"><code class="highlighter-rouge">chars()</code></a> 可以分别对文件的字节和字符进行迭代。最后，<a href="https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.take"><code class="highlighter-rouge">take()</code></a> 允许你从文件中读取任意数量的字节。总而言之，这些都允许你有效地读取所需的任何数据。</p>
+
+<p>对于缓冲区的读取，使用 <a href="https://doc.rust-lang.org/stable/std/io/struct.BufReader.html"><code class="highlighter-rouge">BufReader</code></a> 结构体，有助于读取时减少系统调用的次数。</p>
+
+<h3><a href="#how-do-i-do-asynchronous-input-output-in-rust" name="how-do-i-do-asynchronous-input-output-in-rust">
+Rust 中如何进行异步输入 / 输出？
+</a></h3>
+
+<p>有几个 Rust 的库提供了异步输入 / 输出，包括 <a href="https://github.com/carllerche/mio">mio</a>，<a href="https://github.com/tokio-rs/tokio-core">tokio</a>，<a href="https://github.com/dpc/mioco">mioco</a>，<a href="https://github.com/zonyitoo/coio-rs">coio-rs</a> 和 <a href="https://github.com/tailhook/rotor">rotor</a>。</p>
+
+<h3><a href="#how-do-i-get-command-line-arguments" name="how-do-i-get-command-line-arguments">
+如何在 Rust 中获取命令行参数？
+</a></h3>
+
+<p>最简单的方法是使用 <a href="https://doc.rust-lang.org/stable/std/env/struct.Args.html"><code class="highlighter-rouge">Args</code></a>，它为输入参数提供了迭代器。</p>
+
+<p>如果你正在寻找一些更强大的工具，那么<a href="https://crates.io/keywords/argument">在 crate.io 上有很多选择</a>。</p>
+
+<h2 id="error-handling">错误处理</h2>
+
+<h3><a href="#why-doesnt-rust-have-exceptions" name="why-doesnt-rust-have-exceptions">
+为什么 Rust 没有异常？
+</a></h3>
+
+<p>异常使对于控制流的理解复杂化，它们表示了类型系统之外的有效性/无效性，而且它们与多线程代码（Rust 的主要关注点）交互并不佳。</p>
+
+<p>Rust 更倾向于使用基于类型的错误处理方式，在<a href="https://doc.rust-lang.org/stable/book/second-edition/ch09-00-error-handling.html">这本书中有详细的介绍</a>。这会更适合 Rust 的控制流，并发和其它所有的特性。</p>
+
+<h3><a href="#whats-the-deal-with-unwrap" name="whats-the-deal-with-unwrap">
+到处都有 <code>unwrap()</code> 是怎么回事？
+</a></h3>
+
+<p><code class="highlighter-rouge">unwrap()</code> 是一个函数，它提取一个 <a href="https://doc.rust-lang.org/stable/std/option/enum.Option.html"><code class="highlighter-rouge">Option</code></a> 或 <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a> 中的值，如果值不存在，则引发 panic。</p>
+
+<p><code class="highlighter-rouge">unwrap()</code> 不应该是你处理预料会出现的错误的默认方式，例如用户的错误输入。在生产环境的代码中，它被视为一个断言，断言该值非空，否则会导致程序崩溃。</p>
+
+<p>它也适用于快速原型中，你暂时不想处理错误，或者博客文章中，错误处理会喧宾夺主。</p>
+
+<h3><a href="#why-do-i-get-errors-with-try" name="why-do-i-get-errors-with-try">
+为什么我尝试运行使用 <code>try!</code> 宏的示例代码时会得到错误？
+</a></h3>
+
+<p>这可能是函数返回类型的一个问题。<a href="https://doc.rust-lang.org/stable/std/macro.try!.html"><code class="highlighter-rouge">try!</code></a> 宏从 <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a> 中提取值，或者捕获 <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a> 中的错误并提早返回此错误。这意味着 <a href="https://doc.rust-lang.org/stable/std/macro.try!.html"><code class="highlighter-rouge">try!</code></a> 只适用于返回 <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a> 的函数，其中的 <code class="highlighter-rouge">Err</code> 构造类型实现了 <code class="highlighter-rouge">From::from(err)</code>。在实践中，这意味着 <a href="https://doc.rust-lang.org/stable/std/macro.try!.html"><code class="highlighter-rouge">try!</code></a> 宏不能在 main 函数中执行。</p>
+
+<h3><a href="#error-handling-without-result" name="error-handling-without-result">
+比起无处不在的 <code>Result</code>，有没有一种更简单的错误处理方式？
+</a></h3>
+
+<p>如果你在寻找一种方法，避免处理从别人代码中返回的 <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a> ，总是可以使用 <a href="https://doc.rust-lang.org/stable/core/option/enum.Option.html#method.unwrap"><code class="highlighter-rouge">unwrap()</code></a>，但它可能不是你想要的。 <a href="https://doc.rust-lang.org/stable/std/result/enum.Result.html"><code class="highlighter-rouge">Result</code></a> 是一种用于指示某些运算可能成功或者失败的指示器。要求你显式处理这些失败，是 Rust 鼓励的鲁棒性的方法之一。 Rust 提供了像 <a href="https://doc.rust-lang.org/stable/std/macro.try!.html"><code class="highlighter-rouge">try!</code></a> 这样的宏，使得处理失败更便捷。</p>
+
+<p>如果你真的不想处理错误，可以用 <a href="https://doc.rust-lang.org/stable/core/option/enum.Option.html#method.unwrap"><code class="highlighter-rouge">unwrap()</code></a>，但请注意，这么做意味着在失败的时候代码会 panic，这通常会导致进程关闭。</p>
+
+<h2 id="concurrency">并发</h2>
+
+<h3><a href="#can-i-use-static-values-across-threads-without-an-unsafe-block" name="can-i-use-static-values-across-threads-without-an-unsafe-block">
+我可以不用 <code>unsafe</code> 块而跨线程使用静态（static）值吗？
+</a></h3>
+
+<p>在同步的情况下，修改是安全的。修改一个静态的 <a href="https://doc.rust-lang.org/stable/std/sync/struct.Mutex.html"><code class="highlighter-rouge">Mutex</code></a> （通过 <a href="https://crates.io/crates/lazy_static/">lazy-static</a> 包进行延迟初始化）不需要用 <code class="highlighter-rouge">unsafe</code> 块，修改一个静态的 <a href="https://doc.rust-lang.org/stable/std/sync/atomic/struct.AtomicUsize.html"><code class="highlighter-rouge">AtomicUsize</code></a> （可以不用 lazy_staic 初始化）也是一样。</p>
+
+<p>更一般来说，如果一个类型实现了 <a href="https://doc.rust-lang.org/stable/std/marker/trait.Sync.html"><code class="highlighter-rouge">Sync</code></a> 而且不实现 <a href="https://doc.rust-lang.org/stable/std/ops/trait.Drop.html"><code class="highlighter-rouge">Drop</code></a>，它就<a href="https://doc.rust-lang.org/book/const-and-static.html#static">可以被用作 <code class="highlighter-rouge">static</code></a></p>
+
+<h2 id="macros">宏</h2>
+
+<h3><a href="#can-i-write-a-macro-to-generate-identifiers" name="can-i-write-a-macro-to-generate-identifiers">
+我可以编写一个宏来生成标识符吗？
+</a></h3>
+
+<p>目前还不行。 Rust 宏是 <a href="https://en.wikipedia.org/wiki/Hygienic_macro">「卫生宏（hygienic macros）」</a>，它有意避免捕获或者创建可能导致与其它标识符产生意外冲突的标识符。它们的功能与 C 预处理器相关的宏的风格有着显著的不同。宏调用只能在显式支持的地方出现：项（item），方法声明，表达式，以及模式。这里，「方法声明」是指可以放置方法的位置。它们不能用于完成部分方法声明。由于相同的逻辑，它们也不能用于完成部分变量声明。</p>
+
+<h2 id="debugging">调试和工具</h2>
+
+<h3><a href="#how-do-i-debug-rust-programs" name="how-do-i-debug-rust-programs">
+如何调试 Rust 程序？
+</a></h3>
+
+<p>与 C 和 C++ 相同，Rust 程序可以用 <a href="https://sourceware.org/gdb/current/onlinedocs/gdb/">gdb</a> 或 <a href="http://lldb.llvm.org/tutorial.html">lldb</a> 进行调试。实际上，每个 Rust 安装都带了 rust-gdb 和 rust-lldb 两者或其中一个（取决于平台支持）。这些是对 gdb 和 lldb 的封装，增加了对 Rust 的显示优化。</p>
+
+<h3><a href="#how-do-i-locate-a-panic" name="how-do-i-locate-a-panic">
+<code>rustc</code> 说标准库代码中发生了一个 panic。我如何才能在我的代码中定位错误？
+</a></h3>
+
+<p>这个错误通常是由于用户代码中对一个 <code class="highlighter-rouge">None</code> 或者 <code class="highlighter-rouge">Err</code> 值执行 <a href="https://doc.rust-lang.org/stable/core/option/enum.Option.html#method.unwrap"><code class="highlighter-rouge">unwrap()</code></a> 操作引起的。设置环境变量 <code class="highlighter-rouge">RUST_BACKTRACE=1</code> 启用回溯或能，在助于获取更多的信息。在调试模式下编译（<code class="highlighter-rouge">cargo build</code> 的默认模式）也是有帮助的。使用 rust 提供的 <code class="highlighter-rouge">rust-gdb</code> 或 <code class="highlighter-rouge">rust-lldb</code> 这样的调试器也是有帮助的。</p>
+
+<h3><a href="#what-ide-should-i-use" name="what-ide-should-i-use">
+我该使用什么 IDE？
+</a></h3>
+
+<p>Rust 有许多开发环境可供选择，详见官方的 <a href="https://forge.rust-lang.org/ides.html">IDE 支持页面</a>。</p>
+
+<h3><a href="#wheres-rustfmt" name="wheres-rustfmt">
+<code>gofmt</code> 很棒。<code>rustfmt</code>在哪？
+</a></h3>
+
+<p><code class="highlighter-rouge">rustfmt</code> <a href="https://github.com/rust-lang-nursery/rustfmt">就在这里</a>，正在活跃地开发中，以使得阅读 Rust 代码尽可能更容易和可预测。</p>
+
+<h2 id="low-level">底层</h2>
+
+<h3><a href="#how-do-i-memcpy-bytes" name="how-do-i-memcpy-bytes">
+如何用 <code>memcpy</code> 在内存中拷贝字节？
+</a></h3>
+
+<p>如果你想安全地克隆一个现有切片，可以使用 <a href="https://doc.rust-lang.org/stable/std/primitive.slice.html#method.clone_from_slice"><code class="highlighter-rouge">clone_from_slice</code></a>。</p>
+
+<p>用 <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy.html"><code class="highlighter-rouge">copy</code></a> 拷贝可能重叠（overlapping）的字节。用 <a href="https://doc.rust-lang.org/stable/std/ptr/fn.copy_nonoverlapping.html"><code class="highlighter-rouge">copy_nonoverlapping</code></a> 拷贝非重叠字节。两个特性都是 <code class="highlighter-rouge">unsafe</code> 的，因此两者都会破坏本语言的安全保障，使用时请小心。</p>
+
+<h3><a href="#does-rust-work-without-the-standard-library" name="does-rust-work-without-the-standard-library">
+没有标准库的 Rust 还能正确运行吗？
+</a></h3>
+
+<p>绝对可以。Rust 程序可以使用 <code class="highlighter-rouge">#![no_std]</code> 属性设置为不加载标准库。使用此属性集后，你可以继续使用 Rust 核心库，那些是与平台无关的原函数。也因此，它不包括 IO、并发、堆分配等。</p>
+
+<h3><a href="#can-i-write-an-operating-system-in-rust" name="can-i-write-an-operating-system-in-rust">
+我可以用 Rust 写一个操作系统吗？
+</a></h3>
+
+<p>行的！事实上，<a href="http://wiki.osdev.org/Rust">有多个项目正在进行中</a>。</p>
+
+<h3><a href="#how-can-i-write-endian-independent-values" name="how-can-i-write-endian-independent-values">
+如何以大端或小端格式读取或写入像 <code>i32</code> 或 <code>f64</code> 这样的数字类型到一个文件或其他字节流中？
+</a></h3>
+
+<p>你应该检出 <a href="http://burntsushi.net/rustdoc/byteorder/">byteorder 包</a>，它正是为这种情况提供了各种工具。</p>
+
+<h3><a href="#does-rust-guarantee-data-layout" name="does-rust-guarantee-data-layout">
+Rust 是否保证特定的数据布局？
+</a></h3>
+
+<p>默认不会。在一般情况下，<code class="highlighter-rouge">enum</code> 和 <code class="highlighter-rouge">struct</code> 布局是未定义的。这允许编译器进行潜在优化，如根据差别式重新对齐，压缩嵌套的 <code class="highlighter-rouge">enum</code>，重排字段以消除填充，等。不带数据的 <code class="highlighter-rouge">enum</code> （类 C）符合按定义表示的条件。这样的 <code class="highlighter-rouge">enum</code> 很容易区分，因为它们只是一个不包含数据的名字列表：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">enum</span> <span class="n">CLike</span> <span class="p">{</span>
+    <span class="n">A</span><span class="p">,</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="mi">34</span><span class="p">,</span>
+    <span class="n">D</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">#[repr(C)]</code> 属性可以应用到诸如 <code class="highlighter-rouge">enums</code> 以提供等同 C 语言中的表示。对于大多数情况来说，这允许在 FFI 代码中使用 Rust 的 <code class="highlighter-rouge">enum</code> 和 C 的 <code class="highlighter-rouge">enum</code>。这个属性也可以应用到 <code class="highlighter-rouge">strut</code> 上，来获得与 C <code class="highlighter-rouge">struct</code> 相同的布局。</p>
+
+<h2 id="cross-platform">跨平台</h2>
+
+<!--
+### How do I build a Windows binary that doesn't display the console window?
+
+TODO: Write this answer.
+-->
+
+<!--
+### How do I make the console-less binary not crash on panic!?
+
+TODO: Write this answer.
+-->
+
+<h3><a href="#how-do-i-express-platform-specific-behavior" name="how-do-i-express-platform-specific-behavior">
+在 Rust 中表达特定平台行为的惯用方式是什么？
+</a></h3>
+
+<p>特定平台的行为可以使用<a href="https://doc.rust-lang.org/reference/attributes.html#conditional-compilation">条件编译属性</a>，诸如 <code class="highlighter-rouge">target_os</code>、<code class="highlighter-rouge">target_family</code>、<code class="highlighter-rouge">target_endian</code> 等。</p>
+
+<h3><a href="#can-rust-be-used-for-android-ios-programs" name="can-rust-be-used-for-android-ios-programs">
+Rust 可以用于 Android/iOS 编程吗？
+</a></h3>
+
+<p>可以！已经有为 <a href="https://github.com/tomaka/android-rs-glue">Android</a> 和 <a href="https://www.bignerdranch.com/blog/building-an-ios-app-in-rust-part-1/">iOS</a> 使用 Rust 的例子。它需要一些工作来完成设置，但是 Rust 在这两个平台上都能正常工作。</p>
+
+<h3><a href="#can-i-run-my-rust-program-in-a-web-browser" name="can-i-run-my-rust-program-in-a-web-browser">
+我可以在网页浏览器中运行我的 Rust 程序吗？
+</a></h3>
+
+<p>有可能。Rust 已经拥有了对于 <a href="http://asmjs.org/">asm.js</a> 和 <a href="http://webassembly.org/">WebAssembly</a> 的<a href="https://davidmcneil.gitbooks.io/the-rusty-web/">实验性支持</a>。</p>
+
+<h3><a href="#how-do-i-cross-compile-rust" name="how-do-i-cross-compile-rust">
+如何在 Rust 中交叉编译？
+</a></h3>
+
+<p>Rust 的交叉编译是可能的，它但需要<a href="https://github.com/japaric/rust-cross/blob/master/README.md">一些流程</a>完成设置。每个 Rust 编译器都是一个交叉编译器，但库需要针对目标平台进行交叉编译。</p>
+
+<p>Rust 确实为每个受支持平台方法<a href="https://static.rust-lang.org/dist/index.html">标准库副本</a>，在分发目录上可以找到各构建目录，其中包含的 <code class="highlighter-rouge">rust-std-*</code> 文件就是它们，但尚没有自动安装它们的方法。</p>
+
+<h2 id="modules-and-crates">模块（module）和包（crate）</h2>
+
+<h3><a href="#what-is-the-relationship-between-a-module-and-a-crate" name="what-is-the-relationship-between-a-module-and-a-crate">
+模块与包之间的关系是什么？
+</a></h3>
+
+<ul>
+  <li>一个包是一个编译单元，它是 Rust 编译器可操作的最小代码量。</li>
+  <li>一个模块是一个（可能是嵌套的）放在一个包内的代码单元。</li>
+  <li>一个包包含一个隐含的、未命名的顶层模块。</li>
+  <li>递归定义可以跨越模块，但不能跨包。</li>
+</ul>
+
+<h3><a href="#why-cant-the-rust-compiler-find-a-library-im-using" name="why-cant-the-rust-compiler-find-a-library-im-using">
+为什么 Rust 编译器找不到我 <code>use</code> 的库？
+</a></h3>
+
+<p>可能有多种原因，但一个常见的错误是没有意识到 <code class="highlighter-rouge">use</code> 声明是相对于包的根层级。如果在项目的根文件中定义，请尝试重写声明以使用它们要使用的路径，并查看是否可以解决问题。</p>
+
+<p>还有 <code class="highlighter-rouge">self</code> 和 <code class="highlighter-rouge">super</code>，它们分别使用相对于当前模块或者父模块的路径。</p>
+
+<p>有关 <code class="highlighter-rouge">use</code> 库的完整信息，请阅读 Rust 之书的<a href="https://doc.rust-lang.org/stable/book/second-edition/ch07-00-modules.html">「包和模块」</a> 一章。</p>
+
+<h3><a href="#why-do-i-have-to-declare-modules-with-mod" name="why-do-i-have-to-declare-modules-with-mod">
+为什么我必须在包顶层用 <code>mod</code> 声明模块文件，而不能直接 <code>use</code> 它们？
+</a></h3>
+
+<p>有两种方法在 Rust 中声明模块：内链或者另一个文件。下面是两个例子：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">// In main.rs</span>
+<span class="k">mod</span> <span class="n">hello</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nd">println!</span><span class="p">(</span><span class="s">"hello!"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nn">hello</span><span class="p">::</span><span class="nf">f</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">// In main.rs</span>
+<span class="k">mod</span> <span class="n">hello</span><span class="p">;</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nn">hello</span><span class="p">::</span><span class="nf">f</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c">// In hello.rs</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"hello!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>在第一个例子中，模块在其使用的同一个文件中定义。第二个例子中，主文件中的模块声明告诉编译器找到 <code class="highlighter-rouge">hello.rs</code> 或 <code class="highlighter-rouge">hello/mod.rs</code>，然后加载该文件。</p>
+
+<p>注意 <code class="highlighter-rouge">mod</code> 与 <code class="highlighter-rouge">use</code> 的差异：<code class="highlighter-rouge">mod</code> 声明一个模块的存在，而 <code class="highlighter-rouge">use</code> 引用一个在别处声明的模块，将其内容纳入到当前模块的范围。</p>
+
+<h3><a href="#how-do-i-configure-cargo-to-use-a-proxy" name="how-do-i-configure-cargo-to-use-a-proxy">
+如何配置 Cargo 使用代理服务器？
+</a></h3>
+
+<p>正如 Cargo 的<a href="http://doc.crates.io/config.html">配置文档</a>所说，你可以设置配置文件中 <code class="highlighter-rouge">[http]</code> 下的「proxy」变量使 Cargo 使用一个代理服务器。</p>
+
+<h3><a href="#why-cant-the-compile-find-method-implementations" name="why-cant-the-compile-find-method-implementations">
+为什么编译器找不到方法实现，即使我已经 <code>use</code> 了相应的包？
+</a></h3>
+
+<p>对于在 trait 上定义的方法，必须显式导入 trait 的声明。这意味着导入一个实现了 trait 的 struct 模块是不够的，还必须导入这个 trait 本身。</p>
+
+<h3><a href="#why-cant-the-compiler-infer-use-statements" name="why-cant-the-compiler-infer-use-statements">
+为什么编译器不能为我推断 <code>use</code> 声明？
+</a></h3>
+
+<p>它可以做到，但你也许也不希望它这么做。尽管在许多情况下，编译器可以通过简单地查找给定的标识符定义的位置来确定要导入的正确模块，但这可能不是一般的情况。在某些情况下， <code class="highlighter-rouge">rustc</code> 中任何用于在竞争项之间进行选择的规则都有可能引起意外和混淆，而 Rust 更倾向于显式标明名字来源于哪里。</p>
+
+<p>例如，编译器可以说在竞争标识符定义的情况下，选择最早导入的模块。那么如果两个模块 <code class="highlighter-rouge">foo</code> 和模块 <code class="highlighter-rouge">bar</code> 都定义了标识符 <code class="highlighter-rouge">baz</code>，但是 <code class="highlighter-rouge">foo</code> 是首先注册的模块，编译器会插入 <code class="highlighter-rouge">use foo::baz;</code>。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">mod</span> <span class="n">foo</span><span class="p">;</span>
+<span class="k">mod</span> <span class="n">bar</span><span class="p">;</span>
+
+<span class="c">// use foo::baz  // 会由编译器插入。</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">baz</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>假如你知道这将会发生，或许这样可以节省少量的按键次数，但当你实际需要用到 <code class="highlighter-rouge">bar::baz()</code> 中的 <code class="highlighter-rouge">baz()</code> 时，会大大增加意外的错误信息的可能性，而且通过模块声明来决定一个函数调用的含义，也降低了代码的可读性。这些不是我们愿意做的折衷。</p>
+
+<p>然而，在将来，IDE 可以帮助管理声明，这会在两方面带来更好的结果：机器帮助引入名字，但显式声明这些名字来自何处。</p>
+
+<!--
+### How do I package and archive crates from [https://crates.io](https://crates.io)?
+
+TODO: Write this answer.
+-->
+
+<h3><a href="#how-do-i-do-dynamic-rust-library-loading" name="how-do-i-do-dynamic-rust-library-loading">
+如何动态加载 Rust 库？
+</a></h3>
+
+<p>在 Rust 中使用 <a href="https://crates.io/crates/libloading">libloading</a> 导入动态库，它提供了一个用于动态链接的跨平台系统。</p>
+
+<h3><a href="#why-doesnt-crates-io-have-namespaces" name="why-doesnt-crates-io-have-namespaces">
+为什么 crates.io 没有命名空间？
+</a></h3>
+
+<p>引用 <a href="https://crates.io">https://crates.io</a> 设计的<a href="https://internals.rust-lang.org/t/crates-io-package-policies/1041">官方解释</a>：</p>
+
+<blockquote>
+  <p>在 crates.io 的第一个月里，有一些人就问我们关于引入<a href="https://github.com/rust-lang/crates.io/issues/58">基于命名空间的包</a>的可能性。<br /><br /></p>
+
+  <p>尽管基于命名空间的包允许多个作者使用一个单一的，通用的名字，但这也增加了 Rust 代码中和人际沟通中如何引用包的复杂度。乍看之下，这允许多个作者占有像 <code class="highlighter-rouge">http</code> 这样的名字，但这只意味着人们必须用 <code class="highlighter-rouge">wycats' http</code> 或者 <code class="highlighter-rouge">reem's http</code> 来指定所引用的包，相对于像 <code class="highlighter-rouge">wycats-http</code> 或者 <code class="highlighter-rouge">reem-http</code> 这样的名字，前者几乎没什么好处。<br /><br /></p>
+
+  <p>当我们在没有命名空间的情况下观察包生态系统时，发现人们更倾向于使用更多的富有创意的名字（如 <code class="highlighter-rouge">nologiri</code> 而不是 <code class="highlighter-rouge">tenderlove's libxml2</code>）。这些创意名字往往是简短且易于记忆的，部分原因在于减少了层级。这使得关于包的信息更容易被简洁明确地交流。它能创造令人兴奋的品牌。而且，我们已经看到了多个拥有超过 10,000+ 个包的生态系统的成功，如 NPM 和 RubyGems，其社区在单一的命名空间中蓬勃发展。<br /><br /></p>
+
+  <p>简而言之，假如 Piston 选择一个如 <code class="highlighter-rouge">bvssvni/game-engine</code> （允许其它用户选择 <code class="highlighter-rouge">wycats/game-engine</code>）的名字而不是简单的 <code class="highlighter-rouge">piston</code>，我们不认为这样对 Cargo 生态系统会更好。<br /><br /></p>
+
+  <p>因为命名空间在许多方面有更严格的复杂度，而且因为在将来如果有必要可以添加兼容性，我们坚持使用一个共享的命名空间。</p>
+</blockquote>
+
+<h2 id="libraries">库</h2>
+
+<h3><a href="#how-can-i-make-an-http-request" name="how-can-i-make-an-http-request">
+我该怎样发出一个 HTTP 请求？
+</a></h3>
+
+<p>标准库不包含 HTTP 的实现，因此你需要用外部的包。 <a href="https://github.com/hyperium/hyper">Hyper</a> 是最流行的选择，但<a href="https://crates.io/keywords/http">也有众多其他可选</a>。</p>
+
+<h3><a href="#how-can-i-write-a-gui-application" name="how-can-i-write-a-gui-application">
+如何用 Rust 编写 GUI 应用程序？
+</a></h3>
+
+<p>有多种方法在 Rust 中编写 GUI 应用程序。查阅我们的 <a href="https://github.com/kud1ing/awesome-rust#gui">GUI 框架列表</a>吧。</p>
+
+<h3><a href="#how-can-i-parse-json-xml" name="how-can-i-parse-json-xml">
+如何解析 JSON/XML？
+</a></h3>
+
+<p><a href="https://github.com/serde-rs/serde">Serde</a> 是推荐的将 Rust 数据序列化与反序列化为多种格式的库。</p>
+
+<h3><a href="#is-there-a-standard-2d-vector-crate" name="is-there-a-standard-2d-vector-crate">
+有标准的 2D+ 矢量和形状包吗？
+</a></h3>
+
+<p>还没有呢！你能写一个吗？</p>
+
+<h3><a href="#how-do-i-write-an-opengl-app" name="how-do-i-write-an-opengl-app">
+如何用 Rust 编写 OpenGL 应用程序？
+</a></h3>
+
+<p><a href="https://github.com/tomaka/glium">Glium</a> 是 Rust 中 OpenGL 编程的主要的库。<a href="https://github.com/bjz/glfw-rs">GLFW</a> 也是一个可靠的选择。</p>
+
+<h3><a href="#can-i-write-a-video-game-in-rust" name="can-i-write-a-video-game-in-rust">
+我能用 Rust 编写一个电子游戏吗？
+</a></h3>
+
+<p>没问题！Rust 主要的游戏编程库是 <a href="http://www.piston.rs/">Piston</a>，另有 <a href="https://www.reddit.com/r/rust_gamedev/">Rust 游戏编程的 reddit 板块</a> 和 IRC 频道（<a href="https://wiki.mozilla.org/IRC">Mozilla IRC</a> 上的 <code class="highlighter-rouge">#rust-gamedev</code>)。</p>
+
+<h2 id="design-patterns">设计模式</h2>
+
+<h3><a href="#is-rust-object-oriented" name="is-rust-object-oriented">
+Rust 是面向对象吗？
+</a></h3>
+
+<p>它是多范式。你在面向对象（OO）语言中做的许多事情也能在 Rust 中做，但并不是所有都可以，并且不一定是你熟悉的方式。</p>
+
+<h3><a href="#how-do-i-map-object-oriented-concepts-to-rust" name="how-do-i-map-object-oriented-concepts-to-rust">
+如何将面向对象的概念映射到 Rust？
+</a></h3>
+
+<p>看情况。将面向对象的概念转化到 Rust 有许多种 <em>方式</em>，例如<a href="https://www.reddit.com/r/rust/comments/2sryuw/ideaquestion_about_multiple_inheritence/">多继承</a>，但由于 Rust 不是面向对象的，所以转化的结果可能与 OO 语言看起来有很大的不同。</p>
+
+<h3><a href="#how-do-i-configure-a-struct-with-optional-parameters" name="how-do-i-configure-a-struct-with-optional-parameters">
+如何处理有可选参数的结构体的配置？
+</a></h3>
+
+<p>最简单的方法是在你用来构造结构体实现的任何函数（ 通常是 <code class="highlighter-rouge">new</code>）中使用 <a href="https://doc.rust-lang.org/stable/std/option/enum.Option.html"><code class="highlighter-rouge">Option</code></a> 类型。另一种方法是使用 <a href="https://doc.rust-lang.org/stable/book/first-edition/method-syntax.html#builder-pattern">构造器模式</a>，在构造类型之前，一些明确实例化成员变量的函数必须被调用。</p>
+
+<h3><a href="#how-do-i-do-global-variables" name="how-do-i-do-global-variables">
+如何在 Rust 中做全局对象？
+</a></h3>
+
+<p>Rust 中可以用 <code class="highlighter-rouge">const</code> 声明在编译时计算的全局常量，而 <code class="highlighter-rouge">static</code> 可用于可变的全局变量。请注意，修改一个 <code class="highlighter-rouge">static mut</code> 变量需要使用 <code class="highlighter-rouge">unsafe</code>，因为它允许数据竞争（races），这在安全的 Rust 中保证不会发生的事之一。<code class="highlighter-rouge">const</code> 与 <code class="highlighter-rouge">static</code> 值的一项重要区别是，你可以引用 <code class="highlighter-rouge">static</code> 值，但不能引用 <code class="highlighter-rouge">const</code> 值，因为它没有一个特定的内存位置。有关 <code class="highlighter-rouge">const</code> 与 <code class="highlighter-rouge">static</code> 的更多信息，请阅读 <a href="https://doc.rust-lang.org/book/const-and-static.html">Rust 之书</a>。</p>
+
+<h3><a href="#how-can-i-set-compile-time-constants-that-are-defined-procedurally" name="how-can-i-set-compile-time-constants-that-are-defined-procedurally">
+如何设置程序定义的编译时的常量？
+</a></h3>
+
+<p>Rust 目前对编译时常量的支持有限。你可以使用 <code class="highlighter-rouge">const</code> 声明（类似 <code class="highlighter-rouge">static</code>，但它不可变，并且在内存中没有特定位置）定义原生类型，以及定义 <code class="highlighter-rouge">const</code> 函数和固有方法。</p>
+
+<p>要定义那些无法通过这种机制定义的过程常量，使用 <a href="https://github.com/rust-lang-nursery/lazy-static.rs"><code class="highlighter-rouge">lazy-static</code></a> crate，它通过第一次使用的时候自动求值来模拟编译时求值。</p>
+
+<h3><a href="#can-i-run-code-before-main" name="can-i-run-code-before-main">
+我可以在 main 发生前运行初始化代码吗？
+</a></h3>
+
+<p>Rust 没有「<code class="highlighter-rouge">main</code> 之前」的概念。你想找到的最接近的可能是 <a href="https://github.com/Kimundi/lazy-static.rs"><code class="highlighter-rouge">lazy-static</code></a> 包，它在初次使用时通过懒惰初始化静态变量做到类似「在main之前」。</p>
+
+<!--
+
+This answer needs significant work. Let's revise after the initial posting. --aturon
+
+<h3><a href="#why-doesnt-rust-have-inheritance" name="why-doesnt-rust-have-inheritance">
+Why doesn't Rust have inheritance?
+</a></h3>
+
+There are two meanings for the word "inheritance": _subtyping_, and _interface sharing_. Both purposes are already handled by traits.
+
+For the first, subtyping exists for polymorphism, which traits already provide.
+
+For the second, interface sharing is handled via trait methods, which define a collection of related functions that must be implemented for any implementation of the trait.
+
+Rust has consistently worked to avoid having features with overlapping purposes, preferring to keep features orthogonal. For this reason, and given that the two major purposes are already handled by traits, Rust has opted not to include inheritance.
+
+-->
+
+<h3><a href="#does-rust-allow-non-constant-expression-values-for-globals" name="does-rust-allow-non-constant-expression-values-for-globals">
+Rust 是否允许全局的非常量表达式值？
+</a></h3>
+
+<p>不允许。全局不能有一个非常量表达式的构造器和解构器。静态构造器也不允许，因为确保一个静态初始化顺序很难。main 之前的生命周期经常被认为是不当的功能，所以 Rust 不允许。</p>
+
+<p>参考 <a href="http://yosefk.com/c++fqa/ctors.html#fqa-10.12">C++ FQA</a> 中关于「static initialization order fiasco」的问题，以及 <a href="https://ericlippert.com/2013/02/06/static-constructors-part-one/">Eric Lippert’s blog</a> 中针对 C# 中此功能的挑战。</p>
+
+<p>你可以以 <a href="https://crates.io/crates/lazy_static/">lazy-static</a> 包使用近似的非常量表达式全局对象。</p>
+
+<h2 id="other-languages">其他语言</h2>
+
+<h3><a href="#how-can-i-use-static-fields" name="how-can-i-use-static-fields">
+如何在 Rust 中实现类似 C 的 <code>struct X { static int X; };</code>？
+</a></h3>
+
+<p>如上所说，Rust 没有 <code class="highlighter-rouge">static</code> 字段。不过，你可以在指定的模块中声明一个 <code class="highlighter-rouge">static</code> 变量，这样它将为该模块私有。</p>
+
+<h3><a href="#how-can-i-convert-a-c-style-enum-to-an-integer" name="how-can-i-convert-a-c-style-enum-to-an-integer">
+如何将 C 风格的枚举转换为整数，反之亦然？
+</a></h3>
+
+<p>把 C 风格的枚举转换成一个整型，可以通过 <code class="highlighter-rouge">as</code> 表达式，如 <code class="highlighter-rouge">e as i64</code>（这里 <code class="highlighter-rouge">e</code> 是某个枚举）。</p>
+
+<p>反方向转换，可以通过 <code class="highlighter-rouge">match</code> 语句，将不同的数值映射到枚举的不同潜在值。</p>
+
+<h3><a href="#why-do-rust-programs-use-more-memory-than-c" name="why-do-rust-programs-use-more-memory-than-c">
+为什么 Rust 程序的二进制文件比 C 程序要大？
+</a></h3>
+
+<p>在默认情况下，Rust 程序比功能相当的 C 程序有更大的二进制大小，有几个因素。一般来说， Rust 倾向于为实现世界的性能做优化，而不是程序的大小。</p>
+
+<p><strong>单态化（Monomorphization）</strong></p>
+
+<p>Rust 的单态化泛型，意味着为程序中使用的每个具体类型生成一个泛型函数或者类型的新版本。这与 C++ 中模板的工作方式类似。例如，在以下程序中：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="n">foo</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c">// ... do something</span>
+<span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">foo</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>       <span class="c">// i32</span>
+    <span class="nf">foo</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span>  <span class="c">// &amp;str</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>在最终的二进制文件中会有两个不同版本的 <code class="highlighter-rouge">foo</code>，一个专门用于接收 <code class="highlighter-rouge">i32</code> 的输入，一个专门用于接收 <code class="highlighter-rouge">&amp;str</code> 的输入。这样实现了通用函数的高效静态调度（dispatch），但代价是会产生较大的二进制文件。</p>
+
+<p><strong>调试符号</strong></p>
+
+<p>Rust 程序在编译的时候保留了一些调试符号，即使在 release 模式下编译也是如此。这是用于在 panic 的时候提供回溯（backtrace）的功能，可以用 <code class="highlighter-rouge">strip</code> 或者其它调试符号删除工具进行删除。还有一点值得注意的是，在 Cargo 的 release 模式下进行编译等同于用 rustc 设置优化级别为 3。一个替代的优化级别（称为 <code class="highlighter-rouge">s</code> 或 <code class="highlighter-rouge">z</code>）<a href="https://github.com/rust-lang/rust/pull/32386">最近被引入</a>，用于告诉编译器针对大小而不是性能进行优化。</p>
+
+<p><strong>Jemalloc</strong></p>
+
+<p>Rust 使用 jemalloc 作为默认内存分配器，这会增加一些编译后的二进制文件的大小。选择 jemalloc 是因为它是一个一致的，优质的内存分配器，与许多常见的系统提供的分配器相比具有优越的性能特征。<a href="https://github.com/rust-lang/rust/issues/32838">为了更容易地使用自定义的分配器</a>，有一项工作正在进行，但尚未完成。</p>
+
+<p><strong>链接时（link-time）优化</strong></p>
+
+<p>Rust 在默认情况下不提供链接时优化，但可以指定这么做。这增加了 Rust 编译器可能会执行的优化量，对二进制文件产生很小的影响。与之前提到的文件大小优化模式相结合，效果会更好。</p>
+
+<p><strong>标准库</strong></p>
+
+<p>Rust 标准库包括 libbacktrace 和 libunwind，这在某些程序中可能用不到。因此，使用 <code class="highlighter-rouge">#![no_std]</code> 可以产生更小的二进制文件，但通常也会导致你编写的代码需要大量的修改。请注意，使用不带标准库的 Rust 通常在功能上更接近等效的 C 代码。</p>
+
+<p>例如，以下 C 程序读入一个名字，然后输出向该名字的人的问好 「hello」。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"What's your name?</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="kt">char</span> <span class="n">input</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">input</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Hello %s!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">input</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>用 Rust 重写，你可能得到如下的内容：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="n">io</span><span class="p">;</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"What's your name?"</span><span class="p">);</span>
+    <span class="k">let</span> <span class="k">mut</span> <span class="n">input</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
+    <span class="nn">io</span><span class="p">::</span><span class="nf">stdin</span><span class="p">()</span><span class="nf">.read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">input</span><span class="p">)</span><span class="nf">.unwrap</span><span class="p">();</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello {}!"</span><span class="p">,</span> <span class="n">input</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>该程序编译之后与 C 程序相比，具有更大的二进制文件且使用更多的内存。但是该程序并不完全等同于上面的 C 代码。相反，等效的 Rust 代码看起来像这样：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">#</span><span class="o">!</span><span class="p">[</span><span class="nf">feature</span><span class="p">(</span><span class="n">lang_items</span><span class="p">)]</span>
+<span class="err">#</span><span class="o">!</span><span class="p">[</span><span class="nf">feature</span><span class="p">(</span><span class="n">libc</span><span class="p">)]</span>
+<span class="err">#</span><span class="o">!</span><span class="p">[</span><span class="nf">feature</span><span class="p">(</span><span class="n">no_std</span><span class="p">)]</span>
+<span class="err">#</span><span class="o">!</span><span class="p">[</span><span class="nf">feature</span><span class="p">(</span><span class="n">start</span><span class="p">)]</span>
+<span class="err">#</span><span class="o">!</span><span class="p">[</span><span class="n">no_std</span><span class="p">]</span>
+
+<span class="k">extern</span> <span class="n">crate</span> <span class="n">libc</span><span class="p">;</span>
+
+<span class="k">extern</span> <span class="s">"C"</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="nf">printf</span><span class="p">(</span><span class="n">fmt</span><span class="p">:</span> <span class="o">*</span><span class="k">const</span> <span class="nb">u8</span><span class="p">,</span> <span class="err">...</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">i32</span><span class="p">;</span>
+    <span class="k">fn</span> <span class="nf">scanf</span><span class="p">(</span><span class="n">fmt</span><span class="p">:</span> <span class="o">*</span><span class="k">const</span> <span class="nb">u8</span><span class="p">,</span> <span class="err">...</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">i32</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#[start]</span>
+<span class="k">fn</span> <span class="nf">start</span><span class="p">(</span><span class="n">_argc</span><span class="p">:</span> <span class="n">isize</span><span class="p">,</span> <span class="n">_argv</span><span class="p">:</span> <span class="o">*</span><span class="k">const</span> <span class="o">*</span><span class="k">const</span> <span class="nb">u8</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">isize</span> <span class="p">{</span>
+    <span class="k">unsafe</span> <span class="p">{</span>
+        <span class="nf">printf</span><span class="p">(</span><span class="n">b</span><span class="s">"What's your name?</span><span class="se">\n</span><span class="err">\</span><span class="s">0"</span><span class="nf">.as_ptr</span><span class="p">());</span>
+        <span class="k">let</span> <span class="k">mut</span> <span class="n">input</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0u8</span><span class="p">;</span> <span class="mi">100</span><span class="p">];</span>
+        <span class="nf">scanf</span><span class="p">(</span><span class="n">b</span><span class="s">"</span><span class="si">%s</span><span class="err">\</span><span class="s">0"</span><span class="nf">.as_ptr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="k">mut</span> <span class="n">input</span><span class="p">);</span>
+        <span class="nf">printf</span><span class="p">(</span><span class="n">b</span><span class="s">"Hello </span><span class="si">%s</span><span class="s">!</span><span class="se">\n</span><span class="err">\</span><span class="s">0"</span><span class="nf">.as_ptr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">input</span><span class="p">);</span>
+        <span class="mi">0</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">#[lang=</span><span class="s">"eh_personality"</span><span class="cp">]</span> <span class="k">extern</span> <span class="k">fn</span> <span class="nf">eh_personality</span><span class="p">()</span> <span class="p">{}</span>
+<span class="cp">#[lang=</span><span class="s">"panic_fmt"</span><span class="cp">]</span> <span class="k">fn</span> <span class="nf">panic_fmt</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="o">!</span> <span class="p">{</span> <span class="k">loop</span> <span class="p">{}</span> <span class="p">}</span>
+<span class="cp">#[lang=</span><span class="s">"stack_exhausted"</span><span class="cp">]</span> <span class="k">extern</span> <span class="k">fn</span> <span class="nf">stack_exhausted</span><span class="p">()</span> <span class="p">{}</span>
+</code></pre>
+</div>
+
+<p>这样在内存的使用上就应该大致与 C 相当了，但代价是需要程序员更多的编程技巧，而且缺少了 Rust 通常提供的静态保证（由于这里 <code class="highlighter-rouge">unsafe</code> 的使用）。</p>
+
+<h3><a href="#why-no-stable-abi" name="why-no-stable-abi">
+为什么 Rust 没有像 C 一样稳定的 ABI，以及为什么必须用 extern 来标注？
+</a></h3>
+
+<p>承诺一个 ABI 是一个很重大的决定，这会限制语言在将来潜在的有利改进。鉴于 Rust 在 2015 年 5 月才达到 1.0，拟作出一个像稳定 ABI 这样的大承诺还为时过早。但这并不意味着将来不会有。（虽然 C++ 已经设法发展了很多年，但并没有指定一个稳定的 ABI。）</p>
+
+<p><code class="highlighter-rouge">extern</code> 关键字允许 Rust 使用一些特定的 ABI，例如明确定义的 C ABI，来与其它语言交互。</p>
+
+<h3><a href="#can-rust-code-call-c-code" name="can-rust-code-call-c-code">
+Rust 代码能调用 C 代码吗？
+</a></h3>
+
+<p>可以。从 Rust 调用 C 代码与从 C++ 调用 C 代码一样高效。</p>
+
+<h3><a href="#can-c-code-call-rust-code" name="can-c-code-call-rust-code">
+C 代码能调用 Rust 代码吗？
+</a></h3>
+
+<p>可以。 Rust 代码必须通过一个 <code class="highlighter-rouge">extern</code> 声明来导出，这和 C-ABI 兼容。这样的函数可以作为函数指针传递给 C 代码，或者通过标识 <code class="highlighter-rouge">#[no_mangle]</code> 来禁用符号调整（symbol mangling），可以直接从 C 代码中调用。</p>
+
+<h3><a href="#why-rust-vs-cxx" name="why-rust-vs-cxx">
+我已经写了完美的 C++。 Rust 能给我什么？
+</a></h3>
+
+<p>现代 C++ 包含了许多功能，使得写出安全且正确的代码更不容易出错，但并不完美，仍然很容易引入不安全。这是 C++ 核心开发人员正在努力解决的问题，但他们现在正想尝试实现的许多想法被 C++ 被之前悠久的历史包袱限制住了。</p>
+
+<p>Rust 是从第一天开始就被设计成一种安全的系统编程语言，这意味着它不受限于那些让 C++ 变得如此复杂的历史设计决策。在 C++ 中，安全是通过谨慎的个人纪律来达到的，很容易出错。在 Rust 中，安全是默认的。即使你的团队中包含了不如你完美的人，你仍然能够工作，而无需花费时间仔细检查其代码的安全性漏洞。</p>
+
+<h3><a href="#how-to-get-cxx-style-template-specialization" name="how-to-get-cxx-style-template-specialization">
+如何在 Rust 中做到相当于 C++ 模板特化？
+</a></h3>
+
+<p>Rust 目前还没有完全等同的模板特化，这<a href="https://github.com/rust-lang/rfcs/pull/1210">正在研究</a>并有希望尽快加入。不过，可以用<a href="https://doc.rust-lang.org/stable/book/second-edition/ch19-03-advanced-traits.html">关联类型</a>达成类似的效果。</p>
+
+<h3><a href="#how-does-ownership-relate-to-cxx-move-semantics" name="how-does-ownership-relate-to-cxx-move-semantics">
+Rust 的所有权系统如何与 C++ 中的 move 语义相关联？
+</a></h3>
+
+<p>基本概念是相似的，但两个系统在实践中的工作方式非常不同。在这两个系统中，
+「移动」一个值是转移其底层资源所有权的一种方式。例如，移动一个字符串，
+将传递这个字符串的缓冲区，而不是复制它。</p>
+
+<p>在Rust 中，所有权转移是默认的行为。例如，假设我写一个接收 <code class="highlighter-rouge">String</code>
+作为参数的函数，该函数将获得其调用者提供的这个 <code class="highlighter-rouge">String</code> 的所有权：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">process</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">caller</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">);</span>
+    <span class="nf">process</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="c">// Transfers ownership of `s` to `process`</span>
+    <span class="nf">process</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="c">// Error! ownership already transferred.</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>从上面的代码片断可以看出，在 <code class="highlighter-rouge">caller</code> 函数中，第一次调用 <code class="highlighter-rouge">process</code>
+转移了变量 <code class="highlighter-rouge">s</code> 的所有权。编译器跟踪所有权，所以第二次调用 <code class="highlighter-rouge">process</code>
+会导致错误，因为同一个值所有权被放弃两次是非法的。如果这个值被借出未归还，
+Rust 也会阻止你移动它。</p>
+
+<p>C++ 采用不同的方式。在 C++ 中，默认是复制一个值（更具体的是，调用拷贝
+构造器）。然而调用者可以使用一个 「rvalue 引用」来定义他们的参数，如
+<code class="highlighter-rouge">string&amp;&amp;</code>，表示它们将获得这些参数拥有的某些资源的所有权（在本例中为字符串的内部缓冲区）。
+然后调用者必须要么传递一个临时表达式或者使用 <code class="highlighter-rouge">std::move</code> 来显式移动。
+那么与上面的 <code class="highlighter-rouge">process</code> 函数大致相当的代码：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>void process(string&amp;&amp; s) { }
+
+void caller() {
+    string s("Hello, world!");
+    process(std::move(s));
+    process(std::move(s));
+}
+</code></pre>
+</div>
+
+<p>C++ 编译器没有义务跟踪移动。例如，上面的代码在编译时没有警告或错误，
+至少在 clang 上使用默认设置的时候如此。此外，在 C++ 中字符串 <code class="highlighter-rouge">s</code>
+本身的所有权（假设不是它内部的缓冲区）还是在 <code class="highlighter-rouge">caller</code>，因此当 <code class="highlighter-rouge">caller</code>
+返回时解构器会运行，即使它被移动了（在 Rust 中则相反，被移动的值只会被它的新所有者丢弃）。</p>
+
+<h3><a href="#how-to-interoperate-with-cxx" name="how-to-interoperate-with-cxx">
+如何让 Rust 与 C++ 互操作，反之亦然？
+</a></h3>
+
+<p>Rust 与 C++ 可以通过 C 互操作。Rust 和 C++ 都提供一个适用于 C 的<a href="https://doc.rust-lang.org/book/ffi.html">外部函数接口</a>，我们可以用它来相互沟通。如果编写 C 语言的绑定太麻烦，你随时可以用 <a href="https://github.com/servo/rust-bindgen">rust-bindgen</a> 来帮忙自动生成可执行的 C 绑定。</p>
+
+<h3><a href="#does-rust-have-cxx-style-constructors" name="does-rust-have-cxx-style-constructors">
+Rust 有 C++ 风格的构造器吗？
+</a></h3>
+
+<p>没有。函数与构造器的目的相同，但不增加语言的复杂度。 Rust 中与构造器等效的函数名字通常是 <code class="highlighter-rouge">new()</code>，但这只是一个约定而不是一个语言规则。实际上 <code class="highlighter-rouge">new()</code> 函数与其它任何函数一样。如下例子所示：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Foo</span> <span class="p">{</span>
+    <span class="n">a</span><span class="p">:</span> <span class="nb">i32</span><span class="p">,</span>
+    <span class="n">b</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+    <span class="n">c</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">Foo</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="nf">new</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="n">Foo</span> <span class="p">{</span>
+        <span class="n">Foo</span> <span class="p">{</span>
+            <span class="n">a</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">b</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="n">c</span><span class="p">:</span> <span class="k">false</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3><a href="#does-rust-have-copy-constructors" name="does-rust-have-copy-constructors">
+Rust 有复制构造器吗？
+</a></h3>
+
+<p>不太完全。实现了 <code class="highlighter-rouge">Copy</code> 的类型会执行标准的类 C 「浅拷贝」，无需额外的工作（类似于 C++ 中的 trivially copyable 类型）。要实现自定义复制行为的 <code class="highlighter-rouge">Copy</code> 类型是不可能的。作为替代的是，在 Rust 中，「复制构造器」是通过实现 <code class="highlighter-rouge">Clone</code> trait 并显式调用 <code class="highlighter-rouge">clone</code> 方法来创建的。使用户定义的复制操作清晰地表达了底层的复杂性，使开发人员更加容易识别潜在的大开销操作。</p>
+
+<h3><a href="#does-rust-have-move-constructors" name="does-rust-have-move-constructors">
+Rust 有移动构造器吗？
+</a></h3>
+
+<p>没有。所有类型的值都通过 <code class="highlighter-rouge">memcpy</code> 来移动。这使得编写通用的 unsafe 代码更加简单，因为分配，传递和返回都是已知的，不像展开（unwinding）那样具有副作用。</p>
+
+<h3><a href="#compare-go-and-rust" name="compare-go-and-rust">
+Go 与 Rust 有何相似，及它们有什么不同？
+</a></h3>
+
+<p>Rust 与 Go 有着完全不同的设计目标。下列差异不是全部的差异（它们太多而无法列出），而是较重要的一些：</p>
+
+<ul>
+  <li>Rust 比 Go 处理更低的级别。例如 Rust 不需要垃圾收集，而 Go 需要。一般来说，Rust 提供了与 C 或 C++ 相当的控制级别。</li>
+  <li>Rust 专注于确保安全和高效，同时也提供了高级别的可用性，而 Go 则至力于成为一种简单易用的语言，可以快速编译，并可以使用各种工具进行良好的工作。</li>
+  <li>Rust 受到来自函数编译世界的强烈影响，包括从 Haskell 类型类中抽取出来的类型系统。Go 有一个简单的类型系统，使用接口进行基本的通用编译。</li>
+</ul>
+
+<h3><a href="#how-do-rust-traits-compare-to-haskell-typeclasses" name="how-do-rust-traits-compare-to-haskell-typeclasses">
+Rust 的 trait 与 Haskell 类型类（typeclasses）相较如何？
+</a></h3>
+
+<p>Rust 的 trait 与 Haskell 的类型类相似，但目前并没有那么强大，因为 Rust 不能表示更高级的类型。
+Rust 的关联类型相当于 Haskell 的类型族（type families）。</p>
+
+<p>Haskell 的类型类和 Rust 的 trait 之前的一些具体区别包括：</p>
+
+<ul>
+  <li>Rust 的 trait 有一个隐含的第一个参数 <code class="highlighter-rouge">Self</code>。Rust 中的 <code class="highlighter-rouge">trait Bar</code> 相当于 Haskell 中的 <code class="highlighter-rouge">class Bar self</code>，Rust 中的 <code class="highlighter-rouge">trait Bar&lt;Foo&gt;</code> 相当于 Haskell 中的 <code class="highlighter-rouge">class Bar foo self</code>。</li>
+  <li>Rust 中的「父 trait」或者「父类约束」写作 <code class="highlighter-rouge">trait Sub: Super</code>，与 Haskell 中的 <code class="highlighter-rouge">class Super self =&gt; Sub self</code> 区别。</li>
+  <li>Rust 禁止孤儿实例，导致与 Rust 与 Haskell 相比有不同的相关性规则。</li>
+  <li>Rust 的 <code class="highlighter-rouge">impl</code> 解决方案在决定两个 <code class="highlighter-rouge">impl</code> 是否重叠或者在潜在的 <code class="highlighter-rouge">impl</code> 之间进行选择时，会考虑相关的 <code class="highlighter-rouge">where</code> 子句和 trait 绑定。Haskell 仅考虑 <code class="highlighter-rouge">instance</code> 声明中的约束，则不考虑其它地方提供的约束。</li>
+  <li>Rust 中的 trait（<a href="https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md">「对象安全」</a>）的一个子集可以通过 trait 对象用于动态调度。 Haskell 中则是通过 GHC 的<code class="highlighter-rouge">ExistentialQuantification</code> 来获得相同的功能。</li>
+</ul>
+
+<h2 id="documentation">文档</h2>
+
+<h3><a href="#why-are-so-many-rust-answers-on-stackoverflow-wrong" name="why-are-so-many-rust-answers-on-stackoverflow-wrong">
+为什么 Stack Overflow（问答网站）上的许多 Rust 回答是错的？
+</a></h3>
+
+<p>Rust 语言已存在多年，而它在 2015 年 5 月才达成 1.0 版本。在那达成之前，语言曾经发生过很多变化，而问答网站上的答案可能只适用较旧的语言版本。</p>
+
+<p>随着时间的推移，会有越来越多的答案适用于当前版本，从而改善这一问题。</p>
+
+<h3><a href="#where-do-i-report-issues-in-the-rust-documentation" name="where-do-i-report-issues-in-the-rust-documentation">
+我该在哪报告 Rust 文档的问题？
+</a></h3>
+
+<p>你可以在 Rust 编译器的<a href="https://github.com/rust-lang/rust/issues">问题跟踪器</a>中报告 Rust 文档的问题。在报告前，请先阅读<a href="https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#writing-documentation">贡献指南</a>。</p>
+
+<h3><a href="#how-do-i-view-rustdoc-documentation-for-a-library-my-project-depends-on" name="how-do-i-view-rustdoc-documentation-for-a-library-my-project-depends-on">
+如何查看我的项目所依赖的库的 rustdoc 文档？
+</a></h3>
+
+<p>当你用 <code class="highlighter-rouge">cargo doc</code> 来为你的项目生成文档的时候，它也会生成当前依赖的库的版本的文档。这些文档被放在项目的 <code class="highlighter-rouge">target/doc</code> 目录中。在构建完之后，使用 <code class="highlighter-rouge">cargo doc --open</code> 来打开文档，或者你可以自己打开 <code class="highlighter-rouge">target/doc/index.html</code> 文件。</p>
+
+
+</div>
+
+</div>
+
+
+    <footer>
+      <p>本土化页面：
+	    <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

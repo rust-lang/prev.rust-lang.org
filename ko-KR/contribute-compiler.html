@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rust에 기여하기 &mdash; 언어, 컴파일러 및 표준 라이브러리 &middot; Rust 프로그래밍 언어</title>
+    <meta name="keywords" content="Rust, Rust 프로그래밍 언어, rustlang, rust-lang, Mozilla Rust, 러스트, Mozilla, 모질라">
+    <meta name="description" content="매우 빠르며, 세그폴트를 방지하고, 스레드 안전성을 보장하는 시스템 프로그래밍 언어">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme_ko_kr.svg" alt="GitHub에서 포크" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/ko-KR/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust 로고" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/ko-KR/documentation.html">문서</a></h2>
+	  <h2><a href="/ko-KR/install.html">설치</a></h2>
+	  <h2><a href="/ko-KR/community.html">커뮤니티</a></h2>
+	  <h2><a href="/ko-KR/contribute.html">기여하기</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1 id="rust--mdash-----">Rust에 기여하기 — 언어, 컴파일러 및 표준 라이브러리</h1>
+
+<p>컴파일러와 표준 라이브러리의 소스 코드는 주 저장소에 있고,
+그걸 관리하는 게 해당 저장소의 주 목적이기 때문에
+이슈 트래커의 수많은 라벨들은 관리에 연관됩니다.
+가장 많이 붙는 라벨을 몇 개 꼽자면,
+Rust를 LLVM IR로 번역하는 걸 다루는 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-codegen">A-codegen</a>,
+디버거가 사용하는 메타데이터의 생성을 다루는 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo">A-debuginfo</a>,
+컴파일러가 오류 시 제공하는 피드백을 다루는 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-diagnostics">A-diagnostics</a>,
+표준 라이브러리의 문제를 다루는 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-libs">A-libs</a>,
+문법 확장에 연관된 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-macros">A-macros</a>와 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-syntaxext">A-syntaxext</a>,
+그리고 타입 관련된 주제가 올라오는 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-typesystem">A-typesystem</a> 등이 있습니다.</p>
+
+<p>컴파일러의 구조에 대해 잘 관리되는 안내는 없습니다만
+<a href="https://github.com/rust-lang/rust/blob/master/src/librustc/README.md">저장소 내에 짧은 개관이 있습니다</a>.
+<a href="https://manishearth.github.io/rust-internals-docs">컴파일러를 구성하는 크레이트들의 API 문서</a>나
+<a href="https://dxr.mozilla.org/rust/source/src">Rust DXR</a> 소스 코드 브라우저가 코드를 돌아다니는 데 도움이 될 수 있습니다.
+<a href="https://github.com/rust-lang/rust-wiki-backup/blob/master/Note-testsuite.md">Rust 테스트 수트 안내</a>와 명령줄에서 <a href="https://github.com/rust-lang/rust/blob/3d1f3c9d389d46607ae28c51cc94c1f43d65f3f9/Makefile.in#L48"><code class="highlighter-rouge">make tips</code></a>를 실행하는 걸로
+어떻게 Rust 빌드 시스템을 효과적으로 써 먹을지 배울 수 있습니다.</p>
+
+<p>근시일 내에 Rust 컴파일러 개발이 나아가는 큰 방향 중 하나로
+AST를 직접 다루지 않고 <a href="https://github.com/rust-lang/rust/issues/27840">MIR라 불리는 중간 표현</a>을 다루도록
+내부를 바꾸는 것이 있습니다.
+이 작업은 컴파일러를 단순화하여 더 많은 가능성을 열 것으로 예상되며,
+MIR 기반의 번역 단계를 만들고, MIR 기반 최적화를 추가하며,
+증분 컴파일을 구현하는 등의 작업에서 도움이 필요합니다.
+아직 여기에서 필요한 작업들의 정보를 한 곳에서 볼 수는 없지만,
+인도가 필요하면 <a href="https://internals.rust-lang.org/">internals.rust-lang.org</a>이나 <a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-internals">#rust-internals</a>에서 물어 보세요.</p>
+
+<p><a href="https://users.rust-lang.org/t/glacier-a-big-ol-pile-of-ice/3380">컴파일러가 깨지면 부끄럽지요</a>.
+악명 높은 ‘내부 컴파일러 오류’(ICE)입니다.
+<a href="https://github.com/rust-lang/rust/labels/I-ICE">I-ICE</a> 라벨로 추적하며, 종종 많이 있습니다.
+이들은 보통 시작하기 좋은 버그인데 고쳤는지의 여부를 쉽게 알 수 있고
+때때로 비교적 자기 완결적이기 때문입니다.</p>
+
+<p>Rust 코드의 성능은 훌륭한 이득 중 하나이며,
+Rust 컴파일러의 성능은 훌륭한 약점 중 하나입니다.
+실행 시간이나, 특히, 컴파일 시간 성능에서의 개선은 널리 찬양받습니다.
+<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AI-slow">I-slow</a>와 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-optimization">A-optimization</a> 라벨은 실행 시간 성능을 다루고,
+<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AI-compiletime">I-compiletime</a>은 컴파일 시간 성능을 다룹니다.
+여러 작업물에 대한 <a href="http://ncameron.org/perf-rustc/">컴파일 시간 성능을 추적하는 사이트</a>가 있습니다.
+<code class="highlighter-rouge">-Z time-passes</code> 컴파일 플래그가 컴파일러 성능을 디버깅하는 데 도움이 될 수 있으며,
+Rust 코드는 Linux의 <code class="highlighter-rouge">perf</code> 같은 표준적인 프로파일러로도 프로파일할 수 있습니다.</p>
+
+<p>새로운 주요 기능은 <a href="https://github.com/rust-lang/rfcs#table-of-contents">의견 요청</a>(Request for Comments, RFC) 과정에 따라 설계가 합의됩니다.
+이 과정은 모두에게 열려 있긴 하지만,
+기존에 함께 작업하는 경험에 차이가 있는 개발자들 사이에서의 사회적인 과정이기에
+느리게 뛰어 들길 권장합니다.
+역사적, 기술적 또는 사회적 맥락을 이해하지 않고 RFC를 서둘러 제출했다가는
+나쁜 인상을 받고 실망하여 돌아서게 만들기 십상입니다.
+앞에 링크된 읽어보기 파일을 읽고 이 모든 게 어떻게 동작하는지 최대한 이해하세요.
+Rust의 역사 동안 많은 아이디어들에 대해 논쟁이 있었는데,
+어떤 건 기각되었고, 어떤 건 미래로 미루어졌으며,
+RFC <a href="https://github.com/rust-lang/rfcs/issues">이슈 트래커</a>에는 아직 언어에 들어갈 준비가 되지 않은
+희망 사항인 아이디어들을 나열하고 있습니다.
+RFC가 구현되기로 승낙되기 약간 전에 RFC는 ‘마지막 의견 기간’에 들어가며,
+이는 <a href="https://github.com/rust-lang/rfcs/pulls?q=is%3Aopen+is%3Apr+label%3Afinal-comment-period">rust-lang/rfcs 저장소의 final-comment-period 라벨</a>로 표시됩니다.
+마찬가지로 안정 버전의 컴파일러에서 기능이 켜지기 전에는 (‘게이트가 풀린다’고 합니다)
+해당 이슈가 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AB-unstable+label%3Afinal-comment-period">rust-lang/rust 저장소의 final-comment-period 라벨</a>로 들어갑니다.
+두 종류의 FCP 모두 언어의 방향성에 대해 참여하고 의견을 행사할 수 있는 중요한 순간이기에,
+<a href="https://internals.rust-lang.org/">internals.rust-lang.org</a>의 주간 서브팀 보고에서 홍보됩니다.</p>
+
+<p>Rust 컴파일러 기술자들은 <a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rustc">#rustc</a>에서,
+언어 설계자들은 <a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-lang">#rust-lang</a>에서, 그리고 라이브러리 설계자들은 <a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-libs">#rust-libs</a>에서 만나 보세요.</p>
+
+<!--
+TODO: guide to compile-time benchmarking
+TODO: using the triage bot?
+TODO: some of this RFC description could probably go in the RFC readme
+-->
+
+
+</div>
+
+
+    <footer>
+      <p>이 사이트를 다른 언어로 보기:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

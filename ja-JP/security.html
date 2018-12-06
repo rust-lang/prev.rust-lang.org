@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rustセキュリティポリシー &middot; プログラミング言語Rust</title>
+    <meta name="keywords" content="Rust, Rust言語, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Rustは速度、安全性、並行性の3つのゴールにフォーカスしたシステムプログラミング言語です。">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme.svg" alt="Fork me on GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/ja-JP/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust logo" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/ja-JP/documentation.html">ドキュメント</a></h2>
+	  <h2><a href="/ja-JP/install.html">インストール</a></h2>
+	  <h2><a href="/ja-JP/community.html">コミュニティ</a></h2>
+	  <h2><a href="/ja-JP/contribute.html">開発に参加する</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1>Rustセキュリティポリシー</h1>
+
+<h2>バグを報告する</h2>
+
+<p>安全性はRustの基本原則の1つです。そのため、我々はRustの実装が安全であることを保証したいと思っています。問題を発見されたときは、責任ある開示を行って頂ければ幸いです。</p>
+
+<p>Rustの配布物のあらゆるセキュリティのバグは<a href="mailto:security@rust-lang.org">security@rust-lang.org</a>へのメールで報告するべきです。
+このバグリストは少人数のセキュリティチームに届きます。メールは24時間以内に確認され、48時間以内にその報告への対策などさらに詳細な内容のメールが届きます。
+<a href="../rust-security-team-key.gpg.ascii">我々の公開鍵</a>を使ってメールを暗号化することも可能です。
+鍵は<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xEFB9860AE7520DAC">MITの鍵サーバ</a>にありますし、<a href="#key">下記もされています</a>。</p>
+
+<p>このメールアドレスには大量のスパムが届くので、報告が見逃されることがないように確実に内容がひと目で分かるタイトルをつけてください。
+報告に対する最初の返信後、セキュリティチームは問題の修正および最終的なアナウンスに向けて行動を開始し、その進捗を通知するように努力します。
+<a href="https://en.wikipedia.org/wiki/RFPolicy">RFPolicy</a>に推奨されているように、これらの報告は少なくとも5日間隔で送られます。
+実際には24〜48時間毎に送られるはずです。</p>
+
+<p>もし48時間以内に返信がない、あるいは直近5日でセキュリティチームからの音信がない場合はいくつか手段があります。</p>
+
+<ul>
+    <li>現職のセキュリティコーディネータの (<a href="mailto:steve@steveklabnik.com">Steve Klabnik</a>
+        (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xDAE717EFE9424541">public key</a>)) に直接連絡を取る。</li>
+    <li>バックアップの連絡先の (<a href="mailto:andersrb@gmail.com">Brian Anderson</a>
+        (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x16457A6368CFF26F">public key</a>)) に直接連絡を取る。</li>
+    <li><a href="https://internals.rust-lang.org/">インターナルフォーラム</a>に投稿するかirc.mozilla.orgの#rust-internals IRCルームで尋ねる。</li>
+</ul>
+
+<p>ディスカッションフォーラムと#rust-internals IRCチャネルは公の場であることに注意して下さい。
+このような場所に上がる時に問題そのものには言及しないで下さい。
+ただセキュリティチームのメンバーを捕まえたいとだけ言って下さい。</p>
+
+<h2>公開ポリシー</h2>
+
+<p>Rustプロジェクトには5段階の公開プロセスがあります。</p>
+
+<ol>
+<li>セキュリティレポートが受理され担当者が任命される。担当者は修正とリリースプロセスを調整する。</li>
+
+<li>問題が確認され、全ての影響のあるバージョンが確定する。</li>
+
+<li>潜在的に似たような問題が起きないかコードが監査される</li>
+
+<li>まだメンテナンスされている全てのリリースへの修正が準備される。
+この修正は公開レポジトリへはコミットされず、アナウンスまでローカルに保持される。</li>
+
+<li>解禁日に<a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">Rustセキュリティメーリングリスト</a>にアナウンスが送られる。
+変更は公開レポジトリにpushされ、新しいビルドがrust-lang.orgにデプロイされる。メーリングリストに通知されてから6時間以内にRust blogに勧告が掲載される。</li></ol>
+
+<p>このプロセスは時間がかかることもあります。とりわけ他のプロジェクトのメンテナとの調整が必要な時には。
+バグへの対応を可能な限り適切なタイミングで為すことに尽力しますが、公開が一貫した方法で処理されることを保証するために上記のリリースプロセスに従うことは重要です。</p>
+
+<h2>セキュリティアップデートを受ける</h2>
+
+<p>全てのセキュリティのアナウンスを受け取る最善の方法は<a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">Rustセキュリティアナウンスメーリングリスト</a>を購読することです。
+このメーリングリストはあまり流量はなく、解禁日に即座に公開通知が届きます。</p>
+
+<h3>更新通知</h3>
+
+<p>脆弱性の報告を解禁の72時間前に<a href="http://oss-security.openwall.org/wiki/mailing-lists/distros">distros@openwall</a>に通知しますので、Linuxディストリビューションはパッケージをアップデート出来ます。</p>
+
+<h2>このポリシーへのコメント</h2>
+
+<p>もしこのポリシーへの改善を提案したいなら、<a href="mailto:security@rust-lang.org">security@rust-lang.org</a>にメールを送って下さい。</p>
+
+<h2 id="key">プレーンテキストのPGP鍵</h2>
+
+<pre><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1
+
+mQINBFVT5MsBEADKZtOjBhitDx1aYt2ljz1+MUhnmsnJy8duMe6T/b30rEuXTLH8
+6INTYoU08qw7m+7YmxAlpdNHZW3VL0csYiaOOKsHJ4KuUB0Phjnm1ePjE/Q3g7el
+H6TNXQWsjy3V9E0cI3r5En0SDnBmwZoYuE0/mf9Gc313DvSjipFpyXS0R+D3RiPz
+t4LcDWDS7XPRgp9LJ4mWDeYI4GitKfKxvSYrQpLjdNUSmehJ62rZY+i/Mox+zHEQ
+QCrjfKttkoVs6fvLSKJTUGsy4eSViSLLYR8ty2SC/o9u/EG17dfX/EeEbo9yu2iK
+lLo+W58RvmdAtK6Y9MSX2rzlB2akbbEp6LYDaBKDlWBOAT/qQdMmHmUOWjV/8PSi
+Y03Cmx0v/6N3bv617iRe5MXIih7KZH4uYzf7eoCDA7LoopkI84xQIkciKblIGzpe
+0hCOdUYnf+uC3EWmP/e4TA9M7OjiSezOjsedI41ryRKMgpmdx1kHBqsZZVKIGHaf
+mdL/MxlvZrzfgbV8/6e5VhumPBWqih1HwvEzmNSdvFZV8/BgXqhlDidzGNa3eKIT
+1iTYX/YVikBLP0HsvSNwrtOZIjmeiMMivf4daH9bcySthp6PyAcjFa7pcS+GmPrz
+RJh3wAX1fpiaP/HQaIQJzvYHwpCwjFVt5/WpPLBB1b6miUebFpz5oZfApwARAQAB
+tDZSdXN0IExhbmd1YWdlIChTZWN1cml0eSBUZWFtKSA8c2VjdXJpdHlAcnVzdC1s
+YW5nLm9yZz6JAjgEEwECACIFAlVT5MsCGwMGCwkIBwMCBhUIAgkKCwQWAgMBAh4B
+AheAAAoJEO+5hgrnUg2sEsIQAMff5YzBLQb+6Z2euj/+7tcKdAflvTGToHiRZ4xK
+7mhZs5ytQ0/qBKLJ51lM3qo33MUXk8Yx6uQxJjLV/3Fjr/In7jrGXLLtEsXF1+RZ
+8+o5XQahhSjJ5W5E9O7E9tbHZe9VB0Tfv30S6CRZD9F/tUQhknwmgc+0twc3zKq0
+8X8jtNCAgSt0JZ+jOPlXUwMkoK9bsRVTVqj227cHxG6l1ZZmxm29JVOWPtqN3vXZ
+hAwwaHpn09fvcavnBWm9fX4jfdodnOmtnS0a5YQXrjF8TP+MV9fgdpg+lVjJB7NE
+azR3Tj0XYLze+KpL3aSNkpMz0RuXd4OqR3Z3pOOMiov2cEQooH0NGpYSTWzXzZCI
+C5CcgFqxYjv/KjN3FwxCFfdkn22V14jw+IkmOV8n7i2HVpw/D+/0+X4tnp9zaVW2
++1S4xeX13UMEgr29kYoKngzKmolruOftiBdLpM9HWNu/14hggOmSZ2+qNANw27JJ
+lXve/dpZdMpLPMgk+bwa2aXAvygUSlELFVcZf9fFLFoN3bInixzy28zeywwkv4Tn
+Ar5BLLbeS5rfzrAGR8hj55uVdiLTEL+ayG/mXOfSkqigvSzTKxgixPAxhHtOJtmF
+vDVL/UXhprRp6olDRLXA8a+mkIMWt4bpwflxQUNrxIee9T8tZCIShU5ubhvXXKtf
+bjT7iQIcBBABAgAGBQJVU+27AAoJEBZFemNoz/JvQ4cP/0X9xnapa8+Bx0BqSdVH
+CLqJinywVcTsjsY+TTeT+T+rFoERBI/ljFd7OhZg8bPOMln/KXLlh+7nLFoKyxUm
+XqAyY0tXMDGaEWT+KcnVLs/5hMv/KidswFAWq9TiJJFu9DJUt+OwyVT+/troC3VL
+28tAtMEmMIH+7EjH9qRlTf0ZtrNEmgIL8Fa2QEeaIZI8u3jDnrZGsBSxPB+fOW17
+745d7APWCmsv6ZYEv+h0JqVAb4QGIQVo2lQvqpEh0jLg8yqiyp89bdPfmo3ZOm8x
+Ns8JDWQrtbtoEAlVrrKu9oL9T+zbyrRLniYmCgtRxFAcYx5idxYjuWWTP/kwDwq2
+y0F6frZjGMwOsTCHqeZIVuCWHWkLzEduAxOdh7H8hJSpl2E2JnvBhEtAmlyEhrJc
+7Kyf8ZQ4VJe3Q8mcoAbSZS0Q36UnQAH9ww0rYXqCZA+uaPFdjOwW1Puzq6wM7AfT
+Z5EHToho9LPvmyoRvY26sTqxsS6E/HG4DTkD6JqScHCSwPk0GkPCVjOnnnjBVMFS
+n7/s7x6Vhmv/lIkMQ0qW12hfJFuxSWcqBo0Vro6R1IqeoWUewnvY0OEmxiPC+j1X
+2aIHXqTV1jZDVWQ9sBx+v/L/giPbiBFdTofOFXLkaT4A+ZwIexyKuaMVSOhrq1x+
+3Uf5sZAW5Yn6zI0wgIcsw2OPiQIcBBABAgAGBQJVU+5mAAoJEIWrlub6G+X++kQQ
+AMHAP5N88Po0tebcfZTpDCm2/fjFFh29h9mdltbZ0yjOQHNnhfkLDzyQnoQMge5g
+W4Cf3+U6yPx97wUXUVh0lxFlXVZpLExOEYOjPHah6DvvzWjvn2CimzQ5wurI6Bhw
+PPEO6ucDhjeEdr784/4yR2DEjKW+NTCZWaJT67JvKhQFs3N74AeeuWj6caFgxKLk
+qK8LRt7rjlXem+vQgGSHEZQGG4+Srd2Kr1EyhP5SHG3RDaLb3vcUBRhTBaoTT3xj
+aIdz/vt6Ve1W5Mcc2UPY0PO/pRnVQUGNt7MSbt50XJXbDt+zFJ2xKaHnJihDg81z
+/GxKrjHS5t0RAdW5SRfB9izboWIPJo4I/vmuxXINeK+KjmPEazxdkULXzfVOOAxg
+NJjxz46sZw7lZkHcz94g8TthndQHTo6v8AS9JtkIfe54cfg9PFUmlURTatabw67x
+Wqs6+PLmjInvGmAByFw2IgV0Y760xJ+JuPY1W7II/PIa6uSb8VIrkB8tNPFqASAT
+k3xIUEvRqMT62gnRB+iIb7aZUEKPmYZ9Q7OuB1yEHd+juxy5xoZ9jKx3ru6ia+jh
+bneg+Obpl6d9t0mpCblWXuCcnb2hwAr45xWNz8/rexDZQeNFfeNB3sq0u4jdwzjU
+CKFivH2P07FEJajgbIy6t4T0+AzwpEVMU5BN6bhNI3M6uQINBFVT5MsBEAC5xvIx
+8Oa3US6RGaM/SZ9nF3xCdVQhQWK3VL+MsClDInULgNpdzZspwc9JtClUo/fCNgM9
+zXIzFOwlyTPAhwDbQYLSdfkwhT6vsvfPx+T0uC96OrVhNsJsUmLuYNLOlQa3ybpi
+XTmNcnLaEvMEwHPVNYAw88HjHp23jdTOLOHZFg0p+q2dByfbpgGNy8xHDG28AZ+i
+BToLQCT2IZTZlOpnLr3gLI5C54ZNX7dbVu7xnC0mibOCqUi7nRH/a2oJRV/6DvtY
+uqHdDJumXW6/h0JvfNVydsy2N+WK9pirmsgIUq52sAey7MSbzKqbdw+zyZSA/Iyv
+XzMXoTPYxTCCE5MSwHwW5Mar9KelvTRjpBj5DqkBxVVPyehH3FXOGfvomgbB+F2I
+ZK1h9wCZDWnk0i8i/7pdQXPw22i/k7BOrBjQ5je60ezZUKvDAq4z5/xjXaD/ZtxO
+HRTTgPboEluuUl0KEtEVm/8zDXas89GlmTYaXv3baXFCGsV+TIkYRtsyWr6Mtirq
+/ZkU0RE+newBCBSF7tDrXoVrcflRIo8XG5y2UqKkiLqssBVx9J9s8LBwA/6+xkgA
+yxS7+KfkOVITW3QuiDCH/ydxnpU/9kzxv9Y68jgOnX3a8wmBTqU3PRwbz9WCQ8qi
+qNCKPBDwf42SVbdSBCljGTiVI9mcaMYtRHDQAQARAQABiQIfBBgBAgAJBQJVU+TL
+AhsMAAoJEO+5hgrnUg2sstoP+wbfIr5vR8CiIqoU8qxU/Co5m2jyyUMiU9iYSaSO
+9Itu9cCpP6dFbx1p7u41zutDaeO/wil3fpH2I7T3qAilvqey9UqhVTkSlotFh07T
+yXw/929Pd3tTekIbeJON+4XdHeF6gfsT/SL9hCDwsMk9Jzyx01n1Oq2fq2fGxqHg
+G6er9HssF7VBs7N0jOgMG2ou8DVEIjbhKJqyvLUsKk6Zolfy+HGn6OWSdgjenaFT
+KcDCOMhQs8ZH95I50stp26njFfcoh82qJNYZbTPWe05ZsGNFdBM+pANxHsiS1Mbd
+Fo21HM8tp8Vs2toimaa1dIyFl5+2vvCcGECcCQ3eT1mb8Ac5rR0TsDMiVGPmhabg
+9mKehJIR4OsqruyCF5yk/zwa7gFb7t83xTDxarlXyN1ltroF/sGod0IDk0UlQPsp
+d0BSiGNx9eNOi2iavxg94cqEK+dF1dUZsuSzTW1UDA4hA5aiX56YOiiSoC9mBqgN
+ZjaHjR6KwulHdIDUg8icmmJdtYDtFDz0DKUBuZshadb9gv3TUe3FbO3W1YhlDA+i
+t1yhhXbJR4oYYwpMuxtpeE+lGkFiJbBeIKG2WocWUn385KPUo2r2trvZUnvaxWy1
+/WMRGsGeczGIkGawwYuSXtkzmYpqs7VdQaPq4JZmAPcU9ogwMSlNYVsuV3FUtVsv
+u05l
+=SPB7
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre>
+
+</div>
+
+
+    <footer>
+      <p>他の言語のページ:
+	    <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

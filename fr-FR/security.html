@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="fr-FR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Règles relatives à la sécurité de Rust &middot; Rust, le langage de programmation</title>
+    <meta name="keywords" content="Rust, Rust programming language, langage de programmation Rust, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Un langage de programmation système ultra-rapide, qui prévient les erreurs de segmentation, et garantit la sûreté entre threads.">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme.svg" alt="Fork me on GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/fr-FR/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust logo" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/fr-FR/documentation.html">Documentation</a></h2>
+	  <h2><a href="/fr-FR/install.html">Installer</a></h2>
+	  <h2><a href="/fr-FR/community.html">Communauté</a></h2>
+	  <h2><a href="/fr-FR/contribute.html">Contribuer</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1>Règles relatives à la sécurité de Rust</h1>
+
+<h2>Rapporter un bug</h2>
+
+<p>La sécurité est l'un des principes fondamentaux de Rust. Aussi, nous souhaitons nous assurer que Rust dispose d'une implémentation sûre. Merci de prendre le temps de divulguer de façon responsable tout problème que vous pourriez trouver.</p>
+
+<p>Tous les bugs relatifs à la sécurité de Rust doivent être rapportés par courrier électronique à cette adresse : <a href="mailto:security@rust-lang.org">security@rust-lang.org</a>. Les destinataires de cette adresse forment une équipe restreinte dédiée à la sécurité. Nous prendrons connaissance de votre e-mail dans les 24 heures qui suivent sa réception et vous recevrez une réponse plus détaillée en 48 heures qui indique les étapes qui seront entreprises suite à votre rapport. Si vous le souhaitez, vous pouvez chiffrer votre rapport en utilisant <a href="../rust-security-team-key.gpg.ascii">notre clé publique</a>. Cette clé est également disponible <a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xEFB9860AE7520DAC">sur le serveur de clés du MIT</a> et est <a href="#key">reproduite ci-après</a>.
+
+<p>Cette adresse électronique reçoit de nombreux spams. Aussi, assurez-vous d'indiquer un sujet descriptif afin que votre rapport ne soit pas ignoré. Suite à la première réponse relative à votre rapport, l'équipe de sécurité fera son maximum pour vous tenir informé de l'avancé d'un correctif et de la publication. Suivant les recommandations de la <a href="https://en.wikipedia.org/wiki/RFPolicy">RFPolicy</a>, ces informations seront au moins envoyées tous les cinq jours. En réalité, ce délai est généralement de 24-48 heures.</p>
+
+<p>Si vous n'avez pas reçu de réponse à votre courrier électronique dans les 48 heures qui ont suivi ou que vous n'avez pas reçu d'informations de la part de l'équipe de sécurité depuis plus de cinq jours, voici quelques étapes à suivre :</p>
+
+<ul>
+    <li>Contactez directement le coordinateur actuel de l'équipe de sécurité (<a href="mailto:steve@steveklabnik.com">Steve Klabnik</a> (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xDAE717EFE9424541">clé publique</a>)).</li>
+    <li>Contactez directement son suppléant (<a href="mailto:andersrb@gmail.com">Brian Anderson</a> (<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x16457A6368CFF26F">clé publique</a>)).</li>
+    <li>Rédigez une demande sur <a href="https://internals.rust-lang.org/">les forums internes</a> ou demandez sur le canal IRC #rust-internals sur irc.mozilla.org.</li>
+</ul>
+
+<p>Veuillez noter que les forums de discussion, ainsi que le canal #rust-internals sont des espaces publics. Lorsque vous utilisez ces moyens pour nous contacter, merci de ne pas discuter du problème de sécurité. Indiquez simplement que vous souhaitez contacter un membre de l'équipe de sécurité.</p>
+
+<h2>Règles de divulgation</h2>
+
+<p>Le processus de divulgation du projet Rust s'effectue en cinq étapes.</p>
+
+<ol>
+<li>Le rapport de sécurité est reçu et est affecté à un responsable. C'est cette personne qui coordinera le processus de correction et de sa diffusion.</li>
+
+<li>Le problème est confirmé et la liste de l'ensemble des versions impactées est dressée.</li>
+
+<li>Le code est audité afin de repérer éventuellement tout problème analogue..</li>
+
+<li>Des correctifs sont préparés pour toutes les versions qui sont encore maintenues. Ces correctifs ne sont pas transmis sur le dépôt public mais conservés de façon locale en attendant l'annonce.</li>
+
+<li>À la date d'embargo, <a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">la liste de diffusion relative à la sécurité de Rust</a> reçoit une copie de l'annonce. Les modifications des correctifs sont envoyées sur le dépôt public et les nouvelles versions sont déployées sur rust-lang.org. Six heures après cette première diffusion, une copie d'information est publiée sur le blog Rust.</li> </ol>
+
+<p>Ce processus peut prendre un certain temps, notamment lorsqu'il est nécessaire de coordiner différents mainteneurs impliqués sur d'autres projets. Tous les efforts seront faits afin de résoudre le bug de la façon la plus réactive qui soit. Toutefois, il est incontournable de respecter le processus de déploiement des versions afin de s'assurer que la divulgation est gérée de façon cohérente.</p>
+
+<h2>Recevoir les informations relatives à la sécurité</h2>
+
+<p>Afin de recevoir les annonces liées à la sécurité du projet Rust, la meilleure méthode consiste à s'abonner à <a href="https://groups.google.com/forum/#!forum/rustlang-security-announcements">la liste de diffusion pour les annonces de sécurité</a>. Cette liste de diffusion reçoit peu d'e-mails et reçoit les notifications publiques lorsque l'embargo est levé.</p>
+
+<h3>Notifications en avance</h3>
+
+<p>Nous annoncerons les vulnérabilités 72 heures avant la levée de l'embargo sur <a href="http://oss-security.openwall.org/wiki/mailing-lists/distros">distros@openwall</a> afin que les distributions Linux puissent mettre à jour leurs paquets.</p>
+
+<h2>Commentaires relatifs à ces règles</h2>
+
+<p>Si vous souhaitez nous faire part de suggestions pour améliorer ces règles, merci de nous écrire à <a href="mailto:security@rust-lang.org">security@rust-lang.org</a>.</p>
+
+<h2 id="key">Clé PGP en texte simple</h2>
+
+<pre><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1
+
+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
+u05l
+=SPB7
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre>
+
+</div>
+
+
+    <footer>
+      <p>Notre site dans d'autres langues&nbsp;:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

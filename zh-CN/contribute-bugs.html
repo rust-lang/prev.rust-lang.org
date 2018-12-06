@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>为 Rust 出力 &mdash; 找出、分类和修复问题 &middot; Rust 程序设计语言</title>
+    <meta name="keywords" content="Rust, Rust 编程语言, Rust 语言, Rust 程序设计语言, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="一种注重高效、安全、并行的系统程序语言。">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme_zh_cn.svg" alt="从 GitHub 上拷贝源码" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/zh-CN/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust logo" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/zh-CN/documentation.html">文档</a></h2>
+	  <h2><a href="/zh-CN/install.html">安装</a></h2>
+	  <h2><a href="/zh-CN/community.html">社区</a></h2>
+	  <h2><a href="/zh-CN/contribute.html">贡献</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1 id="rust--mdash-">为 Rust 出力 — 找出、分类和修复问题</h1>
+
+<p>Rust 项目的的日常维护工作是围绕着<a href="https://github.com/rust-lang/rust/issues">问题跟踪器</a>和<a href="https://github.com/rust-lang/rust/pulls">拉取请求</a>，并且始终需要更多的贡献。
+开始为 Rust 出力的最简单方式是寻找标有 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy">E-easy</a> 或 <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy+label%3AE-mentor">E-mentor</a> 标签的问题。
+它们最适合新手 Rust 程序员。</p>
+
+<p>在标有 <code class="highlighter-rouge">E-mentor</code> 的问题上会有一名经验丰富的 Rust 开发人员来自愿帮助你解决该问题和<a href="https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#pull-requests">提交 GitHub 拉取请求</a>来修复它。
+在评论、IRC 中用 <a href="https://github.com/blog/821">@mentioning</a> 来联系他们（也可通过电子邮件）。
+温馨提醒，Rust 开发人员经常收到大量的通知，所以有时可能错过某些；
+不要犹豫！如果你认为他没有注意到你。</p>
+
+<p>Rust 的其他项目也有其他类似的入门级任务，包括网页浏览器 <a href="https://github.com/servo/servo">Servo</a>，HTTP 库 <a href="https://github.com/hyperium/hyper">hyper</a>，源代码格式化器 <a href="https://github.com/rust-lang-nursery/rustfmt">rustfmt</a>，Unix 库绑定 <a href="https://github.com/nix-rust/nix/">nix</a>，以及 lint 集 <a href="https://github.com/Manishearth/rust-clippy">clippy</a>。</p>
+
+<p>虽然 Rust 有一个<a href="https://github.com/rust-lang/rust-wiki-backup/blob/master/Note-testsuite.md">广泛的测试套件</a>，但测试总是不嫌多的嘛。
+<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-needstest">E-needstest</a> 标签指出了被认为已修复但尚未测试的问题。编写测试用例也是很好的一个了解新项目并开始贡献的方法。</p>
+
+<p>Rust 始终需要人们来<a href="https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#issue-triage">分流</a>问题：重现 bug，
+最小化的测试用例，应用标签，关闭已解决的问题。
+请注意，您需要被提升的 GitHub 权限才能应用标签，
+不过卓有经验的人很容易得到它，相关事宜请联系<a href="team.html">团队成员</a>。</p>
+
+<p>在您找到自己的方式为项目出力并创建一些拉取请求后，可以考虑审阅其他人的拉取请求：良好的审阅是一个不可多得的技能。无需事先批准 — 只需开始礼貌并有建设性地在您感兴趣的拉取请求中评论。如果您想在代码审核的基础上有效分流，<a href="http://blog.originate.com/blog/2014/09/29/effective-code-reviews/">阅读这份指南</a>。</p>
+
+<!--
+TODO: weekly triage email?
+TODO: @nrc says suggesting everybody review w/o training is bad
+-->
+
+
+</div>
+
+
+    <footer>
+      <p>本土化页面：
+	    <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

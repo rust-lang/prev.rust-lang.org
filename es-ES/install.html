@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Instalación &middot; El lenguaje de programación Rust</title>
+    <meta name="keywords" content="Rust, Rust lenguaje de programación, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Rust es un lenguaje de programación de sistemas extremadamente rápido, previene fallas de segmentación y garantiza la seguridad de los hilos de ejecución. ">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme_es_es.svg" alt="Fork me en GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/es-ES/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Logo de Rust" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/es-ES/documentation.html">Documentación</a></h2>
+	  <h2><a href="/es-ES/install.html">Instalar</a></h2>
+	  <h2><a href="/es-ES/community.html">Comunidad</a></h2>
+	  <h2><a href="/es-ES/contribute.html">Contribuye</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+      <h1 class="rustup">Instalar Rust</h1>
+
+    <div class="row rustup-row">
+      <div class="col-md-8 instr-column">
+        <div id="platform-instructions-unix" class="instructions" style="display: none;">
+          <p>Para instalar Rust, ejecuta lo siguiente en tu termina, luego sigue las instrucciones en pantalla.</p>
+          <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+        </div>
+
+        <div id="platform-instructions-win" class="instructions" style="display: none;">
+          <p>
+            Para instalar Rust, descarga y ejecuta
+            <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+            luego sigue las instrucciones en pantalla.
+          </p>
+        </div>
+
+        <div id="platform-instructions-unknown" class="instructions" style="display: none;">
+          <!-- unrecognized platform: ask for help -->
+          <p>No reconozco tu plataforma.</p>
+          <p>
+            Rust se puede ejecutar en Windows, Linux, Max OS X, FreeBSD y
+            NetBSD. Si estas en una de estas plataformas y estás viendo esto,
+            por favor
+            <a href="https://github.com/rust-lang/rust-www/issues/new">reporta un error</a>,
+            con la siguientes información:
+          </p>
+
+          <div>
+            <div>navigator.platform:</div>
+            <div id="nav-plat"></div>
+            <div>navigator.appVersion:</div>
+            <div id="nav-app"></div>
+          </div>
+
+          <!-- duplicate the default cross-platform instructions -->
+          <div>
+            <p>Para instalar Rust en Unix,<br/>ejecuta lo siguiente en tu
+                terminal y sigue las instrucciones en pantalla.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              If you are running Windows,<br/>download and run
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              then follow the onscreen instructions.
+            </p>
+            <p>
+              Si estas en Windows,<br/>descarga y ejecuta
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              luego sigue las instrucciones en pantalla.
+            </p>
+          </div>
+
+        </div>
+
+        <div id="platform-instructions-default" class="instructions">
+          <div>
+            <p>Para instalar Rust en Unix,<br/>ejecuta lo siguiente en tu
+                terminal y sigue las instrucciones en pantalla.</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              If you are running Windows,<br/>download and run
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              then follow the onscreen instructions.
+            </p>
+            <p>
+              Si estas en Windows,<br/>descarga y ejecuta
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              luego sigue las instrucciones en pantalla.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-4 release-info-column">
+        <div>
+          <div class="release-version">Rust <span>1.31.0</span></div>
+          <a href="https://blog.rust-lang.org/2018/12/06/Rust-1.31-and-rust-2018.html">
+            <div class="release-date">December 6, 2018</div>
+          </a>
+
+          <br>
+
+          <a id="platform-button" style="display: none;" href="#">
+            haz click o presiona "n" para cambiar de plataforma
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>Notas sobre la instalación de Rust</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <h3>Administración de herramientas con <code>rustup</code></h3>
+
+        <p>
+          Rust se instala y administra con la herramienta
+          <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>
+          . Rust tiene un
+          <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
+            proceso de liberación veloz
+          </a> en periodos de 6 semanas y soporta un
+          <a href="https://forge.rust-lang.org/platform-support.html">
+             gran número de plataformas
+          </a>, así que siempre hay varias versiones de Rust disponibles.
+          <code>rustup</code> administra estas versiones en una forma
+          consistente en todas las plataformas que Rust soporta, permitiendo la
+          instalación de Rust en las versiones <i>beta</i> y <i>nightly</i> así
+          como el soporte de compilación para otras plataformas usando
+          <i>cross-compiling</i>.
+        </p>
+
+        <p>
+          Para más información lee la
+          <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md"> documentación de <code>rustup</code></a>.
+        </p>
+
+        <h3>Configurando la variable de entorno <code>PATH</code></h3>
+
+        <p>
+          En el entorno de desarrollo de Rust, todas las herramientas se
+          instalan en el directorio
+          <span class="platform-specific not-win" style="display: inline;">
+            <code>~/.cargo/bin</code>
+          </span>
+          <span class="platform-specific win" style="display: none;">
+            <code>%USERPROFILE%\.cargo\bin</code>
+          </span>
+          , es ahí donde encontrarás todas las herramientas de Rust, incluyendo
+          <code>rustc</code>, <code>cargo</code>, y <code>rustup</code>.
+        </p>
+
+        <p>
+          Por esto, es común que los desarrolladores de Rust incluyan este
+          directorio en su
+          <a href="https://en.wikipedia.org/wiki/PATH_(variable)"> variable de entorno <code>PATH </code></a>.
+          Durante la instalación, <code>rustup</code>,
+          intentará configurar el
+          <code>PATH</code>, pero debido a las diferencias entre las diferentes plataformas,
+          shells de comandos y errores en <code>rustup</code>, las
+          modificaciones al <code>PATH</code> pueden no tomar efecto hasta que
+          se reinicie la consola, el usuario cierre la sesión, o puede no
+          funcionar en lo absoluto.
+        </p>
+
+        <p>
+          Si luego de la instalación, ejecutar <code>rustc --version</code> en
+          la consola falla, esta es la razón más posible.
+        </p>
+
+        <div class="platform-specific win">
+
+          <h3>Consideraciones en Windows</h3>
+          <!-- This anchor is probably linked in the wild and should not be broken -->
+          <a id="win-foot"></a>
+
+	  <p>
+
+	  </p>
+
+          <p>
+            Para más información sobre como configurar Rust en Windows, puedes
+            leer la
+            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows-specific <code>rustup</code>
+            documentación</a>.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <h2>Otros métodos de instalación</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          La instalación descrita antes, usando
+          <code>rustup</code>, es la forma recomendada de instalar Rust para la
+          mayoría de desarrolladores, pero Rust se puede
+          <a href="other-installers.html">instalar usando otros métodos</a>
+          también.
+        </p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var platform_override = null;
+
+function detect_platform() {
+    "use strict";
+
+    if (platform_override) {
+        return platform_override;
+    }
+
+    var os = "unknown";
+
+    if (navigator.platform == "Linux x86_64") {os = "unix";}
+    if (navigator.platform == "Linux i686") {os = "unix";}
+    if (navigator.platform == "Linux i686 on x86_64") {os = "unix";}
+    if (navigator.platform == "Linux aarch64") {os = "unix";}
+    if (navigator.platform == "Linux armv6l") {os = "unix";}
+    if (navigator.platform == "Linux armv7l") {os = "unix";}
+    if (navigator.platform == "Linux armv8l") {os = "unix";}
+    if (navigator.platform == "Linux ppc64") {os = "unix";}
+    if (navigator.platform == "Linux mips") {os = "unix";}
+    if (navigator.platform == "Linux mips64") {os = "unix";}
+    if (navigator.platform == "Mac") {os = "unix";}
+    if (navigator.platform == "Win32") {os = "win";}
+    if (navigator.platform == "FreeBSD x86_64") {os = "unix";}
+    if (navigator.platform == "FreeBSD amd64") {os = "unix";}
+    if (navigator.platform == "NetBSD x86_64") {os = "unix";}
+    if (navigator.platform == "NetBSD amd64") {os = "unix";}
+
+    // I wish I knew by now, but I don't. Try harder.
+    if (os == "unknown") {
+        if (navigator.appVersion.indexOf("Win")!=-1) {os = "win";}
+        if (navigator.appVersion.indexOf("Mac")!=-1) {os = "unix";}
+        // rust-www/#692 - FreeBSD epiphany!
+        if (navigator.appVersion.indexOf("FreeBSD")!=-1) {os = "unix";}
+    }
+    
+    // Firefox Quantum likes to hide platform and appVersion but oscpu works
+    if (navigator.oscpu) {
+        if (navigator.oscpu.indexOf("Windows")!=-1) {os = "win";}
+        if (navigator.oscpu.indexOf("Mac")!=-1) {os = "unix";}
+        if (navigator.oscpu.indexOf("Linux")!=-1) {os = "unix";}
+        if (navigator.oscpu.indexOf("FreeBSD")!=-1) {os = "unix";}
+        if (navigator.oscpu.indexOf("NetBSD")!=-1) {os = "unix";}
+    }
+
+    return os;
+}
+
+function adjust_for_platform() {
+    "use strict";
+
+    var platform = detect_platform();
+
+    var unix_div = document.getElementById("platform-instructions-unix");
+    var win_div = document.getElementById("platform-instructions-win");
+    var unknown_div = document.getElementById("platform-instructions-unknown");
+    var default_div = document.getElementById("platform-instructions-default");
+
+    unix_div.style.display = "none";
+    win_div.style.display = "none";
+    unknown_div.style.display = "none";
+    default_div.style.display = "none";
+
+    if (platform == "unix") {
+        unix_div.style.display = "block";
+    } else if (platform == "win") {
+        win_div.style.display = "block";
+    } else if (platform == "unknown") {
+        unknown_div.style.display = "block";
+    } else {
+        default_div.style.display = "block";
+    }
+
+    var platform_specific = document.getElementsByClassName("platform-specific");
+    for (var el of platform_specific) {
+        var el_is_not_win = el.className.indexOf("not-win") !== -1;
+        var el_is_inline = el.tagName.toLowerCase() == "span";
+        var el_visible_style = "block";
+        if (el_is_inline) {
+            el_visible_style = "inline";
+        }
+        if (platform == "win") {
+            if (el_is_not_win) {
+                el.style.display = "none";
+            } else {
+                el.style.display = el_visible_style;
+            }
+        } else {
+            if (el_is_not_win) {
+                el.style.display = el_visible_style;
+            } else {
+                el.style.display = "none";
+            }
+        }
+    }
+}
+
+function cycle_platform() {
+    if (platform_override == null) {
+        platform_override = "default";
+    } else if (platform_override == "default") {
+        platform_override = "unknown";
+    } else if (platform_override == "unknown") {
+        platform_override = "win";
+    } else if (platform_override == "win") {
+        platform_override = "unix";
+    } else if (platform_override == "unix") {
+        platform_override = "default";
+    }
+    adjust_for_platform();
+}
+
+function set_up_cycle_button() {
+    var cycle_button = document.getElementById("platform-button");
+    cycle_button.onclick = cycle_platform;
+
+    var key="test";
+    var idx=0;
+    var unlocked=false;
+
+    document.onkeypress = function(event) {
+        if (event.key == "n" && unlocked) {
+            cycle_platform();
+        }
+
+        if (event.key == key[idx]) {
+            idx += 1;
+
+            if (idx == key.length) {
+                cycle_button.style.display = "block";
+                unlocked = true;
+                cycle_platform();
+            }
+        } else if (event.key == key[0]) {
+            idx = 1;
+        } else {
+            idx = 0;
+        }
+    };
+}
+
+function fill_in_bug_report_values() {
+    var nav_plat = document.getElementById("nav-plat");
+    var nav_app = document.getElementById("nav-app");
+    nav_plat.textContent = navigator.platform;
+    nav_app.textContent = navigator.appVersion;
+}
+
+(function () {
+    adjust_for_platform();
+    set_up_cycle_button();
+    fill_in_bug_report_values();
+}());
+
+    </script>
+
+</div>
+
+
+    <footer>
+      <p>Our site in other languages:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

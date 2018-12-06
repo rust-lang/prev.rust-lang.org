@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contribuindo para Rust &mdash; encontrando, fazendo triagem e solucionando bugs &middot; A linguagem de programação Rust</title>
+    <meta name="keywords" content="Rust, Rust programming language, Linguagem de programação Rust, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Uma linguagem de programação de sistemas que roda incrivelmente rápido, previne falhas de segmentação e garante segurança entre threads.">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme.svg" alt="Fork me on GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/pt-BR/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust logo" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/pt-BR/documentation.html">Documentação</a></h2>
+	  <h2><a href="/pt-BR/install.html">Instale</a></h2>
+	  <h2><a href="/pt-BR/community.html">Comunidade</a></h2>
+	  <h2><a href="/pt-BR/contribute.html">Contribua</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1 id="contribuindo-para-rust-mdash-encontrando-fazendo-triagem-e-solucionando-bugs">Contribuindo para Rust — encontrando, fazendo triagem e solucionando bugs</h1>
+
+<p>A manutenção diária do projeto gira em torno do <a href="https://github.com/rust-lang/rust/issues">seguidor de problemas</a>
+e das <a href="https://github.com/rust-lang/rust/pulls">pull requests</a> de Rust, e mais ajuda é sempre necessária. O jeito mais
+básico de se começar a contribuir para Rust é olhar para rótulos <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy">E-easy</a> e <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-easy+label%3AE-mentor">E-mentor</a>.
+Esses são pensados para novos programadores Rust.</p>
+
+<p>Em problemas <code class="highlighter-rouge">E-mentor</code>, um desenvolvedor Rust experiente se voluntariou nos comentários
+para aconselhar/acompanhar você em resolver o problema e enviar sua <a href="https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#pull-requests">solução via pull requests do GitHub</a>.
+Contate-os sobre o problema no seguidor de problemas <a href="https://github.com/blog/821">@mencionando</a> seus nomes num comentário,
+no IRC ou por e-mail. Note que os desenvolvedores Rust recebem muitas notificações e é
+fácil escapar uma; não hesite em insistir se for necessário!</p>
+
+<p>Outros projetos em Rust mantêm tarefas de cunho similar, incluindo o navegador web <a href="https://github.com/servo/servo">Servo</a>,
+a biblioteca HTTP <a href="https://github.com/hyperium/hyper">hyper</a>, o formatador de código <a href="https://github.com/rust-lang-nursery/rustfmt">rustfmt</a>, as <em>bindings</em> para bibliotecas unix <a href="https://github.com/nix-rust/nix/">nix</a>,
+e a coleção de lints, <a href="https://github.com/Manishearth/rust-clippy">clippy</a>.</p>
+
+<p>Enquanto Rust tem uma [suite de testes intensiva][tests], há sempre mais para testar.
+Os rótulos <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AE-needstest">E-needstest</a> indica que problemas estão quase solucionados mas não foram completamente
+testados ainda. Escrever test cases é um ótimo jeito de entender um novo projeto
+e começar a contribuir.</p>
+
+<p>Rust está sempre necessitando de pessoas para realizar a triagem de problemas:
+reproduzir bugs, minimizar as test cases, aplicar rótulos, fechar problemas já
+solucionados. Note que você precisará de permissões elevadas no GitHub para aplicar
+rótulos, mas isso é fácil de se obter para alguém com um pouco de experiência no projeto.
+Pergunte um <a href="team.html">membro do time</a>.</p>
+
+<p>Assim que você encontrar seu lugar no projeto e já tiver criado algumas pull requests
+numa área particular, considere revisar pull requests de outros contribuidores:
+boa liderança é uma habilidade rara e é sempre bem-vinda. Nenhuma permissão é necessária para tal —
+apenas comece a comentar construtivamente e politicamente nas pull requests que lhe interessam. Se
+você deseja treinamento em como realizar boas revisões de código, <a href="http://blog.originate.com/blog/2014/09/29/effective-code-reviews/">leia este guia (inglês)</a>.</p>
+
+<!--
+TODO: weekly triage email?
+TODO: @nrc says suggesting everybody review w/o training is bad
+-->
+
+
+</div>
+
+
+    <footer>
+      <p>Nosso site em outros idiomas:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

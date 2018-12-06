@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contribuire a Rust &mdash; linguaggio, compilatore e la libreria standard &middot; Linguaggio di programmazione Rust</title>
+    <meta name="keywords" content="Rust, Linguaggio di programmazione Rust, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Un linguaggio di programmazione per sistemi ad altissime prestazioni che previene errori di segmentazione e assicura la sicurezza della memoria.">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme_it_it.svg" alt="Forkami on GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/it-IT/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust logo" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/it-IT/documentation.html">Documentazione</a></h2>
+	  <h2><a href="/it-IT/install.html">Installazione</a></h2>
+	  <h2><a href="/it-IT/community.html">Comunità</a></h2>
+	  <h2><a href="/it-IT/contribute.html">Contribuisci</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1 id="contribuire-a-rust-mdash-linguaggio-compilatore-e-la-libreria-standard">Contribuire a Rust — linguaggio, compilatore e la libreria standard</h1>
+
+<p>Il sorgente della libreria standard e del compilatore sono nel repository principale
+ed essendo la loro manutenzione uno degli obiettivi primari di quel repository
+la maggior parte dei problemi riportati nel tracciatore delle problematiche li riguardano.
+Alcune tra le etichette interessanti includono <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-codegen">A-codegen</a> per la traduzione di Rust in 
+rappresentazione intermedia LLVM; <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo">A-debuginfo</a>, la generazione di metadati utilizzata
+per la risoluzione dei problemi; <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-diagnostics">A-diagnostics</a> per gli errori mostrati dal compilatore;
+<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-libs">A-libs</a> per i problemi con la libreria standard; <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-macros">A-macros</a> e <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-syntaxext">A-syntaxext</a>, entrambi
+dedicati all’espansione della sintassi e <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-typesystem">A-typesystem</a> per parlare dei tipi.</p>
+
+<p>Non esiste alcuna guida ben mantenuta all’architettura del compilatore 
+ma ne <a href="https://github.com/rust-lang/rust/blob/master/src/librustc/README.md">esiste una piccola carrellata nel repository principale</a>.
+La <a href="https://manishearth.github.io/rust-internals-docs">documentazione delle API che compongono il compilatore</a>
+possono aiutarti a navigare il codice, come può farlo  anche il navigatore di codice
+<a href="https://dxr.mozilla.org/rust/source/src">Rust DXR</a>. La <a href="https://github.com/rust-lang/rust-wiki-backup/blob/master/Note-testsuite.md">guida per Rust e la sua piattaforma di controllo</a>
+ti insegnerà come utilizzare al meglio il sistema di compilazione di Rust,
+come farebbe anche il comando <a href="https://github.com/rust-lang/rust/blob/3d1f3c9d389d46607ae28c51cc94c1f43d65f3f9/Makefile.in#L48"><code class="highlighter-rouge">make tips</code></a> da riga di comando.</p>
+
+<p>Per il futuro prossimo, una delle maggiori spinte per il compilatore Rust 
+è convertire le sue componenti interne per lavorare direttamente dall’Albero
+di Sintassi Astratto, per elaborare su una <a href="https://github.com/rust-lang/rust/issues/27840">rappresentazione intermedia chiamata MIR</a>.
+Questo lavoro si preannuncia come l’inizio di molte nuove possibilità
+per semplificare il compilatore ed è richiesto dell’aiuto per esempio
+creare una fase di traduzione basata su MIR, ottimizzare la MIR e implementare
+la compilazione incrementale.
+Non esiste una fonte unica per informazioni sul lavoro richiesto ma chiedi
+su <a href="https://internals.rust-lang.org/">internals.rust-lang.org</a> o su
+<a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-internals">#rust-internals</a> per ulteriori informazioni.</p>
+
+<p><a href="https://users.rust-lang.org/t/glacier-a-big-ol-pile-of-ice/3380">È imbarazzante se il nostro compilatore si blocca</a> — il 
+nefasto ‘errore interno di compilazione’ (‘internal compiler error’ ICE). 
+L’etichetta <a href="https://github.com/rust-lang/rust/labels/I-ICE">I-ICE</a> tiene traccia di questi problemi e spesso sono molti.
+Questi sono usualmente degli ottimi problemi per iniziare a contribuire
+perché è facile comprendere quando vengono riparati e sono relativamente
+isolati dal resto del codice.</p>
+
+<p>Le prestazioni di Rust è uno dei suoi più grossi vantaggi; e quella
+del suo compilatore è uno dei suoi più grossi problemi.
+Ogni miglioramento della prestazione degli eseguibili or — specialmente —
+delle prestazioni del compilatore sono largamente celebrati.
+Le etichette <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AI-slow">I-slow</a> e <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-optimization">A-optimization</a> si occupano delle prestazioni
+degli eseguibili e <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AI-compiletime">I-compiletime</a> di quella del compilatore. Abbiamo un
+<a href="http://ncameron.org/perf-rustc/">sito che tiene traccia delle prestazioni del compilatore</a> 
+durante alcuni carichi di lavoro.
+L’opzione da riga di comando <code class="highlighter-rouge">-Z time-passes</code> può aiutare a ispezionare
+le prestazioni del compilatore e il codice di Rust può essere profilato
+da tutti i profilatori standard come <code class="highlighter-rouge">perf</code> su Linux.</p>
+
+<p>Funzionalità importanti passano attraverso il processo di <a href="https://github.com/rust-lang/rfcs#table-of-contents">Request for Comments (RFC)</a>
+dal quale ci si accorda sul design. Anche se aperto a tutti è un’interazione tra
+sviluppatori che già hanno un discreto quantitivo di esperienza in comune ed è 
+consigliato prendere parte al processo lentamente —
+inviare una RFC ostica senza comprendere il contesto storico, tecnico o sociale
+è un modo facile per dare una cattiva impressione e andarsene delusi.
+Leggi il collegamento sopra per comprendere al meglio come tutto il sistema funziona.
+Molte idee sono già state discusse durante il passato di Rust, alcune sono state
+rifiutate, altre rimandate al futuro e la <a href="https://github.com/rust-lang/rfcs/issues">portale delle RFC</a>
+elenca alcune idee desiderate che non sono ancora riuscite a entrare
+nel linguaggio.
+Poco prima che una RFC venga accettata per l’implementazione, entra in 
+una ‘fase finale di commento’ indicata dall’etichetta
+<a href="https://github.com/rust-lang/rfcs/pulls?q=is%3Aopen+is%3Apr+label%3Afinal-comment-period">final-comment-period sul repository rust-lang/rfcs</a>.
+Similarmente, prima che una funzionalità venga abilitata nel compilatore
+stabile (procedura definita ‘ungating’) essa entra nella <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AB-unstable+label%3Afinal-comment-period">final-comment-period sul repository rust-lang/rust</a>. 
+Entrambe le fasi di commento finale sono momenti critici per essere coinvolti
+ed esprimere opinioni sulla direzione del linguaggio e sono indicate
+nei report settimanali dei vari gruppi di lavoro su <a href="https://internals.rust-lang.org/">internals.rust-lang.org</a>.</p>
+
+<p>Incontra altri progettisti di compilatori su <a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rustc">#rustc</a>, progettisti del linguaggio
+su <a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-lang">#rust-lang</a> e progettisti di librerie su <a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-libs">#rust-libs</a>.</p>
+
+<!--
+TODO: guide to compile-time benchmarking
+TODO: using the triage bot?
+TODO: some of this RFC description could probably go in the RFC readme
+-->
+
+
+</div>
+
+
+    <footer>
+      <p>Il nostro sito in altre lingue:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

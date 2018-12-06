@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>インストール &middot; プログラミング言語Rust</title>
+    <meta name="keywords" content="Rust, Rust言語, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Rustは速度、安全性、並行性の3つのゴールにフォーカスしたシステムプログラミング言語です。">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme.svg" alt="Fork me on GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/ja-JP/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rust logo" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/ja-JP/documentation.html">ドキュメント</a></h2>
+	  <h2><a href="/ja-JP/install.html">インストール</a></h2>
+	  <h2><a href="/ja-JP/community.html">コミュニティ</a></h2>
+	  <h2><a href="/ja-JP/contribute.html">開発に参加する</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+      <h1 class="rustup">Rustのインストール</h1>
+
+    <div class="row rustup-row">
+      <div class="col-md-8 instr-column">
+        <div id="platform-instructions-unix" class="instructions" style="display: none;">
+          <p>Rustをインストールするにはターミナルで以下を実行して画面の指示に従って下さい。</p>
+          <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+        </div>
+
+        <div id="platform-instructions-win" class="instructions" style="display: none;">
+          <p>
+            Rustをインストールするには
+            <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+            をダウンロードして実行し画面の指示に従って下さい。
+          </p>
+        </div>
+
+        <div id="platform-instructions-unknown" class="instructions" style="display: none;">
+            <!-- unrecognized platform: ask for help -->
+            <p>お使いのプラットフォームを認識出来ませんでした。</p>
+            <p>
+                RustはWindows、Linux、Mac OS X、FreeBSD、NetBSD上で動きます。
+                これらのプラットフォームを使っているのにこのメッセージが出る場合は、
+                以下の情報と共に
+                <a href="https://github.com/rust-lang/rust-www/issues/new">問題を報告して下さい</a>
+          </p>
+
+          <div>
+            <div>navigator.platform:</div>
+            <div id="nav-plat"></div>
+            <div>navigator.appVersion:</div>
+            <div id="nav-app"></div>
+          </div>
+
+          <!-- duplicate the default cross-platform instructions -->
+          <div>
+              <p>Rustをインストールするには、Unixをお使いなら、<br/>
+                  以下をターミナル上で実行して、画面の指示に従って下さい。</p>
+              <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+              <p>
+                  Windowsをお使いなら、<br/>
+                  <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+                  をダウンロードして実行し、画面の指示に従って下さい
+              </p>
+          </div>
+        </div>
+
+        <div id="platform-instructions-default" class="instructions">
+          <div>
+            <p>Rustをインストールするには、Unixをお使いなら、<br/>
+            以下をターミナル上で実行して、画面の指示に従って下さい。</p>
+            <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Windowsをお使いなら、<br/>
+              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              をダウンロードして実行し、画面の指示に従って下さい
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-4 release-info-column">
+        <div>
+          <div class="release-version">Rust <span>1.31.0</span></div>
+          <a href="https://blog.rust-lang.org/2018/12/06/Rust-1.31-and-rust-2018.html">
+            <div class="release-date">December 6, 2018</div>
+          </a>
+
+          <br>
+
+          <a id="platform-button" style="display: none;" href="#">
+            プラットフォームを送るにはクリックするか「n」を押して下さい
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>Rustのインストールに関する注意</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <h3><code>rustup</code>を使ったツールチェーン管理</h3>
+
+        <p>
+          Rustは
+          <a href="https://github.com/rust-lang-nursery/rustup.rs"><code>rustup</code></a>
+          を使ってインストール及び管理されます。
+          Rustは6週間の
+          <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
+            高速リリースプロセス
+          </a>を採用しており、
+          <a href="https://forge.rust-lang.org/platform-support.html">
+             多数のプラットフォームをサポートしています
+          </a>ので、いつでも複数種類のRustのビルドが利用可能です。
+          <code>rustup</code>は全てのRustがサポートするプラットフォーム上で全く同じようにこれらのビルドを管理し、
+          betaやnightlyのリリースチャネル、追加のクロスコンパイルターゲットからのインストールも可能にします。
+        </p>
+
+        <p>
+          さらなる情報は
+          <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md"><code>rustup</code>
+          のドキュメントを参照して下さい</a>。
+        </p>
+
+        <h3><code>PATH</code>環境変数の設定</h3>
+
+        <p>
+          Rustの開発では、全てのツールは
+          <span class="platform-specific not-win" style="display: inline;">
+            <code>~/.cargo/bin</code>
+          </span>
+          <span class="platform-specific win" style="display: none;">
+            <code>%USERPROFILE%\.cargo\bin</code>
+          </span> ディレクトリにインストールされるので、
+          <code>rustc</code>, <code>cargo</code>、<code>rustup</code>
+          などのツールがそこにある筈です。
+        </p>
+
+        <p>
+          従って、Rustの開発者は慣例的にこのディレクトリを
+          <a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code>環境変数</a>
+          に含めます。
+          インストール時に、<code>rustup</code>が<code>PATH</code>を設定しようとしますが、 プラットフォームごと、シェルごとの差異、あるいは<code>rustup</code>のバグのために<code>PATH</code>への変更が反映されない場合があります。その場合はコンソールを再起動するか再ログインしてください。それでも反映されない場合は失敗しています。
+        </p>
+
+        <p>
+          もしインストール後に<code>rustc --version</code>を実行してみて失敗するなら、恐らくPATHの設定に失敗しているのが原因でしょう。
+        </p>
+
+        <div class="platform-specific win">
+
+          <h3>Windowsでの留意事項</h3>
+          <!-- This anchor is probably linked in the wild and should not be broken -->
+          <a id="win-foot"></a>
+
+	  <p>
+            Windowsでは、Rustは追加でVisual Studio 2013以降のC++のビルドツールを要求します。
+            入手するにはVisual C++ビルドツールを同梱している
+	    <a href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2017">
+	      Microsoft Visual C++ Build Tools 2017
+            </a>
+            をインストールします。
+            あるいは、Visual Studio 2015かVisual Studio 2013を
+            <a href="https://www.visualstudio.com/downloads/">インストール</a>
+            して、インストール時に「C++ tools」を選択します。
+	  </p>
+
+          <p>
+            WindowsでのRustの設定方法についてのさらなる情報は
+            <a href="https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows向け <code>rustup</code>
+            ドキュメント</a>を参照して下さい。
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <h2>その他のインストール方法</h2>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          上記の<code>rustup</code>を使った方法がほとんどの開発者に推奨されるRustのインストール方法ですが、必要に応じて
+          <a href="other-installers.html">他の方法でインストール</a>することも出来ます。
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var platform_override = null;
+
+function detect_platform() {
+    "use strict";
+
+    if (platform_override) {
+        return platform_override;
+    }
+
+    var os = "unknown";
+
+    if (navigator.platform == "Linux x86_64") {os = "unix";}
+    if (navigator.platform == "Linux i686") {os = "unix";}
+    if (navigator.platform == "Linux i686 on x86_64") {os = "unix";}
+    if (navigator.platform == "Linux aarch64") {os = "unix";}
+    if (navigator.platform == "Linux armv6l") {os = "unix";}
+    if (navigator.platform == "Linux armv7l") {os = "unix";}
+    if (navigator.platform == "Linux armv8l") {os = "unix";}
+    if (navigator.platform == "Linux ppc64") {os = "unix";}
+    if (navigator.platform == "Linux mips") {os = "unix";}
+    if (navigator.platform == "Linux mips64") {os = "unix";}
+    if (navigator.platform == "Mac") {os = "unix";}
+    if (navigator.platform == "Win32") {os = "win";}
+    if (navigator.platform == "FreeBSD x86_64") {os = "unix";}
+    if (navigator.platform == "FreeBSD amd64") {os = "unix";}
+    if (navigator.platform == "NetBSD x86_64") {os = "unix";}
+    if (navigator.platform == "NetBSD amd64") {os = "unix";}
+
+    // I wish I knew by now, but I don't. Try harder.
+    if (os == "unknown") {
+        if (navigator.appVersion.indexOf("Win")!=-1) {os = "win";}
+        if (navigator.appVersion.indexOf("Mac")!=-1) {os = "unix";}
+        // rust-www/#692 - FreeBSD epiphany!
+        if (navigator.appVersion.indexOf("FreeBSD")!=-1) {os = "unix";}
+    }
+    
+    // Firefox Quantum likes to hide platform and appVersion but oscpu works
+    if (navigator.oscpu) {
+        if (navigator.oscpu.indexOf("Windows")!=-1) {os = "win";}
+        if (navigator.oscpu.indexOf("Mac")!=-1) {os = "unix";}
+        if (navigator.oscpu.indexOf("Linux")!=-1) {os = "unix";}
+        if (navigator.oscpu.indexOf("FreeBSD")!=-1) {os = "unix";}
+        if (navigator.oscpu.indexOf("NetBSD")!=-1) {os = "unix";}
+    }
+
+    return os;
+}
+
+function adjust_for_platform() {
+    "use strict";
+
+    var platform = detect_platform();
+
+    var unix_div = document.getElementById("platform-instructions-unix");
+    var win_div = document.getElementById("platform-instructions-win");
+    var unknown_div = document.getElementById("platform-instructions-unknown");
+    var default_div = document.getElementById("platform-instructions-default");
+
+    unix_div.style.display = "none";
+    win_div.style.display = "none";
+    unknown_div.style.display = "none";
+    default_div.style.display = "none";
+
+    if (platform == "unix") {
+        unix_div.style.display = "block";
+    } else if (platform == "win") {
+        win_div.style.display = "block";
+    } else if (platform == "unknown") {
+        unknown_div.style.display = "block";
+    } else {
+        default_div.style.display = "block";
+    }
+
+    var platform_specific = document.getElementsByClassName("platform-specific");
+    for (var el of platform_specific) {
+        var el_is_not_win = el.className.indexOf("not-win") !== -1;
+        var el_is_inline = el.tagName.toLowerCase() == "span";
+        var el_visible_style = "block";
+        if (el_is_inline) {
+            el_visible_style = "inline";
+        }
+        if (platform == "win") {
+            if (el_is_not_win) {
+                el.style.display = "none";
+            } else {
+                el.style.display = el_visible_style;
+            }
+        } else {
+            if (el_is_not_win) {
+                el.style.display = el_visible_style;
+            } else {
+                el.style.display = "none";
+            }
+        }
+    }
+}
+
+function cycle_platform() {
+    if (platform_override == null) {
+        platform_override = "default";
+    } else if (platform_override == "default") {
+        platform_override = "unknown";
+    } else if (platform_override == "unknown") {
+        platform_override = "win";
+    } else if (platform_override == "win") {
+        platform_override = "unix";
+    } else if (platform_override == "unix") {
+        platform_override = "default";
+    }
+    adjust_for_platform();
+}
+
+function set_up_cycle_button() {
+    var cycle_button = document.getElementById("platform-button");
+    cycle_button.onclick = cycle_platform;
+
+    var key="test";
+    var idx=0;
+    var unlocked=false;
+
+    document.onkeypress = function(event) {
+        if (event.key == "n" && unlocked) {
+            cycle_platform();
+        }
+
+        if (event.key == key[idx]) {
+            idx += 1;
+
+            if (idx == key.length) {
+                cycle_button.style.display = "block";
+                unlocked = true;
+                cycle_platform();
+            }
+        } else if (event.key == key[0]) {
+            idx = 1;
+        } else {
+            idx = 0;
+        }
+    };
+}
+
+function fill_in_bug_report_values() {
+    var nav_plat = document.getElementById("nav-plat");
+    var nav_app = document.getElementById("nav-app");
+    nav_plat.textContent = navigator.platform;
+    nav_app.textContent = navigator.appVersion;
+}
+
+(function () {
+    adjust_for_platform();
+    set_up_cycle_button();
+    fill_in_bug_report_values();
+}());
+
+    </script>
+
+
+</div>
+
+
+    <footer>
+      <p>他の言語のページ:
+	    <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>

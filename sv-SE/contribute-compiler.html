@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- Page last generated 2018-12-06 19:24:32 +0000 -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Att Bidra till Rust &mdash; Språket, Kompilatorn och Standardbiblioteket &middot; Programmeringsspråket rust</title>
+    <meta name="keywords" content="Rust, programmeringsspråket rust, rustlang, rust-lang, Mozilla Rust">
+    <meta name="description" content="Ett systemprogrammeringsspråk som kör blixtsnabbt, förhindrar segmenteringsfel och garanterar trådsäkerhet.">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+  </head>
+
+  <body class="container">
+    <a href="https://github.com/rust-lang/rust">
+      <img class="ribbon" style="display: none" src="/logos/forkme.svg" alt="Forka mig på GitHub" width="298" height="298">
+    </a>
+
+    <header>
+      <ul class="row menu">
+	<li class="col-xs-12 col-md-2">
+          <a href="/sv-SE/index.html">
+            <img class="img-responsive" src="/logos/rust-logo-blk.svg" onerror="this.src='/logos/rust-logo-256x256-blk.png'" height="128" width="128" alt="Rusts logotyp" />
+          </a>
+	</li>
+	<li class="col-xs-12 col-md-10 menu">
+	  <h2><a href="/sv-SE/documentation.html">Dokumentation</a></h2>
+	  <h2><a href="/sv-SE/install.html">Installation</a></h2>
+	  <h2><a href="/sv-SE/community.html">Community</a></h2>
+	  <h2><a href="/sv-SE/contribute.html">Bidra</a></h2>
+	</li>
+      </ul>
+    </header>
+
+    <div class="content">
+  <h1 id="att-bidra-till-rust-mdash-sprket-kompilatorn-och-standardbiblioteket">Att Bidra till Rust — Språket, Kompilatorn och Standardbiblioteket</h1>
+
+<p>Källkoden för kompilatorn och standardbiblioteket är i huvud-repot och
+dess underhåll är det primära målet för det repot. Många etiketter på
+issue trackern är relaterade till det. Några av de mer fruktbara etiketterna
+är <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-codegen">A-codegen</a>, för översättning av Rust-kod till LLVM IR;
+<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo">A-debuginfo</a>, för generation av metadata för debuggers;
+<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-diagnostics">A-diagnostics</a>, feedbacken som kompilatorn ger vid fel;
+<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-libs">A-libs</a>, problem i standardbiblioteket;
+<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-macros">A-macros</a> och <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-syntaxext">A-syntaxext</a>, båda relaterade till syntax extensions
+(“syntax-utökningar”); och <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-typesystem">A-typesystem</a>, som handlar om typsystemet.</p>
+
+<p>Det finns ingen väl underhållen guide till kompilatorns arkitektur men
+<a href="https://github.com/rust-lang/rust/blob/master/src/librustc/README.md">det finns en liten översikt i repot</a>.
+<a href="https://manishearth.github.io/rust-internals-docs">API-dokumentationen för de crates som utgör kompilatorn</a> kan 
+hjälpa till med att navigera i koden, likväl som källkods-browsern <a href="https://dxr.mozilla.org/rust/source/src">Rust DXR</a>.
+<a href="https://github.com/rust-lang/rust-wiki-backup/blob/master/Note-testsuite.md">Guiden till Rusts testsvit</a> kan lära dig hur du kan använda Rusts
+byggsystem effektivt likväl som att köra <a href="https://github.com/rust-lang/rust/blob/3d1f3c9d389d46607ae28c51cc94c1f43d65f3f9/Makefile.in#L48"><code class="highlighter-rouge">make tips</code></a> i terminalen.</p>
+
+<p>Under överskådlig framtid är en av de initiativen i utvecklingen av
+Rust-kompilatorn att konvertera dess interna mekanismer från att
+arbeta direkt på det abstrakta syntax trädet (AST) till att arbeta med
+och på <a href="https://github.com/rust-lang/rust/issues/27840">en mellanliggande representation vid namn MIR</a>.
+Detta arbete förväntas öppna upp för många nya möjligheter genom att
+förenkla kompilatorn, och hjälp behövs för att t.ex. skapa ett MIR-baserat
+översättningssteg, lägga till MIR-baserade optimeringar och implementera
+inkrementell kompilering. Det finns tillsvidare ingen enskild resurs för
+information om arbetet som krävs här, men fråga på <a href="https://internals.rust-lang.org/">internals.rust-lang.org</a>
+eller <a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-internals">#rust-internals</a> för att bli guidad.</p>
+
+<p><a href="https://users.rust-lang.org/t/glacier-a-big-ol-pile-of-ice/3380">Det är pinsamt när vår kompilator kraschar</a> — den
+fruktade ‘internt-kompilator-fel’ (ICE). Etiketten <a href="https://github.com/rust-lang/rust/labels/I-ICE">I-ICE</a>
+håller koll på dessa och det finns ofta många sådana märkta problem.
+Dessa är oftast bra buggar att börja med eftersom det är lätt att veta
+när du har fixat dem och de är ofta relativt fristående.</p>
+
+<p>Rust-kods prestanda är en av dess stora fördelar; och prestandan på Rust-kompilatorn
+är en av dess stora svagheter. Förbättringar av körsningstid eller speciellt
+prestandan på kompileringstiden är mycket uppskattade. Etiketterna <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AI-slow">I-slow</a> och
+<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-optimization">A-optimization</a> är för körningstidsprestanda, och <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AI-compiletime">I-compiletime</a> för
+kompileringstid. Vi har en <a href="http://ncameron.org/perf-rustc/">sida som håller koll på kompileringstidsprestanda</a>
+på ett antal projekt. Kompilatorflaggan <code class="highlighter-rouge">-Z time-passes</code> kan hjälpa till att
+debugga kompilatorprestanda, och Rust-kod kan profileras med standard-profiler såsom
+<code class="highlighter-rouge">perf</code> på Linux.</p>
+
+<p>Större ny funktionalitet genomgår en <a href="https://github.com/rust-lang/rfcs#table-of-contents">Förfrågningar för kommentarer (RFC)</a>
+process, genom vilken en design för funktionaliteten bestäms. Denna process är
+öppen för alla. Det är en social process utvecklare emellan som redan har olika
+mängd erfarenhet av att arbeta tillsammans och det rekommenderas att bli involverad
+sakta — att bidra en snabbskriven RFC utan att förstå ämnets historiska,
+tekniska eller sociala kontext är ett lätt sätt att göra ett dåligt intryck och
+att bli besviken på resultatet. Läs den tidigare nämnda readme-filen för att bättre
+förstå hur det hela går till. Många idéer har debatterats under Rusts historia.
+Vissa har avvisats, några har skjutits upp på framtiden och <a href="https://github.com/rust-lang/rfcs/issues">issue trackern</a>
+för RFCs katalogiserar vissa önskemål som ännu inte blivit en del av språket.
+Strax innan en RFC blir accepterad för implementation går den in i en
+‘sista period för kommentarer’-fas, som indikeras av etiketten
+<a href="https://github.com/rust-lang/rfcs/pulls?q=is%3Aopen+is%3Apr+label%3Afinal-comment-period">final-comment-period på rust-lang/rfcs repot</a>. Likaledes går ny
+funktionalitet igenom en
+<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AB-unstable+label%3Afinal-comment-period">final-comment-period i rust-lang/rust repot</a> innan den blir
+aktiverad och användbar i den stabila kompilatorn (kallas för ‘ungating’).
+Båda FCPs är kritiska stunder att bli involverad och uttrycka åsikter om
+språkets utvecklingsriktning. FCPs påannonsers i de veckovisa sub-team
+rapporterna på <a href="https://internals.rust-lang.org/">internals.rust-lang.org</a>.</p>
+
+<p>Träffa andra Rust-kompilator-ingenjörer i <a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rustc">#rustc</a>, språkdesigners i
+<a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-lang">#rust-lang</a>, och bibliotekdesigners i <a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-libs">#rust-libs</a>.</p>
+
+<!--
+TODO: guide to compile-time benchmarking
+TODO: using the triage bot?
+TODO: some of this RFC description could probably go in the RFC readme
+-->
+
+
+</div>
+
+
+    <footer>
+      <p>Vår webbsida på andra språk:
+        <a href="/de-DE/">Deutsch</a>,
+<a href="/en-US/">English</a>,
+<a href="/es-ES/">Español</a>,
+<a href="/fr-FR/">Français</a>,
+<a href="/id-ID/">Bahasa Indonesia</a>,
+<a href="/it-IT/">Italiano</a>,
+<a href="/ja-JP/">日本語</a>,
+<a href="/ko-KR/">한국어</a>,
+<a href="/pl-PL/">Polski</a>,
+<a href="/pt-BR/">Português</a>,
+<a href="/ru-RU/">Русский</a>,
+<a href="/sv-SE/">Svenska</a>,
+<a href="/vi-VN/">Tiếng việt</a>,
+<a href="/zh-CN/">简体中文</a>
+
+      </p>
+    </footer>
+  </body>
+</html>
