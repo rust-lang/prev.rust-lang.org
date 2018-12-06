@@ -1,7 +1,7 @@
 name: The Rust Programming Language
 stable: "1.31.0"
 stable_date: "2018-12-06"
-stable_blog: "https://blog.rust-lang.org/2018/12/06/Rust-1.31-and-Rust-2018.html"
+stable_blog: "https://blog.rust-lang.org/2018/12/06/Rust-1.31-and-rust-2018.html"
 stable_full_version: "rustc 1.31.0 (abe02cefd 2018-12-04)"
 beta: "1.32"
 beta_date: "2019-01-17"
