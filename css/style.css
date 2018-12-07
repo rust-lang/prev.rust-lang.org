@@ -794,6 +794,7 @@ h1.rustup {
   top: 0;
   left: 0;
   padding: 20px 0;
+  z-index: 1;
 }
 
 .flash a {
