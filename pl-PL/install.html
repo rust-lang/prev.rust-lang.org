@@ -11,12 +11,24 @@ title: Instalacja &middot; Język programowania Rust
           <pre>curl https://sh.rustup.rs -sSf | sh</pre>
         </div>
 
-        <div id="platform-instructions-win" class="instructions" style="display: none;">
+        <div id="platform-instructions-win32" class="instructions" style="display: none;">
           <p>
-            Aby zainstalować Rusta, pobierz i uruchom
-            <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+            Aby zainstalować Rusta, pobierz i uruchom
+            <a class="windows-download" href="https://win.rustup.rs/i686">rustup&#x2011;init.exe</a>
             oraz postępuj zgodnie z instrukcjami wyświetlanymi na ekranie.
           </p>
+          <p>If you're a Windows Subsystem for Linux user run the following in your terminal, then follow the onscreen instructions to install Rust.</p>
+          <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+        </div>
+
+        <div id="platform-instructions-win64" class="instructions" style="display: none;">
+          <p>
+            Aby zainstalować Rusta, pobierz i uruchom
+            <a class="windows-download" href="https://win.rustup.rs/x86_64">rustup&#x2011;init.exe</a>
+            oraz postępuj zgodnie z instrukcjami wyświetlanymi na ekranie.
+          </p>
+          <p>If you're a Windows Subsystem for Linux user run the following in your terminal, then follow the onscreen instructions to install Rust.</p>
+          <pre>curl https://sh.rustup.rs -sSf | sh</pre>
         </div>
 
         <div id="platform-instructions-unknown" class="instructions" style="display: none;">
@@ -26,13 +38,32 @@ title: Instalacja &middot; Język programowania Rust
             używasz jednego z tych systemów i to widzisz proszę
             <a href="https://github.com/rust-lang/rust-www/issues/new">złóż issue</a>,
             wraz z tymi wartościami:
-            <div>
-              <div>navigator.platform:</div>
-              <div id="nav-plat"></div>
-              <div>navigator.appVersion:</div>
-              <div id="nav-app"></div>
-            </div>
           </p>
+
+          <div>
+            <div>navigator.platform:</div>
+            <div id="nav-plat"></div>
+            <div>navigator.appVersion:</div>
+            <div id="nav-app"></div>
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Jeżeli używasz systemu Windows 64-bit,<br/>pobierz i uruchom
+              <a class="windows-download" href="https://win.rustup.rs/x86_64">rustup&#x2011;init.exe</a>
+              oraz postępuj zgodnie z instrukcjami wyświetlanymi na ekranie.
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Jeżeli używasz systemu Windows 32-bit,<br/>pobierz i uruchom
+              <a class="windows-download" href="https://win.rustup.rs/i686">rustup&#x2011;init.exe</a>
+              oraz postępuj zgodnie z instrukcjami wyświetlanymi na ekranie.
+          </div>
         </div>
 
         <div id="platform-instructions-default" class="instructions">
@@ -45,8 +76,17 @@ title: Instalacja &middot; Język programowania Rust
 
           <div>
             <p>
-              Jeżeli używasz systemu Windows,<br/>pobierz i uruchom
-              <a href="https://win.rustup.rs">rustup&#x2011;init.exe</a>
+              Jeżeli używasz systemu Windows 64-bit,<br/>pobierz i uruchom
+              <a class="windows-download" href="https://win.rustup.rs/x86_64">rustup&#x2011;init.exe</a>
+              oraz postępuj zgodnie z instrukcjami wyświetlanymi na ekranie.
+          </div>
+
+          <hr/>
+
+          <div>
+            <p>
+              Jeżeli używasz systemu Windows 32-bit,<br/>pobierz i uruchom
+              <a class="windows-download" href="https://win.rustup.rs/i686">rustup&#x2011;init.exe</a>
               oraz postępuj zgodnie z instrukcjami wyświetlanymi na ekranie.
           </div>
         </div>
