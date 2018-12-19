@@ -38,6 +38,8 @@ This guide focuses on a few avenues for the new contributor:
   implementation, performance improvement.
 * [Internationalization](contribute-translations.html). Help spread the
   Rust love by translating our site to every language.
+* [Working groups](working-groups.html). Join (or start) a working group to
+  contribute to a specific domain.
 
 If you need additional guidance ask on [#rust-internals] or
 [internals.rust-lang.org].
