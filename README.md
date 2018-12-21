@@ -2,7 +2,7 @@
 
 This repository contains the source files for prev.rust-lang.org.
 
-# NOTE: This repository will be deprecated soon. A new website is currently in Alpha Stage, and being reviewed by the Rust Teams. It will go into beta on November 29, 2018, at which point it will be linked here. The current site will remain up until the beta of the new site is over, however you should refrain from making large changes to this repository as it will soon be deprecated.
+# NOTE: This repository has already been deprecated, use <https://github.com/rust-lang/www.rust-lang.org> instead.
 
 ## Deployment
 
