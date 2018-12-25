@@ -38,7 +38,7 @@ Você pode também encontrar ajuda no site de perguntas e respostas [Stack Overf
 
 [stack_overflow]: https://stackoverflow.com/questions/tagged/rust
 
-## Noticias
+## Notícias
 
 [Essa semana em Rust][twir] coleta as novidades mais recentes, próximos eventos
 e um sumário de mudanças de semana-por-semana na linguagem Rust e suas bibliotecas.
