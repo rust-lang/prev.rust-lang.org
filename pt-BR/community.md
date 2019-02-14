@@ -6,7 +6,7 @@ title: A comunidade Rust &middot; A linguagem de programação Rust
 # A comunidade Rust
 
 A linguagem de programação Rust tem muitas qualidades, mas a melhor parte é a
-comunidade de pessoas que se juntam para fazer recompensador o trabalho em Rust.
+comunidade de pessoas que se juntam para que trabalhar em Rust seja recompensador.
 
 Somos conhecidos por fornecer um ambiente amigável, seguro e acolhedor para todos,
 independente de gênero, orientação sexual, incapacidade, etinia, religião ou qualquer
@@ -19,7 +19,7 @@ do [Time de moderação de Rust][mod_team] imediatamente. Independentemente se v
 é um contribuidor regular ou um novato, nós nos preocupamos em manter a comunidade
 como um espaço confortável para você.
 
-[coc]: https://www.rust-lang.org/conduct.html
+[coc]: https://www.rust-lang.org/pt-BR/conduct.html
 [mod_team]: https://www.rust-lang.org/team.html#Moderation-team
 [mod_team_email]: mailto:rust-mods@rust-lang.org
 
@@ -61,9 +61,9 @@ O canal [#rust][rust_irc] é a via principal para discussão geral sobre Rust, e
 um bom lugar para pedir ajuda. Você vai encontrar pessoas ansiosas para responder
 perguntas sobre Rust, e as respostas são tipicamente rápidas.
 
-Os desenvolvedores de Rust se coordenam em [#rust-internals][internals_irc]. Ele é
-para discussão em tempo real sobre o desenvolvimento de Rust. É também o canal para
-perguntar questões sobre contribuir para o Rust.
+Os desenvolvedores de Rust se coordenam em [#rust-internals][internals_irc], este é o
+canal para discussão em tempo real sobre o desenvolvimento de Rust assim como para
+perguntar questões sobre como contribuir para o Rust.
 
 ### Canais Principais
 

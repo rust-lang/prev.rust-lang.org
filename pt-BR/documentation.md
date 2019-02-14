@@ -7,9 +7,9 @@ title:  Documentação Rust &middot; A linguagem de programação Rust
 
 Se você ainda não viu Rust de fato, a primeira coisa que você deveria ler é a
 introdução ao livro, [A linguagem de programação Rust (inglês)][book]. Ele vai
-te dar uma boa ideia de como Rust se parece, te mostra como instalá-lo, e explica
-a sintaxe e os conceitos. Ao completar o livro, você será um desenvolvedor intermediário
-de Rust, e vai ter uma bom fundamento das ideias por trás de Rust.
+te dar uma boa visão sobre Rust, te mostrar como instalá-lo, explicar
+a sintaxe e conceitos. Ao completar o livro, você será um desenvolvedor intermediário
+de Rust e terá um bom fundamento das ideias por trás de Rust.
 
 ## Aprendendo Rust
 
@@ -41,7 +41,7 @@ aprender Rust.
 [docs.rs] Documentação pra todas as crates disponíveis em [crates.io].
 
 [A Referência de Rust][ref]. Enquanto Rust ainda não possui uma especificação, a referência
-tenta descrever o seu funcionamento em detalhes. Algumas vezes está meio antigo.
+tenta descrever o seu funcionamento em detalhes. Algumas vezes pode estar meio desatualizado.
 
 [Índice de Sintaxe][syn]. Esse apêndice do Livro contêm exemplos de toda a sintaxe em Rust
 com referência da seção do livro que a descreve.
@@ -80,7 +80,7 @@ canais IRC e vários outros cantos do mundo Rust.
 ## Documentação sobre versões noturna (nightly) e beta
 
 Muito da documentação oficial de Rust está também disponível para
-versões [nortuno][nightly] e [beta] em adição à documentação para estável disposta acima.
+versões [nortuno][nightly] e [beta] em adição à documentação estável disposta acima.
 
 [nightly]: https://doc.rust-lang.org/nightly/
 [beta]: https://doc.rust-lang.org/beta/
