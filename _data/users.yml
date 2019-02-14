@@ -33,6 +33,11 @@
   logo: 360dialog.png
   how: "Most of our service consumers are written with Rust."
 -
+  name: 49nord
+  url: https://49nord.de/rust
+  logo: 49nord.svg
+  how: "49nord develops safe and secure Industrial IoT hardware and applications using Rust."
+-
   name: 3DR
   url: https://3dr.com/
   logo: 3dr.svg
@@ -47,6 +52,11 @@
   url: http://www.agildata.com/
   logo: agildata.svg
   how: "<a href='http://www.agildata.com/packet-capturing-mysql-with-rust/'>MySQL packet capture tool</a>."
+-
+  name: AISenz 艾森智能
+  url: https://loraflow.io/
+  logo: aisenz.svg
+  how: "Rust contributes to our LoRaWAN services and industry solutions in performance, reliability, and productivity."
 -
   name: Algorithmia
   url: https://algorithmia.com/
@@ -93,6 +103,11 @@
   logo: braintree.png
   how: "Speeding up batch processing and for small command-line utilities."
 -
+  name: Bytedance
+  url: https://bytedance.com/
+  logo: bytedance.png
+  how: "Use Rust for our cross-platform client-side development, safe and fast"
+-
   name: Calyptech
   url: http://calyptech.com
   logo: calyptech.png
@@ -123,6 +138,11 @@
   logo: clever-cloud.svg
   how: "We <a href='https://www.clever-cloud.com/doc/rust/rust/'>host Rust web applications</a>, and a part of our infrastructure is developed in Rust."
 -
+  name: Cloudflare
+  url: https://www.cloudflare.com/
+  logo: cloudflare.svg
+  how: "We are <a href='https://blog.cloudflare.com/tag/rust/'>using Rust</a> as a replacement for memory-unsafe languages (particularly C) and are using it in our core edge logic."
+-
   name: CodePicnic
   url: https://codepicnic.com
   logo: codepicnic.png
@@ -131,7 +151,7 @@
   name: Coursera
   url: https://www.coursera.org
   logo: coursera.png
-  how: "<a href='https://building.coursera.org/blog/2016/07/07/rust-docker-in-production-coursera/'>Programming Assignments</a> in <a href='http://betacs.pro/blog/2016/07/07/docker-and-rust/'>secured Docker containers</a>."
+  how: "<a href='https://medium.com/coursera-engineering/rust-docker-in-production-coursera-f7841d88e6ed'>Programming Assignments</a> in secured Docker containers."
 -
   name: Coredump Hackerspace
   url: https://www.coredump.ch/
@@ -148,6 +168,11 @@
   logo: craftai.png
   how: "Our core machine learning engine is written in Rust."
 -
+  name: Cultivate Software
+  url: https://cultivatehq.com/
+  logo: cultivate-logo.svg
+  how: "<a href='https://cultivatehq.com/posts/how-we-built-a-visual-studio-code-extension-for-iot-prototyping/'>We used Rust as a bridge between a VSCode extension and IoT devices</a>."
+-
   name: Dazta
   url: https://www.dazta.com
   logo: dazta.svg
@@ -157,6 +182,11 @@
   url: https://www.delimiter.com/
   logo: delimiter.png
   how: "Rust powers our bare metal provisioning system."
+-
+  name: Deliveroo
+  url: https://deliveroo.co.uk
+  logo: deliveroo.svg
+  how: "We are using Rust to quickly make assignment decisions in our food delivery network."
 -
   name: Dropbox
   url: https://www.dropbox.com
@@ -170,8 +200,8 @@
 -
   name: Parity Technologies
   url: https://parity.io/
-  logo: parity.png
-  how: "<a href='https://parity.io/parity.html'>Powering the Ethereum revolution.</a>"
+  logo: parity-logo.png
+  how: "<a href='https://www.parity.io/#parity'>Powering the Ethereum revolution.</a>"
 -
   name: Everlane
   url: http://www.everlane.com/
@@ -213,6 +243,11 @@
   logo: imageoptim.png
   how: 'High-efficiency modern JPEG encoder written in Rust is at the heart of the <a href="https://imageoptim.com/api">image compression web service</a>.'
 -
+  name: iqlusion
+  url: https://iqlusion.io
+  logo: iqlusion.svg
+  how: "Rust is the main language we use to develop in-house and OSS software, and used for infrastructure/devops tools as well as cryptographic key management services."
+-
   name: krypt.co
   url: https://krypt.co
   logo: krypt.co.png
@@ -231,7 +266,7 @@
   name: Linkerd
   url: https://linkerd.io/
   logo: linkerd.svg
-  how: "<a href='https://blog.buoyant.io/2017/03/29/introducing-linkerd-tcp/'>We're using Rust to extend the Linkerd Service Mesh with a lightweight TCP/TLS load balancer, linkerd-tcp.</a>"
+  how: "<a href='https://buoyant.io/2017/03/29/introducing-linkerd-tcp/'>We're using Rust to extend the Linkerd Service Mesh with a lightweight TCP/TLS load balancer, linkerd-tcp.</a>"
 -
   name: Linki Tools
   url: http://linki.tools/
@@ -271,7 +306,7 @@
   name: OVH
   url: https://www.ovh.com
   logo: ovh.png
-  how: "We used Rust to build a high performance, highly available <a href='https://www.runabove.com/paas-logs.xml'>log management system</a>."
+  how: "We used Rust to build a high performance, highly available <a href='https://www.ovh.com/world/a2202.paas-logs-management-ovh'>log management system</a>."
 -
   name: Pants Build
   url: http://www.pantsbuild.org/
@@ -358,6 +393,11 @@
   logo: superscale.svg
   how: "We run rust-mips on tens of thousands of linux routers with 4-16Mb RAM. Rust is the only modern language that has low enough runtime constrains to make this possible."
 -
+  name: System76
+  url: https://system76.com/
+  logo: system76.svg
+  how: "As a Linux-based computer-manufacture, much of our infrastructure and desktop Linux projects are written in Rust. From hardware certification, flashing, and imaging; to system services and GTK3 desktop applications."
+-
   name: Telenor Digital
   url: https://www.telenordigital.com/
   logo: telenordigital.png
@@ -377,6 +417,11 @@
   url: https://threat-x.com/
   logo: threatx.svg
   how: "Threat X Web Application Firewall (WAF) and central analysis engine are written in Rust, facilitating real time analysis of high bandwidth web applications."
+-
+  name: Threema
+  url: https://threema.ch/
+  logo: threema.svg
+  how: "We use Rust in our iOS app (see <a href='https://github.com/saltyrtc/saltyrtc-client-rs'>saltyrtc-client-rs</a>) as well as for <a href='https://github.com/threema-ch/push-relay'>some of our backend services</a>."
 -
   name: Tilde
   url: http://www.tilde.io
@@ -496,7 +541,7 @@
   name: Tocco AG
   url: https://www.tocco.ch
   logo: tocco.svg
-  how: "Tocco is a Switzerland based company specialized in ERP software that has been using Rust with great enthusiasm for many of its <a href='https://github.com/tocco/lo-migrate'>internal tools</a>."
+  how: "Tocco is a Switzerland-based company specialized in ERP software that has been using Rust with great enthusiasm for many of its <a href='https://github.com/tocco/lo-migrate'>internal tools</a>."
 -
   name: Pressjitsu Inc
   url: https://pressjitsu.com
@@ -559,3 +604,103 @@
   url: https://zeplin.io
   logo: zeplin.svg
   how: "Zeplin's Adobe XD CC integration is built on Rust."
+-
+  name: Starry
+  url: https://starry.com
+  logo: starry.svg
+  how: "Re-imagining broadband by engineering a new wireless access network and building an ecosystem of products designed to simplify and improve your connected life."
+-
+  name: Tonsser
+  url: https://tonsser.com
+  logo: tonsser.png
+  how: "Moving performance intensive parts of our Ruby on Rails API to Rust for more speed and higher reliability."
+-
+  name: Tula Technology
+  url: https://www.tulatech.com/
+  logo: tulatech.png
+  how: "All our automotive code is verified using a Rust based harness; we're also working on transpiling MATLAB to Rust for additional model verification."
+-
+  name: ChartMogul
+  url: https://chartmogul.com
+  logo: chartmogul.png
+  how: "Our main microservice that generates the aggregate data displayed in ChartMogul graphs is written in Rust."
+-
+  name: FacturaDirecta
+  url: https://www.facturadirecta.com/
+  logo: facturadirecta.svg
+  how: "Optimizing search speed in our accounting software as a service."
+-
+  name: Yomura Fiber
+  url: https://yomurafiber.com/
+  logo: yomura.png
+  how: "Rust powers our GPON provisioning and statistic gathering."
+-
+  name: NAVITAS Solutions GmbH
+  url: https://www.navitas.de/
+  logo: navitas.png
+  how: "We're using Rust for a Scheduling-Service for one of our clients and the corresponding webserver backend."
+-
+  name: Webbula
+  url: https://webbula.com
+  logo: webbula.png
+  how: "For our back end data processing and fulfillment."
+-
+  name: Imeka
+  url: https://www.imeka.ca
+  logo: imeka.svg
+  how: "High performance medical imaging algorithms."
+-
+  name: Figma
+  url: https://www.figma.com/
+  logo: figma.svg
+  how: "<a href='https://blog.figma.com/rust-in-production-at-figma-e10a0ec31929'>Our real-time multiplayer syncing server (used to edit all Figma documents) is written in Rust.</a>"
+-
+  name: EXSigma
+  url: https://www.exsigma.com
+  logo: exsigma.svg
+  how: "EXSigma developed a privacy preserving, secure and environmental friendly Ad Network entirely in Rust."
+-
+  name: Sourcegraph
+  url: https://sourcegraph.com
+  logo: sourcegraph.svg
+  how: "All files and code search previews (<a href='https://sourcegraph.com/search?q=repogroup:crates+lang:rust+open'>example</a>) on Sourcegraph are syntax-highlighted by <a href='https://github.com/sourcegraph/syntect_server'>sourcegraph/syntect_server</a>, written in Rust."
+-
+  name: Aprila Bank
+  url: https://www.aprila.no
+  logo: aprila.svg
+  how: "Orchestrating business process flows for onboarding, KYC, credit decisions and more."
+-
+  name: Fire and Emergency NZ
+  url: https://fireandemergency.nz/
+  logo: fenz-logo.svg
+  how: "The New Zealand Fire Service is using a custom geolocation search engine, built in rust, that runs on embedded hardware within a fire truck to stream hazard information to a fire crew at an incident."
+-
+  name: Solana
+  url: https://solana.com/
+  logo: solana.png
+  how: "High performance blockchain, rebuilt for scale."
+-
+  name: Kodebox
+  url: https://codechain.io/
+  logo: kodebox.png
+  how: "We created CodeChain, a programmable open source blockchain technology optimal for developing and customizing multi-asset management systems."
+-
+  name: TenX
+  url: https://www.tenx.tech
+  logo: tenx.png
+  how: "Building a secure and scalable distributed payments system in Rust."
+-
+  name: Star Lab
+  url: https://starlab.io/
+  logo: starlab.svg
+  how: "As an embedded security company, Rust allows us to have confidence in the performance and reliability of our products."
+-
+  name: Routific
+  url: https://routific.com/
+  logo: routific.svg
+  how: "High performance route optimization software."
+-
+  name: Kentik
+  url: https://kentik.com/
+  logo: kentik.svg
+  how: "Our advanced network analytics platform relies on <a href='https://www.kentik.com/blog/under-the-hood-how-rust-helps-keep-kentik%27s-performance-on-high'>many Rust components</a>."

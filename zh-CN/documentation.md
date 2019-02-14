@@ -21,7 +21,7 @@ title:  Rust 语言文档 &middot; Rust 程序设计语言
 
 [常见问题解答][faq]
 
-[book]: https://kaisery.gitbooks.io/rust-book-chinese/content/
+[book]: https://kaisery.github.io/trpl-zh-cn/
 [rbe]: https://rustwiki.org/rust-by-example/
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning

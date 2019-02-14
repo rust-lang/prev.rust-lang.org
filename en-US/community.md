@@ -46,7 +46,7 @@ announcements about major developments. And nearly everything happening in
 Rust is discussed on the unofficial subreddit, [/r/rust][reddit].
 
 We also have a [Twitter][twitter] account.
-If you can't read English, You can also follow our [Weibo][weibo] for Chinese.
+If you can't read English, you can also follow our [Weibo][weibo] for Chinese.
 
 [twir]: https://this-week-in-rust.org/
 [rust_blog]: http://blog.rust-lang.org/
@@ -227,6 +227,9 @@ optimizations.
 * The [Infrastructure Team][infra_team] is responsible for infrastructure that supports
   the project itself: CI, release generation, bots, and metrics.
 
+* The [Crates.io Team][crates_team] is responsible for managing the operations
+  development, and policies of crates.io.
+
 * The [Community Team][community_team] is responsible for coordinating events,
 outreach, commercial users, teaching materials, and exposure. They can also
 direct inquiries to the correct parties when its not clear who to contact
@@ -255,6 +258,7 @@ help get you started.
 [mod_team]: team.html#Moderation-team
 [doc_team]: team.html#Documentation-team
 [infra_team]: team.html#Infrastructure-team
+[crates_team]: team.html#Crates-io-team
 
 ## Rust Development
 

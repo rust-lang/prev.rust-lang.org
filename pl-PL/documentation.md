@@ -31,7 +31,7 @@ Jest przeznaczona dla zaawansowanych programistów Rusta.
 przydatnych do nauki Rusta.
 
 [book]: https://doc.rust-lang.org/book/
-[rbe]: http://rustbyexample.com
+[rbe]: https://doc.rust-lang.org/rust-by-example/
 [faq]: /en-US/faq.html
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning

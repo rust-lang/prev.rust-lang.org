@@ -12,7 +12,7 @@ title: Rust에 기여하기 &mdash; 도구, IDE 및 인프라 &middot; Rust 프�
 
 Rust의 패키지 관리자인 Cargo와 문서 생성기인 rustdoc 둘 다,
 완전한 기능을 제공하고 잘 동작하긴 하지만 개발자들이 부족합니다.
-Rustdoc에는 주 저장소의 [A-rustdoc] 라벨 아래 이슈가 많이 열려 있습니다.
+Rustdoc에는 주 저장소의 [T-rustdoc] 라벨 아래 이슈가 많이 열려 있습니다.
 이 이슈는 대부분 버그이며 기여를 하려면 버그를 고쳐서
 풀 요청(pull request)을 보내는 것으로 충분합니다.
 Cargo는 [별도의 저장소와 이슈][Cargo]를 가지고 있으며,
@@ -31,7 +31,7 @@ Rust를 gdb와 lldb 디버거로 어느 정도까지는 성공적으로 실행�
 [#cargo]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
 [#rust-tools]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
 [A-debuginfo]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo
-[A-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-rustdoc
+[T-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AT-rustdoc
 [Cargo]: https://github.com/rust-lang/cargo/issues
 [awesome-rust]: https://github.com/kud1ing/awesome-rust
 [ides]: https://forge.rust-lang.org/ides.html

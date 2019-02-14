@@ -649,6 +649,7 @@ footer a {
 }
 
 #platform-instructions-unix > pre,
+#platform-instructions-win > pre,
 #platform-instructions-default > div > pre {
     background-color: #515151;
     color: white;
@@ -782,4 +783,24 @@ h1.rustup {
 .installer-table > div > div > a {
     margin-left: 1em;
     margin-right: 1em;
+}
+
+.flash {
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: #428bca;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+}
+
+.flash a {
+  color: white;
+  padding: 10px;
+}
+
+header {
+  margin-top: 40px;
 }

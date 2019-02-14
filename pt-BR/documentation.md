@@ -14,8 +14,8 @@ de Rust e terá um bom fundamento das ideias por trás de Rust.
 ## Aprendendo Rust
 
 [A linguagem de programação Rust (inglês)][book]. Também conhecido como "O Livro",
-é o recurso mais compreensivel disponível sobre Rust. Todos os tópicos relacionados
-à Rust são cobertos e é o documento oficial primário sobre a linguagem.
+é uma introdução aos tópicos mais importantes para aprender Rust,
+sendo o documento oficial primário sobre a linguagem.
 
 [Rust por Exemplos (inglês)][rbe]. Uma coleção de exemplos de Rust numa variedade
 de tópicos, disponível no seu navegador.
@@ -29,7 +29,7 @@ inseguro em Rust. Isso é para programadores Rust avançados.
 aprender Rust.
 
 [book]: https://doc.rust-lang.org/book/
-[rbe]: http://rustbyexample.com
+[rbe]: https://doc.rust-lang.org/rust-by-example/
 [faq]: faq.html
 [nomicon]: https://doc.rust-lang.org/nomicon/
 [rust-learning]: https://github.com/ctjhoa/rust-learning

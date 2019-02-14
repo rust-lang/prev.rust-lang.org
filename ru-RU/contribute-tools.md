@@ -15,7 +15,7 @@ title: Участие в разработке Rust &mdash; IDE, инструме
 Cargo, менеджер пакетов Rust, и rustdoc, генератор документации Rust,
 хоть и реализованы в полной мере, но страдают от нехватки разработчиков. Для
 rustdoc сейчас имеется много открытых задач, которые находятся в 
-в главном репозитории с пометкой [A-rustdoc]. Большинство задач связаны 
+в главном репозитории с пометкой [T-rustdoc]. Большинство задач связаны 
 с багами в коде, и участие в разработке сводится к исправлению этих багов и 
 отправке pull request. У cargo есть [свой репозиторий с задачами][Cargo],
 и тем, кто заинтересовался в разработке, было бы неплохо написать в 
@@ -34,7 +34,7 @@ IRC-канале [#cargo].
 [#cargo]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
 [#rust-tools]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
 [A-debuginfo]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo
-[A-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-rustdoc
+[T-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AT-rustdoc
 [Cargo]: https://github.com/rust-lang/cargo/issues
 [awesome-rust]: https://github.com/kud1ing/awesome-rust
 [ides]: https://forge.rust-lang.org/ides.html

@@ -15,7 +15,7 @@ bis zu deiner Lieblings-IDE. Folge dem Link für mehr Information.
 Sowohl Cargo, der Paketmanager, als auch der Dokumentationsgenerator rustdoc
 sind zwar voll funktionsfähig, leiden aber an einem Entwicklermangel.
 Rustdoc hat viele offene Probleme, die im Main-Repository unter dem Label
-[A-rustdoc] gelistet sind. Es sind hauptsächlich Bugs, die lediglich einen
+[T-rustdoc] gelistet sind. Es sind hauptsächlich Bugs, die lediglich einen
 Bugfix und einen Pull Request erfordern.
 Cargo hat [sein eigenes Repository mit Issue-Tracker][Cargo], und
 wer beitragen möchte, kann sich gerne in [#cargo] melden.
@@ -36,7 +36,7 @@ Diese können mit anderen Tooling-Enthusiasten in
 [#cargo]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rustc
 [#rust-tools]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-tools
 [A-debuginfo]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-debuginfo
-[A-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AA-rustdoc
+[T-rustdoc]: https://github.com/rust-lang/rust/issues?q=is%3Aopen+is%3Aissue+label%3AT-rustdoc
 [Cargo]: https://github.com/rust-lang/cargo/issues
 [awesome-rust]: https://github.com/kud1ing/awesome-rust
 [ides]: https://forge.rust-lang.org/ides.html
