@@ -333,6 +333,10 @@
       city: Warsaw
       url: https://www.meetup.com/Rust-Warsaw/
 
+    - name: Rust Wroclaw
+      city: Wroclaw
+      url:  https://rust-wroclaw.github.io/
+
 - country: Russia
   meetups:
 
