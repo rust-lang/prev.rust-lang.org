@@ -6,10 +6,9 @@ title:  Documentação Rust &middot; A linguagem de programação Rust
 # Documentação Rust
 
 Se você ainda não viu Rust de fato, a primeira coisa que você deveria ler é a
-introdução ao livro, [A linguagem de programação Rust (inglês)][book]. Ele vai
-te dar uma boa ideia de como Rust se parece, te mostra como instalá-lo, e explica
+introdução ao livro, [A linguagem de programação Rust (inglês)][book]. Ele te dará uma boa ideia de como Rust se parece, te mostrará como instalá-lo, e explicará
 a sintaxe e os conceitos. Ao completar o livro, você será um desenvolvedor intermediário
-de Rust, e vai ter uma bom fundamento das ideias por trás de Rust.
+de Rust, e vai ter um bom fundamento das ideias por trás de Rust.
 
 ## Aprendendo Rust
 
