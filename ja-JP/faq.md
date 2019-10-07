@@ -141,7 +141,7 @@ Rustは安全でありながら使いやすいシステムプログラミング�
 Rustの言語バージョンの仕組みはどうなっていますか？
 </a></h3>
 
-Rustの言語バージョニングは[SemVer](http://semver.org/)に従っていて、マイーバージョンでのstableなAPIの後方互換性を保たない変更はコンパイラバグの修正、セーフティホールへのパッチ、ディスパッチあるいは型推論をアノテーションが必要なようにすることのみ許されています。
+Rustの言語バージョニングは[SemVer](http://semver.org/)に従っていて、マイナーバージョンでのstableなAPIの後方互換性を保たない変更はコンパイラバグの修正、セーフティホールへのパッチ、ディスパッチあるいは型推論をアノテーションが必要なようにすることのみ許されています。
 マイナーバージョンの変更での詳細なガイドラインは承認済みRFCの[language](https://github.com/rust-lang/rfcs/blob/master/text/1122-language-semver.md)や[standard library](https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md)で確認出来ます。
 
 Rustは3つの「リリースチャネル」を維持しています。stable、beta、nightlyです。
