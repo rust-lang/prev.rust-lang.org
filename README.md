@@ -10,6 +10,10 @@ This repository contains the source files for prev.rust-lang.org.
 
 The site is built with TravisCI and automatically deployed to S3.
 
+#Resources
+1:https://www.youtube.com/watch?v=U-JhRjRaD4A
+2:https://www.youtube.com/watch?v=6mbwJ2xhgzM&list=PLu0W_9lII9agiCUZYRsvtGTXdxkzPyItg 
+
 ## Testing Locally
 
 To install jekyll (and any other dependencies, if we get any):
